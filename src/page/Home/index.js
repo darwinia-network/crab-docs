@@ -1,6 +1,10 @@
+import { PageHeader } from '../../components/PageHeader';
+
 const Home = () => {
     return (
-        <div>Home</div>
+        <div>
+            <PageHeader />
+        </div>
     )
 };
 

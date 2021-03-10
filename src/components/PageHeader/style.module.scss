@@ -1,0 +1,89 @@
+.headerContainer {
+  .pageLogo {
+    width: 180px;
+    height: 40px;
+  }
+}
+
+// PC
+@media (min-width: 576px) {
+  .headerContainer {
+
+    // for debug
+    // border: 1px solid red;
+
+    .pageLogo {
+      width: 238px;
+      height: 53px;
+      line-height: 22px;
+      margin: 5px 10px;
+    }
+
+    .navBar {
+      background: transparent !important;
+
+      .navigators {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .pageDocs {
+        // width: 37px;
+        // height: 20px;
+        font-size: 16px;
+        font-family: IBMPlexSans-Medium, IBMPlexSans;
+        font-weight: 500;
+        color: #6330DD;
+        line-height: 20px;
+        margin: 5px 10px;
+      }
+
+      .pageGithub {
+        // width: 50px;
+        // height: 20px;
+        font-size: 16px;
+        font-family: IBMPlexSans-Medium, IBMPlexSans;
+        font-weight: 500;
+        color: #6330DD;
+        line-height: 20px;
+        margin: 5px 10px;
+      }
+
+      .pageWhitePaper {
+        // width: 48px;
+        // height: 22px;
+        font-size: 16px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #6330DD;
+        line-height: 22px;
+        margin: 5px 10px;
+      }
+
+      .pageLang {
+        // width: 65px;
+        // height: 30px;
+        border-radius: 4px;
+        border: 1px solid #6330DD;
+        line-height: 22px;
+        margin: 5px 10px;
+      }
+      .pageLangImg {
+        width: 22px;
+        height: 22px;
+        margin-right: 5px;
+      }
+      .pageLangWord {
+        width: 17px;
+        height: 18px;
+        font-size: 14px;
+        font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+        font-weight: 600;
+        color: #6330DD;
+        line-height: 18px;
+      }
+    }
+  }
+}

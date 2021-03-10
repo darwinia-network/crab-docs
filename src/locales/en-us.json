@@ -1,1 +1,10 @@
-{}
+{
+    "header": {
+        "docs": "Docs",
+        "github": "Github",
+        "whitepaper": "WhitePaper",
+        "lang_demo": "EN",
+        "en": "English",
+        "zh": "简体中文"
+    }
+}
