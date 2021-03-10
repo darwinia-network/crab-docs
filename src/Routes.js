@@ -3,7 +3,9 @@ import { Router, Route, Switch } from "react-router-dom";
 import { asyncComponent } from "./components/AsyncComponent";
 
 const history = createBrowserHistory();
+
 const AsyncHome = asyncComponent(import("./page/Home"));
+const AsyncNotFound = asyncComponent(import("./page/NotFound"));
 
 const Routers = () => (
     <Router history={history}>
@@ -13,6 +15,7 @@ const Routers = () => (
                 component={AsyncHome}
                 path='/'
             />
+            <Route component={AsyncNotFound} />
         </Switch>
     </Router>
 );
