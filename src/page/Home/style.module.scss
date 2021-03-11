@@ -1,0 +1,238 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    padding-top: 10px;
+
+    .constent {
+        flex: 1;
+
+        .crabImg {
+            position: absolute;
+            top: 92px;
+            right: 0;
+            width: 275px;
+            height: 248px;
+        }
+
+        .crabTitleImg {
+            position: absolute;
+            top: 172px;
+            left: 20px;
+        }
+
+        .crabNetDesc {
+            width: 335px;
+            height: 80px;
+            font-size: 16px;
+            font-family: IBMPlexSans;
+            color: #6330DD;
+            line-height: 20px;
+            margin: 0 auto;
+            margin-top: 360px;
+            text-align: start;
+        }
+
+        .crabCoolImg {
+            margin: 20px 0;
+        }
+
+        .economicTitle {
+            width: 335px;
+            height: 39px;
+            font-size: 30px;
+            font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+            font-weight: 600;
+            color: #080C20;
+            line-height: 39px;
+            background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 auto;
+        }
+
+        .economicDesc {
+            width: 335px;
+            // height: 260px;
+            font-size: 16px;
+            font-family: IBMPlexSans;
+            color: #6330DD;
+            line-height: 20px;
+            text-align: start;
+            margin: 10px auto;
+
+            .desc1, .desc2 {
+                margin: 20px auto;
+            }
+        }
+
+        .readMoreBtn {
+            width: 335px;
+            height: 40px;
+            background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+            border-radius: 20px;
+
+            .content {
+                width: 76px;
+                height: 18px;
+                font-size: 14px;
+                font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                font-weight: 600;
+                color: #FFFFFF;
+                line-height: 18px;
+                text-align: start;
+            }
+        }
+
+        .wareShadow {
+            // width: 375px;
+            // height: 2099px;
+            background: rgba($color: #D8D8D8, $alpha: 0.2);
+
+            .parachainAuction {
+                // width: 335px;
+                height: 39px;
+                font-size: 30px;
+                font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                font-weight: 600;
+                color: #080C20;
+                line-height: 39px;
+                background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin: 20px auto;
+                margin-top: 40px;
+            }
+
+            .crowdfunding {
+                // width: 125px;
+                height: 24px;
+                font-size: 19px;
+                font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                font-weight: 600;
+                color: #080C20;
+                line-height: 24px;
+                background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin: 20px auto;
+            }
+
+            .auctionCard {
+                // width: 335px;
+                // height: 310px;
+                background: #FFFFFF;
+                border-radius: 30px;
+                margin: 20px;
+                padding: 0 15px;
+                padding-bottom: 15px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .content {
+                    // width: 295px;
+                    // height: 120px;
+                    font-size: 16px;
+                    font-family: IBMPlexSans;
+                    color: #6330DD;
+                    // line-height: 20px;
+                    text-align: start;
+                }
+            }
+
+            .participate {
+                // width: 164px;
+                height: 24px;
+                font-size: 19px;
+                font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                font-weight: 600;
+                color: #080C20;
+                line-height: 24px;
+                background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-top: 30px;
+            }
+
+            .participateBox {
+                // width: 335px;
+                // height: 94px;
+                background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                border-radius: 30px;
+                padding: 20px 15px;
+                margin: 20px 30px;
+
+                // border: 1px solid red;
+
+                .content {
+                    // width: 295px;
+                    // height: 54px;
+                    font-size: 14px;
+                    font-family: IBMPlexSans;
+                    color: #FFFFFF;
+                    line-height: 18px;
+                    text-align: start;
+                }
+            }
+
+            .kusama {
+                background-image: url(./img/mobile-kusama-bg.png);
+                // display: flex;
+                // flex-direction: column;
+                // justify-content: center;
+                // align-items: center;
+
+                padding: 30px 0;
+                padding-top: 60px;
+
+                .title {
+                    margin: 10px;
+                }
+
+                .content {
+                    // width: 335px;
+                    // height: 254px;
+                    font-size: 14px;
+                    font-family: IBMPlexSans-Medium, IBMPlexSans;
+                    font-weight: 500;
+                    color: #FFFFFF;
+                    line-height: 18px;
+                    text-align: start;
+                    margin: 20px;
+                }
+
+                .readMoreBtn {
+                    width: 219px;
+                    height: 40px;
+                    background: #FFFFFF;
+                    border-radius: 20px;
+
+                    margin: 10px 0;
+
+                    .content {
+                        // width: 80px;
+                        // height: 18px;
+                        font-size: 14px;
+                        font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                        font-weight: 600;
+                        color: #FFFFFF;
+                        line-height: 18px;
+                        background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// PC
+@media (min-width: 576px) {
+    .container {
+        display: none;
+    }
+}
