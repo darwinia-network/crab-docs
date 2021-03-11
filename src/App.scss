@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
+@import '~antd/dist/antd.css';
 
 .App {
   text-align: center;
@@ -36,6 +37,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -60,4 +62,31 @@
   src: url('./style/font/Rajdhani-Bold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-light .navbar-toggler-icon {
+  color: #000
+}
+
+.cs-header .dropdown-toggle::after {
+  display: none;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background: url("./style/img/navbar-toggler-icon.png") top center no-repeat;
+  background-size: 22px 19px;
+  width: 22px;
+  height: 19px;
+}
+
+.btn-light {
+  background: transparent;
+}
+
+.btn-light:active, .btn-light:hover, .btn-light:focus {
+  background: transparent;
 }

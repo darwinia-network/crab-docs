@@ -1,15 +1,68 @@
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
+    Button,
     Container, Row, Col,
     Navbar, Nav, NavDropdown
 } from 'react-bootstrap';
+import { Drawer } from 'antd';
 
 import styles from './style.module.scss';
 import pageLogo from './img/logo-page.png';
 import pageLangImg from './img/lang.png';
+import sideBarCloseImg from './img/sidebar-close.png';
+import sideBarLogo from './img/sidebar-logo.png';
+import sideBarLangImg from './img/sidebar-lang.png';
+
+const SideBar = ({ visible, onClose, onLngChange }) => {
+    const { t, i18n } = useTranslation();
+
+    const handleLngClick = () => {
+        if (i18n.language && i18n.language.toLowerCase() === 'en-us') {
+            onLngChange('zh-cn');
+        } else {
+            onLngChange('en-us');
+        }
+    }
+
+    return (
+        <div id="basic-navbar-nav">
+            <Drawer
+                drawerStyle={{ background: 'linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%)' }}
+                placement="right"
+                onClose={onClose}
+                visible={visible}
+                closeIcon={<img alt='close sidebar' src={sideBarCloseImg} style={{ width: '16.73px', height: '16.73px' }} />}
+            >
+                <div className={styles.sideBarSpace}></div>
+                <div className={styles.sideBarContent}>
+                    <img alt='sidebar logo' src={sideBarLogo} />
+                    <div className={styles.sideBarLink}>
+                        <Nav.Link href='/' className={styles.sideBarDocs} >{t('header:docs')}</Nav.Link>
+                        <Nav.Link href='/' className={styles.sideBarGithub} >{t('header:github')}</Nav.Link>
+                        <Nav.Link href='/' className={styles.sideBarWhitePaper} >{t('header:whitepaper')}</Nav.Link>
+                    </div>
+                    <Button variant="light" className={styles.sideBarLangBtn} onClick={handleLngClick}>
+                        <img alt='sidebar lang' src={sideBarLangImg} className={styles.sideBarLangImg} />
+                        <span className={styles.sideBarLangWord}>{t('header:lang_demo')}</span>
+                    </Button>
+                </div>
+            </Drawer>
+        </div>
+    )
+};
 
 const PageHeader = () => {
     const { t, i18n } = useTranslation();
+    const [visibleSideBar, setVisibleSideBar] = useState(false);
+
+    const handleCloseSideBar = () => {
+        setVisibleSideBar(false);
+    };
+
+    const handleClickShowSideBar = () => {
+        setVisibleSideBar(true);
+    };
 
     const handleClickChangeLng = lng => {
         i18n.changeLanguage(lng);
@@ -25,10 +78,11 @@ const PageHeader = () => {
 
     return (
         <div className={styles.headerContainer}>
+            <SideBar visible={visibleSideBar} onClose={handleCloseSideBar} onLngChange={handleClickChangeLng} />
             <Container>
-                <Row>
+                <Row style={{ display: 'flex', alignItems: 'center' }}>
                     <Col
-                        xs={4}
+                        xs={3}
                         sm={5}
                     >
                         <a target="_blank" rel="noopener noreferrer" href='/'>
@@ -36,16 +90,16 @@ const PageHeader = () => {
                         </a>
                     </Col>
                     <Col
-                        xs={{ span: 6, offset: 2 }}
+                        xs={{ span: 3, offset: 6 }}
                         sm={{ span: 5, offset: 2 }}
                     >
-                        <Navbar bg="light" expand="sm" className={styles.navBar}>
-                            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                            <Navbar.Collapse id="basic-navbar-nav">
+                        <Navbar bg="white" expand="sm" className={`${styles.navBar} cs-header`}>
+                            <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleClickShowSideBar} />
+                            <Navbar.Collapse className={'d-none d-sm-block'}>
                                 <Nav className={styles.navigators}>
-                                    <div><Nav.Link href="#todo" className={styles.pageDocs} >{t('header:docs')}</Nav.Link></div>
-                                    <div><Nav.Link href="#todo" className={styles.pageGithub} >{t('header:github')}</Nav.Link></div>
-                                    <div><Nav.Link href="#todo" className={styles.pageWhitePaper} >{t('header:whitepaper')}</Nav.Link></div>
+                                    <div><Nav.Link href="/" className={styles.pageDocs} >{t('header:docs')}</Nav.Link></div>
+                                    <div><Nav.Link href="/" className={styles.pageGithub} >{t('header:github')}</Nav.Link></div>
+                                    <div><Nav.Link href="/" className={styles.pageWhitePaper} >{t('header:whitepaper')}</Nav.Link></div>
                                     <div>
                                         <NavDropdown id="basic-nav-dropdown" className={styles.pageLang}
                                             title={<>
