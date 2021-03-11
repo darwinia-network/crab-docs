@@ -1,0 +1,36 @@
+.footerContainer {
+  // width: 2560px;
+  height: 66px;
+  background: #FFFFFF;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .footerContent {
+    // width: 225px;
+    height: 20px;
+    font-size: 16px;
+    font-family: IBMPlexSans;
+    color: #6330DD;
+    line-height: 20px;
+  }
+}
+
+// PC
+@media (min-width: 576px) {
+  .footerContainer {
+    // width: 375px;
+    height: 66px;
+    background: #FFFFFF;
+
+    .footerContent {
+      // width: 197px;
+      height: 18px;
+      font-size: 14px;
+      font-family: IBMPlexSans;
+      color: #6330DD;
+      line-height: 18px;
+    }
+  }
+}
