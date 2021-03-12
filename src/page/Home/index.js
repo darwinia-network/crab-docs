@@ -2,6 +2,7 @@ import {
     Button,
     // Container, Row, Col
 } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 import styles from './style.module.scss';
 import { PageHeader } from '../../components/PageHeader';
@@ -26,6 +27,19 @@ import desktopParticipate01 from './img/participate-content-01.png';
 import desktopParticipate02 from './img/participate-content-02.png';
 
 const Home = () => {
+    const { i18n } = useTranslation();
+
+    const DesktopTitleCN = (
+        <div className={styles.containerTitleCN}>
+            <div className={styles.title}>Crab Network</div>
+            <div className={styles.subtitle}>KUSAMA 的跨链枢纽</div>
+        </div>
+    );
+
+    const DesktopTitleEN = (
+        <img alt='crab title' src={desktopCrabTitleImg} className={styles.crabTitleImgDesktop} />
+    );
+
     return (
         <div className={styles.container}>
             <PageHeader />
@@ -33,8 +47,9 @@ const Home = () => {
             <div className={styles.constent}>
                 <img alt='crab' src={mobileCrabImg} className={styles.crabImg} />
                 <img alt='crab title' src={mobileCrabTitleImg} className={styles.crabTitleImg} />
+
                 <img alt='crab' src={desktopCrabImg} className={styles.crabImgDesktop} />
-                <img alt='crab title' src={desktopCrabTitleImg} className={styles.crabTitleImgDesktop} />
+                {i18n.language && i18n.language.toLowerCase() === 'en-us' ? DesktopTitleEN : DesktopTitleCN}
 
                 <div className={styles.crabNetDesc}>
                     Crab Network (Crab for short) is a Canary Network for Darwinia. The positioning of Crab is similar to Polkadot’s Kusama Network. Expect Chaos is a reasonable expectation

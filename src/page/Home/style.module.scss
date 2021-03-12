@@ -267,6 +267,39 @@
                 left: 10%;
             }
 
+            .containerTitleCN {
+                display: inline;
+                position: absolute;
+                top: 280px;
+                left: 10%;
+
+                .title {
+                    // width: 1046px;
+                    // height: 182px;
+                    font-size: 152px;
+                    font-family: SFUIDisplay-Black, SFUIDisplay;
+                    font-weight: 900;
+                    color: #080C20;
+                    line-height: 182px;
+                    background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                .subtitle {
+                    // width: 813px;
+                    // height: 118px;
+                    font-size: 84px;
+                    font-family: SFUIDisplay-Black, SFUIDisplay;
+                    font-weight: 900;
+                    color: #080C20;
+                    line-height: 100px;
+                    background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+
             .crabNetDesc {
                 // width: 100%;
                 // height: 66px;
