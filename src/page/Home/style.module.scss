@@ -11,8 +11,8 @@
             position: absolute;
             top: 92px;
             right: 0;
-            width: 275px;
-            height: 248px;
+            // width: 275px;
+            // height: 248px;
         }
 
         .crabTitleImg {
@@ -21,14 +21,22 @@
             left: 20px;
         }
 
+        .crabImgDesktop {
+            display: none;
+        }
+
+        .crabTitleImgDesktop {
+            display: none;
+        }
+
         .crabNetDesc {
-            width: 335px;
-            height: 80px;
+            // width: 335px;
+            // height: 80px;
             font-size: 16px;
             font-family: IBMPlexSans;
             color: #6330DD;
             line-height: 20px;
-            margin: 0 auto;
+            margin: 0 20px;
             margin-top: 360px;
             text-align: start;
         }
@@ -61,7 +69,8 @@
             text-align: start;
             margin: 10px auto;
 
-            .desc1, .desc2 {
+            .desc1,
+            .desc2 {
                 margin: 20px auto;
             }
         }
@@ -157,15 +166,13 @@
                 margin-top: 30px;
             }
 
-            .participateBox {
+            .contentBox {
                 // width: 335px;
                 // height: 94px;
                 background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
                 border-radius: 30px;
                 padding: 20px 15px;
                 margin: 20px 30px;
-
-                // border: 1px solid red;
 
                 .content {
                     // width: 295px;
@@ -230,9 +237,196 @@
     }
 }
 
-// PC
+// Desktop
 @media (min-width: 576px) {
     .container {
-        display: none;
+        // display: none;
+
+        .constent {
+            flex: 1;
+
+            .crabImg {
+                display: none;
+            }
+
+            .crabTitleImg {
+                display: none;
+            }
+
+            .crabImgDesktop {
+                display: inline;
+                position: absolute;
+                top: 92px;
+                right: 0;
+            }
+
+            .crabTitleImgDesktop {
+                display: inline;
+                position: absolute;
+                top: 280px;
+                left: 10%;
+            }
+
+            .crabNetDesc {
+                // width: 100%;
+                // height: 66px;
+                font-size: 25px;
+                font-family: IBMPlexSans;
+                color: #6330DD;
+                line-height: 33px;
+                margin-top: 560px;
+                margin-left: 10%;
+                text-align: start;
+            }
+
+            .economicTitle {
+                width: 100%;
+                height: 65px;
+                font-size: 50px;
+                font-family: IBMPlexSans-Bold, IBMPlexSans;
+                font-weight: bold;
+                color: #080C20;
+                line-height: 65px;
+                background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin: 0;
+                text-align: left;
+            }
+
+            .economicDesc {
+                margin: 0;
+                width: 470px;
+                // height: 200px;
+                font-size: 16px;
+                font-family: IBMPlexSans;
+                color: #6330DD;
+                line-height: 20px;
+            }
+
+            .readMoreBtn {
+                width: 219px;
+                height: 40px;
+                background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                border-radius: 20px;
+
+                .content {
+                    width: 80px;
+                    height: 18px;
+                    font-size: 14px;
+                    font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                    font-weight: 600;
+                    color: #FFFFFF;
+                    line-height: 18px;
+                }
+            }
+
+            .wareShadow {
+                .parachainAuction {
+                    // width: 432px;
+                    height: 65px;
+                    font-size: 50px;
+                    font-family: IBMPlexSans-Bold, IBMPlexSans;
+                    font-weight: bold;
+                    color: #080C20;
+                    line-height: 65px;
+                    background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    margin: 40px auto;
+                }
+
+                .crowdfunding {
+                    width: 197px;
+                    height: 39px;
+                    font-size: 30px;
+                    font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                    font-weight: 600;
+                    color: #080C20;
+                    line-height: 39px;
+                    background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                .auctionCard {
+                    width: 369px;
+                    height: 389px;
+                    background: #FFFFFF;
+                    box-shadow: 0px 10px 10px 0px rgba(147, 24, 172, 0.1);
+                    border-radius: 70px;
+
+                    .content {
+                        width: 309px;
+                        height: 100px;
+                        font-size: 16px;
+                        font-family: IBMPlexSans;
+                        color: #6330DD;
+                        line-height: 20px;
+                        margin-top: 30px;
+                    }
+                }
+
+                .participateZoom {
+                    background: url(./img/desktop-crab-participate.png) center center no-repeat;
+                    background-size: 1670px 754px;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .participate {
+                        // width: 258px;
+                        height: 39px;
+                        font-size: 30px;
+                        font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                        font-weight: 600;
+                        color: #080C20;
+                        line-height: 39px;
+                        background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+
+                    .contentBox {
+                        background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                        border-radius: 71px;
+
+                        display: flex;
+                        justify-content: left;
+                        align-items: center;
+
+                        img {
+                            margin: 0 20px;
+                        }
+
+                        .content {
+                            width: 310px;
+                            height: 80px;
+                            font-size: 16px;
+                            font-family: IBMPlexSans;
+                            color: #FFFFFF;
+                            line-height: 20px;
+                        }
+                    }
+
+                    .kusama {
+                        background: transparent;
+                        margin-top: 40px;
+
+                        .content {
+                            width: 770px;
+                            font-size: 16px;
+                            font-family: IBMPlexSans-Medium, IBMPlexSans;
+                            font-weight: 500;
+                            color: #FFFFFF;
+                            line-height: 20px;
+                            margin: 20px auto;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
