@@ -21,6 +21,10 @@
             left: 20px;
         }
 
+        .parallaxContainer {
+            display: none;
+        }
+
         .crabImgDesktop {
             display: none;
         }
@@ -255,6 +259,7 @@
             }
 
             .parallaxContainer {
+                display: block;
                 overflow: hidden;
             }
 
