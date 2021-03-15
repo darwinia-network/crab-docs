@@ -21,7 +21,7 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
-  "homepage": "https://jayjay1024.github.io/crabnet",
+  "homepage": "https://darwinia-network.github.io/crab-home",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
