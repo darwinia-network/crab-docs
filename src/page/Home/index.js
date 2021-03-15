@@ -1,7 +1,9 @@
+import { useRef, useEffect } from 'react';
 import {
     Button,
     // Container, Row, Col
 } from 'react-bootstrap';
+import Parallax from "parallax-js";
 import { useTranslation } from 'react-i18next';
 
 import styles from './style.module.scss';
@@ -27,18 +29,28 @@ import desktopParticipate01 from './img/participate-content-01.png';
 import desktopParticipate02 from './img/participate-content-02.png';
 
 const Home = () => {
+    const ref = useRef();
     const { i18n } = useTranslation();
 
     const DesktopTitleCN = (
-        <div className={styles.containerTitleCN}>
+        <div data-depth="0.2" className={styles.containerTitleCN}>
             <div className={styles.title}>Crab Network</div>
             <div className={styles.subtitle}>KUSAMA 的跨链枢纽</div>
         </div>
     );
 
     const DesktopTitleEN = (
-        <img alt='crab title' src={desktopCrabTitleImg} className={styles.crabTitleImgDesktop} />
+        <img data-depth="0.2" alt='crab title' src={desktopCrabTitleImg} className={styles.crabTitleImgDesktop} />
     );
+
+    useEffect(() => {
+        if (ref.current) {
+            new Parallax(ref.current, {
+                hoverOnly: true,
+                pointerEvents: true,
+            });
+        }
+    }, [ref]);
 
     return (
         <div className={styles.container}>
@@ -48,8 +60,10 @@ const Home = () => {
                 <img alt='crab' src={mobileCrabImg} className={styles.crabImg} />
                 <img alt='crab title' src={mobileCrabTitleImg} className={styles.crabTitleImg} />
 
-                <img alt='crab' src={desktopCrabImg} className={styles.crabImgDesktop} />
-                {i18n.language && i18n.language.toLowerCase() === 'en-us' ? DesktopTitleEN : DesktopTitleCN}
+                <div className={styles.parallaxContainer} ref={ref} >
+                    <img data-depth="0.1" alt='crab' src={desktopCrabImg} className={styles.crabImgDesktop} />
+                    {i18n.language && i18n.language.toLowerCase() === 'en-us' ? DesktopTitleEN : DesktopTitleCN}
+                </div>
 
                 <div className={styles.crabNetDesc}>
                     Crab Network (Crab for short) is a Canary Network for Darwinia. The positioning of Crab is similar to Polkadot’s Kusama Network. Expect Chaos is a reasonable expectation

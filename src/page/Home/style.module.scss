@@ -253,25 +253,32 @@
                 display: none;
             }
 
+            .parallaxContainer {
+                overflow: hidden;
+            }
+
             .crabImgDesktop {
-                display: inline;
+                display: block;
                 position: absolute;
-                top: 92px;
-                right: 0;
+                left: 48% !important;
+                right: 0 !important;
+                top: 72px !important;
             }
 
             .crabTitleImgDesktop {
-                display: inline;
+                display: block;
                 position: absolute;
-                top: 280px;
-                left: 10%;
+                left: 10% !important;
+                right: auto !important;
+                top: 260px !important;
             }
 
             .containerTitleCN {
-                display: inline;
+                display: block;
                 position: absolute;
-                top: 280px;
-                left: 10%;
+                top: 280px !important;
+                left: 10% !important;
+                border: 1px solid red;
 
                 .title {
                     // width: 1046px;
@@ -307,7 +314,7 @@
                 font-family: IBMPlexSans;
                 color: #6330DD;
                 line-height: 33px;
-                margin-top: 560px;
+                margin-top: 0px;
                 margin-left: 10%;
                 text-align: start;
             }
