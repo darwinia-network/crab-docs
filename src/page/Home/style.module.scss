@@ -96,7 +96,8 @@
         .wareShadow {
             // width: 375px;
             // height: 2099px;
-            background: rgba($color: #D8D8D8, $alpha: 0.2);
+            background-color: #f6f6f6;
+            border: 1px solid rgba(255,255,255,0);
 
             .parachainAuction {
                 // width: 335px;

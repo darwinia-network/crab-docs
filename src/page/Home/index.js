@@ -6,7 +6,9 @@ import {
 import Parallax from "parallax-js";
 import { useTranslation } from 'react-i18next';
 
+import Divider from '../../components/Svg/Divider';
 import styles from './style.module.scss';
+
 import { PageHeader } from '../../components/PageHeader';
 import { PageFooter } from '../../components/PageFooter';
 
@@ -105,6 +107,7 @@ const Home = () => {
                     </div>
                 </div>
 
+                <Divider />
                 <div className={styles.wareShadow}>
                     {/* Parachain Auction */}
 
