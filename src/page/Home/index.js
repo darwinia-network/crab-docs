@@ -107,6 +107,8 @@ const Home = () => {
                     </div>
                 </div>
 
+                <div className={`d-sm-none`} style={{ height: '40px' }}></div>
+
                 <Divider />
                 <div className={styles.wareShadow}>
                     {/* Parachain Auction */}
