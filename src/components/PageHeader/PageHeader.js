@@ -39,7 +39,7 @@ const SideBar = ({ visible, onClose, onLngChange }) => {
             >
                 <div className={styles.sideBarSpace}></div>
                 <div className={styles.sideBarContent}>
-                    <img alt='sidebar logo' src={sideBarLogo} />
+                    <img alt='sidebar logo' src={sideBarLogo} style={{ width: '160px' }} />
                     <div className={styles.sideBarLink}>
                         <Nav.Link href='/' className={styles.sideBarDocs} >{t('header:docs')}</Nav.Link>
                         <Nav.Link href='/' className={styles.sideBarGithub} >{t('header:github')}</Nav.Link>
