@@ -61,8 +61,8 @@ const Home = () => {
             <div className={styles.constent}>
 
                 <Container>
-                    <img alt='crab' src={mobileCrabImg} className={styles.crabImg} />
-                    <img alt='crab title' src={mobileCrabTitleImg} className={styles.crabTitleImg} />
+                    <img alt='...' src={mobileCrabImg} className={styles.crabImg} />
+                    <img alt='...' src={mobileCrabTitleImg} className={styles.crabTitleImg} />
 
                     <div className={styles.parallaxContainer} ref={ref} >
                         <img data-depth="0.1" alt='crab' src={desktopCrabImg} className={styles.crabImgDesktop} />
@@ -113,7 +113,7 @@ const Home = () => {
 
                 <div className={`d-sm-none`} style={{ height: '40px' }}></div>
 
-                <div style={{ marginTop: '-180px' }}>
+                <div className={styles.wareShadowWrapper}>
                     <Divider />
                     <div className={styles.wareShadow}>
                         {/* Parachain Auction */}
@@ -127,19 +127,19 @@ const Home = () => {
                             </div>
 
                             <div className={styles.auctionCard}>
-                                <img alt='...' src={mobileTokenLockImg} />
+                                <img alt='...' src={mobileTokenLockImg} style={{ width: '209px', height: '134px' }} />
                                 <div className={styles.content}>
                                     KSM holders lock their tokens on Kusama for a period of time (6, 12 or 24 months) to help Darwinia rent a slot. In return for these KSM holders, participants will receive CRINGs as rewards.
                                 </div>
                             </div>
                             <div className={styles.auctionCard}>
-                                <img alt='...' src={mobileTokenSaveImg} />
+                                <img alt='...' src={mobileTokenSaveImg} style={{ width: '209px', height: '134px' }} />
                                 <div className={styles.content}>
                                     Your token lock takes place on the chain in a decentralized manner and will be returned to the holder after the lock-up period, so you don’t have to worry about the security of the token.
                                 </div>
                             </div>
                             <div className={styles.auctionCard}>
-                                <img alt='...' src={mobileTokenCringImg} />
+                                <img alt='...' src={mobileTokenCringImg} style={{ width: '209px', height: '134px' }} />
                                 <div className={styles.content}>
                                     CRING is the token of the Crab network. Holding CRINGs can participate in the staking and on-chain governance of the Crab network.
                                 </div>

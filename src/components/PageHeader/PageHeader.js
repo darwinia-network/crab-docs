@@ -83,7 +83,7 @@ const PageHeader = () => {
         <>
             <SideBar visible={visibleSideBar} onClose={handleCloseSideBar} onLngChange={handleClickChangeLng} />
             <Container className={styles.headerContainer}>
-                <Row className={`d-flex justify-content-between`}>
+                <Row className={`d-flex justify-content-between align-items-center`}>
                     <div >
                         <div className={`d-block d-sm-none`}>
                             <a target="_blank" rel="noopener noreferrer" href='/'>

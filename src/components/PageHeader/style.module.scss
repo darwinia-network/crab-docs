@@ -1,6 +1,6 @@
 .headerContainer {
-  margin-left: 10px;
-  margin-right: 20px;
+  margin: 0;
+  margin-left: 25px;
 
   .navBar {
     background: transparent !important;
@@ -82,7 +82,7 @@
 // PC
 @media (min-width: 576px) {
   .headerContainer {
-    margin: 0;
+    margin-top: 30px;
 
     .navBar {
       .nav {
