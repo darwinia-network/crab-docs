@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
     Button,
-    Container, Row, Col,
+    Container, Row,
     Navbar, Nav, NavDropdown
 } from 'react-bootstrap';
 import { Drawer } from 'antd';
