@@ -2,10 +2,12 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    align-items: center;
     padding-top: 10px;
 
     .constent {
         flex: 1;
+        width: 100%;
 
         .crabImg {
             position: absolute;
@@ -19,6 +21,7 @@
             position: absolute;
             top: 172px;
             left: 20px;
+            z-index: 100;
         }
 
         .parallaxContainer {
@@ -100,6 +103,7 @@
         .wareShadow {
             // width: 375px;
             // height: 2099px;
+            // margin-top: -180px;
             background-color: rgba(216,216,216,0.2);
             border: 1px solid rgba(255,255,255,0);
 
@@ -264,26 +268,32 @@
             }
 
             .crabImgDesktop {
+                width: 823px;
+                height: 607px;
                 display: block;
                 position: absolute;
                 left: 48% !important;
-                right: 0 !important;
-                top: 72px !important;
+                right: 0px !important;
+                top: 30px !important;
+                z-index: 100;
             }
 
             .crabTitleImgDesktop {
+                width: 1021px;
+                height: 339px;
                 display: block;
                 position: absolute;
-                left: 10% !important;
+                left: 0 !important;
                 right: auto !important;
-                top: 260px !important;
+                top: 230px !important;
             }
 
             .containerTitleCN {
                 display: block;
                 position: absolute;
-                top: 280px !important;
-                left: 10% !important;
+                top: 220px !important;
+                left: 0 !important;
+                text-align: left;
 
                 .title {
                     // width: 1046px;
@@ -313,15 +323,14 @@
             }
 
             .crabNetDesc {
-                // width: 100%;
-                // height: 66px;
+                height: 66px;
                 font-size: 25px;
-                font-family: IBMPlexSans;
+                font-family: IBMPlexSans-Bold, IBMPlexSans;
+                font-weight: bold;
                 color: #6330DD;
                 line-height: 33px;
+                margin-left: 0px;
                 margin-top: 0px;
-                margin-left: 10%;
-                text-align: start;
             }
 
             .economicTitle {
@@ -368,7 +377,7 @@
 
             .wareShadow {
                 .parachainAuction {
-                    // width: 432px;
+                    width: 436px;
                     height: 65px;
                     font-size: 50px;
                     font-family: IBMPlexSans-Bold, IBMPlexSans;
@@ -378,7 +387,6 @@
                     background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
-                    margin: 40px auto;
                 }
 
                 .crowdfunding {
@@ -398,7 +406,6 @@
                     width: 369px;
                     height: 389px;
                     background: #FFFFFF;
-                    box-shadow: 0px 10px 10px 0px rgba(147, 24, 172, 0.1);
                     border-radius: 70px;
 
                     .content {
@@ -414,15 +421,16 @@
 
                 .participateZoom {
                     background: url(./img/desktop-crab-participate.png) center center no-repeat;
-                    background-size: 1670px 754px;
+                    background-size: 2370px 1074px;
 
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
+                    margin-top: 20px;
 
                     .participate {
-                        // width: 258px;
+                        width: 268px;
                         height: 39px;
                         font-size: 30px;
                         font-family: IBMPlexSans-SemiBold, IBMPlexSans;
@@ -432,9 +440,13 @@
                         background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
+                        margin: 0 auto;
+                        // margin-top: -80px;
                     }
 
                     .contentBox {
+                        width: 554px;
+                        height: 142px;
                         background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
                         border-radius: 71px;
 
@@ -458,7 +470,7 @@
 
                     .kusama {
                         background: transparent;
-                        margin-top: 40px;
+                        margin-top: 160px;
 
                         .content {
                             width: 770px;
@@ -468,6 +480,10 @@
                             color: #FFFFFF;
                             line-height: 20px;
                             margin: 20px auto;
+                        }
+
+                        .readMoreBtn {
+                            margin-bottom: 30px;
                         }
                     }
                 }
