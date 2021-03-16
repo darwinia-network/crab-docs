@@ -71,12 +71,12 @@ const PageHeader = () => {
         i18n.changeLanguage(lng);
         localStorage.setItem("lng", lng);
 
-        let app = document.getElementsByTagName('body')[0];
-        if (lng === 'zh-cn') {
-            app.setAttribute('class', 'zh-font');
-        } else {
-            app.setAttribute('class', '');
-        }
+        // let app = document.getElementsByTagName('body')[0];
+        // if (lng === 'zh-cn') {
+        //     app.setAttribute('class', 'zh-font');
+        // } else {
+        //     app.setAttribute('class', '');
+        // }
     };
 
     return (
