@@ -80,19 +80,13 @@ const PageHeader = () => {
         <div className={styles.headerContainer}>
             <SideBar visible={visibleSideBar} onClose={handleCloseSideBar} onLngChange={handleClickChangeLng} />
             <Container>
-                <Row style={{ display: 'flex', alignItems: 'center' }}>
-                    <Col
-                        xs={3}
-                        sm={5}
-                    >
+                <Row className='d-flex justify-content-between'>
+                    <div>
                         <a target="_blank" rel="noopener noreferrer" href='/'>
                             <img alt='page logo' src={pageLogo} className={styles.pageLogo} />
                         </a>
-                    </Col>
-                    <Col
-                        xs={{ span: 3, offset: 6 }}
-                        sm={{ span: 5, offset: 2 }}
-                    >
+                    </div>
+                    <div>
                         <Navbar bg="white" expand="sm" className={`${styles.navBar} cs-header`}>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleClickShowSideBar} />
                             <Navbar.Collapse className={'d-none d-sm-block'}>
@@ -114,7 +108,7 @@ const PageHeader = () => {
                                 </Nav>
                             </Navbar.Collapse>
                         </Navbar>
-                    </Col>
+                    </div>
                 </Row>
             </Container>
         </div>
