@@ -64,7 +64,7 @@ const Home = () => {
 
                 <div className={styles.parallaxContainer} ref={ref} >
                     <img data-depth="0.1" alt='crab' src={desktopCrabImg} className={styles.crabImgDesktop} />
-                    {i18n.language && i18n.language.toLowerCase() === 'en-us' ? DesktopTitleEN : DesktopTitleCN}
+                    {i18n.language && i18n.language.toLowerCase() === 'zh-cn' ? DesktopTitleCN : DesktopTitleEN}
                 </div>
 
                 <div className={styles.crabNetDesc}>
