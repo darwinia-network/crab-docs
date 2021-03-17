@@ -434,13 +434,14 @@
 
                     .participateZoom {
                         background: url(./img/desktop-crab-participate.png) center center no-repeat;
-                        background-size: 2370px 1074px;
+                        background-size: 2370px;
 
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
                         align-items: center;
-                        margin-top: 20px;
+                        margin-top: 10px;
+                        padding-top: 30px;
 
                         .participate {
                             width: 268px;
@@ -454,7 +455,7 @@
                             -webkit-background-clip: text;
                             -webkit-text-fill-color: transparent;
                             margin: 0 auto;
-                            // margin-top: -80px;
+                            margin-bottom: 12px;
                         }
 
                         .contentBox {
@@ -483,7 +484,7 @@
 
                         .kusama {
                             background: transparent;
-                            margin-top: 160px;
+                            margin-top: 180px;
 
                             .content {
                                 width: 770px;
@@ -496,7 +497,8 @@
                             }
 
                             .readMoreBtn {
-                                margin-bottom: 30px;
+                                margin-top: 20px;
+                                margin-bottom: 50px;
                             }
                         }
                     }

@@ -280,7 +280,7 @@ const Home = () => {
 
                             <div className={styles.kusama}>
                                 <Animate delay={100}>
-                                    <img alt='...' src={desktopKusamaImg} style={{ width: '280px', height: '66px', marginBottom: '20px' }} />
+                                    <img alt='...' src={desktopKusamaImg} style={{ width: '280px', height: '66px', marginBottom: '30px' }} />
                                 </Animate>
                                 <Animate delay={200}>
                                     <div className={styles.content}>
