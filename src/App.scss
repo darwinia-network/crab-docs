@@ -1,6 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
 @import '~antd/dist/antd.css';
 
+body {
+  font-family: 'Rajdhani-Medium', 'Rajdhani-SemiBold', 'Rajdhani-Bold', 'IBMPlexSans-Bold', 'IBMPlexSans-ExtraLight', 'IBMPlexSans-Light', 'IBMPlexSans-Medium', 'IBMPlexSans-Regular', 'IBMPlexSans-SemiBold', 'IBMPlexSans-Thin', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+}
+
 .App {
   text-align: center;
   background-image: url(./style/img/background.svg);
@@ -50,23 +56,72 @@
 }
 
 @font-face {
-  font-family: Rajdhani;
+  font-family: Rajdhani-Medium;
   src: url('./style/font/Rajdhani-Medium.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Rajdhani;
+  font-family: Rajdhani-SemiBold;
   src: url('./style/font/Rajdhani-SemiBold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Rajdhani;
+  font-family: Rajdhani-Bold;
   src: url('./style/font/Rajdhani-Bold.ttf') format('truetype');
   font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: IBMPlexSans-Bold;
+  src: url('./style/font/IBMPlexSans-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: IBMPlexSans-ExtraLight;
+  src: url('./style/font/IBMPlexSans-ExtraLight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: IBMPlexSans-Light;
+  src: url('./style/font/IBMPlexSans-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: IBMPlexSans-Medium;
+  src: url('./style/font/IBMPlexSans-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: IBMPlexSans-Regular;
+  src: url('./style/font/IBMPlexSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: IBMPlexSans-SemiBold;
+  src: url('./style/font/IBMPlexSans-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: IBMPlexSans-Thin;
+  src: url('./style/font/IBMPlexSans-Thin.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
 }
 
