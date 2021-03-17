@@ -110,7 +110,7 @@ const Home = () => {
                 </Container>
 
                 <Container >
-                    <div className='d-none d-sm-flex justify-content-sm-center' style={{ overflow: 'auto' }}>
+                    <div className={`d-none d-sm-flex justify-content-sm-center ${styles.economicWrapper}`}>
                         <Animate>
                             <img alt='crab cool' src={desktopCrabCoolImg} style={{ height: '800px', marginLeft: '-600px' }} />
                         </Animate>

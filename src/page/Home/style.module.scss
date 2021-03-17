@@ -304,40 +304,49 @@
                 margin-bottom: 50px;
             }
 
-            .economicTitle {
-                height: 65px;
-                font-size: 50px;
-                font-family: IBMPlexSans-Bold, IBMPlexSans;
-                font-weight: bold;
-                color: #080C20;
-                line-height: 65px;
-                background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                margin: 0;
-                text-align: left;
-            }
+            .economicWrapper {
+                .economicTitle {
+                    height: 65px;
+                    font-size: 50px;
+                    font-family: IBMPlexSans-Bold, IBMPlexSans;
+                    font-weight: bold;
+                    color: #080C20;
+                    line-height: 65px;
+                    background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    margin: 0;
+                    text-align: left;
+                }
 
-            .economicDesc {
-                margin: 0;
-                font-size: 16px;
-                font-family: IBMPlexSans-Regular;
-                color: #6330DD;
-                line-height: 20px;
-            }
+                .economicDesc {
+                    margin: 0;
+                    font-size: 16px;
+                    font-family: IBMPlexSans-Regular;
+                    color: #6330DD;
+                    line-height: 20px;
+                }
 
-            .readMoreBtn {
-                background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
-                border-radius: 20px;
+                .readMoreBtn {
+                    background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    border-radius: 20px;
 
-                .content {
-                    font-size: 14px;
-                    font-family: IBMPlexSans-SemiBold, IBMPlexSans;
-                    font-weight: 600;
-                    color: #FFFFFF;
-                    line-height: 18px;
+                    .content {
+                        font-size: 14px;
+                        font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                        font-weight: 600;
+                        color: #FFFFFF;
+                        line-height: 18px;
+                    }
                 }
             }
+
+            @media (max-width: 766px) {
+                .economicWrapper {
+                    overflow: auto;
+                }
+            }
+
 
             .wareShadowWrapper {
                 margin-top: -200px;
