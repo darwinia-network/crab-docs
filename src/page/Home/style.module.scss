@@ -377,6 +377,10 @@
                         }
                     }
 
+                    .auctionCard:hover {
+                        box-shadow: 0px 10px 10px 0px rgba(147, 24, 172, 0.1);
+                    }
+
                     .participateZoom {
                         background: url(./img/desktop-crab-participate.png) center center no-repeat;
                         background-size: 2370px;
