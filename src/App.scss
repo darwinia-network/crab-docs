@@ -2,7 +2,9 @@
 @import '~antd/dist/antd.css';
 
 body {
-  font-family: 'Rajdhani-Medium', 'Rajdhani-SemiBold', 'Rajdhani-Bold', 'IBMPlexSans', 'IBMPlexSans-Bold', 'IBMPlexSans-ExtraLight', 'IBMPlexSans-Light', 'IBMPlexSans-Medium', 'IBMPlexSans-Regular', 'IBMPlexSans-SemiBold', 'IBMPlexSans-Thin', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Rajdhani-Medium', 'Rajdhani-SemiBold', 'Rajdhani-Bold', 'IBMPlexSans', 'IBMPlexSans-Bold', 'IBMPlexSans-ExtraLight', 'IBMPlexSans-Light', 'IBMPlexSans-Medium', 'IBMPlexSans-Regular', 'IBMPlexSans-SemiBold', 'IBMPlexSans-Thin', 
+  'SFUIDisplay-Black', 'SFUIDisplay-Bold', 'SFUIDisplay-Heavy', 'SFUIDisplay-Light', 'SFUIDisplay-Medium', 'SFUIDisplay-Semibold', 'SFUIDisplay-Thin', 'SFUIDisplay-Ultralight',
+  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
 }
@@ -123,6 +125,62 @@ body {
 @font-face {
   font-family: IBMPlexSans-Thin;
   src: url('./style/font/IBMPlexSans-Thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SFUIDisplay-Black;
+  src: url('./style/font/sf-ui-display-black.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SFUIDisplay-Bold;
+  src: url('./style/font/sf-ui-display-bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SFUIDisplay-Heavy;
+  src: url('./style/font/sf-ui-display-heavy.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SFUIDisplay-Light;
+  src: url('./style/font/sf-ui-display-light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SFUIDisplay-Medium;
+  src: url('./style/font/sf-ui-display-medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SFUIDisplay-Semibold;
+  src: url('./style/font/sf-ui-display-semibold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SFUIDisplay-Thin;
+  src: url('./style/font/sf-ui-display-thin.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: SFUIDisplay-Ultralight;
+  src: url('./style/font/sf-ui-display-ultralight.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
