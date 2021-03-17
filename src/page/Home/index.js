@@ -37,7 +37,7 @@ const Home = () => {
 
     const DesktopTitleCN = (
         <div data-depth="0.2" className={styles.containerTitleCN}>
-            <div className={styles.title} style={{ width: '1000px' }}>Crab Network</div>
+            <div className={styles.title}>Crab Network</div>
             <div className={styles.subtitle}>KUSAMA 的跨链枢纽</div>
         </div>
     );
@@ -56,24 +56,30 @@ const Home = () => {
     }, [ref]);
 
     return (
-        <div className={styles.container}>
+        <div className={styles.layout}>
             <PageHeader />
 
             <div className={styles.constent}>
 
+                {/* Title */}
                 <Container>
                     <img alt='...' src={mobileCrabImg} className={styles.crabImg} />
                     <img alt='...' src={mobileCrabTitleImg} className={styles.crabTitleImg} />
 
+                    {/* Parallax on desktop */}
                     <div className={styles.parallaxContainer} ref={ref} >
                         <img data-depth="0.1" alt='crab' src={desktopCrabImg} className={styles.crabImgDesktop} />
                         {i18n.language && i18n.language.toLowerCase() === 'zh-cn' ? DesktopTitleCN : DesktopTitleEN}
                     </div>
-                    <div className={styles.crabNetDesc}>
-                        <Animate>
+                </Container>
+
+                {/* CrabNet summary */}
+                <Container>
+                    <Animate>
+                        <div className={styles.crabNetSumary}>
                             Crab Network (Crab for short) is a Canary Network for Darwinia. The positioning of Crab is similar to Polkadot’s Kusama Network. Expect Chaos is a reasonable expectation
-                        </Animate>
-                    </div>
+                        </div>
+                    </Animate>
                 </Container>
 
                 {/* Econmic Model */}
@@ -104,11 +110,11 @@ const Home = () => {
                 </Container>
 
                 <Container >
-                    <div className='d-none d-sm-flex justify-content-center'>
+                    <div className='d-none d-sm-flex justify-content-sm-center' style={{ overflow: 'auto' }}>
                         <Animate>
-                            <img alt='crab cool' src={desktopCrabCoolImg} style={{ width: '1100px', marginLeft: '-600px' }} />
+                            <img alt='crab cool' src={desktopCrabCoolImg} style={{ height: '800px', marginLeft: '-600px' }} />
                         </Animate>
-                        <div className='d-flex flex-column justify-content-center align-items-start'>
+                        <div className='d-sm-flex flex-sm-column justify-content-sm-center align-items-sm-start'>
                             <Animate delay={100}>
                                 <div className={styles.economicTitle}>
                                     Economic Model
@@ -151,7 +157,7 @@ const Home = () => {
 
                             <Animate delay={50}>
                                 <div className={styles.auctionCard}>
-                                    <img alt='...' src={mobileTokenLockImg} style={{ width: '209px', height: '134px' }} />
+                                    <img alt='...' src={mobileTokenLockImg} />
                                     <div className={styles.content}>
                                         KSM holders lock their tokens on Kusama for a period of time (6, 12 or 24 months) to help Darwinia rent a slot. In return for these KSM holders, participants will receive CRINGs as rewards.
                                     </div>
@@ -159,7 +165,7 @@ const Home = () => {
                             </Animate>
                             <Animate delay={50}>
                                 <div className={styles.auctionCard}>
-                                    <img alt='...' src={mobileTokenSaveImg} style={{ width: '209px', height: '134px' }} />
+                                    <img alt='...' src={mobileTokenSaveImg} />
                                     <div className={styles.content}>
                                         Your token lock takes place on the chain in a decentralized manner and will be returned to the holder after the lock-up period, so you don’t have to worry about the security of the token.
                                     </div>
@@ -167,7 +173,7 @@ const Home = () => {
                             </Animate>
                             <Animate delay={50}>
                                 <div className={styles.auctionCard}>
-                                    <img alt='...' src={mobileTokenCringImg} style={{ width: '209px', height: '134px' }} />
+                                    <img alt='...' src={mobileTokenCringImg} />
                                     <div className={styles.content}>
                                         CRING is the token of the Crab network. Holding CRINGs can participate in the staking and on-chain governance of the Crab network.
                                     </div>
@@ -175,7 +181,7 @@ const Home = () => {
                             </Animate>
                         </div>
 
-                        <div className='d-none d-sm-block'>
+                        <Container className='d-none d-sm-block'>
                             <Animate delay={100}>
                                 <div className={styles.parachainAuction}>
                                     Parachain Auction
@@ -188,32 +194,32 @@ const Home = () => {
                             </Animate>
 
                             <Animate delay={300}>
-                                <div className='d-flex justify-content-center align-items-center'>
+                                <div className='d-sm-flex' style={{ overflow: 'auto' }}>
                                     <div className={styles.auctionCard}>
-                                        <img alt='...' src={desktopTokenLockImg} style={{ width: '209px', height: '134px' }} />
+                                        <img alt='...' src={desktopTokenLockImg} />
                                         <div className={styles.content}>
                                             KSM holders lock their tokens on Kusama for a period of time (6, 12 or 24 months) to help Darwinia rent a slot. In return for these KSM holders, participants will receive CRINGs as rewards.
                                         </div>
                                     </div>
                                     <div className={styles.auctionCard}>
-                                        <img alt='...' src={desktopTokenSaveImg} style={{ width: '209px', height: '134px' }} />
+                                        <img alt='...' src={desktopTokenSaveImg} />
                                         <div className={styles.content}>
                                             Your token lock takes place on the chain in a decentralized manner and will be returned to the holder after the lock-up period, so you don’t have to worry about the security of the token.
                                         </div>
                                     </div>
                                     <div className={styles.auctionCard}>
-                                        <img alt='...' src={desktopTokenCringImg} style={{ width: '209px', height: '134px' }} />
+                                        <img alt='...' src={desktopTokenCringImg} />
                                         <div className={styles.content}>
                                             CRING is the token of the Crab network. Holding CRINGs can participate in the staking and on-chain governance of the Crab network.
                                         </div>
                                     </div>
                                 </div>
                             </Animate>
-                        </div>
+                        </Container>
 
                         {/* How to participate */}
 
-                        <div className='d-sm-none'>
+                        <Container className='d-sm-none'>
                             <Animate delay={50}>
                                 <div className={styles.participate}>
                                     How to participate
@@ -233,10 +239,12 @@ const Home = () => {
                                     </div>
                                 </div>
                             </Animate>
+                        </Container>
 
-                            <div className={styles.kusama}>
+                        <div className={`d-sm-none ${styles.kusama}`}>
+                            <Container>
                                 <Animate delay={50}>
-                                    <img alt='...' src={mobileKusamaImg} className={styles.title} />
+                                    <img alt='...' src={mobileKusamaImg}/>
                                 </Animate>
                                 <Animate delay={50}>
                                     <div className={styles.content}>
@@ -247,55 +255,57 @@ const Home = () => {
                                     </div>
                                 </Animate>
                                 <Animate delay={50}>
-                                    <Button variant='light' className={styles.readMoreBtn}>
-                                        <span className={styles.content}>Read More</span>
-                                    </Button>
+                                    <div>
+                                        <Button variant='light' className={styles.readMoreBtn}>
+                                            <span className={styles.content}>Read More</span>
+                                        </Button>
+                                    </div>
                                 </Animate>
-                            </div>
+                            </Container>
                         </div>
 
                         <div className={`d-none d-sm-block ${styles.participateZoom}`}>
-                            <Animate delay={100}>
-                                <div className={styles.participate}>
-                                    How to participate
-                                </div>
-                            </Animate>
-
-                            <Animate delay={200}>
-                                <div className='d-flex justify-content-center'>
-                                    <div className={styles.contentBox}>
-                                        <img alt='...' src={desktopParticipate01} style={{ width: '100px', height: '108px' }} />
-                                        <div className={styles.content}>
-                                            Prepare your KSMs. If it is in the bond state, the unbond operation must be performed at least seven days in advance.
-                                        </div>
-                                    </div>
-                                    <div className={styles.contentBox} style={{ width: '554px', height: '142px' }} >
-                                        <img alt='...' src={desktopParticipate02} style={{ width: '110px', height: '108px' }} />
-                                        <div className={styles.content}>
-                                            Participate in crowdfunding. After the crowdfunding starts, you can participate in the crowdfunding through polkadot.js.org and apps.
-                                        </div>
-                                    </div>
-                                </div>
-                            </Animate>
-
-                            <div className={styles.kusama}>
+                            <Container>
                                 <Animate delay={100}>
-                                    <img alt='...' src={desktopKusamaImg} style={{ width: '280px', height: '66px', marginBottom: '30px' }} />
+                                    <div className={styles.participate}>
+                                        How to participate
+                                    </div>
                                 </Animate>
+
                                 <Animate delay={200}>
-                                    <div className={styles.content}>
-                                        Kusama is a multi-chain network. Parachains can be accessed through slots. Parachains and Kusama jointly form an interoperable blockchain network. Kusama guarantees the security of the entire network, while parachains provide a variety of capabilities for the entire network. All parachains must participate in the parachain auction to obtain the right to rent a slot.
-                                    </div>
-                                    <div className={styles.content}>
-                                        The Crab network needs to crowdfund enough KSMs to win the parachain auction. Crab Network chooses to crowdfund KSMs in a trustless way. During Crab’s parachain lease, these KSMs will be “locked” in the Kusama relay chain.
+                                    <div className={styles.contentBoxWrapper}>
+                                        <div className={styles.contentBox}>
+                                            <img alt='...' src={desktopParticipate01} />
+                                            <div className={styles.content}>
+                                                Prepare your KSMs. If it is in the bond state, the unbond operation must be performed at least seven days in advance.
+                                            </div>
+                                        </div>
+                                        <div className={styles.contentBox} >
+                                            <img alt='...' src={desktopParticipate02} />
+                                            <div className={styles.content}>
+                                                Participate in crowdfunding. After the crowdfunding starts, you can participate in the crowdfunding through polkadot.js.org and apps.
+                                            </div>
+                                        </div>
                                     </div>
                                 </Animate>
-                                <Animate delay={300}>
-                                    <Button variant='light' className={styles.readMoreBtn}>
-                                        <span className={styles.content}>Read More</span>
-                                    </Button>
-                                </Animate>
-                            </div>
+
+                                <div className={styles.kusama}>
+                                    <Animate delay={100}>
+                                        <img alt='...' src={desktopKusamaImg} />
+                                    </Animate>
+                                    <Animate delay={200}>
+                                        <div className={styles.content}>
+                                            Kusama is a multi-chain network. Parachains can be accessed through slots. Parachains and Kusama jointly form an interoperable blockchain network. Kusama guarantees the security of the entire network, while parachains provide a variety of capabilities for the entire network. All parachains must participate in the parachain auction to obtain the right to rent a slot.
+                                        </div>
+                                        <div className={styles.content}>
+                                            The Crab network needs to crowdfund enough KSMs to win the parachain auction. Crab Network chooses to crowdfund KSMs in a trustless way. During Crab’s parachain lease, these KSMs will be “locked” in the Kusama relay chain.
+                                        </div>
+                                        <Button variant='light' className={styles.readMoreBtn}>
+                                            <span className={styles.content}>Read More</span>
+                                        </Button>
+                                    </Animate>
+                                </div>
+                            </Container>
                         </div>
                     </div>
                 </div>

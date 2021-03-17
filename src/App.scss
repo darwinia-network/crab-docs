@@ -11,12 +11,7 @@ body {
   text-align: center;
   background-image: url(./style/img/background.svg);
   min-height: 100vh;
-}
-
-@media (min-width: 576px) {
-  .App {
-    min-width: 1096px;
-  }
+  // min-width: 996px;
 }
 
 .App-logo {
