@@ -92,7 +92,7 @@ const PageHeader = () => {
                         </div>
                         <div className={`d-none d-sm-block`}>
                             <a target="_blank" rel="noopener noreferrer" href='/'>
-                                <img alt='...' src={logoDesktop} style={{ width: '238px', height: '53px' }} />
+                                <img alt='...' src={logoDesktop} style={{ width: '220px' }} />
                             </a>
                         </div>
                     </div>

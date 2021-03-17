@@ -277,24 +277,24 @@
             }
 
             .crabImgDesktop {
-                width: 823px;
-                height: 607px;
+                width: 740px;
+                // height: 607px;
                 display: block;
                 position: absolute;
-                left: 48% !important;
+                left: 38% !important;
                 right: 0px !important;
                 top: 30px !important;
                 z-index: 100;
             }
 
             .crabTitleImgDesktop {
-                width: 1021px;
-                height: 339px;
+                width: 950px;
+                // height: 339px;
                 display: block;
                 position: absolute;
                 left: 0 !important;
                 right: auto !important;
-                top: 230px !important;
+                top: 160px !important;
             }
 
             .containerTitleCN {
@@ -335,11 +335,12 @@
                 height: 66px;
                 font-size: 25px;
                 font-family: IBMPlexSans-Bold, IBMPlexSans;
-                font-weight: bold;
+                // font-weight: bold;
                 color: #6330DD;
                 line-height: 33px;
                 margin-left: 0px;
-                margin-top: 0px;
+                margin-top: -60px;
+                margin-bottom: 30px;
             }
 
             .economicTitle {

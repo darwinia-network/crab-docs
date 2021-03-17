@@ -106,7 +106,7 @@ const Home = () => {
                 <Container >
                     <div className='d-none d-sm-flex justify-content-center'>
                         <Animate>
-                            <img alt='crab cool' src={desktopCrabCoolImg} style={{ width: '1215px', height: '875px', marginLeft: '-600px' }} />
+                            <img alt='crab cool' src={desktopCrabCoolImg} style={{ width: '1100px', marginLeft: '-600px' }} />
                         </Animate>
                         <div className='d-flex flex-column justify-content-center align-items-start'>
                             <Animate delay={100}>
