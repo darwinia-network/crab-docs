@@ -37,7 +37,7 @@ const Home = () => {
 
     const DesktopTitleCN = (
         <div data-depth="0.2" className={styles.containerTitleCN}>
-            <div className={styles.title} style={{ width: '1046px' }}>Crab Network</div>
+            <div className={styles.title} style={{ width: '1000px' }}>Crab Network</div>
             <div className={styles.subtitle}>KUSAMA 的跨链枢纽</div>
         </div>
     );
