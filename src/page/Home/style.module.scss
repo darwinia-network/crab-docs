@@ -233,7 +233,12 @@
 
             .parallaxContainer {
                 display: block;
-                overflow: hidden;
+            }
+
+            @media (max-width: 1400px) {
+                .parallaxContainer {
+                    overflow: hidden;
+                }
             }
 
             .crabImgDesktop {
