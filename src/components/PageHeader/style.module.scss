@@ -1,9 +1,31 @@
-.headerContainer {
-  margin: 0;
-  margin-left: 25px;
+.container {
 
-  .navBar {
-    background: transparent !important;
+  .containerWrapper {
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .navBar {
+        padding: 0;
+
+        .toggler {
+          padding: 0;
+        }
+      }
+
+      .logoMobile {
+        display: block;
+      }
+
+      .logoDesktop {
+        display: none;
+      }
+
+      .navBar {
+        background: transparent !important;
+      }
+    }
   }
 }
 
@@ -26,8 +48,6 @@
     align-items: center;
 
     .sideBarDocs {
-      // width: 49px;
-      // height: 27px;
       font-size: 20px;
       font-family: Eina01-SemiBold, Eina01;
       font-weight: 600;
@@ -36,8 +56,6 @@
     }
 
     .sideBarGithub {
-      // width: 65px;
-      // height: 27px;
       font-size: 20px;
       font-family: Eina01-SemiBold, Eina01;
       font-weight: 600;
@@ -46,8 +64,6 @@
     }
 
     .sideBarWhitePaper {
-      // width: 113px;
-      // height: 27px;
       font-size: 20px;
       font-family: Eina01-SemiBold, Eina01;
       font-weight: 600;
@@ -61,18 +77,15 @@
     // height: 30px;
     border-radius: 4px;
     border: 1px solid #FEFEFF;
-    padding: 1px 0;
+    padding: 2px;
     margin-bottom: 30px;
 
     .sideBarLangImg {
-      margin-right: 5px;
-      margin-bottom: 2px;
       width: 22px;
+      margin-right: 5px;
     }
 
     .sideBarLangWord {
-      width: 17px;
-      height: 18px;
       font-size: 14px;
       font-family: IBMPlexSans-SemiBold, IBMPlexSans;
       font-weight: 600;
@@ -84,73 +97,76 @@
 
 // PC
 @media (min-width: 576px) {
-  .headerContainer {
-    margin-top: 30px;
-
-    .navBar {
-      .nav {
-        width: 320px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .docs {
-        // width: 37px;
-        // height: 20px;
-        font-size: 16px;
-        font-family: IBMPlexSans-Medium, IBMPlexSans;
-        font-weight: 500;
-        color: #6330DD;
-        line-height: 20px;
-      }
-
-      .github {
-        // width: 50px;
-        // height: 20px;
-        font-size: 16px;
-        font-family: IBMPlexSans-Medium, IBMPlexSans;
-        font-weight: 500;
-        color: #6330DD;
-        line-height: 20px;
-      }
-
-      .whitePaper {
-        // width: 48px;
-        // height: 22px;
-        font-size: 16px;
-        font-family: PingFangSC-Medium, PingFang SC;
-        font-weight: 500;
-        color: #6330DD;
-        line-height: 22px;
-      }
-
-      .lngMenu {
-        width: 65px;
-        height: 30px;
-        border-radius: 4px;
-        border: 1px solid #6330DD;
-      }
-
-      .lngMenuTitle {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: -5px;
-
-        .lngImg {
-          width: 22px;
-          height: 22px;
+  .container {
+    .containerWrapper {
+      .row {
+        .logoMobile {
+          display: none;
         }
-  
-        .lngWord {
-          width: 17px;
-          height: 18px;
-          font-size: 14px;
-          font-family: IBMPlexSans-SemiBold, IBMPlexSans;
-          font-weight: 600;
-          color: #6330DD;
-          line-height: 18px;
+
+        .logoDesktop {
+          display: block;
+        }
+
+        .navBar {
+          .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          .docs {
+            font-size: 16px;
+            font-family: IBMPlexSans-Medium, IBMPlexSans;
+            font-weight: 500;
+            color: #6330DD;
+            line-height: 20px;
+            margin-right: 8px;
+          }
+
+          .github {
+            font-size: 16px;
+            font-family: IBMPlexSans-Medium, IBMPlexSans;
+            font-weight: 500;
+            color: #6330DD;
+            line-height: 20px;
+            margin: 0 8px;
+          }
+
+          .whitePaper {
+            font-size: 16px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #6330DD;
+            line-height: 22px;
+            margin: 0 8px;
+          }
+
+          .lngMenu {
+            border-radius: 4px;
+            border: 1px solid #6330DD;
+            margin-left: 10px;
+          }
+
+          .lngMenuTitle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: -5px 0;
+
+            .lngImg {
+              height: 22px;
+              margin-right: 5px;
+            }
+
+            .lngWord {
+              font-size: 14px;
+              font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+              font-weight: 600;
+              color: #6330DD;
+              line-height: 18px;
+            }
+          }
         }
       }
     }

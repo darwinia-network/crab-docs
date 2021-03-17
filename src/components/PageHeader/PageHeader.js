@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
     Button,
-    Container, Row,
+    Container,
     Navbar, Nav, NavDropdown
 } from 'react-bootstrap';
 import { Drawer } from 'antd';
@@ -82,43 +82,45 @@ const PageHeader = () => {
     return (
         <>
             <SideBar visible={visibleSideBar} onClose={handleCloseSideBar} onLngChange={handleClickChangeLng} />
-            <Container className={styles.headerContainer}>
-                <Row className={`d-flex justify-content-between align-items-center`}>
-                    <div >
-                        <div className={`d-block d-sm-none`}>
-                            <a target="_blank" rel="noopener noreferrer" href='/'>
-                                <img alt='page logo' src={logoMobile} style={{ width: '180px', height: '40px' }} />
-                            </a>
+            <div className={styles.container}>
+                <Container className={styles.containerWrapper}>
+                    <div className={styles.row}>
+                        <div >
+                            <div className={styles.logoMobile}>
+                                <a target="_blank" rel="noopener noreferrer" href='/'>
+                                    <img alt='...' src={logoMobile} style={{ height: '35px' }} />
+                                </a>
+                            </div>
+                            <div className={styles.logoDesktop}>
+                                <a target="_blank" rel="noopener noreferrer" href='/'>
+                                    <img alt='...' src={logoDesktop} style={{ height: '50px' }} />
+                                </a>
+                            </div>
                         </div>
-                        <div className={`d-none d-sm-block`}>
-                            <a target="_blank" rel="noopener noreferrer" href='/'>
-                                <img alt='...' src={logoDesktop} style={{ width: '220px' }} />
-                            </a>
-                        </div>
+                        <Navbar bg="white" expand="sm" className={`${styles.navBar} cs-header`}>
+                            <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleClickShowSideBar} className={styles.toggler} />
+                            <Navbar.Collapse className={'d-none d-sm-block'}>
+                                <Nav className={styles.nav}>
+                                    <div><Nav.Link href="/" className={styles.docs} >{t('header:docs')}</Nav.Link></div>
+                                    <div><Nav.Link href="/" className={styles.github} >{t('header:github')}</Nav.Link></div>
+                                    <div><Nav.Link href="/" className={styles.whitePaper} >{t('header:whitepaper')}</Nav.Link></div>
+                                    <div>
+                                        <NavDropdown id="basic-nav-dropdown" className={styles.lngMenu}
+                                            title={<div className={styles.lngMenuTitle}>
+                                                <img alt='...' src={languageImg} className={styles.lngImg} />
+                                                <span className={styles.lngWord}>{t('header:lang_demo')}</span>
+                                            </div>}
+                                        >
+                                            <NavDropdown.Item onClick={() => handleClickChangeLng('en-us')} eventKey="4.1" >{t('header:en')}</NavDropdown.Item>
+                                            <NavDropdown.Item onClick={() => handleClickChangeLng('zh-cn')} eventKey="4.2" >{t('header:zh')}</NavDropdown.Item>
+                                        </NavDropdown>
+                                    </div>
+                                </Nav>
+                            </Navbar.Collapse>
+                        </Navbar>
                     </div>
-                    <Navbar bg="white" expand="sm" className={`${styles.navBar} cs-header`}>
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleClickShowSideBar} />
-                        <Navbar.Collapse className={'d-none d-sm-block'}>
-                            <Nav className={styles.nav}>
-                                <div><Nav.Link href="/" className={styles.docs} >{t('header:docs')}</Nav.Link></div>
-                                <div><Nav.Link href="/" className={styles.github} >{t('header:github')}</Nav.Link></div>
-                                <div><Nav.Link href="/" className={styles.whitePaper} >{t('header:whitepaper')}</Nav.Link></div>
-                                <div>
-                                    <NavDropdown id="basic-nav-dropdown" className={styles.lngMenu}
-                                        title={<div className={styles.lngMenuTitle}>
-                                            <img alt='...' src={languageImg} className={styles.lngImg} />
-                                            <span className={styles.lngWord}>{t('header:lang_demo')}</span>
-                                        </div>}
-                                    >
-                                        <NavDropdown.Item onClick={() => handleClickChangeLng('en-us')} eventKey="4.1" >{t('header:en')}</NavDropdown.Item>
-                                        <NavDropdown.Item onClick={() => handleClickChangeLng('zh-cn')} eventKey="4.2" >{t('header:zh')}</NavDropdown.Item>
-                                    </NavDropdown>
-                                </div>
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Navbar>
-                </Row>
-            </Container>
+                </Container>
+            </div>
         </>
     )
 };
