@@ -202,7 +202,7 @@ const Home = () => {
                                             {t("home_page:crowdfunding_content1")}
                                         </div>
                                     </div>
-                                    <div className={styles.auctionCard}>
+                                    <div className={styles.auctionCard} style={{ marginLeft: '20px', marginRight: '20px' }}>
                                         <img alt='...' src={desktopTokenSaveImg} />
                                         <div className={styles.content}>
                                             {t("home_page:crowdfunding_content2")}
