@@ -43,7 +43,7 @@ const Home = () => {
     );
 
     const DesktopTitleEN = (
-        <img data-depth="0.2" alt='crab title' src={desktopCrabTitleImg} className={styles.crabTitleImgDesktop} />
+        <img data-depth="0.2" alt='...' src={desktopCrabTitleImg} className={styles.crabTitleImgDesktop} />
     );
 
     useEffect(() => {
@@ -63,6 +63,7 @@ const Home = () => {
 
                 {/* Title */}
                 <Container>
+                    {/* Mobile */}
                     <img alt='...' src={mobileCrabImg} className={styles.crabImg} />
                     <img alt='...' src={mobileCrabTitleImg} className={styles.crabTitleImg} />
 
@@ -84,7 +85,7 @@ const Home = () => {
 
                 {/* Econmic Model */}
 
-                <Container className={`d-sm-none`}>
+                <Container className={styles.visibleOnMobile}>
                     <Animate>
                         <img alt='crab cool' src={mobileCrabCoolImg} className={styles.crabCoolImg} />
                     </Animate>
@@ -110,7 +111,7 @@ const Home = () => {
                 </Container>
 
                 <Container >
-                    <div className={`d-none d-sm-flex justify-content-sm-center ${styles.economicWrapper}`}>
+                    <div className={`${styles.visibleOnDesktop} ${styles.economicWrapper}`}>
                         <Animate>
                             <img alt='crab cool' src={desktopCrabCoolImg} style={{ height: '800px', marginLeft: '-600px' }} />
                         </Animate>
@@ -136,14 +137,14 @@ const Home = () => {
                     </div>
                 </Container>
 
-                <div className={`d-sm-none`} style={{ height: '40px' }}></div>
+                <div className={styles.visibleOnMobile} style={{ height: '40px' }}></div>
 
                 <div className={styles.wareShadowWrapper}>
                     <Divider />
                     <div className={styles.wareShadow}>
                         {/* Parachain Auction */}
 
-                        <div className='d-sm-none'>
+                        <Container className={styles.visibleOnMobile}>
                             <Animate delay={50}>
                                 <div className={styles.parachainAuction}>
                                     {t("home_page:parachain_auction")}
@@ -179,9 +180,9 @@ const Home = () => {
                                     </div>
                                 </div>
                             </Animate>
-                        </div>
+                        </Container>
 
-                        <Container className='d-none d-sm-block'>
+                        <Container className={styles.visibleOnDesktop}>
                             <Animate delay={100}>
                                 <div className={styles.parachainAuction}>
                                     {t("home_page:parachain_auction")}
@@ -194,7 +195,7 @@ const Home = () => {
                             </Animate>
 
                             <Animate delay={300}>
-                                <div className='d-sm-flex' style={{ overflow: 'auto' }}>
+                                <div className='d-md-flex' style={{ overflow: 'auto' }}>
                                     <div className={styles.auctionCard}>
                                         <img alt='...' src={desktopTokenLockImg} />
                                         <div className={styles.content}>
@@ -219,7 +220,7 @@ const Home = () => {
 
                         {/* How to participate */}
 
-                        <Container className='d-sm-none'>
+                        <Container className={styles.visibleOnMobile}>
                             <Animate delay={50}>
                                 <div className={styles.participate}>
                                     {t('home_page:how_to_participate')}
@@ -241,7 +242,7 @@ const Home = () => {
                             </Animate>
                         </Container>
 
-                        <div className={`d-sm-none ${styles.kusama}`}>
+                        <div className={`${styles.visibleOnMobile} ${styles.kusama}`}>
                             <Container>
                                 <Animate delay={50}>
                                     <img alt='...' src={mobileKusamaImg}/>
@@ -264,7 +265,7 @@ const Home = () => {
                             </Container>
                         </div>
 
-                        <div className={`d-none d-sm-block ${styles.participateZoom}`}>
+                        <div className={`${styles.visibleOnDesktop} ${styles.participateZoom}`}>
                             <Container>
                                 <Animate delay={100}>
                                     <div className={styles.participate}>

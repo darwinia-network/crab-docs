@@ -1,0 +1,20 @@
+$width-toggle: 768px;
+
+.visibleOnMobile {
+    display: block;
+}
+
+.visibleOnDesktop {
+    display: none;
+}
+
+// Desktop
+@media screen and (min-width: $width-toggle) {
+    .visibleOnMobile {
+        display: none;
+    }
+
+    .visibleOnDesktop {
+        display: block;
+    }
+}

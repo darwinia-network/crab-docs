@@ -1,3 +1,5 @@
+@import '../../style/style.module';
+
 .layout {
     padding-top: 10px;
 
@@ -20,8 +22,7 @@
         .crabImg {
             position: absolute;
             top: 80px;
-            right: 0;
-            width: 282px;
+            right: 10px;
             height: 248px;
             z-index: 100;
         }
@@ -29,9 +30,18 @@
         .crabTitleImg {
             position: absolute;
             top: 172px;
-            left: 20px;
-            width: 273px;
+            left: 10px;
             height: 235px;
+        }
+
+        @media screen and (min-width: 450px) {
+            .crabImg {
+                right: 12%
+            }
+
+            .crabTitleImg {
+                left: 12%;
+            }
         }
 
         .parallaxContainer {
@@ -57,7 +67,6 @@
 
         .crabCoolImg {
             margin: 20px 0;
-            width: 335px;
             height: 254px;
         }
 
@@ -69,6 +78,7 @@
             color: #080C20;
             line-height: 39px;
             background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin: 0 auto;
@@ -117,6 +127,7 @@
                     color: #080C20;
                     line-height: 39px;
                     background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    background-clip: text;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     display: inline-block;
@@ -129,6 +140,7 @@
                     color: #080C20;
                     line-height: 24px;
                     background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    background-clip: text;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     margin: 30px auto;
@@ -139,7 +151,7 @@
                     flex: 1;
                     background: #FFFFFF;
                     border-radius: 30px;
-                    margin: 20px 10px;
+                    margin: 20px 0;
                     padding: 20px;
 
                     display: flex;
@@ -168,6 +180,7 @@
                     color: #080C20;
                     line-height: 24px;
                     background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    background-clip: text;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     display: inline-block;
@@ -222,6 +235,7 @@
                             color: #FFFFFF;
                             line-height: 18px;
                             background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                            background-clip: text;
                             -webkit-background-clip: text;
                             -webkit-text-fill-color: transparent;
                         }
@@ -233,7 +247,7 @@
 }
 
 // Desktop
-@media (min-width: 576px) {
+@media (min-width: $width-toggle) {
     .layout {
         padding-top: 20px;
 
@@ -289,6 +303,7 @@
                     color: #080C20;
                     line-height: 182px;
                     background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    background-clip: text;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     white-space: nowrap;
@@ -303,6 +318,7 @@
                     color: #080C20;
                     line-height: 100px;
                     background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    background-clip: text;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     margin-left: 10px;
@@ -312,7 +328,6 @@
             .crabNetSumary {
                 font-size: 25px;
                 font-family: IBMPlexSans;
-                // font-weight: bold;
                 color: #6330DD;
                 line-height: 33px;
                 margin-top: -60px;
@@ -320,6 +335,9 @@
             }
 
             .economicWrapper {
+                display: flex;
+                justify-content: center;
+
                 .economicTitle {
                     height: 65px;
                     font-size: 50px;
@@ -328,6 +346,7 @@
                     color: #080C20;
                     line-height: 65px;
                     background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    background-clip: text;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     margin: 0;
@@ -374,6 +393,7 @@
                         color: #080C20;
                         line-height: 65px;
                         background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                        background-clip: text;
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                     }
@@ -385,6 +405,7 @@
                         color: #080C20;
                         line-height: 39px;
                         background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                        background-clip: text;
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                     }
@@ -430,6 +451,7 @@
                             color: #080C20;
                             line-height: 39px;
                             background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                            background-clip: text;
                             -webkit-background-clip: text;
                             -webkit-text-fill-color: transparent;
                         }
@@ -499,6 +521,7 @@
                                     color: #FFFFFF;
                                     line-height: 18px;
                                     background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                                    background-clip: text;
                                     -webkit-background-clip: text;
                                     -webkit-text-fill-color: transparent;
                                     padding: 0 30px;

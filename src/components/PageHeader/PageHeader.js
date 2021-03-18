@@ -35,7 +35,7 @@ const SideBar = ({ visible, onClose, onLngChange }) => {
                 placement="right"
                 onClose={onClose}
                 visible={visible}
-                closeIcon={<img alt='close sidebar' src={sideBarCloseImg} style={{ width: '16.73px', height: '16.73px' }} />}
+                closeIcon={<img alt='...' src={sideBarCloseImg} style={{ height: '16.73px' }} />}
             >
                 <div className={styles.sideBarSpace}></div>
                 <div className={styles.sideBarContent}>
@@ -45,8 +45,8 @@ const SideBar = ({ visible, onClose, onLngChange }) => {
                         <Nav.Link href='/' className={styles.sideBarGithub} >{t('header:github')}</Nav.Link>
                         <Nav.Link href='/' className={styles.sideBarWhitePaper} >{t('header:whitepaper')}</Nav.Link>
                     </div>
-                    <Button variant="light" className={styles.sideBarLangBtn} onClick={handleLngClick}>
-                        <img alt='sidebar lang' src={sideBarLangImg} className={styles.sideBarLangImg} />
+                    <Button variant="light" onClick={handleLngClick} className={styles.sideBarLangBtn}>
+                        <img alt='...' src={sideBarLangImg} className={styles.sideBarLangImg} />
                         <span className={styles.sideBarLangWord}>{t('header:lang_demo')}</span>
                     </Button>
                 </div>
@@ -97,9 +97,9 @@ const PageHeader = () => {
                                 </a>
                             </div>
                         </div>
-                        <Navbar bg="white" expand="sm" className={`${styles.navBar} cs-header`}>
+                        <Navbar bg="white" expand="md" className={`${styles.navBar} cs-header`}>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleClickShowSideBar} className={styles.toggler} />
-                            <Navbar.Collapse className={'d-none d-sm-block'}>
+                            <Navbar.Collapse className={styles.visibleOnDesktop}>
                                 <Nav className={styles.nav}>
                                     <div><Nav.Link href="/" className={styles.docs} >{t('header:docs')}</Nav.Link></div>
                                     <div><Nav.Link href="/" className={styles.github} >{t('header:github')}</Nav.Link></div>

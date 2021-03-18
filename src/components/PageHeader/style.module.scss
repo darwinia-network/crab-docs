@@ -1,5 +1,6 @@
-.container {
+@import '../../style/style.module';
 
+.container {
   .containerWrapper {
     .row {
       display: flex;
@@ -47,22 +48,8 @@
     justify-content: space-between;
     align-items: center;
 
-    .sideBarDocs {
-      font-size: 20px;
-      font-family: Eina01-SemiBold, Eina01;
-      font-weight: 600;
-      color: #FFFFFF;
-      line-height: 27px;
-    }
-
-    .sideBarGithub {
-      font-size: 20px;
-      font-family: Eina01-SemiBold, Eina01;
-      font-weight: 600;
-      color: #FFFFFF;
-      line-height: 27px;
-    }
-
+    .sideBarDocs,
+    .sideBarGithub,
     .sideBarWhitePaper {
       font-size: 20px;
       font-family: Eina01-SemiBold, Eina01;
@@ -74,7 +61,6 @@
 
   .sideBarLangBtn {
     width: 65px;
-    // height: 30px;
     border-radius: 4px;
     border: 1px solid #FEFEFF;
     padding: 2px;
@@ -95,8 +81,8 @@
   }
 }
 
-// PC
-@media (min-width: 576px) {
+// Desktop
+@media (min-width: $width-toggle) {
   .container {
     .containerWrapper {
       .row {
@@ -115,30 +101,22 @@
             align-items: center;
           }
 
-          .docs {
-            font-size: 16px;
-            font-family: IBMPlexSans-Medium, IBMPlexSans;
-            font-weight: 500;
-            color: #6330DD;
-            line-height: 20px;
-            margin-right: 8px;
-          }
-
-          .github {
-            font-size: 16px;
-            font-family: IBMPlexSans-Medium, IBMPlexSans;
-            font-weight: 500;
-            color: #6330DD;
-            line-height: 20px;
-            margin: 0 8px;
-          }
-
+          .docs,
+          .github,
           .whitePaper {
             font-size: 16px;
-            font-family: PingFangSC-Medium, PingFang SC;
+            font-family: IBMPlexSans-Medium, IBMPlexSans;
             font-weight: 500;
             color: #6330DD;
             line-height: 22px;
+          }
+
+          .docs {
+            margin-right: 8px;
+          }
+
+          .github,
+          .whitePaper {
             margin: 0 8px;
           }
 
