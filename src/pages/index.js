@@ -11,6 +11,7 @@ import { Suspense, lazy } from 'react';
 import { Spin } from 'antd';
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 const features = [
   {
@@ -101,21 +102,26 @@ function Home() {
   );
 }
 
-const history = createBrowserHistory();
 const Routers = () => {
   return (
-    <Router history={history}>
-      <Suspense fallback={<Spin size='large' style={{ marginTop: '40%' }} />}>
-        <Switch>
-          <Route
-            exact
-            component={lazy(() => import('./home'))}
-            path='/'
-          />
-          <Route component={lazy(() => import('./404'))} />
-        </Switch>
-      </Suspense>
-    </Router>
+    <BrowserOnly fallback={<div></div>}>
+      {() => {
+        return (
+          <Router history={createBrowserHistory()}>
+            <Suspense fallback={<Spin size='large' style={{ marginTop: '40%' }} />}>
+              <Switch>
+                <Route
+                  exact
+                  component={lazy(() => import('./home'))}
+                  path='/'
+                />
+                <Route component={lazy(() => import('./404'))} />
+              </Switch>
+            </Suspense>
+          </Router>
+        )
+      }}
+    </BrowserOnly>
   )
 }
 
