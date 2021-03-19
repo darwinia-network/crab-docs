@@ -41,7 +41,7 @@ const SideBar = ({ visible, onClose, onLngChange }) => {
                 <div className={styles.sideBarContent}>
                     <img alt='...' src={sideBarLogo} style={{ width: '160px' }} />
                     <div className={styles.sideBarLink}>
-                        <Nav.Link href='/docs' className={styles.sideBarDocs} >{t('header:docs')}</Nav.Link>
+                        <Nav.Link href={i18n.language && i18n.language.toLowerCase() === 'zh-cn'?'/zh-CN/docs':'/zh-CN/docs'} className={styles.sideBarDocs} >{t('header:docs')}</Nav.Link>
                         <Nav.Link href='https://github.com/darwinia-network/crab-home' className={styles.sideBarGithub} >{t('header:github')}</Nav.Link>
                         <Nav.Link href='https://darwinia.network/Darwinia_Genepaper_EN.pdf' className={styles.sideBarWhitePaper} >{t('header:whitepaper')}</Nav.Link>
                     </div>
@@ -102,7 +102,7 @@ const PageHeader = () => {
                                 <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleClickShowSideBar} className={styles.toggler} />
                                 <Navbar.Collapse className={styles.visibleOnDesktop}>
                                     <Nav className={styles.nav}>
-                                        <div><Nav.Link href="/docs" className={styles.docs} >{t('header:docs')}</Nav.Link></div>
+                                        <div><Nav.Link href={i18n.language && i18n.language.toLowerCase() === 'zh-cn'?'/zh-CN/docs':'/docs'} className={styles.docs} >{t('header:docs')}</Nav.Link></div>
                                         <div><Nav.Link href="/https://github.com/darwinia-network/crab-home" className={styles.github} >{t('header:github')}</Nav.Link></div>
                                         <div><Nav.Link href="/https://darwinia.network/Darwinia_Genepaper_EN.pdf" className={styles.whitePaper} >{t('header:whitepaper')}</Nav.Link></div>
                                         <div>
