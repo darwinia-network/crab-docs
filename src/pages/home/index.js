@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, Suspense, lazy } from 'react';
 import {
     Button,
     Container
 } from 'react-bootstrap';
+import { Spin } from 'antd';
 import Parallax from "parallax-js";
 import { useTranslation } from 'react-i18next';
 
@@ -342,5 +343,13 @@ const Home = () => {
         </div>
     )
 };
+
+// const AsyncHome = () => {
+//     return (
+//         <Suspense fallback={<Spin size='large' style={{ marginTop: '40%' }} /> }>
+//             {lazy(() => )}
+//         </Suspense>
+//     )
+// }
 
 export default Home;

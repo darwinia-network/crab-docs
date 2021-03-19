@@ -6,6 +6,12 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
+// Routers
+import { Suspense, lazy } from 'react';
+import { Spin } from 'antd';
+import { createBrowserHistory } from "history";
+import { Router, Route, Switch } from "react-router-dom";
+
 const features = [
   {
     title: 'Easy to Use',
@@ -39,7 +45,7 @@ const features = [
   },
 ];
 
-function Feature({imageUrl, title, description}) {
+function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={clsx('col col--4', styles.feature)}>
@@ -54,9 +60,9 @@ function Feature({imageUrl, title, description}) {
   );
 }
 
-export default function Home() {
+function Home() {
   const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+  const { siteConfig = {} } = context;
 
   return (
     <Layout
@@ -94,3 +100,23 @@ export default function Home() {
     </Layout>
   );
 }
+
+const history = createBrowserHistory();
+const Routers = () => {
+  return (
+    <Router history={history}>
+      <Suspense fallback={<Spin size='large' style={{ marginTop: '40%' }} />}>
+        <Switch>
+          <Route
+            exact
+            component={lazy(() => import('./home'))}
+            path='/'
+          />
+          <Route component={lazy(() => import('./404'))} />
+        </Switch>
+      </Suspense>
+    </Router>
+  )
+}
+
+export default Routers;
