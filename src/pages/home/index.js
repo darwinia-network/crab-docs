@@ -123,7 +123,7 @@ const Home = () => {
                 <Container >
                     <div className={`${styles.visibleOnDesktop} ${styles.economicWrapper}`}>
                         <Animate>
-                            <img alt='...' src={desktopCrabCoolImg} style={{ height: '800px', maxWidth: 'none', marginLeft: '-600px' }} />
+                            <img alt='...' src={desktopCrabCoolImg} style={{ height: '620px', maxWidth: 'none', marginLeft: '-240px' }} />
                         </Animate>
                         <div className='d-sm-flex flex-sm-column justify-content-sm-center align-items-sm-start'>
                             <Animate delay={100}>
