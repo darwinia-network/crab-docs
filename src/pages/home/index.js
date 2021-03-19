@@ -111,7 +111,9 @@ const Home = () => {
 
                     <Animate delay={50}>
                         <div className='d-flex justify-content-center'>
-                            <Button variant='light' className={styles.readMoreBtn}>
+                            <Button variant='light' className={styles.readMoreBtn}
+                                href='https://darwinia.network/economic_model/'
+                            >
                                 <span className={styles.content}>{t("home_page:read_more")}</span>
                             </Button>
                         </div>
@@ -136,7 +138,9 @@ const Home = () => {
                                 </div>
                             </Animate>
                             <Animate delay={300}>
-                                <Button variant='light' className={styles.readMoreBtn}>
+                                <Button variant='light' className={styles.readMoreBtn}
+                                    href='https://darwinia.network/economic_model/'
+                                >
                                     <span className={styles.content}>{t("home_page:read_more")}</span>
                                 </Button>
                             </Animate>
@@ -277,7 +281,9 @@ const Home = () => {
                                 </Animate>
                                 <Animate delay={50}>
                                     <div className='d-flex justify-content-center'>
-                                        <Button variant='light' className={styles.readMoreBtn}>
+                                        <Button variant='light' className={styles.readMoreBtn}
+                                            href='https://darwinia.network/economic_model/'
+                                        >
                                             <span className={styles.content}>{t('home_page:read_more')}</span>
                                         </Button>
                                     </div>
@@ -326,7 +332,9 @@ const Home = () => {
                                             {t('home_page:kusama_p2')}
                                         </div>
                                         <div className='d-md-flex justify-content-center'>
-                                            <Button variant='light' className={styles.readMoreBtn}>
+                                            <Button variant='light' className={styles.readMoreBtn}
+                                                href='https://darwinia.network/economic_model/'
+                                            >
                                                 <span className={styles.content}>{t('home_page:read_more')}</span>
                                             </Button>
                                         </div>
