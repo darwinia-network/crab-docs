@@ -41,9 +41,9 @@ const SideBar = ({ visible, onClose, onLngChange }) => {
                 <div className={styles.sideBarContent}>
                     <img alt='...' src={sideBarLogo} style={{ width: '160px' }} />
                     <div className={styles.sideBarLink}>
-                        <Nav.Link href='/' className={styles.sideBarDocs} >{t('header:docs')}</Nav.Link>
-                        <Nav.Link href='/' className={styles.sideBarGithub} >{t('header:github')}</Nav.Link>
-                        <Nav.Link href='/' className={styles.sideBarWhitePaper} >{t('header:whitepaper')}</Nav.Link>
+                        <Nav.Link href='/docs' className={styles.sideBarDocs} >{t('header:docs')}</Nav.Link>
+                        <Nav.Link href='https://github.com/darwinia-network/crab-home' className={styles.sideBarGithub} >{t('header:github')}</Nav.Link>
+                        <Nav.Link href='https://darwinia.network/Darwinia_Genepaper_EN.pdf' className={styles.sideBarWhitePaper} >{t('header:whitepaper')}</Nav.Link>
                     </div>
                     <Button variant="light" onClick={handleLngClick} className={styles.sideBarLangBtn}>
                         <img alt='...' src={sideBarLangImg} className={styles.sideBarLangImg} />
@@ -102,9 +102,9 @@ const PageHeader = () => {
                                 <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleClickShowSideBar} className={styles.toggler} />
                                 <Navbar.Collapse className={styles.visibleOnDesktop}>
                                     <Nav className={styles.nav}>
-                                        <div><Nav.Link href="/" className={styles.docs} >{t('header:docs')}</Nav.Link></div>
-                                        <div><Nav.Link href="/" className={styles.github} >{t('header:github')}</Nav.Link></div>
-                                        <div><Nav.Link href="/" className={styles.whitePaper} >{t('header:whitepaper')}</Nav.Link></div>
+                                        <div><Nav.Link href="/docs" className={styles.docs} >{t('header:docs')}</Nav.Link></div>
+                                        <div><Nav.Link href="/https://github.com/darwinia-network/crab-home" className={styles.github} >{t('header:github')}</Nav.Link></div>
+                                        <div><Nav.Link href="/https://darwinia.network/Darwinia_Genepaper_EN.pdf" className={styles.whitePaper} >{t('header:whitepaper')}</Nav.Link></div>
                                         <div>
                                             <NavDropdown id="basic-nav-dropdown" className={styles.lngMenu}
                                                 title={<div className={styles.lngMenuTitle}>

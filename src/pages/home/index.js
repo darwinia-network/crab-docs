@@ -1,9 +1,8 @@
-import React, { useRef, useEffect, Suspense, lazy } from 'react';
+import React, { useRef, useEffect } from 'react';
 import {
     Button,
     Container
 } from 'react-bootstrap';
-import { Spin } from 'antd';
 import Parallax from "parallax-js";
 import { useTranslation } from 'react-i18next';
 
