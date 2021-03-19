@@ -78,11 +78,11 @@ const Home = () => {
 
                 {/* CrabNet summary */}
                 <Container>
-                    <Animate>
+                    {/* <Animate> */}
                         <div className={styles.crabNetSumary}>
                             {t('home_page:crabnet_sumary')}
                         </div>
-                    </Animate>
+                    {/* </Animate> */}
                 </Container>
 
                 {/* Econmic Model */}
