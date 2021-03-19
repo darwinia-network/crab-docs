@@ -13,6 +13,9 @@ module.exports = {
   organizationName: 'darwinia-network', // Usually your GitHub org/user name.
   projectName: 'crab.network', // Usually your repo name.
   themeConfig: {
+    colorMode: {
+      disableSwitch: true,
+    },
     navbar: {
       title: 'Crab Network',
       // logo: {
