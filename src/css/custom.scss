@@ -9,7 +9,7 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  font-family: 'Rajdhani-Medium', 'Rajdhani-SemiBold', 'Rajdhani-Bold', 'IBMPlexSans', 'IBMPlexSans-Bold', 'IBMPlexSans-ExtraLight', 'IBMPlexSans-Light', 'IBMPlexSans-Medium', 'IBMPlexSans-Regular', 'IBMPlexSans-SemiBold', 'IBMPlexSans-Thin',
+  font-family: 'IBMPlexSans', 'IBMPlexSans-Bold', 'IBMPlexSans-ExtraLight', 'IBMPlexSans-Light', 'IBMPlexSans-Medium', 'IBMPlexSans-Regular', 'IBMPlexSans-SemiBold', 'IBMPlexSans-Thin',
     'SFUIDisplay-Black', 'SFUIDisplay-Bold', 'SFUIDisplay-Heavy', 'SFUIDisplay-Light', 'SFUIDisplay-Medium', 'SFUIDisplay-Semibold', 'SFUIDisplay-Thin', 'SFUIDisplay-Ultralight',
     -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -56,27 +56,6 @@ $width-toggle: 768px;
   .visibleOnDesktop {
     display: block;
   }
-}
-
-@font-face {
-  font-family: Rajdhani-Medium;
-  src: url('/static/font/Rajdhani-Medium.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Rajdhani-SemiBold;
-  src: url('/static/font/Rajdhani-SemiBold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Rajdhani-Bold;
-  src: url('/static/font/Rajdhani-Bold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
 }
 
 @font-face {
