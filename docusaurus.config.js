@@ -14,7 +14,7 @@ module.exports = {
   projectName: 'crab.network', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Crab Network',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -26,11 +26,14 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
-        {to: 'home', label: 'CrabNet', position: 'left'},
+        // {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/darwinia-network/darwinia/tree/master/runtime/crab',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          type: 'localeDropdown',
           position: 'right',
         },
       ],
@@ -111,4 +114,16 @@ module.exports = {
       },
     ],
   ],
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'zh-CN'],
+    localeConfigs: {
+      en: {
+        label: "English",
+      },
+      'zh-CN': {
+        label: "中文",
+      }
+    }
+  }
 };

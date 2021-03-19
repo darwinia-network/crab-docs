@@ -8,7 +8,7 @@ There are mainly three ways to generate a Darwinia account, you can choose eithe
 
 ## 1. Darwinia Web Wallet
 
-### Switch to mainnet
+### Switch to Crab Network
 
 ![setting](assets/tut/create-account-0.png)
 
@@ -126,22 +126,6 @@ Secret phrase `destroy vague trend estate person civil cattle lab hockey tooth e
 ```
 
 > If you previously created an account for other networks other than `substrate` or `crab network`, you need to derive the  correct `Address` from your previous  `secret phrase` or `secret seed`.  You can use `subkey -n substrate inspect "YOUR SECRET PHRASE HERE"` to obtain the Crab network-ID inclusive Address (SS58).
->
-> 
-
-### Polkadot.js Web Apps
-TODO: complete guide when Darwinia network is supported
-
-
-### ~~Itering ID Wallet~~
-
-Coming soon.
-
-### ~~Math Wallet~~
-
-Coming soon.
-
-
 
 ## Storing your key safely
 

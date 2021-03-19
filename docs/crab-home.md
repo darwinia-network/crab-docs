@@ -5,16 +5,14 @@ sidebar_label: Crab Network
 slug: /
 ---
 
-Darwinia Crab Testnet (Crab for short) is a Canary Network for Darwinia, The positioning of Crab is similar to Polkadot's Kusama Network. Expect Chaos is a reasonable expectation.
+Darwinia Crab Testnet (Crab for short) is a canary network with real econmics for Darwinia, The positioning of Crab is similar to Polkadot's Kusama Network. Expect Chaos is a reasonable expectation.
 
-Crab Network is not just a testnet, it will be a long-term network, but it cannot be ruled out that it will stop running due to unexpected conditions or failures.
+Crab mainly provides simulation environment for Darwinia's upgrade and application deployment, perform various radical experiments. Crab includes not only the complete software operation environment and network environment, but also the economic environment.
 
-Crab mainly provides simulation and test environment for Darwinia's upgrade and application deployment, perform various radical experiments. The test environment includes not only the software operation environment and network environment required for testing, but also the test economic environment.
+Crab Network is a long-term valuable network. Some RINGs are allocated to Crab Network as backing assets to make it serve as a canary network having real economic incentives and massive gaming theory testing, not just working a testnet.
 
-For Crab to simulate the real economic environment to a certain extent, Crab has the same parameters as Darwinia Mainnet, and use the same Staking mechanism and inflation model.  Crab’s tokens are CRING and CKTON, the initial supply of CRING is 2000M, and the supply of CKTON is 0.
+Crab has the same parameters as Darwinia Mainnet, and use the same Staking mechanism and inflation model. Crab’s tokens are CRING and CKTON, the initial supply of CRING is 2000M, and the supply of CKTON is 0.
 
-CRING and CKTON have got real value. After the Darwinia Mainnet launched, a Token Bridge will be built between Darwinia Mainnet and Crab, allowing CRING and RING to be mutually exchangeable in the long term, with a conversion ratio of 1 RING = 100 CRING. Darwinia will reserve 40M RING as the backed asset of CRING for the Cryptocurrency Backed Asset Model(CBA Model). Darwinia Mainnet is the backing chain, Crab Network is the issuing chain, CRING is CBA.
+CRING and CKTON have got real value. There is an backing module on the Crab network. Darwinia initially reserved 40M RINGs as CRING's backing assets. These RINGs on the Crab network are called `Mapped RINGs`. In the lifecycle of Crab Network, `Mapped RINGs` is managed by Crab Council, and enables CRING and RING to be mutually swapable.
 
-A portion of the initial supply of the Crab‘s CRING will be distributed to the holders of RING & DOT, they will get CRING (Airdrop) for free.
-
-Darwinia took a snapshot of RING & DOT holders on March 20, 2020. RING & DOT holders can check / receive CRING after Crab launched. DOT airdrop ratio: 1 DOT = 50 CRING, RING airdrop ratio: 1 RING = 1 CRING. The snapshot contains the RING of ERC-20 and TRC-20, including the deposit certificate part in Gringotts. KTON is not in the scope of this snapshot.
+The swap of CRING and RING adopts a constant product market maker model similar to Uniswap, so in essence, the swapping process of CRING and RING is a market trading behavior. The initial liquidity is determined by the Crab Council.

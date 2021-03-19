@@ -2,8 +2,6 @@
 id: crab-tut-exchange
 title: Darwinia Crab Exchange Access Guide
 sidebar_label: Darwinia Crab Exchange Access Guide
-custom_edit_url: https://github.com/darwinia-network/docs/edit/master/content/en/crab-tut-exchange.md
-
 ---
 
 # Darwinia Crab Exchange Access Guide
@@ -18,87 +16,25 @@ Crab use the same Staking mechanism and inflation model with Darwinia mainnet. C
 
 ## Informations
 
-Official website: https://crab.network/ (under construction)  
-Blockchain Explorer: https://crab.subscan.io/  
-Code: https://github.com/darwinia-network/darwinia  
-Block time: 6 seconds  
-Public Websocket RPC: [wss://crab-rpc.darwinia.network](wss://crab-rpc.darwinia.network)  
-Public Http RPC: https://crab-rpc.darwinia.network  
-
-* CRING
+- Official website: https://crab.network/ (under construction)  
+- Blockchain Explorer: https://crab.subscan.io/  
+- Code: https://github.com/darwinia-network/darwinia  
+- Block time: 6 seconds  
+- Public Websocket RPC: [wss://crab-rpc.darwinia.network](wss://crab-rpc.darwinia.network)  
+- Public Http RPC: https://crab-rpc.darwinia.network  
+- CRING  
     Symbol: CRING  
     Name: Darwinia Crab Network Native Token  
     Precision: 9
 
-* CKTON
+- CKTON  
     Symbol: CKTON  
     Name: Darwinia Crab Commitment Token  
     Precision: 9
 
-## Full node quick installation and running
+## Full node installation and running
 
-Download releases from https://github.com/darwinia-network/darwinia/releases
-
-### Minimum requirements of host server
-
-CPU: 1 core  
-Memory: 2 GB  
-Disk: 30 GB SSD
-
-### Linux
-
-#### 1. Prepare binary
-
-```
-curl -sL https://github.com/darwinia-network/darwinia/releases/download/vx.x.x/darwinia-x.x.x-x86_64-linux-gnu-glibc-x.xx-llvm-x.x.tar.bz2
-
-tar xvf darwinia-x.x.x-x86_64-linux-gnu-glibc-x.xx-llvm-x.x.tar.bz2
-
-chmod +x ./darwinia
-```
-
-#### 2. Run
-
-```
-./darwinia \
-    --base-path <YOUR_DATA_DIR> \
-    --name <YOUR_NODE_NAME> \
-    --chain crab
-```
-
-Add the --ws-external and --rpc-cors all options if you want to [remotely connect to this node](https://wiki.polkadot.network/docs/en/maintain-wss):
-
-```
-./darwinia \
-    --base-path <YOUR_DATA_DIR> \
-    --name <YOUR_NODE_NAME> \
-    --chain crab \
-    --ws-external \
-    --rpc-cors all
-```
-
-### Docker
-
-#### 1. Pull docker image
-
-```
-docker pull quay.io/darwinia-network/darwinia:vx.x.x
-```
-
-#### 2. Run
-
-```
-docker run -it \
-    -v <YOUR_DATA_DIR>:/data \
-    -p <YOUR_NODE_HTTP_PORT>:9933 \
-    -p <YOUR_NODE_WSS_PORT>:9944 \
-    darwinianetwork/darwinia:vx.x.x \
-        --base-path /data \
-        --name <YOUR_NODE_NAME> \
-        --chain crab \
-        --ws-external \
-        --rpc-cors all
-```
+See [How to run a node](crab-tut-node.md)
 
 ## Usages
 
