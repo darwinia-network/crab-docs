@@ -199,6 +199,12 @@
                         color: #FFFFFF;
                         line-height: 18px;
                         text-align: start;
+
+                        >a {
+                            color: white;
+                            text-decoration: underline;
+                            font-weight: bold;
+                        }
                     }
                 }
 
