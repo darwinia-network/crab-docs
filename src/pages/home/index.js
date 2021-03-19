@@ -257,9 +257,21 @@ const Home = () => {
                             </Animate>
                             <Animate delay={100}>
                                 <div className={styles.contentBox}>
-                                    <div className={styles.content}>
-                                        {t('home_page:participate_content2')}
-                                    </div>
+                                    {/* {i18n.language && i18n.language.toLowerCase() === 'en-us' ?
+                                        <div className={styles.content}>
+                                            {t('home_page:participate_content2_0')}
+                                            <a ref='https://polkadot.js.org/apps'>polkadot.js.org</a>
+                                            {t('home_page:and')}
+                                            <a ref='https://apps.darwinia.network/'>apps</a>
+                                        </div> :
+                                        <div className={styles.content}>
+                                            {t('home_page:participate_content2_0')}
+                                            <a ref='https://polkadot.js.org/apps'>polkadot.js.org</a>
+                                            {t('home_page:and')}
+                                            <a ref='https://apps.darwinia.network/'>apps</a>
+                                            {t('home_page:participate_content2_1')}
+                                        </div>
+                                    } */}
                                 </div>
                             </Animate>
                         </Container>
@@ -311,9 +323,21 @@ const Home = () => {
                                         </div>
                                         <div className={styles.contentBox} >
                                             <img alt='...' src={desktopParticipate02} />
-                                            <div className={styles.content}>
-                                                {t('home_page:participate_content2')}
-                                            </div>
+                                            {i18n.language && i18n.language.toLowerCase() === 'en-us' ?
+                                                <div className={styles.content}>
+                                                    {t('home_page:participate_content2_0')}
+                                                    <a target="_blank" rel="noopener noreferrer" href='https://polkadot.js.org/apps'> polkadot.js.org </a>
+                                                    {t('home_page:and')}
+                                                    <a target="_blank" rel="noopener noreferrer" href='https://apps.darwinia.network/'> apps </a>
+                                                </div> :
+                                                <div className={styles.content}>
+                                                    {t('home_page:participate_content2_0')}
+                                                    <a target="_blank" rel="noopener noreferrer" href='https://polkadot.js.org/apps'> polkadot.js.org </a>
+                                                    {t('home_page:and')}
+                                                    <a target="_blank" rel="noopener noreferrer" href='https://apps.darwinia.network/'> apps </a>
+                                                    {t('home_page:participate_content2_1')}
+                                                </div>
+                                            }
                                         </div>
                                     </div>
                                 </Animate>

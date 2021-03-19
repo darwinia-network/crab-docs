@@ -20,7 +20,9 @@
         "crowdfunding_content3": "CRING is the token of the Crab network. Holding CRINGs can participate in the staking and on-chain governance of the Crab network.",
         "how_to_participate": "How to participate",
         "participate_content1": "Prepare your KSMs. If it is in the bond state, the unbond operation must be performed at least seven days in advance.",
-        "participate_content2": "Participate in crowdfunding. After the crowdfunding starts, you can participate in the crowdfunding through polkadot.js.org and apps.",
+        "participate_content2_0": "Participate in crowdfunding. After the crowdfunding starts, you can participate in the crowdfunding through",
+        "participate_content2_1": "s",
+        "and": "and",
         "kusama_p1": "Kusama is a multi-chain network. Parachains can be accessed through slots. Parachains and Kusama jointly form an interoperable blockchain network. Kusama guarantees the security of the entire network, while parachains provide a variety of capabilities for the entire network. All parachains must participate in the parachain auction to obtain the right to rent a slot.",
         "kusama_p2": "The Crab network needs to crowdfund enough KSMs to win the parachain auction. Crab Network chooses to crowdfund KSMs in a trustless way. During Crab’s parachain lease, these KSMs will be “locked” in the Kusama relay chain."
     }

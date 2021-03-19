@@ -20,7 +20,9 @@
         "crowdfunding_content3": "CRING是Crab网络的令牌。 持有CRING可以参与Crab网络的staking和链上治理。",
         "how_to_participate": "如何参加",
         "participate_content1": "准备您的KSM。 如果处于绑定状态，则必须至少提前14天执行取消绑定操作。",
-        "participate_content2": "参与众筹。 众筹开始后，您可以通过polkadot.js.org和apps参与众筹。",
+        "participate_content2_0": "参与众筹。 众筹开始后，您可以通过",
+        "participate_content2_1": "参与众筹",
+        "and": "和",
         "kusama_p1": "Kusama是一个多链网络。  Parachain可以通过插槽访问Kusama。 Parachain和Kusama共同形成了一个可互操作的区块链网络。 Kusama保证了整个网络的安全性，而平行链则为整个网络提供了多种功能。 所有平行链必须参与平行链拍卖，以获得租用插槽的权利。",
         "kusama_p2": "Crab网络需要众筹足够多的KSM以赢得平行链拍卖。 Crab网络选择以一种去信任的方式对KSM进行众筹。 在Crab的顺链租赁期间，这些KSM将“锁定”在Kusama中。"
     }
