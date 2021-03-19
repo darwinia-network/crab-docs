@@ -115,6 +115,11 @@ const Routers = () => {
                   component={lazy(() => import('./home'))}
                   path='/'
                 />
+                <Route
+                  exact
+                  component={lazy(() => import('./home'))}
+                  path='/zh-CN'
+                />
                 <Route component={lazy(() => import('./404'))} />
               </Switch>
             </Suspense>
