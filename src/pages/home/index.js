@@ -257,21 +257,21 @@ const Home = () => {
                             </Animate>
                             <Animate delay={100}>
                                 <div className={styles.contentBox}>
-                                    {/* {i18n.language && i18n.language.toLowerCase() === 'en-us' ?
+                                    {i18n.language && i18n.language.toLowerCase() === 'en-us' ?
                                         <div className={styles.content}>
                                             {t('home_page:participate_content2_0')}
-                                            <a ref='https://polkadot.js.org/apps'>polkadot.js.org</a>
+                                            <a target="_blank" rel="noopener noreferrer" href='https://polkadot.js.org/apps'> polkadot.js.org </a>
                                             {t('home_page:and')}
-                                            <a ref='https://apps.darwinia.network/'>apps</a>
+                                            <a target="_blank" rel="noopener noreferrer" href='https://apps.darwinia.network/'> apps </a>
                                         </div> :
                                         <div className={styles.content}>
                                             {t('home_page:participate_content2_0')}
-                                            <a ref='https://polkadot.js.org/apps'>polkadot.js.org</a>
+                                            <a target="_blank" rel="noopener noreferrer" href='https://polkadot.js.org/apps'> polkadot.js.org </a>
                                             {t('home_page:and')}
-                                            <a ref='https://apps.darwinia.network/'>apps</a>
+                                            <a target="_blank" rel="noopener noreferrer" href='https://apps.darwinia.network/'> apps </a>
                                             {t('home_page:participate_content2_1')}
                                         </div>
-                                    } */}
+                                    }
                                 </div>
                             </Animate>
                         </Container>
