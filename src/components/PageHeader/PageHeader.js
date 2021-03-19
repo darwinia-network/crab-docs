@@ -39,7 +39,7 @@ const SideBar = ({ visible, onClose, onLngChange }) => {
             >
                 <div className={styles.sideBarSpace}></div>
                 <div className={styles.sideBarContent}>
-                    <img alt='sidebar logo' src={sideBarLogo} style={{ width: '160px' }} />
+                    <img alt='...' src={sideBarLogo} style={{ width: '160px' }} />
                     <div className={styles.sideBarLink}>
                         <Nav.Link href='/' className={styles.sideBarDocs} >{t('header:docs')}</Nav.Link>
                         <Nav.Link href='/' className={styles.sideBarGithub} >{t('header:github')}</Nav.Link>
@@ -83,7 +83,7 @@ const PageHeader = () => {
         <>
             <SideBar visible={visibleSideBar} onClose={handleCloseSideBar} onLngChange={handleClickChangeLng} />
             <div className={styles.container}>
-                <Container className={styles.containerWrapper}>
+                <Container className={styles.subContainer}>
                     <div className={styles.row}>
                         <div >
                             <div className={styles.logoMobile}>
@@ -97,27 +97,29 @@ const PageHeader = () => {
                                 </a>
                             </div>
                         </div>
-                        <Navbar bg="white" expand="md" className={`${styles.navBar} cs-header`}>
-                            <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleClickShowSideBar} className={styles.toggler} />
-                            <Navbar.Collapse className={styles.visibleOnDesktop}>
-                                <Nav className={styles.nav}>
-                                    <div><Nav.Link href="/" className={styles.docs} >{t('header:docs')}</Nav.Link></div>
-                                    <div><Nav.Link href="/" className={styles.github} >{t('header:github')}</Nav.Link></div>
-                                    <div><Nav.Link href="/" className={styles.whitePaper} >{t('header:whitepaper')}</Nav.Link></div>
-                                    <div>
-                                        <NavDropdown id="basic-nav-dropdown" className={styles.lngMenu}
-                                            title={<div className={styles.lngMenuTitle}>
-                                                <img alt='...' src={languageImg} className={styles.lngImg} />
-                                                <span className={styles.lngWord}>{t('header:lang_demo')}</span>
-                                            </div>}
-                                        >
-                                            <NavDropdown.Item onClick={() => handleClickChangeLng('en-us')} eventKey="4.1" >{t('header:en')}</NavDropdown.Item>
-                                            <NavDropdown.Item onClick={() => handleClickChangeLng('zh-cn')} eventKey="4.2" >{t('header:zh')}</NavDropdown.Item>
-                                        </NavDropdown>
-                                    </div>
-                                </Nav>
-                            </Navbar.Collapse>
-                        </Navbar>
+                        <div>
+                            <Navbar bg="white" expand="md" className={`${styles.navBar} cs-header`}>
+                                <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleClickShowSideBar} className={styles.toggler} />
+                                <Navbar.Collapse className={styles.visibleOnDesktop}>
+                                    <Nav className={styles.nav}>
+                                        <div><Nav.Link href="/" className={styles.docs} >{t('header:docs')}</Nav.Link></div>
+                                        <div><Nav.Link href="/" className={styles.github} >{t('header:github')}</Nav.Link></div>
+                                        <div><Nav.Link href="/" className={styles.whitePaper} >{t('header:whitepaper')}</Nav.Link></div>
+                                        <div>
+                                            <NavDropdown id="basic-nav-dropdown" className={styles.lngMenu}
+                                                title={<div className={styles.lngMenuTitle}>
+                                                    <img alt='...' src={languageImg} className={styles.lngImg} />
+                                                    <span className={styles.lngWord}>{t('header:lang_demo')}</span>
+                                                </div>}
+                                            >
+                                                <NavDropdown.Item onClick={() => handleClickChangeLng('en-us')} eventKey="4.1" >{t('header:en')}</NavDropdown.Item>
+                                                <NavDropdown.Item onClick={() => handleClickChangeLng('zh-cn')} eventKey="4.2" >{t('header:zh')}</NavDropdown.Item>
+                                            </NavDropdown>
+                                        </div>
+                                    </Nav>
+                                </Navbar.Collapse>
+                            </Navbar>
+                        </div>
                     </div>
                 </Container>
             </div>

@@ -28,9 +28,9 @@ i18n
     .init({
         resources,
         // lng: localStorage.getItem("lng") || 'en-us',
-        detection:{
+        detection: {
             // order and from where user language should be detected
-            order: ['querystring', 'cookie', 'localStorage','browser', 'navigator', 'path', 'subdomain'],
+            order: ['querystring', 'cookie', 'localStorage', 'browser', 'navigator', 'path', 'subdomain'],
 
             // keys or params to lookup language from
             lookupQuerystring: 'lng',

@@ -1,0 +1,545 @@
+@import '../../css/custom.scss';
+
+.layout {
+    padding-top: 10px;
+
+    ::selection,
+    ::selection {
+        -webkit-text-fill-color: white;
+    }
+
+    ::-moz-selection,
+    ::-moz-selection {
+        -webkit-text-fill-color: white;
+    }
+
+    ::-webkit-selection ::-webkit-selection {
+        -webkit-text-fill-color: white;
+    }
+
+    .constent {
+        .crabImg {
+            position: absolute;
+            top: 80px;
+            right: 10px;
+            height: 248px;
+            z-index: 100;
+        }
+
+        .crabTitleImg {
+            position: absolute;
+            top: 172px;
+            left: 10px;
+            height: 235px;
+        }
+
+        @media screen and (min-width: 550px) {
+            .crabImg {
+                right: 12%
+            }
+
+            .crabTitleImg {
+                left: 12%;
+            }
+        }
+
+        .parallaxContainer {
+            display: none;
+        }
+
+        .crabImgDesktop {
+            display: none;
+        }
+
+        .crabTitleImgDesktop {
+            display: none;
+        }
+
+        .crabNetSumary {
+            font-size: 16px;
+            font-family: IBMPlexSans;
+            color: #6330DD;
+            line-height: 20px;
+            margin-top: 400px;
+            text-align: start;
+        }
+
+        .crabCoolImg {
+            margin: 20px 0;
+            height: 254px;
+        }
+
+        .economicTitle {
+            height: 39px;
+            font-size: 30px;
+            font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+            font-weight: 600;
+            color: #080C20;
+            line-height: 39px;
+            background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 auto;
+        }
+
+        .economicDesc {
+            font-size: 16px;
+            font-family: IBMPlexSans;
+            color: #6330DD;
+            line-height: 20px;
+            text-align: start;
+            margin: 10px auto;
+
+            .desc1,
+            .desc2 {
+                margin: 20px auto;
+            }
+        }
+
+        .readMoreBtn {
+            padding: 5px 60px;
+            background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+            border-radius: 20px;
+
+            .content {
+                font-size: 14px;
+                font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                font-weight: 600;
+                color: #FFFFFF;
+                line-height: 18px;
+                padding: 0;
+            }
+        }
+
+        .wareShadowWrapper {
+            margin-top: 10px;
+
+            .wareShadow {
+                background-color: rgba(216, 216, 216, 0.2);
+                border: 1px solid rgba(255, 255, 255, 0);
+
+                .parachainAuction {
+                    font-size: 30px;
+                    font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                    font-weight: 600;
+                    color: #080C20;
+                    line-height: 39px;
+                    background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    display: inline-block;
+                }
+
+                .crowdfunding {
+                    font-size: 19px;
+                    font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                    font-weight: 600;
+                    color: #080C20;
+                    line-height: 24px;
+                    background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    margin: 30px auto;
+                    display: inline-block;
+                }
+
+                .auctionCard {
+                    flex: 1;
+                    background: #FFFFFF;
+                    border-radius: 30px;
+                    margin: 20px 0;
+                    padding: 20px;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    .content {
+                        font-size: 16px;
+                        font-family: IBMPlexSans;
+                        color: #6330DD;
+                        line-height: 20px;
+                        text-align: start;
+                        margin: 0 10px;
+                    }
+
+                    >img {
+                        height: 134px;
+                    }
+                }
+
+                .participate {
+                    font-size: 19px;
+                    font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                    font-weight: 600;
+                    color: #080C20;
+                    line-height: 24px;
+                    background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    display: inline-block;
+                }
+
+                .contentBox {
+                    background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    border-radius: 30px;
+                    padding: 20px;
+                    margin: 20px 0;
+
+                    .content {
+                        font-size: 14px;
+                        font-family: IBMPlexSans;
+                        color: #FFFFFF;
+                        line-height: 18px;
+                        text-align: start;
+                    }
+                }
+
+                .kusama {
+                    background: url(./img/mobile-kusama-bg.png) center center no-repeat;
+                    background-size: 100% 100%;
+
+                    padding: 30px 0;
+                    padding-top: 60px;
+
+                    img {
+                        height: 40px;
+                        margin: 10px;
+                    }
+
+                    .content {
+                        font-size: 14px;
+                        font-family: IBMPlexSans-Medium, IBMPlexSans;
+                        font-weight: 500;
+                        color: #FFFFFF;
+                        line-height: 18px;
+                        text-align: start;
+                        margin: 20px 0;
+                    }
+
+                    .readMoreBtn {
+                        background: #FFFFFF;
+                        border-radius: 20px;
+                        margin: 30px 0;
+
+                        .content {
+                            font-size: 14px;
+                            font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                            font-weight: 600;
+                            color: #FFFFFF;
+                            line-height: 18px;
+                            background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Desktop
+@media (min-width: $width-toggle) {
+    .layout {
+        padding-top: 20px;
+
+        .constent {
+            .crabImg {
+                display: none;
+            }
+
+            .crabTitleImg {
+                display: none;
+            }
+
+            .parallaxContainer {
+                display: block;
+            }
+
+            @media (max-width: 1400px) {
+                .parallaxContainer {
+                    overflow: hidden;
+                }
+            }
+
+            .crabImgDesktop {
+                height: 600px;
+                display: block;
+                position: absolute;
+                left: 38% !important;
+                right: 0px !important;
+                top: 20px !important;
+                z-index: 100;
+            }
+
+            .crabTitleImgDesktop {
+                height: 320px;
+                display: block;
+                position: absolute;
+                left: 0 !important;
+                right: auto !important;
+                top: 180px !important;
+            }
+
+            .containerTitleCN {
+                display: block;
+                position: absolute;
+                top: 190px !important;
+                left: 0 !important;
+                text-align: left;
+
+                .title {
+                    font-size: 140px;
+                    font-family: SFUIDisplay-Black, SFUIDisplay;
+                    font-weight: 900;
+                    color: #080C20;
+                    line-height: 182px;
+                    background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+
+                .subtitle {
+                    font-size: 60px;
+                    font-family: SFUIDisplay-Black, SFUIDisplay;
+                    font-weight: 900;
+                    color: #080C20;
+                    line-height: 100px;
+                    background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    margin-left: 10px;
+                }
+            }
+
+            .crabNetSumary {
+                font-size: 25px;
+                font-family: IBMPlexSans;
+                color: #6330DD;
+                line-height: 33px;
+                margin-top: -60px;
+                margin-bottom: 50px;
+            }
+
+            .economicWrapper {
+                display: flex;
+                justify-content: center;
+
+                .economicTitle {
+                    height: 65px;
+                    font-size: 50px;
+                    font-family: IBMPlexSans-Bold, IBMPlexSans;
+                    font-weight: bold;
+                    color: #080C20;
+                    line-height: 65px;
+                    background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    margin: 0;
+                    text-align: left;
+                }
+
+                .economicDesc {
+                    margin: 0;
+                    font-size: 16px;
+                    font-family: IBMPlexSans-Regular;
+                    color: #6330DD;
+                    line-height: 20px;
+                }
+
+                .readMoreBtn {
+                    background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                    border-radius: 20px;
+
+                    .content {
+                        font-size: 14px;
+                        font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                        font-weight: 600;
+                        color: #FFFFFF;
+                        line-height: 18px;
+                    }
+                }
+            }
+
+            @media (max-width: 766px) {
+                .economicWrapper {
+                    overflow: auto;
+                }
+            }
+
+
+            .wareShadowWrapper {
+                margin-top: -200px;
+
+                .wareShadow {
+                    .parachainAuction {
+                        font-size: 50px;
+                        font-family: IBMPlexSans-Bold, IBMPlexSans;
+                        font-weight: bold;
+                        color: #080C20;
+                        line-height: 65px;
+                        background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+
+                    .crowdfunding {
+                        font-size: 30px;
+                        font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                        font-weight: 600;
+                        color: #080C20;
+                        line-height: 39px;
+                        background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+
+                    .auctionCard {
+                        border-radius: 70px;
+
+                        .content {
+                            font-size: 16px;
+                            font-family: IBMPlexSans-Regular;
+                            color: #6330DD;
+                            line-height: 20px;
+                        }
+
+                        @media (max-width: 992px) {
+                            >img {
+                                height: 110px;
+                            }
+
+                            border-radius: 40px;
+                        }
+                    }
+
+                    .auctionCard:hover {
+                        box-shadow: 0px 10px 10px 0px rgba(147, 24, 172, 0.1);
+                    }
+
+                    .participateZoom {
+                        background: url(./img/desktop-crab-participate.png) center center no-repeat;
+                        background-size: 2370px;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-top: 10px;
+                        padding-top: 30px;
+
+                        .participate {
+                            font-size: 30px;
+                            font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                            font-weight: 600;
+                            color: #080C20;
+                            line-height: 39px;
+                            background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                        }
+
+                        .contentBoxWrapper {
+                            display: flex;
+
+                            .contentBox {
+                                background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                                border-radius: 71px;
+                                flex: 1;
+
+                                display: flex;
+                                justify-content: flex-start;
+                                align-items: center;
+                                margin: 20px;
+
+                                >img {
+                                    height: 60px;
+                                    margin: 0 20px;
+                                }
+
+                                .content {
+                                    font-size: 16px;
+                                    font-family: IBMPlexSans;
+                                    color: #FFFFFF;
+                                    line-height: 20px;
+                                }
+                            }
+                        }
+
+                        @media (max-width: 992px) {
+                            .contentBoxWrapper {
+                                flex-direction: column;
+                                align-items: center;
+                            }
+                        }
+
+                        .kusama {
+                            background: none;
+                            margin-top: 180px;
+
+                            img {
+                                height: 66px;
+                                margin-bottom: 30px;
+                            }
+
+                            .content {
+                                font-size: 16px;
+                                font-family: IBMPlexSans-Medium, IBMPlexSans;
+                                font-weight: 500;
+                                color: #FFFFFF;
+                                line-height: 20px;
+                                margin: 20px 0;
+                                padding: 0 160px;
+                            }
+
+                            .readMoreBtn {
+                                padding: 5px 30px;
+                                margin-top: 30px;
+                                margin-bottom: 50px;
+
+                                .content {
+                                    font-size: 14px;
+                                    font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+                                    font-weight: 600;
+                                    color: #FFFFFF;
+                                    line-height: 18px;
+                                    background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+                                    background-clip: text;
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;
+                                    padding: 0 30px;
+                                }
+                            }
+                        }
+
+                        @media (max-width: 992px) {
+                            .kusama {
+                                margin-top: 80px;
+
+                                .content {
+                                    padding: 0 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

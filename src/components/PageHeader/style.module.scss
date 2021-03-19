@@ -1,7 +1,7 @@
-@import '../../style/style.module';
+@import '../../css/custom.scss';
 
 .container {
-  .containerWrapper {
+  .subContainer {
     .row {
       display: flex;
       justify-content: space-between;
@@ -9,6 +9,7 @@
 
       .navBar {
         padding: 0;
+        box-shadow: none;
 
         .toggler {
           padding: 0;
@@ -84,7 +85,7 @@
 // Desktop
 @media (min-width: $width-toggle) {
   .container {
-    .containerWrapper {
+    .subContainer {
       .row {
         .logoMobile {
           display: none;

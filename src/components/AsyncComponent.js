@@ -1,6 +1,6 @@
-import React, {lazy, Suspense} from 'react';
+import React, { lazy, Suspense } from 'react';
 
-export  function asyncComponent(importComponent) {
+export function asyncComponent(importComponent) {
     const DynamicComponent = lazy(() => importComponent);
 
     return () => (

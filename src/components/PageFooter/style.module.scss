@@ -1,5 +1,6 @@
-.footerContainer {
-  // width: 2560px;
+@import '../../css/custom.scss';
+
+.container {
   height: 60px;
   background: #FFFFFF;
 
@@ -7,8 +8,7 @@
   justify-content: center;
   align-items: center;
 
-  .footerContent {
-    // width: 225px;
+  .content {
     height: 20px;
     font-size: 16px;
     font-family: IBMPlexSans;
@@ -17,13 +17,12 @@
   }
 }
 
-// PC
-@media (min-width: 576px) {
-  .footerContainer {
+// Desktop
+@media (min-width: $width-toggle) {
+  .container {
     background: #FFFFFF;
 
-    .footerContent {
-      // width: 197px;
+    .content {
       height: 18px;
       font-size: 14px;
       font-family: IBMPlexSans;
