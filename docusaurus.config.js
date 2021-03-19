@@ -5,8 +5,8 @@ const path = require('path');
 module.exports = {
   title: 'Crab Network',
   tagline: 'The tagline of my site',
-  url: 'https://darwinia-network.github.io/crab.network/',
-  baseUrl: '/crab.network/',
+  url: 'https://crab.network.l2me.com/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.svg',
