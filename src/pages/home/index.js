@@ -282,7 +282,7 @@ const Home = () => {
                                 <Animate delay={50}>
                                     <div className='d-flex justify-content-center'>
                                         <Button variant='light' className={styles.readMoreBtn}
-                                            href='https://darwinia.network/economic_model/'
+                                            href='https://kusama.network/'
                                         >
                                             <span className={styles.content}>{t('home_page:read_more')}</span>
                                         </Button>
@@ -333,7 +333,7 @@ const Home = () => {
                                         </div>
                                         <div className='d-md-flex justify-content-center'>
                                             <Button variant='light' className={styles.readMoreBtn}
-                                                href='https://darwinia.network/economic_model/'
+                                                href='https://kusama.network/'
                                             >
                                                 <span className={styles.content}>{t('home_page:read_more')}</span>
                                             </Button>
