@@ -260,15 +260,13 @@ const Home = () => {
                                     {i18n.language && i18n.language.toLowerCase() === 'en-us' ?
                                         <div className={styles.content}>
                                             {t('home_page:participate_content2_0')}
-                                            <a target="_blank" rel="noopener noreferrer" href='https://polkadot.js.org/apps'> polkadot.js.org </a>
-                                            {t('home_page:and')}
-                                            <a target="_blank" rel="noopener noreferrer" href='https://apps.darwinia.network/'> apps </a>
+                                            <a target="_blank" rel="noopener noreferrer" href='https://polkadot.js.org/apps'>polkadot.js.org</a> {t('home_page:and')} <a target="_blank" rel="noopener noreferrer" href='https://apps.darwinia.network/'>apps</a>
                                         </div> :
                                         <div className={styles.content}>
                                             {t('home_page:participate_content2_0')}
-                                            <a target="_blank" rel="noopener noreferrer" href='https://polkadot.js.org/apps'> polkadot.js.org </a>
+                                            <a target="_blank" rel="noopener noreferrer" href='https://polkadot.js.org/apps'>polkadot.js.org</a>
                                             {t('home_page:and')}
-                                            <a target="_blank" rel="noopener noreferrer" href='https://apps.darwinia.network/'> apps </a>
+                                            <a target="_blank" rel="noopener noreferrer" href='https://apps.darwinia.network/'>apps</a>
                                             {t('home_page:participate_content2_1')}
                                         </div>
                                     }
@@ -326,15 +324,13 @@ const Home = () => {
                                             {i18n.language && i18n.language.toLowerCase() === 'en-us' ?
                                                 <div className={styles.content}>
                                                     {t('home_page:participate_content2_0')}
-                                                    <a target="_blank" rel="noopener noreferrer" href='https://polkadot.js.org/apps'> polkadot.js.org </a>
-                                                    {t('home_page:and')}
-                                                    <a target="_blank" rel="noopener noreferrer" href='https://apps.darwinia.network/'> apps </a>
+                                                    <a target="_blank" rel="noopener noreferrer" href='https://polkadot.js.org/apps'>polkadot.js.org</a> {t('home_page:and')} <a target="_blank" rel="noopener noreferrer" href='https://apps.darwinia.network/'>apps</a>
                                                 </div> :
                                                 <div className={styles.content}>
                                                     {t('home_page:participate_content2_0')}
-                                                    <a target="_blank" rel="noopener noreferrer" href='https://polkadot.js.org/apps'> polkadot.js.org </a>
+                                                    <a target="_blank" rel="noopener noreferrer" href='https://polkadot.js.org/apps'>polkadot.js.org</a>
                                                     {t('home_page:and')}
-                                                    <a target="_blank" rel="noopener noreferrer" href='https://apps.darwinia.network/'> apps </a>
+                                                    <a target="_blank" rel="noopener noreferrer" href='https://apps.darwinia.network/'>apps</a>
                                                     {t('home_page:participate_content2_1')}
                                                 </div>
                                             }
