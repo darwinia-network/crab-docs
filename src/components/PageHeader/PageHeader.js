@@ -104,7 +104,7 @@ const PageHeader = () => {
                                     <Nav className={styles.nav}>
                                         <div><Nav.Link href={i18n.language && i18n.language.toLowerCase() === 'zh-cn'?'/zh-CN/docs':'/docs'} className={styles.docs} >{t('header:docs')}</Nav.Link></div>
                                         <div><Nav.Link href="https://github.com/darwinia-network/darwinia/tree/master/runtime/crab" className={styles.github} >{t('header:github')}</Nav.Link></div>
-                                        <div><Nav.Link href="/https://darwinia.network/Darwinia_Genepaper_EN.pdf" className={styles.whitePaper} >{t('header:whitepaper')}</Nav.Link></div>
+                                        <div><Nav.Link href="https://darwinia.network/Darwinia_Genepaper_EN.pdf" className={styles.whitePaper} >{t('header:whitepaper')}</Nav.Link></div>
                                         <div>
                                             <NavDropdown id="basic-nav-dropdown" className={styles.lngMenu}
                                                 title={<div className={styles.lngMenuTitle}>
