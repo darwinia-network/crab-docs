@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>BG</title>
+    <defs>
+        <pattern id="pattern-1" width="17.2091784" height="17.2091784" x="-17.2091784" y="-17.2091784" patternUnits="userSpaceOnUse">
+            <use xlink:href="#image-2" transform="scale(0.35852455,0.35852455)"></use>
+        </pattern>
+        <image id="image-2" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAMKADAAQAAAABAAAAMAAAAADbN2wMAAAAwUlEQVRoBe2XQQ6AIAwEifFXPl//pXCoIR4ICD1sMyQEFVjbKQVNidIkcOTeUt3K5qaMMASWECAHlmBERJgAOSAcPExfQoAcWIIREWECV7b9FLY/3dn4Ut2K/A8NDritjU7hMBH4npij92WnsYStW+NYP7Prencafd87Xj4CRsirNdpe+kk+AjjgtjY6heUjsHc6+ndY+ZijQGCCwHtiTmg0p8oncdM7OgMQIAcCBBEXpgiQA1P4mByAADkQIIhtFx6JtxlMUx/tlQAAAABJRU5ErkJggg=="></image>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.72" opacity="0.100000001">
+        <g id="切图" transform="translate(-2072.000000, -601.000000)" fill="url(#pattern-1)">
+            <g id="BG" transform="translate(2072.000000, 601.000000)">
+                <rect id="蒙版" x="0" y="0" width="54" height="54"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

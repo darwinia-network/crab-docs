@@ -1,31 +1,40 @@
 {
-  "name": "crab-home",
-  "version": "0.1.0",
+  "name": "crab-network",
+  "version": "0.0.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@docusaurus/core": "2.0.0-alpha.71",
+    "@docusaurus/preset-classic": "2.0.0-alpha.71",
+    "@mdx-js/react": "^1.6.21",
+    "antd": "^4.14.0",
+    "bootstrap": "^4.6.0",
+    "clsx": "^1.1.1",
+    "docusaurus-plugin-sass": "^0.1.12",
+    "history": "^5.0.0",
+    "i18next": "^19.9.2",
+    "i18next-browser-languagedetector": "^6.0.1",
+    "parallax-js": "^3.1.0",
+    "react": "^17.0.1",
+    "react-animate-on-scroll": "^2.1.5",
+    "react-bootstrap": "^1.5.2",
+    "react-dom": "^17.0.1",
+    "react-i18next": "^11.8.10",
+    "react-router-dom": "^5.2.0"
   },
   "browserslist": {
     "production": [
-      ">0.2%",
+      ">0.5%",
       "not dead",
       "not op_mini all"
     ],
