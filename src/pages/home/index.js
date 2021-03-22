@@ -179,7 +179,7 @@ const Home = () => {
                                     <div className={styles.crowdfunding}>
                                         {i18n.language && i18n.language.toLowerCase() === 'zh-cn'
                                             ? <a target="_blank" rel="noopener noreferrer" href='/zh-CN/docs/crab-crowdloan'>{t("home_page:crowdfunding")}</a>
-                                            : <a target="_blank" rel="noopener noreferrer" href='/en/docs/crab-crowdloan'>{t("home_page:crowdfunding")}</a>
+                                            : <a target="_blank" rel="noopener noreferrer" href='/docs/crab-crowdloan'>{t("home_page:crowdfunding")}</a>
                                         }
                                     </div>
                                 </div>
@@ -224,7 +224,7 @@ const Home = () => {
                                     <div className={styles.crowdfunding}>
                                         {i18n.language && i18n.language.toLowerCase() === 'zh-cn'
                                             ? <a target="_blank" rel="noopener noreferrer" href='/zh-CN/docs/crab-crowdloan'>{t("home_page:crowdfunding")}</a>
-                                            : <a target="_blank" rel="noopener noreferrer" href='/en/docs/crab-crowdloan'>{t("home_page:crowdfunding")}</a>
+                                            : <a target="_blank" rel="noopener noreferrer" href='/docs/crab-crowdloan'>{t("home_page:crowdfunding")}</a>
                                         }
                                     </div>
                                 </div>
