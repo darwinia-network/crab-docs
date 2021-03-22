@@ -13,6 +13,8 @@
         "economic_content_p1": "Crab Network is a long-term valuable network. Some RINGs are allocated to Crab Network as backing assets to make it serve as a canary network having real economic incentives and massive gaming theory testing, not just working a testnet.",
         "economic_content_p2": "Crab has the same parameters as Darwinia Mainnet, and use the same Staking mechanism and inflation model. Crab’s tokens are CRING and CKTON, the initial supply of CRING is 2000M, and the supply of CKTON is 0.",
         "read_more": "Read More",
+        "see_darwinia": "Darwinia",
+        "see_circulate": "Circulate",
         "parachain_auction": "Parachain Auction",
         "crowdfunding": "Crowdfunding",
         "crowdfunding_content1": "KSM holders lock their tokens on Kusama for a period of time (6, 12 or 24 months) to help Darwinia rent a slot. In return for these KSM holders, participants will receive CRING, NFT, etc. as rewards.",

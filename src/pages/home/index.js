@@ -114,7 +114,12 @@ const Home = () => {
                             <Button variant='light' className={styles.readMoreBtn}
                                 href='https://darwinia.network/economic_model/'
                             >
-                                <span className={styles.content}>{t("home_page:read_more")}</span>
+                                <span className={styles.content}>{t("home_page:see_darwinia")}</span>
+                            </Button>
+                            <Button variant='light' className={styles.readMoreBtn}
+                                href='https://crab.subscan.io/account'
+                            >
+                                <span className={styles.content}>{t("home_page:see_circulate")}</span>
                             </Button>
                         </div>
                     </Animate>
@@ -141,7 +146,12 @@ const Home = () => {
                                 <Button variant='light' className={styles.readMoreBtn}
                                     href='https://darwinia.network/economic_model/'
                                 >
-                                    <span className={styles.content}>{t("home_page:read_more")}</span>
+                                    <span className={styles.content}>{t("home_page:see_darwinia")}</span>
+                                </Button>
+                                <Button variant='light' className={styles.readMoreBtn}
+                                    href='https://crab.subscan.io/account'
+                                >
+                                    <span className={styles.content}>{t("home_page:see_circulate")}</span>
                                 </Button>
                             </Animate>
                             <div style={{ height: '30%' }}></div>
@@ -167,7 +177,7 @@ const Home = () => {
                             <Animate delay={50}>
                                 <div className='d-flex justify-content-center'>
                                     <div className={styles.crowdfunding}>
-                                        {t("home_page:crowdfunding")}
+                                        <a target="_blank" rel="noopener noreferrer" href='https://docs.google.com/document/d/11Pbx8bKn1UrlAs6zhP8wOx5fua-piCShslzyCkaDCv4/edit?usp=sharing'>{t("home_page:crowdfunding")}</a>
                                     </div>
                                 </div>
                             </Animate>
@@ -209,7 +219,7 @@ const Home = () => {
                             <Animate delay={200}>
                                 <div className='d-md-flex justify-content-center'>
                                     <div className={styles.crowdfunding}>
-                                        {t("home_page:crowdfunding")}
+                                        <a target="_blank" rel="noopener noreferrer" href='https://docs.google.com/document/d/11Pbx8bKn1UrlAs6zhP8wOx5fua-piCShslzyCkaDCv4/edit?usp=sharing'>{t("home_page:crowdfunding")}</a>
                                     </div>
                                 </div>
                             </Animate>
