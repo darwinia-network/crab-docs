@@ -111,12 +111,12 @@ const Home = () => {
 
                     <Animate delay={50}>
                         <div className='d-flex flex-column justify-content-between align-items-center'>
-                            <Button variant='light' className={styles.readMoreBtn} style={{ width: '66%' }}
+                            <Button variant='light' className={styles.economicBtn} style={{ width: '66%' }}
                                 href='https://darwinia.network/economic_model/'
                             >
                                 <span className={styles.content}>{t("home_page:see_darwinia")}</span>
                             </Button>
-                            <Button variant='light' className={styles.readMoreBtn} style={{ width: '66%', marginTop: '10px' }}
+                            <Button variant='light' className={styles.economicBtn} style={{ width: '66%', marginTop: '10px' }}
                                 href='https://crab.subscan.io/account'
                             >
                                 <span className={styles.content}>{t("home_page:see_circulate")}</span>
@@ -144,12 +144,12 @@ const Home = () => {
                             </Animate>
                             <Animate delay={300} style={{ width: '100%' }}>
                                 <div className='d-flex'>
-                                    <Button variant='light' className={styles.readMoreBtn}
+                                    <Button variant='light' className={styles.economicBtn}
                                         href='https://darwinia.network/economic_model/'
                                     >
                                         <span className={styles.content}>{t("home_page:see_darwinia")}</span>
                                     </Button>
-                                    <Button variant='light' className={styles.readMoreBtn} style={{ marginLeft: '10px' }}
+                                    <Button variant='light' className={styles.economicBtn} style={{ marginLeft: '10px' }}
                                         href='https://crab.subscan.io/account'
                                     >
                                         <span className={styles.content}>{t("home_page:see_circulate")}</span>
