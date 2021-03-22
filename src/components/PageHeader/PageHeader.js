@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Head from '@docusaurus/Head';
 import { useTranslation } from 'react-i18next';
 import {
     Button,
@@ -81,6 +82,7 @@ const PageHeader = () => {
 
     return (
         <>
+            <Head><link data-react-helmet="true" rel="shortcut icon" href="/img/favicon.svg" /></Head>
             <SideBar visible={visibleSideBar} onClose={handleCloseSideBar} onLngChange={handleClickChangeLng} />
             <div className={styles.container}>
                 <Container className={styles.subContainer}>
