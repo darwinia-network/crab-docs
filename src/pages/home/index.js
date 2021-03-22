@@ -177,7 +177,10 @@ const Home = () => {
                             <Animate delay={50}>
                                 <div className='d-flex justify-content-center'>
                                     <div className={styles.crowdfunding}>
-                                        <a target="_blank" rel="noopener noreferrer" href='https://docs.google.com/document/d/11Pbx8bKn1UrlAs6zhP8wOx5fua-piCShslzyCkaDCv4/edit?usp=sharing'>{t("home_page:crowdfunding")}</a>
+                                        {i18n.language && i18n.language.toLowerCase() === 'zh-cn'
+                                            ? <a target="_blank" rel="noopener noreferrer" href='/zh-CN/docs/crab-crowdloan'>{t("home_page:crowdfunding")}</a>
+                                            : <a target="_blank" rel="noopener noreferrer" href='/en/docs/crab-crowdloan'>{t("home_page:crowdfunding")}</a>
+                                        }
                                     </div>
                                 </div>
                             </Animate>
@@ -219,7 +222,10 @@ const Home = () => {
                             <Animate delay={200}>
                                 <div className='d-md-flex justify-content-center'>
                                     <div className={styles.crowdfunding}>
-                                        <a target="_blank" rel="noopener noreferrer" href='https://docs.google.com/document/d/11Pbx8bKn1UrlAs6zhP8wOx5fua-piCShslzyCkaDCv4/edit?usp=sharing'>{t("home_page:crowdfunding")}</a>
+                                        {i18n.language && i18n.language.toLowerCase() === 'zh-cn'
+                                            ? <a target="_blank" rel="noopener noreferrer" href='/zh-CN/docs/crab-crowdloan'>{t("home_page:crowdfunding")}</a>
+                                            : <a target="_blank" rel="noopener noreferrer" href='/en/docs/crab-crowdloan'>{t("home_page:crowdfunding")}</a>
+                                        }
                                     </div>
                                 </div>
                             </Animate>
