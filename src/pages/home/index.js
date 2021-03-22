@@ -114,7 +114,12 @@ const Home = () => {
                             <Button variant='light' className={styles.readMoreBtn}
                                 href='https://darwinia.network/economic_model/'
                             >
-                                <span className={styles.content}>{t("home_page:read_more")}</span>
+                                <span className={styles.content}>{t("home_page:see_darwinia")}</span>
+                            </Button>
+                            <Button variant='light' className={styles.readMoreBtn}
+                                href='https://crab.subscan.io/account'
+                            >
+                                <span className={styles.content}>{t("home_page:see_circulate")}</span>
                             </Button>
                         </div>
                     </Animate>
@@ -141,7 +146,12 @@ const Home = () => {
                                 <Button variant='light' className={styles.readMoreBtn}
                                     href='https://darwinia.network/economic_model/'
                                 >
-                                    <span className={styles.content}>{t("home_page:read_more")}</span>
+                                    <span className={styles.content}>{t("home_page:see_darwinia")}</span>
+                                </Button>
+                                <Button variant='light' className={styles.readMoreBtn}
+                                    href='https://crab.subscan.io/account'
+                                >
+                                    <span className={styles.content}>{t("home_page:see_circulate")}</span>
                                 </Button>
                             </Animate>
                             <div style={{ height: '30%' }}></div>
