@@ -4,6 +4,7 @@ module.exports = {
       'crab-home', 
       'crab-tools', 
       'crab-airdrop',
+      'crab-crowdloan',
       'crab-parameters'
     ],
     'Tutorials': [
