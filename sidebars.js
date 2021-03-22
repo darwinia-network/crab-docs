@@ -1,5 +1,5 @@
 module.exports = {
-  someSidebar: {
+  firstSidebar: {
     "Crab Network": [
       'crab-home', 
       'crab-tools', 
@@ -11,9 +11,14 @@ module.exports = {
       'crab-tut-get-free-cring',
       'crab-tut-claim-cring',
       'crab-tut-node',
-      'crab-tut-validator',
-      'crab-tut-nominator',
+      {
+        'Staking': [
+          'crab-tut-validator',
+          'crab-tut-nominator'
+        ]
+      },
       'crab-tut-exchange'
     ],
   },
+
 };
