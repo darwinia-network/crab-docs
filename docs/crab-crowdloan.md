@@ -18,7 +18,7 @@ During some point of the crowdloan campaign the owner will upload the parachain 
 
 If a crowdloan campaign is successful, that parachain will be on-boarded in Kusama. The collective KSM will be locked in that parachain's account for the entire duration that it is active (up to two years).
 
-> ** The user's KSM will not leave the their wallet (except for those hosted by the exchange). **
+> ** The user's KSM will not leave their wallet (except for those hosted by the exchange). **
 
 Participants will be able to reclaim their KSM in one of two ways:
 
