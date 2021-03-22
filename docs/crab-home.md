@@ -13,7 +13,7 @@ Crab is the first cross-chain NFT blockchain in Polkadot ecology, providing smar
 
 Relying on the innovative bridge technology of the Darwinia Network, it also provides an entrance to the Polkadot ecology for projects that have been deployed on public blockchains such as Ethereum and BSC.
 
-Crab also provides users with a very low transaction fee. Darwinia’s [Evolution Land](https://www.evolution.land/)'s new land has been opened on the Crab network, integrating NFT blind box Gamefi mining and other gameplays.
+Crab also provides users with a very low transaction fee. New continent of Darwinia ecosystem cross-chain game [Evolution Land](https://www.evolution.land/) has been deployed on Crab, will soon launch the new NFT+Defi Gamefi system.
 
 Crab is a long-term valuable network. Some RINGs are allocated to Crab Network as backing assets to make it serve as a canary network having real economic incentives and massive gaming theory testing, not just working a testnet.
 
