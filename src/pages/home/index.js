@@ -116,7 +116,7 @@ const Home = () => {
                             >
                                 <span className={styles.content}>{t("home_page:see_darwinia")}</span>
                             </Button>
-                            <Button variant='light' className={styles.readMoreBtn}
+                            <Button variant='light' className={styles.readMoreBtn} style={{ marginRight: '0' }}
                                 href='https://crab.subscan.io/account'
                             >
                                 <span className={styles.content}>{t("home_page:see_circulate")}</span>
