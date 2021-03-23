@@ -8,14 +8,72 @@ sidebar_label: Become a validator
 > Before participating in staking, please make sure you have at least **1** Darwinia address. If you hold more tokens or have higher security requirements, it is recommended to prepare **2** Darwinia addresses. If there is no address, please refer to: [How to create an account](crab-tut-create-account.md).  
 > A small amount of CRING must be prepared in Darwinia-Crab Network's address as fee. If you have no CRING, please refer to: [How to get free CRING through faucet](crab-tut-claim-cring.md).
 
+### Run your validator node
 
-## Start Staking
+You can choose either run node with execute file download before or in docker way. No matter which way you start, please make sure to include `--unsafe-rpc-external --rpc-methods=Unsafe --ws-external --rpc-cors=all` in command line to prepare for the generation of session keys.
+
+- Run validator node with existed node binary
+
+  ```sh
+  ./darwinia \
+    --base-path <YOUR_DATA_DIR> \
+    --name <YOUR_NODE_NAME> \
+    --chain crab \
+    --validator \
+    --unsafe-rpc-external \
+    --rpc-methods=Unsafe \
+    --ws-external \
+    --rpc-cors all
+  ```
+
+- Using docker
+
+  ```bash
+  docker run -it \
+    -v <YOUR_DATA_DIR>:/data \
+    -p <YOUR_NODE_HTTP_PORT>:9933 \
+    -p <YOUR_NODE_WSS_PORT>:9944 \
+    darwinianetwork/darwinia:vx.x.x \
+        --base-path /data \
+        --name <YOUR_NODE_NAME> \
+        --chain crab \
+        --validator \
+        --unsafe-rpc-external \
+        --rpc-methods=Unsafe
+        --ws-external \
+        --rpc-cors all
+    ```
+### Generate your session key
+
+Run the command on the shell where your validator node is running:
+
+```sh
+$ curl http://127.0.0.1:9933 -H "Content-Type:application/json;charset=utf-8" -d \
+'{
+  "jsonrpc":"2.0",
+  "id":1,
+  "method":"author_rotateKeys",
+  "params": []
+}'
+```
+
+If there is no problem, a result similar to the following will be returned:
+
+```json
+{
+  "jsonrpc":"2.0", "result":"0xba99ecfb4a87357a44ee3765cf617a6d81adf8f43e522db52e348d2e9d45ccde12d53d562e14bb18523fbc3032b786f44b2b92340f4756386d4baec68bbfb882bbaccce1440c84d7f5b67c8ecb956345130d5dbd07adfeba3d9482f95d9dec6c68d085323e61590f850c38244dd2d2bc4055548d9edfd0471f47da7667c17fe8",
+  "id":1}
+```
+
+The result is what you need when setting the session key.
+
+### Staking
 
 Enter [Darwinia Wallet](https://apps.darwinia.network) and click the [Staking] column on the left , Click [Start staking].
 
 ![nominate-1-en](assets/nominate-1-en.png)
 
-### Fill in the staking parameters
+Fill in the staking parameters
 
 ![nominate-2-en](assets/nominate-2-en.png)
 
@@ -39,31 +97,7 @@ After filling in the staking parameters, please click [bond] and [submit]
 
 ### To be Validator
 
-#### Generate session key
-
-##### Method 1: generate via command
-
-Enter the following command under the server terminal to receive the returned session keys
-
-```sh
-curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"author_rotateKeys", "id":1 }' http://localhost:9933
-```
-
-##### Method 2: Generate via web wallet
-
-Click [Settings] on the left to change the interface operation mode to developer mode, turn on [Custom Endpoint], enter the local node address（e.g `ws://127.0.0.1:9944`）, and click [Save] after confirming that it is correct.
-
-![tut-validator-session-1](assets/tut-validator-session-1.png)
-
-Click [Toolbox] on the left, select `author/rotate keys` in RPC Calls, click [Submit RPC Call]
-
-![tut-validator-session-2](assets/tut-validator-session-2.png)
-
-Copy the generated session key and keep it properly.
-
-### Set session key
-
-Click [Set session key] on this page, completing the generated session key and submit.
+Click [Set session keys] on this page, completing the generated session keys and submit.
 
 > The session key must be filled with real data, otherwise it will result in missing blocks and be slashed.
 
@@ -90,6 +124,18 @@ Go to [staking scan] to view information about validators
 ![tut-validator-5](assets/tut-validator-5.png)
 
 > The operation of validate will take effect after the first epoch of the next era. Prior to this, the validator will be in the [waiting] list.
+
+**(Optional) Rerun your validator node**
+
+For security, you need to remove the rpc unsafe parameters and re-run your node:
+
+   ```bash
+   ./darwinia \
+      --base-path <YOUR_DATA_DIR> \
+      --name <YOUR_NODE_NAME> \
+      --chain crab \
+      --validator
+   ```
 
 ## Other Staking operations
 

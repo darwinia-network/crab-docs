@@ -4,18 +4,81 @@ title: 如何成为验证人
 sidebar_label: 成为验证人
 ---
 
-> Staking 是基于 PoS（Proof of Stake/权益证明）的共识机制，代币持有人通过质押、投票、委托和锁定等行为获取收益。  
-> 在参与 Staking 之前，请确保有至少拥有 **1** 个 Darwinia 地址，如果您持有较多代币或对安全性要求较高，建议准备 **2** 个 Darwinia 地址。没有地址请参考：[如何创建账户](crab-tut-create-account.md)。  
-> Darwinia 地址内需准备少许 CRING ，作为交易手续费。没有 CRING 请参考：[如何通过水龙头获得免费的CRING](crab-tut-claim-cring.md)。
+> - Staking 是基于 PoS（Proof of Stake/权益证明）的共识机制，代币持有人通过质押、投票、委托和锁定等行为获取收益。  
+> - 在参与 Staking 之前，请确保有至少拥有 **1** 个 Darwinia 地址，如果您持有较多代币或对安全性要求较高，建议准备 **2** 个 Darwinia 地址。没有地址请参考：[如何创建账户](crab-tut-create-account.md)。  
+> - Darwinia 地址内需准备少许 CRING ，作为交易手续费。没有 CRING 请参考：[如何通过水龙头获得免费的CRING](crab-tut-claim-cring.md)。
 
-## 步骤
+### 运行验证人节点
+
+你可以选择下载好的可执行文件或者 Docker 的方式运行自己的验证人节点，无论哪种方式启动，请确保带有 `--unsafe-rpc-external --rpc-methods=Unsafe --ws-external --rpc-cors=all`
+参数，为接下来生产 `session keys` 做准备。
+
+- 本地启动验证人节点
+
+  ```sh
+  ./darwinia \
+    --base-path <YOUR_DATA_DIR> \
+    --name <YOUR_NODE_NAME> \
+    --chain crab \
+    --validator \
+    --unsafe-rpc-external \
+    --rpc-methods=Unsafe \
+    --ws-external \
+    --rpc-cors all
+  ```
+
+- Docker 启动验证人节点
+
+  ```bash
+  docker run -it \
+    -v <YOUR_DATA_DIR>:/data \
+    -p <YOUR_NODE_HTTP_PORT>:9933 \
+    -p <YOUR_NODE_WSS_PORT>:9944 \
+    darwinianetwork/darwinia:vx.x.x \
+        --base-path /data \
+        --name <YOUR_NODE_NAME> \
+        --chain crab \
+        --validator \
+        --unsafe-rpc-external \
+        --rpc-methods=Unsafe
+        --ws-external \
+        --rpc-cors all
+  ```
+
+
+### 生成 session keys
+
+节点运行成功后，执行如下命令：
+
+```sh
+curl http://127.0.0.1:9933 -H "Content-Type:application/json;charset=utf-8" -d \
+'{
+  "jsonrpc":"2.0",
+  "id":1,
+  "method":"author_rotateKeys",
+  "params": []
+}'
+```
+
+如果没有问题，那么会返回类似下面的结果：
+
+```json
+{
+  "jsonrpc":"2.0",
+  "result":"0xba99ecfb4a87357a44ee3765cf617a6d81adf8f43e522db52e348d2e9d45ccde12d53d562e14bb18523fbc3032b786f44b2b92340f4756386d4baec68bbfb882bbaccce1440c84d7f5b67c8ecb956345130d5dbd07adfeba3d9482f95d9dec6c68d085323e61590f850c38244dd2d2bc4055548d9edfd0471f47da7667c17fe8",
+  "id":1
+}
+```
+
+result 就是新生成的属于该节点的 session keys。下面会用到。
+
+### 质押
 
 进入 [Darwinia Web Wallet](https://apps.darwinia.network)，点击左侧「抵押」栏目，点击「开始 Staking」
 
 ![crab-tut-nominator-1](assets/crab-tut-nominator-1.png)
 
-
-### 参与 Staking  
+填入参数
 
 ![crab-tut-nominator-2](assets/crab-tut-nominator-2.png)
 
@@ -33,37 +96,14 @@ sidebar_label: 成为验证人
 
 > 如提前赎回有承诺期限的 CRING，需要支付获得奖励 **3** 倍的 CKTON 惩罚 (在 CKTON 不足的情况下，不可以使用 CRING 来代缴罚金)。
 
-填写好 Staking 参数后，请点击「冻结」，签名并提交：  
+填写好 Staking 参数后，请点击「冻结」，签名并提交
 
-  ![crab-tut-nominator-3](assets/crab-tut-nominator-3.png)
+![crab-tut-nominator-3](assets/crab-tut-nominator-3.png)
 
 ### 参选验证人
 
-#### 生成 session keys
+点击「session 账号」，输入刚刚生成的 session keys，点击「设置session keys」提交。
 
-##### 方法一：通过命令行生成
-
-在服务器终端下输入以下命令，成功的话会返回生成好的 session keys
-
-```sh
-curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"author_rotateKeys", "id":1 }' http://localhost:9933
-```
-
-##### 方法二：通过网页钱包生成
-
-点击钱包左侧「设置」，将接口操作模式改为开发者模式；开启「自定义终端」，输入本地节点地址（e.g ws://127.0.0.1:9944），确认无误后点击「保存」。
-
-![tut-validator-session-1-cn](assets/tut-validator-session-1-cn.png)
-
-点击左侧「工具箱」，在 RPC Calls 中选择 author/rotate keys，点击「Submit RPC Call」
-
-![tut-validator-session-2-cn](assets/tut-validator-session-2-cn.png)
-
-复制生成好的 session keys 并妥善保管。
-
-#### 设置 session keys
-
-点击「session 账号」，输入刚刚生成的 session keys ，点击「设置session keys」提交。
 > session keys 务必填写真实数据，否则会导致漏块，从而收到经济惩罚。
 
 ![tut-validator-1-cn](assets/tut-validator-1-cn.png)
@@ -90,6 +130,18 @@ curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"au
 
 > 参选验证人后会进入「候选」队列，在进入下一个 era 的时刻参与选举。
 
+**(可选步骤) 重启正在运行的 validator 节点**
+
+   为了安全起见，最好去掉 rpc unsafe 相关的参数后重启节点：
+
+  ```sh
+  ./darwinia \
+    --base-path <YOUR_DATA_DIR> \
+    --name <YOUR_NODE_NAME> \
+    --chain crab \
+    --validator
+  ```
+
 ## 其他 Staking 操作
 
 Staking 还有一些其他操作，感兴趣的朋友，可以自行探索，列举如下：
@@ -109,7 +161,7 @@ Staking 还有一些其他操作，感兴趣的朋友，可以自行探索，列
 `领取收益` 手动领取已获得的收益，收益将以 era 为单位发放。
 
 > 请注意：收益会保存 **56** 个 era（约 **56** 天），超期将无法领取。
-  
+
 ![wiki-tut-validator-7-cn](assets/wiki-tut-validator-7-cn.png)
 
 `领取收益` 手动领取已获得的收益，收益将以 era 为单位发放。
