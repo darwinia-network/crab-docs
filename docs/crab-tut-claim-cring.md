@@ -1,22 +1,12 @@
 ---
 id: crab-tut-claim-cring
-title: How to claim free CRING
-sidebar_label: Claim CRING
+title: Claim Airdropped CRING
+sidebar_label: Claim Airdropped CRING
 ---
-
-Crab Tutorials: How to claim your free CRING
 
 ## Receiving condition
 
-Darwinia Crab Network simulated the real network ecology and airdropped the Crab Network Token - CRING for the holders of **ERC-20 RING** **ERC-20 DOT** and **TRC-20 RING**.
-
-The airdrop will be carried out according to the number of RING (including **RING balance** and **in-progress deposit certificate**) and DOT held by the account at the time of the snapshot. The delivery ratio is:
-
-- **1RING -> 1CRING**
-
-- **1DOT -> 50CRING**
-
-The snapshot time is: **2020-03-20 13:50:00 (+0800)**
+See: [Airdrop](./crab-airdrop.md)
 
 ## Environmental preparation
 
