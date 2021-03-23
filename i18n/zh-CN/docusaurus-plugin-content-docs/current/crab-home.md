@@ -11,9 +11,9 @@ Crab 网络主要是为 Darwinia 的升级和应用部署提供先行模拟环�
 
 Crab网络是波卡生态第一条跨链NFT链，提供智能合约解决方案，兼容以太坊虚拟机，支持Defi，NFT等Dapps轻松迁移至波卡。
 
-依托达尔文网络的桥接技术创新，也为已经在以太坊，BSC等公链部署的项目提供进入波卡生态的入口。
+依托达尔文网络的桥接技术创新，也为已经在以太坊，BSC 等公链部署的项目提供进入波卡生态的入口。
 
-Crab网络也为用户提供了极低费率的交易体验，达尔文生态[进化星球](https://www.evolution.land/)游戏新大陆已经开放在Crab网络上，集成NFT盲盒Gamefi挖矿等玩法。
+Crab 网络也为用户提供了极低费率的交易体验，达尔文生态[进化星球](https://www.evolution.land/)游戏新大陆已经开放在 Crab 网络上，集成 NFT 盲盒 Gamefi 挖矿等玩法。
 
 Crab 网络将会是一个有价值的长期运行的网络。一部分 RINGs 将作为背书资产分配给 Crab Network，使其成为具有真正经济激励和大规模博弈理论测试的金丝雀网络，而不仅仅是测试网。
 
@@ -21,6 +21,6 @@ Crab 网络的参数与 Darwinia 主网一样，并使用相同的 Staking 机�
 
 CRING 和 CKTON 是有价值的。Crab 网络上有一个背书模块，Darwinia 初始预留了 40M RING 作为 CRING 的背书资产，在 Crab 网络上的这些 RINGs 被称为 `Mapped RING`。在 Crab 运行期间，`Mapped RING` 由 Crab Council 来管理，并使 CRING 和 RING 在长期内可以做到相互转换。
 
-CRING 和 RING 的互换采用Uniswap类似的固定乘积模型，所以本质上，CRING 和 RING 的互换过程是一种市场交易行为。初始的流动性由 Crab Council 来决定并通过 Crab Treasury 投放。
+CRING 和 RING 的互换采用 Uniswap 类似的固定乘积模型，所以本质上，CRING 和 RING 的互换过程是一种市场交易行为。初始的流动性由 Crab Council 来决定并通过 Crab Treasury 投放。
 
-** Crab网络即将参与波卡Kusama[平行链插槽拍卖](https://polkadot.network/launch-parachains/) **。
+** Crab 网络即将参与波卡 Kusama [平行链插槽拍卖](https://polkadot.network/launch-parachains/) **。

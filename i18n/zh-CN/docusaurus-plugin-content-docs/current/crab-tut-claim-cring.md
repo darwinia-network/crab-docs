@@ -5,27 +5,22 @@ sidebar_label: 领取空投的CRING
 ---
 ## 领取条件
 
-Darwinia Crab 为模拟真实的网络生态，为 **RING (ERC-20 & TRC-20)** 和 **DOT (ERC-20)** 的持有者空投了Crab 网络的Token: CRING。  
-
-空投将按快照时账号持有 RING（包括**RING余额**和**正在进行中的存单**）和 DOT 的数量进行投放，投放比例为：  
-- **1RING -> 1CRING**
-- **1DOT -> 50CRING**
-- 快照时间为：**2020-03-20 13:50:00 （+0800）**  
+请查看： [Crab 网络空投](./crab-airdrop.md)
 
 ## 准备
 
-> 推荐在PC端使用 Chrome 浏览器 + Metamask / Tronlink 插件完成领取操作！
+> 推荐在PC 端使用 Chrome 浏览器 + Metamask / Tronlink 插件完成领取操作！
 
-- Crab地址：https://apps.darwinia.network/#/account
-> 如没有Darwinia Crab 地址，生成方式请参考: [如何创建或导入Darwinia Crab 地址](crab-tut-create-account)
+- Crab 地址：https://apps.darwinia.network/#/account
+> 如没有 Crab 地址，生成方式请参考：[如何创建或导入Darwinia Crab 地址](crab-tut-create-account)
 
 - 插件下载地址：
-  - Metamask: (https://metamask.io/)
-  - Tronlink: (https://www.tronlink.org/)
+  - Metamask：(https://metamask.io/)
+  - Tronlink：(https://www.tronlink.org/)
 
 ## 查询空投数量
 
-1、通过 Chrome 浏览器，访问: https://claim.darwinia.network/
+1、通过 Chrome 浏览器，访问：https://claim.darwinia.network/
 
 2、选择想要查询的网络（以太坊/波场），点击「查询」。（下文以以太坊网络为例）
 

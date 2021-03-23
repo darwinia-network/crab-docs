@@ -6,29 +6,29 @@ sidebar_label: 交易所接入Crab网络指南
 
 Darwinia Crab Network（简称：Crab 网络）对于 Darwinia 来说是一个金丝雀网络，定位类似于 Kusama 网络之于 Polkadot。它将会是一个长期运行的网络。
 
-Crab 网络是一个具有价值的网络，其为应用部署提供了和Darwinia主网类似的环境，它的参数更为激进，非常适合各种快速演进的应用。Crab 网络不仅包含应用运行所需要的软件环境和网络环境，还包括接近Darwinia主网的经济博弈环境。
+Crab 网络是一个具有价值的网络，其为应用部署提供了和 Darwinia 主网类似的环境，它的参数更为激进，非常适合各种快速演进的应用。Crab 网络不仅包含应用运行所需要的软件环境和网络环境，还包括接近 Darwinia 主网的经济博弈环境。
 
-Crab 网络使用与Darwinia主网相同的抵押机制和通胀模型。 Crab的代币为CRING和CKTON，CRING的初始供应为2000M，CKTON的供应为0。
+Crab 网络使用与 Darwinia 主网相同的抵押机制和通胀模型。Crab的代币为 CRING 和 CKTON，CRING 的初始供应为2000M，CKTON 的供应为0。
 
 ## 基本信息
 
-- 官网: https://crab.network/ (under construction)  
-- 链浏览器: https://crab.subscan.io/  
-- 代码: https://github.com/darwinia-network/darwinia  
-- 出块时间: 6 秒  
-- 公共 Websocket RPC: [wss://crab-rpc.darwinia.network](wss://crab-rpc.darwinia.network)  
-- 公共 Http RPC: https://crab-rpc.darwinia.network  
+- 官网：https://crab.network/ (under construction)  
+- 链浏览器：https://crab.subscan.io/  
+- 代码：https://github.com/darwinia-network/darwinia  
+- 出块时间：6 秒  
+- 公共 Websocket RPC：[wss://crab-rpc.darwinia.network](wss://crab-rpc.darwinia.network)  
+- 公共 Http RPC：https://crab-rpc.darwinia.network  
 - CRING
 
-    符号: CRING  
-    全称: Darwinia Crab Network Native Token  
-    精度: 9
+    符号：CRING  
+    全称：Darwinia Crab Network Native Token  
+    精度：9
 
 - CKTON
 
-    符号: CKTON  
-    全称: Darwinia Crab Commitment Token  
-    精度: 9
+    符号：CKTON  
+    全称：Darwinia Crab Commitment Token  
+    精度：9
 
 ## 节点安装并运行
 
@@ -76,7 +76,7 @@ cryptoUtil.cryptoWaitReady().then(() => {
   * Creates a new public/secret keypair from a seed
   * @param {Uint8Array} seed - seed
   * @return {*} a object containing a `publicKey` & `secretKey` generated from the supplied seed.
-  * { secretKey: [...], publicKey: [...] }
+  * { secretKey：[...], publicKey：[...] }
   */
  var keyPair = cryptoUtil.schnorrkelKeypairFromSeed(seed);
   // https://github.com/paritytech/substrate/blob/master/primitives/core/src/crypto.rs#L437
@@ -89,18 +89,18 @@ cryptoUtil.cryptoWaitReady().then(() => {
 
 ### Get the latest block height
 ```
-curl 'http-rpc-url' -X POST -H "Content-Type: application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getFinalizedHead","params":[]}'
+curl 'http-rpc-url' -X POST -H "Content-Type：application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getFinalizedHead","params":[]}'
 ```
 
 ### Get the specified block information by hash
 
 ```
-curl 'http-rpc-url' -X POST -H "Content-Type: application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getBlock","params":["0xb375d7db4d737bdbfb8f8089d7b4589fd9fe68a535d448b44dcf9aa2ef8eed17"]}'
+curl 'http-rpc-url' -X POST -H "Content-Type：application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getBlock","params":["0xb375d7db4d737bdbfb8f8089d7b4589fd9fe68a535d448b44dcf9aa2ef8eed17"]}'
 ```
 
 ### Get details of a transaction
 ```
-curl 'http-rpc-url' -X POST -H "Content-Type: application/json"  --data '{"hash": "0x04af51c980a9152ad8319f73a85d13305e273be8ebd3cc979c18f4ad14e716d6"}' https://crab.subscan.io/api/scan/extrinsic
+curl 'http-rpc-url' -X POST -H "Content-Type：application/json"  --data '{"hash"："0x04af51c980a9152ad8319f73a85d13305e273be8ebd3cc979c18f4ad14e716d6"}' https://crab.subscan.io/api/scan/extrinsic
 ```
 
 * How to judge and avoid a fake deposit
@@ -146,11 +146,11 @@ const { typesBundleForPolkadot } = require('@darwinia/types/mix');
 
 const provider = new WsProvider('wss://<YOUR_NODE_IP>:<YOUR_NODE_WSS_PORT>');
 const api = await ApiPromise.create({
-  provider: wsProvider,
-  types: typesBundleForPolkadot
+  provider：wsProvider,
+  types：typesBundleForPolkadot
 });
 
-const keyring = new Keyring({ type: 'sr25519' });
+const keyring = new Keyring({ type：'sr25519' });
 
 const A = keyring.addFromUri('<YOUR_SEED>');
 const B = '5EU6EEhZRbh1NQS7HRMwAogoBHWtT2eLFQWei2UZHUHJosHt';
@@ -168,12 +168,12 @@ const hash = await transfer.signAndSend(A);
 console.log('Transfer sent with hash', hash.toHex());
 ```
 
-### Transfer: Offline signature with online broadcast
+### Transfer：Offline signature with online broadcast
 https://github.com/darwinia-network/darwinia-polkadotjs-typegen/blob/master/src/test/index.ts
 
 ### Get address balance
 ```
-curl 'http-rpc-url' -X POST -H "Content-Type: application/json" --data '{"id":6,"jsonrpc":"2.0","method":"balances_usableBalance","params":[0, ss58地址]}' 
+curl 'http-rpc-url' -X POST -H "Content-Type：application/json" --data '{"id":6,"jsonrpc":"2.0","method":"balances_usableBalance","params":[0, ss58地址]}' 
 ```
 
 ### Prevention of chain forks

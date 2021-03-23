@@ -12,7 +12,7 @@ There are mainly three ways to generate a Darwinia account, you can choose eithe
 
 ![setting](assets/tut/create-account-0.png)
 
-Enter [Darwinia Crab Web Wallet](https://apps.darwinia.network), you can see two buttons "Add Account" and "Restore  JSON" in the "Account" column.
+Enter [Darwinia Crab Web Wallet](https://apps.darwinia.network), you can see two buttons "Add Account" and "Restore JSON" in the "Account" column.
 
 ![create account](assets/web-wallet-1-en.png)
 

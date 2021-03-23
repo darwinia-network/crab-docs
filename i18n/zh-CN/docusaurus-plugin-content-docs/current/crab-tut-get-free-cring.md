@@ -1,7 +1,7 @@
 ---
 id: crab-tut-get-free-cring
-title: 如何通过水龙头获得免费的CRING
-sidebar_label: 从水龙头获取免费CRING
+title: 如何通过水龙头获得免费的 CRING
+sidebar_label: 获取免费 CRING
 ---
 ## CRING 领取方式
 
@@ -17,7 +17,7 @@ sidebar_label: 从水龙头获取免费CRING
 ## Darwinia Faucet 发放规则
 
 1）每个 Telegram 账号`7天`内可以成功领取`1`次空投。  
-2）每个crab网络地址最多领取`1`次空投。  
+2）每个 Crab 网络地址最多领取`1`次空投。  
 3）领取空投的地址需要包含`CRAB`四个字母（全部为大写）。  
 4）空投每日最大发放量为`500`份，先到先得。  
 5）每笔空投的数量为固定值：`10` CRING。  
