@@ -1,11 +1,12 @@
 ---
 id: crab-tut-claim-cring
-title: 如何领取空投的CRING
-sidebar_label: 领取空投的CRING
+title: 领取空投的 CRING
+sidebar_label: 领取空投的 CRING
 ---
+
 ## 领取条件
 
-请查看： [Crab 网络空投](./crab-airdrop.md)
+请查看：[Crab 网络空投](./crab-airdrop.md)
 
 ## 准备
 
