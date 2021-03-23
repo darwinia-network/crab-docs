@@ -109,7 +109,7 @@ There are other operations in staking for the following purposes:
 
 `Set nominees` Re-nominate validator
 
-`Change session key` If you want to upgrade to become a validator, you need to fill in this item. [How to become a validator](https://docs.darwinia.network/docs/en/wiki-tut-validator)
+`Change session key` If you want to upgrade to become a validator, you need to fill in this item. [How to become a validator](crab-tut-validator.md)
 
 `Set on-chain identity` Set your personal information, such as display, legal name, email, website, twitter and riot. Other users can view this information and contact you.
 

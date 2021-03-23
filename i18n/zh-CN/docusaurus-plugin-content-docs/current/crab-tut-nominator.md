@@ -106,7 +106,7 @@ Staking 还有一些其他操作，感兴趣的朋友，可以自行探索，列
 
 `更改收益账号` 更改用于接收 Staking 收益的账号。
 
-`设置 session keys` 如果要升级成为验证人，需填写此项。[如何成为验证人](https://docs.darwinia.network/docs/zh-CN/wiki-tut-validator)
+`设置 session keys` 如果要升级成为验证人，需填写此项。[如何成为验证人](crab-tut-validator.md)
 
 `设置链上身份` 设置您的个人信息，如昵称、邮箱、网站、twitter、riot 等信息，其他用户可查看此信息并联系您。
 
