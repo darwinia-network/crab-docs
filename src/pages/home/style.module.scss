@@ -3,7 +3,6 @@
 .layout {
     background-image: url(/static/img/background.svg);
     padding-top: 10px;
-    background-image: url('/static/img/background.svg');
 
     ::selection,
     ::selection {
@@ -99,8 +98,9 @@
             }
         }
 
-        .readMoreBtn {
-            padding: 5px 60px;
+        .economicBtn {
+            flex: 1;
+            padding: 5px;
             background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
             border-radius: 20px;
 
@@ -141,11 +141,19 @@
                     color: #080C20;
                     line-height: 24px;
                     background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
+                    // background-clip: text;
+                    // -webkit-background-clip: text;
+                    // -webkit-text-fill-color: transparent;
                     margin: 30px auto;
                     display: inline-block;
+
+                    >a {
+                        color: white;
+                        font-weight: bold;
+                        // text-decoration-style: dashed;
+                        text-decoration: underline;
+                        // text-decoration-color: blue;
+                    }
                 }
 
                 .auctionCard {
@@ -234,6 +242,7 @@
                         background: #FFFFFF;
                         border-radius: 20px;
                         margin: 30px 0;
+                        padding: 5px 40px;
 
                         .content {
                             font-size: 14px;
@@ -368,7 +377,8 @@
                     line-height: 20px;
                 }
 
-                .readMoreBtn {
+                .economicBtn {
+                    padding: 5px 0px;
                     background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
                     border-radius: 20px;
 
@@ -412,9 +422,9 @@
                         color: #080C20;
                         line-height: 39px;
                         background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
+                        // background-clip: text;
+                        // -webkit-background-clip: text;
+                        // -webkit-text-fill-color: transparent;
                     }
 
                     .auctionCard {
