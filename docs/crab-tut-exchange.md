@@ -6,13 +6,7 @@ sidebar_label: Darwinia Crab Exchange Access Guide
 
 # Darwinia Crab Exchange Access Guide
 
-Darwinia Crab Testnet (Crab for short) is a Canary Network for Darwinia. Expect Chaos is a reasonable expectation.
-
-Crab Network is not just a testnet, it will be a long-term network.
-
-Crab mainly provides simulation and test environment for Darwinia's upgrade and application deployment, perform various radical experiments. The test environment includes not only the software operation environment and network environment required for testing, but also the test economic environment.
-
-Crab use the same Staking mechanism and inflation model with Darwinia mainnet. Crab’s tokens are CRING and CKTON, the initial supply of CRING is 2000M, and the supply of CKTON is 0.
+Darwinia Network is a decentralized cross-chain bridge network building on Substrate, which is the "Golden Gate Bridge" of the cross-chain ecology. It provides the safest general bridge solution, connecting Polkadot, Ethereum, TRON and other heterogeneous chains by cross-chain assets transfer and general remote chain call. Also, its main application areas include Defi, cross-chain NFT trading market, games, etc.
 
 ## Informations
 

@@ -4,11 +4,8 @@ title: 交易所接入Crab网络指南
 sidebar_label: 交易所接入Crab网络指南
 ---
 
-Darwinia Crab Network（简称：Crab 网络）对于 Darwinia 来说是一个金丝雀网络，定位类似于 Kusama 网络之于 Polkadot。它将会是一个长期运行的网络。
+Darwinia Crab Network 是Darwinia 达尔文网络的先行网，定位类似Kusama 网络之于 Polkadot。Crab网络是波卡生态第一条跨链NFT链，低费率，并提供智能合约解决方案，兼容以太坊虚拟机，支持Defi，NFT等Dapps轻松迁移至波卡。 达尔文生态进化星球游戏新大陆已经开放在Crab网络上，集成NFT盲盒Gamefi挖矿等玩法。Crab网络即将参与波卡Kusama平行链插槽拍卖。
 
-Crab 网络是一个具有价值的网络，其为应用部署提供了和 Darwinia 主网类似的环境，它的参数更为激进，非常适合各种快速演进的应用。Crab 网络不仅包含应用运行所需要的软件环境和网络环境，还包括接近 Darwinia 主网的经济博弈环境。
-
-Crab 网络使用与 Darwinia 主网相同的抵押机制和通胀模型。Crab的代币为 CRING 和 CKTON，CRING 的初始供应为2000M，CKTON 的供应为0。
 
 ## 基本信息
 
