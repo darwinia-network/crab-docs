@@ -46,20 +46,11 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Style Guide',
-              to: 'doc1',
-            },
-          ],
-        },
-        {
           title: 'Community',
           items: [
             {
               label: 'Medium',
-  			  href: 'https://medium.com/@DarwiniaNetwork',
+              href: 'https://medium.com/@DarwiniaNetwork',
             },
             {
               label: 'Twitter',
@@ -71,8 +62,22 @@ module.exports = {
             },
           ],
         },
+
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'Darwinia',
+              href: 'https://darwinia.network/',
+            },
+            {
+              label: 'Kusama',
+              href: 'https://kusama.network/',
+            },
+          ],
+        },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} ITERING TECH PTE. LTD., Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Crab Network. Built with Docusaurus.`,
     },
   },
   plugins: [
