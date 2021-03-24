@@ -7,6 +7,7 @@ module.exports = {
       'crab-crowdloan',
       'crab-parameters'
     ],
+
     'Tutorials': [
       'crab-tut-create-account',
       'crab-tut-get-free-cring',
@@ -20,6 +21,14 @@ module.exports = {
       },
       'crab-tut-exchange'
     ],
+
+    'Pangolin Testnet': [
+      'pangolin-home',
+      'pangolin-tut-dvm-deposit',
+      'pangolin-tut-dvm-withdraw',
+      'pangolin-tut-dvm-contract',
+      'pangolin-tut-dvm-transfer'
+    ]
   },
 
 };
