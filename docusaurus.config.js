@@ -50,11 +50,7 @@ module.exports = {
           items: [
             {
               label: 'Style Guide',
-              to: 'docs/',
-            },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
+              to: 'doc1',
             },
           ],
         },
@@ -62,34 +58,21 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Medium',
+  			  href: 'https://medium.com/@DarwiniaNetwork',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
+              href: 'https://t.me/DarwiniaNetwork',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/darwinia-network',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ITERING TECH PTE. LTD., Inc. Built with Docusaurus.`,
     },
   },
   plugins: [
@@ -104,7 +87,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+			'https://github.com/darwinia-network/crab-home/edit/master/docs/',
         },
         blog: {
           showReadingTime: true,
