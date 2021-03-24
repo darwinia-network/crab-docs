@@ -92,7 +92,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-			'https://github.com/darwinia-network/crab-home/edit/master/docs/',
+			'https://github.com/darwinia-network/crab-home/edit/master/',
         },
         blog: {
           showReadingTime: true,
