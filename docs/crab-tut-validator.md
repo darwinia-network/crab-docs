@@ -10,11 +10,11 @@ sidebar_label: Become a validator
 
 ### Run your validator node
 
-You can choose either run node with execute file download before or in docker way. No matter which way you start, please make sure to include `--rpc-methods=Unsafe` in command line to prepare for the generation of session keys.
+You can choose either run node with execute file download before or in docker way. 
 
 - Run validator node with existed node binary
 
-  ```sh
+  ```bash
   ./darwinia \
     --base-path <YOUR_DATA_DIR> \
     --name <YOUR_NODE_NAME> \
@@ -22,6 +22,8 @@ You can choose either run node with execute file download before or in docker wa
     --validator \
     --rpc-methods=Unsafe 
   ```
+
+> please make sure to include `--rpc-methods=Unsafe` in command line to prepare for the generation of session keys.
 
 - Using docker
 
@@ -31,12 +33,17 @@ You can choose either run node with execute file download before or in docker wa
     -p <YOUR_NODE_HTTP_PORT>:9933 \
     -p <YOUR_NODE_WSS_PORT>:9944 \
     quay.io/darwinia-network/darwinia:vx.x.x \
-        --base-path /data \
-        --name <YOUR_NODE_NAME> \
-        --chain crab \
-        --validator \
-        --rpc-methods=Unsafe
+      --base-path /data \
+      --name <YOUR_NODE_NAME> \
+      --chain crab \
+      --validator \
+      --rpc-methods=Unsafe \
+      --rpc-external \
+      --rpc-cors all
     ```
+
+> please make sure to include `--rpc-methods=Unsafe --rpc-external --rpc-cors` in command line to prepare for the generation of session keys.
+
 ### Generate your session key
 
 Run the command on the shell where your validator node is running:
@@ -123,13 +130,23 @@ Go to [staking scan] to view information about validators
 
 For security, you need to remove the rpc unsafe parameters and re-run your node:
 
-   ```bash
-   ./darwinia \
+  ```bash
+  ./darwinia \
       --base-path <YOUR_DATA_DIR> \
       --name <YOUR_NODE_NAME> \
       --chain crab \
       --validator
-   ```
+  ```
+
+  ```bash
+  docker run -it \
+    -v <YOUR_DATA_DIR>:/data \
+    quay.io/darwinia-network/darwinia:vx.x.x \
+      --base-path /data \
+      --name <YOUR_NODE_NAME> \
+      --chain crab \
+      --validator
+  ```
 
 ## Other Staking operations
 

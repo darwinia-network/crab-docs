@@ -10,12 +10,11 @@ sidebar_label: 成为验证人
 
 ### 运行验证人节点
 
-你可以选择下载好的可执行文件或者 Docker 的方式运行自己的验证人节点，无论哪种方式启动，请确保带有 `--rpc-methods=Unsafe`
-参数，为接下来生产 `session keys` 做准备。
+你可以选择下载好的可执行文件或者 Docker 的方式运行自己的验证人节点。
 
 - 本地启动验证人节点
 
-  ```sh
+  ```bash
   ./darwinia \
     --base-path <YOUR_DATA_DIR> \
     --name <YOUR_NODE_NAME> \
@@ -24,20 +23,25 @@ sidebar_label: 成为验证人
     --rpc-methods=Unsafe
   ```
 
+> 请确保带有 `--rpc-methods=Unsafe` 参数，为接下来生产 `session keys` 做准备。
+
 - Docker 启动验证人节点
 
   ```bash
   docker run -it \
     -v <YOUR_DATA_DIR>:/data \
     -p <YOUR_NODE_HTTP_PORT>:9933 \
-    -p <YOUR_NODE_WSS_PORT>:9944 \
     quay.io/darwinia-network/darwinia:vx.x.x \
-        --base-path /data \
-        --name <YOUR_NODE_NAME> \
-        --chain crab \
-        --validator \
-        --rpc-methods=Unsafe
+      --base-path /data \
+      --name <YOUR_NODE_NAME> \
+      --chain crab \
+      --validator \
+      --rpc-methods=Unsafe \
+      --rpc-external \
+      --rpc-cors all
   ```
+
+> 请确保带有 `--rpc-methods=Unsafe --rpc-external --rpc-cors` 参数，为接下来生产 `session keys` 做准备。
 
 
 ### 生成 session keys
@@ -128,12 +132,22 @@ result 就是新生成的属于该节点的 session keys。下面会用到。
 
    为了安全起见，最好去掉 rpc unsafe 相关的参数后重启节点：
 
-  ```sh
+  ```bash
   ./darwinia \
     --base-path <YOUR_DATA_DIR> \
     --name <YOUR_NODE_NAME> \
     --chain crab \
     --validator
+  ```
+
+  ```bash
+  docker run -it \
+    -v <YOUR_DATA_DIR>:/data \
+    quay.io/darwinia-network/darwinia:vx.x.x \
+      --base-path /data \
+      --name <YOUR_NODE_NAME> \
+      --chain crab \
+      --validator
   ```
 
 ## 其他 Staking 操作
