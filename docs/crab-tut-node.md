@@ -51,7 +51,7 @@ Add the `--ws-external` and `--rpc-cors all` options if you want to [remotely co
 ```
 docker run -it \
     -v <YOUR_DATA_DIR>:/data \
-    darwinianetwork/darwinia:vx.x.x \
+    quay.io/darwinia-network/darwinia:vx.x.x \
         --base-path /data \
         --name <YOUR_NODE_NAME> \
         --chain crab
@@ -65,7 +65,7 @@ docker run -it \
     -v <YOUR_DATA_DIR>:/data \
     -p <YOUR_NODE_HTTP_PORT>:9933 \
     -p <YOUR_NODE_WSS_PORT>:9944 \
-    darwinianetwork/darwinia:vx.x.x \
+    quay.io/darwinia-network/darwinia:vx.x.x \
         --base-path /data \
         --name <YOUR_NODE_NAME> \
         --chain crab \

@@ -30,7 +30,7 @@ You can choose either run node with execute file download before or in docker wa
     -v <YOUR_DATA_DIR>:/data \
     -p <YOUR_NODE_HTTP_PORT>:9933 \
     -p <YOUR_NODE_WSS_PORT>:9944 \
-    darwinianetwork/darwinia:vx.x.x \
+    quay.io/darwinia-network/darwinia:vx.x.x \
         --base-path /data \
         --name <YOUR_NODE_NAME> \
         --chain crab \
