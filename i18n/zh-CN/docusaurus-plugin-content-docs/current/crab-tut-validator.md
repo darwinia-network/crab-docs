@@ -10,7 +10,7 @@ sidebar_label: 成为验证人
 
 ### 运行验证人节点
 
-你可以选择下载好的可执行文件或者 Docker 的方式运行自己的验证人节点，无论哪种方式启动，请确保带有 `--unsafe-rpc-external --rpc-methods=Unsafe --ws-external --rpc-cors=all`
+你可以选择下载好的可执行文件或者 Docker 的方式运行自己的验证人节点，无论哪种方式启动，请确保带有 `--rpc-methods=Unsafe`
 参数，为接下来生产 `session keys` 做准备。
 
 - 本地启动验证人节点
@@ -21,10 +21,7 @@ sidebar_label: 成为验证人
     --name <YOUR_NODE_NAME> \
     --chain crab \
     --validator \
-    --unsafe-rpc-external \
-    --rpc-methods=Unsafe \
-    --ws-external \
-    --rpc-cors all
+    --rpc-methods=Unsafe
   ```
 
 - Docker 启动验证人节点
@@ -39,10 +36,7 @@ sidebar_label: 成为验证人
         --name <YOUR_NODE_NAME> \
         --chain crab \
         --validator \
-        --unsafe-rpc-external \
         --rpc-methods=Unsafe
-        --ws-external \
-        --rpc-cors all
   ```
 
 

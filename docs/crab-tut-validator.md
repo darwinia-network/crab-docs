@@ -10,7 +10,7 @@ sidebar_label: Become a validator
 
 ### Run your validator node
 
-You can choose either run node with execute file download before or in docker way. No matter which way you start, please make sure to include `--unsafe-rpc-external --rpc-methods=Unsafe --ws-external --rpc-cors=all` in command line to prepare for the generation of session keys.
+You can choose either run node with execute file download before or in docker way. No matter which way you start, please make sure to include `--rpc-methods=Unsafe` in command line to prepare for the generation of session keys.
 
 - Run validator node with existed node binary
 
@@ -20,10 +20,7 @@ You can choose either run node with execute file download before or in docker wa
     --name <YOUR_NODE_NAME> \
     --chain crab \
     --validator \
-    --unsafe-rpc-external \
-    --rpc-methods=Unsafe \
-    --ws-external \
-    --rpc-cors all
+    --rpc-methods=Unsafe 
   ```
 
 - Using docker
@@ -38,10 +35,7 @@ You can choose either run node with execute file download before or in docker wa
         --name <YOUR_NODE_NAME> \
         --chain crab \
         --validator \
-        --unsafe-rpc-external \
         --rpc-methods=Unsafe
-        --ws-external \
-        --rpc-cors all
     ```
 ### Generate your session key
 
