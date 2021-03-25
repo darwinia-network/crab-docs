@@ -27,7 +27,12 @@ module.exports = {
       'pangolin-tut-dvm-deposit',
       'pangolin-tut-dvm-withdraw',
       'pangolin-tut-dvm-contract',
-      'pangolin-tut-dvm-transfer'
+      'pangolin-tut-dvm-transfer',
+      {
+        'Bridges': [
+          'pangolin-bridge-ropsten'
+        ]
+      }
     ]
   },
 
