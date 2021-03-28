@@ -19,10 +19,10 @@ module.exports = {
     },
     navbar: {
       title: 'Crab Network',
-      // logo: {
-      //   alt: 'My Site Logo',
-      //   src: 'img/logo.svg',
-      // },
+      logo: {
+        alt: 'My Site Logo',
+        src: 'img/favicon.svg',
+      },
       items: [
         {
           to: 'docs/',
