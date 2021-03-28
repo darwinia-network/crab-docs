@@ -12,6 +12,9 @@ import Divider from '../../components/Divider';
 import '../../locales/i18n';
 import styles from './style.module.scss';
 
+import Layout from '@theme/Layout';
+// import useThemeContext from '@theme/hooks/useThemeContext';
+
 import { PageHeader } from '../../components/PageHeader';
 import { PageFooter } from '../../components/PageFooter';
 
@@ -36,6 +39,7 @@ import desktopParticipate02 from './img/participate-content-02.png';
 const Home = () => {
     const ref = useRef();
     const { t, i18n } = useTranslation();
+    // const { setLightTheme } = useThemeContext();
 
     const DesktopTitleCN = (
         <div data-depth="0.2" className={styles.containerTitleCN}>
@@ -56,6 +60,10 @@ const Home = () => {
             });
         }
     }, [ref]);
+
+    // useEffect(() => {
+    //     setLightTheme();
+    // }, []);
 
     return (
         <div className={styles.layout}>
@@ -397,4 +405,12 @@ const Home = () => {
 //     )
 // }
 
-export default Home;
+const withDocusaurusLayout = Component => {
+    return () => (
+        <Layout onlyChildren={true}>
+            <Component />
+        </Layout>
+    )
+};
+
+export default withDocusaurusLayout(Home);
