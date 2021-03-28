@@ -9,6 +9,7 @@ import {
 import { Drawer } from 'antd';
 
 import styles from './style.module.scss';
+import "antd/lib/drawer/style/index.css";
 
 import logoMobile from './img/logo-mobile.png';
 import logoDesktop from './img/logo-desktop.png';
