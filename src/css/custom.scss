@@ -7,14 +7,6 @@
 
 @import "~bootstrap/scss/bootstrap";
 
-body {
-  font-family: 'IBMPlexSans', 'IBMPlexSans-Bold', 'IBMPlexSans-ExtraLight', 'IBMPlexSans-Light', 'IBMPlexSans-Medium', 'IBMPlexSans-Regular', 'IBMPlexSans-SemiBold', 'IBMPlexSans-Thin',
-    'SFUIDisplay-Black', 'SFUIDisplay-Bold', 'SFUIDisplay-Heavy', 'SFUIDisplay-Light', 'SFUIDisplay-Medium', 'SFUIDisplay-Semibold', 'SFUIDisplay-Thin', 'SFUIDisplay-Ultralight',
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-}
-
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #ec3783;
