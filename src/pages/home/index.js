@@ -19,7 +19,8 @@ import { PageHeader } from '../../components/PageHeader';
 import { PageFooter } from '../../components/PageFooter';
 
 import mobileCrabImg from './img/mobile-crab.png';
-import mobileCrabTitleImg from './img/mobile-crab-title.png';
+import mobileCrabTitleImgCN from './img/mobile-crab-title-cn.png';
+import mobileCrabTitleImgEN from './img/mobile-crab-title-en.png';
 import mobileCrabCoolImg from './img/mobile-crab-cool.png';
 import mobileTokenLockImg from './img/mobile-token-lock.png';
 import mobileTokenSaveImg from './img/moble-token-save.png';
@@ -41,16 +42,9 @@ const Home = () => {
     const { t, i18n } = useTranslation();
     // const { setLightTheme } = useThemeContext();
 
-    const DesktopTitleCN = (
-        <div data-depth="0.2" className={styles.containerTitleCN}>
-            <div className={styles.title}>Crab Network</div>
-            <div className={styles.subtitle}>KUSAMA 的跨链枢纽</div>
-        </div>
-    );
-
-    const DesktopTitleEN = (
-        <img data-depth="0.2" alt='...' src={desktopCrabTitleImg} className={styles.crabTitleImgDesktop} />
-    );
+    // useEffect(() => {
+    //     setLightTheme();
+    // }, []);
 
     useEffect(() => {
         if (ref.current) {
@@ -61,9 +55,24 @@ const Home = () => {
         }
     }, [ref]);
 
-    // useEffect(() => {
-    //     setLightTheme();
-    // }, []);
+    const DesktopTitleCN = () => (
+        <div data-depth="0.2" className={styles.containerTitleCN}>
+            <div className={styles.title}>Crab Network</div>
+            <div className={styles.subtitle}>KUSAMA 的跨链枢纽</div>
+        </div>
+    );
+
+    const DesktopTitleEN = () => (
+        <img data-depth="0.2" alt='...' src={desktopCrabTitleImg} className={styles.crabTitleImgDesktop} />
+    );
+
+    const MobileTitleCN = () =>  (
+        <img alt='...' src={mobileCrabTitleImgCN} className={styles.crabTitleImg} />
+    );
+
+    const MobileTitleEN = () =>  (
+        <img alt='...' src={mobileCrabTitleImgEN} className={styles.crabTitleImg} />
+    );
 
     return (
         <div className={styles.layout}>
@@ -75,12 +84,13 @@ const Home = () => {
                 <Container>
                     {/* Mobile */}
                     <img alt='...' src={mobileCrabImg} className={styles.crabImg} />
-                    <img alt='...' src={mobileCrabTitleImg} className={styles.crabTitleImg} />
+                    {i18n.language && i18n.language.toLowerCase() === 'zh-cn' ? <MobileTitleCN /> : <MobileTitleEN />}
 
                     {/* Parallax on desktop */}
                     <div className={styles.parallaxContainer} ref={ref} >
+                        <div className={styles.parallaxSpace}></div>
                         <img data-depth="0.1" alt='crab' src={desktopCrabImg} className={styles.crabImgDesktop} />
-                        {i18n.language && i18n.language.toLowerCase() === 'zh-cn' ? DesktopTitleCN : DesktopTitleEN}
+                        {i18n.language && i18n.language.toLowerCase() === 'zh-cn' ? <DesktopTitleCN /> : <DesktopTitleEN />}
                     </div>
                 </Container>
 
