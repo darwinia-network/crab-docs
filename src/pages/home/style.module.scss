@@ -356,6 +356,39 @@
                 margin-top: -100px;
             }
 
+            @media (max-width: 991px) {
+                .parallaxSpace {
+                    height: 400px;
+                }
+
+                .crabImgDesktop {
+                    height: auto;
+                }
+
+                .crabTitleImgDesktop {
+                    height: auto;
+                }
+
+                .containerTitleCN {
+                    top: 140px !important;
+
+                    .title {
+                        font-size: 90px;
+                        line-height: 120px;
+                    }
+
+                    .subtitle {
+                        font-size: 40px;
+                        line-height: 80px;
+                    }
+                }
+
+                .crabNetSumary {
+                    font-size: 18px;
+                    margin-top: -30px;
+                }
+            }
+
             .economicWrapper {
                 display: flex;
                 justify-content: center;
