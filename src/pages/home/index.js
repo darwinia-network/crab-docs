@@ -129,12 +129,12 @@ const Home = () => {
 
                     <Animate delay={50}>
                         <div className='d-flex flex-column justify-content-between align-items-center'>
-                            <Button variant='light' className={styles.economicBtn} style={{ width: '66%' }}
+                            <Button variant='light' className={styles.economicBtn} style={{ width: '90%' }}
                                 href='https://darwinia.network/economic_model/'
                             >
                                 <span className={styles.content}>{t("home_page:see_darwinia")}</span>
                             </Button>
-                            <Button variant='light' className={styles.economicBtn} style={{ width: '66%', marginTop: '10px' }}
+                            <Button variant='light' className={styles.economicBtn} style={{ width: '90%', marginTop: '10px' }}
                                 href='https://crab.subscan.io/account'
                             >
                                 <span className={styles.content}>{t("home_page:see_circulate")}</span>
@@ -146,10 +146,10 @@ const Home = () => {
                 <Container >
                     <div className={`${styles.visibleOnDesktop} ${styles.economicWrapper}`}>
                         <Animate>
-                            <img alt='...' src={desktopCrabCoolImg} style={{ height: '620px', maxWidth: 'none', marginLeft: '-240px' }} />
+                            <img alt='...' src={desktopCrabCoolImg} className={styles.desktopCrabCool} />
                         </Animate>
                         <div className='d-sm-flex flex-sm-column justify-content-sm-center align-items-sm-start'>
-                            <Animate delay={100}>
+                            <Animate delay={100} style={{ width: '100%' }}>
                                 <div className={styles.economicTitle}>
                                     {t('home_page:economic_title')}
                                 </div>
@@ -276,7 +276,7 @@ const Home = () => {
 
                         {/* How to participate */}
 
-                        <Container className={styles.visibleOnMobile}>
+                        <Container className={styles.visibleOnMobile} style={{ paddingTop: '30px', paddingBottom: '30px' }}>
                             <Animate delay={50}>
                                 <div className='d-flex justify-content-center'>
                                     <div className={styles.participate}>
