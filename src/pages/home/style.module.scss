@@ -4,19 +4,19 @@
     background-image: url(/static/img/background.svg);
     padding-top: 10px;
 
-    ::selection,
-    ::selection {
-        -webkit-text-fill-color: white;
-    }
+    // ::selection,
+    // ::selection {
+    //     -webkit-text-fill-color: white;
+    // }
 
-    ::-moz-selection,
-    ::-moz-selection {
-        -webkit-text-fill-color: white;
-    }
+    // ::-moz-selection,
+    // ::-moz-selection {
+    //     -webkit-text-fill-color: white;
+    // }
 
-    ::-webkit-selection ::-webkit-selection {
-        -webkit-text-fill-color: white;
-    }
+    // ::-webkit-selection ::-webkit-selection {
+    //     -webkit-text-fill-color: white;
+    // }
 
     .constent {
         .crabImg {
