@@ -1,7 +1,7 @@
 ---
 id: crab-crowdloan
 title: Kusama Parachain Slot Auctions / Crowdloan
-sidebar_label: Crowdloan
+sidebar_label: Kusama Parachain Auctions / Crowdloan
 ---
 
 [What & How-to from Kusama website](https://kusama.network/auctions)
