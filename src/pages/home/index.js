@@ -12,11 +12,15 @@ import Divider from '../../components/Divider';
 import '../../locales/i18n';
 import styles from './style.module.scss';
 
+import Layout from '@theme/Layout';
+// import useThemeContext from '@theme/hooks/useThemeContext';
+
 import { PageHeader } from '../../components/PageHeader';
 import { PageFooter } from '../../components/PageFooter';
 
 import mobileCrabImg from './img/mobile-crab.png';
-import mobileCrabTitleImg from './img/mobile-crab-title.png';
+import mobileCrabTitleImgCN from './img/mobile-crab-title-cn.png';
+import mobileCrabTitleImgEN from './img/mobile-crab-title-en.png';
 import mobileCrabCoolImg from './img/mobile-crab-cool.png';
 import mobileTokenLockImg from './img/mobile-token-lock.png';
 import mobileTokenSaveImg from './img/moble-token-save.png';
@@ -36,17 +40,11 @@ import desktopParticipate02 from './img/participate-content-02.png';
 const Home = () => {
     const ref = useRef();
     const { t, i18n } = useTranslation();
+    // const { setLightTheme } = useThemeContext();
 
-    const DesktopTitleCN = (
-        <div data-depth="0.2" className={styles.containerTitleCN}>
-            <div className={styles.title}>Crab Network</div>
-            <div className={styles.subtitle}>KUSAMA 的跨链枢纽</div>
-        </div>
-    );
-
-    const DesktopTitleEN = (
-        <img data-depth="0.2" alt='...' src={desktopCrabTitleImg} className={styles.crabTitleImgDesktop} />
-    );
+    // useEffect(() => {
+    //     setLightTheme();
+    // }, []);
 
     useEffect(() => {
         if (ref.current) {
@@ -56,6 +54,25 @@ const Home = () => {
             });
         }
     }, [ref]);
+
+    const DesktopTitleCN = () => (
+        <div data-depth="0.2" className={styles.containerTitleCN}>
+            <div className={styles.title}>Crab Network</div>
+            <div className={styles.subtitle}>KUSAMA 的跨链枢纽</div>
+        </div>
+    );
+
+    const DesktopTitleEN = () => (
+        <img data-depth="0.2" alt='...' src={desktopCrabTitleImg} className={styles.crabTitleImgDesktop} />
+    );
+
+    const MobileTitleCN = () =>  (
+        <img alt='...' src={mobileCrabTitleImgCN} className={styles.crabTitleImg} />
+    );
+
+    const MobileTitleEN = () =>  (
+        <img alt='...' src={mobileCrabTitleImgEN} className={styles.crabTitleImg} />
+    );
 
     return (
         <div className={styles.layout}>
@@ -67,12 +84,13 @@ const Home = () => {
                 <Container>
                     {/* Mobile */}
                     <img alt='...' src={mobileCrabImg} className={styles.crabImg} />
-                    <img alt='...' src={mobileCrabTitleImg} className={styles.crabTitleImg} />
+                    {i18n.language && i18n.language.toLowerCase() === 'zh-cn' ? <MobileTitleCN /> : <MobileTitleEN />}
 
                     {/* Parallax on desktop */}
                     <div className={styles.parallaxContainer} ref={ref} >
+                        <div className={styles.parallaxSpace}></div>
                         <img data-depth="0.1" alt='crab' src={desktopCrabImg} className={styles.crabImgDesktop} />
-                        {i18n.language && i18n.language.toLowerCase() === 'zh-cn' ? DesktopTitleCN : DesktopTitleEN}
+                        {i18n.language && i18n.language.toLowerCase() === 'zh-cn' ? <DesktopTitleCN /> : <DesktopTitleEN />}
                     </div>
                 </Container>
 
@@ -111,12 +129,12 @@ const Home = () => {
 
                     <Animate delay={50}>
                         <div className='d-flex flex-column justify-content-between align-items-center'>
-                            <Button variant='light' className={styles.economicBtn} style={{ width: '66%' }}
+                            <Button variant='light' className={styles.economicBtn} style={{ width: '90%' }}
                                 href='https://darwinia.network/economic_model/'
                             >
                                 <span className={styles.content}>{t("home_page:see_darwinia")}</span>
                             </Button>
-                            <Button variant='light' className={styles.economicBtn} style={{ width: '66%', marginTop: '10px' }}
+                            <Button variant='light' className={styles.economicBtn} style={{ width: '90%', marginTop: '10px' }}
                                 href='https://crab.subscan.io/account'
                             >
                                 <span className={styles.content}>{t("home_page:see_circulate")}</span>
@@ -128,10 +146,10 @@ const Home = () => {
                 <Container >
                     <div className={`${styles.visibleOnDesktop} ${styles.economicWrapper}`}>
                         <Animate>
-                            <img alt='...' src={desktopCrabCoolImg} style={{ height: '620px', maxWidth: 'none', marginLeft: '-240px' }} />
+                            <img alt='...' src={desktopCrabCoolImg} className={styles.desktopCrabCool} />
                         </Animate>
                         <div className='d-sm-flex flex-sm-column justify-content-sm-center align-items-sm-start'>
-                            <Animate delay={100}>
+                            <Animate delay={100} style={{ width: '100%' }}>
                                 <div className={styles.economicTitle}>
                                     {t('home_page:economic_title')}
                                 </div>
@@ -258,7 +276,7 @@ const Home = () => {
 
                         {/* How to participate */}
 
-                        <Container className={styles.visibleOnMobile}>
+                        <Container className={styles.visibleOnMobile} style={{ paddingTop: '30px', paddingBottom: '30px' }}>
                             <Animate delay={50}>
                                 <div className='d-flex justify-content-center'>
                                     <div className={styles.participate}>
@@ -397,4 +415,12 @@ const Home = () => {
 //     )
 // }
 
-export default Home;
+const withDocusaurusLayout = Component => {
+    return () => (
+        <Layout onlyChildren={true}>
+            <Component />
+        </Layout>
+    )
+};
+
+export default withDocusaurusLayout(Home);

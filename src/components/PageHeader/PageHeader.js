@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Head from '@docusaurus/Head';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useTranslation } from 'react-i18next';
 import {
     Button,
@@ -9,6 +10,7 @@ import {
 import { Drawer } from 'antd';
 
 import styles from './style.module.scss';
+import "antd/lib/drawer/style/index.css";
 
 import logoMobile from './img/logo-mobile.png';
 import logoDesktop from './img/logo-desktop.png';
@@ -58,6 +60,7 @@ const SideBar = ({ visible, onClose, onLngChange }) => {
 
 const PageHeader = () => {
     const { t, i18n } = useTranslation();
+    const { siteConfig } = useDocusaurusContext();
     const [visibleSideBar, setVisibleSideBar] = useState(false);
 
     const handleCloseSideBar = () => {
@@ -83,6 +86,7 @@ const PageHeader = () => {
     return (
         <>
             <Head><link data-react-helmet="true" rel="shortcut icon" href="/img/favicon.svg" /></Head>
+            <Head><title data-react-helmet="true">{siteConfig.title}</title></Head>
             <SideBar visible={visibleSideBar} onClose={handleCloseSideBar} onLngChange={handleClickChangeLng} />
             <div className={styles.container}>
                 <Container className={styles.subContainer}>

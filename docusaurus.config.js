@@ -14,15 +14,15 @@ module.exports = {
   projectName: 'crab.network', // Usually your repo name.
   themeConfig: {
     colorMode: {
-      disableSwitch: true,
+      // disableSwitch: true,
       defaultMode: 'light',
     },
     navbar: {
       title: 'Crab Network',
-      // logo: {
-      //   alt: 'My Site Logo',
-      //   src: 'img/logo.svg',
-      // },
+      logo: {
+        alt: 'My Site Logo',
+        src: 'img/favicon.svg',
+      },
       items: [
         {
           to: 'docs/',

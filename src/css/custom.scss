@@ -5,16 +5,7 @@
  * work well for content-centric websites.
  */
 
-@import '~antd/dist/antd.css';
-@import "~bootstrap/scss/bootstrap";
-
-body {
-  font-family: 'IBMPlexSans', 'IBMPlexSans-Bold', 'IBMPlexSans-ExtraLight', 'IBMPlexSans-Light', 'IBMPlexSans-Medium', 'IBMPlexSans-Regular', 'IBMPlexSans-SemiBold', 'IBMPlexSans-Thin',
-    'SFUIDisplay-Black', 'SFUIDisplay-Bold', 'SFUIDisplay-Heavy', 'SFUIDisplay-Light', 'SFUIDisplay-Medium', 'SFUIDisplay-Semibold', 'SFUIDisplay-Thin', 'SFUIDisplay-Ultralight',
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-}
+@import './bootstrap/scss/bootstrap';
 
 /* You can override the default Infima variables here. */
 :root {
@@ -61,6 +52,7 @@ $width-toggle: 768px;
   src: url('/static/font/IBMPlexSans-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -68,6 +60,7 @@ $width-toggle: 768px;
   src: url('/static/font/IBMPlexSans-ExtraLight.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -75,6 +68,7 @@ $width-toggle: 768px;
   src: url('/static/font/IBMPlexSans-Light.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -82,6 +76,7 @@ $width-toggle: 768px;
   src: url('/static/font/IBMPlexSans-Medium.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -89,6 +84,7 @@ $width-toggle: 768px;
   src: url('/static/font/IBMPlexSans-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -96,6 +92,7 @@ $width-toggle: 768px;
   src: url('/static/font/IBMPlexSans-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -103,6 +100,7 @@ $width-toggle: 768px;
   src: url('/static/font/IBMPlexSans-SemiBold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -110,6 +108,7 @@ $width-toggle: 768px;
   src: url('/static/font/IBMPlexSans-Thin.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -117,6 +116,7 @@ $width-toggle: 768px;
   src: url('/static/font/sf-ui-display-black.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -124,6 +124,7 @@ $width-toggle: 768px;
   src: url('/static/font/sf-ui-display-bold.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -131,6 +132,7 @@ $width-toggle: 768px;
   src: url('/static/font/sf-ui-display-heavy.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -138,6 +140,7 @@ $width-toggle: 768px;
   src: url('/static/font/sf-ui-display-light.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -145,6 +148,7 @@ $width-toggle: 768px;
   src: url('/static/font/sf-ui-display-medium.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -152,6 +156,7 @@ $width-toggle: 768px;
   src: url('/static/font/sf-ui-display-semibold.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -159,6 +164,7 @@ $width-toggle: 768px;
   src: url('/static/font/sf-ui-display-thin.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -166,6 +172,7 @@ $width-toggle: 768px;
   src: url('/static/font/sf-ui-display-ultralight.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 .navbar-toggler {
