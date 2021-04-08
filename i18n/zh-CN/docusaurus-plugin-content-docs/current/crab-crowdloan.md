@@ -4,6 +4,8 @@ title: Kusama 平行链拍卖众贷
 sidebar_label: Kusama 平行链拍卖众贷
 ---
 
+[Kusama 官网关于拍卖和众贷的信息](https://translate.google.com/translate?sl=en&tl=zh-CN&u=https://kusama.network/auctions)
+
 Kusama 允许平行链在去中心化的众贷系统中为平行链竞拍提供 KSM。
 
 任何平行链项目团队都可以为平行链插槽创建新的众贷活动。一次众贷活动需要提供插槽使用时间（即，平行链将竞标的持续时间），上限和众贷的持续时间。在众贷时间范围内可以持续数次拍卖，这意味着团队无需因为没有在第一次尝试中获得插槽而重新开启众贷。

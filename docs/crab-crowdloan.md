@@ -1,8 +1,10 @@
 ---
 id: crab-crowdloan
-title: Kusama Parachain Auction Crowdloan
+title: Kusama Parachain Slot Auctions / Crowdloan
 sidebar_label: Crowdloan
 ---
+
+[What & How-to from Kusama website](https://kusama.network/auctions)
 
 Kusama allows parachains to source KSM for their parachain bids in a decentralized crowdloan.
 
