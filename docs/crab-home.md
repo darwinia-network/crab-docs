@@ -23,5 +23,4 @@ cRING and cKTON are tokens with real value, and the cryptocurrency backing modul
 
 The exchange of cRING to RING is facilitated by an automated market maker (AMM) protocol similar to Uniswap, so in essense, swapping of cRING and RING is considered typical market behavior, with initial liquidity for trades to be determined by Crab Council.
 
-
 *** Crab Network will be participating in the Kusama [Parachain Slot Auction](https://polkadot.network/launch-parachains/)***
