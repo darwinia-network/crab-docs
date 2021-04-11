@@ -1,0 +1,329 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+/* .heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 966px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featureImage {
+  height: 200px;
+  width: 200px;
+} */
+
+@import '../css/custom.scss';
+
+$crab-breakpoint: 768px;
+// @media screen and (max-width: $crab-breakpoint) {}
+
+.pageRoot {
+  padding-top: 10px;
+  background-image: url(/static/img/background.svg);
+}
+
+.sloganDesktop {
+  .parallaxSpace {
+    height: 490px;
+  }
+
+  .sloganTitle {
+    height: 385px;
+    position: absolute;
+    top: 100px !important;
+    bottom: auto !important;
+    left: 0 !important;
+    right: auto !important;
+  }
+
+  .crabImg {
+    height: 610px;
+    position: absolute;
+    top: 0 !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: -230px !important;
+  }
+}
+
+.crabDesc {
+  font-size: 25px;
+  font-family: IBMPlexSans;
+  color: #6330DD;
+  line-height: 33px;
+  z-index: 9999;
+  padding: 30px 0;
+}
+
+.economicModel {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -50px;
+
+  >img {
+    height: 617px;
+    margin-left: -220px;
+  }
+
+  .contentWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 70px;
+
+    .contentTitle {
+      padding: 12px 0;
+      font-size: 50px;
+      font-family: IBMPlexSans-Bold, IBMPlexSans;
+      font-weight: bold;
+      color: #080C20;
+      line-height: 65px;
+      background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .contentText {
+      padding: 8px 0;
+      font-size: 16px;
+      font-family: IBMPlexSans;
+      color: #6330DD;
+      line-height: 20px;
+    }
+
+    .btnWrap {
+      margin: 20px 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .btnEconomic {
+        width: 45%;
+        border: none;
+        padding: 5px;
+        background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+        border-radius: 20px;
+        font-size: 14px;
+        font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+        font-weight: 600;
+        color: #FFFFFF;
+        line-height: 18px;
+
+        &:first-child {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+.kusamaWrap {
+  background-color: rgba(216, 216, 216, 0.2);
+
+  .auctionTitle {
+    padding: 40px 0;
+    text-align: center;
+
+    >span {
+      font-size: 50px;
+      font-family: IBMPlexSans-Bold, IBMPlexSans;
+      font-weight: bold;
+      color: #080C20;
+      line-height: 65px;
+      background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .crowdloaningSubTitle {
+    text-align: center;
+
+    >a {
+      color: white;
+      font-weight: bold;
+      text-decoration: underline;
+      font-size: 30px;
+      font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+      line-height: 39px;
+      background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+    }
+  }
+
+  .participateSubTitle {
+    text-align: center;
+    position: relative;
+    top: -10px;
+
+    >span {
+      font-size: 30px;
+      font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+      font-weight: 600;
+      color: #080C20;
+      line-height: 39px;
+      background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.crowdloaningBoxWrap {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.crowdloaningBox {
+  flex: 1;
+  background: #FFFFFF;
+  border-radius: 70px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &:nth-child(2) {
+    margin: 0 20px;
+  }
+
+  >img {
+    height: 134px;
+  }
+
+  >span {
+    font-size: 16px;
+    font-family: IBMPlexSans;
+    color: #6330DD;
+    line-height: 20px;
+  }
+}
+
+.participateBoxWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.participateBox {
+  flex: 1;
+  background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+  border-radius: 71px;
+  padding: 35px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &:first-child {
+    margin-right: 50px;
+  }
+
+  >img {
+    height: 60px;
+  }
+
+  >span {
+    margin-left: 20px;
+    font-size: 16px;
+    font-family: IBMPlexSans;
+    color: #FFFFFF;
+    line-height: 20px;
+
+    >a {
+      color: white;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  }
+}
+
+.kusamaDesc {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 250px;
+
+  .descTitle {
+    margin: 30px 0;
+    >img {
+      height: 66px;
+    }
+  }
+
+  .descContentText {
+    font-size: 16px;
+    font-family: IBMPlexSans-Medium, IBMPlexSans;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 20px;
+    padding: 10px 200px;
+
+    &:first-child {
+      margin-bottom: 20px;
+    }
+  }
+
+  .btnDesc {
+    padding: 5px 30px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 5px 50px;
+    border: none;
+    margin: 30px 0 {
+      bottom: 60px;
+    };
+
+    >span {
+      font-size: 14px;
+      font-family: IBMPlexSans-SemiBold, IBMPlexSans;
+      font-weight: 600;
+      color: #FFFFFF;
+      line-height: 18px;
+      background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.kusamaCrabBg {
+  background: url('./img/crab-bg-desktop.png') center center no-repeat;
+  background-size: 2370px;
+}
