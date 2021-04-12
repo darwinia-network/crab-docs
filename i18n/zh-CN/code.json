@@ -1,0 +1,226 @@
+{
+  "crabnet.description": {
+    "message": "Darwinia Crab网络是达尔文网络先行网，波卡生态第一条跨链NFT链，并提供智能合约方案。即将参与波卡Kusama平行链插槽拍卖。",
+    "description": "Crab Network description"
+  },
+  "economic.title": {
+    "message": "经济模型",
+    "description": "Economic model title"
+  },
+  "economic.content01": {
+    "message": "Crab 网络将会是一个有价值的长期运行的网络。一部分 RINGs 将作为背书资产分配给 Crab Network，使其成为具有真正经济激励和大规模博弈理论测试的金丝雀网络，而不仅仅是测试网。",
+    "description": "Economic model content p1"
+  },
+  "economic.content02": {
+    "message": "Crab 网络的参数与 Darwinia 主网一样，并使用相同的 Staking 机制和通胀模型。通证分别为 CRING 和 CKTON，CRING 的初始供应量为 2000M，CKTON 的供应量为 0。",
+    "description": "Economic model content p2"
+  },
+  "economic.btn01": {
+    "message": "成为验证人",
+    "description": "Economic model first button"
+  },
+  "economic.btn02": {
+    "message": "成为投票人",
+    "description": "Economic model second button"
+  },
+  "kusama.auctionTitle": {
+    "message": "Kusama平行链拍卖",
+    "description": "Kusama auction title"
+  },
+  "kusama.crowdloaningSubTitle": {
+    "message": "众贷",
+    "description": "Kusama crowdloaning subtitle"
+  },
+  "kusama.crowloaningLock": {
+    "message": "KSM持有者将其令牌锁定在Kusama上一段时间（6、12或24个月），以帮助达尔文租用插槽。 作为这些KSM持有者的回报，参与者将获得CRING、NFT等作为奖励。",
+    "description": "Kusama crowloaning lock"
+  },
+  "kusama.crowloaningSave": {
+    "message": "您的令牌锁定以去中心、去信任的方式在链上进行，在锁定期过后持有人就可以继续使用您的令牌，因此您不必担心令牌的安全性。用户的KSM不会脱离用户的钱包账户(托管给交易所的除外)。",
+    "description": "Kusama crowloaning save"
+  },
+  "kusama.crowloaningCring": {
+    "message": "CRING是Crab网络的令牌。 持有CRING可以参与Crab网络的staking和链上治理。",
+    "description": "Kusama crowloaning cring"
+  },
+  "kusama.participateSubTitle": {
+    "message": "如何参加",
+    "description": "Kusama participate subtitle"
+  },
+  "kusama.participateContent01": {
+    "message": "准备您的KSM。 如果处于绑定状态，则必须至少提前14天执行取消绑定操作。",
+    "description": "Kusama participate first content"
+  },
+  "kusama.participateContent02": {
+    "message": "参与众贷。 众贷开始后，您可以通过 {polkadot} 和 {apps} 参与众贷",
+    "description": "Kusama participate second content"
+  },
+  "kusama.descContent01": {
+    "message": "Kusama是一个多链网络。  Parachain可以通过插槽访问Kusama。 Parachain和Kusama共同形成了一个可互操作的区块链网络。 Kusama保证了整个网络的安全性，而平行链则为整个网络提供了多种功能。 所有平行链必须参与平行链拍卖，以获得租用插槽的权利。",
+    "description": "Kusama description first content"
+  },
+  "kusama.descContent02": {
+    "message": "Crab网络需要众贷足够多的KSM以赢得平行链拍卖。 Crab网络选择以一种去信任的方式对KSM进行众贷。 在Crab的顺链租赁期间，这些KSM将“锁定”在Kusama中。",
+    "description": "Kusama description second content"
+  },
+  "kusama.descBtn": {
+    "message": "更多",
+    "description": "Kusama description button"
+  },
+  "theme.NotFound.title": {
+    "message": "Page Not Found",
+    "description": "The title of the 404 page"
+  },
+  "theme.NotFound.p1": {
+    "message": "We could not find what you were looking for.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Close",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Blog list page navigation",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Newer Entries",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Older Entries",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Tags:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Read More",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Blog post page navigation",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Newer Post",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Older Post",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Tags",
+    "description": "The title of the tag list page"
+  },
+  "theme.blog.post.plurals": {
+    "message": "One post|{count} posts",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} tagged with \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "View All Tags",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Docs pages navigation",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Previous",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Next",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "This is unreleased documentation for {siteTitle} {versionLabel} version.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).",
+    "description": "The label userd to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "latest version",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.docs.sidebar.responsiveCloseButtonLabel": {
+    "message": "Close menu",
+    "description": "The ARIA label for close button of mobile doc sidebar"
+  },
+  "theme.docs.sidebar.responsiveOpenButtonLabel": {
+    "message": "Open menu",
+    "description": "The ARIA label for open button of mobile doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.common.editThisPage": {
+    "message": "Edit this page",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Direct link to heading",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " on {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " by {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Last updated{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Skip to main content",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  }
+}
