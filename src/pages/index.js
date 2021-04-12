@@ -104,14 +104,14 @@ const CrabHome = () => {
                 </Translate>
               </Animate>
               <Animate delay={200} className={styles.btnWrap}>
-                <Button className={styles.btnEconomic} href='https://crab.network/zh-CN/docs/crab-tut-validator'>
+                <Button className={styles.btnEconomic} href={isLocaleCN() ? 'https://crab.network/zh-CN/docs/crab-tut-validator' : 'https://crab.network/docs/crab-tut-validator'}>
                   {translate({
                     id: 'economic.btn01',
                     description: 'Economic model first button',
                     message: 'Become a Validator',
                   })}
                 </Button>
-                <Button className={styles.btnEconomic} href='https://crab.network/zh-CN/docs/crab-tut-nominator'>
+                <Button className={styles.btnEconomic} href={isLocaleCN() ? 'https://crab.network/zh-CN/docs/crab-tut-nominator' : 'https://crab.network/docs/crab-tut-nominator'}>
                   {translate({
                     id: 'economic.btn02',
                     description: 'Economic model second button',
