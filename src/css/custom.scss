@@ -26,27 +26,6 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-$width-toggle: 768px;
-
-.visibleOnMobile {
-  display: block;
-}
-
-.visibleOnDesktop {
-  display: none;
-}
-
-// Desktop
-@media screen and (min-width: $width-toggle) {
-  .visibleOnMobile {
-    display: none;
-  }
-
-  .visibleOnDesktop {
-    display: block;
-  }
-}
-
 @font-face {
   font-family: IBMPlexSans-Bold;
   src: url('/static/font/IBMPlexSans-Bold.ttf') format('truetype');
@@ -173,25 +152,6 @@ $width-toggle: 768px;
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
-
-.navbar-toggler {
-  border: none;
-}
-
-.navbar-light .navbar-toggler-icon {
-  color: #000
-}
-
-.cs-header .dropdown-toggle::after {
-  display: none;
-}
-
-.navbar-light .navbar-toggler-icon {
-  background: url('/img/navbar-toggler-icon.png') top center no-repeat;
-  background-size: 22px 19px;
-  width: 22px;
-  height: 19px;
 }
 
 .btn-light {

@@ -16,11 +16,11 @@
     "description": "Economic model content p2"
   },
   "economic.btn01": {
-    "message": "参见Darwinia",
+    "message": "成为验证人",
     "description": "Economic model first button"
   },
   "economic.btn02": {
-    "message": "查看流通情况",
+    "message": "成为投票人",
     "description": "Economic model second button"
   },
   "kusama.auctionTitle": {

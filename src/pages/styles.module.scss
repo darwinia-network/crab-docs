@@ -41,12 +41,30 @@
 $crab-breakpoint: 768px;
 // @media screen and (max-width: $crab-breakpoint) {}
 
+%-btn-animate-base {
+  transition: opacity 0.35s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
 .pageRoot {
   padding-top: 10px;
   background-image: url(/static/img/background.svg);
 }
 
 .sloganDesktop {
+  display: block;
+
+  @media screen and (max-width: $crab-breakpoint) {
+    display: none;
+  }
+
   .parallaxSpace {
     height: 490px;
   }
@@ -60,6 +78,11 @@ $crab-breakpoint: 768px;
     right: auto !important;
   }
 
+  .sloganTitle.isCn {
+    height: 300px;
+    top: 190px !important;
+  }
+
   .crabImg {
     height: 610px;
     position: absolute;
@@ -67,6 +90,57 @@ $crab-breakpoint: 768px;
     bottom: auto !important;
     left: auto !important;
     right: -230px !important;
+
+    @media screen and (max-width: 1600px) {
+      right: -50px !important;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    .parallaxSpace {
+      height: 400px;
+    }
+
+    .sloganTitle {
+      top: 160px !important;
+      height: auto;
+    }
+
+    .sloganTitle.isCn {
+      height: auto;
+    }
+
+    .crabImg {
+      height: auto;
+    }
+  }
+}
+
+.sloganMobile {
+  height: 280px;
+  position: relative;
+  display: none;
+
+  @media screen and (max-width: $crab-breakpoint) {
+    display: block;
+  }
+
+  .sloganTitle {
+    height: 188px;
+    position: absolute;
+    top: 80px;
+    bottom: auto;
+    left: 0;
+    right: auto;
+  }
+
+  .crabImg {
+    height: 248px;
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    left: auto;
+    right: 0;
   }
 }
 
@@ -77,6 +151,11 @@ $crab-breakpoint: 768px;
   line-height: 33px;
   z-index: 9999;
   padding: 30px 0;
+
+  @media screen and (max-width: $crab-breakpoint) {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
 
 .economicModel {
@@ -86,9 +165,13 @@ $crab-breakpoint: 768px;
   align-items: center;
   margin-bottom: -50px;
 
-  >img {
+  .crabClawDesktop {
     height: 617px;
     margin-left: -220px;
+  }
+
+  .crabClawMobile {
+    display: none;
   }
 
   .contentWrap {
@@ -127,6 +210,8 @@ $crab-breakpoint: 768px;
       align-items: center;
 
       .btnEconomic {
+        @extend %-btn-animate-base;
+
         width: 45%;
         border: none;
         padding: 5px;
@@ -140,6 +225,61 @@ $crab-breakpoint: 768px;
 
         &:first-child {
           margin-right: 20px;
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .btnEconomic {
+          width: 100%;
+          padding: 10px;
+
+          &:first-child {
+            margin-right: 0px;
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $crab-breakpoint) {
+    flex-direction: column;
+
+    .crabClawDesktop {
+      display: none;
+    }
+
+    .crabClawMobile {
+      display: block;
+      height: 254px;
+    }
+
+    .contentWrap {
+      align-items: center;
+      padding-bottom: 90px;
+
+      .contentTitle {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 39px;
+      }
+
+      .btnWrap {
+        flex-direction: column;
+        align-items: center;
+
+        .btnEconomic {
+          width: 70%;
+          padding: 10px;
+
+          &:first-child {
+            margin-right: 0px;
+            margin-bottom: 15px;
+          }
         }
       }
     }
@@ -164,6 +304,14 @@ $crab-breakpoint: 768px;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    @media screen and (max-width: $crab-breakpoint) {
+      >span {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 39px;
+      }
+    }
   }
 
   .crowdloaningSubTitle {
@@ -177,6 +325,14 @@ $crab-breakpoint: 768px;
       font-family: IBMPlexSans-SemiBold, IBMPlexSans;
       line-height: 39px;
       background: linear-gradient(315deg, #FF0050 0%, #7000FF 71%, #0027FF 100%);
+    }
+
+    @media screen and (max-width: $crab-breakpoint) {
+      >a {
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 24px;
+      }
     }
   }
 
@@ -196,6 +352,14 @@ $crab-breakpoint: 768px;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    @media screen and (max-width: $crab-breakpoint) {
+      >span {
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 24px;
+      }
+    }
   }
 }
 
@@ -205,6 +369,10 @@ $crab-breakpoint: 768px;
   padding: 10px 0;
   margin-top: 20px;
   margin-bottom: 50px;
+
+  @media screen and (max-width: $crab-breakpoint) {
+    flex-direction: column;
+  }
 }
 
 .crowdloaningBox {
@@ -216,6 +384,11 @@ $crab-breakpoint: 768px;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  transition: box-shadow 0.35s;
+
+  &:hover {
+    box-shadow: 0px 10px 10px 0px rgba(147, 24, 172, 0.1);
+  }
 
   &:nth-child(2) {
     margin: 0 20px;
@@ -231,12 +404,45 @@ $crab-breakpoint: 768px;
     color: #6330DD;
     line-height: 20px;
   }
+
+  @media screen and (max-width: $crab-breakpoint) {
+    border-radius: 30px;
+    // padding-left: 30px;
+    // padding-right: 30px;
+    // padding-bottom: 40px;
+
+    &:nth-child(2) {
+      margin: 20px 0;
+    }
+  }
+}
+
+.participateWrapDesktop {
+  display: block;
+}
+
+.participateWrapMobile {
+  display: none;
+}
+
+@media screen and (max-width: $crab-breakpoint) {
+  .participateWrapDesktop {
+    display: none;
+  }
+
+  .participateWrapMobile {
+    display: block;
+  }
 }
 
 .participateBoxWrap {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+
+  @media screen and (max-width: 996px) {
+    flex-direction: column;
+  }
 }
 
 .participateBox {
@@ -269,6 +475,34 @@ $crab-breakpoint: 768px;
       font-weight: bold;
     }
   }
+
+  @media screen and (max-width: 996px) {
+    padding: 20px;
+
+    &:first-child {
+      margin-right: 0px;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media screen and (max-width: $crab-breakpoint) {
+    border-radius: 30px;
+    padding: 15px 10px;
+
+    &:first-child {
+      margin-right: 0px;
+      margin-bottom: 20px;
+    }
+
+    >img {
+      display: none;
+    }
+
+    >span {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
 }
 
 .kusamaDesc {
@@ -281,8 +515,29 @@ $crab-breakpoint: 768px;
 
   .descTitle {
     margin: 30px 0;
+
     >img {
       height: 66px;
+    }
+  }
+
+  @media screen and (max-width: 996px) {
+    margin-top: 220px;
+
+    .descTitle {
+      margin-top: 15px;
+    }
+  }
+
+  @media screen and (max-width: $crab-breakpoint) {
+    margin-top: 50px;
+
+    .descTitle {
+      margin-top: 80px;
+
+      >img {
+        height: 41px;
+      }
     }
   }
 
@@ -297,17 +552,32 @@ $crab-breakpoint: 768px;
     &:first-child {
       margin-bottom: 20px;
     }
+
+    @media screen and (max-width: 996px) {
+      padding: 10px 60px;
+    }
+
+    @media screen and (max-width: $crab-breakpoint) {
+      font-size: 14px;
+      line-height: 18px;
+      padding: 10px 0;
+    }
   }
 
   .btnDesc {
+    @extend %-btn-animate-base;
+
     padding: 5px 30px;
     background: #FFFFFF;
     border-radius: 20px;
     padding: 5px 50px;
     border: none;
+
     margin: 30px 0 {
       bottom: 60px;
-    };
+    }
+
+    ;
 
     >span {
       font-size: 14px;
@@ -326,4 +596,9 @@ $crab-breakpoint: 768px;
 .kusamaCrabBg {
   background: url('./img/crab-bg-desktop.png') center center no-repeat;
   background-size: 2370px;
+
+  @media screen and (max-width: $crab-breakpoint) {
+    background: url('./img//crab-bg-mobile.png') center center no-repeat;
+    background-size: 100% 100%;
+  }
 }

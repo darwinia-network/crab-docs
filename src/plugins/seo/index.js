@@ -13,7 +13,7 @@ module.exports = function (context, options) {
                     tagName: 'meta',
                     attributes: {
                         name: 'description',
-                        content: 'Crab Network (Crab for short) is a Canary Network for Darwinia. The positioning of Crab is similar to Polkadot’s Kusama Network. Expect Chaos is a reasonable expectation.',
+                        content: 'Darwinia Crab network is the canary network for Darwinia. It is the first cross-chain NFT blockchain in the Polkadot ecology, and provides the smart contract solution. Crab is going to participate in the Kusama Parachain Slot Auction.',
                     },
                 }],
             };
