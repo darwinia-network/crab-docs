@@ -22,6 +22,37 @@ module.exports = {
       'crab-tut-exchange'
     ],
 
+    "DVM": [
+      'dvm-intro',
+      'dvm-info',
+      {
+        'Concepts': [
+          'dvm-address',
+          'dvm-system-contract'
+        ]
+      },
+      {
+        'Wallets': [
+          'dvm-apps',
+          'dvm-metamask',
+          'dvm-smart-app'
+        ]
+      },
+      'dvm-explorer',
+      {
+        'Interaction': [
+          'dvm-rpc',
+          {
+            'Contract': [
+              'dvm-remix',
+              'dvm-truffle'
+            ]
+          }
+        ]
+      },
+      'dvm-eco'
+    ],                  
+
     'Pangolin Testnet': [
       'pangolin-home',
       'pangolin-tut-dvm-deposit',
