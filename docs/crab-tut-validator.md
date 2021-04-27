@@ -15,7 +15,7 @@ You can choose either run node with execute file download before or in docker wa
 - Run validator node with existed node binary
 
   ```bash
-  ./darwinia \
+  $ ./darwinia \
     --base-path <YOUR_DATA_DIR> \
     --name <YOUR_NODE_NAME> \
     --chain crab \
@@ -28,7 +28,7 @@ You can choose either run node with execute file download before or in docker wa
 - Using docker
 
   ```bash
-  docker run -it \
+  $ docker run -it \
     -v <YOUR_DATA_DIR>:/data \
     -p <YOUR_NODE_HTTP_PORT>:9933 \
     -p <YOUR_NODE_WSS_PORT>:9944 \
@@ -49,13 +49,7 @@ You can choose either run node with execute file download before or in docker wa
 Run the command on the shell where your validator node is running:
 
 ```sh
-$ curl http://127.0.0.1:9933 -H "Content-Type:application/json;charset=utf-8" -d \
-'{
-  "jsonrpc":"2.0",
-  "id":1,
-  "method":"author_rotateKeys",
-  "params": []
-}'
+$ curl http://127.0.0.1:9933 -H "Content-Type:application/json;charset=utf-8" -d '{ "jsonrpc":"2.0", "id":1, "method":"author_rotateKeys", "params": [] }'
 ```
 
 If there is no problem, a result similar to the following will be returned:
@@ -63,14 +57,15 @@ If there is no problem, a result similar to the following will be returned:
 ```json
 {
   "jsonrpc":"2.0", "result":"0xba99ecfb4a87357a44ee3765cf617a6d81adf8f43e522db52e348d2e9d45ccde12d53d562e14bb18523fbc3032b786f44b2b92340f4756386d4baec68bbfb882bbaccce1440c84d7f5b67c8ecb956345130d5dbd07adfeba3d9482f95d9dec6c68d085323e61590f850c38244dd2d2bc4055548d9edfd0471f47da7667c17fe8",
-  "id":1}
+  "id":1
+}
 ```
 
 The result is what you need when setting the session key.
 
 ### Staking
 
-Enter [Darwinia Wallet](https://apps.darwinia.network) and click the [Staking] column on the left , Click [Start staking].
+Enter [Crab Wallet](https://apps.darwinia.network) and click the [Staking] column on the left , Click [Start staking].
 
 ![nominate-1-en](assets/nominate-1-en.png)
 
@@ -130,23 +125,23 @@ Go to [staking scan] to view information about validators
 
 For security, you need to remove the rpc unsafe parameters and re-run your node:
 
-  ```bash
-  ./darwinia \
-      --base-path <YOUR_DATA_DIR> \
-      --name <YOUR_NODE_NAME> \
-      --chain crab \
-      --validator
-  ```
+```bash
+$ ./darwinia \
+    --base-path <YOUR_DATA_DIR> \
+    --name <YOUR_NODE_NAME> \
+    --chain crab \
+    --validator
+```
 
-  ```bash
-  docker run -it \
-    -v <YOUR_DATA_DIR>:/data \
-    quay.io/darwinia-network/darwinia:vx.x.x \
-      --base-path /data \
-      --name <YOUR_NODE_NAME> \
-      --chain crab \
-      --validator
-  ```
+```bash
+$ docker run -it \
+  -v <YOUR_DATA_DIR>:/data \
+  quay.io/darwinia-network/darwinia:vx.x.x \
+    --base-path /data \
+    --name <YOUR_NODE_NAME> \
+    --chain crab \
+    --validator
+```
 
 ## Other Staking operations
 
