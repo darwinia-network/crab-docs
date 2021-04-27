@@ -1,0 +1,26 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.firstSidebar.category.Crab Network": {
+    "message": "Crab 网络",
+    "description": "The label for category Crab Network in sidebar firstSidebar"
+  },
+  "sidebar.firstSidebar.category.Tutorials": {
+    "message": "教程",
+    "description": "The label for category Tutorials in sidebar firstSidebar"
+  },
+  "sidebar.firstSidebar.category.Staking": {
+    "message": "质押",
+    "description": "The label for category Staking in sidebar firstSidebar"
+  },
+  "sidebar.firstSidebar.category.Pangolin Testnet": {
+    "message": "Pangolin 测试网",
+    "description": "The label for category Pangolin Testnet in sidebar firstSidebar"
+  },
+  "sidebar.firstSidebar.category.Bridges": {
+    "message": "桥",
+    "description": "The label for category Bridges in sidebar firstSidebar"
+  }
+}
