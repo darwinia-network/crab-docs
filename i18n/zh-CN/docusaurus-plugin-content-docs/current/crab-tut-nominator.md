@@ -10,7 +10,7 @@ sidebar_label: 成为投票人
 
 ## 开始质押
 
-进入 [Darwinia Web Wallet](https://apps.darwinia.network)，点击左侧「抵押」栏目，点击「开始 staking」  
+进入 [Crab Web Wallet](https://apps.darwinia.network)，点击左侧「抵押」栏目，点击「开始 staking」  
 
 ![crab-tut-nominator-1](assets/crab-tut-nominator-1.png)
 

@@ -8,7 +8,7 @@ sidebar_label: 创建账户
 
 ### 方法 1： Darwinia Web Apps
 
-进入 [Darwinia Crab Web Wallet](https://apps.darwinia.network)，可在「账户」栏看到「添加账号」和「使用JSON恢复」两个按钮。
+进入 [Crab Web Wallet](https://apps.darwinia.network)，可在「账户」栏看到「添加账号」和「使用JSON恢复」两个按钮。
 
 ![create account](assets/crab-tut-create-account-1-cn.png)
 

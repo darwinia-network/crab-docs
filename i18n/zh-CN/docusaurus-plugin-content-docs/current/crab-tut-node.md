@@ -8,10 +8,10 @@ sidebar_label: 运行节点
 
 > 以下三种获取可执行文件方式任选其一。
 
-### 1. 从源码编译
+### 1. 源码编译
 
-- 编译环境配置，参考从 4.1 到 4.1.3 小节之前 https://github.com/darwinia-network/darwinia#41-hacking-on-darwinia
-- 启动命令行
+- 编译环境配置，[参考文档](https://github.com/darwinia-network/darwinia#41-hacking-on-darwinia)
+- 启动终端
 - 进入 darwinia 根目录
 - cargo build --release
 - 可以在 darwinia/target/release 下面找到编译好的可执行文件 darwinia(.exe)
