@@ -38,7 +38,7 @@ var cryptoUtil = require('@polkadot/util-crypto');
  */
 var checkResult = cryptoUtil.checkAddress('5EU6EEhZRbh1NQS7HRMwAogoBHWtT2eLFQWei2UZHUHJosHt', 42);
 
-console.log('-----check crab address----- \n' , checkResult);
+console.log('-----check crab address----- \n', checkResult);
 ```
 
 ### 生成地址
