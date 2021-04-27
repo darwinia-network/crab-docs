@@ -11,9 +11,9 @@ sidebar_label: Tools
 
 ## Explorer: 
 
-- [Subscan](https://crab.subscan.io/)
+- [Crab Subscan](https://crab.subscan.io/)
 
 ## Networks:
 
-- [Telemetry](https://telemetry.polkadot.io/#list/crab)
+- [Crab Telemetry](https://telemetry.polkadot.io/#list/crab)
 

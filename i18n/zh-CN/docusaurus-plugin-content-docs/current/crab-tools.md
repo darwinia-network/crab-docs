@@ -6,13 +6,13 @@ sidebar_label: 工具集
 
 ## 钱包
 
--  [Darwinia Web Wallet](https://apps.darwinia.network)
+-  [Crab Web Wallet](https://apps.darwinia.network)
 -  [Polkadot.js Browser Extension](https://github.com/polkadot-js/extension)
 
 ## 浏览器
 
-- [Subscan](https://crab.subscan.io/)
+- [Crab Subscan](https://crab.subscan.io/)
 
 ## 网络监控
 
-- [Telemetry](https://telemetry.polkadot.io/#list/crab)
+- [Crab Telemetry](https://telemetry.polkadot.io/#list/crab)
