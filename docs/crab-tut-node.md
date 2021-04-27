@@ -6,22 +6,24 @@ sidebar_label: Running a node
 
 ## Initial Setup
 
-### Choose one of the following 3 ways to obtain an executable file
+> Choose one of the following 3 ways to obtain an executable file
 
-#### 1. Compile from source
+### 1. Compile from source
 
-- Compiler environment configuration. Refer to sections 4.1 to 4.1.3 https://github.com/darwinia-network/darwinia#41-hacking-on-darwinia
+- Compiler environment configuration. Refer to https://github.com/darwinia-network/darwinia#41-hacking-on-darwinia
 - Enter the darwinia root directory
 - cargo build --release
 - The compiled executable file darwinia (.exe) can be found under darwinia/target/release
 
-#### 2. Download the compiled executable file
+### 2. Download the compiled executable file
 
 - https://github.com/darwinia-network/darwinia/releases
 
-#### 3. Docker
+### 3. Docker
 
-- `docker pull quay.io/darwinia-network/darwinia:vx.x.x`
+```sh
+$ docker pull quay.io/darwinia-network/darwinia:vx.x.x
+```
 
 ## Run
 
@@ -29,15 +31,12 @@ sidebar_label: Running a node
 ### Linux / MacOS
 
 ```sh
-./darwinia \
-    --base-path <YOUR_DATA_DIR> \
-    --name <YOUR_NODE_NAME> \
-    --chain crab
+$ ./darwinia --base-path <YOUR_DATA_DIR> --name <YOUR_NODE_NAME> --chain crab
 ```
 
 Add the `--ws-external` and `--rpc-cors all` options if you want to [remotely connect to this node](https://wiki.polkadot.network/docs/en/maintain-wss):
 
-```
+```sh
 ./darwinia \
     --base-path <YOUR_DATA_DIR> \
     --name <YOUR_NODE_NAME> \
@@ -48,8 +47,8 @@ Add the `--ws-external` and `--rpc-cors all` options if you want to [remotely co
 
 ### Docker
 
-```
-docker run -it \
+```sh
+$ docker run -it \
     -v <YOUR_DATA_DIR>:/data \
     quay.io/darwinia-network/darwinia:vx.x.x \
         --base-path /data \
@@ -60,8 +59,8 @@ docker run -it \
 Add the `--ws-external` and `--rpc-cors all` options and map out the rpc ports if you want to [remotely connect to this node](https://wiki.polkadot.network/docs/en/maintain-wss):
 
 
-```
-docker run -it \
+```sh
+$ docker run -it \
     -v <YOUR_DATA_DIR>:/data \
     -p <YOUR_NODE_HTTP_PORT>:9933 \
     -p <YOUR_NODE_WSS_PORT>:9944 \
@@ -74,7 +73,7 @@ docker run -it \
 ```
 #### View all parameter descriptions:
 
-```
+```sh
 ./darwinia --help
 ```
 

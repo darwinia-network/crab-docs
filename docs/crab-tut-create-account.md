@@ -4,15 +4,13 @@ title: Create an Account
 sidebar_label: Create an Account
 ---
 
-There are mainly three ways to generate a Darwinia account, you can choose either one based on your preference.  Once your account is created and you have your account `secret phrase` or `secret seed`, you can migrate your account from various medium by importing your account.  
+There are mainly three ways to generate a Crab account, you can choose either one based on your preference.  Once your account is created and you have your account `secret phrase` or `secret seed`, you can migrate your account from various medium by importing your account.  
 
-## 1. Darwinia Web Wallet
-
-### Switch to Crab Network
+## 1. Crab Web Wallet
 
 ![setting](assets/tut/create-account-0.png)
 
-Enter [Darwinia Crab Web Wallet](https://apps.darwinia.network), you can see two buttons "Add Account" and "Restore JSON" in the "Account" column.
+Enter [Crab Web Wallet](https://apps.darwinia.network), you can see two buttons "Add Account" and "Restore JSON" in the "Account" column.
 
 ![create account](assets/web-wallet-1-en.png)
 

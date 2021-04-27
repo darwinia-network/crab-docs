@@ -6,7 +6,7 @@ sidebar_label: 创建账户
 
 创建 Crab 帐户的方法有多种，您可以根据自己的喜好选择其中一种。如果您之前创建过帐户，则可直接通过 “助记词/私钥/JSON 文件” 等恢复/导入账户。  
 
-### 方法 1： Darwinia Web Apps
+### 方法 1： Crab Web Apps
 
 进入 [Crab Web Wallet](https://apps.darwinia.network)，可在「账户」栏看到「添加账号」和「使用JSON恢复」两个按钮。
 
