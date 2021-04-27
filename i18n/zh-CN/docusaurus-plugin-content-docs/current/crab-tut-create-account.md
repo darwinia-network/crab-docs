@@ -4,11 +4,11 @@ title: 创建账户
 sidebar_label: 创建账户
 ---
 
-创建 Darwinia 帐户的方法有多种，您可以根据自己的喜好选择其中一种。如果您之前创建过帐户，则可直接通过 “助记词/私钥/JSON 文件” 等恢复/导入账户。  
+创建 Crab 帐户的方法有多种，您可以根据自己的喜好选择其中一种。如果您之前创建过帐户，则可直接通过 “助记词/私钥/JSON 文件” 等恢复/导入账户。  
 
-### 方法一：Darwinia Web Apps
+### 方法 1： Darwinia Web Apps
 
-进入[Darwinia Crab Web Wallet](https://apps.darwinia.network)，可在「账户」栏看到「添加账号」和「使用JSON恢复」两个按钮。
+进入 [Darwinia Crab Web Wallet](https://apps.darwinia.network)，可在「账户」栏看到「添加账号」和「使用JSON恢复」两个按钮。
 
 ![create account](assets/crab-tut-create-account-1-cn.png)
 
@@ -60,7 +60,7 @@ sidebar_label: 创建账户
    > 务必备份好`助记词、私钥、JSON文件`等。备份 JSON 文件时，请注意保管密码，密码丢失将无法通过 JSON 文件恢复地址，但可通过助记词、私钥重新导入。
 
 
-### 方法二：Polkadot.js 浏览器插件
+### 方法 2： Polkadot.js 浏览器插件
 
 **安装浏览器插件**
 
@@ -86,7 +86,7 @@ sidebar_label: 创建账户
 
 > Crab网络与Substrate共享相同的`Network ID`，如果在生成帐户时需要选择网络，请选择`Substrate`。
 
-### 方法三：Subkey
+### 方法 3：Subkey
 
 对于熟悉命令行和编译 Rust 代码的技术高级用户，建议使用 Subkey。Subkey 允许您在可以编译代码的任何设备上生成密钥。Subkey 可能对使用自动运行的设备（而不是运行 iOS 或 Android 的设备或其他特定用途的设备）的自动生成帐户有用。不建议一般用户使用。
 

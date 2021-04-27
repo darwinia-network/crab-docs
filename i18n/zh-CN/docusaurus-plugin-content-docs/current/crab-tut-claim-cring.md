@@ -1,25 +1,33 @@
 ---
 id: crab-tut-claim-cring
-title: 领取空投的 CRING
-sidebar_label: 领取空投的 CRING
+title: 空投
+sidebar_label: 空投
 ---
 
-## 领取条件
+## 空投计划
 
-请查看：[Crab 网络空投](./crab-airdrop.md)
+Crab 网络初始供应量中一部分 CRING 已经空投给 RING & DOT 的持有者，RING & DOT 的持有者可以免费获得 CRING 空投。
 
-## 准备
+Darwinia 官方已于 2020年3月20日13:50（GMT +8:00），对 RING & DOT 的持有者进行了快照，RING & DOT的持有者可在 Crab 网络上线后自行查询/领取。
 
-> 推荐在PC 端使用 Chrome 浏览器 + Metamask / Tronlink 插件完成领取操作！
+- DOT 的空投比例：1 DOT = 50 CRING
+- RING 的空投比例：1 RING = 1 CRING
 
-- Crab 地址：https://apps.darwinia.network/#/account
-> 如没有 Crab 地址，生成方式请参考：[如何创建或导入Darwinia Crab 地址](crab-tut-create-account)
+> 快照包含 ERC-20 和 TRC-20 的 RING，包括古灵阁中存单部分，KTON 不在此次快照范围。
 
-- 插件下载地址：
-  - Metamask：(https://metamask.io/)
-  - Tronlink：(https://www.tronlink.org/)
 
-## 查询空投数量
+## 领取空投
+
+### 准备
+
+> 推荐在 PC 端使用 Chrome 浏览器 + Metamask / Tronlink 插件完成领取操作！
+
+1. Crab 网络地址，如需创建请参考：[如何创建或导入 Crab 地址](crab-tut-create-account)
+2. 插件下载地址：
+    -  Metamask：(https://metamask.io/)
+    -  Tronlink：(https://www.tronlink.org/)
+
+### 查询空投数量
 
 1、通过 Chrome 浏览器，访问：https://claim.darwinia.network/
 
@@ -31,7 +39,7 @@ sidebar_label: 领取空投的 CRING
 
 ![03_claim_search](assets/03_claim_search.png)
 
-## 领取CRING空投
+### 领取 CRING 空投
 
 1、通过 Chrome 浏览器或手机钱包，访问 CRING [领取工具](https://claim.darwinia.network/)
 
@@ -51,7 +59,7 @@ sidebar_label: 领取空投的 CRING
 
 ![07_claim_copy](assets/07_claim_copy.png)
 
-6、打开[达尔文钱包-认领模块](<https://apps.darwinia.network/#/claims>)：<https://apps.darwinia.network/#/claims>,选中刚刚填写的接收空投的地址，点击「继续」。
+6、打开 [达尔文钱包-认领模块](<https://apps.darwinia.network/#/claims>)：<https://apps.darwinia.network/#/claims>，选中刚刚填写的接收空投的地址，点击「继续」。
 
 ![08_claim_chooseaccount](assets/08_claim_chooseaccount.png)
 

@@ -1,41 +1,33 @@
 ---
 id: crab-tut-exchange
-title: 交易所接入Crab网络指南
-sidebar_label: 交易所接入Crab网络指南
+title: 操作指南
+sidebar_label: 交易所接入
 ---
-
-Darwinia Crab Network 是Darwinia 达尔文网络的先行网，定位类似Kusama 网络之于 Polkadot。Crab网络是波卡生态第一条跨链NFT链，低费率，并提供智能合约解决方案，兼容以太坊虚拟机，支持Defi，NFT等Dapps轻松迁移至波卡。 达尔文生态进化星球游戏新大陆已经开放在Crab网络上，集成NFT盲盒Gamefi挖矿等玩法。Crab网络即将参与波卡Kusama平行链插槽拍卖。
-
 
 ## 基本信息
 
-- 官网：https://crab.network/ (under construction)  
-- 链浏览器：https://crab.subscan.io/  
-- 代码：https://github.com/darwinia-network/darwinia  
-- 出块时间：6 秒  
+- 官方网站： https://crab.network/
+- 链浏览器： https://crab.subscan.io/  
+- 代码仓库： https://github.com/darwinia-network/darwinia  
+- 出块时间： 6 秒  
 - 公共 Websocket RPC：[wss://crab-rpc.darwinia.network](wss://crab-rpc.darwinia.network)  
 - 公共 Http RPC：https://crab-rpc.darwinia.network  
-- CRING
+- 代币信息
 
-    符号：CRING  
-    全称：Darwinia Crab Network Native Token  
-    精度：9
+| 代币名称 |  精度 | 全称                                |
+| -------| -----|  -----------------------------------|
+| CRING  | 9    | Darwinia Crab Network Native Token  |
+| CKTON  | 9    | Darwinia Crab Commitment Token      |
 
-- CKTON
+## 运行全节点
 
-    符号：CKTON  
-    全称：Darwinia Crab Commitment Token  
-    精度：9
+见 [如何运行一个全节点](crab-tut-node.md)
 
-## 节点安装并运行
+## 使用指南
 
-见[如何运行一个节点](crab-tut-node.md)
+### 地址检查
 
-## 使用
-
-### Check address correctness
-
-```
+```js
 var cryptoUtil = require('@polkadot/util-crypto');
 
 /**
@@ -49,8 +41,9 @@ var checkResult = cryptoUtil.checkAddress('5EU6EEhZRbh1NQS7HRMwAogoBHWtT2eLFQWei
 console.log('-----check crab address----- \n' , checkResult);
 ```
 
-### Generate address
-```
+### 生成地址
+
+```js
 var cryptoUtil = require('@polkadot/util-crypto');
 
 // buffer is an ArrayBuffer
@@ -84,24 +77,26 @@ cryptoUtil.cryptoWaitReady().then(() => {
 })
 ```
 
-### Get the latest block height
-```
-curl 'http-rpc-url' -X POST -H "Content-Type：application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getFinalizedHead","params":[]}'
+### 获取链的最新高度
+
+```sh
+$ curl 'http-rpc-url' -X POST -H "Content-Type：application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getFinalizedHead","params":[]}'
 ```
 
-### Get the specified block information by hash
+### 获取指定区块信息
 
 ```
-curl 'http-rpc-url' -X POST -H "Content-Type：application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getBlock","params":["0xb375d7db4d737bdbfb8f8089d7b4589fd9fe68a535d448b44dcf9aa2ef8eed17"]}'
+$ curl 'http-rpc-url' -X POST -H "Content-Type：application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getBlock","params":["0xb375d7db4d737bdbfb8f8089d7b4589fd9fe68a535d448b44dcf9aa2ef8eed17"]}'
 ```
 
-### Get details of a transaction
+### 获取交易详情
 ```
-curl 'http-rpc-url' -X POST -H "Content-Type：application/json"  --data '{"hash"："0x04af51c980a9152ad8319f73a85d13305e273be8ebd3cc979c18f4ad14e716d6"}' https://crab.subscan.io/api/scan/extrinsic
+$ curl 'http-rpc-url' -X POST -H "Content-Type：application/json"  --data '{"hash"："0x04af51c980a9152ad8319f73a85d13305e273be8ebd3cc979c18f4ad14e716d6"}' https://crab.subscan.io/api/scan/extrinsic
 ```
 
 * How to judge and avoid a fake deposit
-    ```
+
+    ```sh
     1. Check whether the transaction is successful
     result["data"]["success"] == true;
     
@@ -126,9 +121,9 @@ curl 'http-rpc-url' -X POST -H "Content-Type：application/json"  --data '{"hash
     value = event["params"][2]["value"] / 1_000_000_000
     ```
 
-### Transfer
+### 转账
 
-```
+```sh
 yarn add @polkadot/api
 yarn add @polkadot/keyring
 yarn add @darwinia/types
@@ -165,14 +160,16 @@ const hash = await transfer.signAndSend(A);
 console.log('Transfer sent with hash', hash.toHex());
 ```
 
-### Transfer：Offline signature with online broadcast
-https://github.com/darwinia-network/darwinia-polkadotjs-typegen/blob/master/src/test/index.ts
+### 转账（链下签名）
 
-### Get address balance
+[参考](https://github.com/darwinia-network/darwinia-polkadotjs-typegen/blob/master/src/test/index.ts)
+
+### 获取账户余额
+
+```sh
+$ curl 'http-rpc-url' -X POST -H "Content-Type：application/json" --data '{"id":6,"jsonrpc":"2.0","method":"balances_usableBalance","params":[0, ss58地址]}' 
 ```
-curl 'http-rpc-url' -X POST -H "Content-Type：application/json" --data '{"id":6,"jsonrpc":"2.0","method":"balances_usableBalance","params":[0, ss58地址]}' 
-```
 
-### Prevention of chain forks
+### 分叉预防
 
-Waiting for block finalized
+请基于 Finalized 区块操作。

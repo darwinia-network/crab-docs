@@ -15,7 +15,7 @@ sidebar_label: 成为验证人
 - 本地启动验证人节点
 
   ```bash
-  ./darwinia \
+  $ ./darwinia \
     --base-path <YOUR_DATA_DIR> \
     --name <YOUR_NODE_NAME> \
     --chain crab \
@@ -28,7 +28,7 @@ sidebar_label: 成为验证人
 - Docker 启动验证人节点
 
   ```bash
-  docker run -it \
+  $ docker run -it \
     -v <YOUR_DATA_DIR>:/data \
     -p <YOUR_NODE_HTTP_PORT>:9933 \
     quay.io/darwinia-network/darwinia:vx.x.x \
@@ -49,13 +49,7 @@ sidebar_label: 成为验证人
 节点运行成功后，执行如下命令：
 
 ```sh
-curl http://127.0.0.1:9933 -H "Content-Type:application/json;charset=utf-8" -d \
-'{
-  "jsonrpc":"2.0",
-  "id":1,
-  "method":"author_rotateKeys",
-  "params": []
-}'
+$ curl http://127.0.0.1:9933 -H "Content-Type:application/json;charset=utf-8" -d '{ "jsonrpc":"2.0", "id":1, "method":"author_rotateKeys", "params": []}'
 ```
 
 如果没有问题，那么会返回类似下面的结果：

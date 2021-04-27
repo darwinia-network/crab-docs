@@ -3,18 +3,16 @@ module.exports = {
     "Crab Network": [
       'crab-home', 
       'crab-tools', 
-      'crab-airdrop',
       'crab-crowdloan',
       'crab-parameters'
     ],
 
-    'Tutorials': [
+    '常用教程': [
       'crab-tut-create-account',
-      'crab-tut-get-free-cring',
       'crab-tut-claim-cring',
       'crab-tut-node',
       {
-        'Staking': [
+        '质押': [
           'crab-tut-validator',
           'crab-tut-nominator'
         ]
@@ -26,13 +24,13 @@ module.exports = {
       'dvm-intro',
       'dvm-info',
       {
-        'Concepts': [
+        '概念': [
           'dvm-address',
           'dvm-system-contract'
         ]
       },
       {
-        'Wallets': [
+        '钱包': [
           'dvm-apps',
           'dvm-metamask',
           'dvm-smart-app'
@@ -40,10 +38,10 @@ module.exports = {
       },
       'dvm-explorer',
       {
-        'Interaction': [
+        '链上交互': [
           'dvm-rpc',
           {
-            'Contract': [
+            '合约': [
               'dvm-remix',
               'dvm-truffle'
             ]
