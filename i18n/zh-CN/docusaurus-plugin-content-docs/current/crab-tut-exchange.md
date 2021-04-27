@@ -85,12 +85,13 @@ $ curl 'http-rpc-url' -X POST -H "Content-Type：application/json"  --data '{"id
 
 ### 获取指定区块信息
 
-```
+```sh
 $ curl 'http-rpc-url' -X POST -H "Content-Type：application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getBlock","params":["0xb375d7db4d737bdbfb8f8089d7b4589fd9fe68a535d448b44dcf9aa2ef8eed17"]}'
 ```
 
 ### 获取交易详情
-```
+
+```sh
 $ curl 'http-rpc-url' -X POST -H "Content-Type：application/json"  --data '{"hash"："0x04af51c980a9152ad8319f73a85d13305e273be8ebd3cc979c18f4ad14e716d6"}' https://crab.subscan.io/api/scan/extrinsic
 ```
 
@@ -129,7 +130,7 @@ yarn add @polkadot/keyring
 yarn add @darwinia/types
 ```
 
-```
+```js
 const { ApiPromise } = require('@polkadot/api');
 const { Keyring } = require('@polkadot/keyring');
 

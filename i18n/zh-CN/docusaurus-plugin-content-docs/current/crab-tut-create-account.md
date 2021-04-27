@@ -101,7 +101,7 @@ $ cargo build -p subkey
 成功安装 Subkey 后，运行：
 
 ```shell
-subkey -n substrate generate
+$ subkey -n substrate generate
 ```
 
 您应该看到类似下面的信息弹出： **save all of this information somewhere secure you will not be able to recover your account if you lose your phrase or seed.**

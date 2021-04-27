@@ -22,20 +22,19 @@ sidebar_label: 运行节点
 
 ### 3. Docker
 
-- `docker pull quay.io/darwinia-network/darwinia:vx.x.x`
+```sh
+$ docker pull quay.io/darwinia-network/darwinia:vx.x.x
+```
 
 ## 运行
 
 ### Linux / MacOS
 
 ```sh
-$ ./darwinia \
-    --base-path <YOUR_DATA_DIR> \
-    --name <YOUR_NODE_NAME> \
-    --chain crab
+$ ./darwinia --base-path <YOUR_DATA_DIR> --name <YOUR_NODE_NAME> --chain crab
 ```
 
-如果你想 [远程连接节点](https://wiki.polkadot.network/docs/en/maintain-wss), 请在运行参数里增加 `--ws-external` and `--rpc-cors all`：
+如果你想 [远程连接节点](https://wiki.polkadot.network/docs/en/maintain-wss), 请在运行参数里增加 `--ws-external` and `--rpc-cors all`>
 
 ```
 $ ./darwinia \
