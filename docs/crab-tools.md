@@ -1,19 +1,19 @@
 ---
 id: crab-tools
-title: Crab Network Tools
+title: Tools
 sidebar_label: Tools
 ---
 
-## Wallet: 
+## Wallet
 
 -  [Polkadot.js Browser Extension](https://github.com/polkadot-js/extension)
--  [Darwinia Crab Wallet](https://apps.darwinia.network/#/accounts)
+-  [Crab Web Wallet](https://apps.darwinia.network/#/accounts)
 
-## Explorer: 
+## Explorer 
 
 - [Crab Subscan](https://crab.subscan.io/)
 
-## Networks:
+## Networks Monitor
 
 - [Crab Telemetry](https://telemetry.polkadot.io/#list/crab)
 

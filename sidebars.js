@@ -7,12 +7,12 @@ module.exports = {
       'crab-parameters'
     ],
 
-    '常用教程': [
+    'Tutorials': [
       'crab-tut-create-account',
       'crab-tut-claim-cring',
       'crab-tut-node',
       {
-        '质押': [
+        'Staking': [
           'crab-tut-validator',
           'crab-tut-nominator'
         ]
@@ -24,13 +24,13 @@ module.exports = {
       'dvm-intro',
       'dvm-info',
       {
-        '概念': [
+        'Overview': [
           'dvm-address',
           'dvm-system-contract'
         ]
       },
       {
-        '钱包': [
+        'Wallets': [
           'dvm-apps',
           'dvm-metamask',
           'dvm-smart-app'
@@ -38,10 +38,10 @@ module.exports = {
       },
       'dvm-explorer',
       {
-        '链上交互': [
+        'Interaction': [
           'dvm-rpc',
           {
-            '合约': [
+            'Contract': [
               'dvm-remix',
               'dvm-truffle'
             ]
