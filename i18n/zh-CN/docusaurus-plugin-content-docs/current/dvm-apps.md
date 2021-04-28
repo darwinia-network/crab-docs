@@ -14,6 +14,9 @@ sidebar_label: Apps
 
 2. 查询余额
 
-    点击左侧 `工具箱`，`RPC请求`，`balances` 模块输入 Substrate 账户查询对应的账户余额。
+    点击左侧 `工具箱`，`RPC请求`，`balances` 模块输入:
     
+    - accountId： 待查询余额的 Substrate 账户
+    - tokentype： 0 查询账户 RING 余额，1 表示查询账户 KTON 余额
+
     ![dvm query balance](assets/dvm/dvm-apps-1.png)
