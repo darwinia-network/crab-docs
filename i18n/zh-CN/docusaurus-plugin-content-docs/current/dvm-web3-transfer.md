@@ -1,10 +1,10 @@
 ---
-id: pangolin-tut-dvm-transfer
+id: dvm-web3-transfer
 title: 转账
-sidebar_label: 转账
+sidebar_label: Web3 转账交易
 ---
 
-## 准备工作
+## 准备
 
 1. 安装 nodejs
 

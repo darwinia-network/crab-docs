@@ -44,7 +44,8 @@ module.exports = {
           {
             'Contract': [
               'dvm-remix',
-              'dvm-web3'
+              'dvm-web3-contract',
+              'dvm-web3-transfer'
             ]
           }
         ]
@@ -54,8 +55,6 @@ module.exports = {
 
     'Pangolin Testnet': [
       'pangolin-home',
-      'pangolin-tut-dvm-contract',
-      'pangolin-tut-dvm-transfer',
       {
         'Bridges': [
           'pangolin-bridge-ropsten'

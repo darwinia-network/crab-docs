@@ -1,18 +1,18 @@
 ---
-id: pangolin-tut-dvm-contract
-title: Play with contract
-sidebar_label: Play with contract
+id: dvm-web3-contract
+title: Web3 SDK
+sidebar_label: Web3 部署合约
 ---
 
-## Preparations
+## 准备
 
-1. Install Node.js
+1. 安装 Node.js
 
 ```sh
 $ sudo apt install -y nodejs
 ```
 
-2. install web3, solc package
+2. 安装 web3， solc 工具包
 
 ```sh
 $ mkdir incrementer && cd incrementer/
@@ -21,16 +21,16 @@ $ npm install --save web3
 $ npm install --save solc@0.6.10
 ```
 
-3. The project layout as follows:
+3. 项目初始化后，如下：
 
 ```sh
 $ ls incrementer/
 compile.js  deploy.js  get.js  Incrementer.sol  increment.js  node_modules/  package.json  package-lock.json  reset.js
 ```
 
-## Play with contract
+## 玩转合约
 
-A simple solidity contract demo.
+准备一个合约，这里是一个简单演示合约：
 
 ```js
 // Incrementer.sol
@@ -53,7 +53,7 @@ contract Incrementer {
 }
 ```
 
-### Deploy contract
+### 部署合约
 
 ```js
 // compile.js
@@ -127,22 +127,22 @@ const deploy = async () => {
  deploy();
 ```
 
-Deploy contract using the command:
+输入以下命令进行合约部署：
 
 ```sh
 $ node deploy.js
 ```
 
-The output:
+输出：
 
 ```sh
 Attempting to deploy from account: 0x6Be02d1d3665660d22FF9624b7BE0551ee1Ac91b
 Contract deployed at address 0x5c4242beB94dE30b922f57241f1D02f36e906915
 ```
 
-The contract address `0x5c4242beB94dE30b922f57241f1D02f36e906915`.
+合约地址为 `0x5c4242beB94dE30b922f57241f1D02f36e906915`.
 
-### Get number
+### 获取 number 值
 
 ```js
 // get.js
@@ -167,20 +167,20 @@ const get = async () => {
 get();
 ```
 
-Run command below:
+运行：
 
 ```sh
 $ node get.js
 ```
 
-The output:
+结果：
 
 ```sh
 aking a call to contract at address 0x5c4242beB94dE30b922f57241f1D02f36e906915
 The current number stored is: 5
 ```
 
-### Set number
+### 改变 number 值
 
 ```js
 // increment.js
@@ -222,20 +222,20 @@ const increment = async () => {
 increment();
 ```
 
-Run command:
+运行：
 
 ```sh
 $ node increment.js 
 ```
 
-The output:
+结果：
 
 ```sh
 Calling the increment by 3 function in contract at address 0x5c4242beB94dE30b922f57241f1D02f36e906915
 Tx successfull with hash: 0x259078d1eefb40b9859748e2116c5bed04360583d5309e9d6947458bb5e1d0f9
 ```
 
-Get the number value:
+再次查询 number 值：
 
 ```sh
 $ node get.js
@@ -243,7 +243,7 @@ Making a call to contract at address 0x5c4242beB94dE30b922f57241f1D02f36e906915
 The current number stored is: 8
 ```
 
-### Reset number
+### 重置 number 值
 
 ```js
 // reset.js
@@ -284,20 +284,20 @@ const reset = async () => {
 reset();
 ```
 
-Run command:
+运行：
 
 ```sh
 $ node reset.js
 ```
 
-The output:
+结果：
 
 ```sh
 Calling the reset function in contract at address 0x5c4242beB94dE30b922f57241f1D02f36e906915
 Tx successfull with hash: 0x79b8b47ba82e271cd6e105b07743f2a2f470b5fa923a0c97d7f75ce3a3bcceac
 ```
 
-Get the number value:
+再次查询 number 值：
 
 ```sh
 $ node get.js

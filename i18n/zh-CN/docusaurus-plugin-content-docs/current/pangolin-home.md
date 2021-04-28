@@ -1,7 +1,7 @@
 ---
 id: pangolin-home
 title: Pangolin 测试网
-sidebar_label: Pangolin 测试网
+sidebar_label: 介绍
 ---
 
 Pangolin 是 Darwinia 和 Crab 网络的无价值测试网，主要面向开发者测试使用。

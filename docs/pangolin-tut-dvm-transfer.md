@@ -1,5 +1,5 @@
 ---
-id: pangolin-tut-dvm-transfer
+id: dvm-transfer
 title: Transfer
 sidebar_label: Transfer
 ---
