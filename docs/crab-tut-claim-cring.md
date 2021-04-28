@@ -65,7 +65,7 @@ Please select the following signature tools and download according to the usage 
 
 4. Fill in the Darwinia Crab address that accepts CRING. After confirming that it is correct, click [Submit].
 
-    >️If there is no Darwinia Crab address, please refer to the generation method: [如何创建或导入Darwinia Crab 地址](crab-tut-create-account)
+    >️ If there is no Darwinia Crab address, please refer to the generation method: [How to create Crab account](crab-tut-create-account)
 
 ![claim_submitaccount](assets/05_en.png)
 
