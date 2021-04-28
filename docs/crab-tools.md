@@ -13,7 +13,7 @@ sidebar_label: Tools
 
 - [Crab Subscan](https://crab.subscan.io/)
 
-## Networks Monitor
+## Network Monitors
 
 - [Crab Telemetry](https://telemetry.polkadot.io/#list/crab)
 

@@ -7,11 +7,11 @@ sidebar_label: Exchange Access Guide
 ## Basic Informations
 
 - Official website: https://crab.network/
-- Blockchain Explorer: https://crab.subscan.io/  
-- Code: https://github.com/darwinia-network/darwinia  
+- Blockchain explorer: https://crab.subscan.io/  
+- Code repository: https://github.com/darwinia-network/darwinia  
 - Block time: 6 seconds  
-- Public Websocket RPC: [wss://crab-rpc.darwinia.network](wss://crab-rpc.darwinia.network)  
-- Public Http RPC: https://crab-rpc.darwinia.network  
+- Public WebSocket RPC: [wss://crab-rpc.darwinia.network](wss://crab-rpc.darwinia.network)  
+- Public HTTP RPC: https://crab-rpc.darwinia.network  
 
 | Symbol |  Precision | Name                          |
 | -------| -----|  -----------------------------------|
