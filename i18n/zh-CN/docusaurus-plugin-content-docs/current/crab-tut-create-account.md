@@ -8,17 +8,17 @@ sidebar_label: 创建账户
 
 ### 方法 1：Crab Web Apps
 
-进入 [Crab Web Wallet](https://apps.darwinia.network)，可在「账户」栏看到「添加账号」和「使用JSON恢复」两个按钮。
+进入 [Crab Web Wallet](https://apps.darwinia.network)，可在`账户` 栏看到 `添加账号` 和 `使用JSON恢复` 两个按钮。
 
 ![create account](assets/crab-tut-create-account-1-cn.png)
 
 **新建账号**
 
-点击「添加账号」，在设置完账户基本信息后，点击「保存」按钮。（默认只显示“助记词“，”私钥“需切换）
+点击 `添加账号`，在设置完账户基本信息后，点击 `保存` 按钮。（默认只显示“助记词“，”私钥“需切换）
 
 ![create account](assets/crab-tut-create-account-2-cn.png)
 
-点击「创建并且备份账户」按钮，备份该账户“JSON 文件”
+点击 `创建并且备份账户` 按钮，备份该账户“JSON 文件”
 
 ![create account](assets/crab-tut-create-account-3-cn.png)
 
@@ -26,13 +26,13 @@ sidebar_label: 创建账户
 
 **通过 JSON 恢复账号**
 
-如之前创建过账号，且备份有 JSON 文件，可直接选择「使用JSON恢复」。
+如之前创建过账号，且备份有 JSON 文件，可直接选择 `使用JSON恢复`。
 
 ![create account](assets/crab-tut-create-account-4-cn.png)
 
-**通过「助记词」恢复账号**
+**通过 `助记词` 恢复账号**
 
-如忘记 JSON 文件密码，可通过「助记词」进行恢复。点击「添加账号」，将助记词替换成原先账户的助记词即可。（名称和密码均可重新设置）
+如忘记 JSON 文件密码，可通过 `助记词` 进行恢复。点击 `添加账号`，将助记词替换成原先账户的助记词即可。（名称和密码均可重新设置）
 
 ![create account](assets/crab-tut-create-account-5-cn.png)
 
@@ -49,11 +49,11 @@ sidebar_label: 创建账户
 
 `密钥加密类型` 选择账号的加密类型，session 账号只能使用 Edwards (ed25519) 。
 
-- 点击「开始生成」，等待账户生成，点击「 + 」选择您心仪的账户进行备份。
+- 点击 `开始生成`，等待账户生成，点击 `+` 选择您心仪的账户进行备份。
 
 ![faucet-2-cn](assets/faucet-2-cn.png)
 
-- 点击「保存」，根据你的使用习惯，选择备份原始种子或 JSON 文件
+- 点击 `保存`，根据你的使用习惯，选择备份原始种子或 JSON 文件
 
 ![faucet-3-cn](assets/faucet-3-cn.png)
 
@@ -70,7 +70,7 @@ sidebar_label: 创建账户
 
 **新建账户**
 
-单击扩展程序打开 “帐户管理” 对话框，单击「创建新帐户」按钮，然后按照说明进行操作。
+单击扩展程序打开 “帐户管理” 对话框，单击 `创建新帐户` 按钮，然后按照说明进行操作。
 
 ![polkadot-js](assets/polkadot-js-2-cn.png)
 
