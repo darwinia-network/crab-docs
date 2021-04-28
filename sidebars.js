@@ -43,7 +43,7 @@ module.exports = {
           {
             'Contract': [
               'dvm-remix',
-              'dvm-truffle'
+              'dvm-web3'
             ]
           }
         ]
