@@ -1,5 +1,5 @@
 ---
-id: pangolin-tut-dvm-withdraw
+id: dvm-withdraw
 title: Withdraw from a DVM address
 sidebar_label: Withdraw from a DVM address
 ---

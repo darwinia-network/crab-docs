@@ -32,9 +32,11 @@ module.exports = {
         'Wallets': [
           'dvm-apps',
           'dvm-metamask',
-          'dvm-smart-app'
+          'dvm-smart-app',
         ]
       },
+      'dvm-deposit',
+      'dvm-withdraw',
       'dvm-explorer',
       {
         'Interaction': [
@@ -52,8 +54,6 @@ module.exports = {
 
     'Pangolin Testnet': [
       'pangolin-home',
-      'pangolin-tut-dvm-deposit',
-      'pangolin-tut-dvm-withdraw',
       'pangolin-tut-dvm-contract',
       'pangolin-tut-dvm-transfer',
       {

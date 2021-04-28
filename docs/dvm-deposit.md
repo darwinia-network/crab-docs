@@ -1,5 +1,5 @@
 ---
-id: pangolin-tut-dvm-deposit
+id: dvm-deposit
 title: Deposit to a DVM address
 sidebar_label: Deposit to a DVM address
 ---
