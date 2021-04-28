@@ -5,8 +5,8 @@ sidebar_label: 成为验证人
 ---
 
 > - Staking 是基于 PoS（Proof of Stake/权益证明）的共识机制，代币持有人通过质押、投票、委托和锁定等行为获取收益。  
-> - 在参与 Staking 之前，请确保有至少拥有 **1** 个 Darwinia 地址，如果您持有较多代币或对安全性要求较高，建议准备 **2** 个 Darwinia 地址。没有地址请参考：[如何创建账户](crab-tut-create-account.md)。  
-> - Darwinia 地址内需准备少许 CRING，作为交易手续费。没有 CRING 请参考：[如何通过水龙头获得免费的CRING](crab-tut-claim-cring.md)。
+> - 在参与 Staking 之前，请确保有至少拥有 **1** 个 Crab 地址，如果您持有较多代币或对安全性要求较高，建议准备 **2** 个 Crab 地址。没有地址请参考：[如何创建账户](crab-tut-create-account.md)。  
+> - Crab 地址内需准备少许 CRING，作为交易手续费。
 
 ### 运行验证人节点
 
