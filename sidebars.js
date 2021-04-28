@@ -22,7 +22,6 @@ module.exports = {
 
     "DVM": [
       'dvm-intro',
-      'dvm-info',
       {
         'Overview': [
           'dvm-address',
