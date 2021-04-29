@@ -11,7 +11,7 @@ sidebar_label: Metamask
 1. 安装 Metamask 插件，自行下载安装。
 2. 添加自定义网络，这里以添加 Pangolin 测试网络为例，不同网络配置参数不同。
 
-![dvm](assets/dvm/pangolin-home-02.png)
+![dvm](assets/dvm/dvm-metamask-0.png)
 
 ![dvm](assets/dvm/dvm-metamask-1.png)
 

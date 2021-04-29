@@ -11,7 +11,7 @@ As the DVM and the Ethereum Virtual Machine remain compatible in terms of underl
 1. Install the Metamask plugin, download and install it yourself. 
 2. Add a custom network, here is an example of adding a Pangolin test network, different networks have different configuration parameters.
 
-![dvm](assets/dvm/pangolin-home-02.png)
+![dvm](assets/dvm/dvm-metamask-0.png)
 
 ![dvm](assets/dvm/dvm-metamask-1.png)
 
