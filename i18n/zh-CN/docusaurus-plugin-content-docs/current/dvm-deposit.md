@@ -14,16 +14,16 @@ DVM 账户地址充值的过程实际上是，给 DVM 地址关联的 Substrate 
 
 打开 `Apps` > `ToolBox` > `DVM address`，输入 DVM 地址后，关联的 Substrate 地址就生成了。
 
-![create substrate address](assets/pangolin/pangolin-tut-dvm-deposit-01.png)
+![create substrate address](assets/dvm/dvm-deposit-1.png)
 
 ## 充值
 
 使用 [Web Wallet(Apps)](https://apps.darwinia.network/#/account) 向这个 Substrate 地址转账。
 
-![transfer pring](assets/pangolin/pangolin-tut-dvm-deposit-02.png)
+![transfer pring](assets/dvm/dvm-deposit-2.png)
 
 点击 `Make Transfer` 然后 交易成功。
 
 ## Metamask 确认到账
 
-![confirm balance in mataMask](assets/pangolin/pangolin-tut-dvm-deposit-03.png)
+![confirm balance in mataMask](assets/dvm/dvm-deposit-3.png)

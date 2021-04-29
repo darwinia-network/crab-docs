@@ -37,7 +37,7 @@ $ ./darwinia --base-path <YOUR_DATA_DIR> --name <YOUR_NODE_NAME> --chain crab
 Add the `--ws-external` and `--rpc-cors all` options if you want to [remotely connect to this node](https://wiki.polkadot.network/docs/en/maintain-wss):
 
 ```sh
-./darwinia \
+$ ./darwinia \
     --base-path <YOUR_DATA_DIR> \
     --name <YOUR_NODE_NAME> \
     --chain crab \
@@ -74,7 +74,7 @@ $ docker run -it \
 #### View all parameter descriptions:
 
 ```sh
-./darwinia --help
+$ ./darwinia --help
 ```
 
 > It is recommended to use systemctl, pm2, tmux, screen and other tools to maintain the process.

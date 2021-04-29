@@ -1,7 +1,7 @@
 ---
 id: dvm-withdraw
 title: Withdraw from a DVM address
-sidebar_label: Withdraw from a DVM address
+sidebar_label: Withdraw
 ---
 
 DVM account withdrawal refers to the action of transfering tokens from a DVM address to a Darwinia address.
