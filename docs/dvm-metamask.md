@@ -11,9 +11,9 @@ As the DVM and the Ethereum Virtual Machine remain compatible in terms of underl
 1. Install the Metamask plugin, download and install it yourself. 
 2. Add a custom network, here is an example of adding a Pangolin test network, different networks have different configuration parameters.
 
-![add testnet](assets/dvm/pangolin-home-02.png)
+![dvm](assets/dvm/pangolin-home-02.png)
 
-![set testnet](assets/dvm/dvm-metamask-1.png)
+![dvm](assets/dvm/dvm-metamask-1.png)
 
 The different network configuration are as follows.
 
@@ -22,7 +22,7 @@ The different network configuration are as follows.
 | Pangolin | http://pangolin-rpc.darwinia.network | 43     | PRING   | https://pangolin.subscan.io/ |
 | Crab     | http://crab-rpc.darwinia.network     | 44     | CRING   | https://crab.subscanio/      |   
 
-![set testnet success](assets/dvm/dvm-metamask-2.png)
+![dvm](assets/dvm/dvm-metamask-2.png)
 
 ### Transfer
 
@@ -30,18 +30,18 @@ Demonstrating how to use Metamask to transfer and query transactions in a DVM on
 
 1. Click `Send` and enter the transfer parameters. 
 
-![set testnet success](assets/dvm/dvm-metamask-3.png)
-![set testnet success](assets/dvm/dvm-metamask-4.png)
+![dvm](assets/dvm/dvm-metamask-3.png)
+![dvm](assets/dvm/dvm-metamask-4.png)
 
 2. Click `Confirm` to send transaction.
 
-![set testnet success](assets/dvm/dvm-metamask-5.png)
+![dvm](assets/dvm/dvm-metamask-5.png)
 
 3. The transfer executed successfully.
 
-![set testnet success](assets/dvm/dvm-metamask-6.png)
+![dvm](assets/dvm/dvm-metamask-6.png)
 
 4. View details of the transaction execution in your browser.
 
-![set testnet success](assets/dvm/dvm-metamask-7.png)
-![set testnet success](assets/dvm/dvm-metamask-8.png)
+![dvm](assets/dvm/dvm-metamask-7.png)
+![dvm](assets/dvm/dvm-metamask-8.png)

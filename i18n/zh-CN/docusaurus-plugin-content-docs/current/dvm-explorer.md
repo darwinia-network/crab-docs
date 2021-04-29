@@ -10,20 +10,20 @@ sidebar_label: 浏览器
 
 切换网络，选择想要查询数据的网络。
 
-![set testnet](assets/dvm/dvm-explorer-0.png)
+![dvm](assets/dvm/dvm-explorer-0.png)
 
 ## 查看交易信息
 
 搜索框输入 DVM 交易哈希，点击 `搜索` 即可。
 
-![set testnet](assets/dvm/dvm-explorer-1.png)
+![dvm](assets/dvm/dvm-explorer-1.png)
 
 交易信息如下所示：
 
-![set testnet](assets/dvm/dvm-explorer-3.png)
+![dvm](assets/dvm/dvm-explorer-3.png)
 
 ## 查看账户信息
 
-![set testnet](assets/dvm/dvm-explorer-2.png)
+![dvm](assets/dvm/dvm-explorer-2.png)
 
 如上图所示，可以清楚地展示出 DVM 账户和 Substrate 账户之间的对应关系，账户余额，质押以及交易历史等信息。

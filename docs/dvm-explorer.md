@@ -10,18 +10,18 @@ sidebar_label: Explorer
 
 Switch network and select the network for which you want to query data.
 
-![set testnet](assets/dvm/dvm-explorer-0.png)
+![dvm](assets/dvm/dvm-explorer-0.png)
 
 ## Get transaction information
 
 Enter the DVM transaction hash in the search box and click `Search`.
 
-![set testnet](assets/dvm/dvm-explorer-1.png)
+![dvm](assets/dvm/dvm-explorer-1.png)
 
-![set testnet](assets/dvm/dvm-explorer-3.png)
+![dvm](assets/dvm/dvm-explorer-3.png)
 
 ## Get account information
 
-![set testnet](assets/dvm/dvm-explorer-2.png)
+![dvm](assets/dvm/dvm-explorer-2.png)
 
 As shown above, the relationship between the DVM account and the Substrate account, the account balance, the staking and the transaction history can be clearly displayed.
