@@ -80,19 +80,19 @@ cryptoUtil.cryptoWaitReady().then(() => {
 ### Get the latest block height
 
 ```sh
-curl 'http-rpc-url' -X POST -H "Content-Type: application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getFinalizedHead","params":[]}'
+$ curl 'http-rpc-url' -X POST -H "Content-Type: application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getFinalizedHead","params":[]}'
 ```
 
 ### Get the specified block information by hash
 
 ```sh
-curl 'http-rpc-url' -X POST -H "Content-Type: application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getBlock","params":["0xb375d7db4d737bdbfb8f8089d7b4589fd9fe68a535d448b44dcf9aa2ef8eed17"]}'
+$ curl 'http-rpc-url' -X POST -H "Content-Type: application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getBlock","params":["0xb375d7db4d737bdbfb8f8089d7b4589fd9fe68a535d448b44dcf9aa2ef8eed17"]}'
 ```
 
 ### Get details of a transaction
 
 ```sh
-curl 'http-rpc-url' -X POST -H "Content-Type: application/json"  --data '{"hash": "0x04af51c980a9152ad8319f73a85d13305e273be8ebd3cc979c18f4ad14e716d6"}' https://crab.subscan.io/api/scan/extrinsic
+$ curl 'http-rpc-url' -X POST -H "Content-Type: application/json"  --data '{"hash": "0x04af51c980a9152ad8319f73a85d13305e273be8ebd3cc979c18f4ad14e716d6"}' https://crab.subscan.io/api/scan/extrinsic
 ```
 
 * How to judge and avoid a fake deposit
@@ -124,10 +124,10 @@ value = event["params"][2]["value"] / 1_000_000_000
 
 ### Transfer
 
-```sj
-yarn add @polkadot/api
-yarn add @polkadot/keyring
-yarn add @darwinia/types
+```sh
+$ yarn add @polkadot/api
+$ yarn add @polkadot/keyring
+$ yarn add @darwinia/types
 ```
 
 ```js
@@ -168,7 +168,7 @@ https://github.com/darwinia-network/darwinia-polkadotjs-typegen/blob/master/src/
 ### Get address balance
 
 ```sh
-curl 'http-rpc-url' -X POST -H "Content-Type: application/json" --data '{"id":6,"jsonrpc":"2.0","method":"balances_usableBalance","params":[0, ss58地址]}' 
+$ curl 'http-rpc-url' -X POST -H "Content-Type: application/json" --data '{"id":6,"jsonrpc":"2.0","method":"balances_usableBalance","params":[0, ss58地址]}' 
 ```
 
 ### Prevention of chain forks

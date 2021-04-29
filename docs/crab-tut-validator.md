@@ -5,8 +5,8 @@ sidebar_label: Become a validator
 ---
 
 > - Staking is a consensus mechanism based on PoS (Proof of Stake / Proof of Stake). Token holders obtain rewards and benefits through pledge, voting, delegation, and locking.  
-> - Before participating in staking, please make sure you have at least **1** Darwinia address. If you hold more tokens or have higher security requirements, it is recommended to prepare **2** Darwinia addresses. If there is no address, please refer to: [How to create an account](crab-tut-create-account.md).  
-> - A small amount of CRING must be prepared in Darwinia-Crab Network's address as fee. If you have no CRING, please refer to: [How to get free CRING through faucet](crab-tut-claim-cring.md).
+> - Before participating in staking, please make sure you have at least **1** Crab address. If you hold more tokens or have higher security requirements, it is recommended to prepare **2** Crab addresses. If there is no address, please refer to: [How to create an account](crab-tut-create-account.md).  
+> - A small amount of CRING must be prepared in Crab Network's address as fee. 
 
 ### Run your validator node
 
@@ -65,7 +65,7 @@ The result is what you need when setting the session key.
 
 ### Staking
 
-Enter [Crab Wallet](https://apps.darwinia.network) and click the [Staking] column on the left , Click [Start staking].
+Enter [Crab Wallet](https://apps.darwinia.network) and click the `Staking` column on the left , Click `Start staking`.
 
 ![nominate-1-en](assets/nominate-1-en.png)
 
@@ -87,35 +87,35 @@ Fill in the staking parameters
 
 > If you unlock CRING in advance within the lock limit, you will be charged  a penalty of 3 times the CKTON reward (In the absence of sufficient CKTON, the CRING can not be used for payment of fines).
 
-After filling in the staking parameters, please click [bond] and [submit]
+After filling in the staking parameters, please click `bond` and `submit`
 
 ![nominate-3-en](assets/nominate-3-en.png)
 
 ### To be Validator
 
-Click [Set session keys] on this page, completing the generated session keys and submit.
+Click `Set session keys` on this page, completing the generated session keys and submit.
 
 > The session key must be filled with real data, otherwise it will result in missing blocks and be slashed.
 
 ![tut-validator-1](assets/tut-validator-1.png)
 
-After confirming, click [sign and submit]
+After confirming, click `sign and submit`
 
 > The identities of the validator and the nominator are mutually exclusive and cannot coexist. If you are running a validator, you need to cancel the validator before proceeding with the nomination.
 
 ![tut-validator-2](assets/tut-validator-2.png)
 
-Click [validate] and set the validator parameters
+Click `validate` and set the validator parameters
 
 `Reward commission percentage` Set the proportion of the node's priority distribution of income, the range is 0-100. (Example: If a 5% reward commission is set, this node will first receive 5% of the node's revenue, and the remaining 95% of the node's revenue will be distributed in proportion to the amount of mortgages validated by the validator and nominator; Validator's income = node reward commission + mortgage reward share)
 
 ![tut-validator-3](assets/tut-validator-3.png)
 
-After confirming, click [sign and submit]」
+After confirming, click `sign and submit`
 
 ![tut-validator-4](assets/tut-validator-4.png)
 
-Go to [staking scan] to view information about validators
+Go to `staking scan` to view information about validators
 
 ![tut-validator-5](assets/tut-validator-5.png)
 
