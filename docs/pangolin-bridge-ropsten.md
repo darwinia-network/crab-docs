@@ -4,7 +4,7 @@ title: Ropsten Bridge
 sidebar_label: Ropsten Bridge
 ---
 
-## Rangolin > Ropsten
+## Pangolin > Ropsten
 
 ### Relay Contract
 
