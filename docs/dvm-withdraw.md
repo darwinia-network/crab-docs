@@ -18,10 +18,10 @@ DVM account withdrawal refers to the action of transfering tokens from a DVM add
 
 `Apps` > `Toolbox` - `DVM Withdraw`, and click `Connect`.
 
-![connect](assets/pangolin/pangolin-tut-dvm-withdraw-01.png)
+![connect](assets/dvm/dvm-withdraw-1.png)
 
 2. Withdraw
 
 Once you connected to Metamask successfully, fill in the withdrawal address and amount. Then click `Withdraw`.
 
-![withdraw](assets/pangolin/pangolin-tut-dvm-withdraw-02.png)
+![withdraw](assets/dvm/dvm-withdraw-2.png)
