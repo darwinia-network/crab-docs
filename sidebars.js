@@ -3,14 +3,12 @@ module.exports = {
     "Crab Network": [
       'crab-home', 
       'crab-tools', 
-      'crab-airdrop',
       'crab-crowdloan',
       'crab-parameters'
     ],
 
     'Tutorials': [
       'crab-tut-create-account',
-      'crab-tut-get-free-cring',
       'crab-tut-claim-cring',
       'crab-tut-node',
       {
@@ -22,12 +20,41 @@ module.exports = {
       'crab-tut-exchange'
     ],
 
+    "DVM": [
+      'dvm-intro',
+      {
+        'Overview': [
+          'dvm-address',
+          'dvm-system-contract'
+        ]
+      },
+      {
+        'Wallets': [
+          'dvm-apps',
+          'dvm-metamask',
+          'dvm-smart-app',
+        ]
+      },
+      'dvm-deposit',
+      'dvm-withdraw',
+      'dvm-explorer',
+      {
+        'Interaction': [
+          'dvm-rpc',
+          {
+            'Contract': [
+              'dvm-remix',
+              'dvm-web3-contract',
+              'dvm-web3-transfer'
+            ]
+          }
+        ]
+      },
+      'dvm-eco'
+    ],                  
+
     'Pangolin Testnet': [
       'pangolin-home',
-      'pangolin-tut-dvm-deposit',
-      'pangolin-tut-dvm-withdraw',
-      'pangolin-tut-dvm-contract',
-      'pangolin-tut-dvm-transfer',
       {
         'Bridges': [
           'pangolin-bridge-ropsten'

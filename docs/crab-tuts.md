@@ -12,5 +12,4 @@ sidebar_label: Tutorials
 
 ## Other
 - Create an Account [View Guide](crab-tut-create-account)
-- Get free CRING (test coin) [View Guide](crab-tut-get-free-cring)
 - Claim your CRING (test coin) [View Guide](crab-tut-claim-cring)

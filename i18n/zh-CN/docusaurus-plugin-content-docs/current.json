@@ -22,5 +22,21 @@
   "sidebar.firstSidebar.category.Bridges": {
     "message": "桥",
     "description": "The label for category Bridges in sidebar firstSidebar"
+  },
+  "sidebar.firstSidebar.category.Overview": {
+    "message": "概览",
+    "description": "The label for category Overview in sidebar firstSidebar"
+  },
+  "sidebar.firstSidebar.category.Wallets": {
+    "message": "钱包",
+    "description": "The label for category Wallets in sidebar firstSidebar"
+  },
+  "sidebar.firstSidebar.category.Interaction": {
+    "message": "链上交互",
+    "description": "The label for category Interaction in sidebar firstSidebar"
+  },
+  "sidebar.firstSidebar.category.Contract": {
+    "message": "合约操作",
+    "description": "The label for category Contract in sidebar firstSidebar"
   }
 }

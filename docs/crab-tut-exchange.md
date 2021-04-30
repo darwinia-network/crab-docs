@@ -1,40 +1,33 @@
 ---
 id: crab-tut-exchange
-title: Darwinia Crab Exchange Access Guide
-sidebar_label: Darwinia Crab Exchange Access Guide
+title: Exchange Access Guide
+sidebar_label: Exchange Access Guide
 ---
 
-# Darwinia Crab Exchange Access Guide
+## Basic Informations
 
-Darwinia Network is a decentralized cross-chain bridge network building on Substrate, which is the "Golden Gate Bridge" of the cross-chain ecology. It provides the safest general bridge solution, connecting Polkadot, Ethereum, TRON and other heterogeneous chains by cross-chain assets transfer and general remote chain call. Also, its main application areas include Defi, cross-chain NFT trading market, games, etc.
-
-## Informations
-
-- Official website: https://crab.network/ (under construction)  
-- Blockchain Explorer: https://crab.subscan.io/  
-- Code: https://github.com/darwinia-network/darwinia  
+- Official website: https://crab.network/
+- Blockchain explorer: https://crab.subscan.io/  
+- Code repository: https://github.com/darwinia-network/darwinia  
 - Block time: 6 seconds  
-- Public Websocket RPC: [wss://crab-rpc.darwinia.network](wss://crab-rpc.darwinia.network)  
-- Public Http RPC: https://crab-rpc.darwinia.network  
-- CRING  
-    Symbol: CRING  
-    Name: Darwinia Crab Network Native Token  
-    Precision: 9
+- Public WebSocket RPC: [wss://crab-rpc.darwinia.network](wss://crab-rpc.darwinia.network)  
+- Public HTTP RPC: https://crab-rpc.darwinia.network  
 
-- CKTON  
-    Symbol: CKTON  
-    Name: Darwinia Crab Commitment Token  
-    Precision: 9
+| Symbol |  Precision | Name                          |
+| -------| -----|  -----------------------------------|
+| CRING  | 9    | Darwinia Crab Network Native Token  |
+| CKTON  | 9    | Darwinia Crab Commitment Token      |
 
-## Full node installation and running
 
-See [How to run a node](crab-tut-node.md)
+## Full node running
+
+See [How to run a full node](crab-tut-node.md)
 
 ## Usages
 
 ### Check address correctness
 
-```
+```js
 var cryptoUtil = require('@polkadot/util-crypto');
 
 /**
@@ -49,7 +42,8 @@ console.log('-----check crab address----- \n' , checkResult);
 ```
 
 ### Generate address
-```
+
+```js
 var cryptoUtil = require('@polkadot/util-crypto');
 
 // buffer is an ArrayBuffer
@@ -84,56 +78,59 @@ cryptoUtil.cryptoWaitReady().then(() => {
 ```
 
 ### Get the latest block height
-```
-curl 'http-rpc-url' -X POST -H "Content-Type: application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getFinalizedHead","params":[]}'
+
+```sh
+$ curl 'http-rpc-url' -X POST -H "Content-Type: application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getFinalizedHead","params":[]}'
 ```
 
 ### Get the specified block information by hash
 
-```
-curl 'http-rpc-url' -X POST -H "Content-Type: application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getBlock","params":["0xb375d7db4d737bdbfb8f8089d7b4589fd9fe68a535d448b44dcf9aa2ef8eed17"]}'
+```sh
+$ curl 'http-rpc-url' -X POST -H "Content-Type: application/json"  --data '{"id":1,"jsonrpc":"2.0","method":"chain_getBlock","params":["0xb375d7db4d737bdbfb8f8089d7b4589fd9fe68a535d448b44dcf9aa2ef8eed17"]}'
 ```
 
 ### Get details of a transaction
-```
-curl 'http-rpc-url' -X POST -H "Content-Type: application/json"  --data '{"hash": "0x04af51c980a9152ad8319f73a85d13305e273be8ebd3cc979c18f4ad14e716d6"}' https://crab.subscan.io/api/scan/extrinsic
+
+```sh
+$ curl 'http-rpc-url' -X POST -H "Content-Type: application/json"  --data '{"hash": "0x04af51c980a9152ad8319f73a85d13305e273be8ebd3cc979c18f4ad14e716d6"}' https://crab.subscan.io/api/scan/extrinsic
 ```
 
 * How to judge and avoid a fake deposit
-    ```
-    1. Check whether the transaction is successful
-    result["data"]["success"] == true;
-    
-    2. Check if the transaction is a transfer
-    // CRING
-    const event = result["event"].find(event => {
-        event["module_id"] == "balances" && event["event_id"] == "Transfer" 
-    }); 
-    
-    // CKTON
-    const event = result["event"].find(event => {
-        event["module_id"] == "kton" && event["event_id"] == "Transfer" 
-    });
-    
-    3. Check if the transaction is finalized
-    result["data"]["finalized"] == true;
-    
-    4. Confirm the receipt address and quantity
-    event["params"][1]["value"] == Deposit Address
-    
-    5. Get the value transfered
-    value = event["params"][2]["value"] / 1_000_000_000
-    ```
+
+```
+1. Check whether the transaction is successful
+result["data"]["success"] == true;
+
+2. Check if the transaction is a transfer
+// CRING
+const event = result["event"].find(event => {
+    event["module_id"] == "balances" && event["event_id"] == "Transfer" 
+}); 
+
+// CKTON
+const event = result["event"].find(event => {
+    event["module_id"] == "kton" && event["event_id"] == "Transfer" 
+});
+
+3. Check if the transaction is finalized
+result["data"]["finalized"] == true;
+
+4. Confirm the receipt address and quantity
+event["params"][1]["value"] == Deposit Address
+
+5. Get the value transfered
+value = event["params"][2]["value"] / 1_000_000_000
+```
 
 ### Transfer
 
-```
-yarn add @polkadot/api
-yarn add @polkadot/keyring
-yarn add @darwinia/types
+```sh
+$ yarn add @polkadot/api
+$ yarn add @polkadot/keyring
+$ yarn add @darwinia/types
 ```
 
-```
+```js
 const { ApiPromise } = require('@polkadot/api');
 const { Keyring } = require('@polkadot/keyring');
 
@@ -165,11 +162,13 @@ console.log('Transfer sent with hash', hash.toHex());
 ```
 
 ### Transfer: Offline signature with online broadcast
+
 https://github.com/darwinia-network/darwinia-polkadotjs-typegen/blob/master/src/test/index.ts
 
 ### Get address balance
-```
-curl 'http-rpc-url' -X POST -H "Content-Type: application/json" --data '{"id":6,"jsonrpc":"2.0","method":"balances_usableBalance","params":[0, ss58地址]}' 
+
+```sh
+$ curl 'http-rpc-url' -X POST -H "Content-Type: application/json" --data '{"id":6,"jsonrpc":"2.0","method":"balances_usableBalance","params":[0, ss58地址]}' 
 ```
 
 ### Prevention of chain forks

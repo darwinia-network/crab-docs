@@ -5,13 +5,13 @@ sidebar_label: Become a nominator
 ---
 
 > - Staking is a consensus mechanism based on PoS (Proof of Stake / Proof of Stake). Token holders obtain rewards and benefits through pledge, voting, delegation, and locking.  
-> - Before participating in staking, please make sure you have at least **1** Darwinia address. If you hold more tokens or have higher security requirements, it is recommended to prepare **2** Darwinia addresses. If there is no address, please refer to: [How to create an account](crab-tut-create-account.md).  
-> - A small amount of CRING must be prepared in  Darwinia-Crab Network's address as fee. If you have no CRING, please refer to: [How to get free CRING through faucet](crab-tut-claim-cring.md).
+> - Before participating in staking, please make sure you have at least **1** Crab address. If you hold more tokens or have higher security requirements, it is recommended to prepare **2** Crab addresses. If there is no address, please refer to: [How to create an account](crab-tut-create-account.md).  
+> - A small amount of CRING must be prepared in Crab Network's address as fee.
 
 
 ## Start Staking
 
-Enter [Darwinia Wallet](https://apps.darwinia.network) and lick the [Staking] column on the left , Click [Start staking]
+Enter [Darwinia Wallet](https://apps.darwinia.network) and lick the `Staking` column on the left , Click `Start staking`
 
 ![nominate-1-en](assets/nominate-1-en.png)
 
@@ -33,7 +33,7 @@ Fill in the staking parameters
 
  > If you unlock CRING in advance within the lock limit, you will be charged  a penalty of 3 times the CKTON reward (In the absence of sufficient CKTON, the CRING can not be used for payment of fines).
 
-After filling in the staking parameters, please click [bond] and [submit]
+After filling in the staking parameters, please click `bond` and `submit`
 
 ![nominate-3-en](assets/nominate-3-en.png)
 
@@ -41,7 +41,7 @@ After filling in the staking parameters, please click [bond] and [submit]
 
 > The identities of the validator and the nominator are mutually exclusive and cannot coexist. If you are running a validator, you need to cancel the validator before proceeding with the nomination.
 
-After completing the staking parameters, click [Nominate] on this page
+After completing the staking parameters, click `Nominate` on this page
 
 ![nominate-4-en](assets/wiki-tut-nominator-4-en.png)
 

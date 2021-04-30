@@ -1,24 +1,25 @@
 ---
 id: crab-parameters
-title: Crab网络参数
-sidebar_label: Crab网络参数
+title: 网络参数
+sidebar_label: 网络参数
 ---
 
-> This page intends to reflect current network configurations, it reflects the [runtime file](https://github.com/darwinia-network/darwinia-common/blob/master/bin/node-template/runtime/src/lib.rs), which is still a work in progress. 
+> 本节内容旨在说明 Crab 网络的一些关键参数， 全部参数请查询 [Runtime File Setting](https://github.com/darwinia-network/darwinia/blob/master/runtime/crab/src/lib.rs)。
 
-## Consensus
+## 共识机制
 
-| Parameter               | Value   |
-| ----------------------- | ------- |
-| **Consensus Mechanism** | BABE    |
-| **Finality Gadget**     | GRANDPA |
+| 参数          | 机制   |
+| ------------- | ------|
+| **区块生成**   | BABE    |
+| **链一致性**  | GRANDPA |
 
-## Accounts and Transactions
+## 共识参数设置
 
-| Parameter               | Value                     | Description                                                                   |
-| ----------------------- | ------------------------- | ----------------------------------------------------------------------------- |
-| **Reaping Threshold**   | 0.1 CRING and 0.001 CKTON | The minimum balance required in the account to create or maintain an account. |
-| **Transaction Minimum** | 0                         | The Min. amount you can send to an Darwinia Address.                          |
+| Crab     | 时长     | Slots |
+| -------- | ---------| ----- |
+| Block    | 6 秒     | 1     |
+| Epoch    | 1 小时    | 600   |
+| Era      | 6 小时    | 3600 |
 
 ## Identity
 
@@ -29,17 +30,9 @@ sidebar_label: Crab网络参数
 | Sub-Account Deposit                              | 2 CRING   | Amount required to deposit in order to create a sub account. |
 | Maximum Sub-Accounts                             | 100       | The maximum number of sub account an account may have.       |
 
-## Periods of common actions and attributes
-
-| Darwinia | Time      | Slots |
-| -------- | --------- | ----- |
-| Block    | 6 seconds | 1     |
-| Epoch    | 1 hour    | 600   |
-| Era      | 6 hours   | 3,600 |
-
 **A maximum of one block per slot can be in a chain.*
 
-## Staking, Validating, and Nominating
+## 验证人相关
 
 | Darwinia                | Time                               | Slots                                                      | Description                                                                                                                                      |
 | ----------------------- | ---------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -50,7 +43,7 @@ sidebar_label: Crab网络参数
 | Slash defer duration    | 14 days                            | 201,600                                                    | Prevents overslashing and validators "escaping" and getting their nominators slashed with no repercussions to themselves                         |
 | Slash Cancellation Vote | Requires 3/4 of Council to Approve |                                                            |                                                                                                                                                  |
 
-## Governance 
+## 治理 
 
 | Democracy        | Time   | Slots   | Description                                                                                                                                                  |
 | ---------------- | ------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -63,10 +56,12 @@ sidebar_label: Crab网络参数
 | Term duration | 1 day | 3,600 | The length of a council member's term until the next election round. |
 | Voting period | 1 day | 3,600 | The council's voting period for motions.                             |
 
-| Technical committee     | Time    | Slots   | Description                                                                                    |
-| ----------------------- | ------- | ------- | ---------------------------------------------------------------------------------------------- |
-| Cool-off period         | 7 days  | 100,800 | The time a veto from the technical committee lasts before the proposal can be submitted again. |
-| Emergency voting period | 3 hours | 1,800   | The voting period after the technical committee expedites voting.                              |
+## 技术委员会
+
+| 技术委员会     | 时长    | Slots   | 描述                                                                                    |
+| -------------| ------- | ------- | ---------------------------------------------------------------------------------------------- |
+| 冷静期        | 7 天    | 100,800 | The time a veto from the technical committee lasts before the proposal can be submitted again. |
+| 紧急投票期     | 3 小时  | 1,800   | The voting period after the technical committee expedites voting.                              |
 
 ## Treasury
 
@@ -76,11 +71,11 @@ sidebar_label: Crab网络参数
 | Proposal Bond               | 5% and minumum 1000 CRING | The amount required to bond in order to propose a treasury spend. If approved, it is returned, if the proposal fails, it is burnt. |
 | Burn unspent treasury funds | Off                       | This deactivates a burn of all  unspent treasury funds at the end of a budgeting period.                                           |
 
-## SS58 Address Format
-| Network Alias | Network ID | Network Type     |
-| ------------- | ---------- | ---------------- |
-| darwinia      | 18         | Darwinia Mainnet |
-| crab          | 42         | Crab Network     |
+## SS58 地址格式
+
+| 网络名称       | 网络 ID |
+| ------------- | -------|
+| Crab Network  | 42     |
 
 ## Seed Nodes
 

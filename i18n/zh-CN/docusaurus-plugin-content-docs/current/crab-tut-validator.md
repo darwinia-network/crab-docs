@@ -5,8 +5,8 @@ sidebar_label: 成为验证人
 ---
 
 > - Staking 是基于 PoS（Proof of Stake/权益证明）的共识机制，代币持有人通过质押、投票、委托和锁定等行为获取收益。  
-> - 在参与 Staking 之前，请确保有至少拥有 **1** 个 Darwinia 地址，如果您持有较多代币或对安全性要求较高，建议准备 **2** 个 Darwinia 地址。没有地址请参考：[如何创建账户](crab-tut-create-account.md)。  
-> - Darwinia 地址内需准备少许 CRING，作为交易手续费。没有 CRING 请参考：[如何通过水龙头获得免费的CRING](crab-tut-claim-cring.md)。
+> - 在参与 Staking 之前，请确保有至少拥有 **1** 个 Crab 地址，如果您持有较多代币或对安全性要求较高，建议准备 **2** 个 Crab 地址。没有地址请参考：[如何创建账户](crab-tut-create-account.md)。  
+> - Crab 地址内需准备少许 CRING，作为交易手续费。
 
 ### 运行验证人节点
 
@@ -15,7 +15,7 @@ sidebar_label: 成为验证人
 - 本地启动验证人节点
 
   ```bash
-  ./darwinia \
+  $ ./darwinia \
     --base-path <YOUR_DATA_DIR> \
     --name <YOUR_NODE_NAME> \
     --chain crab \
@@ -28,7 +28,7 @@ sidebar_label: 成为验证人
 - Docker 启动验证人节点
 
   ```bash
-  docker run -it \
+  $ docker run -it \
     -v <YOUR_DATA_DIR>:/data \
     -p <YOUR_NODE_HTTP_PORT>:9933 \
     quay.io/darwinia-network/darwinia:vx.x.x \
@@ -49,13 +49,7 @@ sidebar_label: 成为验证人
 节点运行成功后，执行如下命令：
 
 ```sh
-curl http://127.0.0.1:9933 -H "Content-Type:application/json;charset=utf-8" -d \
-'{
-  "jsonrpc":"2.0",
-  "id":1,
-  "method":"author_rotateKeys",
-  "params": []
-}'
+$ curl http://127.0.0.1:9933 -H "Content-Type:application/json;charset=utf-8" -d '{ "jsonrpc":"2.0", "id":1, "method":"author_rotateKeys", "params": []}'
 ```
 
 如果没有问题，那么会返回类似下面的结果：
@@ -72,7 +66,7 @@ result 就是新生成的属于该节点的 session keys。下面会用到。
 
 ### 质押
 
-进入 [Darwinia Web Wallet](https://apps.darwinia.network)，点击左侧「抵押」栏目，点击「开始 Staking」
+进入 [Darwinia Web Wallet](https://apps.darwinia.network)，点击左侧 `抵押` 栏目，点击 `开始 Staking`
 
 ![crab-tut-nominator-1](assets/crab-tut-nominator-1.png)
 
@@ -94,13 +88,13 @@ result 就是新生成的属于该节点的 session keys。下面会用到。
 
 > 如提前赎回有承诺期限的 CRING，需要支付获得奖励 **3** 倍的 CKTON 惩罚 (在 CKTON 不足的情况下，不可以使用 CRING 来代缴罚金)。
 
-填写好 Staking 参数后，请点击「冻结」，签名并提交
+填写好 Staking 参数后，请点击 `冻结`，签名并提交
 
 ![crab-tut-nominator-3](assets/crab-tut-nominator-3.png)
 
 ### 参选验证人
 
-点击「session 账号」，输入刚刚生成的 session keys，点击「设置session keys」提交。
+点击 `session 账号`，输入刚刚生成的 session keys，点击 `设置session keys` 提交。
 
 > session keys 务必填写真实数据，否则会导致漏块，从而收到经济惩罚。
 
@@ -112,17 +106,17 @@ result 就是新生成的属于该节点的 session keys。下面会用到。
 
 > 验证人和提名人的身份是互斥的，不可并存。如果您正在提名其他验证人，需要取消提名操作后，再进行后续的操作。
 
-点击「验证」，开始设置验证人参数
+点击 `验证`，开始设置验证人参数
 
 `奖励佣金百分比` 设置本节点优先分配收益的比重，范围为 **0-100%**。（例：如设置了 **5%** 的奖励佣金，本节点将优先获得节点收益的 **5%**，剩下 **95%** 的节点收益，将依据验证人和投票人抵押的金额，按比例分配；也就是说，`验证人的收益 = 节点奖励佣金 + 抵押奖励分成`）
 
 ![tut-validator-3-cn](assets/tut-validator-3-cn.png)
 
-确认无误后，点击「签名并提交」
+确认无误后，点击 `签名并提交`
 
 ![tut-validator-4-cn](assets/tut-validator-4-cn.png)
 
-去「浏览器」查看当前验证人的相关信息
+去 `浏览器` 查看当前验证人的相关信息
 
 ![tut-validator-5-cn](assets/tut-validator-5-cn.png)
 

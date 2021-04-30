@@ -4,7 +4,7 @@ title: Ropsten 桥
 sidebar_label: Ropsten 桥
 ---
 
-## Rangolin > Ropsten
+## Pangolin > Ropsten
 
 ### Relay Contract
 
