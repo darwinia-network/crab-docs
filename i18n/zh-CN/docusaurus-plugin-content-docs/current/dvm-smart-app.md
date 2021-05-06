@@ -14,4 +14,3 @@ sidebar_label: 概述
 
 ![smart app](assets/dvm/smart-app/overview/00.png)
 ![smart app](assets/dvm/smart-app/overview/01.png)
-
