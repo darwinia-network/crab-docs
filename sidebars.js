@@ -31,12 +31,18 @@ module.exports = {
       {
         'Wallets': [
           'dvm-apps',
-          'dvm-metamask',
-          'dvm-smart-app',
+          'dvm-metamask', 
+          {
+            'Smart App':[
+              'dvm-smart-app',
+              'dvm-deposit',
+              'dvm-withdraw'
+            ]
+          }
         ]
       },
-      'dvm-deposit',
-      'dvm-withdraw',
+      // 'dvm-deposit',
+      // 'dvm-withdraw',
       'dvm-explorer',
       {
         'Interaction': [
