@@ -6,22 +6,41 @@ sidebar_label: Withdraw
 
 DVM account withdrawal refers to the action of transfering tokens from a DVM address to a Darwinia address.
 
-### Preparations
+## Preparation
 
-- Metamask (with dvm account imported)
-- [Darwinia Web Wallet(Apps)](https://apps.darwinia.network/#/account), which provides withdraw tool
-- Target Darwinia address
+Generate a Substrate account to receive `PRING/PKTON`.
 
-### Withdraw
+## Withdraw
 
-1. Connect [Apps](https://apps.darwinia.network/#/account) with Metamask
+> Note: The [Metamask Extension](https://metamask.io/) is required before you can use the Smart App.
 
-`Apps` > `Toolbox` - `DVM Withdraw`, and click `Connect`.
+Open [Smart App](https://smart.darwinia.network/), click the arrow in the circle and set it from Smart to Substrate.
 
-![connect](assets/dvm/dvm-withdraw-1.png)
+![smart app](assets/dvm/smart-app/withdraw/00.png)
 
-2. Withdraw
+Select the associated DVM account(the balance of this account is not empty).
 
-Once you connected to Metamask successfully, fill in the withdrawal address and amount. Then click `Withdraw`.
+![smart app](assets/dvm/smart-app/withdraw/02.png)
 
-![withdraw](assets/dvm/dvm-withdraw-2.png)
+Once the association has been successfully established, like this:
+
+![smart app](assets/dvm/smart-app/withdraw/03.png)
+
+Enter the address of your Substrate account prepared in advance, e.g.`2rPQTYLVvDToHK9efx9XMNZiAZ8uBYA3JJTdzqaTE9JynmsG`.
+
+![smart app](assets/dvm/smart-app/withdraw/04.png)
+
+Click on `Confirm`. 
+
+![smart app](assets/dvm/smart-app/withdraw/05.png)
+
+Check and tick the last two, `Confirm` to sign and send the transaction.
+
+![smart app](assets/dvm/smart-app/withdraw/06.png)
+
+## Confirm Arrival
+
+Check your balance in Subscan:
+
+![smart app](assets/dvm/smart-app/withdraw/07.png)
+
