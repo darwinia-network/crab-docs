@@ -8,7 +8,7 @@ DVM 账户提款指的是将 DVM 账户中的资产转账到 Substrate 地址的
 
 ## 准备 
 
-准备一个接收 `PRING` 的 Substrate 账户。
+准备一个接收 `PRING/PKTON` 的 Substrate 账户。
 
 ## 提取
 
