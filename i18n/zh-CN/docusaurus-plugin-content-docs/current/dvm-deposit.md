@@ -1,14 +1,14 @@
 ---
 id: dvm-deposit
-title: 充值
-sidebar_label: 充值
+title: DVM 账户充值
+sidebar_label: DVM 账户充值
 ---
 
 DVM 账户充值指的是用户将 Substrate 账户资产转移到 DVM 账户中的过程。本质上，是给 DVM 账户地址关联的 Substrate 账户地址转账。
 
 ## 准备 
 
-准备一个接收 PRING 的 DVM 账户，可以用 Metamask 生成。见 [如何使用 Metamask](dvm-metamask)。
+准备一个接收 `PRING` 的 DVM 账户，可以用 Metamask 生成。见 [如何使用 Metamask](dvm-metamask)。
 
 ## 充值
 
