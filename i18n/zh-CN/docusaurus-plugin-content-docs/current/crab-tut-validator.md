@@ -164,7 +164,7 @@ Staking 还有一些其他操作，感兴趣的朋友，可以自行探索，列
 
 > 请注意：收益会保存 **56** 个 era（约 **56** 天），超期将无法领取。
 
-![validator](assets/tut/validator/  v7.png)
+![validator](assets/tut/validator/v7.png)
 
 `领取收益` 手动领取已获得的收益，收益将以 era 为单位发放。
 
