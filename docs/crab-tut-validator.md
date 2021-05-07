@@ -67,11 +67,11 @@ The result is what you need when setting the session key.
 
 Enter [Crab Wallet](https://apps.darwinia.network) and click the `Staking` column on the left , Click `Start staking`.
 
-![nominate-1-en](assets/tut/nominator/n1.png)
+![nominate](assets/tut/nominator/n1.png)
 
 Fill in the staking parameters
 
-![nominate-2-en](assets/tut/nominator/n2.png)
+![nominate](assets/tut/nominator/n2.png)
 
 ` Stash account` Account for stashing tokens. Tokens participating in staking will come from this account. The operations of this account are mostly related to changes in stash.
 
@@ -89,7 +89,7 @@ Fill in the staking parameters
 
 After filling in the staking parameters, please click `bond` and `submit`
 
-![nominate-3-en](assets/tut/nominator/n3.png)
+![nominate](assets/tut/nominator/n3.png)
 
 ### To be Validator
 
@@ -97,27 +97,27 @@ Click `Set session keys` on this page, completing the generated session keys and
 
 > The session key must be filled with real data, otherwise it will result in missing blocks and be slashed.
 
-![tut-validator-1](assets/tut-validator-1.png)
+![validator](assets/tut/validator/v1.png)
 
 After confirming, click `sign and submit`
 
 > The identities of the validator and the nominator are mutually exclusive and cannot coexist. If you are running a validator, you need to cancel the validator before proceeding with the nomination.
 
-![tut-validator-2](assets/tut-validator-2.png)
+![validator](assets/tut/validator/v2.png)
 
 Click `validate` and set the validator parameters
 
 `Reward commission percentage` Set the proportion of the node's priority distribution of income, the range is 0-100. (Example: If a 5% reward commission is set, this node will first receive 5% of the node's revenue, and the remaining 95% of the node's revenue will be distributed in proportion to the amount of mortgages validated by the validator and nominator; Validator's income = node reward commission + mortgage reward share)
 
-![tut-validator-3](assets/tut-validator-3.png)
+![validator](assets/tut/validator/v3.png)
 
 After confirming, click `sign and submit`
 
-![tut-validator-4](assets/tut-validator-4.png)
+![validator](assets/tut/validator/v4.png)
 
 Go to `staking scan` to view information about validators
 
-![tut-validator-5](assets/tut-validator-5.png)
+![validator](assets/tut/validator/v5.png)
 
 > The operation of validate will take effect after the first epoch of the next era. Prior to this, the validator will be in the [waiting] list.
 
@@ -147,7 +147,7 @@ $ docker run -it \
 
 There are other operations in staking for the following purposes:
 
-![wiki-tut-validator-6-en](assets/wiki-tut-validator-6-en.png)
+![validator](assets/tut/validator/v6.png)
 
 `Stop nomination` Cancels all nominees.
 
@@ -163,7 +163,7 @@ There are other operations in staking for the following purposes:
 
 > Please note: 56 era (about 56 days) will be saved, and you will not be able to claim it if it expires.
 
-![wiki-tut-validator-7-en](assets/wiki-tut-validator-7-en.png)
+![validator](assets/tut/validator/v7.png)
 
 `Claim Reward` Manually claim the reward, and the reward will be distributed in units of era.
 
