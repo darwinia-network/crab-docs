@@ -21,4 +21,4 @@ The rules for address conversion are shown in the following diagram:
 
 Address conversion is currently done using the [Web Apps](https://apps.darwinia.network/#/account) tool by clicking on `Toolbox` > `DVM Address`, enter the address of the DVM account to be converted.
 
-![dvm address transfer](assets/dvm/dvm-address-1.png)
+![dvm](assets/dvm/dvm-address.png)
