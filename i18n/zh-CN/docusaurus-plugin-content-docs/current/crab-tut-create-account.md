@@ -10,29 +10,17 @@ sidebar_label: 创建账户
 
 进入 [Crab Web Wallet](https://apps.darwinia.network)，可在`账户` 栏看到 `添加账号` 和 `使用JSON恢复` 两个按钮。
 
-<<<<<<< HEAD
-![ca](assets/tut/ca/c1.png)
-=======
 ![create account](assets/tut/create-account/2.png)
->>>>>>> main
 
 **新建账号**
 
 点击 `添加账号`，在设置完账户基本信息后，点击 `保存` 按钮。（默认只显示“助记词“，”私钥“需切换）
 
-<<<<<<< HEAD
-![ca](assets/tut/ca/c2.png)
-
-点击 `创建并且备份账户` 按钮，备份该账户“JSON 文件”
-
-![ca](assets/tut/ca/c3.png)
-=======
 ![create account](assets/tut/create-account/3.png)
 
 点击 `创建并且备份账户` 按钮，备份该账户“JSON 文件”
 
 ![create account](assets/tut/create-account/4.png)
->>>>>>> main
 
 > 务必备份好`助记词、私钥、JSON文件`等。备份 JSON 文件时，请注意保管密码，密码丢失将无法通过 JSON 文件恢复地址，但可通过助记词、私钥重新导入。
 
@@ -40,23 +28,15 @@ sidebar_label: 创建账户
 
 如之前创建过账号，且备份有 JSON 文件，可直接选择 `使用JSON恢复`。
 
-<<<<<<< HEAD
-![ca](assets/tut/ca/c4.png)
-=======
 ![create account](assets/tut/create-account/5.png)
 
 ![create account](assets/tut/create-account/6.png)
->>>>>>> main
 
 **通过 `助记词` 恢复账号**
 
 如忘记 JSON 文件密码，可通过 `助记词` 进行恢复。点击 `添加账号`，将助记词替换成原先账户的助记词即可。（名称和密码均可重新设置）
 
-<<<<<<< HEAD
-![ca](assets/tut/ca/c5.png)
-=======
 ![create account](assets/tut/create-account/7.png)
->>>>>>> main
 
 **生成自定义账号**
 
