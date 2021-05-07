@@ -21,4 +21,4 @@ DVM 账户地址和以太坊账户地址格式，生成方式均一致，每一�
 
 目前使用 [Web Apps](https://apps.darwinia.network/#/account) 的工具完成地址转换，点击左侧 `工具箱`，然后 `DVM 地址`, 输入待转换的 DVM 账户地址即可。
 
-![dvm address transfer](assets/dvm/dvm-address-1.png)
+![dvm](assets/dvm/dvm-address.png)
