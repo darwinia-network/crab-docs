@@ -10,17 +10,17 @@ sidebar_label: 创建账户
 
 进入 [Crab Web Wallet](https://apps.darwinia.network)，可在`账户` 栏看到 `添加账号` 和 `使用JSON恢复` 两个按钮。
 
-![create account](assets/crab-tut-create-account-1-cn.png)
+![ca](assets/tut/ca/c1.png)
 
 **新建账号**
 
 点击 `添加账号`，在设置完账户基本信息后，点击 `保存` 按钮。（默认只显示“助记词“，”私钥“需切换）
 
-![create account](assets/crab-tut-create-account-2-cn.png)
+![ca](assets/tut/ca/c2.png)
 
 点击 `创建并且备份账户` 按钮，备份该账户“JSON 文件”
 
-![create account](assets/crab-tut-create-account-3-cn.png)
+![ca](assets/tut/ca/c3.png)
 
 > 务必备份好`助记词、私钥、JSON文件`等。备份 JSON 文件时，请注意保管密码，密码丢失将无法通过 JSON 文件恢复地址，但可通过助记词、私钥重新导入。
 
@@ -28,20 +28,20 @@ sidebar_label: 创建账户
 
 如之前创建过账号，且备份有 JSON 文件，可直接选择 `使用JSON恢复`。
 
-![create account](assets/crab-tut-create-account-4-cn.png)
+![ca](assets/tut/ca/c4.png)
 
 **通过 `助记词` 恢复账号**
 
 如忘记 JSON 文件密码，可通过 `助记词` 进行恢复。点击 `添加账号`，将助记词替换成原先账户的助记词即可。（名称和密码均可重新设置）
 
-![create account](assets/crab-tut-create-account-5-cn.png)
+![ca](assets/tut/ca/c5.png)
 
 **生成自定义账号**
 
 如您需要生成一个包含特定字母的 Darwinia 钱包账号，可参考一下教程：
    > 此类账号多用于从水龙头领取空投的工作量证明，或者处于记忆和美观的需要。
 - 点击「美化账号」，填写您需要筛选的条件
-![faucet-1-cn](assets/faucet-1-cn.png)
+![faucet](assets/tut/ca/f1.png)
 
 `搜索` 在此处输入您希望包含的地址，该工具将生成密钥并显示与您的搜索最匹配的关联地址。
 
@@ -51,11 +51,11 @@ sidebar_label: 创建账户
 
 - 点击 `开始生成`，等待账户生成，点击 `+` 选择您心仪的账户进行备份。
 
-![faucet-2-cn](assets/faucet-2-cn.png)
+![faucet](assets/tut/ca/f2.png)
 
 - 点击 `保存`，根据你的使用习惯，选择备份原始种子或 JSON 文件
 
-![faucet-3-cn](assets/faucet-3-cn.png)
+![faucet](assets/tut/ca/f3.png)
 
    > 务必备份好`助记词、私钥、JSON文件`等。备份 JSON 文件时，请注意保管密码，密码丢失将无法通过 JSON 文件恢复地址，但可通过助记词、私钥重新导入。
 
@@ -66,15 +66,15 @@ sidebar_label: 创建账户
 
 浏览器插件可用于 [Google Chrome](https://chrome.google.com/webstore/detail/polkadot%7Bjs%7D-extension/mopnmbcafieddcagagdcbnhejhlodfdd?hl=en) and [FireFox](https://addons.mozilla.org/en-US/firefox/addon/polkadot-js-extension).
 
-![polkadot-js](assets/polkadot-js-1-cn.png)
+![polkadot-js](assets/tut/ca/p1.png)
 
 **新建账户**
 
 单击扩展程序打开 “帐户管理” 对话框，单击 `创建新帐户` 按钮，然后按照说明进行操作。
 
-![polkadot-js](assets/polkadot-js-2-cn.png)
+![polkadot-js](assets/tut/ca/p2.png)
 
-![polkadot-js](assets/polkadot-js-3-cn.png)
+![polkadot-js](assets/tut/ca/p3.png)
 
 > 确保将助记词安全保管。
 
@@ -82,7 +82,7 @@ sidebar_label: 创建账户
 
 现在，我们将确保这些地址显示为 Crab 网络 地址。您的地址将根据网络选择而有所不同。单击插件窗口顶部的 “选项”。在 “显示地址格式为” 下拉框中选择 “Substrate”。
 
-![polkadot-js](assets/polkadot-js-4-cn.png)
+![polkadot-js](assets/tut/ca/p4.png)
 
 > Crab网络与Substrate共享相同的`Network ID`，如果在生成帐户时需要选择网络，请选择`Substrate`。
 
