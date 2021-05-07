@@ -43,11 +43,11 @@ Please select the following signature tools and download according to the usage 
 
 3. Select the network you want to query (Ethereum / TRON) and click [Search]. (The Ethereum network is used as an example below)
 
-![claim_choosechain](assets/tut/claim-airdropped-cring/1.png)
+![claim](assets/tut/claim-airdropped-cring/1.png)
 
 4. Get query results
 
-![claim_search](assets/tut/claim-airdropped-cring/2.png)
+![claim](assets/tut/claim-airdropped-cring/2.png)
 
 ### Claim CRING Airdrop
 
@@ -57,19 +57,19 @@ Please select the following signature tools and download according to the usage 
 
 3. Select the network you want to query (Ethereum / TRON) and click [Claim]. (The Ethereum network is used as an example below)
 
-![04_claim_choosechain的副本](assets/tut/claim-airdropped-cring/3.png)
+![claim](assets/tut/claim-airdropped-cring/3.png)
 
 4. Fill in the Darwinia Crab address that accepts CRING. After confirming that it is correct, click [Submit].
 
     >️ If there is no Darwinia Crab address, please refer to the generation method: [How to create Crab account](crab-tut-create-account)
 
-![claim_submitaccount](assets/tut/claim-airdropped-cring/4.png)
+![claim](assets/tut/claim-airdropped-cring/4.png)
 
 5. Sign through mobile wallet or browser plug-in (signature does not consume fees)
-![06_claim_sign](assets/tut/claim-airdropped-cring/5.png)
+![claim](assets/tut/claim-airdropped-cring/5.png)
 
 6. After successfully obtaining the signature information, click [Copy Signature]. (Please pay attention to save the signature information, it is recommended not to close this page temporarily before successfully receiving the airdrop)
-![07_claim_copy](assets/tut/claim-airdropped-cring/6.png)
+![claim](assets/tut/claim-airdropped-cring/6.png)
 
 7. Open [Darwinia wallet - Claim](https://apps.darwinia.network#/claims)：<https://apps.darwinia.network#/claims>, Select the address just received to receive the airdrop and click [Continue].
 
@@ -77,7 +77,7 @@ Please select the following signature tools and download according to the usage 
 
 8. Paste the signature information just generated in the `CRING Claim Tool`, and click [Confirm claim]-[Redeem]-[Submit]
 
-![09_claim_sign2](assets/tut/claim-airdropped-cring/7.png)
+![claim](assets/tut/claim-airdropped-cring/7.png)
 
 9. After successful receipt, you will receive the following prompt. At this time, it means your airdrop has been successfully received, you can check the balance in [Darwinia Wallet-Account](https://apps.darwinia.network#/accounts) or [subscan](https://crab.subscan.io/).
 

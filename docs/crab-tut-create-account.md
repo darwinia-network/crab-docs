@@ -46,7 +46,7 @@ If you need to generate a Darwinia wallet account containing specific letters, y
 
 - Click [Vanity], fill in the conditions you need to filter
 
-![faucet-1](assets/tut/create-account/8.png)
+![faucet](assets/tut/create-account/8.png)
 
 `Search for` Type here what you would like your address to contain. This tool will generate the keys and show the associated addresses that best match your search. You can use \"?\" as a wildcard for a character.": "",
 
@@ -56,11 +56,11 @@ If you need to generate a Darwinia wallet account containing specific letters, y
 
 - Click [Start generation], after waiting for the account to be generated, click [+] to select your favorite account for backup.
 
-![faucet-2](assets/tut/create-account/9.png)
+![faucet](assets/tut/create-account/9.png)
 
 - Click [Save], according to your usage habits, choose to back up the original seed or json file
 
-![faucet-3](assets/tut/create-account/10.png)
+![faucet](assets/tut/create-account/10.png)
 
 > Be sure to back up `mnemonics, private keys, json files`, etc. When backing up the json file, please keep the password safe. If the password is lost, the address cannot be restored through the json file, but it can be re-imported through the mnemonic word and private key.
 
