@@ -68,11 +68,11 @@ result 就是新生成的属于该节点的 session keys。下面会用到。
 
 进入 [Darwinia Web Wallet](https://apps.darwinia.network)，点击左侧 `抵押` 栏目，点击 `开始 Staking`
 
-![crab-tut-nominator-1](assets/crab-tut-nominator-1.png)
+![crab-tut-nominator-1](assets/tut/nominator/n1.png)
 
 填入参数
 
-![crab-tut-nominator-2](assets/crab-tut-nominator-2.png)
+![crab-tut-nominator-2](assets/tut/nominator/n2.png)
 
 `资金账户` 保管资金的账号，参与 Staking 的代币将来自这个账户，此账户的操作多与资金变动相关。
 
@@ -90,7 +90,7 @@ result 就是新生成的属于该节点的 session keys。下面会用到。
 
 填写好 Staking 参数后，请点击 `冻结`，签名并提交
 
-![crab-tut-nominator-3](assets/crab-tut-nominator-3.png)
+![crab-tut-nominator-3](assets/tut/nominator/n3.png)
 
 ### 参选验证人
 

@@ -12,11 +12,11 @@ sidebar_label: 成为投票人
 
 进入 [Crab Web Wallet](https://apps.darwinia.network)，点击左侧 `抵押` 栏目，点击 `开始 staking`  
 
-![crab-tut-nominator-1](assets/crab-tut-nominator-1.png)
+![nominator](assets/tut/nominator/n1.png)
 
 填写 Staking 参数  
 
-![crab-tut-nominator-2](assets/crab-tut-nominator-2.png)
+![nominator](assets/tut/nominator/n2.png)
 
 `资金账户` 保管资金的账号，参与 Staking 的代币将来自这个账户，此账户的操作多与资金变动相关。
 
@@ -34,7 +34,7 @@ sidebar_label: 成为投票人
 
 填写好 Staking 参数后，请点击 `冻结`，签名并提交
 
-![crab-tut-nominator-3](assets/crab-tut-nominator-3.png)
+![nominator](assets/tut/nominator/n3.png)
 
 ## 提名验证人
 
@@ -42,19 +42,19 @@ sidebar_label: 成为投票人
 
 完成 Staking 参数后，在本页面点击 `提名`
 
-![wiki-tut-nominator-4](assets/wiki-tut-nominator-4-cn.png)
+![nominator](assets/tut/nominator/n4.png)
 
 选择合适的验证人，并点击 `提名`
 
-![wiki-tut-nominator-5](assets/wiki-tut-nominator-5-cn.png)
+![nominator](assets/tut/nominator/n5.png)
 
 签名并提交
 
-![wiki-tut-nominator-6](assets/wiki-tut-nominator-6-cn.png)
+![nominator](assets/tut/nominator/n6.png)
 
 返回 `抵押` 处，查看已提名验证人的相关信息
 
-![wiki-tut-nominator-7](assets/wiki-tut-nominator-7-cn.png)
+![nominator](assets/tut/nominator/n7.png)
 
 > 提名验证人的操作结果，会在下一个 era 开始时生效，暂时延迟为正常现象。
 
@@ -74,7 +74,7 @@ sidebar_label: 成为投票人
 
 Staking 还有一些其他操作，感兴趣的朋友，可以自行探索，列举如下：
 
-![wiki-tut-nominator-8](assets/wiki-tut-nominator-8-cn.png)
+![nominator](assets/tut/nominator/n8.png)
 
 `停止提名` 取消所有投票。
 
@@ -90,7 +90,7 @@ Staking 还有一些其他操作，感兴趣的朋友，可以自行探索，列
 
 > 注意：收益会保存 56 个 era（约 56 天），超期将无法领取。
 
-![](assets/wiki-tut-nominator-9-cn.png)
+![nominator](assets/tut/nominator/n9.png)
 
 `领取收益` 手动领取已获得的收益，收益将以 era 为单位发放。
 
