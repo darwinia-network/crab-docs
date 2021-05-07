@@ -61,7 +61,7 @@ Darwinia 官方已于 2020年3月20日13:50（GMT +8:00），对 RING & DOT 的�
 
 6. 打开 [达尔文钱包-认领模块](<https://apps.darwinia.network/#/claims>)：<https://apps.darwinia.network/#/claims>，选中刚刚填写的接收空投的地址，点击「继续」。
 
-![claim](assets/tut/claim/08.png)
+![claim](assets/tut/claim-airdropped-cring/8.png)
 
 7. 将刚刚在 CRING Claim Tool 中生成的签名信息贴入，依次点击 `确定认领` > `领取` > `签名`
 
@@ -69,7 +69,7 @@ Darwinia 官方已于 2020年3月20日13:50（GMT +8:00），对 RING & DOT 的�
 
 8. 领取成功后，您将收到如下提示。这时就代表您的空投已成功领取，可以到 [达尔文钱包-账户](<https://apps.darwinia.network/#/accounts>) 或 [subscan](<https://crab.subscan.io/>)中查看账户余额信息。
 
-![claim](assets/tut/claim/10.png)
+![claim](assets/tut/claim-airdropped-cring/9.png)
 
 - 如果您在领取空投的过程中遇到其他问题，请加入我们的社群交流。
   - 微信公众号：DarwiniaNetwork
