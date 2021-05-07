@@ -8,21 +8,21 @@ There are mainly three ways to generate a Crab account, you can choose either on
 
 ## 1. Crab Web Wallet
 
-![create account](assets/tut/ca/c1.png)
+![setting](assets/tut/create-account/1.png)
 
 Enter [Crab Web Wallet](https://apps.darwinia.network), you can see two buttons "Add Account" and "Restore JSON" in the "Account" column.
 
-![create account](assets/tut/ca/w1.png)
+![create account](assets/tut/create-account/2.png)
 
 **New account**
 
 Click "Add Account", after setting the basic account information, click the "Save" button. (By default, only "mnemonic", "private key" need to be switched)
 
-![create account](assets/tut/ca/w2.png)
+![create account](assets/tut/create-account/3.png)
 
 Click the "Create and Backup Account" button to back up the account "json file"
 
-![create account](assets/tut/ca/w3.png)
+![create account](assets/tut/create-account/4.png)
 
 > Be sure to back up `mnemonics, private keys, json files`, etc. When backing up the json file, please keep the password safe. If the password is lost, the address cannot be restored through the json file, but it can be re-imported through the mnemonic word and private key.
 
@@ -30,13 +30,14 @@ Click the "Create and Backup Account" button to back up the account "json file"
 
 If you have created an account before and backed up a json file, you can directly select "Restore JSON".
 
-![create account](assets/tut/ca/w4.png)
+![create account](assets/tut/create-account/5.png)
+![create account](assets/tut/create-account/6.png)
 
 **Restore account via "Mnemonic"**
 
 If you forget the password of the JSON file, you can use the "mnemonic word" to recover it. Click "Add Account" to replace the mnemonic with the original account's mnemonic. (The name and password can be reset)
 
-![create account](assets/tut/ca/w5.png)
+![create account](assets/tut/create-account/7.png)
 
 **Generate Vanity account**
 
@@ -45,7 +46,7 @@ If you need to generate a Darwinia wallet account containing specific letters, y
 
 - Click [Vanity], fill in the conditions you need to filter
 
-![faucet](assets/tut/ca/f1.png)
+![faucet-1](assets/tut/create-account/8.png)
 
 `Search for` Type here what you would like your address to contain. This tool will generate the keys and show the associated addresses that best match your search. You can use \"?\" as a wildcard for a character.": "",
 
@@ -55,11 +56,11 @@ If you need to generate a Darwinia wallet account containing specific letters, y
 
 - Click [Start generation], after waiting for the account to be generated, click [+] to select your favorite account for backup.
 
-![faucet](assets/tut/ca/f2.png)
+![faucet-2](assets/tut/create-account/9.png)
 
 - Click [Save], according to your usage habits, choose to back up the original seed or json file
 
-![faucet](assets/tut/ca/f3.png)
+![faucet-3](assets/tut/create-account/10.png)
 
 > Be sure to back up `mnemonics, private keys, json files`, etc. When backing up the json file, please keep the password safe. If the password is lost, the address cannot be restored through the json file, but it can be re-imported through the mnemonic word and private key.
 
@@ -71,15 +72,17 @@ If you need to generate a Darwinia wallet account containing specific letters, y
 
 The browser plugin is available for both [Google Chrome](https://chrome.google.com/webstore/detail/polkadot%7Bjs%7D-extension/mopnmbcafieddcagagdcbnhejhlodfdd?hl=en) and [FireFox](https://addons.mozilla.org/en-US/firefox/addon/polkadot-js-extension).
 
-![polkadot-js](assets/tut/ca/p1.png)
+![polkadot-js](assets/tut/create-account/11.png)
 
 **New Account**
 
 Click the extension to open the "Account Management" dialog box, click the "Create New Account" button, and then follow the instructions.
 
-![polkadot-js](assets/tut/ca/p2.png)
+![polkadot-js](assets/tut/create-account/12.png)
 
-![polkadot-js](assets/tut/ca/p3.png)
+![polkadot-js](assets/tut/create-account/13.png)
+
+![polkadot-js](assets/tut/create-account/14.png)
 
 > Make sure to keep the mnemonics safe.
 
@@ -89,7 +92,7 @@ Now we will ensure that the addresses are displayed as Darwinia mainnet addresse
 
 Click on "Options" at the top of the plugin window.  Select `Crab Network` or `Substrate` in "Display Address Format for" dropdown box. 
 
-![polkadot-js](assets/tut/ca/p4.png)
+![polkadot-js](assets/tut/create-account/15.png)
 
 > Crab Network share the same `Network ID` as `Substrate`, if you need to choose a network when generating an account, use `substrate` as the same effect as `crab network`.
 
