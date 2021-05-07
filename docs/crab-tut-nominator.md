@@ -13,11 +13,11 @@ sidebar_label: Become a nominator
 
 Enter [Darwinia Wallet](https://apps.darwinia.network) and lick the `Staking` column on the left , Click `Start staking`
 
-![nominate-1-en](assets/nominate-1-en.png)
+![nominate](assets/tut/nominator/n1.png)
 
 Fill in the staking parameters 
 
-![nominate-2-en](assets/nominate-2-en.png)
+![nominate](assets/tut/nominator/n2.png)
 
 `Stash account` Account for stashing tokens. Tokens participating in staking will come from this account. The operations of this account are mostly related to changes in stash.
 
@@ -35,7 +35,7 @@ Fill in the staking parameters
 
 After filling in the staking parameters, please click `bond` and `submit`
 
-![nominate-3-en](assets/nominate-3-en.png)
+![nominate](assets/tut/nominator/n3.png)
 
 ## Nominate a validator
 
@@ -43,19 +43,19 @@ After filling in the staking parameters, please click `bond` and `submit`
 
 After completing the staking parameters, click `Nominate` on this page
 
-![nominate-4-en](assets/wiki-tut-nominator-4-en.png)
+![nominate](assets/tut/nominator/n4.png)
 
 Choose your favorite validator
 
-![nominate-5-en](assets/wiki-tut-nominator-5-en.png)
+![nominate](assets/tut/nominator/n5.png)
 
 Sign and submit
 
-![nominate-6-en](assets/wiki-tut-nominator-6-en.png)
+![nominate](assets/tut/nominator/n6.png)
 
 View information about nominated validators
 
-![nominate-7-en](assets/wiki-tut-nominator-7-en.png)
+![nominate](assets/tut/nominator/n7.png)
 
 > The operation of nominating validators will take effect from the next era, and it is normal to temporarily delay.
 
@@ -75,7 +75,7 @@ The tokens' statuses are following:
 
 There are other operations in staking for the following purposes:
 
-![nominate-8-en](assets/wiki-tut-nominator-8-en.png)
+![nominate](assets/tut/nominator/n8.png)
 
 `Stop nomination` Cancels all nominees.
 
@@ -91,7 +91,7 @@ There are other operations in staking for the following purposes:
 
 > Please note: 56 era (about 56 days) will be saved, and you will not be able to claim it if it expires.
 
-![](assets/wiki-tut-nominator-9-en.png)
+![nominate](assets/tut/nominator/n9.png)
 
 `Claim Reward` Manually claim the reward, and the reward will be distributed in units of era.
 
