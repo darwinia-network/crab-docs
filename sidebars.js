@@ -41,8 +41,6 @@ module.exports = {
           }
         ]
       },
-      // 'dvm-deposit',
-      // 'dvm-withdraw',
       'dvm-explorer',
       {
         'Interaction': [
