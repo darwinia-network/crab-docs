@@ -67,11 +67,11 @@ The result is what you need when setting the session key.
 
 Enter [Crab Wallet](https://apps.darwinia.network) and click the `Staking` column on the left , Click `Start staking`.
 
-![nominate](assets/tut/nominator/n1.png)
+![nominate](assets/tut/staking-norminator/1.png)
 
 Fill in the staking parameters
 
-![nominate](assets/tut/nominator/n2.png)
+![nominate](assets/tut/staking-norminator/2.png)
 
 ` Stash account` Account for stashing tokens. Tokens participating in staking will come from this account. The operations of this account are mostly related to changes in stash.
 
@@ -89,7 +89,7 @@ Fill in the staking parameters
 
 After filling in the staking parameters, please click `bond` and `submit`
 
-![nominate](assets/tut/nominator/n3.png)
+![nominate](assets/tut/staking-norminator/3.png)
 
 ### To be Validator
 

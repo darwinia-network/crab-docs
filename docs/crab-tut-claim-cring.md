@@ -55,10 +55,6 @@ Please select the following signature tools and download according to the usage 
 
 2. PC: Visit [CRING claim tool](http://claim.darwinia.network/) through chrome browser or mobile wallet
 
-  Mobile: Take the math wallet as an example, click [Dapps]-[DAPP Browser]-enter `http://claim.darwinia.network/` to access.
-
-![claim](assets/tut/claim/01.png)
-
 3. Select the network you want to query (Ethereum / TRON) and click [Claim]. (The Ethereum network is used as an example below)
 
 ![04_claim_choosechain的副本](assets/tut/claim-airdropped-cring/3.png)
@@ -77,7 +73,7 @@ Please select the following signature tools and download according to the usage 
 
 7. Open [Darwinia wallet - Claim](https://apps.darwinia.network#/claims)：<https://apps.darwinia.network#/claims>, Select the address just received to receive the airdrop and click [Continue].
 
-![claim](assets/tut/claim/08.png)
+![claim](assets/tut/claim-airdropped-cring/8.png)
 
 8. Paste the signature information just generated in the `CRING Claim Tool`, and click [Confirm claim]-[Redeem]-[Submit]
 
@@ -85,7 +81,7 @@ Please select the following signature tools and download according to the usage 
 
 9. After successful receipt, you will receive the following prompt. At this time, it means your airdrop has been successfully received, you can check the balance in [Darwinia Wallet-Account](https://apps.darwinia.network#/accounts) or [subscan](https://crab.subscan.io/).
 
-![claim](assets/tut/claim/10.png)
+![claim](assets/tut/claim-airdropped-cring/9.png)
 
 ## Contact Us
 
