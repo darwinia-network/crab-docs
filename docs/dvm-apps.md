@@ -19,4 +19,4 @@ Click on `Toolbox` > `RPC Requests` > `balances` and enter:
 - accountId： Substrate account id
 - tokentype： 0 for RING balance, 1 for KTON balance
 
-![dvm query balance](assets/dvm/dvm-apps-1.png)
+![dvm](assets/dvm/app/d1.png)

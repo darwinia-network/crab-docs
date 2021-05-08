@@ -19,4 +19,4 @@ sidebar_label: Apps
 - accountId： 待查询余额的 Substrate 账户
 - tokentype： 0 查询账户 RING 余额，1 表示查询账户 KTON 余额
 
-![dvm query balance](assets/dvm/dvm-apps-1.png)
+![dvm](assets/dvm/apps/d1.png)

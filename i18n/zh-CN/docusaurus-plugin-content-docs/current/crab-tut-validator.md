@@ -68,11 +68,11 @@ result 就是新生成的属于该节点的 session keys。下面会用到。
 
 进入 [Darwinia Web Wallet](https://apps.darwinia.network)，点击左侧 `抵押` 栏目，点击 `开始 Staking`
 
-![crab-tut-nominator-1](assets/crab-tut-nominator-1.png)
+![nominator](assets/tut/staking-norminator/1.png)
 
 填入参数
 
-![crab-tut-nominator-2](assets/crab-tut-nominator-2.png)
+![nominator](assets/tut/staking-norminator/2.png)
 
 `资金账户` 保管资金的账号，参与 Staking 的代币将来自这个账户，此账户的操作多与资金变动相关。
 
@@ -90,7 +90,7 @@ result 就是新生成的属于该节点的 session keys。下面会用到。
 
 填写好 Staking 参数后，请点击 `冻结`，签名并提交
 
-![crab-tut-nominator-3](assets/crab-tut-nominator-3.png)
+![nominator](assets/tut/staking-norminator/3.png)
 
 ### 参选验证人
 
@@ -98,11 +98,11 @@ result 就是新生成的属于该节点的 session keys。下面会用到。
 
 > session keys 务必填写真实数据，否则会导致漏块，从而收到经济惩罚。
 
-![tut-validator-1-cn](assets/tut-validator-1-cn.png)
+![validator](assets/tut/validator/v1.png)
 
 确认无误后，点击「签名并提交」
 
-![tut-validator-2-cn](assets/tut-validator-2-cn.png)
+![validator](assets/tut/validator/v2.png)
 
 > 验证人和提名人的身份是互斥的，不可并存。如果您正在提名其他验证人，需要取消提名操作后，再进行后续的操作。
 
@@ -110,15 +110,15 @@ result 就是新生成的属于该节点的 session keys。下面会用到。
 
 `奖励佣金百分比` 设置本节点优先分配收益的比重，范围为 **0-100%**。（例：如设置了 **5%** 的奖励佣金，本节点将优先获得节点收益的 **5%**，剩下 **95%** 的节点收益，将依据验证人和投票人抵押的金额，按比例分配；也就是说，`验证人的收益 = 节点奖励佣金 + 抵押奖励分成`）
 
-![tut-validator-3-cn](assets/tut-validator-3-cn.png)
+![validator](assets/tut/validator/v3.png)
 
 确认无误后，点击 `签名并提交`
 
-![tut-validator-4-cn](assets/tut-validator-4-cn.png)
+![validator](assets/tut/validator/v4.png)
 
 去 `浏览器` 查看当前验证人的相关信息
 
-![tut-validator-5-cn](assets/tut-validator-5-cn.png)
+![validator](assets/tut/validator/v5.png)
 
 > 参选验证人后会进入「候选」队列，在进入下一个 era 的时刻参与选举。
 
@@ -148,7 +148,7 @@ result 就是新生成的属于该节点的 session keys。下面会用到。
 
 Staking 还有一些其他操作，感兴趣的朋友，可以自行探索，列举如下：
 
-![wiki-tut-validator-6-cn](assets/wiki-tut-validator-6-cn.png)
+![validator](assets/tut/validator/v6.png)
 
 `停止提名` 取消所有投票。
 
@@ -164,7 +164,7 @@ Staking 还有一些其他操作，感兴趣的朋友，可以自行探索，列
 
 > 请注意：收益会保存 **56** 个 era（约 **56** 天），超期将无法领取。
 
-![wiki-tut-validator-7-cn](assets/wiki-tut-validator-7-cn.png)
+![validator](assets/tut/validator/v7.png)
 
 `领取收益` 手动领取已获得的收益，收益将以 era 为单位发放。
 

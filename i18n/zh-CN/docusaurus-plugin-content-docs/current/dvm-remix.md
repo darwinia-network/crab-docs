@@ -26,29 +26,29 @@ contract Incrementer {
 
 示例合约程序如上图所示，点击 `Compile`，调试程序，保证编译成功。
 
-![dvm](assets/dvm/dvm-remix-1.png)
+![dvm](assets/dvm/remix/r1.png)
 
 ## 连接 Metamask
 
 Remix 可以关联 Metamask 上的 DVM 账户，并直接部署合约到对应的网络中。需要注意的是，DVM 账户需要提前绑定 Metamask, 请参考 [DVM 账户使用 Metamask](dvm-metamask)。 ENVIRONMENT 选择 `Injected Web3`，弹出的 Metamask 窗口中选择关联的 DVM 账户，点击 `Next`。
 
-![dvm](assets/dvm/dvm-remix-2.png)
+![dvm](assets/dvm/remix/r2.png)
 
 ## 合约操作
 
 连接 Metamask 成功后，点击 `Deploy` 部署合约，控制台会显示交易的执行情况。
 
-![dvm](assets/dvm/dvm-remix-3.png)
+![dvm](assets/dvm/remix/r3.png)
 
 合约部署成功后，执行 `number` 进行合约调用，此时的返回结果为 0。
 
-![dvm](assets/dvm/dvm-remix-4.png)
+![dvm](assets/dvm/remix/r4.png)
 
 执行 `increment` 合约，如下图所示：
 
-![dvm](assets/dvm/dvm-remix-5.png)
+![dvm](assets/dvm/remix/r5.png)
 
 再次执行 `number` 进行合约调用，返回结果为 5。
 
-![dvm](assets/dvm/dvm-remix-6.png)
+![dvm](assets/dvm/remix/r6.png)
 
