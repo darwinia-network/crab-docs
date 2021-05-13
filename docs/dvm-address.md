@@ -4,7 +4,7 @@ title: DVM Address
 sidebar_label: Address
 ---
 
-The Darwin Network is a cross-chain network developed based on Substrate, with an account address format based on the [SS58 Address](https://substrate.dev/docs/en/knowledgebase/advanced/ss58-address-format) model. In order to be compatible with the ethereum smart contract ecosystem, a second address format is introduced on top of the existing network, namely
+The Darwinia Network is a cross-chain network developed based on Substrate, with an account address format based on the [SS58 Address](https://substrate.dev/docs/en/knowledgebase/advanced/ss58-address-format) model. In order to be compatible with the ethereum smart contract ecosystem, a second address format is introduced on top of the existing network, namely
 DVM address.
 
 ## Address Conversion

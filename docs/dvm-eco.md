@@ -4,7 +4,7 @@ title: Eco
 sidebar_label: Ecosystem
 ---
 
-With the DVM smart contract solution, smart contract projects in the ethereum ecosystem can easily be migrated to the Darwin Network to operate on the new architectural platform. To encourage more community developers to develop applications based on DVM, the Darwin Network has now launched the [Grant Program](https://github.com/darwinia-network/collaboration/blob/master/grant/README.md) and [Bounty Program](https://github.com/darwinia-network/collaboration/blob/master/bounty/README.md).
+With the DVM smart contract solution, smart contract projects in the ethereum ecosystem can easily be migrated to the Darwinia Network to operate on the new architectural platform. To encourage more community developers to develop applications based on DVM, the Darwinia Network has now launched the [Grant Program](https://github.com/darwinia-network/collaboration/blob/master/grant/README.md) and [Bounty Program](https://github.com/darwinia-network/collaboration/blob/master/bounty/README.md).
 
 Projects built based on DVM:
 

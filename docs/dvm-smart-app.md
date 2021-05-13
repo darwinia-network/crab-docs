@@ -4,7 +4,7 @@ title: Smart App
 sidebar_label: Overview
 ---
 
-The [Smart App](https://smart.darwinia.network/) is Darwin's self-developed wallet that provides a user-friendly solution for transferring assets between DVM accounts and Substrate accounts.
+The [Smart App](https://smart.darwinia.network/) is Darwinia's self-developed wallet that provides a user-friendly solution for transferring assets between DVM accounts and Substrate accounts.
 
 ## Switch Network
 

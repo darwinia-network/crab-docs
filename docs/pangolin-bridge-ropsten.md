@@ -24,7 +24,7 @@ User claims RING & KTON
 address: 0x98fAE9274562FE131e2CF5771ebFB0bB232aFd25
 ```
 
-## Rangolin < Ropsten
+## Pangolin < Ropsten
 
 ### Burn Contract
 

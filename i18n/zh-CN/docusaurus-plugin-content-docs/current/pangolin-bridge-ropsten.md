@@ -24,7 +24,7 @@ address: 0xD35Bb6F1bc1C84b53E0995c1830454AB7C4147f1
 address: 0x98fAE9274562FE131e2CF5771ebFB0bB232aFd25
 ```
 
-## Rangolin < Ropsten
+## Pangolin < Ropsten
 
 ### Burn Contract
 
