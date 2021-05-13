@@ -176,7 +176,7 @@ $ node get.js
 结果：
 
 ```sh
-aking a call to contract at address 0x5c4242beB94dE30b922f57241f1D02f36e906915
+Making a call to contract at address 0x5c4242beB94dE30b922f57241f1D02f36e906915
 The current number stored is: 5
 ```
 
@@ -216,7 +216,7 @@ const increment = async () => {
    const createReceipt = await web3.eth.sendSignedTransaction(
       createTransaction.rawTransaction
    );
-   console.log(`Tx successfull with hash: ${createReceipt.transactionHash}`);
+   console.log(`Tx successfully with hash: ${createReceipt.transactionHash}`);
 };
 
 increment();
@@ -232,7 +232,7 @@ $ node increment.js
 
 ```sh
 Calling the increment by 3 function in contract at address 0x5c4242beB94dE30b922f57241f1D02f36e906915
-Tx successfull with hash: 0x259078d1eefb40b9859748e2116c5bed04360583d5309e9d6947458bb5e1d0f9
+Tx successfully with hash: 0x259078d1eefb40b9859748e2116c5bed04360583d5309e9d6947458bb5e1d0f9
 ```
 
 再次查询 number 值：
@@ -278,7 +278,7 @@ const reset = async () => {
    const createReceipt = await web3.eth.sendSignedTransaction(
       createTransaction.rawTransaction
    );
-   console.log(`Tx successfull with hash: ${createReceipt.transactionHash}`);
+   console.log(`Tx successfully with hash: ${createReceipt.transactionHash}`);
 };
 
 reset();
@@ -294,7 +294,7 @@ $ node reset.js
 
 ```sh
 Calling the reset function in contract at address 0x5c4242beB94dE30b922f57241f1D02f36e906915
-Tx successfull with hash: 0x79b8b47ba82e271cd6e105b07743f2a2f470b5fa923a0c97d7f75ce3a3bcceac
+Tx successfully with hash: 0x79b8b47ba82e271cd6e105b07743f2a2f470b5fa923a0c97d7f75ce3a3bcceac
 ```
 
 再次查询 number 值：

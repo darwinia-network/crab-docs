@@ -112,7 +112,7 @@ $ cargo build -p subkey
 After installing Subkey successfully, run:
 
 ```shell
-subkey -n substrate generate
+$ subkey -n substrate generate
 ```
 
 You should see an output something like below- **save all of this information somewhere secure you will not be able to recover your account if you lose your phrase or seed.**

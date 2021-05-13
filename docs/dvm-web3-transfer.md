@@ -49,8 +49,8 @@ const balances = async () => {
       'ether'
    );
 
-   console.log(`The balance of ${addressFrom} is: ${balanceFrom} Pring.`);
-   console.log(`The balance of ${addressTo} is: ${balanceTo} Pring.`);
+   console.log(`The balance of ${addressFrom} is: ${balanceFrom} PRING.`);
+   console.log(`The balance of ${addressTo} is: ${balanceTo} PRING.`);
 };
 
 balances();
@@ -60,8 +60,8 @@ The output:
 
 ```sh
 $ node balance.js
-The balance of 0x6Be02d1d3665660d22FF9624b7BE0551ee1Ac91b is: 123.45678900000000009 Pring.
-The balance of 0xAa01a1bEF0557fa9625581a293F3AA7770192632 is: 0 Pring.
+The balance of 0x6Be02d1d3665660d22FF9624b7BE0551ee1Ac91b is: 123.45678900000000009 PRING.
+The balance of 0xAa01a1bEF0557fa9625581a293F3AA7770192632 is: 0 PRING.
 ```
 
 ## Transfer
@@ -119,6 +119,6 @@ Transaction successful with hash: 0xaccfb5438c6927c6c32adc640394600f5dda183ea826
 Get balances again:
 
 ```sh
-The balance of 0x6Be02d1d3665660d22FF9624b7BE0551ee1Ac91b is: 73.45678900000000009 Pring.
-The balance of 0xAa01a1bEF0557fa9625581a293F3AA7770192632 is: 50 Pring.
+The balance of 0x6Be02d1d3665660d22FF9624b7BE0551ee1Ac91b is: 73.45678900000000009 PRING.
+The balance of 0xAa01a1bEF0557fa9625581a293F3AA7770192632 is: 50 PRING.
 ```

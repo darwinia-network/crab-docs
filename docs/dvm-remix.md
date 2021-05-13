@@ -6,7 +6,7 @@ sidebar_label: Remix
 
 As the DVM and the Ethereum Virtual Machine are consistent in their underlying specifications, users can use the existing Ethereum ecosystem smart contract development tools, followed by a description of how to execute contracts using Remix.
 
-## Prepare Contrace code
+## Prepare Contract code
 
 ```js
 pragma solidity ^0.6.0;
