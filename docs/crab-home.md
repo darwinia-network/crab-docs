@@ -5,7 +5,7 @@ sidebar_label: Crab Network
 slug: /
 ---
 
-Darwinia Crab Testnet (Crab for short) is a canary network with real economics for Darwinia, The positioning of Crab is similar to Polkadot's Kusama Network. Expect Chaos is a reasonable expectation.
+Crab is a canary network with real economics for Darwinia, The positioning of Crab is similar to Polkadot's Kusama Network. Expect Chaos is a reasonable expectation.
 
 Crab mainly provides simulation environment for Darwinia's upgrade and application deployment, perform various radical experiments. Crab includes not only the complete software operation environment and network environment, but also the economic environment.
 
