@@ -3,15 +3,15 @@
 const path = require('path');
 
 module.exports = {
-  title: 'Crab Network',
+  title: 'Crab Docs',
   tagline: 'The tagline of my site',
-  url: 'https://crab.network.l2me.com/',
+  url: 'https://docs.crab.network.l2me.com/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.svg',
   organizationName: 'darwinia-network', // Usually your GitHub org/user name.
-  projectName: 'crab.network', // Usually your repo name.
+  projectName: 'crab-docs', // Usually your repo name.
   themeConfig: {
     colorMode: {
       // disableSwitch: true,
@@ -24,12 +24,6 @@ module.exports = {
         src: 'img/favicon.svg',
       },
       items: [
-        {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'right',
-        },
         // {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/darwinia-network/darwinia/tree/master/runtime/crab',
@@ -96,7 +90,8 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/darwinia-network/crab-home/edit/main/',
+          editUrl: 'https://github.com/darwinia-network/crab-docs/',
+          routeBasePath: '/',
         },
         blog: {
           showReadingTime: true,
