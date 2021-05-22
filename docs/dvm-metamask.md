@@ -20,7 +20,7 @@ The different network configuration are as follows.
 | Network  | RPC URL                             | ChainId | Currency| Block Explorer URL |
 | ---------| ------------------------------------ | -------| --------|---------- |
 | Pangolin | http://pangolin-rpc.darwinia.network | 43     | PRING   | https://pangolin.subscan.io/ |
-| Crab     | http://crab-rpc.darwinia.network     | 44     | CRING   | https://crab.subscanio/      |   
+| Crab     | http://crab-rpc.darwinia.network     | 44     | CRING   | https://crab.subscan.io/      |   
 
 ![dvm](assets/dvm/metamask/m2.png)
 

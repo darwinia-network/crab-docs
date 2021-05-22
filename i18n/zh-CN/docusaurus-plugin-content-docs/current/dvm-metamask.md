@@ -20,7 +20,7 @@ sidebar_label: Metamask
 | 网络名称   | RPC URL                             | ChainId | 代币名称 | 浏览器地址 |
 | ---------| ------------------------------------ | -------| --------|---------- |
 | Pangolin | http://pangolin-rpc.darwinia.network | 43     | PRING   | https://pangolin.subscan.io/ |
-| Crab     | http://crab-rpc.darwinia.network     | 44     | CRING   | https://crab.subscanio/      |   
+| Crab     | http://crab-rpc.darwinia.network     | 44     | CRING   | https://crab.subscan.io/      |   
 
 连接成功后，如下图所示。
 
