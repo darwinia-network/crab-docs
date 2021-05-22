@@ -4,11 +4,11 @@ title: Deposit to a DVM address
 sidebar_label: Deposit
 ---
 
-It is a process of transferring assets from a Substrate account to a DVM account. The receiving address is the Substrate address of the DVM account.
+It is an action of transferring assets from a Substrate account to a DVM account. The receiving address is the Substrate address of the DVM account.
 
 ## Preparation
 
-Using Metamask to generate a DVM address. See [How to use Metamask](dvm-metamask).
+You should have a DVM account to receive `PRING/PKTON`, if not, please use Metamask to generate one. See [How to use Metamask](dvm-metamask).
 
 ## Deposit
 
@@ -49,7 +49,7 @@ See transaction execution result in Subscan.
 ![smart app](assets/dvm/smart-app/deposit/02.png)
 ![smart app](assets/dvm/smart-app/deposit/03.png)
 
-## Confirm
+## Check if the transfer is successful
 
 Check the balance in Subscan:
 
