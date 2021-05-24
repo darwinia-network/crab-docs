@@ -1,6 +1,6 @@
 ---
 id: dvm-rpc
-title: DVM PPC list
+title: DVM RPC list
 sidebar_label: DVM RPC list
 ---
 

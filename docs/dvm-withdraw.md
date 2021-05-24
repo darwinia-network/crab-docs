@@ -4,7 +4,7 @@ title: Withdraw from a DVM address
 sidebar_label: Withdraw
 ---
 
-It is an action of transferring assets from a DVM account to a Substrate accound.
+It is an action of transferring assets from a DVM account to a Substrate account.
 
 ## Preparation
 
