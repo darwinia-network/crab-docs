@@ -1,10 +1,10 @@
 ---
 id: dvm-rpc
-title: DVM Rpc
-sidebar_label: Rpc
+title: DVM RPC list
+sidebar_label: DVM RPC list
 ---
 
-> Note: The currently implemented RPC interface is consistent with Ethereum, some interfaces are not yet implemented.
+> Note: The currently implemented RPC apis is compatible with Ethereum, but some apis are not yet implemented.
 
 
 List of implemented interfaces:

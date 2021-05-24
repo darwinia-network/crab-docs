@@ -4,7 +4,7 @@ title: Metamask
 sidebar_label: Metamask
 ---
 
-As the DVM and the Ethereum Virtual Machine remain compatible in terms of underlying specifications, users can use wallets from the existing Ethereum ecosystem to manage assets, introducing how to use Metamask.
+Since the DVM and the Ethereum virtual machine are compatible in the underlying specifications, users can use the wallets from the existing Ethereum ecosystem to manage their assets. Here we will introduce how to use Metamask.
 
 ### Connect with Metamask
 
@@ -20,7 +20,7 @@ The different network configuration are as follows.
 | Network  | RPC URL                             | ChainId | Currency| Block Explorer URL |
 | ---------| ------------------------------------ | -------| --------|---------- |
 | Pangolin | http://pangolin-rpc.darwinia.network | 43     | PRING   | https://pangolin.subscan.io/ |
-| Crab     | http://crab-rpc.darwinia.network     | 44     | CRING   | https://crab.subscanio/      |   
+| Crab     | http://crab-rpc.darwinia.network     | 44     | CRING   | https://crab.subscan.io/      |   
 
 ![dvm](assets/dvm/metamask/m2.png)
 

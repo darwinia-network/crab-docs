@@ -4,9 +4,9 @@ title: Remix
 sidebar_label: Remix
 ---
 
-As the DVM and the Ethereum Virtual Machine are consistent in their underlying specifications, users can use the existing Ethereum ecosystem smart contract development tools, followed by a description of how to execute contracts using Remix.
+Since the DVM and the Ethereum virtual machine are compatible in the underlying specifications, users can use the the existing contract development tools of Ethereum ecosystem. Here we will introduce how to use Remix to execute contracts.
 
-## Prepare Contract code
+## Prepare a contract
 
 ```js
 pragma solidity ^0.6.0;
@@ -24,19 +24,19 @@ contract Incrementer {
 }
 ```
 
-Click on `Compile` to debug the program and make sure it compiles successfully.
+Click on `Compile` to compile the program and make sure it compiles successfully.
 
 ![dvm](assets/dvm/remix/r1.png)
 
-## Connect Metamask
+## Connect to Metamask
 
-Remix can associate a DVM account on Metamask and deploy the contract directly to the corresponding network. Note that DVM accounts need to be bound to Metamask in advance, see [Using Metamask with DVM accounts](dvm-metamask). ENVIRONMENT Select `Injected Web3`, select the associated DVM account in the Metamask pop-up window and click `Next`.
+Remix can use a DVM account on Metamask and deploy the contract directly to the corresponding network. Note that DVM accounts need to be bound to Metamask first, see [Using Metamask with DVM accounts](dvm-metamask). ENVIRONMENT Select `Injected Web3`, select the DVM account in the Metamask pop-up window and click `Next`.
 
 ![dvm](assets/dvm/remix/r2.png)
 
-## Execute Contract
+## Execute the contract
 
-Once you have successfully connected to Metamask, click `Deploy` to deploy the contract and the console will display the execution of the transaction.
+Once you have successfully connected to Metamask, click `Deploy` to deploy the contract and the console will display the execution process of the transaction.
 
 ![dvm](assets/dvm/remix/r3.png)
 
@@ -48,6 +48,6 @@ Click `increment` to make another call.
 
 ![dvm](assets/dvm/remix/r5.png)
 
-Click `number` again to make a contract call, and the result is 5.
+Click `number` again to make a contract call, and the result is 5 now.
 
 ![dvm](assets/dvm/remix/r6.png)
