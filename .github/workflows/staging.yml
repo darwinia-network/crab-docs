@@ -1,9 +1,7 @@
 name: Staging
 on:
   push:
-    branches: [develop]
-  pull_request:
-    branches: [develop]
+    branches: [main]
 
 jobs:
   build-and-deploy:
