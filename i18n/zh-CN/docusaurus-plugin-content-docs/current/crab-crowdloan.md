@@ -1,31 +1,67 @@
 ---
 id: crab-crowdloan
-title: Kusama 平行链拍卖众贷
-sidebar_label: Kusama 平行链拍卖众贷
+title: Kusama Parachain Slot Auction Crowdloan
+sidebar_label: Kusama Parachain Auction Crowdloan
 ---
 
-[Kusama 官网关于拍卖和众贷的信息](https://translate.google.com/translate?sl=en&tl=zh-CN&u=https://kusama.network/auctions)
+Kusama allows parachains to source KSM for their parachain bids in a decentralized crowdloan.
 
-Kusama 允许平行链在去中心化的众贷系统中为平行链竞拍提供 KSM。
+## What you can get?
 
-任何平行链项目团队都可以为平行链插槽创建新的众贷活动。一次众贷活动需要提供插槽使用时间（即，平行链将竞标的持续时间），上限和众贷的持续时间。在众贷时间范围内可以持续数次拍卖，这意味着团队无需因为没有在第一次尝试中获得插槽而重新开启众贷。
+* Guaranteed rewards
 
-每个已创建的众贷都会有一个 Index。众贷开启后，任何人都可以通过发送一笔包含项目方 Index 的特殊交易来参与。用于参与众贷的 KSM 必须为可交易的状态，不包括任何形式的锁定，如质押、投票或者治理）。
+  Every **1 KSM** donated by supporters of Crab during the Crowdloan will earn a reward of about **25 CRING** per day immediately at the end of the auction.
 
-> 重要提示：所有众贷捐款均由众贷模块的逻辑处理。为了准确识别项目方，请填写相应众贷活动的 Index 而非地址。
+* Rewards for a successful bid
 
-平行链项目方可以决定是否以及如何奖励那些放弃质押收益的参与者，并选择锁定他们的 KSM 以支持平行链的竞选活动。可以想象，奖励将采用多种形式，并且在各个项目中可能会有很大差异。
+  After successfully winning the slot, we will distribute a 240,000,000 CRING prize pool and a 6,000,000 RING prize pool.
 
-在众贷活动的某个阶段，项目方将上传平行链数据。理想情况下，项目方在向参与贡献的用户发放奖励前进行此操作，以便参与的用户可以对其进行验证。在活动过程中，数据只能上传一次，这将作为平行链的 runtime 部署。当然，一旦平行链开始运行，它可以通过升级 rumtime 来更改（由其自身的本地治理确定）。
+* BTC Prize Lotto
 
-如果众筹活动成功，该平行链将在 Kusama 网络上线。筹集的KSM在活动期间（最多两年）将被锁定在该平行链账户中。
+  In addition to NFT rewards, We will also offer a Mystery BTC Super Prize hidden somewhere in the NFT land. Within 20 days after the parachain auction is finished, all players who get the Evolution Land NFT Legendary Package lucky draw will have a chance to win the BTC lotto prize!
 
-> 注意：用户的 KSM 不会脱离用户的钱包账户(托管给交易所的除外）
+More details in [Darwinia Crab’s Kusama Parachain Auction Strategy](https://darwinianetwork.medium.com/darwinia-crabs-kusama-parachain-auction-strategy-3f37cbfdfe4)
 
-参与者将能够通过以下两种方式之一来收回其 KSM：
+## How to contribute
 
-- 如果活动成功，则平行链将在其租约结束时进入退出阶段。在此阶段中，参与者可以赎回参与的 KSM。
+### If your KSM is in your exchange account
 
-- 如果竞选未成功，则可以在竞选结束后的退出阶段内，参与者也可以撤回其 KSM。
+* [Okex](./crab-crowdloan-okex.md)
 
-> 注意，退出 KSM 需要为每个参与者进行交易。任何人都可以进行交易，因此平行链团队可以批量释放每个参与者的 KSM。在一定时间内未撤出的代币将进入 Kusama 国库。
+* You can withdraw your KSM to your wallet. So, 
+
+### If your KSM is in your wallet
+
+* [Unstaking](./crab-crowdloan-howto-unstaking.md)
+
+* [Contribute through our webpage](https://crab.network/plo)
+
+* [Contribute through Polkadot.{js}](./crab-crowdloan-howto-polkadotjs.md)
+
+### About
+
+Anyone can create a new crowdloan campaign for a parachain slot. A campaign is configured as a range of slots (i.e. the duration the parachain will bid for), a cap, and a duration. The duration can last over several auctions, meaning that the team will not need to restart the campaign just because they do not secure a slot on their first attempt.
+
+Each created campaign will have an index. Once a crowdloan campaign is open, anyone can participate by sending a special transaction that references the campaign's index. KSM used to participate must be transferable --- that is, not locked for any reason, including staking, vesting, and governance --- because they will be moved into a module-controlled account that was generated uniquely for this campaign.
+
+> Important: All crowdloan contributions are handled by the Crowdloan module's logic where a campaign is identified by index, not by address. Never transfer KSM to an address in support of a campaign.
+
+It is up to individual parachain teams to decide if and how they want to reward participants who forgo staking and choose to lock their KSM in support of the parachain's campaign. As one can imagine, rewards will take many forms and may vary widely among projects.
+
+During some point of the crowdloan campaign the owner will upload the parachain data. Ideally, the owner does this before soliciting contributions to the campaign so that the contributors can verify it. The data can only be uploaded once during the course of the campaign and it will be what is deployed as the parachain's runtime. Of course, once the parachain is running it can always change via runtime upgrades (as determined through its own local governance).
+
+If a crowdloan campaign is successful, that parachain will be on-boarded in Kusama. The collective KSM will be locked in that parachain's account for the entire duration that it is active (up to two years).
+
+> The user's KSM will not leave their wallet (except for those hosted by the exchange). 
+
+Participants will be able to reclaim their KSM in one of two ways:
+
+- If the crowdloan campaign was successful, then the parachain will enter a retirement phase at the end of its lease. During this phase, participants can withdraw the KSM with which they participated.
+
+- If the crowdloan campaign was not successful, then this retirement phase will begin at the campaign's configured end, and participants can likewise withdraw their KSM.
+
+![crowdloan.png](./assets/crowdloan/crowdloan.png)
+
+> Note that withdrawing KSM requires a transaction for each participant. Anyone can make the transactions, so a parachain team could free every participant's KSM in a batch. Tokens that are not withdrawn within a certain amount of time will go to the Kusama Treasury.
+
+[More details in Kusama website](https://kusama.network/auctions)
