@@ -6,7 +6,7 @@ sidebar_label: Crowdloan
 
 Kusama allows parachains to source KSM for their parachain bids in a decentralized crowdloan.
 
-## What you can get?
+## What can you get?
 
 * Guaranteed rewards
 
@@ -38,7 +38,7 @@ More details in [Darwinia Crab’s Kusama Parachain Auction Strategy](https://da
 
 * [Contribute through Polkadot.{js}](./crab-crowdloan-howto-polkadotjs.md)
 
-### About crowdloan
+### About the crowdloan
 
 Anyone can create a new crowdloan campaign for a parachain slot. A campaign is configured as a range of slots (i.e. the duration the parachain will bid for), a cap, and a duration. The duration can last over several auctions, meaning that the team will not need to restart the campaign just because they do not secure a slot on their first attempt.
 
@@ -46,7 +46,7 @@ Each created campaign will have an index. Once a crowdloan campaign is open, any
 
 > Important: All crowdloan contributions are handled by the Crowdloan module's logic where a campaign is identified by index, not by address. Never transfer KSM to an address in support of a campaign.
 
-If a crowdloan campaign is successful, that parachain will be on-boarded in Kusama. The collective KSM will be locked in that parachain's account for the entire duration that it is active (up to 1 year, fuchsia bar in below picture).
+If a crowdloan campaign is successful, that parachain will be on-boarded in Kusama. The collective KSM will be locked in that parachain's account for the entire duration that it is active (up to 1 year, the fuchsia bar in the below picture).
 
 > Important: The user's KSM will not leave their wallet (except for those hosted by the exchange). 
 
