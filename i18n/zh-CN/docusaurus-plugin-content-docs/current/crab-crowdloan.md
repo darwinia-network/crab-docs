@@ -46,9 +46,13 @@ Of course, you can withdraw your KSM to your wallet.ss
 
     * [Polkadot.{js}](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkusama-rpc.polkadot.io#/parachains/crowdloan)
 
-      * [How to use Polkadot.{js}](./crab-crowdloan-howto-polkadotjs.md)
+      * [How-to](./crab-crowdloan-howto-polkadotjs.md)
 
     * [Nutbox](https://polkadot.nutbox.io/#/crowdloan/kusama/parachain/2006)
+
+      * [How-to](https://www.notion.so/Crab-Slot-Auction-7710b022aa8647cca7d782ab90f2aa05)
+      
+      * [How-to(TP)](https://www.notion.so/Crab-Slot-Auction-TP-b62746eb90684d6c8ff96f2e83bb3622)
 
     * [Atoken](https://atoken-plo.biliangwang.com/plo)
 
