@@ -3,7 +3,6 @@ module.exports = {
     "Crab Network": [
       'crab-home', 
       'crab-tools', 
-      'crab-crowdloan',
       'crab-parameters'
     ],
 
@@ -18,6 +17,13 @@ module.exports = {
         ]
       },
       'crab-tut-exchange'
+    ],
+
+    "Kusama Auction": [
+      'crab-crowdloan',
+      'crab-crowdloan-howto-unstaking',
+      'crab-crowdloan-howto-polkadotjs',
+      'crab-crowdloan-howto-okex',
     ],
 
     "DVM": [
