@@ -26,7 +26,7 @@ More details in [Darwinia Crab’s Kusama Parachain Auction Strategy](https://da
 
 ### If your KSM is in your exchange account
 
-* [Okex](./crab-crowdloan-howto-okex.md)
+* [Exchanges](./crab-crowdloan-howto-exchanges.md)
 
 * You can withdraw your KSM to your wallet. So, 
 
@@ -59,3 +59,5 @@ Participants will be able to reclaim their KSM in one of two ways:
 ![crowdloan.png](./assets/crowdloan/crowdloan.png)
 
 [More details in Kusama website](https://kusama.network/auctions)
+
+

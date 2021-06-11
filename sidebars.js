@@ -23,7 +23,7 @@ module.exports = {
       'crab-crowdloan',
       'crab-crowdloan-howto-unstaking',
       'crab-crowdloan-howto-polkadotjs',
-      'crab-crowdloan-howto-okex',
+      'crab-crowdloan-howto-exchanges',
     ],
 
     "DVM": [
