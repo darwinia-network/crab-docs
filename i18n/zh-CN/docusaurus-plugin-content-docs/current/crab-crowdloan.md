@@ -24,19 +24,34 @@ More details in [Darwinia Crab’s Kusama Parachain Auction Strategy](https://da
 
 ## How to contribute?
 
-### If your KSM is in your exchange account
+### If your KSM is in your third-party platform account
 
-* [Exchanges](./crab-crowdloan-howto-exchanges.md)
+* [Okex](https://www.ouyi.cc/earn/slotauction), coming at 6/15/2021
 
-* You can withdraw your KSM to your wallet. So, 
+* [Math cloud wallet](https://cloud.mathwallet.xyz/#/auction)
+
+* Kraken, coming soon
+
+* Hotbit, coming soon
+
+Of course, you can withdraw your KSM to your wallet.ss
 
 ### If your KSM is in your wallet
 
-* [Unstaking](./crab-crowdloan-howto-unstaking.md)
+1. [Unstaking](./crab-crowdloan-howto-unstaking.md)
 
-* [Contribute through our webpage](https://crab.network/plo)
+2. Contribute
 
-* [Contribute through Polkadot.{js}](./crab-crowdloan-howto-polkadotjs.md)
+    * [Contribute through our webpage](https://crab.network/plo)
+
+    * [Polkadot.{js}](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkusama-rpc.polkadot.io#/parachains/crowdloan)
+
+      * [How to use Polkadot.{js}](./crab-crowdloan-howto-polkadotjs.md)
+
+    * [Nutbox](https://polkadot.nutbox.io/#/crowdloan/kusama/parachain/2006)
+
+    * [Atoken](https://atoken-plo.biliangwang.com/plo)
+
 
 ### About the crowdloan
 
@@ -59,3 +74,4 @@ Participants will be able to reclaim their KSM in one of two ways:
 ![crowdloan.png](./assets/crowdloan/crowdloan.png)
 
 [More details in Kusama website](https://kusama.network/auctions)
+
