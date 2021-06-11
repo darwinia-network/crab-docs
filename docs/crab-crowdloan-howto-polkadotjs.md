@@ -12,9 +12,11 @@ Before participating in the crowdloan via Polkadot.{js}, please make sure that y
 
 * Or create a new address in the Polkadot.{js}, and transfer KSM from the centralized exchange to this address
 
-## Contribute
+## Contribute your KSM to Crab's crowdloan
 
-1. Click "Network" in the toolbar —> select "Parachains" —> click "Crowdloan".
+1. Go to [Polkadot.{js}](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkusama-rpc.polkadot.io#/parachains/crowdloan)
+
+1. Click "Network" in the toolbar > select "Parachains" > click "Crowdloan".
 
    ![](./assets/crowdloan/polkadotjs.jpg)
 
