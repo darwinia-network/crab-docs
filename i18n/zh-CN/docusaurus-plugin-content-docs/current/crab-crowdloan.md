@@ -1,30 +1,40 @@
 ---
 id: crab-crowdloan
-title: Kusama Parachain Slot Auction Crowdloan
-sidebar_label: Crowdloan
+title: Kusama 平行链拍卖众贷
+sidebar_label: 众贷
 ---
 
-Kusama allows parachains to source KSM for their parachain bids in a decentralized crowdloan.
+Kusama 允许平行链以去中心化的方式筹集 KSM。
 
-## What can you get?
+## 你能获得什么？
 
-* Guaranteed rewards
+KSM 持有者可以将其通证锁定在 Crowdloan 上一段时间（48周），以帮助 Crab 网络拍卖插槽，作为这些 KSM 持有者的回报，参与者将获得 CRING、RING、NFT 、BTC 作为奖励。
 
-  Every **1 KSM** donated by supporters of Crab during the Crowdloan will earn a reward of about **25 CRING** per day immediately at the end of the auction.
+我们会为支持 Crab 网络的用户提供 RING 和 CRING 的代币奖励，以及进化星球建立在 Crab 网络上的 哥伦布大陆、建立在 Heco 网络上的拂晓大陆的 NFT（包括土地、钻头、使徒）奖励。
 
-* Rewards for a successful bid
+我们的超级大奖是 1 枚 BTC，最幸运的一位用户可以在获取的土地 NFT 中发现到这枚 BTC 超级“盲盒”大奖。
 
-  After successfully winning the slot, we will distribute a 240,000,000 CRING prize pool and a 6,000,000 RING prize pool.
+通过合作交易所支持 Crab 网络的用户也可以获得这些奖励。
 
-* BTC Prize Lotto
+* 保底奖励
 
-  In addition to NFT rewards, We will also offer a Mystery BTC Super Prize hidden somewhere in the NFT land. Within 20 days after the parachain auction is finished, all players who get the Evolution Land NFT Legendary Package lucky draw will have a chance to win the BTC lotto prize!
+  用户每支持 1 KSM，可以在竞拍结束后（无论该轮竞拍是否成功）获得参与众贷期间每日 25 CRING（APY: 15%）的基础奖励。CRING 无锁定期，众贷结束时统一发放。
 
-More details in [Darwinia Crab’s Kusama Parachain Auction Strategy](https://darwinianetwork.medium.com/darwinia-crabs-kusama-parachain-auction-strategy-3f37cbfdfe4)
+* 成就奖
 
-## How to contribute?
+  达尔文 Crab 竞拍成功，获得插槽时， 成就奖有总计 240,000,000 CRING 及 6,000,000  RING 的奖池，由支持者按照贡献比例分享。
 
-### If your KSM is in your third-party platform account
+  30% 立即发放，70% 每周线性释放，为期 48 周。
+
+* BTC 乐透大奖
+
+  除了 NFT 奖励外，还有一枚 BTC 的超级大奖藏在大陆的地块中，在拍得平行链后 20 天內，所有参与抽奖并抽中地块的玩家都有机会获得 BTC 乐透大奖～。
+
+更多详情请见： [Kusama 卡槽竞拍计划](https://mp.weixin.qq.com/s/fvQIiQp0xqkgXY4bG8Mskw)
+
+## 如何参与？
+
+### 如果你的KSM在第三方平台的账户上
 
 * [Okex](https://www.ouyi.cc/earn/slotauction), coming at 6/15/2021
 
@@ -34,48 +44,48 @@ More details in [Darwinia Crab’s Kusama Parachain Auction Strategy](https://da
 
 * Hotbit, coming soon
 
-Of course, you can withdraw your KSM to your wallet.ss
+当然，您可以将 KSM 提取到您的钱包中，然后在钱包中参与，请下看。
 
-### If your KSM is in your wallet
+### 如果您的 KSM 在您的钱包中
 
-1. [Unstaking](./crab-crowdloan-howto-unstaking.md)
+1. [解绑](./crab-crowdloan-howto-unstaking.md)
 
-2. Contribute
+2. 贡献
 
-    * [Contribute through our webpage](https://crab.network/plo)
+    * [通过我们的提供的网页](https://crab.network/plo)
 
-    * [Polkadot.{js}](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkusama-rpc.polkadot.io#/parachains/crowdloan)
+    * [通过 Polkadot.{js}](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkusama-rpc.polkadot.io#/parachains/crowdloan)
 
-      * [How-to](./crab-crowdloan-howto-polkadotjs.md)
+      * [教程](./crab-crowdloan-howto-polkadotjs.md)
 
-    * [Nutbox](https://polkadot.nutbox.io/#/crowdloan/kusama/parachain/2006)
+    * [通过 Nutbox](https://polkadot.nutbox.io/#/crowdloan/kusama/parachain/2006)
 
-      * [How-to](https://www.notion.so/Crab-Slot-Auction-7710b022aa8647cca7d782ab90f2aa05)
+      * [教程](https://www.notion.so/Crab-Slot-Auction-7710b022aa8647cca7d782ab90f2aa05)
       
-      * [How-to(TP)](https://www.notion.so/Crab-Slot-Auction-TP-b62746eb90684d6c8ff96f2e83bb3622)
+      * [教程(TP)](https://www.notion.so/Crab-Slot-Auction-TP-b62746eb90684d6c8ff96f2e83bb3622)
 
-    * [Atoken](https://atoken-plo.biliangwang.com/plo)
+    * [通过 Atoken](https://atoken-plo.biliangwang.com/plo)
 
 
-### About the crowdloan
+### 关于众贷
 
-Anyone can create a new crowdloan campaign for a parachain slot. A campaign is configured as a range of slots (i.e. the duration the parachain will bid for), a cap, and a duration. The duration can last over several auctions, meaning that the team will not need to restart the campaign just because they do not secure a slot on their first attempt.
+任何人都可以为平行链插槽创建新的众筹活动。活动被配置为一系列 slot、众贷上限和持续时间。
 
-Each created campaign will have an index. Once a crowdloan campaign is open, anyone can participate by sending a special transaction that references the campaign's index. KSM used to participate must be transferable --- that is, not locked for any reason, including staking, vesting, and governance --- because they will be moved into a module-controlled account that was generated uniquely for this campaign.
+一旦众筹活动开启，任何人都可以通过一个特殊的交易来参与。用于参与的 KSM 必须是可转账的，也就是说，不会因任何原因被锁定，包括质押、归属和治理。
 
-> Important: All crowdloan contributions are handled by the Crowdloan module's logic where a campaign is identified by index, not by address. Never transfer KSM to an address in support of a campaign.
+> Important: 所有众筹捐款都由众筹模块的逻辑处理，其中活动由索引而不是地址标识。切勿将 KSM 转账到某个地址。
 
-If a crowdloan campaign is successful, that parachain will be on-boarded in Kusama. The collective KSM will be locked in that parachain's account for the entire duration that it is active (up to 1 year, the fuchsia bar in the below picture).
+如果众筹活动成功，该平行链将在 Kusama 中上线。筹集的 KSM 将在该平行链的整个活跃期间（大约 1 年，下图中的紫红色条）锁定在该平行链的账户中。
 
-> Important: The user's KSM will not leave their wallet (except for those hosted by the exchange). 
+> Important: 用户的 KSM 不会离开他们的钱包（交易所托管的钱包除外）。
 
-Participants will be able to reclaim their KSM in one of two ways:
+参与者将能够通过以下两种方式之一撤回他们的 KSM：
 
-- If the auction was successful, then the parachain will enter a retirement phase at the end of its lease. During this phase, participants can withdraw the KSM with which they participated.
+- 如果拍卖成功，那么平行链将在租约结束时进入 retirement 阶段。 在此阶段，参与者可以撤回他们参与的 KSM。
 
-- If the auction was not successful, then this retirement phase will begin at the crowdloan's configured end, and participants can likewise withdraw their KSM (at the end of the light purple bar, which is the crab's first crowdloan ).
+- 如果拍卖不成功，那么这个退出阶段将在众筹配置结束时开始，参与者同样可以撤回他们的 KSM（在浅紫色条的末尾，这是 Crab 的第一个众筹）。
 
 ![crowdloan.png](./assets/crowdloan/crowdloan.png)
 
-[More details in Kusama website](https://kusama.network/auctions)
+[如果想了解众贷的更多细节，请看](https://kusama.network/auctions)
 

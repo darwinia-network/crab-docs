@@ -8,6 +8,12 @@ Kusama allows parachains to source KSM for their parachain bids in a decentraliz
 
 ## What can you get?
 
+We have set aside 25% of CRING and 1% of RING token supplies for Kusama PLO over the next 10 years.
+
+In addition, Evolution Land NFT rewards (land, chests, apostles) on the Columbus continent launched on the Crab network and Dawning continent launched on Heco Chain will be provided to supporters after successful bidding.
+
+Our super jackpot is 1 BTC, and one lucky user will find this BTC when they claim their land.
+
 * Guaranteed rewards
 
   Every **1 KSM** donated by supporters of Crab during the Crowdloan will earn a reward of about **25 CRING** per day immediately at the end of the auction.

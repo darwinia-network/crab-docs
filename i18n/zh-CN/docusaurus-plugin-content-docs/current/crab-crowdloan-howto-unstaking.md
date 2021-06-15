@@ -1,38 +1,38 @@
 ---
 id: crab-crowdloan-howto-unstaking
-title: Unstaking Your KSM Tokens on Polkadot.{js} Extension
-sidebar_label: Unstaking
+title: Unstaking 你的 KSM
+sidebar_label: Unstaking 你的 KSM
 ---
 
-You will need to unstake your KSM tokens prior to bonding them to the crowdloan module. For recently unstaked KSM tokens, Kusama has a delayed exit period (7 days), which serves as cooldown. During this period, you will not be able to transfer your tokens.
+在将您的 KSM 参与到众贷之前，您需要先取消 Staking。 对于刚刚解开 Staking 的 KSM 代币，Kusama 有一个延迟期（7 天）。 在此期间，您将无法转账您的代币。
 
 
-## Stop nominating (staking)
+## 停止 staking
 
-1. Open [Polkadot{.js}](https://polkadot.js.org/apps/) and connect to the Kusama network. Then in the navigation bar at the top of the page, click on "Network" dropdown and select "Staking".
+1. 打开 [Polkadot{.js}](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fkusama-rpc.polkadot.io#/staking/actions) ，然后进入"Network" > "Staking"。
 
    ![unstaking1](./assets/crowdloan/unstaking1.jpg)
 
-2. Click on "Account actions" in the white sub-header towards the top of the screen. Then click "Stop" (towards the right of the screen) on the account that you'd like to unstake.
+2. 进入 "Account actions". 然后在你想要进行unstake的账户的右边点击 "Stop" 。
 
    ![unstaking2](./assets/crowdloan/unstaking2.jpg)
 
-3. Click on "Sign and Submit" in the bottom right corner to authorize the transaction. Your browser extension will prompt you to enter your password and sign the transaction. You have now stopped nominating, but your tokens remain bonded.
+3. 点击右下角的“Sign and Submit”，对交易进行授权。 您的浏览器扩展程序将提示您输入密码并签署交易。到这里，您就已经停止nominate了，但您的代币仍是绑定状态。
 
    ![unstaking3](./assets/crowdloan/unstaking3.jpg)
 
-4. To unbond your tokens, click the ellipses (three dots) on the right-hand side of the page and click on "Unbond funds".
+4. 要 unbond 您的代币，请单击页面右侧的省略号（三个点），然后单击“Unbond funds”。
 
    ![unstaking5](./assets/crowdloan/unstaking5.jpg)
 
-5. Enter the amount you'd like to unbond and then click on "Unbond". Then sign and submit the transaction.
+5. 输入您想要解除绑定的金额，然后点击“Unbond”。 然后签名并提交交易。
 
    ![unstaking6](./assets/crowdloan/unstaking6.jpg)
 
-6. If done successfully, there should be a clock icon next the amount you requested to be unbonded. You can hover over the icon to see how much longer until the tokens are fully unlocked, which is approximately 7 days. Once the 7 days have passed, click on "Withdraw unbonded funds". This will make your KSM transferable. Even though it says "withdraw", they won't be leaving your account.
+6. 如果成功完成，您要求解绑的金额旁边应该有一个时钟图标。 您可以将鼠标悬停在该图标上以查看代币完全解锁所需的时间，大约为 7 天。 7 天过后，才能点击“Withdraw unbonded funds”。 这将使您的 KSM 可转账。 
 
    ![unstaking7](./assets/crowdloan/unstaking7.jpg)
 
-7. You can return to "My Accounts" and select the dropdown next to balance to see that your KSM is now transferable.
+7. 您可以返回 “My accounts” 并选择 “balance”  旁边的下拉菜单，以查看您的 KSM 现在都多少可以转账。
 
    ![unstaking8](./assets/crowdloan/unstaking8.jpg)
