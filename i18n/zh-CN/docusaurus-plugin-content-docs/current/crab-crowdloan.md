@@ -36,11 +36,9 @@ KSM 持有者可以将其通证锁定在 Crowdloan 上一段时间（48周），
 
 ### 如果你的KSM在第三方平台的账户上
 
-* [Okex](https://www.ouyi.cc/earn/slotauction), coming at 6/15/2021
+* [Okex](https://www.ouyi.cc/earn/slotauction)
 
 * [Math cloud wallet](https://cloud.mathwallet.xyz/#/auction)
-
-* Kraken, coming soon
 
 * Hotbit, coming soon
 
@@ -63,6 +61,8 @@ KSM 持有者可以将其通证锁定在 Crowdloan 上一段时间（48周），
       * [教程](https://www.notion.so/Crab-Slot-Auction-7710b022aa8647cca7d782ab90f2aa05)
       
       * [教程(TP)](https://www.notion.so/Crab-Slot-Auction-TP-b62746eb90684d6c8ff96f2e83bb3622)
+      
+    * [Bounce](https://ksm.bounce.finance/#/)
 
     * [通过 Atoken](https://atoken-plo.biliangwang.com/plo)
 

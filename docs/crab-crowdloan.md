@@ -32,11 +32,9 @@ More details in [Darwinia Crab’s Kusama Parachain Auction Strategy](https://da
 
 ### If your KSM is in your third-party platform account
 
-* [Okex](https://www.ouyi.cc/earn/slotauction), coming at 6/15/2021
+* [Okex](https://www.ouyi.cc/earn/slotauction)
 
 * [Math cloud wallet](https://cloud.mathwallet.xyz/#/auction)
-
-* Kraken, coming soon
 
 * Hotbit, coming soon
 
@@ -59,6 +57,8 @@ Of course, you can withdraw your KSM to your wallet.ss
     	* [How-to](https://www.notion.so/Crab-Slot-Auction-7710b022aa8647cca7d782ab90f2aa05)
 
     	* [How-to(TP)](https://www.notion.so/Crab-Slot-Auction-TP-b62746eb90684d6c8ff96f2e83bb3622)
+
+    * [Bounce](https://ksm.bounce.finance/#/)
 
     * [Atoken](https://atoken-plo.biliangwang.com/plo)
 
