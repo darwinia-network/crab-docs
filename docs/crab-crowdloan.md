@@ -32,7 +32,9 @@ More details in [Darwinia Crab’s Kusama Parachain Auction Strategy](https://da
 
 ### If your KSM is in your third-party platform account
 
-* [Okex](https://www.ouyi.cc/earn/slotauction)
+* [OKEx](https://www.ouyi.cc/earn/slotauction)
+
+  * [How-to](./crab-crowdloan-howto-okex.md)
 
 * [Math cloud wallet](https://cloud.mathwallet.xyz/#/auction)
 

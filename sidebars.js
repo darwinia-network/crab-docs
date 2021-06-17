@@ -21,6 +21,7 @@ module.exports = {
 
     "Kusama Auction": [
       'crab-crowdloan',
+      'crab-crowdloan-howto-okex',
       'crab-crowdloan-howto-unstaking',
       'crab-crowdloan-howto-polkadotjs',
     ],
