@@ -36,11 +36,13 @@ More details in [Darwinia Crab’s Kusama Parachain Auction Strategy](https://da
 
   * [How-to](./crab-crowdloan-howto-okex.md)
 
+* [Gateio](https://www.gateio.ch/cn/hodl/600)
+
 * [Math cloud wallet](https://cloud.mathwallet.xyz/#/auction)
 
 * Hotbit, coming soon
 
-Of course, you can withdraw your KSM to your wallet.ss
+Of course, you can withdraw your KSM to your wallet.
 
 ### If your KSM is in your wallet
 

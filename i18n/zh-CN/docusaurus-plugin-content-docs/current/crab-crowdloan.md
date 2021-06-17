@@ -40,6 +40,8 @@ KSM 持有者可以将其通证锁定在 Crowdloan 上一段时间（48周），
 
   * [How-to](./crab-crowdloan-howto-okex.md)
 
+* [Gateio](https://www.gateio.ch/cn/hodl/600)
+
 * [Math cloud wallet](https://cloud.mathwallet.xyz/#/auction)
 
 * Hotbit, coming soon
