@@ -36,15 +36,13 @@ KSM 持有者可以将其通证锁定在 Crowdloan 上一段时间（48周），
 
 ### 如果你的KSM在第三方平台的账户上
 
-* [Okex](https://www.ouyi.cc/earn/slotauction)
+* [OKEx](./crab-crowdloan-howto-okex.md)
 
-  * [How-to](./crab-crowdloan-howto-okex.md)
+* [Gateio](./crab-crowdloan-howto-gateio.md)
 
-* [Gateio](https://www.gateio.ch/cn/hodl/600)
+* [Math cloud wallet](./crab-crowdloan-howto-math.md)
 
-* [Math cloud wallet](https://cloud.mathwallet.xyz/#/auction)
-
-* Hotbit, coming soon
+* [Hotbit](./crab-crowdloan-howto-hotbit.md)
 
 当然，您可以将 KSM 提取到您的钱包中，然后在钱包中参与，请下看。
 

@@ -8,7 +8,7 @@ sidebar_label: OKEx 教程
 
 1.访问网页版[OKEx](https://www.okex.com/ )，点击"金融业务" > "赚币" > "平行链插槽竞拍"。
 
-   ![okex1](./assets/crowdloan/okex1.mp4)
+   ![okex1](./assets/crowdloan/okex1.gif)
 
 2.选择 “Crab Network”，点击“投票”，输入想要锁定的 KSM 数量并确认投票。
 
@@ -18,7 +18,7 @@ sidebar_label: OKEx 教程
 
 1.打开手机移动端OKEx，点击“资产” > “金融业务” > “赚币” > “平行链插槽竞拍”。 
 
-   ![okex3](./assets/crowdloan/okex3.mp4)
+   ![okex3](./assets/crowdloan/okex3.gif)
 
 2.选择 “Crab Network”，点击“投票”，输入想要锁定的 KSM 数量并确认投票。
 

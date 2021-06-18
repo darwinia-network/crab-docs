@@ -7,9 +7,9 @@ sidebar_label: Contribute in OKEx
 
 ## Method 1: Join Crowdloan through the web version of OKEx
 
-1. Visit the web version [OKEx](https://www.okex.com/) and go to s"Finance" > "Earn" > "Parachain Slot Auction":
+1. Visit the web version [OKEx](https://www.okex.com/) and go to "Finance" > "Earn" > "Parachain Slot Auction":
 
-   ![okex1](./assets/crowdloan/okex1.mp4)
+   ![okex1](./assets/crowdloan/okex1.gif)
 
 2. Select "Crab Network" and click "Vote", enter the number of KSMs you want to contribute and confirm your vote:
 
@@ -19,7 +19,7 @@ sidebar_label: Contribute in OKEx
 
 1. Open OKEx app and go to "Assets" > "Finance" > "Earn" > "Parachain Slot Auction":
 
-   ![okex3](./assets/crowdloan/okex3.mp4)
+   ![okex3](./assets/crowdloan/okex3.gif)
 
 2. Select "Crab Network" and click click "Vote", enter the number of KSMs you want to contribute and confirm your vote:
 

@@ -32,15 +32,13 @@ More details in [Darwinia Crab’s Kusama Parachain Auction Strategy](https://da
 
 ### If your KSM is in your third-party platform account
 
-* [OKEx](https://www.ouyi.cc/earn/slotauction)
+* [OKEx](./crab-crowdloan-howto-okex.md)
 
-  * [How-to](./crab-crowdloan-howto-okex.md)
+* [Gateio](./crab-crowdloan-howto-gateio.md)
 
-* [Gateio](https://www.gateio.ch/cn/hodl/600)
+* [Math cloud wallet](./crab-crowdloan-howto-math.md)
 
-* [Math cloud wallet](https://cloud.mathwallet.xyz/#/auction)
-
-* Hotbit, coming soon
+* [Hotbit](./crab-crowdloan-howto-hotbit.md)
 
 Of course, you can withdraw your KSM to your wallet.
 
