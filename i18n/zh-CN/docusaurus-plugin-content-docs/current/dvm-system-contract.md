@@ -87,7 +87,7 @@ Transfer 则是 Pangolin 特有的预编译合约，合约地址 `0x000000000000
 {
     // 将 DVM 账户 0x6Be02d1d3665660d22FF9624b7BE0551ee1Ac91b 的 PKTON 转移到 WKTON 合约 0x6Be02d1d3665660d22FF9624b7BE0551ee1Ac91b 用户账户内。
     const from = "0x6Be02d1d3665660d22FF9624b7BE0551ee1Ac91b";
-    const input = ethabi(transfer_and_call(WKTON_ADDRESS,TRANSFER_VALUE));
+    const input = ethabi(transfer_and_call(WKTON_ADDRESS, TRANSFER_VALUE));
     const createTransaction = await web3.eth.accounts.signTransaction(
         {
             from: from,
@@ -100,6 +100,12 @@ Transfer 则是 Pangolin 特有的预编译合约，合约地址 `0x000000000000
 }
 ```
 
+说明：
+
+* `from`: DVM 账户地址
+* `to`: Transfer 合约地址，切记不可填错，否则资产无法找回
+* `data`: ethabi(transfer_and_call(WKTON_ADDRESS, TRANSFER_VALUE)) 的结果
+
 2. PKTON 资产从 DVM WKTON 合约用户账户转移到 Substrate 账户
 
-在 WKTON 合约中调用 `withdraw(bytes32 to, uint wad)`，填充 Substrate 账户，转账金额即可。
+在 WKTON 合约中调用 `withdraw(bytes32 to, uint wad)`，填充 Substrate 账户，转账金额即可。   
