@@ -34,7 +34,7 @@ sidebar_label: 系统合约
 
 为了尽可能地兼容以太坊，为应用迁移减少负担，系统合约目前共包括两种类型，分别是兼容以太坊的预编译合约（ECRecover，Sha256，Ripemd160，Identity） 和 Pangolin 特有的预编译合约 Transfer。
 
-### Tranfer 合约
+### Transfer 合约
 
 Transfer 则是 Pangolin 特有的预编译合约，合约地址 `0x0000000000000000000000000000000000000015`（预留地址给以太坊其他合约），用于 在 DVM 账户和 Substrate 账户之间进行价值转移。目前 Transfer 合约的主要功能有两个：
 
