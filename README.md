@@ -11,7 +11,11 @@ yarn install
 ## Local Development
 
 ```console
+// run en version
 yarn start
+
+// run zh version
+yarn start --locale 'zh-CN' 
 ```
 
 This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
