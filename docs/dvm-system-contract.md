@@ -39,10 +39,10 @@ In order to be as compatible as possible with Ethereum and reduce the burden for
 
 Transfer is a Pangolin-specific pre-compiled contract with address `0x0000000000000000000000000000000000000015` (reserved for other Ethereum contracts) that is used to transfer value between DVM and Substrate account. The current Transfer contract has two main features:
 
-1. support DVM PRING asset transfer to Substrate account. 
-2. support KTON asset transfer between DVM and Substrate account.
+1. Transfer PRING from DVM to Substrate account.
+2. Transfer PKTON between DVM and Substrate account.
 
-* PRING Asset Transfer
+* PRING Transfer
 
 Users can transfer asset from a DVM account to a Substrate account by sending a transaction to the Transfer contract. An example is as follows.
 
@@ -74,7 +74,7 @@ Description:
 3. `data`: Substrate account address
 4. `value`: Asset amount
 
-* PKTON Asset Transfer
+* PKTON Transfer
 
 Similarly, users transfer PKTON asset between a DVM account and Substrate account by sending transaction to the  Transfer contract. Unlike PRING asset transfers, before a PKTON asset transfer can be performed, a [WKTON](https://github.com/evolutionlandorg/token-contracts/blob/dev/src/WCKTON.sol) contract must be deployed in advance and the address of that contract must be recorded (important, and will be used later).
 

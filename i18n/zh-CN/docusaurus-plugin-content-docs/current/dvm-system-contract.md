@@ -38,8 +38,8 @@ sidebar_label: 系统合约
 
 Transfer 则是 Pangolin 特有的预编译合约，合约地址 `0x0000000000000000000000000000000000000015`（预留地址给以太坊其他合约），用于 在 DVM 账户和 Substrate 账户之间进行价值转移。目前 Transfer 合约的主要功能有两个：
 
-1. 支持 DVM PRING 资产转移到 Substrate 账户。
-2. 支持 KTON 资产在 DVM 和 Substrate 账户之间转移。
+1. DVM PRING 资产转移到 Substrate 账户。
+2. PKTON 资产在 DVM 和 Substrate 账户之间转移。
 
 * PRING 资产转移
 
