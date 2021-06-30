@@ -76,8 +76,7 @@ Transfer 则是 Pangolin 特有的预编译合约，合约地址 `0x000000000000
 * PKTON 资产转移
 
 
-同样，用户通过发交易到 Transfer 合约实现 KTON 资产在 DVM 账户和 Substrate 账户之间转移。与 PRING 资产转移不同的是，
-在进行资产转移之前，必须要部署一个 [WKTON](https://github.com/evolutionlandorg/token-contracts/blob/dev/src/WCKTON.sol) 合约，并记录该合约地址（很重要，稍后会用到）。
+同样，用户通过发交易到 Transfer 合约实现 PKTON 资产在 DVM 账户和 Substrate 账户之间转移。与 PRING 资产转移不同的是，PKTON 记账发生在 DVM 合约中，所以在进行资产转移之前，必须要部署一个 [WKTON](https://github.com/evolutionlandorg/token-contracts/blob/dev/src/WCKTON.sol) 合约，并记录该合约地址（很重要，稍后会用到）。
 
 1. PKTON 资产从 DVM 账户转移到 DVM WKTON 合约用户账户
 

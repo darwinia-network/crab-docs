@@ -76,7 +76,7 @@ Description:
 
 * PKTON Transfer
 
-Similarly, users transfer PKTON asset between a DVM account and Substrate account by sending transaction to the  Transfer contract. Unlike PRING asset transfers, before a PKTON asset transfer can be performed, a [WKTON](https://github.com/evolutionlandorg/token-contracts/blob/dev/src/WCKTON.sol) contract must be deployed in advance and the address of that contract must be recorded (important, and will be used later).
+Similarly, users transfer PKTON asset between a DVM account and Substrate account by sending transaction to the Transfer contract. Unlike PRING asset transfers, PKTON is booked in the DVM contract. Thus, before a PKTON asset transfer can be performed, a [WKTON](https://github.com/evolutionlandorg/token-contracts/blob/dev/src/WCKTON.sol) contract must be deployed in advance and the address of that contract must be recorded (important, and will be used later).
 
 1. Transfer PKTON from DVM account to DVM WKTON contract user account
 
