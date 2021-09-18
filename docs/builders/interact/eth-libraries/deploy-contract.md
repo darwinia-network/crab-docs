@@ -1,22 +1,23 @@
 ---
 title: Deploy a Contract
-description: Learn how to deploy unmodified and unchanged Solidity-based smart contracts to a Moonbeam node with a simple script using Web3.js, Ethers.js, or Web3.py.
+sidebar_position: 2
 ---
 
-# Using Ethereum Libraries to Deploy To Moonbeam
+# Using Ethereum Libraries to Deploy To Crab
 
-![Ethereum Libraries Integrations Moonbeam](/images/sendtx/web3-libraries-banner.png)
+![Ethereum Libraries Integrations Crab](/images/sendtx/web3-libraries-banner.png)
 
-## Introduction {: #introduction } 
+## Introduction
 
-This guide walks through using the Solidity compiler and three different Ethereum libraries to deploy a contract to Moonbeam manually. The three libraries covered by this tutorial are:
+This guide walks through using the Solidity compiler and three different Ethereum libraries to deploy a contract to Crab manually. The three libraries covered by this tutorial are:
 
  - [Web3.js](/builders/tools/eth-libraries/etherjs)
  - [Ethers.js](/builders/tools/eth-libraries/web3js)
  - [Web3.py](/builders/tools/eth-libraries/web3py)
 
-!!! note
-    If you would like to find the simplest way to get started, check out the quick start guide for each library by clicking the links above 
+:::note
+If you would like to find the simplest way to get started, check out the quick start guide for each library by clicking the links above 
+:::
 
 Besides, two other libraries will be used to compile the smart contract:
 
@@ -32,8 +33,9 @@ The examples using both web3.js and ethers.js need you to install Node.js and NP
  - Python v3.6.9 (web3 requires Python >= 3.5.3 and < 4)
  - PIP3 v9.0.1
 
-!!! note
-    --8<-- 'text/common/assumes-mac-or-ubuntu-env.md'
+:::note
+The examples in this guide assumes you have a MacOS or Ubuntu 18.04-based environment and will need to be adapted accordingly for Windows.
+:::
 
 Next, create a directory to store all of the relevant files:
 
