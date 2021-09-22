@@ -45,7 +45,7 @@ In the directory, install the library to be used (web3.py is installed in the de
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::info
+
 <Tabs
   defaultValue="Web3.js"
   values={[
@@ -53,11 +53,28 @@ import TabItem from '@theme/TabItem';
     {label: 'Ethers.js', value: 'Ethers.js'},
     {label: 'Web3.py', value: 'Web3.py'},
   ]}>
-  <TabItem value="Web3.js"> npm i web3 </TabItem>
-  <TabItem value="Ethers.js"> npm i ethers </TabItem>
-  <TabItem value="Web3.py"> pip3 install web3 </TabItem>
+  <TabItem value="Web3.js">
+
+```
+npm i web3
+```
+
+  </TabItem>
+  <TabItem value="Ethers.js">
+
+```
+npm i ethers
+```
+
+  </TabItem>
+  <TabItem value="Web3.py"> 
+
+```
+pip3 install web3
+```
+
+  </TabItem>
 </Tabs>
-:::
 
 The versions used as of publishing this guide were:
 
@@ -73,11 +90,10 @@ Only one file is needed to execute a transaction between accounts. The script sh
  - Ethers.js: [_transaction.js_](/snippets/code/ethers-tx-local/transaction.js)
  - Web3.py: [_transaction.py_](/snippets/code/web3py-tx/transaction.py)
 
-Each of the files, regardless of the library used, has been divided into three sections. In the first section ("Define Provider & Variables"), the library to use is imported, and the provider and other variables are defined (variables depend on the library). Note that `providerRPC` has three the standard development node RPC endpoint, the one for [Pangolin](/pangolin-home.md) and the one for [Crab](/crab-home.md).
+Each of the files, regardless of the library used, has been divided into three sections. In the first section ("Define Provider & Variables"), the library to use is imported, and the provider and other variables are defined (variables depend on the library). Note that `providerRPC` has three the standard node RPC endpoint, the one for development, the one for [Pangolin](/pangolin-home.md) and another one for [Crab](/crab-home.md).
 
 The second section ("Create and Deploy Transaction") outlines the functions needed to send the transaction itself. Some of the key takeaways are discussed next.
 
-:::info
 <Tabs
   defaultValue="Web3.js"
   values={[
@@ -85,13 +101,28 @@ The second section ("Create and Deploy Transaction") outlines the functions need
     {label: 'Ethers.js', value: 'Ethers.js'},
     {label: 'Web3.py', value: 'Web3.py'},
   ]}>
-  <TabItem value="Web3.js"> 
-   snippets/code/web3-tx-local/transaction.js
+  <TabItem value="Web3.js">
+
+```
+snippets/code/web3-tx-local/transaction.js
+```
+
   </TabItem>
-  <TabItem value="Ethers.js"> snippets/code/ethers-tx-local/transaction.js </TabItem>
-  <TabItem value="Web3.py"> snippets/code/web3py-tx/transaction.py </TabItem>
+  <TabItem value="Ethers.js">
+
+```
+snippets/code/ethers-tx-local/transaction.js
+```
+
+  </TabItem>
+  <TabItem value="Web3.py"> 
+
+```
+snippets/code/web3py-tx/transaction.py
+```
+
+  </TabItem>
 </Tabs>
-:::
 
 ### Web3.js
 
@@ -145,9 +176,8 @@ You can find the code snippet for each library here (files were arbitrarily name
 
 For simplicity, the balance file is composed of two sections. As before, in the first section ("Define Provider & Variables"), the library to use is imported, and the provider and address from/to (to check the balances) are defined.
 
-The second section ("Balance Call Function") outlines the functions needed to fetch the balances of the accounts previously defined. Note that `providerRPC` has three the standard development node RPC endpoint, the one for [Pangolin](/pangolin-home.md) and the one for [Crab](/crab-home.md). Some of the key takeaways are discussed next.
+The second section ("Balance Call Function") outlines the functions needed to fetch the balances of the accounts previously defined. Note that `providerRPC` has three the standard node RPC endpoint, the one for development, the one for [Pangolin](/pangolin-home.md) and another one for [Crab](/crab-home.md). Some of the key takeaways are discussed next.
 
-:::info
 <Tabs
   defaultValue="Web3.js"
   values={[
@@ -155,11 +185,28 @@ The second section ("Balance Call Function") outlines the functions needed to fe
     {label: 'Ethers.js', value: 'Ethers.js'},
     {label: 'Web3.py', value: 'Web3.py'},
   ]}>
-  <TabItem value="Web3.js"> snippets/code/web3-tx-local/balances.js </TabItem>
-  <TabItem value="Ethers.js"> snippets/code/ethers-tx-local/balances.js </TabItem>
-  <TabItem value="Web3.py"> snippets/code/web3py-tx/balances.py </TabItem>
+  <TabItem value="Web3.js">
+
+```
+snippets/code/web3-tx-local/balances.js
+```
+
+  </TabItem>
+  <TabItem value="Ethers.js">
+
+  ```
+snippets/code/ethers-tx-local/balances.js
+  ```
+
+  </TabItem>
+  <TabItem value="Web3.py"> 
+
+  ```
+snippets/code/web3py-tx/balances.py
+  ```
+
+  </TabItem>
 </Tabs>
-:::
 
 ### Web3.js
 
@@ -183,13 +230,12 @@ In the second section, the `web3.eth.getBalance(address)` method is used to fetc
 
 For this section, the code shown before was adapted to target a development node, which you can run by following [this tutorial](/builders/get-started/crab-dev/). Also, each transaction was sent from the pre-funded account that comes with the node:
 
-import devAccount from '/snippets/text/metamask-local/dev-account.md';
+import DevAccount from '/snippets/text/metamask-local/dev-account.md';
 
-<devAccount name="devAccount" />;
+<DevAccount name="devAccount" />
 
 First, check the balances of both of the addresses before the transaction by running (note that the directory was renamed for each library):
 
-:::info
 <Tabs
   defaultValue="Web3.js"
   values={[
@@ -197,15 +243,31 @@ First, check the balances of both of the addresses before the transaction by run
     {label: 'Ethers.js', value: 'Ethers.js'},
     {label: 'Web3.py', value: 'Web3.py'},
   ]}>
-  <TabItem value="Web3.js"> node balances.js </TabItem>
-  <TabItem value="Ethers.js"> node balances.js </TabItem>
-  <TabItem value="Web3.py"> python3 balances.py </TabItem>
+  <TabItem value="Web3.js">
+
+```
+node balances.js
+```
+
+  </TabItem>
+  <TabItem value="Ethers.js">
+
+```
+node balances.js
+```
+
+  </TabItem>
+  <TabItem value="Web3.py"> 
+
+```
+python3 balances.py
+```
+
+  </TabItem>
 </Tabs>
-:::
 
 Next, run the _transaction.\*_ script to execute the transaction:
 
-:::info
 <Tabs
   defaultValue="Web3.js"
   values={[
@@ -213,15 +275,31 @@ Next, run the _transaction.\*_ script to execute the transaction:
     {label: 'Ethers.js', value: 'Ethers.js'},
     {label: 'Web3.py', value: 'Web3.py'},
   ]}>
-  <TabItem value="Web3.js"> node transaction.js </TabItem>
-  <TabItem value="Ethers.js"> node transaction.js </TabItem>
-  <TabItem value="Web3.py"> python3 transaction.py </TabItem>
+  <TabItem value="Web3.js">
+
+```
+node transaction.js
+```
+
+  </TabItem>
+  <TabItem value="Ethers.js">
+
+```
+node transaction.js
+```
+
+  </TabItem>
+  <TabItem value="Web3.py"> 
+
+```
+python3 transaction.py
+```
+
+  </TabItem>
 </Tabs>
-:::
 
 And lastly, recheck the balance to make sure the transfer was successful. The entire execution should look like this:
 
-:::info
 <Tabs
   defaultValue="Web3.js"
   values={[
@@ -248,4 +326,3 @@ And lastly, recheck the balance to make sure the transfer was successful. The en
 	/>
   </TabItem>
 </Tabs>
-:::

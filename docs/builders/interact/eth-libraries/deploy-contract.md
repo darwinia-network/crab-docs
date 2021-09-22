@@ -24,12 +24,12 @@ Besides, two other libraries will be used to compile the smart contract:
  - [Solc-js](https://www.npmjs.com/package/solc) to compile Solidity smart contracts using JavaScript
  - [Py-solc-x](https://pypi.org/project/py-solc-x/) to compile Solidity smart contracts using Python
 
-## Checking Prerequisites {: #checking-prerequisites } 
+## Checking Prerequisites
 
 The examples using both web3.js and ethers.js need you to install Node.js and NPM previously. For the web3.py, you need Python and PIP. As of the writing of this guide, the versions used were:
 
- - Node.js v15.10.0
- - NPM v7.5.3
+ - Node.js v16.0.0
+ - NPM v7.10.0
  - Python v3.6.9 (web3 requires Python >= 3.5.3 and < 4)
  - PIP3 v9.0.1
 
@@ -51,27 +51,45 @@ npm init --yes
 
 In the directory, install the corresponding library and the Solidity compiler (_web3.py_ and _py-solc-x_ are installed in the default directory of PIP3):
 
-=== "Web3.js"
-    ```
-    npm i web3 npm i solc@0.8.0
-    ```
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-=== "Ethers.js"
-    ```
-    npm i ethers npm i solc@0.8.0
-    ```
+<Tabs
+  defaultValue="Web3.js"
+  values={[
+    {label: 'Web3.js', value: 'Web3.js'},
+    {label: 'Ethers.js', value: 'Ethers.js'},
+    {label: 'Web3.py', value: 'Web3.py'},
+  ]}>
+  <TabItem value="Web3.js">
 
-=== "Web3.py"
-    ```
-    pip3 install web3 pip3 install py-solc-x
-    ```
+```
+npm i web3 solc@0.8.0
+```
+
+  </TabItem>
+  <TabItem value="Ethers.js">
+
+```
+npm i ethers solc@0.8.0
+```
+
+  </TabItem>
+  <TabItem value="Web3.py"> 
+
+```
+pip3 install web3 py-solc-x
+```
+
+  </TabItem>
+</Tabs>
 
 The versions used when this guide was published were
 
- - Web3.js v1.33 (`npm ls web3`)
- - Ethers.js v5.0.31 (`npm ls ethers`)
+ - Web3.js v1.5.2 (`npm ls web3`)
+ - Ethers.js v5.4.7 (`npm ls ethers`)
+ - Web3.py v5.23.1 (`pip3 show web3`)
  - Solc (JS) v0.8.0 (`npm ls solc`)
- - Web3.py v5.17.0 (`pip3 show web3`)
  - Py-solc-x v1.1.0 (`pip3 show py-solc-x`)
 
 The setup for this example will be relatively simple, and it'll contain the following files:
@@ -83,20 +101,37 @@ The setup for this example will be relatively simple, and it'll contain the foll
  - **_increment.\*_** — it will make a transaction to increment the number stored on the Moonbeam node
  - **_reset.\*_** — the function to call that will reset the number stored to zero
 
-## The Contract File {: #the-contract-file } 
+## The Contract File
 
 The contract used is a simple incrementer, arbitrarily named _Incrementer.sol_, which you can find [here](/snippets/code/web3-contract-local/Incrementer.sol). The Solidity code is the following:
 
 ```solidity
---8<-- 'code/web3-contract-local/Incrementer.sol'
+pragma solidity ^0.8.0;
+
+contract Incrementer {
+    uint256 public number;
+
+    constructor(uint256 _initialNumber) {
+        number = _initialNumber;
+    }
+
+    function increment(uint256 _value) public {
+        number = number + _value;
+    }
+
+    function reset() public {
+        number = 0;
+    }
+}
 ```
 
 The `constructor` function, which runs when the contract is deployed, sets the initial value of the number variable stored on-chain (default is 0). The `increment` function adds the `_value` provided to the current number, but a transaction needs to be sent, which modifies the stored data. Lastly, the `reset` function resets the stored value to zero.
 
-!!! note
-    This contract is a simple example for illustration purposes only and does not handle values wrapping around.
+:::note
+This contract is a simple example for illustration purposes only and does not handle values wrapping around.
+:::
 
-## Compiling the Contract {: #compiling-the-contract } 
+## Compiling the Contract
 
 The only purpose of the compile file is to use the Solidity compiler to output the bytecode and interface (ABI) our contract. You can find the code snippet for each library here (they were arbitrarily named `compile.*`):
 
@@ -104,25 +139,41 @@ The only purpose of the compile file is to use the Solidity compiler to output t
  - Ethers.js: [_compile.js_](/snippets/code/web3-contract-local/compile.js)
  - Web3.py: [_compile.py_](/snippets/code/web3py-contract/compile.py)
 
-!!! note
-    The compile file for both JavaScript libraries is the same as they share the JavaScript bindings for the Solidity compiler (same package)
+:::note
+The compile file for both JavaScript libraries is the same as they share the JavaScript bindings for the Solidity compiler (same package)
+:::
 
-=== "Web3.js"
-    ```
-    --8<-- 'code/web3-contract-local/compile.js'
-    ```
+<Tabs
+  defaultValue="Web3.js"
+  values={[
+    {label: 'Web3.js', value: 'Web3.js'},
+    {label: 'Ethers.js', value: 'Ethers.js'},
+    {label: 'Web3.py', value: 'Web3.py'},
+  ]}>
+  <TabItem value="Web3.js">
 
-=== "Ethers.js"
-    ```
-    --8<-- 'code/web3-contract-local/compile.js'
-    ```
+```
+code/web3-contract-local/compile.js
+```
 
-=== "Web3.py"
-    ```
-    --8<-- 'code/web3py-contract/compile.py'
-    ```
+  </TabItem>
+  <TabItem value="Ethers.js">
 
-### Web3.js and Ethers.js {: #web3js-and-ethersjs } 
+```
+code/web3-contract-local/compile.js
+```
+
+  </TabItem>
+  <TabItem value="Web3.py"> 
+
+```
+code/web3py-contract/compile.py
+```
+
+  </TabItem>
+</Tabs>
+
+### Web3.js and Ethers.js
 
 In the first part of [the script](/snippets/code/web3-contract-local/compile.js), the contract's path is fetched, and its content read.
 
@@ -130,16 +181,17 @@ Next, the Solidity compiler's input object is built, and it is passed as input t
 
 Lastly, extract the data of the `Incrementer` contract of the `Incrementer.sol` file, and export it so that the deployment script can use it.
 
-### Web3.py {: #web3py } 
+### Web3.py
 
 In the first part of [the script](/snippets/code/web3py-contract/compile.py), the contract file is compiled using the `solcx.compile_files` function. Note that the contract file is in the same directory as the compile script.
 
-!!! note
-    When running the `compile.py` you might be get an error stating that `Solc` needs to be installed. If so, uncomment the line in the file that executes `solcx.install_solc()` and rerun the compile file again with `python3 compile.py`. More information can be found in [this link](https://pypi.org/project/py-solc-x/).
+:::note
+When running the `compile.py` you might be get an error stating that `Solc` needs to be installed. If so, uncomment the line in the file that executes `solcx.install_solc()` and rerun the compile file again with `python3 compile.py`. More information can be found in [this link](https://pypi.org/project/py-solc-x/).
+:::
 
 Next, and wrapping up the script, the contract data is exported. In this example, only the interface (ABI) and bytecode were defined.
 
-## Deploying the Contract {: #deploying-the-contract } 
+## Deploying the Contract
 
 Regardless of the library, the strategy to deploy the compiled smart contract is somewhat similar. A contract instance is created using its interface (ABI) and bytecode. From this instance, a deployment function is used to send a signed transaction that deploys the contract. You can find the code snippet for each library here (they were arbitrarily named `deploy.*`):
 
@@ -147,29 +199,45 @@ Regardless of the library, the strategy to deploy the compiled smart contract is
  - Ethers.js: [_deploy.js_](/snippets/code/ethers-contract-local/deploy.js)
  - Web3.py: [_deploy.py_](/snippets/code/web3py-contract/deploy.py)
 
-For simplicity, the deploy file is composed of two sections. In the first section ("Define Provider & Variables"), the library to use and the ABI and bytecode of the contract are imported. Also, the provider and account from (with the private key) are defined. Note that `providerRPC` has both the standard development node RPC endpoint and the one for [Moonbase Alpha](/learn/platform/networks/moonbase/).
+For simplicity, the deploy file is composed of two sections. In the first section ("Define Provider & Variables"), the library to use and the ABI and bytecode of the contract are imported. Also, the provider and account from (with the private key) are defined. Note that `providerRPC` has three the standard node RPC endpoint, the one for development, the one for [Pangolin](/pangolin-home.md) and another one for [Crab](/crab-home.md).
 
 The second section ("Deploy Contract") outlines the actual contract deployment part. Note that for this example, the initial value of the `number` variable was set to 5. Some of the key takeaways are discussed next.
 
-=== "Web3.js"
-    ```
-    --8<-- 'code/web3-contract-local/deploy.js'
-    ```
+<Tabs
+  defaultValue="Web3.js"
+  values={[
+    {label: 'Web3.js', value: 'Web3.js'},
+    {label: 'Ethers.js', value: 'Ethers.js'},
+    {label: 'Web3.py', value: 'Web3.py'},
+  ]}>
+  <TabItem value="Web3.js">
 
-=== "Ethers.js"
-    ```
-    --8<-- 'code/ethers-contract-local/deploy.js'
-    ```
+```
+'code/web3-contract-local/deploy.js'
+```
 
-=== "Web3.py"
-    ```
-    --8<-- 'code/web3py-contract/deploy.py'
-    ```
+  </TabItem>
+  <TabItem value="Ethers.js">
 
-!!! note
-    The _deploy.\*_ script provides the contract address as an output. This comes in handy, as it is used for the contract interaction files.
+```
+'code/ethers-contract-local/deploy.js'
+```
 
-### Web3.js {: #web3js } 
+  </TabItem>
+  <TabItem value="Web3.py"> 
+
+```
+'code/web3py-contract/deploy.py'
+```
+
+  </TabItem>
+</Tabs>
+
+:::note
+The _deploy.\*_ script provides the contract address as an output. This comes in handy, as it is used for the contract interaction files.
+:::
+
+### Web3.js
 
 In the first part of [the script](/snippets/code/web3-contract-local/deploy.js), the `web3` instance (or provider) is created using the `Web3` constructor with the provider RPC. By changing the provider RPC given to the constructor, you can choose which network you want to send the transaction to.
 
@@ -181,7 +249,7 @@ Afterwards, the constructor transaction can be signed using the `web3.eth.accoun
 
 Lastly, the signed transaction is sent, and the contract's address is displayed in the terminal.
 
-### Ethers.js {: #ethersjs } 
+### Ethers.js
 
 In the first part of [the script](/snippets/code/ethers-contract-local/deploy.js), different networks can be specified with a name, RPC URL (required), and chain ID. The provider (similar to the `web3` instance) is created with the `ethers.providers.StaticJsonRpcProvider` method. An alternative is to use the `ethers.providers.JsonRpcProvide(providerRPC)` method, which only requires the provider RPC endpoint address. But this might created compatibility issues with individual project specifications.
 
@@ -191,7 +259,7 @@ In the second section, a contract instance is created with `ethers.ContractFacto
 
 Lastly, the contract's address is displayed in the terminal.
 
-### Web3.py {: #web3py } 
+### Web3.py
 
 In the first part of [the script](/snippets/code/web3py-contract/deploy.py), the `web3` instance (or provider) is created using the `Web3(Web3.HTTPProvider(provider_rpc))` method with the provider RPC. By changing the provider RPC, you can choose which network you want to send the transaction to.
 
@@ -203,7 +271,7 @@ The constructor transaction can be signed using `web3.eth.account.signTransactio
 
 Lastly, the signed transaction is sent, and the contract's address is displayed in the terminal.
 
-## Reading from the Contract (Call Methods) {: #reading-from-the-contract-call-methods } 
+## Reading from the Contract (Call Methods)
 
 Call methods are the type of interaction that don't modify the contract's storage (change variables), meaning no transaction needs to be sent.
 
@@ -213,26 +281,41 @@ Let's overview the _get.\*_ file (the simplest of them all), which fetches the c
  - Ethers.js: [_get.js_](/snippets/code/ethers-contract-local/get.js)
  - Web3.py: [_get.py_](/snippets/code/web3py-contract/get.py)
 
-For simplicity, the get file is composed of two sections. In the first section ("Define Provider & Variables"), the library to use and the ABI of the contract are imported. Also, the provider and the contract's address are defined. Note that `providerRPC` has both the standard development node RPC endpoint and the one for [Moonbase Alpha](/learn/platform/networks/moonbase/).
+For simplicity, the get file is composed of two sections. In the first section ("Define Provider & Variables"), the library to use and the ABI of the contract are imported. Also, the provider and the contract's address are defined. Note that `providerRPC` has three the standard node RPC endpoint, the one for development, the one for [Pangolin](/pangolin-home.md) and another one for [Crab](/crab-home.md).
 
 The second section ("Call Function") outlines the actual call to the contract. Regardless of the library, a contract instance is created (linked to the contract's address), from which the call method is queried. Some of the key takeaways are discussed next.
 
-=== "Web3.js"
-    ```
-    --8<-- 'code/web3-contract-local/get.js'
-    ```
+<Tabs
+  defaultValue="Web3.js"
+  values={[
+    {label: 'Web3.js', value: 'Web3.js'},
+    {label: 'Ethers.js', value: 'Ethers.js'},
+    {label: 'Web3.py', value: 'Web3.py'},
+  ]}>
+  <TabItem value="Web3.js">
 
-=== "Ethers.js"
-    ```
-    --8<-- 'code/ethers-contract-local/get.js'
-    ```
+```
+'code/web3-contract-local/get.js'
+```
 
-=== "Web3.py"
-    ```
-    --8<-- 'code/web3py-contract/get.py'
-    ```
+  </TabItem>
+  <TabItem value="Ethers.js">
 
-### Web3.js {: #web3js } 
+```
+'code/ethers-contract-local/get.js'
+```
+
+  </TabItem>
+  <TabItem value="Web3.py"> 
+
+```
+'code/web3py-contract/get.py'
+```
+
+  </TabItem>
+</Tabs>
+
+### Web3.js
 
 In the first part of [the script](/snippets/code/web3-contract-local/get.js), the `web3` instance (or provider) is created using the `Web3` constructor with the provider RPC. By changing the provider RPC given to the constructor, you can choose which network you want to send the transaction to.
 
