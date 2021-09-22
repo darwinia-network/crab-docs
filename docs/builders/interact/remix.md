@@ -1,6 +1,7 @@
 ---
 title: Using Remix
 sidebar_position: 1
+description: Learn how to use one of the most popular Ethereum developer tools, the Remix IDE, to interact with a local Crab node.
 ---
 
 # Using Remix to Deploy to Crab

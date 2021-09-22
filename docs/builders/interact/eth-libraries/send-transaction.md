@@ -1,6 +1,7 @@
 ---
 title: Send a Transaction
 sidebar_position: 1
+description: Learn how to create and send transactions on Crab’s Ethereum-compatible network with a simple script using web3.js, ethers.js, or web3.py.
 ---
 
 # Send Transactions using Ethereum Libraries on Crab

@@ -1,6 +1,7 @@
 ---
 title: Deploy a Contract
 sidebar_position: 2
+description: Learn how to deploy unmodified and unchanged Solidity-based smart contracts to a Crab node with a simple script using Web3.js, Ethers.js, or Web3.py.
 ---
 
 # Using Ethereum Libraries to Deploy To Crab
