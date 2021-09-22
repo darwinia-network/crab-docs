@@ -16,7 +16,7 @@ This guide walks through using the Solidity compiler and three different Ethereu
  - [Web3.py](/builders/tools/eth-libraries/web3py)
 
 :::note
-If you would like to find the simplest way to get started, check out the quick start guide for each library by clicking the links above 
+If you would like to find the simplest way to get started, check out the quick start guide for each library by clicking the links above
 :::
 
 Besides, two other libraries will be used to compile the smart contract:
@@ -75,7 +75,7 @@ npm i ethers solc@0.8.0
 ```
 
   </TabItem>
-  <TabItem value="Web3.py"> 
+  <TabItem value="Web3.py">
 
 ```
 pip3 install web3 py-solc-x
@@ -164,7 +164,7 @@ code/web3-contract-local/compile.js
 ```
 
   </TabItem>
-  <TabItem value="Web3.py"> 
+  <TabItem value="Web3.py">
 
 ```
 code/web3py-contract/compile.py
@@ -224,7 +224,7 @@ The second section ("Deploy Contract") outlines the actual contract deployment p
 ```
 
   </TabItem>
-  <TabItem value="Web3.py"> 
+  <TabItem value="Web3.py">
 
 ```
 'code/web3py-contract/deploy.py'
@@ -306,7 +306,7 @@ The second section ("Call Function") outlines the actual call to the contract. R
 ```
 
   </TabItem>
-  <TabItem value="Web3.py"> 
+  <TabItem value="Web3.py">
 
 ```
 'code/web3py-contract/get.py'
@@ -325,7 +325,7 @@ In the second section, a contract instance is created with `web3.eth.Contract()`
 
 Lastly, the value is displayed in the terminal.
 
-### Ethers.js {: #ethersjs } 
+### Ethers.js
 
 In the first part of [the script](/snippets/code/ethers-contract-local/get.js), different networks can be specified with a name, RPC URL (required), and chain ID. The provider (similar to the `web3` instance) is created with the `ethers.providers.StaticJsonRpcProvider` method. An alternative is to use the `ethers.providers.JsonRpcProvide(providerRPC)` method, which only requires the provider RPC endpoint address. But this might created compatibility issues with individual project specifications.
 
@@ -335,7 +335,7 @@ In the second section, a contract instance is created with `ethers.Contract()`, 
 
 Lastly, the value is displayed in the terminal.
 
-### Web3.py {: #web3py } 
+### Web3.py
 
 In the first part of [the script](/snippets/code/web3py-contract/get.py), the `web3` instance (or provider) is created using the `Web3(Web3.HTTPProvider(provider_rpc))` method with the provider RPC. By changing the provider RPC, you can choose which network you want to send the transaction to.
 
@@ -345,7 +345,7 @@ In the second section, a contract instance is created with `web3.eth.contract()`
 
 Lastly, the value is displayed in the terminal.
 
-## Interacting with the Contract (Send Methods) {: #interacting-with-the-contract-send-methods } 
+## Interacting with the Contract (Send Methods)
 
 Send methods are the type of interaction that modify the contract's storage (change variables), meaning a transaction needs to be signed and sent.
 
@@ -355,24 +355,39 @@ First, let's overview the _increment.\*_ file, which increments the current numb
  - Ethers.js: [_increment.js_](/snippets/code/ethers-contract-local/increment.js)
  - Web3.py: [_increment.py_](/snippets/code/web3py-contract/increment.py)
 
-For simplicity, the increment file is composed of two sections. In the first section ("Define Provider & Variables"), the library to use and the ABI of the contract are imported. The provider, the contract's address, and the value of the `increment` function are also defined. Note that `providerRPC` has both the standard development node RPC endpoint and the one for [Moonbase Alpha](/learn/platform/networks/moonbase/).
+For simplicity, the increment file is composed of two sections. In the first section ("Define Provider & Variables"), the library to use and the ABI of the contract are imported. The provider, the contract's address, and the value of the `increment` function are also defined. Note that `providerRPC` has three the standard node RPC endpoint, the one for development, the one for [Pangolin](/pangolin-home.md) and another one for [Crab](/crab-home.md).
 
 The second section ("Send Function") outlines the actual function to be called with the transaction. Regardless of the library, a contract instance is created (linked to the contract's address), from which the function to be used is queried.
 
-=== "Web3.js"
-    ```
-    --8<-- 'code/web3-contract-local/increment.js'
-    ```
+<Tabs
+  defaultValue="Web3.js"
+  values={[
+    {label: 'Web3.js', value: 'Web3.js'},
+    {label: 'Ethers.js', value: 'Ethers.js'},
+    {label: 'Web3.py', value: 'Web3.py'},
+  ]}>
+  <TabItem value="Web3.js">
 
-=== "Ethers.js"
-    ```
-    --8<-- 'code/ethers-contract-local/increment.js'
-    ```
+```
+'code/web3-contract-local/increment.js'
+```
 
-=== "Web3.py"
-    ```
-    --8<-- 'code/web3py-contract/increment.py'
-    ```
+  </TabItem>
+  <TabItem value="Ethers.js">
+
+```
+'code/ethers-contract-local/increment.js'
+```
+
+  </TabItem>
+  <TabItem value="Web3.py">
+
+```
+'code/web3py-contract/increment.py'
+```
+
+  </TabItem>
+</Tabs>
 
 The second file to interact with the contract is the _reset.\*_ file, which resets the number stored in the contract to zero. You can find the code snippet for each library here (they were arbitrarily named `reset.*`):
 
@@ -382,22 +397,37 @@ The second file to interact with the contract is the _reset.\*_ file, which rese
 
 Each file's structure is very similar to his _increment.\*_ counterpart for each library. The main difference is the method being called.
 
-=== "Web3.js"
-    ```
-    --8<-- 'code/web3-contract-local/reset.js'
-    ```
+<Tabs
+  defaultValue="Web3.js"
+  values={[
+    {label: 'Web3.js', value: 'Web3.js'},
+    {label: 'Ethers.js', value: 'Ethers.js'},
+    {label: 'Web3.py', value: 'Web3.py'},
+  ]}>
+  <TabItem value="Web3.js">
 
-=== "Ethers.js"
-    ```
-    --8<-- 'code/ethers-contract-local/reset.js'
-    ```
+```
+'code/web3-contract-local/reset.js'
+```
 
-=== "Web3.py"
-    ```
-    --8<-- 'code/web3py-contract/reset.py'
-    ```
+  </TabItem>
+  <TabItem value="Ethers.js">
 
-### Web3.js {: #web3js } 
+```
+'code/ethers-contract-local/reset.js'
+```
+
+  </TabItem>
+  <TabItem value="Web3.py">
+
+```
+'code/web3py-contract/reset.py'
+```
+
+  </TabItem>
+</Tabs>
+
+### Web3.js
 
 In the first part of the script ([increment](/snippets/code/web3-contract-local/increment.js) or [reset](/snippets/code/web3-contract-local/reset.js) files), the `web3` instance (or provider) is created using the `Web3` constructor with the provider RPC. By changing the provider RPC given to the constructor, you can choose which network you want to send the transaction to.
 
@@ -409,7 +439,7 @@ Afterwards, the transaction can be signed using the `web3.eth.accounts.signTrans
 
 Lastly, the signed transaction is sent, and the transaction hash is displayed in the terminal.
 
-### Ethers.js {: #ethersjs } 
+### Ethers.js 
 
 In the first part of the script ([increment](/snippets/code/ethers-contract-local/increment.js) or [reset](/snippets/code/ethers-contract-local/reset.js) files), different networks can be specified with a name, RPC URL (required), and chain ID. The provider (similar to the `web3` instance) is created with the `ethers.providers.StaticJsonRpcProvider` method. An alternative is to use the `ethers.providers.JsonRpcProvide(providerRPC)` method, which only requires the provider RPC endpoint address. But this might created compatibility issues with individual project specifications.
 
@@ -419,7 +449,7 @@ In the second section, a contract instance is created with `ethers.Contract()`, 
 
 Lastly, the transaction hash is displayed in the terminal.
 
-### Web3.py {: #web3py } 
+### Web3.py
 
 In the first part of the script ([increment](/snippets/code/web3py-contract/increment.py) or [reset](/snippets/code/web3py-contract/reset.py) files), the `web3` instance (or provider) is created using the `Web3(Web3.HTTPProvider(provider_rpc))` method with the provider RPC. By changing the provider RPC, you can choose which network you want to send the transaction to.
 
@@ -431,123 +461,223 @@ The transaction can be signed using `web3.eth.account.signTransaction()`, passin
 
 Lastly, the transaction hash is displayed in the terminal.
 
-## Running the Scripts {: #running-the-scripts } 
+## Running the Scripts
 
 For this section, the code shown before was adapted to target a development node, which you can run by following [this tutorial](/builders/get-started/moonbeam-dev/). Also, each transaction was sent from the pre-funded account that comes with the node:
 
---8<-- 'text/metamask-local/dev-account.md'
+import DevAccount from '/snippets/text/metamask-local/dev-account.md';
+
+<DevAccount name="devAccount" />
 
 First, deploy the contract by running (note that the directory was renamed for each library):
 
-=== "Web3.js"
-    ```
-    node deploy.js
-    ```
+<Tabs
+  defaultValue="Web3.js"
+  values={[
+    {label: 'Web3.js', value: 'Web3.js'},
+    {label: 'Ethers.js', value: 'Ethers.js'},
+    {label: 'Web3.py', value: 'Web3.py'},
+  ]}>
+  <TabItem value="Web3.js">
 
-=== "Ethers.js"
-    ```
-    node deploy.js
-    ```
+```
+node deploy.js
+```
 
-=== "Web3.py"
-    ```
-    python3 deploy.py
-    ```
+  </TabItem>
+  <TabItem value="Ethers.js">
+
+```
+node deploy.js
+```
+
+  </TabItem>
+  <TabItem value="Web3.py">
+
+```
+python3 deploy.py
+```
+
+  </TabItem>
+</Tabs>
 
 This will deploy the contract and return the address:
 
-=== "Web3.js"
-    ![Deploy Contract Web3js](/images/deploycontract/contract-deploy-web3js.png)
-
-=== "Ethers.js"
-    ![Deploy Contract Etherjs](/images/deploycontract/contract-deploy-ethers.png)
-
-=== "Web3.py"
-    ![Deploy Contract Web3py](/images/deploycontract/contract-deploy-web3py.png)
+<Tabs
+  defaultValue="Web3.js"
+  values={[
+    {label: 'Web3.js', value: 'Web3.js'},
+    {label: 'Ethers.js', value: 'Ethers.js'},
+    {label: 'Web3.py', value: 'Web3.py'},
+  ]}>
+  <TabItem value="Web3.js">
+	<img
+	  src={require('/images/deploycontract/contract-deploy-web3js.png').default}
+	  alt="Deploy Contract Web3js"
+	/>
+  </TabItem>
+  <TabItem value="Ethers.js">
+	<img
+	  src={require('/images/deploycontract/contract-deploy-ethers.png').default}
+	  alt="Deploy Contract Etherjs"
+	/>
+  </TabItem>
+  <TabItem value="Web3.py">
+	<img
+	  src={require('/images/deploycontract/contract-deploy-web3py.png').default}
+	  alt="Deploy Contract Web3py"
+	/>
+  </TabItem>
+</Tabs>
 
 Next, run the increment file. You can use the get file to verify the value of the number stored in the contract before and after increment it:
 
-=== "Web3.js"
-    ```
-    # Get value
-    node get.js 
-    # Increment value
-    increment.js
-    # Get value
-    node get.js
-    ```
+<Tabs
+  defaultValue="Web3.js"
+  values={[
+    {label: 'Web3.js', value: 'Web3.js'},
+    {label: 'Ethers.js', value: 'Ethers.js'},
+    {label: 'Web3.py', value: 'Web3.py'},
+  ]}>
+  <TabItem value="Web3.js">
 
-=== "Ethers.js"
-    ```
-    # Get value
-    node get.js 
-    # Increment value
-    increment.js
-    # Get value
-    node get.js
-    ```
+```
+# Get value
+node get.js
+# Increment value
+increment.js
+# Get value
+node get.js
+```
 
-=== "Web3.py"
-    ```
-    # Get value
-    python3 get.py 
-    # Increment value
-    python3 increment.py
-    # Get value
-    python3 get.py
-    ```
+  </TabItem>
+  <TabItem value="Ethers.js">
+
+```
+# Get value
+node get.js
+# Increment value
+increment.js
+# Get value
+node get.js
+```
+
+  </TabItem>
+  <TabItem value="Web3.py">
+
+```
+# Get value
+python3 get.py
+# Increment value
+python3 increment.py
+# Get value
+python3 get.py
+```
+
+  </TabItem>
+</Tabs>
 
 This will display the value before the increment transaction, the hash of the transaction, and the value after:
 
-=== "Web3.js"
-    ![Increment Contract Web3js](/images/deploycontract/contract-increment-web3js.png)
-
-=== "Ethers.js"
-    ![Increment Contract Etherjs](/images/deploycontract/contract-increment-ethers.png)
-
-=== "Web3.py"
-    ![Increment Contract Web3py](/images/deploycontract/contract-increment-web3py.png)
+<Tabs
+  defaultValue="Web3.js"
+  values={[
+    {label: 'Web3.js', value: 'Web3.js'},
+    {label: 'Ethers.js', value: 'Ethers.js'},
+    {label: 'Web3.py', value: 'Web3.py'},
+  ]}>
+  <TabItem value="Web3.js">
+	<img
+	  src={require('/images/deploycontract/contract-increment-web3js.png').default}
+	  alt="Increment Contract Web3js"
+	/>
+  </TabItem>
+  <TabItem value="Ethers.js">
+	<img
+	  src={require('/images/deploycontract/contract-increment-ethers.png').default}
+	  alt="Increment Contract Etherjs"
+	/>
+  </TabItem>
+  <TabItem value="Web3.py">
+	<img
+	  src={require('/images/deploycontract/contract-increment-web3py.png').default}
+	  alt="Increment Contract Web3py"
+	/>
+  </TabItem>
+</Tabs>
 
 Lastly, run the reset file. Once again, you can use the get file to verify the value of the number stored in the contract before and after resetting it:
 
-=== "Web3.js"
-    ```
-    # Get value
-    node get.js 
-    # Reset value
-    node reset.js 
-    # Get value
-    node get.js
-    ```
+<Tabs
+  defaultValue="Web3.js"
+  values={[
+    {label: 'Web3.js', value: 'Web3.js'},
+    {label: 'Ethers.js', value: 'Ethers.js'},
+    {label: 'Web3.py', value: 'Web3.py'},
+  ]}>
+  <TabItem value="Web3.js">
 
-=== "Ethers.js"
-    ```
-    # Get value
-    node get.js 
-    # Reset value
-    node reset.js 
-    # Get value
-    node get.js
-    ```
+```
+# Get value
+node get.js
+# Reset value
+node reset.js
+# Get value
+node get.js
+```
 
-=== "Web3.py"
-    ```
-    # Get value
-    python3 get.py 
-    # Reset value
-    python3 reset.py
-    # Get value
-    python3 get.py
-    ```
+  </TabItem>
+  <TabItem value="Ethers.js">
+
+```
+# Get value
+node get.js
+# Reset value
+node reset.js
+# Get value
+node get.js
+```
+
+  </TabItem>
+  <TabItem value="Web3.py">
+
+```
+# Get value
+python3 get.py
+# Reset value
+python3 reset.py
+# Get value
+python3 get.py
+```
+
+  </TabItem>
+</Tabs>
 
 This will display the value before the reset transaction, the hash of the transaction, and the value after:
 
-=== "Web3.js"
-    ![Reset Contract Web3js](/images/deploycontract/contract-reset-web3js.png)
-
-=== "Ethers.js"
-    ![Reset Contract Etherjs](/images/deploycontract/contract-reset-ethers.png)
-
-=== "Web3.py"
-    ![Reset Contract Web3py](/images/deploycontract/contract-reset-web3py.png)
-
+<Tabs
+  defaultValue="Web3.js"
+  values={[
+    {label: 'Web3.js', value: 'Web3.js'},
+    {label: 'Ethers.js', value: 'Ethers.js'},
+    {label: 'Web3.py', value: 'Web3.py'},
+  ]}>
+  <TabItem value="Web3.js">
+	<img
+	  src={require('/images/deploycontract/contract-reset-web3js.png').default}
+	  alt="Reset Contract Web3js"
+	/>
+  </TabItem>
+  <TabItem value="Ethers.js">
+	<img
+	  src={require('/images/deploycontract/contract-reset-ethers.png').default}
+	  alt="Reset Contract Etherjs"
+	/>
+  </TabItem>
+  <TabItem value="Web3.py">
+	<img
+	  src={require('/images/deploycontract/contract-reset-web3py.png').default}
+	  alt="Reset Contract Web3py"
+	/>
+  </TabItem>
+</Tabs>

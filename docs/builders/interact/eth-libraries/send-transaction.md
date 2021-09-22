@@ -115,7 +115,7 @@ snippets/code/ethers-tx-local/transaction.js
 ```
 
   </TabItem>
-  <TabItem value="Web3.py"> 
+  <TabItem value="Web3.py">
 
 ```
 snippets/code/web3py-tx/transaction.py
@@ -199,7 +199,7 @@ snippets/code/ethers-tx-local/balances.js
   ```
 
   </TabItem>
-  <TabItem value="Web3.py"> 
+  <TabItem value="Web3.py">
 
   ```
 snippets/code/web3py-tx/balances.py
@@ -257,7 +257,7 @@ node balances.js
 ```
 
   </TabItem>
-  <TabItem value="Web3.py"> 
+  <TabItem value="Web3.py">
 
 ```
 python3 balances.py
@@ -289,7 +289,7 @@ node transaction.js
 ```
 
   </TabItem>
-  <TabItem value="Web3.py"> 
+  <TabItem value="Web3.py">
 
 ```
 python3 transaction.py
