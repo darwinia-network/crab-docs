@@ -104,7 +104,7 @@ contract Box {
 
 ## Hardhat Configuration File
 
-Let's modify our Hardhat configuration file so we can compile and deploy this contract to Moonbase Alpha.
+Let's modify our Hardhat configuration file so we can compile and deploy this contract to Pangolin.
 
 If you have not yet done so, create a MetaMask Account, [connect to Pangolin](/dvm-metamask.md), and fund it through [Mission Control](/builders/get-started/pangolin/#get-tokens/). We will use the private key of the account created to deploy the contract.
 
@@ -182,7 +182,7 @@ module.exports = {
 
   networks: {
     // Pangolin network specification
-    moonbase: {
+    pangolin: {
       url: `http://pangolin-rpc.darwinia.network`,
       chainId: 43,
       accounts: [privateKey]
@@ -267,7 +267,7 @@ Congratulations, your contract is live! Save the address, as we will use it to i
 
 ## Interacting with the Contract
 
-Let's use Hardhat to interact with our newly deployed contract in Moonbase Alpha. To do so, launch `hardhat console` by running:
+Let's use Hardhat to interact with our newly deployed contract in Pangolin. To do so, launch `hardhat console` by running:
 
 ```
 npx hardhat console --network pangolin

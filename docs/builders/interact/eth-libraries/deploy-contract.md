@@ -97,9 +97,9 @@ The setup for this example will be relatively simple, and it'll contain the foll
 
  - **_Incrementer.sol_** — the file with our Solidity code
  - **_compile.\*_** — compiles the contract with the Solidity compiler
- - **_deploy.\*_**: it will handle the deployment to our local Moonbeam node
+ - **_deploy.\*_**: it will handle the deployment to our local Pangolin node
  - **_get.\*_** — it will make a call to the node to get the current value of the number
- - **_increment.\*_** — it will make a transaction to increment the number stored on the Moonbeam node
+ - **_increment.\*_** — it will make a transaction to increment the number stored on the Pangolin node
  - **_reset.\*_** — the function to call that will reset the number stored to zero
 
 ## The Contract File
@@ -464,7 +464,7 @@ Lastly, the transaction hash is displayed in the terminal.
 
 ## Running the Scripts
 
-For this section, the code shown before was adapted to target a development node, which you can run by following [this tutorial](/builders/get-started/moonbeam-dev/). Also, each transaction was sent from the pre-funded account that comes with the node:
+For this section, the code shown before was adapted to target a development node, which you can run by following [this tutorial](/builders/get-started/pangolin-dev/). Also, each transaction was sent from the pre-funded account that comes with the node:
 
 import DevAccount from '/snippets/text/metamask-local/dev-account.md';
 

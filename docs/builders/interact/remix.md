@@ -35,7 +35,7 @@ Make sure you are connected to your Pangolin node and not another network!
 
 ## Getting Started with Remix
 
-Now, let’s fire up Remix to exercise more advanced functionalities in Moonbeam.
+Now, let’s fire up Remix to exercise more advanced functionalities in Pangolin.
 
 Launch Remix by navigating to [https://remix.ethereum.org/](https://remix.ethereum.org/). In the main screen, under Environments, select Solidity to configure Remix for Solidity development, then navigate to the File Explorers view:
 
