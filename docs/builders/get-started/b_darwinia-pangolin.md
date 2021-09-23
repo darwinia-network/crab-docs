@@ -1,5 +1,5 @@
 ---
-title: Moonbase Alpha
+title: Connect to Pangolin
 description: The Moonbeam TestNet, named Moonbase Alpha, is the easiest way to get started with a Polkadot environment. Follow this tutorial to connect to the TestNet.
 ---
 
