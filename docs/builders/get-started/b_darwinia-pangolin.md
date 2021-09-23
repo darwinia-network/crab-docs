@@ -1,6 +1,6 @@
 ---
 title: Connect to Pangolin
-description: The Darwinia TestNet, named Pangolin Network, is the easiest way to get started with a Darwinia network environment. Follow this tutorial to connect to the TestNet.
+description: How to connect to Pangolin network
 ---
 
 # Connect to Pangolin
@@ -41,7 +41,8 @@ wss://pangolin-rpc.darwinia.network
 
 - Testing the latest technology products.
 - Compatible with EVM, Ethereum contracts, Ethereum contract tools.
-- Support substrate-substrate bridge, ethereum-substrate bridge.
+- Support substrate-substrate bi-directional bridge
+- Support ethereum-substrate bi-directional bridge.
 - Have some unstable features, may be reset.
   
 ## Get Tokens
