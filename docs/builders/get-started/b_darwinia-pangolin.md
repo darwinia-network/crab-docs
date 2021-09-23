@@ -39,41 +39,40 @@ wss://pangolin-rpc.darwinia.network
 
 ## Features
 
-- Test the latest technology.
-- Compatible with Ethereum Virtual Machine.
-- Compatible with Ethereum contract infrastructure Metamask, Remix, etc.
-- Support for smart contracts in Solidity.
-- May be reset.
+- Testing the latest technology products.
+- Compatible with EVM, Ethereum contracts, Ethereum contract tools.
+- Support substrate-substrate bridge, ethereum-substrate bridge.
+- Have some unstable features, may be reset.
   
 ## Get Tokens
 
-To start building on Pangolin, you can get DEV tokens from our [Pangolin Faucet Official](https://t.me/darwiniafaucet_official), in our Tg Group. For specific amounts, you can always reach out directly to us via our community channels.
+To start building on Pangolin, you can get DEV tokens(PRING) from our [Pangolin Faucet Official](https://t.me/darwiniafaucet_official), in our Tg Group. For specific amounts, you can always reach out directly to us via our community channels.
 
 ### Pangolin Faucet Official
 
 - Visit [Pangolin Apps Portal](https://apps.darwinia.network/#/account) and select the **Pangolin Test Network** in the network list in the upper left corner.
 
-![01](../../../static/images/started/connect-pangolin/wiki-pangolin-testnet-01.png)
+![01](../../../static/images/started/connect-pangolin/pangolin-01.png)
 
 - Create an account on Pangolin Test Network. For detailed tutorials on creating an account, please refer to [here](https://docs.crab.network/crab-tut-create-account)!
 - Click the avatar and you can copy your Pangolin address.
 
-![02](../../../static/images/started/connect-pangolin/wiki-pangolin-testnet-02.png)
+![02](../../../static/images/started/connect-pangolin/pangolin-02.png)
 
 - Join the Telegram group named "[Darwinia Faucet Official](https://t.me/darwiniafaucet_official)".
 - Send `/faucet`+ Pangolin address.
 
-![03](../../../static/images/started/connect-pangolin/wiki-pangolin-testnet-03.png)
+![03](../../../static/images/started/connect-pangolin/pangolin-03.png)
 
 - You can open the link of the darwinia_bot to check the transaction on Subscan.
 
-![04](../../../static/images/started/connect-pangolin/wiki-pangolin-testnet-04.png)
+![04](../../../static/images/started/connect-pangolin/pangolin-04.png)
 
-![05](../../../static/images/started/connect-pangolin/wiki-pangolin-testnet-05.png)
+![05](../../../static/images/started/connect-pangolin/pangolin-05.png)
 
 - When the transaction is successful, a certain number of test tokens will appear in your pangolin address.
 
-![06](../../../static/images/started/connect-pangolin/wiki-pangolin-testnet-06.png)
+![06](../../../static/images/started/connect-pangolin/pangolin-06.png)
 
 - Each telegram account can get 100 PRINGs every seven days.
 
