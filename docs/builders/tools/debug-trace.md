@@ -10,14 +10,14 @@ description:  Learn how to leverage the Geth Debug API and OpenEthereum Trace mo
 
 Both Geth's debug API and OpenEthereum's trace module provide non-standard RPC methods for getting a deeper insight into transaction processing.
 
-With the release of Moonbase Alpha v7, as part of Moonbeam's goal of providing a seamless Ethereum experience for developers, both `debug_traceTransaction` and `trace_filter` RPC methods are now available.
+With the release of Pangolin, as part of Pangolin's goal of providing a seamless Ethereum experience for developers, both `debug_traceTransaction` and `trace_filter` RPC methods are now available.
 
 Supporting both RPC methods is an important milestone because many projects, such as [The Graph](https://thegraph.com/) or [Blockscout](https://docs.blockscout.com/), rely on them to index blockchain data.
 
 Both calls are quite heavy on the node's side. Therefore, it is required to make this RPC against a locally running node with either the `--ethapi=debug` flag for `debug_traceTransaction`, and/or the `--ethapi=trace` flag for `trace_filter`. Currently, you can spin up two different kinds of nodes:
 
- - **Moonbeam development node** — run your own Moonbeam instance in your private environment. To do so, you can follow [this guide](/builders/get-started/moonbeam-dev/). Make sure to check the [advanced flags section](/builders/get-started/moonbeam-dev/#advanced-flags-and-options)
- - **Moonbase Alpha node** — run a full node of the TestNet and access your own private endpoints. To do so, you can follow [this guide](/node-operators/networks/full-node/). Make sure to check the [advanced flags section](/node-operators/networks/full-node/#advanced-flags-and-options)
+ - **Pangolin development node** — run your own Pangolin instance in your private environment. To do so, you can follow [this guide](/builders/get-started/pangolin-dev/). Make sure to check the [advanced flags section](/builders/get-started/pangolin-dev/#advanced-flags-and-options)
+ - **Pangolin node** — run a full node of the TestNet and access your own private endpoints. To do so, you can follow [this guide](/node-operators/networks/full-node/). Make sure to check the [advanced flags section](/node-operators/networks/full-node/#advanced-flags-and-options)
 
 ## Geth Debug API {: #geth-debug-api } 
 
@@ -44,9 +44,9 @@ The RPC method requires any of the following *optional* parameters:
  - **after**(*uint* offset) — default offset is `0`. Trace offset (or starting) number
  - **count**(*uint* numberOfTraces) — number of traces to display in a batch
 
-## Try it on Moonbase Alpha {: #try-it-on-moonbase-alpha } 
+## Try it on Pangolin
 
-As mentioned before, to use both features you need to have a node running with the `debug` and `trace` flags. For this example, a local Moonbase Alpha full node is used, with the RPC HTTP endpoint at `http://127.0.0.1:9933`. If you have a running node, you should see a similar terminal log:
+As mentioned before, to use both features you need to have a node running with the `debug` and `trace` flags. For this example, a local Pangolin full node is used, with the RPC HTTP endpoint at `http://127.0.0.1:9933`. If you have a running node, you should see a similar terminal log:
 
 ![Debug API](/images/debugtrace/debugtrace-images1.png)
 

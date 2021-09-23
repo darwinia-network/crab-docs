@@ -28,20 +28,20 @@ As of writing of this guide, the versions used were 16.0.0 and 7.10.0, respectiv
 
 ## Starting a Truffle Project
 
-To get started with the Moonbeam Truffle box, if you have Truffle installed globally, you can execute:
+To get started with the Pangolin Truffle box, if you have Truffle installed globally, you can execute:
 
 ```
-mkdir moonbeam-truffle-box && cd moonbeam-truffle-box
-truffle unbox PureStake/moonbeam-truffle-box
+mkdir pangolin-truffle-box && cd pangolin-truffle-box
+truffle unbox PureStake/pangolin-truffle-box
 ```
 
-![Unbox Moonbeam Truffle box](/images/truffle/truffle-1.png)
+![Unbox Pangolin Truffle box](/images/truffle/truffle-1.png)
 
 Nevertheless, the box also has Truffle as a dependency in case you do not want to have it installed globally. In such a case, you can directly clone the following repository:
 
 ```
-git clone https://github.com/PureStake/moonbeam-truffle-box
-cd moonbeam-truffle-box
+git clone https://github.com/PureStake/pangolin-truffle-box
+cd pangolin-truffle-box
 ``` 
 
 With the files in your local system, the next step is to install all dependencies by running:
@@ -59,7 +59,7 @@ Navigate inside the directory to take a look at the `truffle-config.js` file (fo
 
 ```js
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-// Moonbeam Development Node Private Key
+// Pangolin Development Node Private Key
 const privateKeyDev =
    '99B3C12287537E38C90A9219D4CB074A89A16E9CDB20BF85728EBD97C343E342';
 //...
@@ -74,17 +74,17 @@ module.exports = {
       },
       //...
    },
-   plugins: ['moonbeam-truffle-plugin']
+   plugins: ['pangolin-truffle-plugin']
 };
 ```
 
 Note that we are using `HD-Wallet-Provider` from Truffle as the Hierarchical Deterministic wallet. Also, we've defined a `dev` network that points to the development node provider URL, and the private key of the development account, which holds all funds in the development node, is included. 
 
-For deployments to the Moonbase Alpha TestNet or Moonriver, you need to provide the private key of an address that holds funds. For Moonbase Alpha, you can create an account in MetaMask, fund it using the [TestNet faucet](/builders/get-started/moonbase/#get-tokens/), and export its private key.
+For deployments to the Pangolin TestNet or Crab, you need to provide the private key of an address that holds funds. For Pangolin Alpha, you can create an account in MetaMask, fund it using the [TestNet faucet](/builders/get-started/pangolin/#get-tokens/), and export its private key.
 
 Below you can find network configurations for all of our networks:
 
-=== "Moonbeam Development Node"
+=== "Pangolin Development Node"
     ```
     dev: {
       provider: () => {
@@ -95,36 +95,36 @@ Below you can find network configurations for all of our networks:
     },
     ```
 
-=== "Moonbase Alpha"
+=== "Pangolin"
     ```
-    moonbase: {
+    pangolin: {
       provider: () => {
          ...
-         return new HDWalletProvider(privateKeyMoonbase, 'https://rpc.testnet.moonbeam.network') // Insert your private key here
+         return new HDWalletProvider(privateKeyPangolin, 'http://pangolin-rpc.darwinia.network') // Insert your private key here
       },
       network_id: 1287,
     },
     ```
 
-=== "Moonriver"
+=== "Crab"
     ```
-    moonriver: {
+    crab: {
       provider: () => {
          ...
-         return new HDWalletProvider(privateKeyMoonriver, 'https://rpc.moonriver.moonbeam.network') // Insert your private key here
+         return new HDWalletProvider(privateKeyCrab, 'http://crab-rpc.darwinia.network') // Insert your private key here
       },
       network_id: 1285,
     },
     ```
 
-## Using the Moonbeam Truffle Plugin to Run a Node {: #using-the-moonbeam-truffle-plugin-to-run-a-node } 
+## Using the Pangolin Truffle Plugin to Run a Node
 
-To set up a Moonbeam development node, you can follow [this tutorial](/builders/get-started/moonbeam-dev/). The process takes around 40 minutes in total, and you need to install Substrate and all its dependencies. The Moonbeam Truffle plugin provides a way to get started with a development node much quicker, and the only requirement is to have Docker installed (at time of writing the Docker version used was 19.03.6).
+To set up a Pangolin development node, you can follow [this tutorial](/builders/get-started/pangolin-dev/). The process takes around 40 minutes in total, and you need to install Substrate and all its dependencies. The Pangolin Truffle plugin provides a way to get started with a development node much quicker, and the only requirement is to have Docker installed (at time of writing the Docker version used was 19.03.6).
 
-To start a Moonbeam development node in your local environment, we need to first download the corresponding Docker image:
+To start a Pangolin development node in your local environment, we need to first download the corresponding Docker image:
 
 ```
-truffle run moonbeam install
+truffle run pangolin install
 ```
 
 ![Docker image download](/images/truffle/truffle-2.png)
@@ -132,32 +132,32 @@ truffle run moonbeam install
 Once downloaded, we can proceed to start the local node with the following command:
 
 ```
-truffle run moonbeam start
+truffle run pangolin start
 ```
 
 You will see a message indicating that the node has started, followed by both of the endpoinds available.
 
-![Moonbeam local node started](/images/truffle/truffle-3.png)
+![Pangolin local node started](/images/truffle/truffle-3.png)
 
-Once you are finished using your Moonbeam development node, you can run the following lines to stop it and remove the Docker image if that is the case:
-
-```
-truffle run moonbeam stop && \
-truffle run moonbeam remove
-```
-
-![Moonbeam local node stoped and image removed](/images/truffle/truffle-4.png)
-
-You also have the option to pause and unpause your Moonbeam development node:
+Once you are finished using your Pangolin development node, you can run the following lines to stop it and remove the Docker image if that is the case:
 
 ```
-truffle run moonbeam pause
-truffle run moonbeam unpause
+truffle run pangolin stop && \
+truffle run pangolin remove
+```
+
+![Pangolin local node stoped and image removed](/images/truffle/truffle-4.png)
+
+You also have the option to pause and unpause your Pangolin development node:
+
+```
+truffle run pangolin pause
+truffle run pangolin unpause
 ```
 
 You can see the output of these commands in the following image:
 
-![Install Moonbeam Truffle box](/images/truffle/truffle-5.png)
+![Install Pangolin Truffle box](/images/truffle/truffle-5.png)
 
 !!! note
     If you are familiar with Docker, you can skip the plugin commands and interact with the Docker image directly.
@@ -195,7 +195,7 @@ module.exports = function (deployer) {
 
 "8000000000000000000000000" is the number of tokens to initially mint with the contract, i.e., 8 million with 18 decimal places.
 
-## Deploying a Contract to Moonbeam Using Truffle {: #deploying-a-contract-to-moonbeam-using-truffle } 
+## Deploying a Contract to Pangolin Using Truffle
 
 Before we can deploy our contracts, we must compile them. (We say "contracts" because normal Truffle deployments include the `Migrations.sol` contract.) You can do this with the following command:
 
@@ -209,22 +209,22 @@ If successful, you should see output like the following:
 
 Now we are ready to deploy the compiled contracts. You can do this with the following command:
 
-=== "Moonbeam Development Node"
+=== "Pangolin Development Node"
 
     ```
     truffle migrate --network dev
     ```
 
-=== "Moonbase Alpha"
+=== "Pangolin"
 
     ```
-    truffle migrate --network moonbase
+    truffle migrate --network pangolin
     ```
 
-=== "Moonriver"
+=== "Crab"
 
     ```
-    truffle migrate --network moonriver
+    truffle migrate --network Crab
     ```
 
 If successful, you will see deployment actions, including the address of the deployed contract:

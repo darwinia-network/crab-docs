@@ -8,7 +8,7 @@ description:  Learn how to use precompiled contracts on Pangolin, the Pangolin T
 
 ## Introduction
 
-Another feature added with the [release of Moonbase Alpha v2](https://moonbeam.network/blog/moonbase-alpha-v2-contract-events-pub-sub-capabilities/) is the inclusion of some [precompiled contracts](https://docs.klaytn.com/smart-contract/precompiled-contracts) that are natively available on Ethereum. 
+Another feature added with the [release of Pangolin Alpha v2]() is the inclusion of some [precompiled contracts](https://docs.klaytn.com/smart-contract/precompiled-contracts) that are natively available on Ethereum. 
 
 Five precompiles are currently included, including: ecrecover, sha256, ripemd-160, the identity function, and the modular exponentiation.
 
@@ -31,7 +31,7 @@ To verify the installed version of Web3, you can use the `ls` command:
 ```
 npm ls web3
 ```
-As of writing this guide, the version used was 1.3.0. We will be also using [Remix](/builders/tools/remix/), connecting it to the Moonbase Alpha TestNet via [MetaMask](/tokens/connect/metamask/).
+As of writing this guide, the version used was 1.3.0. We will be also using [Remix](/builders/tools/remix/), connecting it to the Pangolin TestNet via [MetaMask](/tokens/connect/metamask/).
 
 ## Verify Signatures with ECRECOVER {: #verify-signatures-with-ecrecover } 
 
@@ -43,7 +43,7 @@ Let's jump into a small example to showcase how to leverage this precompiled fun
 const Web3 = require('web3');
 
 // Provider
-const web3 = new Web3('https://rpc.testnet.moonbeam.network');
+const web3 = new Web3('http://pangolin-rpc.darwinia.network');
 
 // Address and Private Key
 const address = '0x6Be02d1d3665660d22FF9624b7BE0551ee1Ac91b';
@@ -95,7 +95,7 @@ contract ECRECOVER{
 }
 ```
 
-Using the [Remix compiler and deployment](/builders/interact/remix/) and with [MetaMask pointing to Moonbase Alpha](/tokens/connect/metamask/), we can deploy the contract and call the `verify()` method that returns _true_ if the address returned by `ecrecover` is equal to the address used to sign the message (related to the private key and needs to be manually set in the contract).
+Using the [Remix compiler and deployment](/builders/interact/remix/) and with [MetaMask pointing to Pangolin](/tokens/connect/metamask/), we can deploy the contract and call the `verify()` method that returns _true_ if the address returned by `ecrecover` is equal to the address used to sign the message (related to the private key and needs to be manually set in the contract).
 
 ## Hashing with SHA256 {: #hashing-with-sha256 } 
 
