@@ -1,56 +1,82 @@
 ---
 title: Connect to Pangolin
-description: The Moonbeam TestNet, named Moonbase Alpha, is the easiest way to get started with a Polkadot environment. Follow this tutorial to connect to the TestNet.
+description: The Darwinia TestNet, named Pangolin Network, is the easiest way to get started with a Darwinia network environment. Follow this tutorial to connect to the TestNet.
 ---
 
-# Connect to Moonbase Alpha
+# Connect to Pangolin
 
-## Introduction {: #introduction } 
+## Introduction
 
-Moonbase Alpha has two endpoints available for users to connect to: one for HTTPS and one for WSS.
+The Darwinia official TestNet, named Pangolin, is the easiest way to get started with a Darwinia network environment. Follow this tutorial to connect to the Pangolin network.
 
---8<-- 'text/testnet/connect.md'
+The Pangolin Network has two endpoints available for users to connect to: one for HTTPS and one for WSS.
 
-## Connect MetaMask
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-If you already have MetaMask installed, you can easily connect MetaMask to the Moonbase Alpha TestNet:
-
-<div class="button-wrapper">
-    <a href="#" class="md-button connectMetaMask" value="moonbase">Connect MetaMask</a>
-</div>
-
-!!! note
-    MetaMask will popup asking for permission to add Moonbase Alpha as a custom network. Once you approve permissions, MetaMask will switch your current network to Moonbase Alpha.
-
-If you do not have MetaMask installed, please check out the [Interacting with Moonbeam using MetaMask](/tokens/connect/metamask/) guide.
-## Get Tokens {: #get-tokens } 
-
-To start building on Moonbase Alpha, you can get DEV tokens from our [faucet](https://discord.gg/PfpUATX), in our Discord Channel. For specific amounts, you can always reach out directly to us via our community channels.
-
-### Discord - Mission Control {: #discord-mission-control } 
-
-To request tokens automatically, we've created a Discord bot (named Mission Control :sunglasses:) that will automatically send a maximum of 5 DEV tokens every 24 hours (per Discord user) when you enter your address. You can check it out on our [Discord channel](https://discord.gg/PfpUATX).
- 
-Under the category "Miscellaneous," you will find our AlphaNet bot channel. 
-
-![Discord1](/images/testnet/testnet-discord1.png)
-
-To check your balance, enter the following message, replacing `<enter-address-here->` with your H160 address:
+<Tabs
+  defaultValue="wss"
+  values={[
+    {label: 'WSS Entry', value: 'wss'},
+    {label: 'HTTPS Entry', value: 'https'},
+  ]}>
+  
+  <TabItem value="https">
 
 ```
-!balance <enter-address-here->
+https://pangolin-rpc.darwinia.network
 ```
 
-To get DEV tokens, enter the following message, replacing `<enter-address-here->` with your H160 address:
- 
+  </TabItem>
+  <TabItem value="wss">
+
 ```
-!faucet send <enter-address-here->
+wss://pangolin-rpc.darwinia.network
 ```
+    
+   </TabItem>
+</Tabs>
 
-Mission Control will send you 5 DEV tokens and display your current account balance. Remember that Mission Control is limited to dispense once every 24 hours per Discord user.
+## Features
 
-![Discord2](/images/testnet/testnet-discord2.png)
+- Test the latest technology.
+- Compatible with Ethereum Virtual Machine.
+- Compatible with Ethereum contract infrastructure Metamask, Remix, etc.
+- Support for smart contracts in Solidity.
+- May be reset.
+  
+## Get Tokens
 
-### Manual Procedure {: #manual-procedure } 
+To start building on Pangolin, you can get DEV tokens from our [Pangolin Faucet Official](https://t.me/darwiniafaucet_official), in our Tg Group. For specific amounts, you can always reach out directly to us via our community channels.
 
-For token requests of more than the limited account allowed by our Discord bot, contact a moderator directly via our [Discord channel](https://discord.gg/PfpUATX). We are happy to provide the tokens needed to test your applications.
+### Pangolin Faucet Official
+
+- Visit [Pangolin Apps Portal](https://apps.darwinia.network/#/account) and select the **Pangolin Test Network** in the network list in the upper left corner.
+
+![01](../../../static/images/started/connect-pangolin/wiki-pangolin-testnet-01.png)
+
+- Create an account on Pangolin Test Network. For detailed tutorials on creating an account, please refer to [here](https://docs.crab.network/crab-tut-create-account)!
+- Click the avatar and you can copy your Pangolin address.
+
+![02](../../../static/images/started/connect-pangolin/wiki-pangolin-testnet-02.png)
+
+- Join the Telegram group named "[Darwinia Faucet Official](https://t.me/darwiniafaucet_official)".
+- Send `/faucet`+ Pangolin address.
+
+![03](../../../static/images/started/connect-pangolin/wiki-pangolin-testnet-03.png)
+
+- You can open the link of the darwinia_bot to check the transaction on Subscan.
+
+![04](../../../static/images/started/connect-pangolin/wiki-pangolin-testnet-04.png)
+
+![05](../../../static/images/started/connect-pangolin/wiki-pangolin-testnet-05.png)
+
+- When the transaction is successful, a certain number of test tokens will appear in your pangolin address.
+
+![06](../../../static/images/started/connect-pangolin/wiki-pangolin-testnet-06.png)
+
+- Each telegram account can get 100 PRINGs every seven days.
+
+### Manual Procedure
+
+For token requests of more than the limited account allowed by our Tg group, contact a moderator directly via our [Element](https://app.element.io/?pk_vid=6961ca0f7c45f8bf16052310122d2437#/room/#darwinia:matrix.org). We are happy to provide the tokens needed to test your applications.
