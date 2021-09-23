@@ -9,7 +9,7 @@ const providerRPC = {
    development: {
       name: 'development',
       rpc: 'http://localhost:9933',
-      chainId: 42,
+      chainId: 43,
    },
    pangolin: {
       name: 'pangolin',

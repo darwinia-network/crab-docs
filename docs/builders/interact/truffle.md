@@ -1,42 +1,32 @@
 ---
 title: Using Truffle
-description: Moonbeam makes it incredibly easy to deploy a Solidity-based smart contract to a Moonbeam node using Truffle. Learn how in this tutorial.
+sidebar_position: 4
+description: Pangolin makes it incredibly easy to deploy a Solidity-based smart contract to a Pangolin node using Truffle. Learn how in this tutorial.
 ---
 
-# Using Truffle to Deploy to Moonbeam
+# Using Truffle to Deploy to Pangolin
 
+## Introduction
 
-## Introduction {: #introduction } 
+This guide walks through the process of deploying a Solidity-based smart contract to a Pangolin node using [Truffle](https://www.trufflesuite.com/), a commonly used development tool for smart contracts on Ethereum. Given Pangolin’s Ethereum compatibility features, Truffle can be used directly with a Pangolin node.
 
-This guide walks through the process of deploying a Solidity-based smart contract to a Moonbeam node using [Truffle](https://www.trufflesuite.com/), a commonly used development tool for smart contracts on Ethereum. Given Moonbeam’s Ethereum compatibility features, Truffle can be used directly with a Moonbeam node.
+:::note
+This tutorial was created using the v2.6.4 tag which is based on the v2.6.4 release of [Pangolin](https://github.com/darwinia-network/darwinia-common/releases/tag/v2.6.4). The Pangolin platform and the [Frontier](https://github.com/paritytech/frontier) components it relies on for Substrate-based Ethereum compatibility are still under very active development.
 
-!!! note
-    This tutorial was created using the {{ networks.development.build_tag}} tag which is based on the {{ networks.moonbase.version }} release of [Moonbase Alpha](https://github.com/PureStake/moonbeam/releases/tag/{{ networks.moonbase.version }}). The Moonbeam platform and the [Frontier](https://github.com/paritytech/frontier) components it relies on for Substrate-based Ethereum compatibility are still under very active development.
-    --8<-- 'text/common/assumes-mac-or-ubuntu-env.md'
+The examples in this guide assumes you have a MacOS or Ubuntu 18.04-based environment and will need to be adapted accordingly for Windows.
+:::
 
-For this guide, you will need to have a Moonbeam development node running in `--dev` mode. This can be done by either following the steps detailed [here](/builders/get-started/moonbeam-dev/) or by using the [Moonbeam Truffle plugin](#using-the-moonbeam-truffle-plugin-to-run-a-node), which we'll use in this tutorial's examples.
+For this guide, you will need to have a Pangolin development node running in `--dev` mode. This can be done by either following the steps detailed [here](/builders/get-started/pangolin-dev/).
 
-## Checking Prerequisites {: #checking-prerequisites } 
+## Checking Prerequisites
 
---8<-- 'text/common/install-nodejs.md'
+import InstallNodeJs from '/snippets/text/common/install-nodejs.md';
 
+<InstallNodeJs name="installNodeJs"/>
 
-In addition, you can globally install Truffle by running:
+As of writing of this guide, the versions used were 16.0.0 and 7.10.0, respectively.
 
-```
-npm install -g truffle
-```
-
-As of this guide's publish date, the versions used were 15.12.0, 7.6.3, and 5.2.4 respectively.
-
-!!! note
-    For the following examples, you don't need to have Truffle globally installed, as it is included as a dependency on the Moonbeam Truffle box. If you prefer, you can run `npx truffle` or `./node_modules/.bin/truffle` instead of `truffle`.
-
-## Getting Started with Truffle {: #getting-started-with-truffle } 
-
-To ease the process of getting started with Truffle, we have [released the Moonbeam Truffle box](https://moonbeam.network/announcements/moonbeam-truffle-box-available-solidity-developers/). This provides a boilerplate setup to speed up the rampup process to deploy contracts on Moonbeam.
-
-### Creating a Project using the Moonbeam Truffle Box {: #creating-a-project-using-the-moonbeam-truffle-box } 
+## Starting a Truffle Project
 
 To get started with the Moonbeam Truffle box, if you have Truffle installed globally, you can execute:
 

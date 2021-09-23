@@ -1,16 +1,16 @@
 ---
 title: Send a Transaction
 sidebar_position: 1
-description: Learn how to create and send transactions on Crab’s Ethereum-compatible network with a simple script using web3.js, ethers.js, or web3.py.
+description: Learn how to create and send transactions on Pangolin’s Ethereum-compatible network with a simple script using web3.js, ethers.js, or web3.py.
 ---
 
-# Send Transactions using Ethereum Libraries on Crab
+# Send Transactions using Ethereum Libraries on Pangolin
 
-![Ethereum Libraries Integrations Crab](/images/sendtx/web3-libraries-banner.png)
+![Ethereum Libraries Integrations Pangolin](/images/sendtx/web3-libraries-banner.png)
 
 ## Introduction
 
-This guide walks through using three different Ethereum libraries to manually sign and send a transaction on Crab. The three libraries covered in this tutorial are:
+This guide walks through using three different Ethereum libraries to manually sign and send a transaction on Pangolin. The three libraries covered in this tutorial are:
 
  - [Web3.js](https://web3js.readthedocs.io/)
  - [Ethers.js](https://docs.ethers.io/)
@@ -68,7 +68,7 @@ npm i ethers
 ```
 
   </TabItem>
-  <TabItem value="Web3.py"> 
+  <TabItem value="Web3.py">
 
 ```
 pip3 install web3
@@ -229,7 +229,7 @@ In the second section, the `web3.eth.getBalance(address)` method is used to fetc
 
 ## Running the Scripts
 
-For this section, the code shown before was adapted to target a development node, which you can run by following [this tutorial](/builders/get-started/crab-dev/). Also, each transaction was sent from the pre-funded account that comes with the node:
+For this section, the code shown before was adapted to target a development node, which you can run by following [this tutorial](/builders/get-started/pangolin-dev/). Also, each transaction was sent from the pre-funded account that comes with the node:
 
 import DevAccount from '/snippets/text/metamask-local/dev-account.md';
 

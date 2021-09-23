@@ -1,36 +1,36 @@
 ---
 title: Using Remix
 sidebar_position: 1
-description: Learn how to use one of the most popular Ethereum developer tools, the Remix IDE, to interact with a local Crab node.
+description: Learn how to use one of the most popular Ethereum developer tools, the Remix IDE, to interact with a local Pangolin node.
 ---
 
-# Using Remix to Deploy to Crab
+# Using Remix to Deploy to Pangolin
 
 
 ## Introduction
 
-Remix is one of the commonly used development environments for smart contracts on Ethereum. Given Crab’s Ethereum compatibility features, Remix can be used directly with a Crab development node or the Crab Node.
+Remix is one of the commonly used development environments for smart contracts on Ethereum. Given Pangolin’s Ethereum compatibility features, Remix can be used directly with a Pangolin development node or the Pangolin Node.
 
-This guide walks through the process of creating and deploying a Solidity-based smart contract to a Crab development node using the [Remix IDE](https://remix.ethereum.org/).
+This guide walks through the process of creating and deploying a Solidity-based smart contract to a Pangolin development node using the [Remix IDE](https://remix.ethereum.org/).
 
 :::note
-This tutorial was created using the v2.6.4 tag which is based on the v2.6.4 release of [Crab](https://github.com/darwinia-network/darwinia-common/releases/tag/v2.6.4). The Crab platform and the [Frontier](https://github.com/paritytech/frontier) components it relies on for Substrate-based Ethereum compatibility are still under very active development.
+This tutorial was created using the v2.6.4 tag which is based on the v2.6.4 release of [Pangolin](https://github.com/darwinia-network/darwinia-common/releases/tag/v2.6.4). The Pangolin platform and the [Frontier](https://github.com/paritytech/frontier) components it relies on for Substrate-based Ethereum compatibility are still under very active development.
 :::
 
 ## Checking Prerequisites
 
-This guide assumes that you have a local Crab node running in `--dev` mode and that you have a [MetaMask](https://metamask.io/) installation configured to use this local node. You can find instructions for running a local Crab node [here](/builders/get-started/crab-dev/) and instructions to connect MetaMask to it [here](/dvm-metamask.md).
+This guide assumes that you have a local Pangolin node running in `--dev` mode and that you have a [MetaMask](https://metamask.io/) installation configured to use this local node. You can find instructions for running a local Pangolin node [here](/builders/get-started/pangolin-dev/) and instructions to connect MetaMask to it [here](/dvm-metamask.md).
 
-If you followed the guides above, you should have a local Crab node which will begin to author blocks as transactions arrive:
+If you followed the guides above, you should have a local Pangolin node which will begin to author blocks as transactions arrive:
 
-![Local Crab node producing blocks](/images/remix/using-remix-1.png)
+![Local Pangolin node producing blocks](/images/remix/using-remix-1.png)
 
-And you should have a MetaMask installation connected to your local Crab dev node with at least one account that has a balance. It should look something like this (expanded view):
+And you should have a MetaMask installation connected to your local Pangolin dev node with at least one account that has a balance. It should look something like this (expanded view):
 
 ![MetaMask installation with a balance](/images/remix/using-remix-2.png)
 
 :::note
-Make sure you are connected to your Crab node and not another network!
+Make sure you are connected to your Pangolin node and not another network!
 :::
 
 ## Getting Started with Remix
@@ -63,9 +63,9 @@ Now, navigate to the compile sidebar option to press the “Compile MyToken.sol�
 
 You will see Remix download all of the Open Zeppelin dependencies and compile the contract.
 
-## Deploying a Contract to Crab Using Remix
+## Deploying a Contract to Pangolin Using Remix
 
-Now we can deploy the contract by navigating to the Deployment sidebar option. You need to change the topmost “Environment” dropdown from “JavaScript VM” to “Injected Web3.” This tells Remix to use the MetaMask injected provider, which will point it to your Crab development node. If you wanted to try this using the Crab Network, you would have to connect MetaMask to the Crab Network instead of your local development node.
+Now we can deploy the contract by navigating to the Deployment sidebar option. You need to change the topmost “Environment” dropdown from “JavaScript VM” to “Injected Web3.” This tells Remix to use the MetaMask injected provider, which will point it to your Pangolin development node. If you wanted to try this using the Pangolin Network, you would have to connect MetaMask to the Pangolin Network instead of your local development node.
 
 As soon as you select "Injected Web3", you will be prompted to allow Remix to connect to your MetaMask account.
 
@@ -97,7 +97,7 @@ Drill down on the contract under “Deployed Contracts.” Clicking on name, sym
 
 ![Interact with the contract from Remix](/images/remix/using-remix-11.png)
 
-## Interacting with a Crab-based ERC-20 from MetaMask
+## Interacting with a Pangolin-based ERC-20 from MetaMask
 
 Now, open MetaMask to add the newly deployed ERC-20 tokens. Before doing so, make sure you have copied the contract's address from Remix. Back in MetaMask, click on “Add Token” as shown below. Make sure you are in the account that deployed the token contract.
 

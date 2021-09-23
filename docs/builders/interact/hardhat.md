@@ -1,32 +1,35 @@
 ---
 title: Using Hardhat
-description: Use Hardhat to compile, deploy, and debug Ethereum smart contracts on Moonbeam.
+sidebar_position: 3
+description: Use Hardhat to compile, deploy, and debug Ethereum smart contracts on Pangolin.
 ---
 
-# Using Hardhat to Deploy To Moonbeam
+# Using Hardhat to Deploy To Pangolin
 
 ![Hardhat Create Project](/images/hardhat/hardhat-banner.png)
 
-## Introduction {: #introduction } 
+## Introduction
 
-Hardhat is an Ethereum development environment that helps developers manage and automate the recurring tasks inherent to building smart contracts and DApps. Hardhat can directly interact with Moonbeam's Ethereum API so it can also be used to deploy smart contracts into Moonbeam.
+Hardhat is an Ethereum development environment that helps developers manage and automate the recurring tasks inherent to building smart contracts and DApps. Hardhat can directly interact with Pangolin's Ethereum API so it can also be used to deploy smart contracts into Pangolin.
 
-This guide will cover how to use Hardhat to compile, deploy, and debug Ethereum smart contracts on the Moonbase Alpha TestNet.
+This guide will cover how to use Hardhat to compile, deploy, and debug Ethereum smart contracts on the Pangolin Network.
 
-## Checking Prerequisites {: #checking-prerequisites } 
+## Checking Prerequisites
 
---8<-- 'text/common/install-nodejs.md'
+import InstallNodeJs from '/snippets/text/common/install-nodejs.md';
 
-As of writing of this guide, the versions used were 15.7.0 and 7.4.3, respectively.
+<InstallNodeJs name="installNodeJs"/>
+
+As of writing of this guide, the versions used were 16.0.0 and 7.10.0, respectively.
 
 Also, you will need the following:
 
- - Have MetaMask installed and [connected to Moonbase](/tokens/connect/metamask/)
- - Have an account with funds, which you can get from [Mission Control](/builders/get-started/moonbase/#get-tokens/)
+ - Have MetaMask installed and [connected to Pangolin](/dvm-metamask.md)
+ - Have an account with funds, which you can get from [Mission Control](/builders/get-started/pangolin/#get-tokens/)
 
 Once all requirements have been met, you are ready to build with Hardhat.
 
-## Starting a Hardhat Project {: #starting-a-hardhat-project } 
+## Starting a Hardhat Project
 
 To start a new project, create a directory for it:
 
@@ -56,14 +59,15 @@ npx hardhat
 
 This will create a Hardhat config file (`hardhat.config.js`) in our project directory.
 
-!!! note
-    `npx` is used to run executables installed locally in your project. Although Hardhat can be installed globally, we recommend installing locally in each project so that you can control the version on a project by project basis.
+:::note
+`npx` is used to run executables installed locally in your project. Although Hardhat can be installed globally, we recommend installing locally in each project so that you can control the version on a project by project basis.
+:::
 
 After running the command, choose `Create an empty hardhat.config.js`:
 
 ![Hardhat Create Project](/images/hardhat/hardhat-images-1.png)
 
-## The Contract File {: #the-contract-file } 
+## The Contract File
 
 We are going to store our contract in the `contracts` directory. Create it:
 
@@ -98,11 +102,11 @@ contract Box {
 }
 ```
 
-## Hardhat Configuration File {: #hardhat-configuration-file } 
+## Hardhat Configuration File
 
 Let's modify our Hardhat configuration file so we can compile and deploy this contract to Moonbase Alpha.
 
-If you have not yet done so, create a MetaMask Account, [connect to Moonbase Alpha](/tokens/connect/metamask/), and fund it through [Mission Control](/builders/get-started/moonbase/#get-tokens/). We will use the private key of the account created to deploy the contract.
+If you have not yet done so, create a MetaMask Account, [connect to Pangolin](/dvm-metamask.md), and fund it through [Mission Control](/builders/get-started/pangolin/#get-tokens/). We will use the private key of the account created to deploy the contract.
 
 We start by requiring the [ethers plugin](https://hardhat.org/plugins/nomiclabs-hardhat-ethers.html), which brings the [ethers.js](/builders/tools/eth-libraries/etherjs/) library that allows you to interact with the blockchain in a simple way. We can install `ethers` plugin by running:
 
@@ -112,36 +116,56 @@ npm install @nomiclabs/hardhat-ethers ethers
 
 Next, we import the private key that we've retrieved from MetaMask and store it in a `.json` file.
 
-!!! note
-    Please always manage your private keys with a designated secret manager or similar service. Never save or commit your private keys inside your repositories.
+:::note
+Please always manage your private keys with a designated secret manager or similar service. Never save or commit your private keys inside your repositories.
+:::
 
 Inside the `module.exports`, we need to provide the Solidity version (`0.8.1` according to our contract file), and the network details:
 
-=== "Moonbeam Development Node"
-    ```      
-    dev: {
-        url: 'http://localhost:9933/',
-        chainId: 1281,
-        accounts: [privateKeyDev] // Insert your private key here
-      },
-    ```
-=== "Moonbase Alpha"
-    ```
-    moonbase: {
-        url: `https://rpc.testnet.moonbeam.network`,
-        chainId: 1287,
-        accounts: [privateKeyMoonbase] // Insert your private key here
-      },
-    ```
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-=== "Moonriver"
-    ```
-    moonriver: {
-        url: `https://rpc.moonriver.moonbeam.network`,
-        chainId: 1285,
-        accounts: [privateKeyMoonriver] // Insert your private key here
-      },
-    ```
+<Tabs
+  defaultValue="Pangolin Development Node"
+  values={[
+    {label: 'Pangolin Development Node', value: 'Pangolin Development Node'},
+    {label: 'Pangolin', value: 'Pangolin'},
+    {label: 'Crab', value: 'Crab'},
+  ]}>
+  <TabItem value="Pangolin Development Node">
+
+```
+dev: {
+	url: 'http://localhost:9933/',
+	chainId: 43,
+	accounts: [privateKeyDev] // Insert your private key here
+  },
+```
+
+  </TabItem>
+  <TabItem value="Pangolin">
+
+```
+pangolin: {
+	url: `http://pangolin-rpc.darwinia.network`,
+	chainId: 43,
+	accounts: [privateKeyPangolin] // Insert your private key here
+  },
+```
+
+  </TabItem>
+  <TabItem value="Crab">
+
+```
+crab: {
+	url: `http://crab-rpc.darwinia.network`,
+	chainId: 44,
+	accounts: [privateKeyCrab] // Insert your private key here
+  },
+```
+
+  </TabItem>
+</Tabs>
 
 The Hardhat configuration file should look like this:
 
@@ -149,7 +173,7 @@ The Hardhat configuration file should look like this:
 // ethers plugin required to interact with the contract
 require('@nomiclabs/hardhat-ethers');
 
-// private key from the pre-funded Moonbase Alpha testing account
+// private key from the pre-funded Pangolin testing account
 const { privateKey } = require('./secrets.json');
 
 module.exports = {
@@ -157,10 +181,10 @@ module.exports = {
   solidity: "0.8.1",
 
   networks: {
-    // Moonbase Alpha network specification
+    // Pangolin network specification
     moonbase: {
-      url: `{{ networks.moonbase.rpc_url }}`,
-      chainId: {{ networks.moonbase.chain_id }},
+      url: `http://pangolin-rpc.darwinia.network`,
+      chainId: 43,
       accounts: [privateKey]
     }
   }
@@ -177,7 +201,7 @@ Next, let's create a `secrets.json`, where the private key mentioned before is s
 
 Congratulations! We are ready for deployment!
 
-## Compiling Solidity {: #compiling-solidity } 
+## Compiling Solidity
 
 Our contract, `Box.sol`, uses Solidity 0.8.1. Make sure the Hardhat configuration file is correctly set up with this solidity version. If so, we can compile the contract by running:
 
@@ -189,7 +213,7 @@ npx hardhat compile
 
 After compilation, an `artifacts` directory is created: it holds the bytecode and metadata of the contract, which are `.json` files. It’s a good idea to add this directory to your `.gitignore`.
 
-## Deploying the Contract {: #deploying-the-contract } 
+## Deploying the Contract
 
 In order to deploy the Box smart contract, we will need to write a simple `deployment script`. First, let's create a new directory (`scripts`). Inside the newly created directory, add a new file `deploy.js`.
 
@@ -225,14 +249,15 @@ main()
    });
 ```
 
-Using the `run` command, we can now deploy the `Box` contract to `Moonbase Alpha`:
+Using the `run` command, we can now deploy the `Box` contract to `Pangolin`:
 
 ```
-  npx hardhat run --network moonbase scripts/deploy.js
+  npx hardhat run --network pangolin scripts/deploy.js
 ```
 
-!!! note
-    To deploy to a Moonbeam development node, replace `moonbase` for `dev` in the `run` command.
+:::note
+To deploy to a Pangolin development node, replace `pangolin` for `dev` in the `run` command.
+:::
 
 After a few seconds, the contract is deployed, and you should see the address in the terminal.
 
@@ -240,16 +265,17 @@ After a few seconds, the contract is deployed, and you should see the address in
 
 Congratulations, your contract is live! Save the address, as we will use it to interact with this contract instance in the next step.
 
-## Interacting with the Contract {: #interacting-with-the-contract } 
+## Interacting with the Contract
 
 Let's use Hardhat to interact with our newly deployed contract in Moonbase Alpha. To do so, launch `hardhat console` by running:
 
 ```
-npx hardhat console --network moonbase
+npx hardhat console --network pangolin
 ```
 
-!!! note
-    To deploy to a Moonbeam development node, replace `moonbase` for `dev` in the `console` command.
+:::note
+To deploy to a Pangolin development node, replace `pangolin` for `dev` in the `console` command.
+:::
 
 Then, add the following lines of code one line at a time. First, we create a local instance of the `Box.sol`contract once again. Don't worry about the `undefined` output you will get after each line is executed:
 
@@ -269,7 +295,7 @@ After attaching to the contract, we are ready to interact with it. While the con
 await box.store(5)
 ```
 
-The transaction will be signed by your Moonbase account and broadcast to the network. The output should look similar to:
+The transaction will be signed by your Pangolin account and broadcast to the network. The output should look similar to:
 
 ![Transaction output](/images/hardhat/hardhat-images-4.png)
 

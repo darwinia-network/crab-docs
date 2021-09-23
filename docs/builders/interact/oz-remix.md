@@ -1,10 +1,10 @@
 ---
 title: Using OpenZeppelin and Remix
 sidebar_position: 2
-description:  Learn how to create common OpenZeppelin contracts with their Contracts Wizard easily and how to deploy them on Crab thanks to its Ethereum compatibility features
+description:  Learn how to create common OpenZeppelin contracts with their Contracts Wizard easily and how to deploy them on Pangolin thanks to its Ethereum compatibility features
 ---
 
-# Using OpenZeppelin Contracts and Remix To Deploy To Crab
+# Using OpenZeppelin Contracts and Remix To Deploy To Pangolin
 
 ![OpenZeppelin Contracts Banner](/images/openzeppelin/ozcontracts-banner.png)
 
@@ -12,9 +12,9 @@ description:  Learn how to create common OpenZeppelin contracts with their Contr
 
 OpenZeppelin contracts and libraries have become a standard in the industry. They help developers minimize risk, as their open-source code templates are battle-tested for Ethereum and other blockchains. Their code includes the most used implementations of ERC standards and add-ons and often appears in guides and tutorials around the community.
 
-Because Crab is fully Ethereum compatible, all of OpenZeppelin's contracts and libraries can be implemented without any changes.
+Because Pangolin is fully Ethereum compatible, all of OpenZeppelin's contracts and libraries can be implemented without any changes.
 
-This guide is divided into two sections. The first part describes the OpenZeppelin Contracts Wizard, a great online tool to help you create smart contracts using OpenZeppelin code. The second section provides a step-by-step guide on how you can deploy these contracts using [Remix](https://remix.ethereum.org/) on Crab.
+This guide is divided into two sections. The first part describes the OpenZeppelin Contracts Wizard, a great online tool to help you create smart contracts using OpenZeppelin code. The second section provides a step-by-step guide on how you can deploy these contracts using [Remix](https://remix.ethereum.org/) on Pangolin.
 
 ## OpenZeppelin Contract Wizard
 
@@ -42,9 +42,9 @@ The wizard is comprised of the following sections:
 
 Once you have set up your contract with all the settings and features, it is just as easy as copying and pasting the code into your contract file.
 
-## Deploying OpenZeppelin Contracts on Crab
+## Deploying OpenZeppelin Contracts on Pangolin
 
-This section goes through the steps for deploying OpenZeppelin contracts on Crab. It covers the following contracts:
+This section goes through the steps for deploying OpenZeppelin contracts on Pangolin. It covers the following contracts:
 
  - ERC20 (fungible tokens)
  - ERC721 (non-fungible tokens)
@@ -54,14 +54,14 @@ All the code of the contracts was obtained using OpenZeppelin [Contract Wizard](
 
 ### Checking Prerequisites
 
-The steps described in this section assume you have [MetaMask](https://metamask.io/) installed and connected to the Crab Network. Contract deployment is done using the [Remix IDE](https://remix.ethereum.org/) via the "Injected Web3" environment. You can find corresponding tutorials in the following links:
+The steps described in this section assume you have [MetaMask](https://metamask.io/) installed and connected to the Pangolin Network. Contract deployment is done using the [Remix IDE](https://remix.ethereum.org/) via the "Injected Web3" environment. You can find corresponding tutorials in the following links:
 
- - [Interacting with Crab using MetaMask](/dvm-metamask.md)
- - [Interacting with Crab using Remix](/builders/tools/remix/)
+ - [Interacting with Pangolin using MetaMask](/dvm-metamask.md)
+ - [Interacting with Pangolin using Remix](/builders/tools/remix/)
 
 ### Deploying an ERC20 Token
 
-For this example, an ERC20 token will be deployed to Crab. The final code used combines different contracts from OpenZeppelin:
+For this example, an ERC20 token will be deployed to Pangolin. The final code used combines different contracts from OpenZeppelin:
 
  - **ERC20.sol** — ERC20 token implementation with the optional features from the base interface. Includes the supply mechanism with a `mint` function but needs to be explicitly called from within the main contract
  - **Ownable.sol** — extension to restrict access to certain functions
@@ -117,7 +117,7 @@ And that is it! You've deployed an ERC20 token contract using OpenZeppelin's con
 
 ### Deploying an ERC721 Token
 
-For this example, an ERC721 token will be deployed to Crab. The final code used combines different contracts from OpenZeppelin:
+For this example, an ERC721 token will be deployed to Pangolin. The final code used combines different contracts from OpenZeppelin:
 
  - **ERC721** — ERC721 token implementation with the optional features from the base interface. Includes the supply mechanism with a `_mint` function but needs to be explicitly called from within the main contract
  - **Burnable** — extension to allow tokens to be destroyed by their owners (or approved addresses)
@@ -182,7 +182,7 @@ And that is it! You've deployed an ERC721 token contract using OpenZeppelin's co
 
 ### Deploying an ERC1155 Token
 
-For this example, an ERC1155 token will be deployed to Crab. The final code used combines different contracts from OpenZeppelin:
+For this example, an ERC1155 token will be deployed to Pangolin. The final code used combines different contracts from OpenZeppelin:
 
  - **ERC1155** — ERC1155 token implementation with the optional features from the base interface. Includes the supply mechanism with a `_mint` function but needs to be explicitly called from within the main contract
  - **Pausable** — extension to allows pausing tokens transfer, mintings and burnings

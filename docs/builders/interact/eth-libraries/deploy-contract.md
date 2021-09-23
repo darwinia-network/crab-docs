@@ -1,16 +1,16 @@
 ---
 title: Deploy a Contract
 sidebar_position: 2
-description: Learn how to deploy unmodified and unchanged Solidity-based smart contracts to a Crab node with a simple script using Web3.js, Ethers.js, or Web3.py.
+description: Learn how to deploy unmodified and unchanged Solidity-based smart contracts to a Pangolin node with a simple script using Web3.js, Ethers.js, or Web3.py.
 ---
 
-# Using Ethereum Libraries to Deploy To Crab
+# Using Ethereum Libraries to Deploy To Pangolin
 
-![Ethereum Libraries Integrations Crab](/images/sendtx/web3-libraries-banner.png)
+![Ethereum Libraries Integrations Pangolin](/images/sendtx/web3-libraries-banner.png)
 
 ## Introduction
 
-This guide walks through using the Solidity compiler and three different Ethereum libraries to deploy a contract to Crab manually. The three libraries covered by this tutorial are:
+This guide walks through using the Solidity compiler and three different Ethereum libraries to deploy a contract to Pangolin manually. The three libraries covered by this tutorial are:
 
  - [Web3.js](/builders/tools/eth-libraries/etherjs)
  - [Ethers.js](/builders/tools/eth-libraries/web3js)
