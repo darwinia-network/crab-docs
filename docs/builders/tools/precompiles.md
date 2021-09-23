@@ -8,7 +8,7 @@ description:  Learn how to use precompiled contracts on Pangolin, the Pangolin T
 
 ## Introduction
 
-Another feature added with the [release of Pangolin Alpha v2]() is the inclusion of some [precompiled contracts](https://docs.klaytn.com/smart-contract/precompiled-contracts) that are natively available on Ethereum. 
+Another feature added with the release of Pangolin is the inclusion of some [precompiled contracts](https://docs.klaytn.com/smart-contract/precompiled-contracts) that are natively available on Ethereum. 
 
 Five precompiles are currently included, including: ecrecover, sha256, ripemd-160, the identity function, and the modular exponentiation.
 

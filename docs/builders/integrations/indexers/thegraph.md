@@ -1,11 +1,11 @@
 ---
 title: The Graph
-description: Build APIs using The Graph indexing protocol on Moonbeam
+description: Build APIs using The Graph indexing protocol on Pangolin
 ---
 
-# Using The Graph on Moonbeam
+# Using The Graph on Pangolin
 
-![The Graph on Moonbeam](/images/thegraph/thegraph-banner.png)
+![The Graph on Pangolin](/images/thegraph/thegraph-banner.png)
 
 ## Introduction {: #introduction } 
 
@@ -15,15 +15,15 @@ The Graph is a decentralized and open-source indexing protocol for querying netw
 
 Furthermore, developers can build APIs, called Subgraphs. Users or other developers can use Subgraphs to query data specific to a set of smart contracts. Data is fetched with a standard GraphQL API. You can visit [their documentation](https://thegraph.com/docs/about/introduction#what-the-graph-is) to read more about The Graph protocol.
 
-With the introduction of Ethereum tracing modules in [Moonbase Alpha v7](https://github.com/PureStake/moonbeam/releases/tag/v0.7.0), The Graph is capable of indexing blockchain data in Moonbeam.
+With the introduction of Ethereum tracing modules in pangolin, The Graph is capable of indexing blockchain data in Pangolin.
 
-This guide takes you through the creation of a simple subgraph for a Lottery contract on Moonbase Alpha.
+This guide takes you through the creation of a simple subgraph for a Lottery contract on pangolin Alpha.
 
 ## Checking Prerequisites {: #checking-prerequisites } 
 
-To use The Graph on Moonbase Alpha you have two options:
+To use The Graph on pangolin Alpha you have two options:
 
- - Run a Graph Node against Moonbase Alpha and point your Subgraph to it. To do so, you can follow [this tutorial](/node-operators/indexer-nodes/thegraph-node/)
+ - Run a Graph Node against pangolin Alpha and point your Subgraph to it. To do so, you can follow [this tutorial](/node-operators/indexer-nodes/thegraph-node/)
  - Point your Subgraph to The Graph API via the [Graph Explorer website](https://thegraph.com/explorer/). To do so you need to create an account and have an access token
  
 ## The Lottery Contract {: #the-lottery-contract } 
@@ -68,7 +68,7 @@ npx graph codegen --output-dir src/types/
 
 The `codegen` command can also be executed using `yarn codegen`.
 
-For this example, the contract was deployed to `{{ networks.moonbase.thegraph.lotto_contract }}`. You can find more information on how to deploy a contract with Hardhat in our [integrations tutorial](/builders/interact/hardhat/). Also, the "README" file in the [Moonloto repository](https://github.com/PureStake/moonlotto-subgraph) has the steps necessary to compile and deploy the contract if required.
+For this example, the contract was deployed to `{{ networks.pangolin.thegraph.lotto_contract }}`. You can find more information on how to deploy a contract with Hardhat in our [integrations tutorial](/builders/interact/hardhat/). Also, the "README" file in the [Moonloto repository](https://github.com/PureStake/moonlotto-subgraph) has the steps necessary to compile and deploy the contract if required.
 
 ### Subgraphs Core Structure {: #subgraphs-core-structure } 
 
@@ -124,10 +124,10 @@ Some of the most important parameters in the `subgraph.yaml` file are:
  - **repository** — refers to the Github repo of the subgraph
  - **schema/file** — refers to the location of the `schema.graphql` file
  - **dataSources/name** — refers to the name of the Subgraph
- - **network** — refers to the network name. This value **must** be set to `mbase` for any Subgraph being deployed to Moonbase Alpha
+ - **network** — refers to the network name. This value **must** be set to `mbase` for any Subgraph being deployed to pangolin Alpha
  - **dataSources/source/address** — refers to the address of the contract of interest
  - **dataSources/source/abi** — refers to where the interface of the contract is stored inside the `types` folder created with the `codegen` command
- - **dataSources/source/startBlock** — refers to the start block from which the indexing will start. Ideally, this value should be close to the block the contract was created in. You can use [Blockscout](https://moonbase-blockscout.testnet.moonbeam.network/) to get this information by providing the contract address. For this example, the contract was created at block `{{ networks.moonbase.thegraph.block_number }}`
+ - **dataSources/source/startBlock** — refers to the start block from which the indexing will start. Ideally, this value should be close to the block the contract was created in. You can use [Blockscout](https://pangolin-blockscout.testnet.moonbeam.network/) to get this information by providing the contract address. For this example, the contract was created at block `{{ networks.pangolin.thegraph.block_number }}`
  - **dataSources/mapping/file** — refers to the location of the mapping file
  - **dataSources/mapping/entities** — refers to the definitions of the entities in the `schema.graphql` file
  - **dataSources/abis/name** — refers to where the interface of the contract is stored inside the `types/dataSources/name`
@@ -140,7 +140,7 @@ In short, the `subgraph.yaml` should look like the following snippet:
 
 ```
 specVersion: 0.0.2
-description: Moonbeam lottery subgraph tutorial
+description: Pangolin lottery subgraph tutorial
 repository: https://github.com/PureStake/moonlotto-subgraph
 schema:
   file: ./schema.graphql
@@ -149,9 +149,9 @@ dataSources:
     name: MoonLotto
     network: mbase
     source:
-      address: '{{ networks.moonbase.thegraph.lotto_contract }}'
+      address: '{{ networks.pangolin.thegraph.lotto_contract }}'
       abi: MoonLotto
-      startBlock: {{ networks.moonbase.thegraph.block_number }}
+      startBlock: {{ networks.pangolin.thegraph.block_number }}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4

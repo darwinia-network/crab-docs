@@ -1,23 +1,23 @@
 ---
 title: Covalent API
-description: Querying Blockchain Data with the Covalent API Moonbeam
+description: Querying Blockchain Data with the Covalent API Pangolin
 ---
 
 # Getting Started with the Covalent API
 
-![The Graph on Moonbeam](/images/covalent/covalentbannerimage.png)
+![The Graph on Pangolin](/images/covalent/covalentbannerimage.png)
 
 ## Introduction {: #introduction } 
 
-Covalent provides a unified API to bring full transparency and visibility to assets across all blockchain networks. Simply put, Covalent offers a single API that allows you to pull detailed, granular blockchain transaction data from multiple blockchains with no code. The unified Covalent API allows you to create entirely new applications or augment existing ones without configuring or maintaining infrastructure. Covalent supports Moonbase Alpha and plans to support Moonbeam and Moonriver.
+Covalent provides a unified API to bring full transparency and visibility to assets across all blockchain networks. Simply put, Covalent offers a single API that allows you to pull detailed, granular blockchain transaction data from multiple blockchains with no code. The unified Covalent API allows you to create entirely new applications or augment existing ones without configuring or maintaining infrastructure. Covalent supports pangolin Alpha and plans to support Pangolin and Crab.
 
 ## Checking Prerequisites {: #checking-prerequisites } 
 
 All requests require authentication; you will need [a free API Key](https://www.covalenthq.com/platform/#/auth/register/) to use the Covalent API. 
 Also, you will need the following:
 
- - Have MetaMask installed and [connected to Moonbase](/tokens/connect/metamask/)
- - Have an account with funds, which you can get from [Mission Control](/builders/get-started/moonbase/#get-tokens/)
+ - Have MetaMask installed and [connected to pangolin](/tokens/connect/metamask/)
+ - Have an account with funds, which you can get from [Mission Control](/builders/get-started/pangolin/#get-tokens/)
 
 ## Types of Endpoints {: #types-of-endpoints } 
 
@@ -59,7 +59,7 @@ The Covalent API has two classes of endpoints:
 First, make sure you have [your API Key](https://www.covalenthq.com/platform/#/auth/register/) which begins with “ckey_”. The Token Holders Endpoint returns a list of all the token holders of a particular token. For this API call, you’re going to need the following: 
 
  - Your API Key
- - Moonbase Alpha Chain ID: 1287
+ - pangolin Alpha Chain ID: 1287
  - Contract Address (ERTH Token in this example): 0x08B40414525687731C23F430CEBb424b332b3d35
 
 ### Using Curl {: #using-curl } 
@@ -74,10 +74,10 @@ curl https://api.covalenthq.com/v1/1287/tokens/\
     The colon `:` after the API key is important because otherwise you will be prompted for a password (which is not needed).
 
 
-The Covalent API will return a list of token holders for the ERTH token. Unless you already owned some ERTH tokens, your address will be missing from that list. Head over to the [Moonbase Alpha ERC-20 Faucet](https://moonbase-minterc20.netlify.app/) to generate some ERTH tokens for yourself. Now repeat the same Covalent API request as above. The Covalent API updates in real-time, so you should now see your address in the list of token holders for the ERTH token.
+The Covalent API will return a list of token holders for the ERTH token. Unless you already owned some ERTH tokens, your address will be missing from that list. Head over to the [pangolin Alpha ERC-20 Faucet](https://pangolin-minterc20.netlify.app/) to generate some ERTH tokens for yourself. Now repeat the same Covalent API request as above. The Covalent API updates in real-time, so you should now see your address in the list of token holders for the ERTH token.
 
 ## Javascript Examples {: #javascript-examples } 
-Copy and paste the below code block into your preferred environment, or [JSFiddle](https://jsfiddle.net/). After setting the API key, set the address constant. Remember our chain ID is `1287` for Moonbase Alpha.
+Copy and paste the below code block into your preferred environment, or [JSFiddle](https://jsfiddle.net/). After setting the API key, set the address constant. Remember our chain ID is `1287` for pangolin Alpha.
 
 === "Using Fetch"
     ```js
@@ -86,7 +86,7 @@ Copy and paste the below code block into your preferred environment, or [JSFiddl
 
 	function getData() {
     const address = '0xFEC4f9D5B322Aa834056E85946A32c35A3f5aDD8'; //example
-    const chainId = '1287'; //Moonbeam Testnet (Moonbase Alpha Chain ID)
+    const chainId = '1287'; //Pangolin Testnet (pangolin Alpha Chain ID)
     const url = new URL(`https://api.covalenthq.com/v1/${chainId}/address/${address}/balances_v2/`);
     
     url.search = new URLSearchParams({
@@ -112,7 +112,7 @@ Copy and paste the below code block into your preferred environment, or [JSFiddl
     // set your API key
     const APIKEY = 'YOUR API KEY HERE';
 	const address = '0xFEC4f9D5B322Aa834056E85946A32c35A3f5aDD8'; //example
-	const chainId = '1287'; //Moonbeam Testnet (Moonbase Alpha Chain ID)
+	const chainId = '1287'; //Pangolin Testnet (pangolin Alpha Chain ID)
 	const url = new URL(`https://api.covalenthq.com/v1/${chainId}/address/${address}/balances_v2/`);
 
     url.search = new URLSearchParams({

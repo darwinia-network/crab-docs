@@ -1,20 +1,20 @@
 ---
 title: Razor Network
-description: How to use request data from a Razor Network Oracle in your Moonbeam Ethereum DApp using smart contracts
+description: How to use request data from a Razor Network Oracle in your Pangolin Ethereum DApp using smart contracts
 ---
 # Razor Network Oracle
 
-![Razor Network Moonbeam Diagram](/images/razor/razor-banner.png)
+![Razor Network Pangolin Diagram](/images/razor/razor-banner.png)
 
 ## Introduction {: #introduction } 
 
-Developers can now fetch prices from Razor Network’s oracle using a Bridge contract deployed on the Moonbase Alpha TestNet. This Bridge acts as middleware, and events emitted by it are fetched by the Razor Network's oracle infrastructure, sending prices to the Bridge contract.
+Developers can now fetch prices from Razor Network’s oracle using a Bridge contract deployed on the pangolin Alpha TestNet. This Bridge acts as middleware, and events emitted by it are fetched by the Razor Network's oracle infrastructure, sending prices to the Bridge contract.
 
 To access these price feeds, we need to interact with the Bridge contract address, which can be found in the following table:
 
 |     Network    | |         Contract Address        |
 |:--------------:|-|:------------------------------------------:|
-| Moonbase Alpha | | 0x53f7660Ea48289B5DA42f1d79Eb9d4F5eB83D3BE |
+| pangolin Alpha | | 0x53f7660Ea48289B5DA42f1d79Eb9d4F5eB83D3BE |
 
 ## Jobs {: #jobs } 
 
@@ -49,7 +49,7 @@ The second function, `getJob`, takes the Job ID associated with the data-feed an
 
 ### Example Contract {: #example-contract } 
 
-We've deployed the bridge contract in the Moonbase Alpha TestNet (at address `{{ networks.moonbase.razor.bridge_address }}`) so you can quickly check the information fed from Razor Network's oracle. 
+We've deployed the bridge contract in the pangolin Alpha TestNet (at address `{{ networks.pangolin.razor.bridge_address }}`) so you can quickly check the information fed from Razor Network's oracle. 
 
 The only requirement is the Bridge interface, which defines `getResult` structure and makes the functions available to the contract for queries.
 
@@ -79,7 +79,7 @@ contract Demo {
 
     constructor(address _bridgeAddress) public {
         razor = Razor(_bridgeAddress); // Bridge Contract Address
-                                       // Moonbase Alpha {{ networks.moonbase.razor.bridge_address }}
+                                       // pangolin Alpha {{ networks.pangolin.razor.bridge_address }}
     }
 
     function fetchPrice(uint256 _jobID) public view returns (uint256){
@@ -109,9 +109,9 @@ contract Demo {
 }
 ```
 
-### Try it on Moonbase Alpha {: #try-it-on-moonbase-alpha } 
+### Try it on pangolin Alpha {: #try-it-on-pangolin-alpha } 
 
-The easiest way to try their Oracle implementation is by pointing the interface to the Bridge contract deployed at address `{{ networks.moonbase.razor.bridge_address }}`:
+The easiest way to try their Oracle implementation is by pointing the interface to the Bridge contract deployed at address `{{ networks.pangolin.razor.bridge_address }}`:
 
 ```solidity
 pragma solidity 0.6.11;
@@ -129,7 +129,7 @@ With it, you will have two view functions available, very similar to our previou
 
 Let's use [Remix](/builders/tools/remix/) to fetch the `BTC` price in `USD`.
 
-After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the contract address (`{{ networks.moonbase.razor.bridge_address }}`), and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so that you are connected to Moonbase Alpha (through the Web3 provider of the wallet). 
+After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the contract address (`{{ networks.pangolin.razor.bridge_address }}`), and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so that you are connected to pangolin Alpha (through the Web3 provider of the wallet). 
 
 ![Razor Remix deploy](/images/razor/razor-demo1.png)
 
@@ -138,4 +138,4 @@ This will create an instance of the demo contract that you can interact with. Us
 ![Razor check price](/images/razor/razor-demo2.png)
 
 ## Contact Us {: #contact-us } 
-If you have any feedback regarding implementing the Razor Network Oracle on your project or any other Moonbeam related topic, feel free to reach out through our official development [Discord server](https://discord.com/invite/PfpUATX).
+If you have any feedback regarding implementing the Razor Network Oracle on your project or any other Pangolin related topic, feel free to reach out through our official development [Discord server](https://discord.com/invite/PfpUATX).

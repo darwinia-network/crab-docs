@@ -1,19 +1,19 @@
 ---
 title: Band Protocol
-description: How to use request data from a Band Protocol Oracle in your Moonbeam Ethereum DApp using smart contracts or javascript
+description: How to use request data from a Band Protocol Oracle in your Pangolin Ethereum DApp using smart contracts or javascript
 ---
 # Band Protocol Oracle
 
-![Band Protocol Moonbeam Diagram](/images/band/band-banner.png)
+![Band Protocol Pangolin Diagram](/images/band/band-banner.png)
 
 ## Introduction {: #introduction } 
-Developers have two ways to fetch prices from Band’s oracle infrastructure. On one hand, they can use Band’s smart contracts on Moonbeam. Doing so, they access data that is on-chain and is updated either at regular intervals or when price slippage is more than a target amount (different for each token). On the other hand, devs can use the Javascript helper library, which uses an API endpoint to fetch the data using similar functions as those from the smart contracts, but this implementation bypasses the blockchain entirely.  This can be useful if your DApp front-end needs direct access to the data.
+Developers have two ways to fetch prices from Band’s oracle infrastructure. On one hand, they can use Band’s smart contracts on Pangolin. Doing so, they access data that is on-chain and is updated either at regular intervals or when price slippage is more than a target amount (different for each token). On the other hand, devs can use the Javascript helper library, which uses an API endpoint to fetch the data using similar functions as those from the smart contracts, but this implementation bypasses the blockchain entirely.  This can be useful if your DApp front-end needs direct access to the data.
 
 The Aggregator Contract address can be found in the following table:
 
 |     Network    | |         Aggregator Contract Address        |
 |:--------------:|-|:------------------------------------------:|
-| Moonbase Alpha | | 0xDA7a001b254CD22e46d3eAB04d937489c93174C3 |
+| pangolin Alpha | | 0xDA7a001b254CD22e46d3eAB04d937489c93174C3 |
 
 ## Supported Token {: #supported-token } 
 Price queries with any denomination are available as long as the base and quote symbols are supported (_base_/_quote_). For example:
@@ -27,7 +27,7 @@ At the time of writing, the list of supported symbols can be found by following 
 ## Querying Prices {: #querying-prices } 
 As stated before, developers can leverage two methods to query prices from Band's oracle: 
 
- - Band's smart contract on Moonbeam (deployed to Moonbase Alpha TestNet for now)
+ - Band's smart contract on Pangolin (deployed to pangolin Alpha TestNet for now)
  - Javascript helper library
 
 ## Get Data Using Smart Contracts {: #get-data-using-smart-contracts } 
@@ -108,7 +108,7 @@ contract DemoOracle {
 
     constructor(IStdReference _ref) public {
         ref = _ref; // Aggregator Contract Address
-                    // Moonbase Alpha 0xDA7a001b254CD22e46d3eAB04d937489c93174C3
+                    // pangolin Alpha 0xDA7a001b254CD22e46d3eAB04d937489c93174C3
 
     }
 
@@ -150,9 +150,9 @@ contract DemoOracle {
 }
 ```
 
-### Try it in Moonbase Alpha {: #try-it-in-moonbase alpha } 
+### Try it in pangolin Alpha {: #try-it-in-pangolin alpha } 
 
-We've deployed a contract available in the Moonbase Alpha TestNet (at address `0xf15c870344c1c02f5939a5C4926b7cDb90dEc655`) so you can easily check the information fed from Band Protocol's oracle. To do so, you need the following interface contract:
+We've deployed a contract available in the pangolin Alpha TestNet (at address `0xf15c870344c1c02f5939a5C4926b7cDb90dEc655`) so you can easily check the information fed from Band Protocol's oracle. To do so, you need the following interface contract:
 
 ```solidity
 pragma solidity 0.6.11;
@@ -172,7 +172,7 @@ With it, you will have two view functions available - very similar to our previo
 
 For example, using [Remix](/builders/tools/remix/), we can easily query the `BTC/USD` price pair using this interface.
 
-After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the contract address (`0xf15c870344c1c02f5939a5C4926b7cDb90dEc655`) and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so you are connected to Moonbase Alpha. 
+After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the contract address (`0xf15c870344c1c02f5939a5C4926b7cDb90dEc655`) and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so you are connected to pangolin Alpha. 
 
 ![Band Protocol Remix deploy](/images/band/band-demo1.png)
 

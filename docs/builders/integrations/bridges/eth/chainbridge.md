@@ -1,20 +1,20 @@
 ---
 title: ChainBridge
-description: How to use ChainBridge to connect assets between Ethereum and Moonbeam using smart contracts
+description: How to use ChainBridge to connect assets between Ethereum and Pangolin using smart contracts
 ---
-# Transfer Tokens with ChainBridge's Ethereum Moonbeam Bridge
+# Transfer Tokens with ChainBridge's Ethereum Pangolin Bridge
 
-![ChainBridge Moonbeam banner](/images/chainbridge/chainbridge-banner.png)
+![ChainBridge Pangolin banner](/images/chainbridge/chainbridge-banner.png)
 
 ## Introduction {: #introduction } 
 
-A bridge allows two economically sovereign and technologically different chains to communicate with each other. They can range from centralized and trusted, to decentralized and trust minimized. One of the currently available solutions is [ChainBridge](https://github.com/ChainSafe/ChainBridge#installation), a modular multi-directional blockchain bridge built by [ChainSafe](https://chainsafe.io/). A ChainBridge implementation is now available in Moonbeam, which connects our Moonbase Alpha TestNet and Ethereum's Kovan/Rinkeby TestNets.
+A bridge allows two economically sovereign and technologically different chains to communicate with each other. They can range from centralized and trusted, to decentralized and trust minimized. One of the currently available solutions is [ChainBridge](https://github.com/ChainSafe/ChainBridge#installation), a modular multi-directional blockchain bridge built by [ChainSafe](https://chainsafe.io/). A ChainBridge implementation is now available in Pangolin, which connects our pangolin Alpha TestNet and Ethereum's Kovan/Rinkeby TestNets.
 
-This guide is broken down into two main sections. In the first part, we'll explain the general workflow of the bridge. In the second part, we'll go through a couple of examples using the bridge to transfer ERC-20 and ERC-721 assets between Moonbase Alpha and Kovan/Rinkeby. 
+This guide is broken down into two main sections. In the first part, we'll explain the general workflow of the bridge. In the second part, we'll go through a couple of examples using the bridge to transfer ERC-20 and ERC-721 assets between pangolin Alpha and Kovan/Rinkeby. 
 
  - [How the bridge works](/builders/integrations/bridges/eth/chainbridge/#how-the-bridge-works)
     - [General definitions](/builders/integrations/bridges/eth/chainbridge/#general-definitions)
- - [Using the bridge in Moonbase Alpha](/builders/integrations/bridges/eth/chainbridge/#try-it-on-moonbase-alpha)
+ - [Using the bridge in pangolin Alpha](/builders/integrations/bridges/eth/chainbridge/#try-it-on-pangolin-alpha)
     - [Transfer ERC-20 tokens](/builders/integrations/bridges/eth/chainbridge/#erc-20-token-transfer)
     - [Transfer ERC-721 tokens](/builders/integrations/bridges/eth/chainbridge/#erc-721-token-transfer)
     - [Generic handler](/builders/integrations/bridges/eth/chainbridge/#generic-handler)
@@ -48,7 +48,7 @@ The general workflow is the following (from Chain A to Chain B):
 
 This workflow is summarized in the following diagram:
 
-![ChainBridge Moonbeam diagram](/images/chainbridge/chainbridge-diagram.png)
+![ChainBridge Pangolin diagram](/images/chainbridge/chainbridge-diagram.png)
 
 The two target contracts on each side of the bridge are linked by doing a series of registrations in the corresponding handler contract via the bridge contract. These registrations currently can only be done by the bridge contract admin.
 
@@ -56,27 +56,27 @@ The two target contracts on each side of the bridge are linked by doing a series
 
 Here we have put together a list of concepts applicable to the ChainBridge implementation (from Chain A to Chain B):
 
- - **ChainBridge Chain ID** — this is not to be confused with the chain ID of the network. It is a unique network identifier used by the protocol for each chain. It can be different from the actual chain ID of the network itself. For example, for Moonbase Alpha and Rinkeby, we've set the ChainBridge chain ID to 43 and 4 respectively (Kovan was set to 42)
+ - **ChainBridge Chain ID** — this is not to be confused with the chain ID of the network. It is a unique network identifier used by the protocol for each chain. It can be different from the actual chain ID of the network itself. For example, for pangolin Alpha and Rinkeby, we've set the ChainBridge chain ID to 43 and 4 respectively (Kovan was set to 42)
  - **Resource ID** — is a 32 bytes word that is intended to uniquely identify an asset in a cross-chain environment. Note that the least significant byte is reserved for the chainId, so we would have 31 bytes in total to represent an asset of a chain in our bridge. For example, this may express tokenX on Chain A is equivalent to tokenY on Chain B
  - **Calldata** — is the parameter required for the handler that includes the information necessary to execute the proposal on Chain B. The exact serialization is defined for each handler. You can find more information [here](https://chainbridge.chainsafe.io/chains/ethereum/#erc20-erc721-handlers)
 
-## Try it on Moonbase Alpha {: #try-it-on-moonbase-alpha } 
+## Try it on pangolin Alpha {: #try-it-on-pangolin-alpha } 
 
-We have set up a relayer with the ChainBridge implementation, which is connected to our Moonbase Alpha TestNet and both Ethereum's Rinkeby and Kovan TestNets.
+We have set up a relayer with the ChainBridge implementation, which is connected to our pangolin Alpha TestNet and both Ethereum's Rinkeby and Kovan TestNets.
 
 ChainSafe has [pre-programmed handlers](https://chainbridge.chainsafe.io/chains/ethereum/#handler-contracts) specific to ERC-20 and ERC-721 interfaces, and these handlers are used to transfer ERC-20 and ERC-721 tokens between chains. In general terms, this is just narrowing down the general-purpose diagram that we've described before, so the handler works only with the specific token functions such as _lock/burn_, and _mint/unlock_. 
 
-This guide will go over two different examples of using the bridge to transfer tokens between chains. You will mint ERC-20S and ERC-721 Moon tokens and transfer them over the bridge from Moonbase Alpha to Kovan. The same steps can be followed and applied to Rinkeby. To interact with Moonbase Alpha and Kovan/Rinkeby, you will need the following information:
+This guide will go over two different examples of using the bridge to transfer tokens between chains. You will mint ERC-20S and ERC-721 Moon tokens and transfer them over the bridge from pangolin Alpha to Kovan. The same steps can be followed and applied to Rinkeby. To interact with pangolin Alpha and Kovan/Rinkeby, you will need the following information:
 
 ```
-# Kovan/Rinkeby - Moonbase Alpha bridge contract address:
-    {{ networks.moonbase.chainbridge.bridge_address }}
+# Kovan/Rinkeby - pangolin Alpha bridge contract address:
+    {{ networks.pangolin.chainbridge.bridge_address }}
 
- # Kovan/Rinkeby - Moonbase Alpha ERC-20 handler contract:
-    {{ networks.moonbase.chainbridge.ERC20_handler }}
+ # Kovan/Rinkeby - pangolin Alpha ERC-20 handler contract:
+    {{ networks.pangolin.chainbridge.ERC20_handler }}
    
-# Kovan/Rinkeby - Moonbase Alpha ERC-721 handler contract:
-    {{ networks.moonbase.chainbridge.ERC721_handler }}
+# Kovan/Rinkeby - pangolin Alpha ERC-721 handler contract:
+    {{ networks.pangolin.chainbridge.ERC721_handler }}
 ```
 
 !!! note
@@ -87,15 +87,15 @@ This guide will go over two different examples of using the bridge to transfer t
 ERC-20 tokens that want to be moved through the bridge need to be registered by the relayers in the handler contract. Therefore, to test the bridge, we've deployed an ERC-20 token (ERC20S) where any user can mint 5 tokens:
 
 ```
-# Kovan/Rinkeby - Moonbase Alpha custom ERC-20 sample token:
-    {{ networks.moonbase.chainbridge.ERC20S }}
+# Kovan/Rinkeby - pangolin Alpha custom ERC-20 sample token:
+    {{ networks.pangolin.chainbridge.ERC20S }}
 ```
 
 In similar fashion, interacting directly with the Bridge contract and calling the function `deposit()` with the correct parameters can be intimidating. To ease the process of using the bridge, we've created a modified bridge contract, which builds the necessary inputs to the `deposit()` function:
 
 ```
-# Kovan/Rinkeby - Moonbase Alpha custom bridge contract:
-    {{ networks.moonbase.chainbridge.bridge_address }}
+# Kovan/Rinkeby - pangolin Alpha custom bridge contract:
+    {{ networks.pangolin.chainbridge.bridge_address }}
 ```
 
 
@@ -116,15 +116,15 @@ To try the bridge with this sample ERC-20 token, we must do the following steps 
 !!! note
     Remember that tokens will be transferred only if the handler contract has enough allowance to spend tokens on behalf of the owner. If the process fails, check the allowance.
 
-Let's send some ERC20S tokens from **Moonbase Alpha** to **Kovan**. If you wanted to try it out with Rinkeby, the steps and addresses are the same. For this, we'll use [Remix](/builders/tools/remix/). First, we can use the following interface to interact with this contract and mint the tokens:
+Let's send some ERC20S tokens from **pangolin Alpha** to **Kovan**. If you wanted to try it out with Rinkeby, the steps and addresses are the same. For this, we'll use [Remix](/builders/tools/remix/). First, we can use the following interface to interact with this contract and mint the tokens:
 
 ```solidity
 pragma solidity ^0.8.1;
 
 /**
     Interface for the Custom ERC20 Token contract for ChainBridge implementation
-    Kovan/Rinkeby - Moonbase Alpha ERC-20 Address : 
-        {{ networks.moonbase.chainbridge.ERC20S }}
+    Kovan/Rinkeby - pangolin Alpha ERC-20 Address : 
+        {{ networks.pangolin.chainbridge.ERC20S }}
 */
 
 interface ICustomERC20 {
@@ -137,8 +137,8 @@ interface ICustomERC20 {
     
     /** 
         Increase allowance to Handler
-        Kovan/Rinkeby - Moonbase Alpha ERC-20 Handler:
-           {{ networks.moonbase.chainbridge.ERC20_handler}}
+        Kovan/Rinkeby - pangolin Alpha ERC-20 Handler:
+           {{ networks.pangolin.chainbridge.ERC20_handler}}
     */
     function increaseAllowance(address spender, uint256 addedValue) external returns (bool);
     
@@ -159,15 +159,15 @@ After adding the Custom ERC20 contract to Remix and compiling it, the next steps
 
 ![ChainBridge ERC20 mint Tokens](/images/chainbridge/chainbridge-image1.png)
 
-Once we have the tokens, we can proceed to send them over the bridge to the target chain. In this case, remember that we do it from **Moonbase Alpha** to **Kovan**. There is a single interface that will allow you to transfer ERC20S and ERC721M tokens. For this example you will use the `sendERC20SToken()` function to initiate the transfer of your minted ERC20S tokens:
+Once we have the tokens, we can proceed to send them over the bridge to the target chain. In this case, remember that we do it from **pangolin Alpha** to **Kovan**. There is a single interface that will allow you to transfer ERC20S and ERC721M tokens. For this example you will use the `sendERC20SToken()` function to initiate the transfer of your minted ERC20S tokens:
 
 ```solidity
 pragma solidity 0.8.1;
 
 /**
     Simple Interface to interact with bridge to transfer the ERC20S and ERC721M tokens
-    Kovan/Rinkeby - Moonbase Alpha Bridge Address: 
-        {{ networks.moonbase.chainbridge.bridge_address }}
+    Kovan/Rinkeby - pangolin Alpha Bridge Address: 
+        {{ networks.pangolin.chainbridge.bridge_address }}
  */
 
 interface IBridge {
@@ -206,45 +206,45 @@ You can check your balance by adding the token to [MetaMask](/tokens/connect/met
 
 ![ChainBridge ERC20 balance](/images/chainbridge/chainbridge-image3.png)
 
-Remember that you can also mint ERC20S tokens in Kovan and send them to Moonbase Alpha. To approve a spender or increase its allowance, you can use the `increaseAllowance()` function of the interface provided. To check the allowance of the handler contract in the ERC20 token contract, you can use the `allowance()` function of the interface.
+Remember that you can also mint ERC20S tokens in Kovan and send them to pangolin Alpha. To approve a spender or increase its allowance, you can use the `increaseAllowance()` function of the interface provided. To check the allowance of the handler contract in the ERC20 token contract, you can use the `allowance()` function of the interface.
 
 !!! note
     Tokens will be transferred only if the handler contract has enough allowance to spend tokens on behalf of the owner. If the process fails, check the allowance.
 
 ### ERC-721 Token Transfer {: #erc-721-token-transfer } 
 
-Similar to our previous example, ERC-721 tokens contracts need to be registered by the relayers to enable transfer through the bridge. Therefore, we've customized an ERC-721 token contract so that any user can mint a token to test the bridge out. However, as each token is non-fungible, and consequently unique, the mint function is only available in the Source chain token contract and not in the Target contract. In other words, ERC-721M tokens can only be minted on Moonbase Alpha and then transfered to Rinkeby or Kovan. The following diagram explains the workflow for this example, where it is important to highlight that the token ID and metadata is maintained.
+Similar to our previous example, ERC-721 tokens contracts need to be registered by the relayers to enable transfer through the bridge. Therefore, we've customized an ERC-721 token contract so that any user can mint a token to test the bridge out. However, as each token is non-fungible, and consequently unique, the mint function is only available in the Source chain token contract and not in the Target contract. In other words, ERC-721M tokens can only be minted on pangolin Alpha and then transfered to Rinkeby or Kovan. The following diagram explains the workflow for this example, where it is important to highlight that the token ID and metadata is maintained.
 
 ![ChainBridge ERC721 workflow](/images/chainbridge/chainbridge-erc721.png)
 
-To mint tokens in Moonbase Alpha (named ERC721Moon with symbol ERC721M) and send them back-and-forth to Kovan/Rinkeby, you need the following address:
+To mint tokens in pangolin Alpha (named ERC721Moon with symbol ERC721M) and send them back-and-forth to Kovan/Rinkeby, you need the following address:
 
 ```
-# Kovan/Rinkeby - Moonbase Alpha ERC-721 Moon tokens (ERC721M),
-# Mint function in Moonbase Alpha: 
-    {{ networks.moonbase.chainbridge.ERC721M }}
+# Kovan/Rinkeby - pangolin Alpha ERC-721 Moon tokens (ERC721M),
+# Mint function in pangolin Alpha: 
+    {{ networks.pangolin.chainbridge.ERC721M }}
 ```
 
 Instead of interacting with the Bridge contract and calling the function `deposit()`, we've modified the bridge contract to ease the process of using the bridge (same address as in the previous example):
 
 ```
-# Kovan/Rinkeby - Moonbase Alpha custom bridge contract:
-    {{ networks.moonbase.chainbridge.bridge_address }}
+# Kovan/Rinkeby - pangolin Alpha custom bridge contract:
+    {{ networks.pangolin.chainbridge.bridge_address }}
 ```
 
 In simple terms, the modified bridge contract used to initiate the transfer will create the _chainID_ and _resourceID_ for this example based on the destination chain ID that you provide. Therefore, it builds the _calldata_ object from the user's input, which is only the recipient address and the token ID to be sent.
 
-Let's send an ERC721M token from **Moonbase Alpha** to **Kovan**. For that, we'll use [Remix](/builders/tools/remix/). The following interface can be used to interact with the source ERC721M contract and mint the tokens. The `tokenOfOwnerByIndex()` function also can be used to check the token IDs owned by a specific address, passing the address and the index to query (each token ID is stored as an array element associated to the address):
+Let's send an ERC721M token from **pangolin Alpha** to **Kovan**. For that, we'll use [Remix](/builders/tools/remix/). The following interface can be used to interact with the source ERC721M contract and mint the tokens. The `tokenOfOwnerByIndex()` function also can be used to check the token IDs owned by a specific address, passing the address and the index to query (each token ID is stored as an array element associated to the address):
 
 ```solidity
 pragma solidity ^0.8.1;
 
 /**
     Interface for the Custom ERC721 Token contract for ChainBridge implementation:
-    Kovan/Rinkeby - Moonbase Alpha:
-        ERC721Moon: {{ networks.moonbase.chainbridge.ERC721M }}
+    Kovan/Rinkeby - pangolin Alpha:
+        ERC721Moon: {{ networks.pangolin.chainbridge.ERC721M }}
 
-    ERC721Moon tokens are only mintable on Moonbase Alpha
+    ERC721Moon tokens are only mintable on pangolin Alpha
 */
 
 interface ICustomERC721 {
@@ -263,8 +263,8 @@ interface ICustomERC721 {
     
     /**
         Set Approval for Handler 
-        Kovan/Rinkeby - Moonbase Alpha ERC-721 Handler:
-           {{ networks.moonbase.chainbridge.ERC721_handler }}
+        Kovan/Rinkeby - pangolin Alpha ERC-721 Handler:
+           {{ networks.pangolin.chainbridge.ERC721_handler }}
     */
     function approve(address to, uint256 tokenId) external;
     
@@ -285,15 +285,15 @@ After adding the contract to Remix and compiling it, next we'll want to mint an 
 
 ![ChainBridge ERC721 mint Tokens](/images/chainbridge/chainbridge-image4.png) 
 
-The following interface allows you to use the `sendERC721MoonToken()` function to initiate the transfer of tokens originally minted in Moonbase Alpha (ERC721M).
+The following interface allows you to use the `sendERC721MoonToken()` function to initiate the transfer of tokens originally minted in pangolin Alpha (ERC721M).
 
 ```solidity
 pragma solidity 0.8.1;
 
 /**
     Simple Interface to interact with bridge to transfer the ERC20S and ERC721M tokens
-    Kovan/Rinkeby - Moonbase Alpha Bridge Address: 
-        {{ networks.moonbase.chainbridge.bridge_address }}
+    Kovan/Rinkeby - pangolin Alpha Bridge Address: 
+        {{ networks.pangolin.chainbridge.bridge_address }}
  */
 
 interface IBridge {
@@ -316,10 +316,10 @@ interface IBridge {
 }
 ```
 
-Now you can proceed to send the ERC721M token over the bridge to the target chain. In this case, remember that we'll do it from Moonbase Alpha to Kovan. To transfer the ERC721M token over the bridge:
+Now you can proceed to send the ERC721M token over the bridge to the target chain. In this case, remember that we'll do it from pangolin Alpha to Kovan. To transfer the ERC721M token over the bridge:
 
 1. Load the bridge contract address and click **At Address**
-2. Call the `sendERC721MoonToken()` function to initiate the transfer of ERC721M tokens originally minted in Moonbase Alpha by providing the destination chain ID (For this example we're using Kovan: `42`)
+2. Call the `sendERC721MoonToken()` function to initiate the transfer of ERC721M tokens originally minted in pangolin Alpha by providing the destination chain ID (For this example we're using Kovan: `42`)
 3. Enter the recipient address on the other side of the bridge
 4. Add the token ID to transfer
 5. Click **transact** and then MetaMask should pop-up asking you to sign the transaction.
@@ -332,7 +332,7 @@ You can check your balance by adding the token to [MetaMask](/tokens/connect/met
 
 ![ChainBridge ERC721 balance](/images/chainbridge/chainbridge-image6.png)
 
-Remember that ERC721M tokens are only mintable in Moonbase Alpha and then they will be available to send back and forth to Kovan or Rinkeby. It is important to always check the allowance provided to the handler contract in the corresponding ERC721 token contract. You can approve the handler contract to send tokens on your behalf using the `approve()` function provided in the interface. You can check the approval of each of your token IDs with the `getApproved()` function.
+Remember that ERC721M tokens are only mintable in pangolin Alpha and then they will be available to send back and forth to Kovan or Rinkeby. It is important to always check the allowance provided to the handler contract in the corresponding ERC721 token contract. You can approve the handler contract to send tokens on your behalf using the `approve()` function provided in the interface. You can check the approval of each of your token IDs with the `getApproved()` function.
 
 !!! note
     Tokens will be transferred only if the handler contract is approved to transfer tokens on behalf of the owner. If the process fails, check the approval.
@@ -343,12 +343,12 @@ The Generic Handler offers the possibility of executing a function in chain A an
 
 The generic handler address is:
 ```
-{{ networks.moonbase.chainbridge.generic_handler }}
+{{ networks.pangolin.chainbridge.generic_handler }}
 ```
 
 If you are interested in implementing this functionality, you can reach out directly to us via our [Discord server](https://discord.com/invite/PfpUATX). We'll be happy to discuss this implementation.
 
-### Moonbase Alpha ChainBridge UI {: #moonbase-alpha-chainbridge-ui } 
+### pangolin Alpha ChainBridge UI {: #pangolin-alpha-chainbridge-ui } 
 
-If you want to play around with transferring ERC20S tokens from Moonbase Alpha to Kovan or Rinkeby without having to set up the contracts in Remix, you can checkout our [Moonbase Alpha ChainBridge UI](https://moonbase-chainbridge.netlify.app/transfer).
+If you want to play around with transferring ERC20S tokens from pangolin Alpha to Kovan or Rinkeby without having to set up the contracts in Remix, you can checkout our [pangolin Alpha ChainBridge UI](https://pangolin-chainbridge.netlify.app/transfer).
 

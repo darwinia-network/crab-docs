@@ -1,15 +1,15 @@
 ---
 title: Chainlink
-description: How to use request data from a Chainlink Oracle in your Moonbeam Ethereum Dapp using smart contracts or Javascript
+description: How to use request data from a Chainlink Oracle in your Pangolin Ethereum Dapp using smart contracts or Javascript
 ---
 
 # Chainlink Oracle
 
-![Chainlink Moonbeam Banner](/images/chainlink/chainlink-banner.png)
+![Chainlink Pangolin Banner](/images/chainlink/chainlink-banner.png)
 
 ## Introduction {: #introduction } 
 
-Developers can now use [Chainlink's decentralized Oracle network](https://chain.link/) to fetch data in the Moonbase Alpha TestNet. This tutorial goes through two different ways of using Chainlink Oracles:
+Developers can now use [Chainlink's decentralized Oracle network](https://chain.link/) to fetch data in the pangolin Alpha TestNet. This tutorial goes through two different ways of using Chainlink Oracles:
 
  - [Basic Request Model](https://docs.chain.link/docs/architecture-request-model), where the end-user sends a request to an Oracle provider, which fetches the data through an API, and fulfils the request storing this data on-chain
  - [Price Feeds](https://docs.chain.link/docs/architecture-decentralized-model), where data is continuously updated by Oracle operators in a smart contract so that other smart contracts can fetch it
@@ -65,18 +65,18 @@ contract Client is ChainlinkClient {
 
 Note that the Client contract must have a LINK tokens balance to be able to pay for this request. However, if you deploy your setup, you can set the LINK value to 0 in your `ChainlinkClient.sol` contract, but you still need to have the LINK token contract deployed.
 
-### Try it on Moonbase Alpha {: #try-it-on-moonbase-alpha } 
+### Try it on pangolin Alpha {: #try-it-on-pangolin-alpha } 
 
 If you want to skip the hurdles of deploying all contracts, setting up your Oracle node, creating job IDs, and so on, we've got you covered.
 
-A custom Client contract on Moonbase Alpha that makes all requests to our Oracle contract, with a 0 LINK token payment, is available. These requests are fulfilled by an Oracle node that we are running. You can try it out with the following interface contract and the custom Client contract deployed at `{{ networks.moonbase.chainlink.client_contract }}`:
+A custom Client contract on pangolin Alpha that makes all requests to our Oracle contract, with a 0 LINK token payment, is available. These requests are fulfilled by an Oracle node that we are running. You can try it out with the following interface contract and the custom Client contract deployed at `{{ networks.pangolin.chainlink.client_contract }}`:
 
 ```solidity
 pragma solidity ^0.6.6;
 
 /**
  * @title Simple Interface to interact with Universal Client Contract
- * @notice Client Address {{ networks.moonbase.chainlink.client_contract }}
+ * @notice Client Address {{ networks.pangolin.chainlink.client_contract }}
  */
 interface ChainlinkInterface {
 
@@ -100,22 +100,22 @@ Currently, the Oracle node has a set of Job IDs for different price datas for th
 
 |  Base/Quote  |     |                 Job ID Reference                  |
 | :----------: | --- | :-----------------------------------------------: |
-|  BTC to USD  |     |  {{ networks.moonbase.chainlink.basic.btc_usd }}  |
-|  ETH to USD  |     |  {{ networks.moonbase.chainlink.basic.eth_usd }}  |
-|  DOT to USD  |     |  {{ networks.moonbase.chainlink.basic.dot_usd }}  |
-|  KSM to USD  |     |  {{ networks.moonbase.chainlink.basic.ksm_usd }}  |
-| AAVE to USD  |     | {{ networks.moonbase.chainlink.basic.aave_usd }}  |
-| ALGO to USD  |     | {{ networks.moonbase.chainlink.basic.algo_usd }}  |
-| BAND to USD  |     | {{ networks.moonbase.chainlink.basic.band_usd }}  |
-| LINK to USD  |     | {{ networks.moonbase.chainlink.basic.link_usd }}  |
-| SUSHI to USD |     | {{ networks.moonbase.chainlink.basic.sushi_usd }} |
-|  UNI to USD  |     |  {{ networks.moonbase.chainlink.basic.uni_usd }}  |
+|  BTC to USD  |     |  {{ networks.pangolin.chainlink.basic.btc_usd }}  |
+|  ETH to USD  |     |  {{ networks.pangolin.chainlink.basic.eth_usd }}  |
+|  DOT to USD  |     |  {{ networks.pangolin.chainlink.basic.dot_usd }}  |
+|  KSM to USD  |     |  {{ networks.pangolin.chainlink.basic.ksm_usd }}  |
+| AAVE to USD  |     | {{ networks.pangolin.chainlink.basic.aave_usd }}  |
+| ALGO to USD  |     | {{ networks.pangolin.chainlink.basic.algo_usd }}  |
+| BAND to USD  |     | {{ networks.pangolin.chainlink.basic.band_usd }}  |
+| LINK to USD  |     | {{ networks.pangolin.chainlink.basic.link_usd }}  |
+| SUSHI to USD |     | {{ networks.pangolin.chainlink.basic.sushi_usd }} |
+|  UNI to USD  |     |  {{ networks.pangolin.chainlink.basic.uni_usd }}  |
 
 Let's go ahead and use the interface contract with the `BTC to USD` Job ID in [Remix](/builders/tools/remix/).
 
-After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the Client contract address, and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so you are connected to Moonbase Alpha. This will create an instance of the Client contract that you can interact with. Use the function `requestPrice()` to query the data of the corresponding Job ID. Once the transaction is confirmed, we have to wait until the whole process explained before occurs. We can check the price using the view function `currentPrice()`.
+After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the Client contract address, and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so you are connected to pangolin Alpha. This will create an instance of the Client contract that you can interact with. Use the function `requestPrice()` to query the data of the corresponding Job ID. Once the transaction is confirmed, we have to wait until the whole process explained before occurs. We can check the price using the view function `currentPrice()`.
 
-![Chainlink Basic Request on Moonbase Alpha](/images/chainlink/chainlink-image1.png)
+![Chainlink Basic Request on pangolin Alpha](/images/chainlink/chainlink-image1.png)
 
 If there is any specific pair you want us to include, feel free to reach out to us through our [Discord server](https://discord.com/invite/PfpUATX).
 
@@ -125,8 +125,8 @@ If you want to run your Client contract but use our Oracle node, you can do so w
 
 |  Contract Type  |     |                      Address                      |
 | :-------------: | --- | :-----------------------------------------------: |
-| Oracle Contract |     | {{ networks.moonbase.chainlink.oracle_contract }} |
-|   LINK Token    |     |  {{ networks.moonbase.chainlink.link_contract }}  |
+| Oracle Contract |     | {{ networks.pangolin.chainlink.oracle_contract }} |
+|   LINK Token    |     |  {{ networks.pangolin.chainlink.link_contract }}  |
 
 Remember that the LINK token payment is set to zero.
 
@@ -134,7 +134,7 @@ Remember that the LINK token payment is set to zero.
 
 Chainlink's Oracles can tentatively provide many different types of data feeds with the use of external adapters. However, for simplicity, our Oracle node is configured to deliver only price feeds.
 
-If you are interested in running your own Oracle node in Moonbeam, please visit [this guide](/node-operators/oracle-nodes/node-chainlink/). Also, we recommend going through [Chainlink's documentation site](https://docs.chain.link/docs).
+If you are interested in running your own Oracle node in Pangolin, please visit [this guide](/node-operators/oracle-nodes/node-chainlink/). Also, we recommend going through [Chainlink's documentation site](https://docs.chain.link/docs).
 
 ## Price Feeds {: #price-feeds } 
 
@@ -146,11 +146,11 @@ The end-user can retrieve price feeds with read-only operations via a Consumer c
 
 ![Price Feed Diagram](/images/chainlink/chainlink-pricefeed.png)
 
-### Try it on Moonbase Alpha {: #try-it-on-moonbase-alpha } 
+### Try it on pangolin Alpha {: #try-it-on-pangolin-alpha } 
 
 If you want to skip the hurdles of deploying all the contracts, setting up your Oracle node, creating job IDs, and so on, we've got you covered.
 
-We've deployed all the necessary contracts on Moonbase Alpha to simplify the process of requesting price feeds. In our current configuration, we are running only one Oracle node that fetches the price from a single API source. Price data is checked every minute and updated in the smart contracts every hour unless there is a price deviation of 1 %.
+We've deployed all the necessary contracts on pangolin Alpha to simplify the process of requesting price feeds. In our current configuration, we are running only one Oracle node that fetches the price from a single API source. Price data is checked every minute and updated in the smart contracts every hour unless there is a price deviation of 1 %.
 
 The data lives in a series of smart contracts (one per price feed) and can be fetched with the following interface:
 
@@ -181,24 +181,24 @@ Currently, there is an Consumer contract for the the following price pairs:
 
 |  Base/Quote  |     |                     Consumer Contract                     |
 | :----------: | --- | :-------------------------------------------------------: |
-|  BTC to USD  |     |  {{ networks.moonbase.chainlink.feed.consumer.btc_usd }}  |
-|  ETH to USD  |     |  {{ networks.moonbase.chainlink.feed.consumer.eth_usd }}  |
-|  DOT to USD  |     |  {{ networks.moonbase.chainlink.feed.consumer.dot_usd }}  |
-|  KSM to USD  |     |  {{ networks.moonbase.chainlink.feed.consumer.ksm_usd }}  |
-| AAVE to USD  |     | {{ networks.moonbase.chainlink.feed.consumer.aave_usd }}  |
-| ALGO to USD  |     | {{ networks.moonbase.chainlink.feed.consumer.algo_usd }}  |
-| BAND to USD  |     | {{ networks.moonbase.chainlink.feed.consumer.band_usd }}  |
-| LINK to USD  |     | {{ networks.moonbase.chainlink.feed.consumer.link_usd }}  |
-| SUSHI to USD |     | {{ networks.moonbase.chainlink.feed.consumer.sushi_usd }} |
-|  UNI to USD  |     |  {{ networks.moonbase.chainlink.feed.consumer.uni_usd }}  |
+|  BTC to USD  |     |  {{ networks.pangolin.chainlink.feed.consumer.btc_usd }}  |
+|  ETH to USD  |     |  {{ networks.pangolin.chainlink.feed.consumer.eth_usd }}  |
+|  DOT to USD  |     |  {{ networks.pangolin.chainlink.feed.consumer.dot_usd }}  |
+|  KSM to USD  |     |  {{ networks.pangolin.chainlink.feed.consumer.ksm_usd }}  |
+| AAVE to USD  |     | {{ networks.pangolin.chainlink.feed.consumer.aave_usd }}  |
+| ALGO to USD  |     | {{ networks.pangolin.chainlink.feed.consumer.algo_usd }}  |
+| BAND to USD  |     | {{ networks.pangolin.chainlink.feed.consumer.band_usd }}  |
+| LINK to USD  |     | {{ networks.pangolin.chainlink.feed.consumer.link_usd }}  |
+| SUSHI to USD |     | {{ networks.pangolin.chainlink.feed.consumer.sushi_usd }} |
+|  UNI to USD  |     |  {{ networks.pangolin.chainlink.feed.consumer.uni_usd }}  |
 
 Let's go ahead and use the interface contract to fetch the price feed of `BTC to USD` using [Remix](/builders/tools/remix/).
 
-After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the Consumer contract address corresponding to `BTC to USD`, and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so you are connected to Moonbase Alpha.
+After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the Consumer contract address corresponding to `BTC to USD`, and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so you are connected to pangolin Alpha.
 
 This will create an instance of the Consumer contract that you can interact with. Use the function `getLatestPrice()` to query the data of the corresponding price feed.
 
-![Chainlink Price Feeds on Moonbase Alpha](/images/chainlink/chainlink-image2.png)
+![Chainlink Price Feeds on pangolin Alpha](/images/chainlink/chainlink-image2.png)
 
 Note that to obtain the real price, you must account for the decimals of the price feed, available with the `decimals()` method.
 
