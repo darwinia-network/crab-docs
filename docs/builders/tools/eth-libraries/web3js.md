@@ -1,16 +1,17 @@
 ---
 title: Web3.js
-description: Follow this tutorial to learn how to use the Ethereum Web3 JavaScript Library to deploy Solidity smart contracts to Moonbeam.
+sidebar_position: 2
+description: Follow this tutorial to learn how to use the Ethereum Web3 JavaScript Library to deploy Solidity smart contracts to Pangolin.
 ---
 # Web3.js JavaScript Library
 
 ![Intro diagram](/images/integrations/integrations-web3js-banner.png)
 
-## Introduction {: #introduction } 
+## Introduction
 
-[Web3.js](https://web3js.readthedocs.io/) is a set of libraries that allow developers to interact with Ethereum nodes using HTTP, IPC, or WebSocket protocols with JavaScript. Moonbeam has an Ethereum-like API available that is fully compatible with Ethereum-style JSON RPC invocations. Therefore, developers can leverage this compatibility and use the web3.js library to interact with a Moonbeam node as if they were doing so on Ethereum.
+[Web3.js](https://web3js.readthedocs.io/) is a set of libraries that allow developers to interact with Ethereum nodes using HTTP, IPC, or WebSocket protocols with JavaScript. Pangolin has an Ethereum-like API available that is fully compatible with Ethereum-style JSON RPC invocations. Therefore, developers can leverage this compatibility and use the web3.js library to interact with a Pangolin node as if they were doing so on Ethereum.
 
-## Setup Web3.js with Moonbeam {: #setup-web3js-with-moonbeam } 
+## Setup Web3.js with Pangolin
 
 To get started with the web3.js library, we first need to install it using the following command:
 
@@ -29,11 +30,11 @@ const web3 = new Web3('RPC_URL');
 
 Depending on which network you want to connect to, you can set the `RPC_URL` to the following values:
 
- - Moonbeam development node: `{{ networks.development.rpc_url }}`
- - Moonbase Alpha TestNet: `{{ networks.moonbase.rpc_url }}`
- - Moonriver: `{{ networks.moonriver.rpc_url }}`
+ - Pangolin development node: `http://localhost:9933/`
+ - Pangolin TestNet: `http://pangolin-rpc.darwinia.network`
+ - Crab: `http://crab-rpc.darwinia.network`
 
-## Tutorials {: #tutorials } 
+## Tutorials
 
-If you are interested in a more detailed step-by-step guide, go to our specific tutorials about using web3.js on Moonbeam to [send a transaction](/builders/interact/eth-libraries/send-transaction/) or [deploy a contract](/builders/interact/eth-libraries/deploy-contract/).
+If you are interested in a more detailed step-by-step guide, go to our specific tutorials about using web3.js on Pangolin to [send a transaction](/builders/interact/eth-libraries/send-transaction/) or [deploy a contract](/builders/interact/eth-libraries/deploy-contract/).
 

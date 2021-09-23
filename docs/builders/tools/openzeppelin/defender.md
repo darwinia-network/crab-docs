@@ -1,13 +1,14 @@
 ---
 title: Defender
-description:  Learn how to use OpenZeppelin Defender to manage smart contracts securely on Moonbeam, thanks to its Ethereum compatibility features
+sidebar_position: 2
+description:  Learn how to use OpenZeppelin Defender to manage smart contracts securely on Pangolin, thanks to its Ethereum compatibility features
 ---
 
 # OpenZeppelin Defender
 
 ![OpenZeppelin Defender Banner](/images/openzeppelin/ozdefender-banner.png)
 
-## Introduction {: #introduction } 
+## Introduction
 
 OpenZeppelin Defender is a web-based application that allows developers to perform and automate smart contract operations in a secure way. Defender offers different components:
 
@@ -17,17 +18,17 @@ OpenZeppelin Defender is a web-based application that allows developers to perfo
  - [**Sentinel**](https://docs.openzeppelin.com/defender/sentinel) — to monitor your smart contract's events, functions, and transactions, and receive notifications via email
  - [**Advisor**](https://docs.openzeppelin.com/defender/advisor) — to learn and implement best practices around development, testing, monitoring, and operations
 
-OpenZeppelin Defender can now be used on the Moonbase Alpha TestNet. This guide will show you how to get started with Defender and demo the Admin component to pause a smart contract. You can find more information in regards to the other components in the links mentioned above.
+OpenZeppelin Defender can now be used on the Pangolin TestNet. This guide will show you how to get started with Defender and demo the Admin component to pause a smart contract. You can find more information in regards to the other components in the links mentioned above.
 
 For more information, the OpenZeppelin team has written a great [documentation site](https://docs.openzeppelin.com/defender/) for Defender.
 
-## Getting Started with Defender on Moonbase Alpha {: #getting-started-with-defender-on-moonbase-alpha } 
+## Getting Started with Defender on Pangolin
 
-This section goes through the steps for getting started with OpenZeppelin Defender on Moonbase Alpha.
- 
-### Checking Prerequisites {: #checking-prerequisites } 
+This section goes through the steps for getting started with OpenZeppelin Defender on Pangolin.
 
-The steps described in this section assume you have [MetaMask](https://metamask.io/) installed and connected to the Moonbase Alpha TestNet. If you haven't connected MetaMask to the TestNet, check out our [MetaMask integration guide](/tokens/connect/metamask/).
+### Checking Prerequisites
+
+The steps described in this section assume you have [MetaMask](https://metamask.io/) installed and connected to the Pangolin TestNet. If you haven't connected MetaMask to the TestNet, check out our [MetaMask integration guide](/dvm-metamask.md).
 
 In addition, you need to sign up for a free OpenZeppelin Defender account, which you can do on the main [Defender website](https://defender.openzeppelin.com/).
 
@@ -42,7 +43,7 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
 contract PausableBox is Initializable, PausableUpgradeable, OwnableUpgradeable {
     uint256 private value;
- 
+
     // Emitted when the stored value changes
     event ValueChanged(uint256 newValue);
 
@@ -51,18 +52,18 @@ contract PausableBox is Initializable, PausableUpgradeable, OwnableUpgradeable {
         __Ownable_init();
         __Pausable_init_unchained();
     }
- 
+
     // Stores a new value in the contract
     function store(uint256 newValue) whenNotPaused public {
         value = newValue;
         emit ValueChanged(newValue);
     }
- 
+
     // Reads the last stored value
     function retrieve() public view returns (uint256) {
         return value;
     }
-    
+
     function pause() public onlyOwner {
         _pause();
     }
@@ -73,24 +74,24 @@ contract PausableBox is Initializable, PausableUpgradeable, OwnableUpgradeable {
 }
 ```
 
-### Connecting Defender to Moonbase Alpha {: #connecting-defender-to-moonbase-alpha } 
+### Connecting Defender to Pangolin
 
-Once you have an OpenZeppelin Defender account, log into the [Defender App](https://defender.openzeppelin.com/). In the main screen, with MetaMask [connected to Moonbase Alpha](/tokens/connect/metamask/) click on the top right corner "Connect wallet" button:
+Once you have an OpenZeppelin Defender account, log into the [Defender App](https://defender.openzeppelin.com/). In the main screen, with MetaMask [connected to Pangolin](/dvm-metamask.md) click on the top right corner "Connect wallet" button:
 
 ![OpenZeppelin Defender Connect](/images/openzeppelin/ozdefender-images1.png)
 
-If successful, you should see your address and a text stating "Connected to Moonbase Alpha."
+If successful, you should see your address and a text stating "Connected to Pangolin."
 
-## Using the Admin Component {: #using-the-admin-component } 
+## Using the Admin Component
 
-This section goes through the steps for getting started with OpenZeppelin Defender Admin component to manage smart contracts on Moonbase Alpha.
+This section goes through the steps for getting started with OpenZeppelin Defender Admin component to manage smart contracts on Pangolin.
 
-### Importing your Contract {: #importing-your-contract } 
+### Importing your Contract
 
 The first step to using Defender Admin is to add the contract you want to manage. To do so, click on the "Add contract" button near the top right corner. This will take you to the "import contract" screen, where you need to:
 
  1. Set a contract name. This is only for display purposes
- 2. Select the network where the contract that you want to manage is deployed. This is particularly useful when a contract is deployed with the same address to multiple networks. For this example, enter `Moonbase Alpha`
+ 2. Select the network where the contract that you want to manage is deployed. This is particularly useful when a contract is deployed with the same address to multiple networks. For this example, enter `Pangolin`
  3. Enter the contract address
  4. Paste the contract ABI. This can be obtained either in [Remix](/builders/tools/remix/) or in the `.json` file generally created after the compilation process (for example, in Truffle or HardHat)
  5. Check that the contract features were detected correctly
@@ -102,7 +103,7 @@ If everything was successfully imported, you should see your contract in the Adm
 
 ![OpenZeppelin Defender Admin Contract Added](/images/openzeppelin/ozdefender-images3.png)
 
-### Create a Contract Proposal {: #create-a-contract-proposal } 
+### Create a Contract Proposal
 
 Proposals are actions to be carried out in the contract. At the time of writing, there are three main proposals/actions that can take place:
 
@@ -130,9 +131,9 @@ Once the proposal is successfully created, it should be listed in the contract's
 
 ![OpenZeppelin Defender Admin Contract Proposal List](/images/openzeppelin/ozdefender-images6.png)
 
-### Approve a Contract Proposal {: #approve-a-contract-proposal } 
+### Approve a Contract Proposal
 
-With the contract proposal created, the next step is to approve and execute it. To do so, go to the proposal and click on "Approve and Execute." 
+With the contract proposal created, the next step is to approve and execute it. To do so, go to the proposal and click on "Approve and Execute."
 
 ![OpenZeppelin Defender Admin Contract Proposal Pause Approve](/images/openzeppelin/ozdefender-images7.png)
 
@@ -141,4 +142,4 @@ This will initiate a transaction that needs to be signed using MetaMask, after w
 
 ![OpenZeppelin Defender Admin Contract Proposal Pause Executed](/images/openzeppelin/ozdefender-images8.png)
 
-You can also see that the contract's status has changed from "Running" to "Paused." Great! You now know how to use the Admin component to manage your smart contracts. 
+You can also see that the contract's status has changed from "Running" to "Paused." Great! You now know how to use the Admin component to manage your smart contracts.

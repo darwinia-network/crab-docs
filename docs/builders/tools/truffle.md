@@ -1,17 +1,18 @@
 ---
 title: Truffle
-description: Learn how to configure Truffle to add a local Moonbeam development node and the Moonbase Alpha TestNet as networks for testing and deploying Solidity smart contracts.
+sidebar_position: 6
+description: Learn how to configure Truffle to add a local Pangolin development node and the Pangolin TestNet as networks for testing and deploying Solidity smart contracts.
 ---
 
 # Truffle
 
 ![Intro diagram](/images/integrations/integrations-truffle-banner.png)
 
-## Introduction {: #introduction } 
+## Introduction
 
-[Truffle](https://www.trufflesuite.com/truffle) is a popular development framework for compiling, testing, and deploying Solidity smart contracts. Since Moonbeam is Ethereum compatible, with a few lines of extra configuration, you can use Truffle as you normally would with Ethereum to develop on Moonbeam.
+[Truffle](https://www.trufflesuite.com/truffle) is a popular development framework for compiling, testing, and deploying Solidity smart contracts. Since Pangolin is Ethereum compatible, with a few lines of extra configuration, you can use Truffle as you normally would with Ethereum to develop on Pangolin.
 
-## Configure Truffle to Connect to Moonbeam {: #configure-truffle-to-connect-to-moonbeam } 
+## Configure Truffle to Connect to Pangolin
 
 If you haven't yet, you'll want to globally install Truffle:
 
@@ -19,52 +20,51 @@ If you haven't yet, you'll want to globally install Truffle:
 npm install -g truffle
 ```
 
-In your `truffle-config.js` file, add network configurations for a Moonbeam development node and the Moonbase Alpha TestNet:
+In your `truffle-config.js` file, add network configurations for a Pangolin development node and the Pangolin TestNet:
 
 ```javascript
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-// Moonbeam Development Node Private Key
-const privateKeyDev =
-   '99B3C12287537E38C90A9219D4CB074A89A16E9CDB20BF85728EBD97C343E342';
-// Moonbase Alpha Private Key
-const privateKeyMoonbase = "YOUR-PRIVATE-KEY-HERE";
-// Moonriver Private Key - Note: This is for example purposes only. Never store your private keys in a JavaScript file.
-const privateKeyMoonriver = "YOUR-PRIVATE-KEY-HERE";
+// Pangolin Development Node Private Key
+const privateKeyDev = 'YOUR-PRIVATE-KEY-HERE';
+// Pangolin Private Key
+const privateKeyPangolin = "YOUR-PRIVATE-KEY-HERE";
+// Crab Private Key - Note: This is for example purposes only. Never store your private keys in a JavaScript file.
+const privateKeyCrab = "YOUR-PRIVATE-KEY-HERE";
 
 module.exports = {
    networks: {
-      // Moonbeam Development Node
+      // Pangolin Development Node
       dev: {
         provider: () => {
           return new HDWalletProvider(privateKeyDev, 'http://localhost:9933/')
          },
-        network_id: 1281,
+        network_id: 43,
       },
-      // Moonbase Alpha TestNet
-      moonbase: {
+      // Pangolin TestNet
+      pangolin: {
         provider: () => {
           return new HDWalletProvider(
-            privateKeyMoonbase,
-            'https://rpc.testnet.moonbeam.network'
+            privateKeyPangolin,
+            'http://pangolin-rpc.darwinia.network'
           );
         },
-        network_id: 1287,
+        network_id: 43,
       },
-      // Moonriver
-      moonriver: {
+      // Crab
+      crab: {
         provider: () => {
           return new HDWalletProvider(
-            privateKeyMoonriver,
-            'https://rpc.moonriver.moonbeam.network'
+            privateKeyCrab,
+            'http://crab-rpc.darwinia.network'
           );
         },
-        network_id: 1285,
+        network_id: 44,
       }
    },
 };
 ```
 
 
-## Tutorial {: #tutorial } 
+## Tutorial
 
-If you are interested in a more detailed step-by-step guide, go to our specific tutorial about [using Truffle](/builders/interact/truffle/) with Moonbeam.
+If you are interested in a more detailed step-by-step guide, go to our specific tutorial about [using Truffle](/builders/interact/truffle/) with Pangolin.

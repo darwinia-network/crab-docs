@@ -1,16 +1,17 @@
 ---
 title: Ethers.js
-description: Follow this tutorial to learn how to use the Ethereum EtherJS Library to deploy Solidity smart contracts to Moonbeam.
+sidebar_position: 1
+description: Follow this tutorial to learn how to use the Ethereum EtherJS Library to deploy Solidity smart contracts to Pangolin.
 ---
 # Ethers.js JavaScript Library
 
 ![Intro diagram](/images/integrations/integrations-ethersjs-banner.png)
 
-## Introduction {: #introduction } 
+## Introduction
 
-The [ethers.js](https://docs.ethers.io/) library provides a set of tools to interact with Ethereum Nodes with JavaScript, similar to web3.js. Moonbeam has an Ethereum-like API available that is fully compatible with Ethereum-style JSON RPC invocations. Therefore, developers can leverage this compatibility and use the ethers.js library to interact with a Moonbeam node as if they were doing so on Ethereum. You can read more about ethers.js on this [blog post](https://medium.com/l4-media/announcing-ethers-js-a-web3-alternative-6f134fdd06f3).
+The [ethers.js](https://docs.ethers.io/) library provides a set of tools to interact with Ethereum Nodes with JavaScript, similar to web3.js. Pangolin has an Ethereum-like API available that is fully compatible with Ethereum-style JSON RPC invocations. Therefore, developers can leverage this compatibility and use the ethers.js library to interact with a Pangolin node as if they were doing so on Ethereum. You can read more about ethers.js on this [blog post](https://medium.com/l4-media/announcing-ethers-js-a-web3-alternative-6f134fdd06f3).
 
-## Setup Ethers.js with Moonbeam {: #setup-ethersjs-with-moonbeam } 
+## Setup Ethers.js with Pangolin
 
 To get started with the ethers.js library, install it using the following command:
 
@@ -38,24 +39,45 @@ let wallet = new ethers.Wallet(privKey, provider);
 
 Different methods are available inside `provider` and `wallet`. Depending on which network you want to connect to, you can set the `RPC_URL` to the following values:
 
-Moonbeam development node: 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-  - RPC_URL: `{{ networks.development.rpc_url }}`
-  - ChainId: `{{ networks.development.chain_id }}`
-  - NETWORK_NAME: `moonbeam-development`
- 
-Moonbase Alpha TestNet: 
+<Tabs
+  defaultValue="Pangolin Development Node"
+  values={[
+    {label: 'Pangolin Development Node', value: 'Pangolin Development Node'},
+    {label: 'Pangolin', value: 'Pangolin'},
+    {label: 'Crab', value: 'Crab'},
+  ]}>
+  <TabItem value="Pangolin Development Node">
 
-  - RPC_URL: `{{ networks.moonbase.rpc_url }}`
-  - ChainId: `{{ networks.moonbase.chain_id }}`
-  - NETWORK_NAME: `moonbase-alpha`
+```
+- RPC_URL: http://localhost:9933/
+- ChainId: 43
+- NETWORK_NAME: development
+```
 
-Moonriver:
+  </TabItem>
+  <TabItem value="Pangolin">
 
-  - RPC_URL: `{{ networks.moonriver.rpc_url }}`
-  - ChainID: `{{ networks.moonriver.chain_id }}`
-  - NETWORK_NAME: `{{ networks.moonriver.chain_spec }}`
+```
+- RPC_URL: http://pangolin-rpc.darwinia.network
+- ChainId: 43
+- NETWORK_NAME: Pangolin
+```
 
-## Tutorials {: #tutorials } 
+  </TabItem>
+  <TabItem value="Crab">
 
-If you are interested in a more detailed step-by-step guide, you can go to our specific tutorials on using ethers.js on Moonbeam to [send a transaction](/builders/interact/eth-libraries/send-transaction/) or [deploy a contract](/builders/interact/eth-libraries/deploy-contract/).
+```
+- RPC_URL: http://crab-rpc.darwinia.network
+- ChainID: 44
+- NETWORK_NAME: Crab
+```
+
+  </TabItem>
+</Tabs>
+
+## Tutorials
+
+If you are interested in a more detailed step-by-step guide, you can go to our specific tutorials on using ethers.js on Pangolin to [send a transaction](/builders/interact/eth-libraries/send-transaction/) or [deploy a contract](/builders/interact/eth-libraries/deploy-contract/).

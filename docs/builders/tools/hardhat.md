@@ -1,17 +1,18 @@
 ---
 title: Hardhat
-description: Learn how to configure Hardhat to add a local Moonbeam development node and the Moonbase Alpha TestNet as networks for testing and deploying Solidity smart contracts.
+sidebar_position: 5
+description: Learn how to configure Hardhat to add a local Pangolin development node and the Pangolin TestNet as networks for testing and deploying Solidity smart contracts.
 ---
 
 # Hardhat
 
 ![Hardhat Create Project](/images/hardhat/hardhat-banner.png)
 
-## Introduction {: #introduction } 
+## Introduction
 
-[Hardhat](https://hardhat.org/) is a popular development framework for compiling, testing, and deploying Solidity smart contracts. Since Moonbeam is Ethereum compatible, with a few lines of extra configuration, you can use Hardhat as you normally would to develop on Moonbeam.
+[Hardhat](https://hardhat.org/) is a popular development framework for compiling, testing, and deploying Solidity smart contracts. Since Pangolin is Ethereum compatible, with a few lines of extra configuration, you can use Hardhat as you normally would to develop on Pangolin.
 
-## Configure Hardhat to Connect to Moonbeam {: #configure-hardhat-to-connect-to-moonbeam } 
+## Configure Hardhat to Connect to Pangolin
 
 To get started with Hardhat you must have an npm project. If you do not yet have one, to create one you can run:
 
@@ -31,41 +32,40 @@ Then to create a Hardhat config file in your project, run:
 npx hardhat
 ```
 
-In your `hardhat.config.js` file, add network configurations for a Moonbeam development node and the Moonbase Alpha TestNet:
+In your `hardhat.config.js` file, add network configurations for a Pangolin development node and the Pangolin TestNet:
 
 ```javascript
-// Moonbeam Development Node Private Key
-const privateKeyDev =
-   '99B3C12287537E38C90A9219D4CB074A89A16E9CDB20BF85728EBD97C343E342';
-// Moonbase Alpha Private Key
-const privateKeyMoonbase = "YOUR-PRIVATE-KEY-HERE";
-// Moonriver Private Key - Note: This is for example purposes only. Never store your private keys in a JavaScript file.
-const privateKeyMoonriver = "YOUR-PRIVATE-KEY-HERE";
+// Pangolin Development Node Private Key
+const privateKeyDev = 'YOUR-PRIVATE-KEY-HERE';
+// Pangolin Private Key
+const privateKeyPangolin = "YOUR-PRIVATE-KEY-HERE";
+// Crab Private Key - Note: This is for example purposes only. Never store your private keys in a JavaScript file.
+const privateKeyCrab = "YOUR-PRIVATE-KEY-HERE";
 
 module.exports = {
    networks: {
-      // Moonbeam Development Node
+      // Pangolin Development Node
       dev: {
         url: 'http://localhost:9933/',
-        chainId: 1281,
+        chainId: 43,
         accounts: [privateKeyDev]
       },
-      // Moonbase Alpha TestNet
-      moonbase: {
-        url: `https://rpc.testnet.moonbeam.network`,
-        chainId: 1287,
-        accounts: [privateKeyMoonbase]
+      // Pangolin TestNet
+      pangolin: {
+        url: 'http://pangolin-rpc.darwinia.network',
+        chainId: 43,
+        accounts: [privateKeyPangolin]
       },
-      // Moonriver
-      moonbase: {
-        url: `https://rpc.moonriver.moonbeam.network`,
-        chainId: 1285,
-        accounts: [privateKeyMoonriver]
+      // Crab
+      crab: {
+        url: 'http://crab-rpc.darwinia.network',
+        chainId: 44,
+        accounts: [privateKeyCrab]
       },
    },
 };
 ```
 
-## Tutorial {: #tutorial } 
+## Tutorial
 
-If you are interested in a more detailed step-by-step guide, check out our specific tutorial about using [Hardhat](/builders/interact/hardhat/) with Moonbeam.
+If you are interested in a more detailed step-by-step guide, check out our specific tutorial about using [Hardhat](/builders/interact/hardhat/) with Pangolin.

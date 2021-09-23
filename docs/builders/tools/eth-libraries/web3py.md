@@ -1,16 +1,17 @@
 ---
 title: Web3.py
-description: Follow this tutorial to learn how to use the Ethereum Web3 Python Library to deploy Solidity smart contracts to Moonbeam.
+sidebar_position: 3
+description: Follow this tutorial to learn how to use the Ethereum Web3 Python Library to deploy Solidity smart contracts to Pangolin.
 ---
 # Web3.py Python Library
 
 ![Intro diagram](/images/integrations/integrations-web3py-banner.png)
 
-## Introduction {: #introduction } 
+## Introduction
 
-[Web3.py](https://web3py.readthedocs.io/) is a set of libraries that allow developers to interact with Ethereum nodes using HTTP, IPC, or WebSocket protocols with Python. Moonbeam has an Ethereum-like API available that is fully compatible with Ethereum-style JSON RPC invocations. Therefore, developers can leverage this compatibility and use the web3.py library to interact with a Moonbeam node as if they were doing so on Ethereum.
+[Web3.py](https://web3py.readthedocs.io/) is a set of libraries that allow developers to interact with Ethereum nodes using HTTP, IPC, or WebSocket protocols with Python. Pangolin has an Ethereum-like API available that is fully compatible with Ethereum-style JSON RPC invocations. Therefore, developers can leverage this compatibility and use the web3.py library to interact with a  node as if they were doing so on Ethereum.
 
-## Setup Web3.py with Moonbeam {: #setup-web3py-with-moonbeam } 
+## Setup Web3.py with Pangolin
 
 To get started with the web3.py library, install it using the following command:
 
@@ -28,11 +29,11 @@ web3 = Web3(Web3.HTTPProvider('RPC_URL'))
 
 Depending on which network you want to connect to, you can set the `RPC_URL` to the following values:
 
- - Moonbeam development node: `http://127.0.0.1:9933`
- - Moonbase Alpha TestNet: `https://rpc.testnet.moonbeam.network`
- - Moonriver: `{{ networks.moonriver.rpc_url }}`
+ - Pangolin development node: `http://localhost:9933/`
+ - Pangolin TestNet: `http://pangolin-rpc.darwinia.network`
+ - Crab: `http://crab-rpc.darwinia.network`
 
-## Tutorials {: #tutorials } 
+## Tutorials
 
-If you are interested in a more detailed step-by-step guide, go to our specific tutorials about using web3.py on Moonbeam to [send a transaction](/builders/interact/eth-libraries/send-transaction/) or [deploy a contract](/builders/interact/eth-libraries/deploy-contract/).
+If you are interested in a more detailed step-by-step guide, go to our specific tutorials about using web3.py on Pangolin to [send a transaction](/builders/interact/eth-libraries/send-transaction/) or [deploy a contract](/builders/interact/eth-libraries/deploy-contract/).
 

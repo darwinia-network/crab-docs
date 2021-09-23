@@ -1,11 +1,12 @@
 ---
 title: Precompiled Contracts
-description:  Learn how to use precompiled contracts on Moonbase Alpha, the Moonbeam Network TestNet that is unique for its complete Ethereum compatibility. 
+sidebar_position: 10
+description:  Learn how to use precompiled contracts on Pangolin, the Pangolin TestNet that is unique for its complete Ethereum compatibility.
 ---
 
-# Precompiled Contracts on Moonbase Alpha
+# Precompiled Contracts on Pangolin
 
-## Introduction {: #introduction } 
+## Introduction
 
 Another feature added with the [release of Moonbase Alpha v2](https://moonbeam.network/blog/moonbase-alpha-v2-contract-events-pub-sub-capabilities/) is the inclusion of some [precompiled contracts](https://docs.klaytn.com/smart-contract/precompiled-contracts) that are natively available on Ethereum. 
 
@@ -15,9 +16,11 @@ In this guide, we will explain how to use and/or verify these precompiles.
 
 ## Checking Prerequisites {: #checking-prerequisites } 
 
---8<-- 'text/common/install-nodejs.md'
+import InstallNodeJs from '/snippets/text/common/install-nodejs.md';
 
-As of writing this guide, the versions used were 15.2.1 and 7.0.8, respectively. We will also need to install the Web3 package by executing:
+<InstallNodeJs name="installNodeJs"/>
+
+As of writing of this guide, the versions used were 16.0.0 and 7.10.0, respectively. We will also need to install the Web3 package by executing:
 
 ```
 npm install --save web3

@@ -1,13 +1,14 @@
 ---
 title: Debug & Trace
-description:  Learn how to leverage the Geth Debug API and OpenEthereum Trace module on Moonbeam
+sidebar_position: 12
+description:  Learn how to leverage the Geth Debug API and OpenEthereum Trace module on Pangolin
 ---
 
 # Debug API & Trace Module
 
-![Full Node Moonbeam Banner](/images/debugtrace/debugtrace-banner.png)
+![Full Node Pangolin Banner](/images/debugtrace/debugtrace-banner.png)
 
-## Introduction {: #introduction } 
+## Introduction
 
 Both Geth's debug API and OpenEthereum's trace module provide non-standard RPC methods for getting a deeper insight into transaction processing.
 
