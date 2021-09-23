@@ -6,8 +6,6 @@ description: Learn how to configure Truffle to add a local Pangolin development 
 
 # Truffle
 
-![Intro diagram](/images/integrations/integrations-truffle-banner.png)
-
 ## Introduction
 
 [Truffle](https://www.trufflesuite.com/truffle) is a popular development framework for compiling, testing, and deploying Solidity smart contracts. Since Pangolin is Ethereum compatible, with a few lines of extra configuration, you can use Truffle as you normally would with Ethereum to develop on Pangolin.

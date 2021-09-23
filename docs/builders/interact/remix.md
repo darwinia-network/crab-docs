@@ -6,7 +6,6 @@ description: Learn how to use one of the most popular Ethereum developer tools, 
 
 # Using Remix to Deploy to Pangolin
 
-
 ## Introduction
 
 Remix is one of the commonly used development environments for smart contracts on Ethereum. Given Pangolin’s Ethereum compatibility features, Remix can be used directly with a Pangolin development node or the Pangolin Node.

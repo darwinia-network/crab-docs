@@ -5,8 +5,6 @@ description: Follow this tutorial to learn how to use the Ethereum Web3 JavaScri
 ---
 # Web3.js JavaScript Library
 
-![Intro diagram](/images/integrations/integrations-web3js-banner.png)
-
 ## Introduction
 
 [Web3.js](https://web3js.readthedocs.io/) is a set of libraries that allow developers to interact with Ethereum nodes using HTTP, IPC, or WebSocket protocols with JavaScript. Pangolin has an Ethereum-like API available that is fully compatible with Ethereum-style JSON RPC invocations. Therefore, developers can leverage this compatibility and use the web3.js library to interact with a Pangolin node as if they were doing so on Ethereum.

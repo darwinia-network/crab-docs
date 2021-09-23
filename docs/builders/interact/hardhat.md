@@ -6,8 +6,6 @@ description: Use Hardhat to compile, deploy, and debug Ethereum smart contracts 
 
 # Using Hardhat to Deploy To Pangolin
 
-![Hardhat Create Project](/images/hardhat/hardhat-banner.png)
-
 ## Introduction
 
 Hardhat is an Ethereum development environment that helps developers manage and automate the recurring tasks inherent to building smart contracts and DApps. Hardhat can directly interact with Pangolin's Ethereum API so it can also be used to deploy smart contracts into Pangolin.

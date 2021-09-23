@@ -6,7 +6,6 @@ description: Learn how to configure Waffle for testing Solidity smart contracts 
 
 # Waffle
 
-![Waffle Introduction](/images/waffle-mars/waffle-banner.png)
 ## Introduction
 
 [Waffle](https://www.getwaffle.io/) is a popular development framework for testing Solidity smart contracts. Since Pangolin is Ethereum compatible, with a few lines of extra configuration, you can use Waffle as you normally would with Ethereum to develop on Pangolin.

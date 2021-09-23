@@ -6,7 +6,6 @@ description: Learn how to configure Mars for deploying Solidity smart contracts 
 
 # Mars
 
-![Mars Introduction](/images/waffle-mars/mars-banner.png)
 ## Introduction
 
 [Mars](https://github.com/EthWorks/Mars) is a new infrastructure-as-code tool for deploying Solidity smart contracts. Mars makes writing advanced deployment scripts a breeze and handles state change for you, making sure your deployments are always up-to-date. Since Pangolin is Ethereum compatible, you can use Mars as you normally would with Ethereum to develop on Pangolin. All you have to do is change the network you wish to deploy to.

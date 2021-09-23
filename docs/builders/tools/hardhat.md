@@ -6,8 +6,6 @@ description: Learn how to configure Hardhat to add a local Pangolin development 
 
 # Hardhat
 
-![Hardhat Create Project](/images/hardhat/hardhat-banner.png)
-
 ## Introduction
 
 [Hardhat](https://hardhat.org/) is a popular development framework for compiling, testing, and deploying Solidity smart contracts. Since Pangolin is Ethereum compatible, with a few lines of extra configuration, you can use Hardhat as you normally would to develop on Pangolin.

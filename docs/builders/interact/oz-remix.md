@@ -6,8 +6,6 @@ description:  Learn how to create common OpenZeppelin contracts with their Contr
 
 # Using OpenZeppelin Contracts and Remix To Deploy To Pangolin
 
-![OpenZeppelin Contracts Banner](/images/openzeppelin/ozcontracts-banner.png)
-
 ## Introduction
 
 OpenZeppelin contracts and libraries have become a standard in the industry. They help developers minimize risk, as their open-source code templates are battle-tested for Ethereum and other blockchains. Their code includes the most used implementations of ERC standards and add-ons and often appears in guides and tutorials around the community.

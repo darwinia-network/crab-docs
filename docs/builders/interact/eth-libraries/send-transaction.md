@@ -6,8 +6,6 @@ description: Learn how to create and send transactions on Pangolin’s Ethereum-
 
 # Send Transactions using Ethereum Libraries on Pangolin
 
-![Ethereum Libraries Integrations Pangolin](/images/sendtx/web3-libraries-banner.png)
-
 ## Introduction
 
 This guide walks through using three different Ethereum libraries to manually sign and send a transaction on Pangolin. The three libraries covered in this tutorial are:

@@ -6,8 +6,6 @@ description:  Learn how to leverage the Geth Debug API and OpenEthereum Trace mo
 
 # Debug API & Trace Module
 
-![Full Node Pangolin Banner](/images/debugtrace/debugtrace-banner.png)
-
 ## Introduction
 
 Both Geth's debug API and OpenEthereum's trace module provide non-standard RPC methods for getting a deeper insight into transaction processing.

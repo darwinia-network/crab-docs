@@ -6,8 +6,6 @@ description:  Learn how to use OpenZeppelin products on Pangolin thanks to its E
 
 # OpenZeppelin
 
-![OpenZeppelin Banner](/images/openzeppelin/openzeppelin-banner.png)
-
 ## Introduction
 
 OpenZeppelin is well known in the Ethereum developer community as their set of audited smart contracts and libraries are a standard in the industry. For example, most of the tutorials that show developers how to deploy an ERC20 token use OpenZeppelin contracts.

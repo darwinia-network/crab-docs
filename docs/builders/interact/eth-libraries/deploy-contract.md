@@ -6,8 +6,6 @@ description: Learn how to deploy unmodified and unchanged Solidity-based smart c
 
 # Using Ethereum Libraries to Deploy To Pangolin
 
-![Ethereum Libraries Integrations Pangolin](/images/sendtx/web3-libraries-banner.png)
-
 ## Introduction
 
 This guide walks through using the Solidity compiler and three different Ethereum libraries to deploy a contract to Pangolin manually. The three libraries covered by this tutorial are:

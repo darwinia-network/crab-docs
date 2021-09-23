@@ -6,8 +6,6 @@ description: Learn how to use one of the most popular Ethereum developer tools, 
 
 # Remix
 
-![Intro diagram](/images/integrations/integrations-remix-banner.png)
-
 ## Introduction
 
 Another tool developers can use to interact with Pangolin is the [Remix IDE](https://remix.ethereum.org/), one of the most commonly used development environments for smart contracts on Ethereum. It provides a web-based solution to quickly compile and deploy Solidity and Vyper based code to either a local VM or, more interestingly, an external Web3 provider, such as MetaMask. By combining both tools, one can get started very swiftly with Pangolin.

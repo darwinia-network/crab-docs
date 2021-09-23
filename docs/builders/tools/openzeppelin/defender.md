@@ -6,8 +6,6 @@ description:  Learn how to use OpenZeppelin Defender to manage smart contracts s
 
 # OpenZeppelin Defender
 
-![OpenZeppelin Defender Banner](/images/openzeppelin/ozdefender-banner.png)
-
 ## Introduction
 
 OpenZeppelin Defender is a web-based application that allows developers to perform and automate smart contract operations in a secure way. Defender offers different components:

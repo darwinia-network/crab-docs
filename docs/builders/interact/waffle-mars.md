@@ -6,8 +6,6 @@ description: Learn how to use Waffle and Mars to write, compile, test, and deplo
 
 # Using Waffle & Mars to Deploy to Pangolin
 
-![Waffle and Mars on Pangolin](/images/waffle-mars/waffle-mars-banner.png)
-
 ## Introduction
 
 [Waffle](https://getwaffle.io/) is a library for compiling and testing smart contracts, and [Mars](https://github.com/EthWorks/Mars) is a deployment manager. Together, Waffle and Mars can be used to write, compile, test, and deploy Ethereum smart contracts. Since Pangolin is Ethereum compatible, Waffle and Mars can be used to deploy smart contracts to a Pangolin development node or the Pangolin.
