@@ -9,14 +9,13 @@ description: How to setup a Darwinia Development Node.
 
 This guide outlines the steps needed to create a development node for latest features of Darwinia.
 
-A Darwinia development node is your own personal development environment for building and testing applications on Darwinia. For Ethereum developers, it is comparable to Ganache. It enables you to get started quickly.
-If you follow to the end of this guide, you will have a Darwinia development node running in your local environment, and will be able to connect it to the default Darwinia Apps GUI.
+A Darwinia development node is your own personal development environment for building and testing applications on Darwinia. For Ethereum developers, it is comparable to Ganache. If you follow to the end of this guide, you will have a Darwinia development node running in your local environment, and will be able to connect it to the default Darwinia Apps GUI.
 
 ## Getting Started With The Binary
 
 > If you know what you are doing, you can directly download the precompiled binaries attached to each release on the [Darwinia Release Page](https://github.com/darwinia-network/darwinia-common/releases). These will not work in all systems. For example, the binaries only work with x86-64 Linux with specific versions of dependencies. The safest way to ensure compatibility is to compile the binary in the system where it will be run from.
 
-First, start by cloning a specific tag of the [darwinia-common repo](https://github.com/darwinia-network/darwinia-common) that you can find here:
+First, start by cloning the [darwinia-common](https://github.com/darwinia-network/darwinia-common) codebase:
 
 ```
 git clone https://github.com/darwinia-network/darwinia-common
@@ -64,27 +63,22 @@ You should see an output that looks like the following, showing some blocks has 
 
 ![Output shows blocks being produced](/images/setting-up-a-node/setting-up-node-4.png)
 
-For more information on some of the flags and options used in the example, check out [Common Flags and Options](#common-commands-flags-and-options). If you want to see a complete list of all of the flags, options, and subcommands, open the help menu by running:
+For more information on some of the flags and options used in the example, check out [Common Options](#common-options). If you want to see a complete list of all of the flags, options, and subcommands, open the help menu by running:
 
 ```
 ./target/release/drml --help
 ```
 ## Connecting To Darwinia Apps
 
-The development node is a Substrate-based node, so you can interact with it using standard Substrate tools. The two provided RPC endpoints are:
-
- - HTTP: `http://127.0.0.1:9933`
- - WS: `ws://127.0.0.1:9944` 
-
 Start by connecting to it with [Darwinia Apps Explorer](https://apps.darwinia.network/?rpc%3Dwss%253A%252F%252Fpangolin-rpc.darwinia.network#/explorer). This will automatically connects to Pangolin TestNet.
 
 ![Polkadot JS Apps](/images/setting-up-a-node/setting-up-node-5.png)
 
-Click on the top left corner to open the menu to configure the networks, and then navigate down to open the Development sub-menu. In there, you will want to toggle the "Local Node" option, which points Polkadot JS Apps to `ws://127.0.0.1:9944`. Next, select the Switch button, and the site should connect to your Darwinia development node.
+Click on the top left corner to open the menu to configure the networks, and then navigate down to open the Development sub-menu. In there, you will want to toggle the "Local Node" option, which points to `ws://127.0.0.1:9944`. Next, select the "Save & Reload" button, and the site should connect to your Darwinia development node.
 
 ![Select Local Node](/images/setting-up-a-node/setting-up-node-6.png)
 
-With Darwinia Apps connected, you will see the the development node waiting for transactions to arrive to begin producing blocks.
+With Darwinia Apps connected, you will see the the development node has began producing blocks.
 
 ![Select Local Node](/images/setting-up-a-node/setting-up-node-7.png)
 
@@ -105,8 +99,7 @@ Flags do not take an argument. To use a flag, add it to the end of a command. Fo
 For a complete list of flags and options, spin up your Darwinia development node with `--help` added to the end of the command.
 ## Pre-funded Development Accounts
 
-Your Darwinia development node comes with some pre-funded accounts for development. There are two test account
-are derived from Substrate's canonical development mnemonic:
+Your Darwinia development node comes with some pre-funded substrate accounts for development. There are two test accounts are derived from Substrate's canonical development mnemonic:
 
 ```
 bottom drive obey lake curtain smoke basket hold race lonely fit walk
