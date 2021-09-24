@@ -1,26 +1,27 @@
 ---
 title: Chainlink
+sidebar_position: 2
 description: How to use request data from a Chainlink Oracle in your Pangolin Ethereum Dapp using smart contracts or Javascript
 ---
 
 # Chainlink Oracle
 
-![Chainlink Pangolin Banner](/images/chainlink/chainlink-banner.png)
+## Introduction
 
-## Introduction {: #introduction } 
-
-Developers can now use [Chainlink's decentralized Oracle network](https://chain.link/) to fetch data in the pangolin Alpha TestNet. This tutorial goes through two different ways of using Chainlink Oracles:
+Developers can now use [Chainlink's decentralized Oracle network](https://chain.link/) to fetch data in the Pangolin TestNet. This tutorial goes through two different ways of using Chainlink Oracles:
 
  - [Basic Request Model](https://docs.chain.link/docs/architecture-request-model), where the end-user sends a request to an Oracle provider, which fetches the data through an API, and fulfils the request storing this data on-chain
  - [Price Feeds](https://docs.chain.link/docs/architecture-decentralized-model), where data is continuously updated by Oracle operators in a smart contract so that other smart contracts can fetch it
 
-## Basic Request Model {: #basic-request-model } 
+## Basic Request Model
 
 Before we go into fetching the data itself, it is important to understand the basics of the "basic request model."
 
---8<-- 'text/chainlink/chainlink-brm.md'
+import ChainlinkBRM from '/snippets/text/chainlink/chainlink-brm.md';
 
-### The Client Contract {: #the-client-contract } 
+<ChainlinkBRM name="chainlinkBRM"/>
+
+### The Client Contract
 
 The Client contract is the element that starts the communication with the Oracle by sending a request. As shown in the diagram, it calls the _transferAndCall_ method from the LINK token contract, but there is more processing that is needed to track the request to the Oracle. For this example, you can use the code in [this file](/snippets/code/chainlink/Client.sol), and deploy it on [Remix](/builders/tools/remix/) to try it out. Let's look at the core functions of the contract:
 
@@ -65,11 +66,11 @@ contract Client is ChainlinkClient {
 
 Note that the Client contract must have a LINK tokens balance to be able to pay for this request. However, if you deploy your setup, you can set the LINK value to 0 in your `ChainlinkClient.sol` contract, but you still need to have the LINK token contract deployed.
 
-### Try it on pangolin Alpha {: #try-it-on-pangolin-alpha } 
+### Try it on Pangolin
 
 If you want to skip the hurdles of deploying all contracts, setting up your Oracle node, creating job IDs, and so on, we've got you covered.
 
-A custom Client contract on pangolin Alpha that makes all requests to our Oracle contract, with a 0 LINK token payment, is available. These requests are fulfilled by an Oracle node that we are running. You can try it out with the following interface contract and the custom Client contract deployed at `{{ networks.pangolin.chainlink.client_contract }}`:
+A custom Client contract on Pangolin that makes all requests to our Oracle contract, with a 0 LINK token payment, is available. These requests are fulfilled by an Oracle node that we are running. You can try it out with the following interface contract and the custom Client contract deployed at `{{ networks.pangolin.chainlink.client_contract }}`:
 
 ```solidity
 pragma solidity ^0.6.6;
@@ -113,13 +114,13 @@ Currently, the Oracle node has a set of Job IDs for different price datas for th
 
 Let's go ahead and use the interface contract with the `BTC to USD` Job ID in [Remix](/builders/tools/remix/).
 
-After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the Client contract address, and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so you are connected to pangolin Alpha. This will create an instance of the Client contract that you can interact with. Use the function `requestPrice()` to query the data of the corresponding Job ID. Once the transaction is confirmed, we have to wait until the whole process explained before occurs. We can check the price using the view function `currentPrice()`.
+After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the Client contract address, and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so you are connected to Pangolin. This will create an instance of the Client contract that you can interact with. Use the function `requestPrice()` to query the data of the corresponding Job ID. Once the transaction is confirmed, we have to wait until the whole process explained before occurs. We can check the price using the view function `currentPrice()`.
 
-![Chainlink Basic Request on pangolin Alpha](/images/chainlink/chainlink-image1.png)
+![Chainlink Basic Request on Pangolin](/images/chainlink/chainlink-image1.png)
 
-If there is any specific pair you want us to include, feel free to reach out to us through our [Discord server](https://discord.com/invite/PfpUATX).
+If there is any specific pair you want us to include, feel free to reach out to us through our [Telegram](https://t.me/DarwiniaDev).
 
-### Run your Client Contract {: #run-your-client-contract } 
+### Run your Client Contract
 
 If you want to run your Client contract but use our Oracle node, you can do so with the following information:
 
@@ -130,13 +131,13 @@ If you want to run your Client contract but use our Oracle node, you can do so w
 
 Remember that the LINK token payment is set to zero.
 
-### Other Requests {: #other-requests } 
+### Other Requests
 
 Chainlink's Oracles can tentatively provide many different types of data feeds with the use of external adapters. However, for simplicity, our Oracle node is configured to deliver only price feeds.
 
 If you are interested in running your own Oracle node in Pangolin, please visit [this guide](/node-operators/oracle-nodes/node-chainlink/). Also, we recommend going through [Chainlink's documentation site](https://docs.chain.link/docs).
 
-## Price Feeds {: #price-feeds } 
+## Price Feeds
 
 Before we go into fetching the data itself, it is important to understand the basics of price feeds.
 
@@ -146,11 +147,11 @@ The end-user can retrieve price feeds with read-only operations via a Consumer c
 
 ![Price Feed Diagram](/images/chainlink/chainlink-pricefeed.png)
 
-### Try it on pangolin Alpha {: #try-it-on-pangolin-alpha } 
+### Try it on Pangolin
 
 If you want to skip the hurdles of deploying all the contracts, setting up your Oracle node, creating job IDs, and so on, we've got you covered.
 
-We've deployed all the necessary contracts on pangolin Alpha to simplify the process of requesting price feeds. In our current configuration, we are running only one Oracle node that fetches the price from a single API source. Price data is checked every minute and updated in the smart contracts every hour unless there is a price deviation of 1 %.
+We've deployed all the necessary contracts on Pangolin to simplify the process of requesting price feeds. In our current configuration, we are running only one Oracle node that fetches the price from a single API source. Price data is checked every minute and updated in the smart contracts every hour unless there is a price deviation of 1 %.
 
 The data lives in a series of smart contracts (one per price feed) and can be fetched with the following interface:
 
@@ -194,11 +195,11 @@ Currently, there is an Consumer contract for the the following price pairs:
 
 Let's go ahead and use the interface contract to fetch the price feed of `BTC to USD` using [Remix](/builders/tools/remix/).
 
-After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the Consumer contract address corresponding to `BTC to USD`, and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so you are connected to pangolin Alpha.
+After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the Consumer contract address corresponding to `BTC to USD`, and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so you are connected to Pangolin.
 
 This will create an instance of the Consumer contract that you can interact with. Use the function `getLatestPrice()` to query the data of the corresponding price feed.
 
-![Chainlink Price Feeds on pangolin Alpha](/images/chainlink/chainlink-image2.png)
+![Chainlink Price Feeds on Pangolin](/images/chainlink/chainlink-image2.png)
 
 Note that to obtain the real price, you must account for the decimals of the price feed, available with the `decimals()` method.
 

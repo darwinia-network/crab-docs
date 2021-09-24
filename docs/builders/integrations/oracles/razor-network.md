@@ -1,22 +1,21 @@
 ---
 title: Razor Network
+sidebar_position: 3
 description: How to use request data from a Razor Network Oracle in your Pangolin Ethereum DApp using smart contracts
 ---
 # Razor Network Oracle
 
-![Razor Network Pangolin Diagram](/images/razor/razor-banner.png)
+## Introduction
 
-## Introduction {: #introduction } 
-
-Developers can now fetch prices from Razor Network’s oracle using a Bridge contract deployed on the pangolin Alpha TestNet. This Bridge acts as middleware, and events emitted by it are fetched by the Razor Network's oracle infrastructure, sending prices to the Bridge contract.
+Developers can now fetch prices from Razor Network’s oracle using a Bridge contract deployed on the Pangolin TestNet. This Bridge acts as middleware, and events emitted by it are fetched by the Razor Network's oracle infrastructure, sending prices to the Bridge contract.
 
 To access these price feeds, we need to interact with the Bridge contract address, which can be found in the following table:
 
 |     Network    | |         Contract Address        |
 |:--------------:|-|:------------------------------------------:|
-| pangolin Alpha | | 0x53f7660Ea48289B5DA42f1d79Eb9d4F5eB83D3BE |
+| Pangolin | | 0x0000000000000000000000000000000000000000 |
 
-## Jobs {: #jobs } 
+## Jobs
 
 Each data-feed has a Job ID attached to it. For example:
 
@@ -28,7 +27,7 @@ Each data-feed has a Job ID attached to it. For example:
 
 You can check Job IDs for each data-feed at the following [link](https://razorscan.io/#/custom). Price feeds are updated every 5 minutes. More information can be found in [Razor's documentation website][https://docs.razor.network/].
 
-## Get Data From Bridge Contract {: #get-data-from-bridge-contract } 
+## Get Data From Bridge Contract
 
 Contracts can query on-chain data such as token prices, from Razor Network's oracle by implementing the interface of the Bridge contract, which exposes the `getResult` and `getJob` functions.
 
@@ -36,9 +35,9 @@ Contracts can query on-chain data such as token prices, from Razor Network's ora
 pragma solidity 0.6.11;
 
 interface Razor {
-    
+
     function getResult(uint256 id) external view returns (uint256);
-    
+
     function getJob(uint256 id) external view returns(string memory url, string memory selector, string memory name, bool repeat, uint256 result);
 }
 ```
@@ -47,9 +46,9 @@ The first function, `getResult`, takes the Job ID associated with the data-feed 
 
 The second function, `getJob`, takes the Job ID associated with the data-feed and fetches the general information regarding the data-feed, such as the name of the data-feed, the price, and the URL being used to fetch the prices.
 
-### Example Contract {: #example-contract } 
+### Example Contract
 
-We've deployed the bridge contract in the pangolin Alpha TestNet (at address `{{ networks.pangolin.razor.bridge_address }}`) so you can quickly check the information fed from Razor Network's oracle. 
+We've deployed the bridge contract in the Pangolin TestNet (at address `{{ networks.pangolin.razor.bridge_address }}`) so you can quickly check the information fed from Razor Network's oracle.
 
 The only requirement is the Bridge interface, which defines `getResult` structure and makes the functions available to the contract for queries.
 
@@ -72,20 +71,20 @@ interface Razor {
 contract Demo {
     // Interface
     Razor internal razor;
-    
+
     // Variables
     uint256 public price;
     uint256[] public pricesArr;
 
     constructor(address _bridgeAddress) public {
         razor = Razor(_bridgeAddress); // Bridge Contract Address
-                                       // pangolin Alpha {{ networks.pangolin.razor.bridge_address }}
+                                       // Pangolin {{ networks.pangolin.razor.bridge_address }}
     }
 
     function fetchPrice(uint256 _jobID) public view returns (uint256){
         return razor.getResult(_jobID);
     }
-    
+
     function fetchMultiPrices(uint256[] memory jobs) external view returns(uint256[] memory){
         uint256[] memory prices = new uint256[](jobs.length);
         for(uint256 i=0;i<jobs.length;i++){
@@ -93,14 +92,14 @@ contract Demo {
         }
         return prices;
     }
-    
+
     function savePrice(uint _jobID) public {
         price = razor.getResult(_jobID);
     }
 
     function saveMultiPrices(uint[] calldata _jobIDs) public {
         delete pricesArr;
-        
+
         for (uint256 i = 0; i < _jobIDs.length; i++) {
             pricesArr.push(razor.getResult(_jobIDs[i]));
         }
@@ -109,7 +108,7 @@ contract Demo {
 }
 ```
 
-### Try it on pangolin Alpha {: #try-it-on-pangolin-alpha } 
+### Try it on Pangolin
 
 The easiest way to try their Oracle implementation is by pointing the interface to the Bridge contract deployed at address `{{ networks.pangolin.razor.bridge_address }}`:
 
@@ -129,7 +128,7 @@ With it, you will have two view functions available, very similar to our previou
 
 Let's use [Remix](/builders/tools/remix/) to fetch the `BTC` price in `USD`.
 
-After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the contract address (`{{ networks.pangolin.razor.bridge_address }}`), and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so that you are connected to pangolin Alpha (through the Web3 provider of the wallet). 
+After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the contract address (`{{ networks.pangolin.razor.bridge_address }}`), and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so that you are connected to Pangolin (through the Web3 provider of the wallet).
 
 ![Razor Remix deploy](/images/razor/razor-demo1.png)
 
@@ -137,5 +136,5 @@ This will create an instance of the demo contract that you can interact with. Us
 
 ![Razor check price](/images/razor/razor-demo2.png)
 
-## Contact Us {: #contact-us } 
-If you have any feedback regarding implementing the Razor Network Oracle on your project or any other Pangolin related topic, feel free to reach out through our official development [Discord server](https://discord.com/invite/PfpUATX).
+## Contact Us
+If you have any feedback regarding implementing the Razor Network Oracle on your project or any other Pangolin related topic, feel free to reach out through our official development [Telegram](https://t.me/DarwiniaDev).

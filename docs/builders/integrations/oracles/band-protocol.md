@@ -1,21 +1,20 @@
 ---
 title: Band Protocol
+sidebar_position: 1
 description: How to use request data from a Band Protocol Oracle in your Pangolin Ethereum DApp using smart contracts or javascript
 ---
 # Band Protocol Oracle
 
-![Band Protocol Pangolin Diagram](/images/band/band-banner.png)
-
-## Introduction {: #introduction } 
+## Introduction
 Developers have two ways to fetch prices from Band’s oracle infrastructure. On one hand, they can use Band’s smart contracts on Pangolin. Doing so, they access data that is on-chain and is updated either at regular intervals or when price slippage is more than a target amount (different for each token). On the other hand, devs can use the Javascript helper library, which uses an API endpoint to fetch the data using similar functions as those from the smart contracts, but this implementation bypasses the blockchain entirely.  This can be useful if your DApp front-end needs direct access to the data.
 
 The Aggregator Contract address can be found in the following table:
 
 |     Network    | |         Aggregator Contract Address        |
 |:--------------:|-|:------------------------------------------:|
-| pangolin Alpha | | 0xDA7a001b254CD22e46d3eAB04d937489c93174C3 |
+| pangolin | | 0x0000000000000000000000000000000000000000 |
 
-## Supported Token {: #supported-token } 
+## Supported Token
 Price queries with any denomination are available as long as the base and quote symbols are supported (_base_/_quote_). For example:
 
  - `BTC/USD`
@@ -24,13 +23,13 @@ Price queries with any denomination are available as long as the base and quote 
 
 At the time of writing, the list of supported symbols can be found by following [this link](https://data.bandprotocol.com). There are more than 146 price pairs available to query.
 
-## Querying Prices {: #querying-prices } 
-As stated before, developers can leverage two methods to query prices from Band's oracle: 
+## Querying Prices
+As stated before, developers can leverage two methods to query prices from Band's oracle:
 
- - Band's smart contract on Pangolin (deployed to pangolin Alpha TestNet for now)
+ - Band's smart contract on Pangolin (deployed to Pangolin TestNet for now)
  - Javascript helper library
 
-## Get Data Using Smart Contracts {: #get-data-using-smart-contracts } 
+## Get Data Using Smart Contracts
 Contracts can query on-chain data, such as token prices, from Band's oracle by implementing the interface of the `StdReference` contract, which exposes the `getReferenceData` and `getReferenceDataBulk` functions.
 
 The first function, `getReferenceData`, takes two strings (the base and the quote symbol) as the inputs. The function queries the `StdReference` contract for the latest rates available for those two tokens. It returns a `ReferenceData` struct.
@@ -40,11 +39,10 @@ The `ReferenceData` struct has the following elements:
  - Rate: the exchange rate in terms of _base/quote_. The value returned is multiplied by 10<sup>18</sup>
  - Last updated base: the last time when the base price was updated (since UNIX epoch)
  - Last updated quote: the last time when the quoted price was updated (since UNIX epoch)
- 
 ```js
 struct ReferenceData {
-   uint256 rate; 
-   uint256 lastUpdatedBase; 
+   uint256 rate;
+   uint256 lastUpdatedBase;
    uint256 lastUpdatedQuote;
 }
 ```
@@ -55,7 +53,7 @@ The second function, `getReferenceDataBulk`, takes information as data arrays. F
  - `BTC/ETH`
  - `ETH/EUR`
 
-### Example Contract {: #example-contract } 
+### Example Contract
 
 The following smart contract code provides some simple examples of the `StdReference` contract and the `getReferenceData` function - these are not meant for production. The `IStdReference.sol` interface defines ReferenceData structure and the functions available to make the queries.
 
@@ -102,13 +100,13 @@ import "./IStdReference.sol";
 
 contract DemoOracle {
     IStdReference ref;
-    
+
     uint256 public price;
     uint256[] public pricesArr;
 
     constructor(IStdReference _ref) public {
         ref = _ref; // Aggregator Contract Address
-                    // pangolin Alpha 0xDA7a001b254CD22e46d3eAB04d937489c93174C3
+                    // Pangolin 0xDA7a001b254CD22e46d3eAB04d937489c93174C3
 
     }
 
@@ -128,12 +126,12 @@ contract DemoOracle {
 
         return prices;
     }
-    
+
     function savePrice(string memory _base, string memory _quote) external {
         IStdReference.ReferenceData memory data = ref.getReferenceData(_base,_quote);
         price = data.rate;
     }
-    
+
     function saveMultiPrices(
         string[] memory _bases,
         string[] memory _quotes
@@ -145,14 +143,14 @@ contract DemoOracle {
         for (uint256 i = 0; i < len; i++) {
             pricesArr.push(data[i].rate);
         }
-        
+
     }
 }
 ```
 
-### Try it in pangolin Alpha {: #try-it-in-pangolin alpha } 
+### Try it in Pangolin
 
-We've deployed a contract available in the pangolin Alpha TestNet (at address `0xf15c870344c1c02f5939a5C4926b7cDb90dEc655`) so you can easily check the information fed from Band Protocol's oracle. To do so, you need the following interface contract:
+We've deployed a contract available in the Pangolin TestNet (at address `0x0000000000000000000000000000000000000000`) so you can easily check the information fed from Band Protocol's oracle. To do so, you need the following interface contract:
 
 ```solidity
 pragma solidity 0.6.11;
@@ -172,7 +170,7 @@ With it, you will have two view functions available - very similar to our previo
 
 For example, using [Remix](/builders/tools/remix/), we can easily query the `BTC/USD` price pair using this interface.
 
-After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the contract address (`0xf15c870344c1c02f5939a5C4926b7cDb90dEc655`) and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so you are connected to pangolin Alpha. 
+After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the contract address (`0x0000000000000000000000000000000000000000`) and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so you are connected to Pangolin.
 
 ![Band Protocol Remix deploy](/images/band/band-demo1.png)
 
@@ -180,7 +178,7 @@ This will create an instance of the demo contract that you can interact with. Us
 
 ![Band Protocol Remix check price](/images/band/band-demo2.png)
 
-## BandChain.js Javascript Helper Library {: #bandchainjs-javascript-helper-library } 
+## BandChain.js Javascript Helper Library
 
 The helper library also supports a similar `getReferenceData` function. To get started, the library needs to be installed:
 
@@ -217,7 +215,7 @@ Then, it returns an array object with the following structure:
 ```
 Where `lastUpdatedBase` and `lastUpdatedQuote` are the last time when the base and quote prices were updated respectively (since UNIX epoch).
 
-### Example Usage {: #example-usage } 
+### Example Usage
 
 The following Javascript script provides a simple example of the `getReferenceData` function.
 
