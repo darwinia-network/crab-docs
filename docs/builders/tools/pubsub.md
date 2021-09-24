@@ -1,7 +1,7 @@
 ---
 title: Events Subscription
 sidebar_position: 11
-description: Use Ethereum-like publish-subscribe functionality to subscribe to specific events on Pangolin's Ethereum-compatible chain.
+description: Use Ethereum-like publish-subscribe functionality to subscribe to specific events on Darwinia's Ethereum-compatible chain.
 ---
 
 # Subscribe to Events in Pangolin

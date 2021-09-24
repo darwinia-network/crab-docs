@@ -7,7 +7,7 @@ description: Follow this tutorial to learn how to use the Ethereum Web3 JavaScri
 
 ## Introduction
 
-[Web3.js](https://web3js.readthedocs.io/) is a set of libraries that allow developers to interact with Ethereum nodes using HTTP, IPC, or WebSocket protocols with JavaScript. Pangolin has an Ethereum-like API available that is fully compatible with Ethereum-style JSON RPC invocations. Therefore, developers can leverage this compatibility and use the web3.js library to interact with a Pangolin node as if they were doing so on Ethereum.
+[Web3.js](https://web3js.readthedocs.io/) is a set of libraries that allow developers to interact with Ethereum nodes using HTTP, IPC, or WebSocket protocols with JavaScript. Darwinia has an Ethereum-like API available that is fully compatible with Ethereum-style JSON RPC invocations. Therefore, developers can leverage this compatibility and use the web3.js library to interact with a Darwinia node as if they were doing so on Ethereum.
 
 ## Setup Web3.js with Pangolin
 
@@ -28,7 +28,7 @@ const web3 = new Web3('RPC_URL');
 
 Depending on which network you want to connect to, you can set the `RPC_URL` to the following values:
 
- - Pangolin development node: `http://localhost:9933/`
+ - Darwinia development node: `http://localhost:9933/`
  - Pangolin TestNet: `http://pangolin-rpc.darwinia.network`
  - Crab: `http://crab-rpc.darwinia.network`
 

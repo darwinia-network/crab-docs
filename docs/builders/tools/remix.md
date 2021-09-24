@@ -1,7 +1,7 @@
 ---
 title: Remix
 sidebar_position: 4
-description: Learn how to use one of the most popular Ethereum developer tools, the Remix IDE, to interact with Pangolin.
+description: Learn how to use one of the most popular Ethereum developer tools, the Remix IDE, to interact with Darwinia.
 ---
 
 # Remix

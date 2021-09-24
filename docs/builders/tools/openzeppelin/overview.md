@@ -18,7 +18,7 @@ As part of its Ethereum compatibility features, OpenZeppelin products can be sea
 
 Currently, the following OpenZeppelin products/solutions work on the different networks available on Pangolin:
 
-|      **Product**      |     |**Pangolin Dev Node**|     |**Pangolin TestNet**|
+|      **Product**      |     |**Darwinia Dev Node**|     |**Pangolin TestNet**|
 | :-------------------: | :-: | :-----------------: | :-: | :--------------: |
 | Contracts & Libraries |     |          ✓          |     |         ✓       |
 |    Contract Wizard    |     |          ✓          |     |         ✓       |

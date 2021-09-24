@@ -7,7 +7,7 @@ description: Follow this tutorial to learn how to use the Ethereum EtherJS Libra
 
 ## Introduction
 
-The [ethers.js](https://docs.ethers.io/) library provides a set of tools to interact with Ethereum Nodes with JavaScript, similar to web3.js. Pangolin has an Ethereum-like API available that is fully compatible with Ethereum-style JSON RPC invocations. Therefore, developers can leverage this compatibility and use the ethers.js library to interact with a Pangolin node as if they were doing so on Ethereum. You can read more about ethers.js on this [blog post](https://medium.com/l4-media/announcing-ethers-js-a-web3-alternative-6f134fdd06f3).
+The [ethers.js](https://docs.ethers.io/) library provides a set of tools to interact with Ethereum Nodes with JavaScript, similar to web3.js. Darwinia has an Ethereum-like API available that is fully compatible with Ethereum-style JSON RPC invocations. Therefore, developers can leverage this compatibility and use the ethers.js library to interact with a Darwinia node as if they were doing so on Ethereum. You can read more about ethers.js on this [blog post](https://medium.com/l4-media/announcing-ethers-js-a-web3-alternative-6f134fdd06f3).
 
 ## Setup Ethers.js with Pangolin
 
@@ -41,13 +41,13 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-  defaultValue="Pangolin Development Node"
+  defaultValue="Darwinia Development Node"
   values={[
-    {label: 'Pangolin Development Node', value: 'Pangolin Development Node'},
+    {label: 'Darwinia Development Node', value: 'Darwinia Development Node'},
     {label: 'Pangolin', value: 'Pangolin'},
     {label: 'Crab', value: 'Crab'},
   ]}>
-  <TabItem value="Pangolin Development Node">
+  <TabItem value="Darwinia Development Node">
 
 ```
 - RPC_URL: http://localhost:9933/

@@ -11,7 +11,7 @@ Block explorers can be thought of as search engines for the blockchain. They all
 
 ### PolkadotJS (Dev Node - TestNet)
 
-Polkadot JS Apps uses the WebSocket endpoint to interact with the Network. To connect it to a Pangolin development node, you can follow the steps in [this tutorial](/builders/get-started/darwinia-dev/#connecting-to-darwinia-apps). The default port for this is `9944`.
+Polkadot JS Apps uses the WebSocket endpoint to interact with the Network. To connect it to a Darwinia development node, you can follow the steps in [this tutorial](/builders/get-started/darwinia-dev/#connecting-to-darwinia-apps). The default port for this is `9944`.
 
 ![Polkadot JS Local Node](/images/explorers/explorers-images-3.png)
 

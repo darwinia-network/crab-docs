@@ -1,14 +1,14 @@
 ---
 title: Hardhat
 sidebar_position: 5
-description: Learn how to configure Hardhat to add a local Pangolin development node and the Pangolin TestNet as networks for testing and deploying Solidity smart contracts.
+description: Learn how to configure Hardhat to add a local Darwinia development node and the Pangolin TestNet as networks for testing and deploying Solidity smart contracts.
 ---
 
 # Hardhat
 
 ## Introduction
 
-[Hardhat](https://hardhat.org/) is a popular development framework for compiling, testing, and deploying Solidity smart contracts. Since Pangolin is Ethereum compatible, with a few lines of extra configuration, you can use Hardhat as you normally would to develop on Pangolin.
+[Hardhat](https://hardhat.org/) is a popular development framework for compiling, testing, and deploying Solidity smart contracts. Since Darwinia is Ethereum compatible, with a few lines of extra configuration, you can use Hardhat as you normally would to develop on Pangolin.
 
 ## Configure Hardhat to Connect to Pangolin
 
@@ -30,10 +30,10 @@ Then to create a Hardhat config file in your project, run:
 npx hardhat
 ```
 
-In your `hardhat.config.js` file, add network configurations for a Pangolin development node and the Pangolin TestNet:
+In your `hardhat.config.js` file, add network configurations for a Darwinia development node and the Pangolin TestNet:
 
 ```javascript
-// Pangolin Development Node Private Key
+// Darwinia Development Node Private Key
 const privateKeyDev = 'YOUR-PRIVATE-KEY-HERE';
 // Pangolin Private Key
 const privateKeyPangolin = "YOUR-PRIVATE-KEY-HERE";
@@ -42,7 +42,7 @@ const privateKeyCrab = "YOUR-PRIVATE-KEY-HERE";
 
 module.exports = {
    networks: {
-      // Pangolin Development Node
+      // Darwinia Development Node
       dev: {
         url: 'http://localhost:9933/',
         chainId: 43,

@@ -1,22 +1,22 @@
 ---
 title: Using Truffle
 sidebar_position: 4
-description: Pangolin makes it incredibly easy to deploy a Solidity-based smart contract to a Pangolin node using Truffle. Learn how in this tutorial.
+description: Darwinia makes it incredibly easy to deploy a Solidity-based smart contract to a Darwinia node using Truffle. Learn how in this tutorial.
 ---
 
-# Using Truffle to Deploy to Pangolin
+# Using Truffle to Deploy to Darwinia
 
 ## Introduction
 
-This guide walks through the process of deploying a Solidity-based smart contract to a Pangolin node using [Truffle](https://www.trufflesuite.com/), a commonly used development tool for smart contracts on Ethereum. Given Pangolin’s Ethereum compatibility features, Truffle can be used directly with a Pangolin node.
+This guide walks through the process of deploying a Solidity-based smart contract to a Darwinia node using [Truffle](https://www.trufflesuite.com/), a commonly used development tool for smart contracts on Ethereum. Given Darwinia’s Ethereum compatibility features, Truffle can be used directly with a Darwinia node.
 
 :::note
-This tutorial was created using the v2.6.4 tag which is based on the v2.6.4 release of [Pangolin](https://github.com/darwinia-network/darwinia-common/releases/tag/v2.6.4). The Pangolin platform and the [Frontier](https://github.com/paritytech/frontier) components it relies on for Substrate-based Ethereum compatibility are still under very active development.
+This tutorial was created using the v2.6.4 tag which is based on the v2.6.4 release of [Darwinia-Common](https://github.com/darwinia-network/darwinia-common/releases/tag/v2.6.4). The Darwinia platform and the [Frontier](https://github.com/paritytech/frontier) components it relies on for Substrate-based Ethereum compatibility are still under very active development.
 
 The examples in this guide assumes you have a MacOS or Ubuntu 18.04-based environment and will need to be adapted accordingly for Windows.
 :::
 
-For this guide, you will need to have a Pangolin development node running in `--dev` mode. This can be done by either following the steps detailed [here](/builders/get-started/darwinia-dev/).
+For this guide, you will need to have a Darwinia development node running in `--dev` mode. This can be done by either following the steps detailed [here](/builders/get-started/darwinia-dev/).
 
 ## Checking Prerequisites
 
@@ -28,14 +28,14 @@ As of writing of this guide, the versions used were 16.0.0 and 7.10.0, respectiv
 
 Also, you will need the following:
 
- - Have MetaMask installed and [connected to Pangolin](/dvm-metamask.md)
+ - Have MetaMask installed and [connected to Darwinia](/dvm-metamask.md)
  - Have an account with funds, which you can get from [Mission Control](/builders/get-started/darwinia-pangolin/#get-tokens/)
 
 Once all requirements have been met, you are ready to build with truffle.
 
 ## Starting a Truffle Project
 
-To get started with the Pangolin Truffle box, if you have Truffle installed globally, you can execute:
+To get started with the Truffle box, if you have Truffle installed globally, you can execute:
 
 ```
 mkdir metacoin-box && cd metacoin-box
@@ -68,7 +68,7 @@ Navigate inside the directory to take a look at the `truffle-config.js` file (fo
 
 ```js
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-// Pangolin Development Node Private Key
+// Darwinia Development Node Private Key
 const privateKeyDev ='YOUR-PRIVATE-KEY-HERE';
 //...
 module.exports = {
@@ -98,13 +98,13 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-  defaultValue="Pangolin Development Node"
+  defaultValue="Darwinia Development Node"
   values={[
-    {label: 'Pangolin Development Node', value: 'Pangolin Development Node'},
+    {label: 'Darwinia Development Node', value: 'Darwinia Development Node'},
     {label: 'Pangolin', value: 'Pangolin'},
     {label: 'Crab', value: 'Crab'},
   ]}>
-  <TabItem value="Pangolin Development Node">
+  <TabItem value="Darwinia Development Node">
 
 ```
 dev: {
@@ -200,7 +200,7 @@ module.exports = function(deployer) {
 };
 ```
 
-## Deploying a Contract to Pangolin Using Truffle
+## Deploying a Contract to Darwinia Using Truffle
 
 Before we can deploy our contracts, we must compile them. (We say "contracts" because normal Truffle deployments include the `Migrations.sol` contract.) You can do this with the following command:
 
@@ -215,13 +215,13 @@ If successful, you should see output like the following:
 Now we are ready to deploy the compiled contracts. You can do this with the following command:
 
 <Tabs
-  defaultValue="Pangolin Development Node"
+  defaultValue="Darwinia Development Node"
   values={[
-    {label: 'Pangolin Development Node', value: 'Pangolin Development Node'},
+    {label: 'Darwinia Development Node', value: 'Darwinia Development Node'},
     {label: 'Pangolin', value: 'Pangolin'},
     {label: 'Crab', value: 'Crab'},
   ]}>
-  <TabItem value="Pangolin Development Node">
+  <TabItem value="Darwinia Development Node">
 
 ```
 truffle migrate --network dev

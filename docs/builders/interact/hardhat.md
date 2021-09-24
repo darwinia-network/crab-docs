@@ -124,13 +124,13 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-  defaultValue="Pangolin Development Node"
+  defaultValue="Darwinia Development Node"
   values={[
-    {label: 'Pangolin Development Node', value: 'Pangolin Development Node'},
+    {label: 'Darwinia Development Node', value: 'Darwinia Development Node'},
     {label: 'Pangolin', value: 'Pangolin'},
     {label: 'Crab', value: 'Crab'},
   ]}>
-  <TabItem value="Pangolin Development Node">
+  <TabItem value="Darwinia Development Node">
 
 ```
 dev: {
@@ -254,7 +254,7 @@ Using the `run` command, we can now deploy the `Box` contract to `Pangolin`:
 ```
 
 :::note
-To deploy to a Pangolin development node, replace `pangolin` for `dev` in the `run` command.
+To deploy to a Darwinia development node, replace `pangolin` for `dev` in the `run` command.
 :::
 
 After a few seconds, the contract is deployed, and you should see the address in the terminal.
@@ -272,7 +272,7 @@ npx hardhat console --network pangolin
 ```
 
 :::note
-To deploy to a Pangolin development node, replace `pangolin` for `dev` in the `console` command.
+To deploy to a Darwinia development node, replace `pangolin` for `dev` in the `console` command.
 :::
 
 Then, add the following lines of code one line at a time. First, we create a local instance of the `Box.sol`contract once again. Don't worry about the `undefined` output you will get after each line is executed:

@@ -8,7 +8,7 @@ description: Learn how to use Waffle and Mars to write, compile, test, and deplo
 
 ## Introduction
 
-[Waffle](https://getwaffle.io/) is a library for compiling and testing smart contracts, and [Mars](https://github.com/EthWorks/Mars) is a deployment manager. Together, Waffle and Mars can be used to write, compile, test, and deploy Ethereum smart contracts. Since Pangolin is Ethereum compatible, Waffle and Mars can be used to deploy smart contracts to a Pangolin development node or the Pangolin.
+[Waffle](https://getwaffle.io/) is a library for compiling and testing smart contracts, and [Mars](https://github.com/EthWorks/Mars) is a deployment manager. Together, Waffle and Mars can be used to write, compile, test, and deploy Ethereum smart contracts. Since Darwinia is Ethereum compatible, Waffle and Mars can be used to deploy smart contracts to a Darwinia development node or the Pangolin.
 
 Waffle uses minimal dependencies, has syntax that is easy to learn and extend, and provides fast execution times when compiling and testing smart contracts. Furthermore, it is [TypeScript](https://www.typescriptlang.org/) compatible and uses [Chai matchers](https://ethereum-waffle.readthedocs.io/en/latest/matchers.html) to make tests easy to read and write.
 
@@ -24,7 +24,7 @@ import InstallNodeJs from '/snippets/text/common/install-nodejs.md';
 
 As of writing of this guide, the versions used were 16.0.0 and 7.10.0, respectively.
 
-Waffle and Mars can be used with a locally running Pangolin development node, but for the purposes of this guide, you will be deploying to Pangolin. Therefore, you will need a funded account for development.
+Waffle and Mars can be used with a locally running Darwinia development node, but for the purposes of this guide, you will be deploying to Pangolin. Therefore, you will need a funded account for development.
 
 import DevAccount from '/snippets/text/metamask-local/dev-account.md';
 
