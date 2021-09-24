@@ -102,22 +102,171 @@ The second section ("Create and Deploy Transaction") outlines the functions need
   ]}>
   <TabItem value="Web3.js">
 
-```
-snippets/code/web3-tx-local/transaction.js
+```js
+const Web3 = require('web3');
+
+/*
+   -- Define Provider & Variables --
+*/
+// Provider
+const providerRPC = {
+   development: 'http://localhost:9933',
+   pangolin: 'http://pangolin-rpc.darwinia.network',
+   crab: 'http://crab-rpc.darwinia.network',
+};
+const web3 = new Web3(providerRPC.development); //Change to correct network
+
+const account_from = {
+   privateKey: 'YOUR-PRIVATE-KEY-HERE',
+   address: 'PUBLIC-ADDRESS-OF-PK-HERE',
+};
+const addressTo = 'ADDRESS-TO-HERE'; // Change addressTo
+
+/*
+   -- Create and Deploy Transaction --
+*/
+const deploy = async () => {
+   console.log(
+      `Attempting to send transaction from ${account_from.address} to ${addressTo}`
+   );
+
+   // Sign Tx with PK
+   const createTransaction = await web3.eth.accounts.signTransaction(
+      {
+         gas: 21000,
+         to: addressTo,
+         value: web3.utils.toWei('1', 'ether'),
+      },
+      account_from.privateKey
+   );
+
+   // Send Tx and Wait for Receipt
+   const createReceipt = await web3.eth.sendSignedTransaction(
+      createTransaction.rawTransaction
+   );
+   console.log(
+      `Transaction successful with hash: ${createReceipt.transactionHash}`
+   );
+};
+
+deploy();
 ```
 
   </TabItem>
   <TabItem value="Ethers.js">
 
-```
-snippets/code/ethers-tx-local/transaction.js
+```js
+const ethers = require('ethers');
+
+/*
+   -- Define Provider & Variables --
+*/
+// Provider
+const providerRPC = {
+   development: {
+      name: 'development',
+      rpc: 'http://localhost:9933',
+      chainId: 42,
+   },
+   pangolin: {
+      name: 'pangolin',
+      rpc: 'http://pangolin-rpc.darwinia.network',
+      chainId: 43,
+   },
+   crab: {
+      name: 'crab',
+      rpc: 'http://crab-rpc.darwinia.network',
+      chainId: 44,
+   },
+};
+const provider = new ethers.providers.StaticJsonRpcProvider(
+   providerRPC.development.rpc,
+   {
+      chainId: providerRPC.development.chainId,
+      name: providerRPC.development.name,
+   }
+); //Change to correct network
+
+// Variables
+const account_from = {
+   privateKey: 'YOUR-PRIVATE-KEY-HERE',
+};
+const addressTo = 'ADDRESS-TO-HERE';
+
+// Create Wallet
+let wallet = new ethers.Wallet(account_from.privateKey, provider);
+
+/*
+   -- Create and Deploy Transaction --
+*/
+const send = async () => {
+   console.log(
+      `Attempting to send transaction from ${wallet.address} to ${addressTo}`
+   );
+
+   // Create Tx Object
+   const tx = {
+      to: addressTo,
+      value: ethers.utils.parseEther('1'),
+   };
+
+   // Sign and Send Tx - Wait for Receipt
+   const createReceipt = await wallet.sendTransaction(tx);
+   await createReceipt.wait();
+   console.log(`Transaction successful with hash: ${createReceipt.hash}`);
+};
+
+send();
 ```
 
   </TabItem>
   <TabItem value="Web3.py">
 
-```
-snippets/code/web3py-tx/transaction.py
+```python
+from web3 import Web3
+
+#
+# -- Define Provider & Variables --
+#
+# Provider
+provider_rpc = {
+    "development": "http://localhost:9933",
+    "pangolin": 'http://pangolin-rpc.darwinia.network',
+    "crab": 'http://crab-rpc.darwinia.network',
+}
+web3 = Web3(Web3.HTTPProvider(provider_rpc["development"]))  # Change to correct network
+
+# Variables
+account_from = {
+    "private_key": "YOUR-PRIVATE-KEY-HERE",
+    "address": "PUBLIC-ADDRESS-OF-PK-HERE",
+}
+address_to = "ADDRESS-TO-HERE"  # Change address_to
+
+#
+#  -- Create and Deploy Transaction --
+#
+print(
+    f'Attempting to send transaction from { account_from["address"] } to { address_to }'
+)
+
+# Sign Tx with PK
+tx_create = web3.eth.account.signTransaction(
+    {
+        "nonce": web3.eth.getTransactionCount(account_from["address"]),
+        "gasPrice": 0,
+        "gas": 21000,
+        "to": address_to,
+        "value": web3.toWei("1", "ether"),
+    },
+    account_from["private_key"],
+)
+
+# Send Tx and Wait for Receipt
+tx_hash = web3.eth.sendRawTransaction(tx_create.rawTransaction)
+tx_receipt = web3.eth.waitForTransactionReceipt(tx_hash)
+
+print(f"Transaction successful with hash: { tx_receipt.transactionHash.hex() }")
 ```
 
   </TabItem>
@@ -186,23 +335,132 @@ The second section ("Balance Call Function") outlines the functions needed to fe
   ]}>
   <TabItem value="Web3.js">
 
-```
-snippets/code/web3-tx-local/balances.js
+```js
+const Web3 = require('web3');
+
+/*
+   -- Define Provider & Variables --
+*/
+// Provider
+const providerRPC = {
+   development: 'http://localhost:9933',
+   pangolin: 'http://pangolin-rpc.darwinia.network',
+   crab: 'http://crab-rpc.darwinia.network',
+};
+const web3 = new Web3(providerRPC.development); //Change to correct network
+
+// Variables
+const addressFrom = 'ADDRESS-FROM-HERE';
+const addressTo = 'ADDRESS-TO-HERE';
+
+/*
+   -- Balance Call Function --
+*/
+const balances = async () => {
+   const balanceFrom = web3.utils.fromWei(
+      await web3.eth.getBalance(addressFrom),
+      'ether'
+   );
+   const balanceTo = web3.utils.fromWei(
+      await web3.eth.getBalance(addressTo),
+      'ether'
+   );
+
+   console.log(`The balance of ${addressFrom} is: ${balanceFrom} ETH`);
+   console.log(`The balance of ${addressTo} is: ${balanceTo} ETH`);
+};
+
+balances();
 ```
 
   </TabItem>
   <TabItem value="Ethers.js">
 
-  ```
-snippets/code/ethers-tx-local/balances.js
-  ```
+```js
+const ethers = require('ethers');
+
+/*
+   -- Define Provider & Variables --
+*/
+// Provider
+const providerRPC = {
+   development: {
+      name: 'development',
+      rpc: 'http://localhost:9933',
+      chainId: 42,
+   },
+   pangolin: {
+      name: 'pangolin',
+      rpc: 'http://pangolin-rpc.darwinia.network',
+      chainId: 43,
+   },
+   crab: {
+      name: 'crab',
+      rpc: 'http://crab-rpc.darwinia.network',
+      chainId: 44,
+   },
+};
+const provider = new ethers.providers.StaticJsonRpcProvider(
+   providerRPC.development.rpc,
+   {
+      chainId: providerRPC.development.chainId,
+      name: providerRPC.development.name,
+   }
+); //Change to correct network
+
+// Variables
+const addressFrom = 'ADDRESS-FROM-HERE';
+const addressTo = 'ADDRESS-TO-HERE';
+
+/*
+   -- Balance Call Function --
+*/
+const balances = async () => {
+   const balanceFrom = ethers.utils.formatEther(
+      await provider.getBalance(addressFrom)
+   );
+
+   const balanceTo = ethers.utils.formatEther(
+      await provider.getBalance(addressTo)
+   );
+
+   console.log(`The balance of ${addressFrom} is: ${balanceFrom} ETH`);
+   console.log(`The balance of ${addressTo} is: ${balanceTo} ETH`);
+};
+
+balances();
+```
 
   </TabItem>
   <TabItem value="Web3.py">
 
-  ```
-snippets/code/web3py-tx/balances.py
-  ```
+```python
+from web3 import Web3
+
+#
+# -- Define Provider & Variables --
+#
+# Provider
+provider_rpc = {
+    "development": "http://localhost:9933",
+    "pangolin": 'http://pangolin-rpc.darwinia.network',
+    "crab": 'http://crab-rpc.darwinia.network',
+}
+web3 = Web3(Web3.HTTPProvider(provider_rpc["development"]))  # Change to correct network
+
+# Variables
+address_from = "ADDRESS-FROM-HERE"
+address_to = "ADDRESS-TO-HERE"
+
+#
+#  -- Balance Call Function --
+#
+balance_from = web3.fromWei(web3.eth.getBalance(address_from), "ether")
+balance_to = web3.fromWei(web3.eth.getBalance(address_to), "ether")
+
+print(f"The balance of { address_from } is: { balance_from } ETH")
+print(f"The balance of { address_to } is: { balance_to } ETH")
+```
 
   </TabItem>
 </Tabs>

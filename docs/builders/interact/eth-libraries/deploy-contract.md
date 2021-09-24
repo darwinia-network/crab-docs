@@ -151,22 +151,84 @@ The compile file for both JavaScript libraries is the same as they share the Jav
   ]}>
   <TabItem value="Web3.js">
 
-```
-code/web3-contract-local/compile.js
+```js
+const fs = require('fs');
+const solc = require('solc');
+
+// Get Path and Load Contract
+const source = fs.readFileSync('Incrementer.sol', 'utf8');
+
+// Compile Contract
+const input = {
+   language: 'Solidity',
+   sources: {
+      'Incrementer.sol': {
+         content: source,
+      },
+   },
+   settings: {
+      outputSelection: {
+         '*': {
+            '*': ['*'],
+         },
+      },
+   },
+};
+const tempFile = JSON.parse(solc.compile(JSON.stringify(input)));
+const contractFile = tempFile.contracts['Incrementer.sol']['Incrementer'];
+
+// Export Contract Data
+module.exports = contractFile;
 ```
 
   </TabItem>
   <TabItem value="Ethers.js">
 
-```
-code/web3-contract-local/compile.js
+```js
+const fs = require('fs');
+const solc = require('solc');
+
+// Get Path and Load Contract
+const source = fs.readFileSync('Incrementer.sol', 'utf8');
+
+// Compile Contract
+const input = {
+   language: 'Solidity',
+   sources: {
+      'Incrementer.sol': {
+         content: source,
+      },
+   },
+   settings: {
+      outputSelection: {
+         '*': {
+            '*': ['*'],
+         },
+      },
+   },
+};
+const tempFile = JSON.parse(solc.compile(JSON.stringify(input)));
+const contractFile = tempFile.contracts['Incrementer.sol']['Incrementer'];
+
+// Export Contract Data
+module.exports = contractFile;
 ```
 
   </TabItem>
   <TabItem value="Web3.py">
 
-```
-code/web3py-contract/compile.py
+```python
+import solcx
+
+# If you haven't already installed the Solidity compiler, uncomment the following line
+# solcx.install_solc()
+
+# Compile contract
+temp_file = solcx.compile_files('Incrementer.sol')
+
+# Export contract data
+abi = temp_file['Incrementer.sol:Incrementer']['abi']
+bytecode = temp_file['Incrementer.sol:Incrementer']['bin']
 ```
 
   </TabItem>
@@ -211,22 +273,178 @@ The second section ("Deploy Contract") outlines the actual contract deployment p
   ]}>
   <TabItem value="Web3.js">
 
-```
-'code/web3-contract-local/deploy.js'
+```js
+const Web3 = require('web3');
+const contractFile = require('./compile');
+
+/*
+   -- Define Provider & Variables --
+*/
+// Provider
+const providerRPC = {
+   development: 'http://localhost:9933',
+   pangolin: 'http://pangolin-rpc.darwinia.network',
+   crab: 'http://crab-rpc.darwinia.network',
+};
+const web3 = new Web3(providerRPC.development); //Change to correct network
+
+// Variables
+const account_from = {
+   privateKey: 'YOUR-PRIVATE-KEY-HERE',
+   address: 'PUBLIC-ADDRESS-OF-PK-HERE',
+};
+const bytecode = contractFile.evm.bytecode.object;
+const abi = contractFile.abi;
+
+/*
+   -- Deploy Contract --
+*/
+const deploy = async () => {
+   console.log(`Attempting to deploy from account ${account_from.address}`);
+
+   // Create Contract Instance
+   const incrementer = new web3.eth.Contract(abi);
+
+   // Create Constructor Tx
+   const incrementerTx = incrementer.deploy({
+      data: bytecode,
+      arguments: [5],
+   });
+
+   // Sign Transacation and Send
+   const createTransaction = await web3.eth.accounts.signTransaction(
+      {
+         data: incrementerTx.encodeABI(),
+         gas: await incrementerTx.estimateGas(),
+      },
+      account_from.privateKey
+   );
+
+   // Send Tx and Wait for Receipt
+   const createReceipt = await web3.eth.sendSignedTransaction(
+      createTransaction.rawTransaction
+   );
+   console.log(
+      `Contract deployed at address: ${createReceipt.contractAddress}`
+   );
+};
+
+deploy();
 ```
 
   </TabItem>
   <TabItem value="Ethers.js">
 
-```
-'code/ethers-contract-local/deploy.js'
+```js
+const ethers = require('ethers');
+const contractFile = require('./compile');
+
+/*
+   -- Define Provider & Variables --
+*/
+// Provider
+const providerRPC = {
+   development: {
+      name: 'development',
+      rpc: 'http://localhost:9933',
+      chainId: 43,
+   },
+   pangolin: {
+      name: 'pangolin',
+      rpc: 'http://pangolin-rpc.darwinia.network',
+      chainId: 43,
+   },
+   crab: {
+      name: 'crab',
+      rpc: 'http://crab-rpc.darwinia.network',
+      chainId: 44,
+   },
+};
+const provider = new ethers.providers.StaticJsonRpcProvider(
+   providerRPC.development.rpc,
+   {
+      chainId: providerRPC.development.chainId,
+      name: providerRPC.development.name,
+   }
+); //Change to correct network
+
+// Variables
+const account_from = {
+   privateKey: 'YOUR-PRIVATE-KEY-HERE',
+};
+const bytecode = contractFile.evm.bytecode.object;
+const abi = contractFile.abi;
+
+// Create Wallet
+let wallet = new ethers.Wallet(account_from.privateKey, provider);
+
+/*
+   -- Deploy Contract --
+*/
+// Create Contract Instance with Signer
+const incrementer = new ethers.ContractFactory(abi, bytecode, wallet);
+
+const deploy = async () => {
+   console.log(`Attempting to deploy from account: ${wallet.address}`);
+
+   // Send Tx (Initial Value set to 5) and Wait for Receipt
+   const contract = await incrementer.deploy([5]);
+   await contract.deployed();
+
+   console.log(`Contract deployed at address: ${contract.address}`);
+};
+
+deploy();
 ```
 
   </TabItem>
   <TabItem value="Web3.py">
 
-```
-'code/web3py-contract/deploy.py'
+```python
+from compile import abi, bytecode
+from web3 import Web3
+
+#
+# -- Define Provider & Variables --
+#
+# Provider
+provider_rpc = {
+    'development': 'http://localhost:9933',
+    "pangolin": 'http://pangolin-rpc.darwinia.network',
+    "crab": 'http://crab-rpc.darwinia.network',
+}
+web3 = Web3(Web3.HTTPProvider(provider_rpc['development']))  # Change to correct network
+
+# Variables
+account_from = {
+    'private_key': 'YOUR-PRIVATE-KEY-HERE',
+    'address': 'PUBLIC-ADDRESS-OF-PK-HERE',
+}
+
+#
+#  -- Deploy Contract --
+#
+print(f'Attempting to deploy from account: { account_from["address"] }')
+
+# Create Contract Instance
+Incrementer = web3.eth.contract(abi=abi, bytecode=bytecode)
+
+# Build Constructor Tx
+construct_txn = Incrementer.constructor(5).buildTransaction(
+    {
+        'from': account_from['address'],
+        'nonce': web3.eth.getTransactionCount(account_from['address']),
+    }
+)
+
+# Sign Tx with PK
+tx_create = web3.eth.account.signTransaction(construct_txn, account_from['private_key'])
+
+# Send Tx and Wait for Receipt
+tx_hash = web3.eth.sendRawTransaction(tx_create.rawTransaction)
+tx_receipt = web3.eth.waitForTransactionReceipt(tx_hash)
+
+print(f'Contract deployed at address: { tx_receipt.contractAddress }')
 ```
 
   </TabItem>
@@ -293,22 +511,132 @@ The second section ("Call Function") outlines the actual call to the contract. R
   ]}>
   <TabItem value="Web3.js">
 
-```
-'code/web3-contract-local/get.js'
+```js
+const Web3 = require('web3');
+const { abi } = require('./compile');
+
+/*
+   -- Define Provider & Variables --
+*/
+// Provider
+const providerRPC = {
+   development: 'http://localhost:9933',
+   pangolin: 'http://pangolin-rpc.darwinia.network',
+   crab: 'http://crab-rpc.darwinia.network',
+};
+const web3 = new Web3(providerRPC.development); //Change to correct network
+
+// Variables
+const contractAddress = 'CONTRACT-ADDRESS-HERE';
+
+/*
+   -- Call Function --
+*/
+// Create Contract Instance
+const incrementer = new web3.eth.Contract(abi, contractAddress);
+
+const get = async () => {
+   console.log(`Making a call to contract at address: ${contractAddress}`);
+
+   // Call Contract
+   const data = await incrementer.methods.number().call();
+
+   console.log(`The current number stored is: ${data}`);
+};
+
+get();
 ```
 
   </TabItem>
   <TabItem value="Ethers.js">
 
-```
-'code/ethers-contract-local/get.js'
+```js
+const ethers = require('ethers');
+const { abi } = require('./compile');
+
+/*
+   -- Define Provider & Variables --
+*/
+// Provider
+const providerRPC = {
+   development: {
+      name: 'development',
+      rpc: 'http://localhost:9933',
+      chainId: 43,
+   },
+   pangolin: {
+      name: 'pangolin',
+      rpc: 'http://pangolin-rpc.darwinia.network',
+      chainId: 43,
+   },
+   crab: {
+      name: 'crab',
+      rpc: 'http://crab-rpc.darwinia.network',
+      chainId: 44,
+   },
+};
+const provider = new ethers.providers.StaticJsonRpcProvider(
+   providerRPC.development.rpc,
+   {
+      chainId: providerRPC.development.chainId,
+      name: providerRPC.development.name,
+   }
+); //Change to correct network
+
+// Variables
+const contractAddress = 'CONTRACT-ADDRESS-HERE';
+
+/*
+   -- Call Function --
+*/
+// Create Contract Instance
+const incrementer = new ethers.Contract(contractAddress, abi, provider);
+
+const get = async () => {
+   console.log(`Making a call to contract at address: ${contractAddress}`);
+
+   // Call Contract
+   const data = await incrementer.number();
+
+   console.log(`The current number stored is: ${data}`);
+};
+
+get();
 ```
 
   </TabItem>
   <TabItem value="Web3.py">
 
-```
-'code/web3py-contract/get.py'
+```python
+from compile import abi, bytecode
+from web3 import Web3
+
+#
+# -- Define Provider & Variables --
+#
+# Provider
+provider_rpc = {
+    'development': 'http://localhost:9933',
+    "pangolin": 'http://pangolin-rpc.darwinia.network',
+    "crab": 'http://crab-rpc.darwinia.network',
+}
+web3 = Web3(Web3.HTTPProvider(provider_rpc["development"]))  # Change to correct network
+
+# Variables
+contract_address = 'CONTRACT-ADDRESS-HERE'
+
+#
+#  -- Call Function --
+#
+print(f'Making a call to contract at address: { contract_address }')
+
+# Create Contract Instance
+Incrementer = web3.eth.contract(address=contract_address, abi=abi)
+
+# Call Contract
+number = Incrementer.functions.number().call()
+
+print(f'The current number stored is: { number } ')
 ```
 
   </TabItem>
@@ -367,22 +695,180 @@ The second section ("Send Function") outlines the actual function to be called w
   ]}>
   <TabItem value="Web3.js">
 
-```
-'code/web3-contract-local/increment.js'
+```js
+const Web3 = require('web3');
+const { abi } = require('./compile');
+
+/*
+   -- Define Provider & Variables --
+*/
+// Provider
+const providerRPC = {
+   development: 'http://localhost:9933',
+   pangolin: 'http://pangolin-rpc.darwinia.network',
+   crab: 'http://crab-rpc.darwinia.network',
+};
+const web3 = new Web3(providerRPC.development); //Change to correct network
+
+// Variables
+const account_from = {
+   privateKey: 'YOUR-PRIVATE-KEY-HERE',
+};
+const contractAddress = 'CONTRACT-ADDRESS-HERE';
+const _value = 3;
+
+/*
+   -- Send Function --
+*/
+// Create Contract Instance
+const incrementer = new web3.eth.Contract(abi, contractAddress);
+
+// Build Increment Tx
+const incrementTx = incrementer.methods.increment(_value);
+
+const increment = async () => {
+   console.log(
+      `Calling the increment by ${_value} function in contract at address: ${contractAddress}`
+   );
+
+   // Sign Tx with PK
+   const createTransaction = await web3.eth.accounts.signTransaction(
+      {
+         to: contractAddress,
+         data: incrementTx.encodeABI(),
+         gas: await incrementTx.estimateGas(),
+      },
+      account_from.privateKey
+   );
+
+   // Send Tx and Wait for Receipt
+   const createReceipt = await web3.eth.sendSignedTransaction(
+      createTransaction.rawTransaction
+   );
+   console.log(`Tx successful with hash: ${createReceipt.transactionHash}`);
+};
+
+increment();
 ```
 
   </TabItem>
   <TabItem value="Ethers.js">
 
-```
-'code/ethers-contract-local/increment.js'
+```js
+const ethers = require('ethers');
+const { abi } = require('./compile');
+
+/*
+   -- Define Provider & Variables --
+*/
+// Provider
+const providerRPC = {
+   development: {
+      name: 'development',
+      rpc: 'http://localhost:9933',
+      chainId: 43,
+   },
+   pangolin: {
+      name: 'pangolin',
+      rpc: 'http://pangolin-rpc.darwinia.network',
+      chainId: 43,
+   },
+   crab: {
+      name: 'crab',
+      rpc: 'http://crab-rpc.darwinia.network',
+      chainId: 44,
+   },
+};
+const provider = new ethers.providers.StaticJsonRpcProvider(
+   providerRPC.development.rpc,
+   {
+      chainId: providerRPC.development.chainId,
+      name: providerRPC.development.name,
+   }
+); //Change to correct network
+
+// Variables
+const account_from = {
+   privateKey: 'YOUR-PRIVATE-KEY-HERE',
+};
+const contractAddress = 'CONTRACT-ADDRESS-HERE';
+const _value = 3;
+
+// Create Wallet
+let wallet = new ethers.Wallet(account_from.privateKey, provider);
+
+/*
+   -- Send Function --
+*/
+// Create Contract Instance with Signer
+const incrementer = new ethers.Contract(contractAddress, abi, wallet);
+const increment = async () => {
+   console.log(
+      `Calling the increment by ${_value} function in contract at address: ${contractAddress}`
+   );
+
+   // Sign-Send Tx and Wait for Receipt
+   const createReceipt = await incrementer.increment([_value]);
+   await createReceipt.wait();
+
+   console.log(`Tx successful with hash: ${createReceipt.hash}`);
+};
+
+increment();
 ```
 
   </TabItem>
   <TabItem value="Web3.py">
 
-```
-'code/web3py-contract/increment.py'
+```python
+from compile import abi, bytecode
+from web3 import Web3
+
+#
+# -- Define Provider & Variables --
+#
+# Provider
+provider_rpc = {
+    'development': 'http://localhost:9933',
+    "pangolin": 'http://pangolin-rpc.darwinia.network',
+    "crab": 'http://crab-rpc.darwinia.network',
+}
+web3 = Web3(Web3.HTTPProvider(provider_rpc["development"]))  # Change to correct network
+
+# Variables
+account_from = {
+    'private_key': 'YOUR-PRIVATE-KEY-HERE',
+    'address': 'PUBLIC-ADDRESS-OF-PK-HERE',
+}
+contract_address = 'CONTRACT-ADDRESS-HERE'
+value = 3
+
+#
+#  -- Send Function --
+#
+print(
+    f'Calling the increment by { value } function in contract at address: { contract_address }'
+)
+
+# Create Contract Instance
+Incrementer = web3.eth.contract(address=contract_address, abi=abi)
+
+# Build Increment Tx
+increment_tx = Incrementer.functions.increment(value).buildTransaction(
+    {
+        'from': account_from['address'],
+        'nonce': web3.eth.getTransactionCount(account_from['address']),
+    }
+)
+
+# Sign Tx with PK
+tx_create = web3.eth.account.signTransaction(increment_tx, account_from['private_key'])
+
+# Send Tx and Wait for Receipt
+tx_hash = web3.eth.sendRawTransaction(tx_create.rawTransaction)
+tx_receipt = web3.eth.waitForTransactionReceipt(tx_hash)
+
+print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
 ```
 
   </TabItem>
@@ -405,22 +891,175 @@ Each file's structure is very similar to his _increment.\*_ counterpart for each
   ]}>
   <TabItem value="Web3.js">
 
-```
-'code/web3-contract-local/reset.js'
+```js
+const Web3 = require('web3');
+const { abi } = require('./compile');
+
+/*
+   -- Define Provider & Variables --
+*/
+// Provider
+const providerRPC = {
+   development: 'http://localhost:9933',
+   pangolin: 'http://pangolin-rpc.darwinia.network',
+   crab: 'http://crab-rpc.darwinia.network',
+};
+const web3 = new Web3(providerRPC.development); //Change to correct network
+
+// Variables
+const account_from = {
+   privateKey: 'YOUR-PRIVATE-KEY-HERE',
+};
+const contractAddress = 'CONTRACT-ADDRESS-HERE';
+
+/*
+   -- Send Function --
+*/
+// Create Contract Instance
+const incrementer = new web3.eth.Contract(abi, contractAddress);
+
+// Build Reset Tx
+const resetTx = incrementer.methods.reset();
+
+const reset = async () => {
+   console.log(
+      `Calling the reset function in contract at address: ${contractAddress}`
+   );
+
+   // Sign Tx with PK
+   const createTransaction = await web3.eth.accounts.signTransaction(
+      {
+         to: contractAddress,
+         data: resetTx.encodeABI(),
+         gas: await resetTx.estimateGas(),
+      },
+      account_from.privateKey
+   );
+
+   // Send Tx and Wait for Receipt
+   const createReceipt = await web3.eth.sendSignedTransaction(
+      createTransaction.rawTransaction
+   );
+   console.log(`Tx successful with hash: ${createReceipt.transactionHash}`);
+};
+
+reset();
 ```
 
   </TabItem>
   <TabItem value="Ethers.js">
 
-```
-'code/ethers-contract-local/reset.js'
+```js
+const ethers = require('ethers');
+const { abi } = require('./compile');
+
+/*
+   -- Define Provider & Variables --
+*/
+// Provider
+const providerRPC = {
+   development: {
+      name: 'development',
+      rpc: 'http://localhost:9933',
+      chainId: 43,
+   },
+   pangolin: {
+      name: 'pangolin',
+      rpc: 'http://pangolin-rpc.darwinia.network',
+      chainId: 43,
+   },
+   crab: {
+      name: 'crab',
+      rpc: 'http://crab-rpc.darwinia.network',
+      chainId: 44,
+   },
+};
+const provider = new ethers.providers.StaticJsonRpcProvider(
+   providerRPC.development.rpc,
+   {
+      chainId: providerRPC.development.chainId,
+      name: providerRPC.development.name,
+   }
+); //Change to correct network
+
+// Variables
+const account_from = {
+   privateKey: 'YOUR-PRIVATE-KEY-HERE',
+};
+const contractAddress = 'CONTRACT-ADDRESS-HERE';
+
+// Create Wallet
+let wallet = new ethers.Wallet(account_from.privateKey, provider);
+
+/*
+   -- Send Function --
+*/
+// Create Contract Instance with Signer
+const incrementer = new ethers.Contract(contractAddress, abi, wallet);
+const reset = async () => {
+   console.log(
+      `Calling the reset function in contract at address: ${contractAddress}`
+   );
+
+   // Sign-Send Tx and Wait for Receipt
+   const createReceipt = await incrementer.reset();
+   await createReceipt.wait();
+
+   console.log(`Tx successful with hash: ${createReceipt.hash}`);
+};
+
+reset();
 ```
 
   </TabItem>
   <TabItem value="Web3.py">
 
-```
-'code/web3py-contract/reset.py'
+```python
+from compile import abi, bytecode
+from web3 import Web3
+
+#
+# -- Define Provider & Variables --
+#
+# Provider
+provider_rpc = {
+    'development': 'http://localhost:9933',
+    "pangolin": 'http://pangolin-rpc.darwinia.network',
+    "crab": 'http://crab-rpc.darwinia.network',
+}
+web3 = Web3(Web3.HTTPProvider(provider_rpc["development"]))  # Change to correct network
+
+# Variables
+account_from = {
+    'private_key': 'YOUR-PRIVATE-KEY-HERE',
+    'address': 'PUBLIC-ADDRESS-OF-PK-HERE',
+}
+contract_address = 'CONTRACT-ADDRESS-HERE'
+
+#
+#  -- Call Function --
+#
+print(f'Calling the reset function in contract at address: { contract_address }')
+
+# Create Contract Instance
+Incrementer = web3.eth.contract(address=contract_address, abi=abi)
+
+# Build Reset Tx
+reset_tx = Incrementer.functions.reset().buildTransaction(
+    {
+        'from': account_from['address'],
+        'nonce': web3.eth.getTransactionCount(account_from['address']),
+    }
+)
+
+# Sign Tx with PK
+tx_create = web3.eth.account.signTransaction(reset_tx, account_from['private_key'])
+
+# Send Tx and Wait for Receipt
+tx_hash = web3.eth.sendRawTransaction(tx_create.rawTransaction)
+tx_receipt = web3.eth.waitForTransactionReceipt(tx_hash)
+
+print(f'Tx successful with hash: { tx_receipt.transactionHash.hex() }')
 ```
 
   </TabItem>
@@ -438,7 +1077,7 @@ Afterwards, the transaction can be signed using the `web3.eth.accounts.signTrans
 
 Lastly, the signed transaction is sent, and the transaction hash is displayed in the terminal.
 
-### Ethers.js 
+### Ethers.js
 
 In the first part of the script ([increment](/snippets/code/ethers-contract-local/increment.js) or [reset](/snippets/code/ethers-contract-local/reset.js) files), different networks can be specified with a name, RPC URL (required), and chain ID. The provider (similar to the `web3` instance) is created with the `ethers.providers.StaticJsonRpcProvider` method. An alternative is to use the `ethers.providers.JsonRpcProvide(providerRPC)` method, which only requires the provider RPC endpoint address. But this might created compatibility issues with individual project specifications.
 
