@@ -1,5 +1,6 @@
 ---
 title: Connect to Crab
+sidebar_position: 3
 description: How to connect to crab network.
 ---
 
@@ -20,7 +21,7 @@ import TabItem from '@theme/TabItem';
     {label: 'WSS Entry', value: 'wss'},
     {label: 'HTTPS Entry', value: 'https'},
   ]}>
-  
+
   <TabItem value="https">
 
 ```
@@ -33,7 +34,7 @@ https://crab-rpc.darwinia.network
 ```
 wss://crab-rpc.darwinia.network
 ```
-    
+
    </TabItem>
 </Tabs>
 

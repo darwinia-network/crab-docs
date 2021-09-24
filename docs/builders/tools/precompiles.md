@@ -31,7 +31,7 @@ To verify the installed version of Web3, you can use the `ls` command:
 ```
 npm ls web3
 ```
-As of writing this guide, the version used was 1.3.0. We will be also using [Remix](/builders/tools/remix/), connecting it to the Pangolin TestNet via [MetaMask](/tokens/connect/metamask/).
+As of writing this guide, the version used was 1.3.0. We will be also using [Remix](/builders/tools/remix/), connecting it to the Pangolin TestNet via [MetaMask](/dvm-metamask.md).
 
 ## Verify Signatures with ECRECOVER {: #verify-signatures-with-ecrecover } 
 
@@ -95,7 +95,7 @@ contract ECRECOVER{
 }
 ```
 
-Using the [Remix compiler and deployment](/builders/interact/remix/) and with [MetaMask pointing to Pangolin](/tokens/connect/metamask/), we can deploy the contract and call the `verify()` method that returns _true_ if the address returned by `ecrecover` is equal to the address used to sign the message (related to the private key and needs to be manually set in the contract).
+Using the [Remix compiler and deployment](/builders/interact/remix/) and with [MetaMask pointing to Pangolin](/dvm-metamask.md), we can deploy the contract and call the `verify()` method that returns _true_ if the address returned by `ecrecover` is equal to the address used to sign the message (related to the private key and needs to be manually set in the contract).
 
 ## Hashing with SHA256 {: #hashing-with-sha256 } 
 

@@ -24,9 +24,13 @@ import InstallNodeJs from '/snippets/text/common/install-nodejs.md';
 
 As of writing of this guide, the versions used were 16.0.0 and 7.10.0, respectively.
 
-Waffle and Mars can be used with a locally running Pangolin development node, but for the purposes of this guide, you will be deploying to Pangolin. Therefore, you will need a funded account for development. You can choose to [create an account with MetaMask](/tokens/connect/metamask/#create-a-wallet) or [create an account with PolkadotJS Apps](/tokens/connect/polkadotjs/#creating-or-importing-an-h160-account).
+Waffle and Mars can be used with a locally running Pangolin development node, but for the purposes of this guide, you will be deploying to Pangolin. Therefore, you will need a funded account for development.
 
-Once you've created an account you'll need to export the private key to be used in this guide. Before moving on, ensure your account has funds and, if needed, get `DEV` tokens from the [faucet](/builders/get-started/pangolin/#get-tokens/).
+import DevAccount from '/snippets/text/metamask-local/dev-account.md';
+
+<DevAccount name="devAccount" />
+
+Once you've created an account you'll need to export the private key to be used in this guide. Before moving on, ensure your account has funds and, if needed, get `PRING` tokens from the [faucet](/builders/get-started/darwinia-pangolin/#get-tokens/).
 
 ## Create a TypeScript Project with Waffle & Mars
 
@@ -159,7 +163,7 @@ After compiling your contracts, Waffle stores the JSON output in the `build` dir
 
 Before deploying your contract and sending it off into the wild, you should test it first. Waffle provides an advanced testing framework and has plenty of tools to help you with testing.
 
-You'll be running tests against the Pangolin TestNet and will need the corresponding RPC URL to connect to it: `http://pangolin-rpc.darwinia.network`. Since you will be running tests against the TestNet, it might take a couple minutes to run all of the tests. If you want a more efficient testing experience, you can [spin up a Pangolin development node](/builders/get-started/pangolin-dev/) using [`instant seal`](/builders/get-started/pangolin-dev/#node-options). Running a local pangolin development node with the `instant seal` feature is similar to the quick and iterative experience you would get with [Ganache](https://www.trufflesuite.com/ganache).
+You'll be running tests against the Pangolin TestNet and will need the corresponding RPC URL to connect to it: `http://pangolin-rpc.darwinia.network`. Since you will be running tests against the TestNet, it might take a couple minutes to run all of the tests.
 
 1. Create a directory to contain your tests and a file to test your `MyToken` contract:
 ```

@@ -18,7 +18,7 @@ This tutorial was created using the v2.6.4 tag which is based on the v2.6.4 rele
 
 ## Checking Prerequisites
 
-This guide assumes that you have a local Pangolin node running in `--dev` mode and that you have a [MetaMask](https://metamask.io/) installation configured to use this local node. You can find instructions for running a local Pangolin node [here](/builders/get-started/pangolin-dev/) and instructions to connect MetaMask to it [here](/dvm-metamask.md).
+This guide assumes that you have a local Pangolin node running in `--dev` mode and that you have a [MetaMask](https://metamask.io/) installation configured to use this local node. You can find instructions for running a local Pangolin node [here](/builders/get-started/darwinia-dev/) and instructions to connect MetaMask to it [here](/dvm-metamask.md).
 
 If you followed the guides above, you should have a local Pangolin node which will begin to author blocks as transactions arrive:
 

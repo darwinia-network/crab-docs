@@ -155,7 +155,7 @@ After adding the Custom ERC20 contract to Remix and compiling it, the next steps
 2. Select Injected Web3 from the **Environment** dropdown
 3. Load the custom ERC-20 token contract address and click **At Address**
 4. Call the `mintTokens()` function and sign the transaction. 
-5. Once the transaction is confirmed, you should have received 5 ERC20S tokens. You can check your balance by adding the token to [MetaMask](/tokens/connect/metamask/).
+5. Once the transaction is confirmed, you should have received 5 ERC20S tokens. You can check your balance by adding the token to [MetaMask](/dvm-metamask.md).
 
 ![ChainBridge ERC20 mint Tokens](/images/chainbridge/chainbridge-image1.png)
 
@@ -202,7 +202,7 @@ Once the transaction is confirmed, the process can take around 3 minutes to comp
 
 ![ChainBridge ERC20 send Tokens](/images/chainbridge/chainbridge-image2.png)
 
-You can check your balance by adding the token to [MetaMask](/tokens/connect/metamask/) and connecting it to the target network - in our case Kovan.
+You can check your balance by adding the token to [MetaMask](/dvm-metamask.md) and connecting it to the target network - in our case Kovan.
 
 ![ChainBridge ERC20 balance](/images/chainbridge/chainbridge-image3.png)
 
@@ -281,7 +281,7 @@ After adding the contract to Remix and compiling it, next we'll want to mint an 
 2. Select Injected Web3 from the **Environment** dropdown
 3. Load the custom ERC721M token contract address and click **At Address**
 4. Call the `mintTokens()` function and sign the transaction. 
-5. Once the transaction is confirmed, you should have received an ERC721M token. You can check your balance by adding the token to [MetaMask](/tokens/connect/metamask/).
+5. Once the transaction is confirmed, you should have received an ERC721M token. You can check your balance by adding the token to [MetaMask](/dvm-metamask.md).
 
 ![ChainBridge ERC721 mint Tokens](/images/chainbridge/chainbridge-image4.png) 
 
@@ -328,7 +328,7 @@ Once the transaction is confirmed, the process can take around 3 minute to compl
 
 ![ChainBridge ERC721 send Token](/images/chainbridge/chainbridge-image5.png)
 
-You can check your balance by adding the token to [MetaMask](/tokens/connect/metamask/) and connecting it to the target network, in our case Kovan.
+You can check your balance by adding the token to [MetaMask](/dvm-metamask.md) and connecting it to the target network, in our case Kovan.
 
 ![ChainBridge ERC721 balance](/images/chainbridge/chainbridge-image6.png)
 

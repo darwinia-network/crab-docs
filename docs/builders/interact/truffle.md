@@ -16,7 +16,7 @@ This tutorial was created using the v2.6.4 tag which is based on the v2.6.4 rele
 The examples in this guide assumes you have a MacOS or Ubuntu 18.04-based environment and will need to be adapted accordingly for Windows.
 :::
 
-For this guide, you will need to have a Pangolin development node running in `--dev` mode. This can be done by either following the steps detailed [here](/builders/get-started/pangolin-dev/).
+For this guide, you will need to have a Pangolin development node running in `--dev` mode. This can be done by either following the steps detailed [here](/builders/get-started/darwinia-dev/).
 
 ## Checking Prerequisites
 
@@ -29,7 +29,7 @@ As of writing of this guide, the versions used were 16.0.0 and 7.10.0, respectiv
 Also, you will need the following:
 
  - Have MetaMask installed and [connected to Pangolin](/dvm-metamask.md)
- - Have an account with funds, which you can get from [Mission Control](/builders/get-started/pangolin/#get-tokens/)
+ - Have an account with funds, which you can get from [Mission Control](/builders/get-started/darwinia-pangolin/#get-tokens/)
 
 Once all requirements have been met, you are ready to build with truffle.
 
@@ -90,7 +90,7 @@ module.exports = {
 
 Note that we are using `HD-Wallet-Provider` from Truffle as the Hierarchical Deterministic wallet. Also, we've defined a `dev` network that points to the development node provider URL, and the private key of the development account, which holds all funds in the development node, is included.
 
-For deployments to the Pangolin TestNet or Crab, you need to provide the private key of an address that holds funds. For Pangolin, you can create an account in MetaMask, fund it using the [TestNet faucet](/builders/get-started/pangolin/#get-tokens/), and export its private key.
+For deployments to the Pangolin TestNet or Crab, you need to provide the private key of an address that holds funds. For Pangolin, you can create an account in MetaMask, fund it using the [TestNet faucet](/builders/get-started/darwinia-pangolin/#get-tokens/), and export its private key.
 
 Below you can find network configurations for all of our networks:
 

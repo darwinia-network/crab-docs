@@ -227,7 +227,7 @@ In the second section, the `web3.eth.getBalance(address)` method is used to fetc
 
 ## Running the Scripts
 
-For this section, the code shown before was adapted to target a development node, which you can run by following [this tutorial](/builders/get-started/pangolin-dev/). Also, each transaction was sent from the pre-funded account that comes with the node:
+For this section, the code shown before was adapted to target a development node, which you can run by following [this tutorial](/builders/get-started/darwinia-dev/). Also, each transaction was sent from the pre-funded account that comes with the node:
 
 import DevAccount from '/snippets/text/metamask-local/dev-account.md';
 

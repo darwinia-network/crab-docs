@@ -135,7 +135,7 @@ Remember that the LINK token payment is set to zero.
 
 Chainlink's Oracles can tentatively provide many different types of data feeds with the use of external adapters. However, for simplicity, our Oracle node is configured to deliver only price feeds.
 
-If you are interested in running your own Oracle node in Pangolin, please visit [this guide](/node-operators/oracle-nodes/node-chainlink/). Also, we recommend going through [Chainlink's documentation site](https://docs.chain.link/docs).
+If you are interested in running your own Oracle node in Pangolin, please visit [this guide](https://docs.chain.link/docs/running-a-chainlink-node/). Also, we recommend going through [Chainlink's documentation site](https://docs.chain.link/docs).
 
 ## Price Feeds
 

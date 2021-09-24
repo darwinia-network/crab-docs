@@ -1,7 +1,7 @@
 ---
 title: Deploy a Contract
 sidebar_position: 2
-description: Learn how to deploy unmodified and unchanged Solidity-based smart contracts to a Pangolin node with a simple script using Web3.js, Ethers.js, or Web3.py.
+description: Learn how to deploy unmodified and unchanged Solidity-based smart contracts to a Darwinia node with a simple script using Web3.js, Ethers.js, or Web3.py.
 ---
 
 # Using Ethereum Libraries to Deploy To Pangolin
@@ -462,7 +462,7 @@ Lastly, the transaction hash is displayed in the terminal.
 
 ## Running the Scripts
 
-For this section, the code shown before was adapted to target a development node, which you can run by following [this tutorial](/builders/get-started/pangolin-dev/). Also, each transaction was sent from the pre-funded account that comes with the node:
+For this section, the code shown before was adapted to target a development node, which you can run by following [this tutorial](/builders/get-started/darwinia-dev/). Also, each transaction was sent from the pre-funded account that comes with the node:
 
 import DevAccount from '/snippets/text/metamask-local/dev-account.md';
 

@@ -1,5 +1,6 @@
 ---
 title: Development Node
+sidebar_position: 1
 description: How to setup a Darwinia Development Node.
 ---
 

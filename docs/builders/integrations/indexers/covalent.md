@@ -16,8 +16,8 @@ Covalent provides a unified API to bring full transparency and visibility to ass
 All requests require authentication; you will need [a free API Key](https://www.covalenthq.com/platform/#/auth/register/) to use the Covalent API. 
 Also, you will need the following:
 
- - Have MetaMask installed and [connected to pangolin](/tokens/connect/metamask/)
- - Have an account with funds, which you can get from [Mission Control](/builders/get-started/pangolin/#get-tokens/)
+ - Have MetaMask installed and [connected to pangolin](/dvm-metamask.md)
+ - Have an account with funds, which you can get from [Mission Control](/builders/get-started/darwinia-pangolin/#get-tokens/)
 
 ## Types of Endpoints {: #types-of-endpoints } 
 

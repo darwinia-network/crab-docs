@@ -1,5 +1,6 @@
 ---
 title: Connect to Pangolin
+sidebar_position: 2
 description: How to connect to Pangolin network
 ---
 
@@ -20,7 +21,7 @@ import TabItem from '@theme/TabItem';
     {label: 'WSS Entry', value: 'wss'},
     {label: 'HTTPS Entry', value: 'https'},
   ]}>
-  
+
   <TabItem value="https">
 
 ```
@@ -33,7 +34,7 @@ https://pangolin-rpc.darwinia.network
 ```
 wss://pangolin-rpc.darwinia.network
 ```
-    
+
    </TabItem>
 </Tabs>
 
@@ -44,7 +45,7 @@ wss://pangolin-rpc.darwinia.network
 - Support substrate-substrate bi-directional bridge
 - Support ethereum-substrate bi-directional bridge.
 - Have some unstable features, may be reset.
-  
+
 ## Get Tokens
 
 To start building on Pangolin, you can get DEV tokens(PRING) from our [Pangolin Faucet Official](https://t.me/darwiniafaucet_official), in our Tg Group. For specific amounts, you can always reach out directly to us via our community channels.
@@ -53,27 +54,27 @@ To start building on Pangolin, you can get DEV tokens(PRING) from our [Pangolin 
 
 - Visit [Pangolin Apps Portal](https://apps.darwinia.network/#/account) and select the **Pangolin Test Network** in the network list in the upper left corner.
 
-![01](../../../static/images/started/connect-pangolin/pangolin-01.png)
+![01](/images/started/connect-pangolin/pangolin-01.png)
 
 - Create an account on Pangolin Test Network. For detailed tutorials on creating an account, please refer to [here](https://docs.crab.network/crab-tut-create-account)!
 - Click the avatar and you can copy your Pangolin address.
 
-![02](../../../static/images/started/connect-pangolin/pangolin-02.png)
+![02](/images/started/connect-pangolin/pangolin-02.png)
 
 - Join the Telegram group named "[Darwinia Faucet Official](https://t.me/darwiniafaucet_official)".
 - Send `/faucet`+ Pangolin address.
 
-![03](../../../static/images/started/connect-pangolin/pangolin-03.png)
+![03](/images/started/connect-pangolin/pangolin-03.png)
 
 - You can open the link of the darwinia_bot to check the transaction on Subscan.
 
-![04](../../../static/images/started/connect-pangolin/pangolin-04.png)
+![04](/images/started/connect-pangolin/pangolin-04.png)
 
-![05](../../../static/images/started/connect-pangolin/pangolin-05.png)
+![05](/images/started/connect-pangolin/pangolin-05.png)
 
 - When the transaction is successful, a certain number of test tokens will appear in your pangolin address.
 
-![06](../../../static/images/started/connect-pangolin/pangolin-06.png)
+![06](/images/started/connect-pangolin/pangolin-06.png)
 
 - Each telegram account can get 100 PRINGs every seven days.
 
