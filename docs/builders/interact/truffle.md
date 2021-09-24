@@ -26,174 +26,179 @@ import InstallNodeJs from '/snippets/text/common/install-nodejs.md';
 
 As of writing of this guide, the versions used were 16.0.0 and 7.10.0, respectively.
 
+Also, you will need the following:
+
+ - Have MetaMask installed and [connected to Pangolin](/dvm-metamask.md)
+ - Have an account with funds, which you can get from [Mission Control](/builders/get-started/pangolin/#get-tokens/)
+
+Once all requirements have been met, you are ready to build with truffle.
+
 ## Starting a Truffle Project
 
 To get started with the Pangolin Truffle box, if you have Truffle installed globally, you can execute:
 
 ```
-mkdir pangolin-truffle-box && cd pangolin-truffle-box
-truffle unbox PureStake/pangolin-truffle-box
+mkdir metacoin-box && cd metacoin-box
+truffle unbox metacoin
 ```
 
-![Unbox Pangolin Truffle box](/images/truffle/truffle-1.png)
+![Unbox Truffle box](/images/truffle/truffle-1.png)
 
 Nevertheless, the box also has Truffle as a dependency in case you do not want to have it installed globally. In such a case, you can directly clone the following repository:
 
 ```
-git clone https://github.com/PureStake/pangolin-truffle-box
-cd pangolin-truffle-box
+git clone https://github.com/truffle-box/metacoin-box.git
+cd metacoin-box
 ``` 
 
-With the files in your local system, the next step is to install all dependencies by running:
+:::note
+To create a bare Truffle project with no smart contracts included, use `truffle init`.
+:::
 
-```
-npm install
-```
+Once this operation is completed, you'll now have a project structure with the following items:
 
-!!! note
-    We noticed an error while installing the packages with npm version 7.0.15. You can downgrade npm by running `npm install -g npm@version` and setting the version to the one desired. For example, 7.0.8 or 6.14.9.
+- `contracts/`: Directory for Solidity contracts
+- `migrations/`: Directory for scriptable deployment files
+- `test/`: Directory for test files for testing your application and contracts
+- `truffle-config.js`: Truffle configuration file
 
-### The Truffle Configuration File {: #the-truffle-configuration-file } 
+### The Truffle Configuration File
 
 Navigate inside the directory to take a look at the `truffle-config.js` file (for the purpose of this guide, some information was removed):
 
 ```js
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 // Pangolin Development Node Private Key
-const privateKeyDev =
-   '99B3C12287537E38C90A9219D4CB074A89A16E9CDB20BF85728EBD97C343E342';
+const privateKeyDev ='YOUR-PRIVATE-KEY-HERE';
 //...
 module.exports = {
-   networks: {
-      dev: {
+  networks: {
+    dev: {
          provider: () => {
-            ...
             return new HDWalletProvider(privateKeyDev, 'http://localhost:9933/')
          },
-         network_id: 1281,
-      },
-      //...
-   },
-   plugins: ['pangolin-truffle-plugin']
+         network_id: 43,
+    }
+  },
+  compilers: {
+    solc: {
+      version: "^0.8.0"
+    }
+  }
 };
 ```
 
-Note that we are using `HD-Wallet-Provider` from Truffle as the Hierarchical Deterministic wallet. Also, we've defined a `dev` network that points to the development node provider URL, and the private key of the development account, which holds all funds in the development node, is included. 
+Note that we are using `HD-Wallet-Provider` from Truffle as the Hierarchical Deterministic wallet. Also, we've defined a `dev` network that points to the development node provider URL, and the private key of the development account, which holds all funds in the development node, is included.
 
-For deployments to the Pangolin TestNet or Crab, you need to provide the private key of an address that holds funds. For Pangolin Alpha, you can create an account in MetaMask, fund it using the [TestNet faucet](/builders/get-started/pangolin/#get-tokens/), and export its private key.
+For deployments to the Pangolin TestNet or Crab, you need to provide the private key of an address that holds funds. For Pangolin, you can create an account in MetaMask, fund it using the [TestNet faucet](/builders/get-started/pangolin/#get-tokens/), and export its private key.
 
 Below you can find network configurations for all of our networks:
 
-=== "Pangolin Development Node"
-    ```
-    dev: {
-      provider: () => {
-         ...
-         return new HDWalletProvider(privateKeyDev, 'http://localhost:9933/') // Insert your private key here
-      },
-      network_id: 1281,
-    },
-    ```
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-=== "Pangolin"
-    ```
-    pangolin: {
-      provider: () => {
-         ...
-         return new HDWalletProvider(privateKeyPangolin, 'http://pangolin-rpc.darwinia.network') // Insert your private key here
-      },
-      network_id: 1287,
-    },
-    ```
-
-=== "Crab"
-    ```
-    crab: {
-      provider: () => {
-         ...
-         return new HDWalletProvider(privateKeyCrab, 'http://crab-rpc.darwinia.network') // Insert your private key here
-      },
-      network_id: 1285,
-    },
-    ```
-
-## Using the Pangolin Truffle Plugin to Run a Node
-
-To set up a Pangolin development node, you can follow [this tutorial](/builders/get-started/pangolin-dev/). The process takes around 40 minutes in total, and you need to install Substrate and all its dependencies. The Pangolin Truffle plugin provides a way to get started with a development node much quicker, and the only requirement is to have Docker installed (at time of writing the Docker version used was 19.03.6).
-
-To start a Pangolin development node in your local environment, we need to first download the corresponding Docker image:
+<Tabs
+  defaultValue="Pangolin Development Node"
+  values={[
+    {label: 'Pangolin Development Node', value: 'Pangolin Development Node'},
+    {label: 'Pangolin', value: 'Pangolin'},
+    {label: 'Crab', value: 'Crab'},
+  ]}>
+  <TabItem value="Pangolin Development Node">
 
 ```
-truffle run pangolin install
+dev: {
+  provider: () => {
+	 ...
+	 return new HDWalletProvider(privateKeyDev, 'http://localhost:9933/') // Insert your private key here
+  },
+  network_id: 43,
+},
 ```
 
-![Docker image download](/images/truffle/truffle-2.png)
-
-Once downloaded, we can proceed to start the local node with the following command:
-
-```
-truffle run pangolin start
-```
-
-You will see a message indicating that the node has started, followed by both of the endpoinds available.
-
-![Pangolin local node started](/images/truffle/truffle-3.png)
-
-Once you are finished using your Pangolin development node, you can run the following lines to stop it and remove the Docker image if that is the case:
+  </TabItem>
+  <TabItem value="Pangolin">
 
 ```
-truffle run pangolin stop && \
-truffle run pangolin remove
+pangolin: {
+  provider: () => {
+	 ...
+	 return new HDWalletProvider(privateKeyPangolin, 'http://pangolin-rpc.darwinia.network') // Insert your private key here
+  },
+  network_id: 43,
+},
 ```
 
-![Pangolin local node stoped and image removed](/images/truffle/truffle-4.png)
-
-You also have the option to pause and unpause your Pangolin development node:
+  </TabItem>
+  <TabItem value="Crab">
 
 ```
-truffle run pangolin pause
-truffle run pangolin unpause
+crab: {
+  provider: () => {
+	 ...
+	 return new HDWalletProvider(privateKeyCrab, 'http://crab-rpc.darwinia.network') // Insert your private key here
+  },
+  network_id: 44,
+},
 ```
 
-You can see the output of these commands in the following image:
+  </TabItem>
+</Tabs>
 
-![Install Pangolin Truffle box](/images/truffle/truffle-5.png)
+## The Contract File
 
-!!! note
-    If you are familiar with Docker, you can skip the plugin commands and interact with the Docker image directly.
-
-## The Contract File {: #the-contract-file } 
-
-There is also a ERC-20 token contract included with the Truffle box:
+There is also a MetaCoin contract included with the Truffle box:
 
 ```solidity
-pragma solidity ^0.7.5;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.4.25 <0.7.0;
 
-// Import OpenZeppelin Contract
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "./ConvertLib.sol";
 
-// This ERC-20 contract mints the specified amount of tokens to the contract creator.
-contract MyToken is ERC20 {
-    constructor(uint256 initialSupply) ERC20("MyToken", "MYTOK")
-    {
-        _mint(msg.sender, initialSupply);
-    }
+// This is just a simple example of a coin-like contract.
+// It is not standards compatible and cannot be expected to talk to other
+// coin/token contracts. If you want to create a standards-compliant
+// token, see: https://github.com/ConsenSys/Tokens. Cheers!
+
+contract MetaCoin {
+	mapping (address => uint) balances;
+
+	event Transfer(address indexed _from, address indexed _to, uint256 _value);
+
+	constructor() public {
+		balances[tx.origin] = 10000;
+	}
+
+	function sendCoin(address receiver, uint amount) public returns(bool sufficient) {
+		if (balances[msg.sender] < amount) return false;
+		balances[msg.sender] -= amount;
+		balances[receiver] += amount;
+		emit Transfer(msg.sender, receiver, amount);
+		return true;
+	}
+
+	function getBalanceInEth(address addr) public view returns(uint){
+		return ConvertLib.convert(getBalance(addr),2);
+	}
+
+	function getBalance(address addr) public view returns(uint) {
+		return balances[addr];
+	}
 }
 ```
-
-This is a simple ERC-20 contract based on the OpenZepplin ERC-20 contract. It creates "MyToken" with "MYTOK" symbol and the standard 18 decimal places. Furthermore, it assigns the created initial token supply to the contract creator.
 
 If we take a look at the Truffle contract migration script under `migrations/2_deploy_contracts.js`, it contains the following:
 
 ```javascript
-var MyToken = artifacts.require('MyToken');
+const ConvertLib = artifacts.require("ConvertLib");
+const MetaCoin = artifacts.require("MetaCoin");
 
-module.exports = function (deployer) {
-   deployer.deploy(MyToken, '8000000000000000000000000');
+module.exports = function(deployer) {
+  deployer.deploy(ConvertLib);
+  deployer.link(ConvertLib, MetaCoin);
+  deployer.deploy(MetaCoin);
 };
 ```
-
-"8000000000000000000000000" is the number of tokens to initially mint with the contract, i.e., 8 million with 18 decimal places.
 
 ## Deploying a Contract to Pangolin Using Truffle
 
@@ -209,23 +214,35 @@ If successful, you should see output like the following:
 
 Now we are ready to deploy the compiled contracts. You can do this with the following command:
 
-=== "Pangolin Development Node"
+<Tabs
+  defaultValue="Pangolin Development Node"
+  values={[
+    {label: 'Pangolin Development Node', value: 'Pangolin Development Node'},
+    {label: 'Pangolin', value: 'Pangolin'},
+    {label: 'Crab', value: 'Crab'},
+  ]}>
+  <TabItem value="Pangolin Development Node">
 
-    ```
-    truffle migrate --network dev
-    ```
+```
+truffle migrate --network dev
+```
 
-=== "Pangolin"
+  </TabItem>
+  <TabItem value="Pangolin">
 
-    ```
-    truffle migrate --network pangolin
-    ```
+```
+truffle migrate --network pangolin
+```
 
-=== "Crab"
+  </TabItem>
+  <TabItem value="Crab">
 
-    ```
-    truffle migrate --network Crab
-    ```
+```
+truffle migrate --network Crab
+```
+
+  </TabItem>
+</Tabs>
 
 If successful, you will see deployment actions, including the address of the deployed contract:
 
