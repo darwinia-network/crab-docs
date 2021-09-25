@@ -89,7 +89,7 @@ Only one file is needed to execute a transaction between accounts. The script sh
  - Ethers.js: [_transaction.js_](/snippets/code/ethers-tx-local/transaction.js)
  - Web3.py: [_transaction.py_](/snippets/code/web3py-tx/transaction.py)
 
-Each of the files, regardless of the library used, has been divided into three sections. In the first section ("Define Provider & Variables"), the library to use is imported, and the provider and other variables are defined (variables depend on the library). Note that `providerRPC` has three the standard node RPC endpoint, the one for development, the one for [Pangolin](/pangolin-home.md) and another one for [Crab](/crab-home.md).
+Each of the files, regardless of the library used, has been divided into three sections. In the first section ("Define Provider & Variables"), the library to use is imported, and the provider and other variables are defined (variables depend on the library). Note that `providerRPC` has three the standard node RPC endpoint, the one for development, the one for [Pangolin](/builders/get-started/darwinia-pangolin.md) and another one for [Crab](/builders/get-started/darwinia-crab.md).
 
 The second section ("Create and Deploy Transaction") outlines the functions needed to send the transaction itself. Some of the key takeaways are discussed next.
 
@@ -324,7 +324,7 @@ You can find the code snippet for each library here (files were arbitrarily name
 
 For simplicity, the balance file is composed of two sections. As before, in the first section ("Define Provider & Variables"), the library to use is imported, and the provider and address from/to (to check the balances) are defined.
 
-The second section ("Balance Call Function") outlines the functions needed to fetch the balances of the accounts previously defined. Note that `providerRPC` has three the standard node RPC endpoint, the one for development, the one for [Pangolin](/pangolin-home.md) and another one for [Crab](/crab-home.md). Some of the key takeaways are discussed next.
+The second section ("Balance Call Function") outlines the functions needed to fetch the balances of the accounts previously defined. Note that `providerRPC` has three the standard node RPC endpoint, the one for development, the one for [Pangolin](/builders/get-started/darwinia-pangolin.md) and another one for [Crab](/builders/get-started/darwinia-crab.md). Some of the key takeaways are discussed next.
 
 <Tabs
   defaultValue="Web3.js"

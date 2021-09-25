@@ -13,7 +13,7 @@ The ability to subscribe to Ethereum-style events was supported by Pangolin. In 
 The examples in this guide are based on a MacOS environment. You will also need the following:
 
  - Have MetaMask installed and [connected to Pangolin](/dvm-metamask.md)
- - Have an account with funds. You can get this from [Mission Control](/builders/get-started/darwinia-pangolin/#get-tokens/)
+ - Have an account with funds. You can get this from [Faucet](/builders/get-started/darwinia-pangolin/#get-tokens)
  - Deploy your own ERC-20 token on Pangolin. You can do following [our Remix tutorial](/builders/interact/remix/), while first pointing MetaMask to Pangolin
 
 import InstallNodeJs from '/snippets/text/common/install-nodejs.md';

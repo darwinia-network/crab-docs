@@ -17,7 +17,7 @@ All requests require authentication; you will need [a free API Key](https://www.
 Also, you will need the following:
 
  - Have MetaMask installed and [connected to pangolin](/dvm-metamask.md)
- - Have an account with funds, which you can get from [Mission Control](/builders/get-started/darwinia-pangolin/#get-tokens/)
+ - Have an account with funds, which you can get from [Faucet](/builders/get-started/darwinia-pangolin/#get-tokens)
 
 ## Types of Endpoints {: #types-of-endpoints } 
 

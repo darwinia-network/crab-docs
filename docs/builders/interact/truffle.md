@@ -29,7 +29,7 @@ As of writing of this guide, the versions used were 16.0.0 and 7.10.0, respectiv
 Also, you will need the following:
 
  - Have MetaMask installed and [connected to Darwinia](/dvm-metamask.md)
- - Have an account with funds, which you can get from [Mission Control](/builders/get-started/darwinia-pangolin/#get-tokens/)
+ - Have an account with funds, which you can get from [Faucet](/builders/get-started/darwinia-pangolin/#get-tokens)
 
 Once all requirements have been met, you are ready to build with truffle.
 
@@ -90,7 +90,7 @@ module.exports = {
 
 Note that we are using `HD-Wallet-Provider` from Truffle as the Hierarchical Deterministic wallet. Also, we've defined a `dev` network that points to the development node provider URL, and the private key of the development account, which holds all funds in the development node, is included.
 
-For deployments to the Pangolin TestNet or Crab, you need to provide the private key of an address that holds funds. For Pangolin, you can create an account in MetaMask, fund it using the [TestNet faucet](/builders/get-started/darwinia-pangolin/#get-tokens/), and export its private key.
+For deployments to the Pangolin TestNet or Crab, you need to provide the private key of an address that holds funds. For Pangolin, you can create an account in MetaMask, fund it using the [TestNet faucet](/builders/get-started/darwinia-pangolin/#get-tokens), and export its private key.
 
 Below you can find network configurations for all of our networks:
 

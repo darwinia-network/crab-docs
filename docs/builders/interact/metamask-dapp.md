@@ -97,7 +97,7 @@ const configurePangolin = async () => {
                         nativeCurrency: {
                             name: 'PRING',
                             symbol: 'PRING',
-                            decimals: 9
+                            decimals: 18
                         },
                        rpcUrls: ["http://pangolin-rpc.darwinia.network"],
                        blockExplorerUrls: ["https://pangolin.subscan.io/"]
