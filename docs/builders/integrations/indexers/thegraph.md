@@ -1,272 +1,266 @@
 ---
-title: The Graph
-description: Build APIs using The Graph indexing protocol on Pangolin
+id: dvm-thegraph
+title: Using The Graph
+sidebar_position: 1
+sidebar_label: Using The Graph
 ---
 
-# Using The Graph on Pangolin
+The Graph is a decentralized and open-source protocol for indexing and querying data from blockchains. It is very difficult to query data directly from blockchains. And The Graph makes it easy to save data from blockchain to database and query. The darwinia DVM is compatible with EVM, we suggest using The Graph as the indexer. Developers can easily deploy The Graph Node, build APIs called Subgraphs, and query data from it. The data is saved in postgres, and with a standard GraphQL API to query. For more detail of the usage of The Graph, you can visit their [docs](https://thegraph.com/docs/about/introduction).
 
-![The Graph on Pangolin](/images/thegraph/thegraph-banner.png)
+Here we introduce you about how to deploy a local The Graph Node, create and deploy a Subgraph to listen event from DVM contract.
 
-## Introduction
-
-Indexing protocols organize information in a way that applications can access it more efficiently. For example, Google indexes the entire internet to provide information rapidly when you search for something.
-
-The Graph is a decentralized and open-source indexing protocol for querying networks like Ethereum. In short, it provides a way to efficiently store data emitted by events from smart contracts so that other projects or dApps can access it easily.
-
-Furthermore, developers can build APIs, called Subgraphs. Users or other developers can use Subgraphs to query data specific to a set of smart contracts. Data is fetched with a standard GraphQL API. You can visit [their documentation](https://thegraph.com/docs/about/introduction#what-the-graph-is) to read more about The Graph protocol.
-
-With the introduction of Ethereum tracing modules in pangolin, The Graph is capable of indexing blockchain data in Pangolin.
-
-This guide takes you through the creation of a simple subgraph for a Lottery contract on pangolin Alpha.
-
-## Checking Prerequisites
-
-To use The Graph on pangolin Alpha you have two options:
-
- - Run a Graph Node against pangolin Alpha and point your Subgraph to it. To do so, you can follow [this tutorial](https://docs.chain.link/docs/running-a-chainlink-node/)
- - Point your Subgraph to The Graph API via the [Graph Explorer website](https://thegraph.com/explorer/). To do so you need to create an account and have an access token
-
-## The Lottery Contract
-
-For this example, a simple Lottery contract is be used. You can find the Solidity file in [this link](https://github.com/PureStake/moonlotto-subgraph/blob/main/contracts/MoonLotto.sol).
-
-The contract hosts a lottery where players can buy ticket for themselves, or gift one to another user. When 1 hour has passed, if there are 10 participants, the next player that joins the lottery will execute a function that picks the winner. All the funds stored in the contract are sent to the winner, after which a new round starts.
-
-The main functions of the contract are the following:
-
- - **joinLottery**() — function to enter the lottery's current round, the value (amount of tokens) sent to the contract need to be equal to the ticket price
- - **giftTicket**(*address* recipient) —  similar to `joinLottery` but the ticket's owner can be set to a different address
- - **enterLottery**(*address* owner) — an internal function that handles the lottery's tickets logic. If an hour has passed and there are at least 10 participants, it calls the `pickWinner` function
- - **pickWinner**() — an internal function that selects the lottery winner with a pseudo-random number generator (not safe, only for demonstration purposes). It handles the logic of transferring funds and resetting variable for the next lottery round
-
-### Events of the Lottery Contract
-
-The Graph uses the events emitted by the contract to index data. The lottery contract emits only two events:
-
- - **PlayerJoined** — in the `enterLottery` function. It provides information related to the latest lottery entry, such as the address of the player, current lottery round, if the ticket was gifted, and the prize amount of the current round
- - **LotteryResult** — in the `pickWinner` function. It provides information to the draw of an ongoing round, such as the address of the winner, current lottery round, if the winning ticket was a gift, amount of the prize, and timestamp of the draw
-
-## Creating a Subgraph
-
-This section goes through the process of creating a Subgraph. For the Lottery Subgraph, a [GitHub repository](https://github.com/PureStake/moonlotto-subgraph) was prepared with everything you need to help you get started. The repo also includes the Lottery contract, as well as a Hardhat configuration file and deployment script. If you are not familiar with it, you can check our [Hardhat integration guide](/builders/interact/hardhat/).
-
-To get started, first clone the repo and install the dependencies:
+## The Graph Node
+The docker-compose file is like this. Before start the server, you need to set a URL for the network. Here we use the darwinia testnet `pangolin` http://pangolin-rpc.darwinia.network.
+```
+version: '3'
+services:
+  graph-node:
+    image: graphprotocol/graph-node
+    ports:
+      - '8000:8000'
+      - '8001:8001'
+      - '8020:8020'
+      - '8030:8030'
+      - '8040:8040'
+    depends_on:
+      - ipfs
+      - postgres
+    environment:
+      postgres_host: postgres
+      postgres_user: graph-node
+      postgres_pass: let-me-in
+      postgres_db: graph-node
+      ipfs: 'ipfs:5001'
+      ethereum: 'pangolin:http://pangolin-rpc.darwinia.network'
+      GRAPH_LOG: info
+  ipfs:
+    image: ipfs/go-ipfs:v0.4.23
+    ports:
+      - '5001:5001'
+    volumes:
+      - ./data/ipfs:/data/ipfs
+  postgres:
+    image: postgres
+    ports:
+      - '5432:5432'
+    command: ["postgres", "-cshared_preload_libraries=pg_stat_statements"]
+    environment:
+      POSTGRES_USER: graph-node
+      POSTGRES_PASSWORD: let-me-in
+      POSTGRES_DB: graph-node
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
 
 ```
-git clone https://github.com/PureStake/moonlotto-subgraph \
-&& cd moonlotto-subgraph && yarn
+
+To start The Graph Node docker server, enter the command
+```
+docker-compose up -d
 ```
 
-Now, you can create the TypeScript types for The Graph by running:
+The server will open some ports to support subgraph depoly, graphQL query, etc.
 
-```
-npx graph codegen --output-dir src/types/
-```
+| Port  |  Usage            |
+| ----- | ----------------- |
+|  8000 |  GraphQL(http)    |
+|  8001 |  GraphQL(ws)      |
+|  8020 |  Subgraph(deploy) |
 
-!!! note
-    Creating the types requires you to have the ABI files specified in the `subgraph.yaml` file. This sample repository has the file already, but this is usually obtained after compiling the contract. Check the [Moonlotto repo](https://github.com/PureStake/moonlotto-subgraph) for more information.
+## Deploy Subgraph
 
-The `codegen` command can also be executed using `yarn codegen`.
+If you're creating a new project, you can enter the following command to generate a demo.
+Before do this, please prepare a contract and the ABI file of the contract. For example, we have such a contract and deploy it at address `0xA6BDC789074A8b5C6eA697EE74B2e3a363b2dAA1`.
 
-For this example, the contract was deployed to `{{ networks.pangolin.thegraph.lotto_contract }}`. You can find more information on how to deploy a contract with Hardhat in our [integrations tutorial](/builders/interact/hardhat/). Also, the "README" file in the [Moonloto repository](https://github.com/PureStake/moonlotto-subgraph) has the steps necessary to compile and deploy the contract if required.
+```js
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.7.0 <0.9.0;
 
-### Subgraphs Core Structure
+contract TheGraphExample {
+    event TestEvent(address indexed sender);
 
-In general terms, Subgraphs define the data that The Graph will index from the blockchain and the way it is stored. Subgraphs tend to have some of the following files:
-
- - **subgraph.yaml** — is a YAML file that contains the [Subgraph's manifest](https://thegraph.com/docs/define-a-subgraph#the-subgraph-manifest), that is, information related to the smart contracts being indexed by the Subgraph
- - **schema.graphql** — is a [GraphQL schema](https://thegraph.com/docs/define-a-subgraph#the-graphql-schema) file that defines the data store for the Subgraph being created and its structure. It is written using [GraphQL interface definition schema](https://graphql.org/learn/schema/#type-language)
- - **AssemblyScript mappings** — code in TypeScript (then compiled to [AssemblyScript](https://github.com/AssemblyScript/assemblyscript)) that is used to translate event data from the contract to the entities defined in the schema
-
-There is no particular order to follow when modifying the files to create a Subgraph.
-
-### Schema.graphql
-
-It is important to outline what data needs to be extracted from the events of the contract before modifying the `schema.graphql`. Schemas need to be defined considering the requirements of the dApp itself. For this example, although there is no dApp associated with the lottery, four entities are defined:
-
- - **Round** — refers to a lottery round. It stores an index of the round, the prize awarded, the timestamp of when the round started, the timestamp of when the winner was drawn, and information regarding the participating tickets, which is derived from the `Ticket` entity
- - **Player** — refers to a player that has participated in at least one round. It stores its address and information from all its participating tickets, which is derived from the `Ticket` entity
- - **Ticket** — refers to a ticket to enter a lottery round. It stores if the ticket was gifted, the owner's address, the round from which the ticket is valid, and if it was a winning ticket
-
-In short, the `schema.graphql` should look like the following snippet:
-
-```
-type Round @entity {
-  id: ID!
-  index: BigInt!
-  prize: BigInt!
-  timestampInit: BigInt!
-  timestampEnd: BigInt
-  tickets: [Ticket!] @derivedFrom(field: "round")
-}
-
-type Player @entity {
-  id: ID!
-  address: Bytes!
-  tickets: [Ticket!] @derivedFrom(field: "player")
-}
-
-type Ticket @entity {
-  id: ID!
-  isGifted: Boolean!
-  player: Player!
-  round: Round!
-  isWinner: Boolean!
+    function triggerTestEvent () external {
+        emit TestEvent(msg.sender);
+    }
 }
 ```
 
-### Subgraph Manifest
-
-The `subgraph.yaml` file, or Subgraph's manifest, contains the information related to the smart contract being indexed, including the events which have the data needed to be mapped. That data is then stored by Graph nodes, allowing applications to query it.
-
-Some of the most important parameters in the `subgraph.yaml` file are:
-
- - **repository** — refers to the Github repo of the subgraph
- - **schema/file** — refers to the location of the `schema.graphql` file
- - **dataSources/name** — refers to the name of the Subgraph
- - **network** — refers to the network name. This value **must** be set to `mbase` for any Subgraph being deployed to pangolin Alpha
- - **dataSources/source/address** — refers to the address of the contract of interest
- - **dataSources/source/abi** — refers to where the interface of the contract is stored inside the `types` folder created with the `codegen` command
- - **dataSources/source/startBlock** — refers to the start block from which the indexing will start. Ideally, this value should be close to the block the contract was created in. You can use [Blockscout](https://pangolin-blockscout.testnet.moonbeam.network/) to get this information by providing the contract address. For this example, the contract was created at block `{{ networks.pangolin.thegraph.block_number }}`
- - **dataSources/mapping/file** — refers to the location of the mapping file
- - **dataSources/mapping/entities** — refers to the definitions of the entities in the `schema.graphql` file
- - **dataSources/abis/name** — refers to where the interface of the contract is stored inside the `types/dataSources/name`
- - **dataSources/abis/file** — refers to the location where the `.json` file with the contract's ABI is stored
- - **dataSources/eventHandlers** — no value needs to be defined here, but this section refers to all the events that The Graph will index
- - **dataSources/eventHandlers/event** — refers to the structure of an event to be tracked inside the contract. You need to provide the event name and its type of variables
- - **dataSources/eventHandlers/handler** — refers to the name of the function inside the `mapping.ts` file which handles the event data
- 
-In short, the `subgraph.yaml` should look like the following snippet:
-
+the ABI file is `example.json`
+```json
+[
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			}
+		],
+		"name": "TestEvent",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "triggerTestEvent",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
 ```
+Then enter the follow command to generate a subgraph project.
+```
+graph init --product subgraph-studio. --abi
+```
+follow the steps, then you can have this output.
+```js
+>> graph init --product subgraph-studio. --abi
+✔ Product for which to initialize · hosted-service
+✔ Subgraph name · example/TheGraphExample
+✔ Directory to create the subgraph in · TheGraphExample
+✔ Ethereum network · ropsten
+✔ Contract address · 0xA6BDC789074A8b5C6eA697EE74B2e3a363b2dAA1
+✔ ABI file (path) · ./example.json
+✔ Contract Name · TheGraphExample
+———
+  Generate subgraph from ABI
+  Write subgraph to directory
+✔ Create subgraph scaffold
+✔ Initialize subgraph repository
+✔ Install dependencies with yarn
+✔ Generate ABI and schema types with yarn codegen
+
+Subgraph example/TheGraphExample created in TheGraphExample
+
+Next steps:
+
+  1. Run `graph auth` to authenticate with your deploy key.
+
+  2. Type `cd TheGraphExample` to enter the subgraph.
+
+  3. Run `yarn deploy` to deploy the subgraph.
+
+Make sure to visit the documentation on https://thegraph.com/docs/ for further information.
+```
+A Subgraph project has three parts.
+### schema.graphql
+This used to define the entity used. For example
+```graphql
+type ExampleEntity @entity {
+  id: ID!
+  count: BigInt!
+  sender: Bytes! # address
+}
+```
+Once you modify this schema file, you need regenerate the TypeScript types for The Graph, running:
+```js
+>> npx graph codegen --output-dir generated/
+  Skip migration: Bump mapping apiVersion from 0.0.1 to 0.0.2
+  Skip migration: Bump mapping apiVersion from 0.0.2 to 0.0.3
+  Skip migration: Bump mapping apiVersion from 0.0.3 to 0.0.4
+  Skip migration: Bump mapping specVersion from 0.0.1 to 0.0.2
+✔ Apply migrations
+✔ Load subgraph from subgraph.yaml
+  Load contract ABI from abis/TheGraphExample.json
+✔ Load contract ABIs
+  Generate types for contract ABI: TheGraphExample (abis/TheGraphExample.json)
+  Write types to generated/TheGraphExample/TheGraphExample.ts
+✔ Generate types for contract ABIs
+✔ Generate types for data source templates
+✔ Load data source template ABIs
+✔ Generate types for data source template ABIs
+✔ Load GraphQL schema from schema.graphql
+  Write types to generated/schema.ts
+✔ Generate types for GraphQL schema
+
+Types generated successfully
+```
+### subgraph.yaml
+This file tells you the basic infomation of the subgraph(contract address, abi, event...) and which network to use.
+```yaml
 specVersion: 0.0.2
-description: Pangolin lottery subgraph tutorial
-repository: https://github.com/PureStake/moonlotto-subgraph
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: MoonLotto
-    network: mbase
+    name: TheGraphExample
+    network: pangolin
     source:
-      address: '{{ networks.pangolin.thegraph.lotto_contract }}'
-      abi: MoonLotto
-      startBlock: {{ networks.pangolin.thegraph.block_number }}
+      address: "0xA6BDC789074A8b5C6eA697EE74B2e3a363b2dAA1"
+      abi: TheGraphExample
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
-      file: ./src/mapping.ts
       entities:
-        - Player
-        - Round
-        - Ticket
-        - Winner
+        - TestEvent
       abis:
-        - name: MoonLotto
-          file: ./artifacts/contracts/MoonLotto.sol/MoonLotto.json
+        - name: TheGraphExample
+          file: ./abis/TheGraphExample.json
       eventHandlers:
-        - event: PlayerJoined(uint256,address,uint256,bool,uint256)
-          handler: handlePlayerJoined
-        - event: LotteryResult(uint256,address,uint256,bool,uint256,uint256)
-          handler: handleLotteryResult
+        - event: TestEvent(indexed address)
+          handler: handleTestEvent
+      file: ./src/mapping.ts
 ```
+### AssemblyScript mappings
+In this file, users define their own logic to save the event as entities.
+```js
+import { BigInt } from "@graphprotocol/graph-ts"
+import {
+  TheGraphExample,
+  TestEvent
+} from "../generated/TheGraphExample/TheGraphExample"
+import { ExampleEntity } from "../generated/schema"
 
-### Mappings
-
-Mappings files are what transform the blockchain data into entities defined in the schema file. Each event handler inside the `subgraph.yaml` file needs to have a subsequent function in the mapping.
-
-The mapping file used for the Lottery example can be found in [this link](https://github.com/PureStake/moonlotto-subgraph/blob/main/src/mapping.ts).
-
-In general, the strategy of each handler function is to load the event data, check if an entry already exists, arrange the data as desired, and save the entry. For example, the handler function for the `PlayerJoined` event is as follows:
-
-```
-export function handlePlayerJoined(event: PlayerJoined): void {
-  // ID for the round:
-  // round number
-  let roundId = event.params.round.toString();
-  // try to load Round from a previous player
-  let round = Round.load(roundId);
-  // if round doesn't exists, it's the first player in the round -> create round
-  if (round == null) {
-    round = new Round(roundId);
-    round.timestampInit = event.block.timestamp;
+export function handleTestEvent(event: TestEvent): void {
+  let entity = ExampleEntity.load(event.transaction.from.toHex())
+  if (entity == null) {
+    entity = new ExampleEntity(event.transaction.from.toHex())
+    entity.count = BigInt.fromI32(0)
   }
-  round.index = event.params.round;
-  round.prize = event.params.prizeAmount;
 
-  round.save();
-
-  // ID for the player:
-  // issuer address
-  let playerId = event.params.player.toHex();
-  // try to load Player from previous rounds
-  let player = Player.load(playerId);
-  // if player doesn't exists, create it
-  if (player == null) {
-    player = new Player(playerId);
-  }
-  player.address = event.params.player;
-
-  player.save();
-
-  // ID for the ticket (round - player_address - ticket_index_round):
-  // "round_number" + "-" + "player_address" + "-" + "ticket_index_per_round"
-  let nextTicketIndex = event.params.ticketIndex.toString();
-  let ticketId = roundId + "-" + playerId + "-" + nextTicketIndex;
-
-  let ticket = new Ticket(ticketId);
-  ticket.round = roundId;
-  ticket.player = playerId;
-  ticket.isGifted = event.params.isGifted;
-  ticket.isWinner = false;
-
-  ticket.save();
+  entity.count = entity.count + BigInt.fromI32(1)
+  entity.sender = event.params.sender
+  entity.save()
 }
 ```
-
-## Deploying a Subgraph
-
-If you are going to use The Graph API (hosted service), you need to:
-
- - Create a [Graph Explorer](https://thegraph.com/explorer/) account, you will need a Github account
- - Go to your dashboard and write down the access token
- - Create your Subgraph via the "Add Subgraph" button in the Graph Explorer site. Write down the Subgraph name
-
-!!! note
-    All steps can be found in [this link](https://thegraph.com/docs/deploy-a-subgraph).
-
-If using a local Graph Node, you can create your Subgraph executing the following code:
-
+### Deploy
+First we need to create the subgraph on The Graph server.
+```js
+>> npx graph create example/TheGraphExample --node http://127.0.0.1:8020
+Created subgraph: example/TheGraphExample
 ```
-npx graph create <username>/<subgraphName> --node <graph-node>
+Then we deploy it to the server.
+```js
+>> npx graph deploy example/TheGraphExample --ipfs http://localhost:5001 --node http://localhost:8020
+✔ Version Label (e.g. v0.0.1) ·
+  Skip migration: Bump mapping apiVersion from 0.0.1 to 0.0.2
+  Skip migration: Bump mapping apiVersion from 0.0.2 to 0.0.3
+  Skip migration: Bump mapping apiVersion from 0.0.3 to 0.0.4
+  Skip migration: Bump mapping specVersion from 0.0.1 to 0.0.2
+✔ Apply migrations
+✔ Load subgraph from subgraph.yaml
+  Compile data source: TheGraphExample => build/TheGraphExample/TheGraphExample.wasm
+✔ Compile subgraph
+  Copy schema file build/schema.graphql
+  Write subgraph file build/TheGraphExample/abis/TheGraphExample.json
+  Write subgraph manifest build/subgraph.yaml
+✔ Write compiled subgraph to build/
+  Add file to IPFS build/schema.graphql
+                .. QmVRyRF12mxYcKAd9YfsiXkeHHc79wkU5LqWLDinrfnmbg
+  Add file to IPFS build/TheGraphExample/abis/TheGraphExample.json
+                .. QmTDhpdjATMtKcmxoeAR9nZ59fhhm2cJ1xuQ5dikJiWNyL
+  Add file to IPFS build/TheGraphExample/TheGraphExample.wasm
+                .. QmTDJcE1hZ1cbSa9kTx7iGVQ5VM2H8XVg7tQKCRwz3iSwZ
+✔ Upload subgraph to IPFS
+
+Build completed: QmSAjoWQcHa9B56DGuE3WTSahWR3dTy7d7VpVNuWj3VFmS
+
+Deployed to http://localhost:8000/subgraphs/name/example/TheGraphExample/graphql
+
+Subgraph endpoints:
+Queries (HTTP):     http://localhost:8000/subgraphs/name/example/TheGraphExample
+Subscriptions (WS): http://localhost:8001/subgraphs/name/example/TheGraphExample
 ```
-
-Where:
-
- - **username** — refers to the username related to the Subgraph being created
- - **subgraphName** — refers to the Subgraph name
- - **graph-node** — refers to the URL of the hosted service to use. Typically, for a local Graph Node is `http://127.0.0.1:8020`
-
-Once created, you can deploy your Subgraph by running the following command with the same parameters as before:
-
-```
-npx graph deploy <username>/<subgraphName> \
---ipfs <ipfs-url> \
---node <graph-node> \
---access-token <access-token>
-```
-
-Where:
-
- - **username** — refers to the username used when creating the Subgraph
- - **subraphName** — refers to the Subgraph name defined when creating the Subgraph
- - **ifps-url**  — refers to the URL for IFPS. If using The Graph API you can use `https://api.thegraph.com/ipfs/`. For your local Graph Node, the default value is `http://localhost:5001`
- - **graph-node** — refers to the URL of the hosted service to use. If using The Graph API you can use `https://api.thegraph.com/deploy/`. For your local Graph Node, the default value is `http://localhost:8020`
- - **access-token** — refers to the access token to use The Graph API. If you are using a local Graph Node this parameter is not necessary
-
-The logs from the previous command should look similar to:
-
-![The Graph deployed](/images/thegraph/thegraph-images1.png)
-
-DApps can now use the Subgraph endpoints to fetch the data indexed by The Graph protocol.
+After we deploy the subgraph, the server start to scan blocks. Wait for the scan result and then we can use the Subgraph endpoints `http://localhost:8000/subgraphs/name/example/TheGraphExample` to query the entity.

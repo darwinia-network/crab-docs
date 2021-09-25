@@ -1,8 +1,8 @@
 module.exports = {
   firstSidebar: {
     "Crab Network": [
-      'crab-home', 
-      'crab-tools', 
+      'crab-home',
+      'crab-tools',
       'crab-parameters'
     ],
 
@@ -40,7 +40,7 @@ module.exports = {
       {
         'Wallets': [
           'dvm-apps',
-          'dvm-metamask', 
+          'dvm-metamask',
           {
             'Smart App':[
               'dvm-smart-app',
@@ -61,11 +61,6 @@ module.exports = {
               'dvm-web3-transfer'
             ]
           },
-          {
-              'Indexers': [
-                  'dvm-thegraph'
-              ]
-          }
         ]
       },
       'dvm-eco',
@@ -77,7 +72,7 @@ module.exports = {
           },
         ]
       }
-    ],                  
+    ],
 
     'Pangolin Testnet': [
       'pangolin-home',

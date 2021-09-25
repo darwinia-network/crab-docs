@@ -1,5 +1,6 @@
 ---
 title: Covalent API
+sidebar_position: 2
 description: Querying Blockchain Data with the Covalent API Pangolin
 ---
 
