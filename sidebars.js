@@ -60,6 +60,11 @@ module.exports = {
               'dvm-web3-contract',
               'dvm-web3-transfer'
             ]
+          },
+          {
+              'Indexers': [
+                  'dvm-thegraph'
+              ]
           }
         ]
       },
