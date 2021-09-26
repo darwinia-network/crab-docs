@@ -1,7 +1,6 @@
-pragma solidity ^0.6.6;
+pragma solidity 0.6.6;
 
-import "https://github.com/smartcontractkit/chainlink/evm-contracts/src/v0.6/ChainlinkClient.sol";
-
+import "https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.6/ChainlinkClient.sol";
 /**
  * @title Client based in ChainlinkClient
  * @notice End users can deploy this contract to request the Prices from an Oracle

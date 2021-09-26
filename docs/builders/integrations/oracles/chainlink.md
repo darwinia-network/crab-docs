@@ -30,19 +30,24 @@ The Client contract is the element that starts the communication with the Oracle
  - _fulfill_: callback used by the Oracle node to fulfill the request by storing the queried information in the contract
 
 ```solidity
-pragma solidity ^0.6.6;
+pragma solidity 0.6.6;
 
-import "https://github.com/smartcontractkit/chainlink/evm-contracts/src/v0.6/ChainlinkClient.sol";
-
+import "https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.6/ChainlinkClient.sol";
+/**
+ * @title Client based in ChainlinkClient
+ * @notice End users can deploy this contract to request the Prices from an Oracle
+ */
 contract Client is ChainlinkClient {
   //... there is mode code here
 
+  // Deploy with the address of the LINK token
   constructor(address _link) public {
     // Set the address for the LINK token for the network
     setChainlinkToken(_link);
     owner = msg.sender;
   }
 
+  // Creates Chainlink Request
   function requestPrice(address _oracle, string memory _jobId, uint256 _payment)
     public
     onlyOwner
@@ -53,6 +58,7 @@ contract Client is ChainlinkClient {
     sendChainlinkRequestTo(_oracle, req, _payment);
   }
 
+  // Callback function called by the Oracle when it has resolved the request
   function fulfill(bytes32 _requestId, uint256 _price)
     public
     recordChainlinkFulfillment(_requestId)
@@ -61,7 +67,6 @@ contract Client is ChainlinkClient {
   }
 
   //... there is more code here
-}
 ```
 
 Note that the Client contract must have a LINK tokens balance to be able to pay for this request. However, if you deploy your setup, you can set the LINK value to 0 in your `ChainlinkClient.sol` contract, but you still need to have the LINK token contract deployed.
@@ -70,47 +75,48 @@ Note that the Client contract must have a LINK tokens balance to be able to pay 
 
 If you want to skip the hurdles of deploying all contracts, setting up your Oracle node, creating job IDs, and so on, we've got you covered.
 
-A custom Client contract on Pangolin that makes all requests to our Oracle contract, with a 0 LINK token payment, is available. These requests are fulfilled by an Oracle node that we are running. You can try it out with the following interface contract and the custom Client contract deployed at `{{ networks.pangolin.chainlink.client_contract }}`:
+A custom Client contract on Pangolin that makes all requests to our Oracle contract, with a 0 LINK token payment, is available. These requests are fulfilled by an Oracle node that we are running. You can try it out with the following interface contract and the custom Client contract deployed at `0xab8eC6D46717a2CC91f4394F253a52E9719e308f`:
 
 ```solidity
-pragma solidity ^0.6.6;
+pragma solidity 0.6.6;
 
 /**
  * @title Simple Interface to interact with Universal Client Contract
- * @notice Client Address {{ networks.pangolin.chainlink.client_contract }}
+ * @notice Client Address 0xab8eC6D46717a2CC91f4394F253a52E9719e308f
  */
 interface ChainlinkInterface {
 
   /**
    * @notice Creates a Chainlink request with the job specification ID,
    * @notice and sends it to the Oracle.
-   * @notice _oracle The address of the Oracle contract fixed top
-   * @notice _payment For this example the PAYMENT is set to zero
+   * @param _oracle The address of the Oracle contract fixed top
    * @param _jobId The job spec ID that we want to call in string format
+   * @param _payment For this example the PAYMENT is set to zero
    */
-    function requestPrice(string calldata _jobId) external;
+	function requestPrice(address _oracle, string memory _jobId, uint256 _payment)
 
     function currentPrice() external view returns (uint);
 
 }
 ```
 
-This provides two functions. `requestPrice()` only needs the job ID of the data you want to query. This function starts the chain of events explained before. `currentPrice()` is a view function that returns the latest price stored in the contract.
+This provides two functions. `requestPrice()` needs the job ID of the data you want to query. This function starts the chain of events explained before. `currentPrice()` is a view function that returns the latest price stored in the contract.
 
 Currently, the Oracle node has a set of Job IDs for different price datas for the following pairs:
 
 |  Base/Quote  |     |                 Job ID Reference                  |
 | :----------: | --- | :-----------------------------------------------: |
-|  BTC to USD  |     |  {{ networks.pangolin.chainlink.basic.btc_usd }}  |
-|  ETH to USD  |     |  {{ networks.pangolin.chainlink.basic.eth_usd }}  |
-|  DOT to USD  |     |  {{ networks.pangolin.chainlink.basic.dot_usd }}  |
-|  KSM to USD  |     |  {{ networks.pangolin.chainlink.basic.ksm_usd }}  |
-| AAVE to USD  |     | {{ networks.pangolin.chainlink.basic.aave_usd }}  |
-| ALGO to USD  |     | {{ networks.pangolin.chainlink.basic.algo_usd }}  |
-| BAND to USD  |     | {{ networks.pangolin.chainlink.basic.band_usd }}  |
-| LINK to USD  |     | {{ networks.pangolin.chainlink.basic.link_usd }}  |
-| SUSHI to USD |     | {{ networks.pangolin.chainlink.basic.sushi_usd }} |
-|  UNI to USD  |     |  {{ networks.pangolin.chainlink.basic.uni_usd }}  |
+|  RING to USD |     |  4cda609794884c58a8690d402e80bfea  |
+|  BTC to USD  |     |  66f0d2a59b82482799bee1e714d94991  |
+|  ETH to USD  |     |  8f032a4cf422438b835f243b96ecfc7a  |
+|  DOT to USD  |     |  fd5e3c79e83344d5a6c3de75501a4c54  |
+|  KSM to USD  |     |  dd3a14692e68435da5b28b8716d06423  |
+| AAVE to USD  |     |  764e831e1d30420ca52aab23c6489319  |
+| ALGO to USD  |     |  5fa0cb97996f4e5cbe5954c09c3544b3  |
+| BAND to USD  |     |  b494823291974e50bc5d8c6466a18b38  |
+| LINK to USD  |     |  bf322091c7d44d418761754d367534d4  |
+| SUSHI to USD |     |  5e47777ecc664801a64bd4b23c5e912c |
+|  UNI to USD  |     |  ea3111fdc33e4a9c9af8dd0ede87b279  |
 
 Let's go ahead and use the interface contract with the `BTC to USD` Job ID in [Remix](/builders/tools/remix/).
 
@@ -126,8 +132,8 @@ If you want to run your Client contract but use our Oracle node, you can do so w
 
 |  Contract Type  |     |                      Address                      |
 | :-------------: | --- | :-----------------------------------------------: |
-| Oracle Contract |     | {{ networks.pangolin.chainlink.oracle_contract }} |
-|   LINK Token    |     |  {{ networks.pangolin.chainlink.link_contract }}  |
+| Oracle Contract |     | 0x97C02719aEf6B70f0abDa6402f9Bb136aFF7043d |
+|   LINK Token    |     | 0xbE872fFa86274E9717884394f088C02EE929c18d |
 
 Remember that the LINK token payment is set to zero.
 
@@ -137,70 +143,3 @@ Chainlink's Oracles can tentatively provide many different types of data feeds w
 
 If you are interested in running your own Oracle node in Pangolin, please visit [this guide](https://docs.chain.link/docs/running-a-chainlink-node/). Also, we recommend going through [Chainlink's documentation site](https://docs.chain.link/docs).
 
-## Price Feeds
-
-Before we go into fetching the data itself, it is important to understand the basics of price feeds.
-
-In a standard configuration, each price feed is updated by a decentralized Oracle network. Each Oracle node is rewarded for publishing the price data to the Aggregator contract. However, the information is only updated if a minimum number of responses from Oracle nodes are received (during an aggregation round).
-
-The end-user can retrieve price feeds with read-only operations via a Consumer contract, referencing the correct Aggregator interface (Proxy contract). The Proxy acts as a middleware to provide the Consumer with the most up-to-date Aggregator for a particular price feed.
-
-![Price Feed Diagram](/images/chainlink/chainlink-pricefeed.png)
-
-### Try it on Pangolin
-
-If you want to skip the hurdles of deploying all the contracts, setting up your Oracle node, creating job IDs, and so on, we've got you covered.
-
-We've deployed all the necessary contracts on Pangolin to simplify the process of requesting price feeds. In our current configuration, we are running only one Oracle node that fetches the price from a single API source. Price data is checked every minute and updated in the smart contracts every hour unless there is a price deviation of 1 %.
-
-The data lives in a series of smart contracts (one per price feed) and can be fetched with the following interface:
-
-```solidity
-pragma solidity ^0.6.6;
-
-interface ConsumerV3Interface {
-    /**
-     * Returns the latest price
-     */
-    function getLatestPrice() external view returns (int);
-
-    /**
-     * Returns the decimals to offset on the getLatestPrice call
-     */
-    function decimals() external view returns (uint8);
-
-    /**
-     * Returns the description of the underlying price feed aggregator
-     */
-    function description() external view returns (string memory);
-}
-```
-
-This provides three functions. `getLatestPrice()` will read the latest price data available in the Aggregator contract via the Proxy. We've added the `decimals()` function, which returns the number of decimals of the data and the `description()` function, which returns a brief description of the price feed available in the Aggregator contract being queried.
-
-Currently, there is an Consumer contract for the the following price pairs:
-
-|  Base/Quote  |     |                     Consumer Contract                     |
-| :----------: | --- | :-------------------------------------------------------: |
-|  BTC to USD  |     |  {{ networks.pangolin.chainlink.feed.consumer.btc_usd }}  |
-|  ETH to USD  |     |  {{ networks.pangolin.chainlink.feed.consumer.eth_usd }}  |
-|  DOT to USD  |     |  {{ networks.pangolin.chainlink.feed.consumer.dot_usd }}  |
-|  KSM to USD  |     |  {{ networks.pangolin.chainlink.feed.consumer.ksm_usd }}  |
-| AAVE to USD  |     | {{ networks.pangolin.chainlink.feed.consumer.aave_usd }}  |
-| ALGO to USD  |     | {{ networks.pangolin.chainlink.feed.consumer.algo_usd }}  |
-| BAND to USD  |     | {{ networks.pangolin.chainlink.feed.consumer.band_usd }}  |
-| LINK to USD  |     | {{ networks.pangolin.chainlink.feed.consumer.link_usd }}  |
-| SUSHI to USD |     | {{ networks.pangolin.chainlink.feed.consumer.sushi_usd }} |
-|  UNI to USD  |     |  {{ networks.pangolin.chainlink.feed.consumer.uni_usd }}  |
-
-Let's go ahead and use the interface contract to fetch the price feed of `BTC to USD` using [Remix](/builders/tools/remix/).
-
-After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the Consumer contract address corresponding to `BTC to USD`, and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so you are connected to Pangolin.
-
-This will create an instance of the Consumer contract that you can interact with. Use the function `getLatestPrice()` to query the data of the corresponding price feed.
-
-![Chainlink Price Feeds on Pangolin](/images/chainlink/chainlink-image2.png)
-
-Note that to obtain the real price, you must account for the decimals of the price feed, available with the `decimals()` method.
-
-If there is any specific pair you want us to include, feel free to reach out to us through our [Discord server](https://discord.com/invite/PfpUATX).
