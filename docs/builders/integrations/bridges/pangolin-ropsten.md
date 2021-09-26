@@ -1,6 +1,7 @@
 ---
 id: pangolin-bridge-ropsten
 title: Ropsten Bridge
+sidebar_position: 1
 sidebar_label: Ropsten Bridge
 ---
 
@@ -8,14 +9,14 @@ sidebar_label: Ropsten Bridge
 
 ### Relay Contract
 
-1. Relayer sends `Authority Set` change 
+1. Relayer sends `Authority Set` change
 2. Relayer listens to the `Authority Set` changed event
 
 ```
 address: 0xD35Bb6F1bc1C84b53E0995c1830454AB7C4147f1
   topic: 0x91d6d149c7e5354d1c671fe15a5a3332c47a38e15e8ac0339b24af3c1090690f
 ```
-	
+
 ### TokenIssuing Contract
 
 User claims RING & KTON

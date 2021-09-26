@@ -73,17 +73,5 @@ module.exports = {
         ]
       }
     ],
-
-    'Pangolin Testnet': [
-      'pangolin-home',
-      {
-        'Bridges': [
-          'pangolin-bridge-ropsten'
-        ]
-      }
-    ]
   },
-  'Builders': [
-  ]
-
 };
