@@ -12,4 +12,4 @@ sidebar_label: Tutorials
 
 ## Other
 - Create an Account [View Guide](crab-tut-create-account)
-- Claim your CRING (test coin) [View Guide](crab-tut-claim-crab)
+- Claim your CRAB (test coin) [View Guide](crab-tut-claim-crab)

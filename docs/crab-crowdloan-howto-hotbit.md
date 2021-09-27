@@ -9,7 +9,7 @@ sidebar_label: Contribute in Hotbit
    ![hotbit1](./assets/crowdloan/hotbit1.png)
 
 
-2. Select "Crab (CRING) Slot#1", select "Participate" and enter a certain amount of KSM.
+2. Select "Crab (CRAB) Slot#1", select "Participate" and enter a certain amount of KSM.
    
    ![hotbit2](./assets/crowdloan/hotbit2.png)
 

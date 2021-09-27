@@ -1,17 +1,17 @@
 ---
 id: crab-tut-claim-crab
-title: Claim Airdropped CRING
-sidebar_label: Claim Airdropped CRING
+title: Claim Airdropped CRAB
+sidebar_label: Claim Airdropped CRAB
 ---
 
 ## Airdrop
 
-A portion of the initial supply of the CRINGs have been airdropped to the holders of RING & DOT, they will get CRINGs for free.
+A portion of the initial supply of the CRABs have been airdropped to the holders of RING & DOT, they will get CRABs for free.
 
 Darwinia took a snapshot of RING & DOT holders on March 20, 2020 (GMT +8:00).
 
-- DOT airdrop ratio: 1 DOT = 50 CRINGs
-- RING airdrop ratio: 1 RING = 1 CRING
+- DOT airdrop ratio: 1 DOT = 50 CRABs
+- RING airdrop ratio: 1 RING = 1 CRAB
 
 > The snapshot contains the RING of ERC-20 and TRC-20, including the deposit certificate part in Gringotts. KTON is not in the scope of this snapshot.
 
@@ -39,7 +39,7 @@ Please select the following signature tools and download according to the usage 
 
 1. Confirm that the signature environment is ready and unlocked
 
-2. PC: Visit [CRING claim tool](http://claim.darwinia.network/) through chrome browser or mobile wallet
+2. PC: Visit [CRAB claim tool](http://claim.darwinia.network/) through chrome browser or mobile wallet
 
 3. Select the network you want to query (Ethereum / TRON) and click [Search]. (The Ethereum network is used as an example below)
 
@@ -49,17 +49,17 @@ Please select the following signature tools and download according to the usage 
 
 ![claim](assets/tut/claim-airdropped-crab/2.png)
 
-### Claim CRING Airdrop
+### Claim CRAB Airdrop
 
 1. Confirm that the signature environment is ready and unlocked
 
-2. PC: Visit [CRING claim tool](http://claim.darwinia.network/) through chrome browser or mobile wallet
+2. PC: Visit [CRAB claim tool](http://claim.darwinia.network/) through chrome browser or mobile wallet
 
 3. Select the network you want to query (Ethereum / TRON) and click [Claim]. (The Ethereum network is used as an example below)
 
 ![claim](assets/tut/claim-airdropped-crab/3.png)
 
-4. Fill in the Darwinia Crab address that accepts CRING. After confirming that it is correct, click [Submit].
+4. Fill in the Darwinia Crab address that accepts CRAB. After confirming that it is correct, click [Submit].
 
     >️ If there is no Darwinia Crab address, please refer to the generation method: [How to create Crab account](crab-tut-create-account)
 
@@ -75,7 +75,7 @@ Please select the following signature tools and download according to the usage 
 
 ![claim](assets/tut/claim-airdropped-crab/8.png)
 
-8. Paste the signature information just generated in the `CRING Claim Tool`, and click [Confirm claim]-[Redeem]-[Submit]
+8. Paste the signature information just generated in the `CRAB Claim Tool`, and click [Confirm claim]-[Redeem]-[Submit]
 
 ![claim](assets/tut/claim-airdropped-crab/7.png)
 
