@@ -39,7 +39,7 @@
     "message": "您的令牌锁定以去中心、去信任的方式在链上进行，在锁定期过后持有人就可以继续使用您的令牌，因此您不必担心令牌的安全性。用户的KSM不会脱离用户的钱包账户(托管给交易所的除外)。",
     "description": "Kusama crowloaning save"
   },
-  "kusama.crowloaningCring": {
+  "kusama.crowloaningCrab": {
     "message": "CRAB是Crab网络的令牌。 持有CRAB可以参与Crab网络的staking和链上治理。",
     "description": "Kusama crowloaning crab"
   },
