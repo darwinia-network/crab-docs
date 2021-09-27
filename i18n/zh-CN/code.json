@@ -41,7 +41,7 @@
   },
   "kusama.crowloaningCring": {
     "message": "CRING是Crab网络的令牌。 持有CRING可以参与Crab网络的staking和链上治理。",
-    "description": "Kusama crowloaning cring"
+    "description": "Kusama crowloaning crab"
   },
   "kusama.participateSubTitle": {
     "message": "如何参加",
