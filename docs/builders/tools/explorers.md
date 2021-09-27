@@ -21,8 +21,24 @@ To view and interact with Pangolin's substrate layer, go to [this URL](https://p
 
 ### Subscan
 
-Subscan provides blockchain explorer capabilities for Substrate-based chains. It is capable of parsing standard or custom modules. For example, this is useful to display information regarding the Staking, Governance, and EVM pallets (or modules). Code is all open-source and can be found [here](https://github.com/itering/subscan-essentials).
+[Subscan](https://crab.subscan.io/) is a powerful, user-friendly multi-chain browser that adds support for DVM smart contract solutions now.
 
-An instance of Subscan running against the Pangolin TestNet can be found in [this link](https://pangolin.subscan.io/).
+#### Preparation
 
-![Subscan Pangolin](/images/explorers/explorers-images-5.png)
+Switch network and select the network for which you want to query data.
+
+![dvm](../../assets/dvm/explorer/e0.png)
+
+#### Get transaction information
+
+Enter the DVM transaction hash in the search box and click `Search`.
+
+![dvm](../../assets/dvm/explorer/e1.png)
+
+![dvm](../../assets/dvm/explorer/e3.png)
+
+#### Get account information
+
+![dvm](../../assets/dvm/explorer/e2.png)
+
+As shown above, the relationship between the DVM account and the Substrate account, the account balance, the staking and the transaction history can be clearly displayed.

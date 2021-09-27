@@ -2,6 +2,7 @@
 id: dvm-rpc
 title: DVM RPC list
 sidebar_label: DVM RPC list
+sidebar_position: 0
 ---
 
 > Note: The currently implemented RPC apis is compatible with Ethereum, but some apis are not yet implemented.
