@@ -93,7 +93,7 @@ interface ChainlinkInterface {
    * @param _jobId The job spec ID that we want to call in string format
    * @param _payment For this example the PAYMENT is set to zero
    */
-	function requestPrice(address _oracle, string memory _jobId, uint256 _payment)
+    function requestPrice(address _oracle, string calldata _jobId, uint256 _payment) external;
 
     function currentPrice() external view returns (uint);
 
