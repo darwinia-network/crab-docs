@@ -9,7 +9,7 @@ sidebar_label: Hotbit 教程
    ![hotbit1](./assets/crowdloan/hotbit1.png)
 
 
-2. 选择 "Crab (CRING) Slot#1"，选择 "点击参与" 并输入一定数量的 KSM 即可。
+2. 选择 "Crab (CRAB) Slot#1"，选择 "点击参与" 并输入一定数量的 KSM 即可。
    
    ![hotbit2](./assets/crowdloan/hotbit2.png)
    

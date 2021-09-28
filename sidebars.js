@@ -8,7 +8,7 @@ module.exports = {
 
     'Tutorials': [
       'crab-tut-create-account',
-      'crab-tut-claim-cring',
+      'crab-tut-claim-crab',
       'crab-tut-node',
       {
         'Staking': [

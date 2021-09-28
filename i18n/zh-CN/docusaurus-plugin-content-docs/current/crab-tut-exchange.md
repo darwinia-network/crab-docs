@@ -16,7 +16,7 @@ sidebar_label: 交易所接入
 
 | 代币名称 |  精度 | 全称                                |
 | -------| -----|  -----------------------------------|
-| CRING  | 9    | Darwinia Crab Network Native Token  |
+| CRAB  | 9    | Darwinia Crab Network Native Token  |
 | CKTON  | 9    | Darwinia Crab Commitment Token      |
 
 ## 运行全节点
@@ -102,7 +102,7 @@ $ curl 'http-rpc-url' -X POST -H "Content-Type：application/json"  --data '{"ha
     result["data"]["success"] == true;
     
     2. Check if the transaction is a transfer
-    // CRING
+    // CRAB
     const event = result["event"].find(event => {
         event["module_id"] == "balances" && event["event_id"] == "Transfer" 
     }); 
@@ -149,7 +149,7 @@ const A = keyring.addFromUri('<YOUR_SEED>');
 const B = '5EU6EEhZRbh1NQS7HRMwAogoBHWtT2eLFQWei2UZHUHJosHt';
 
 // Create a extrinsic
-// CRING, transferring 1 CRING to B
+// CRAB, transferring 1 CRAB to B
 const transfer = api.tx.balances.transfer(B, 1_000_000_000);
 
 // CKTON, transferring 1 CKTON to B
