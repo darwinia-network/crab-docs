@@ -53,7 +53,7 @@ module.exports = {
             },
             {
               label: 'Twitter',
-              href: 'https://t.me/DarwiniaNetwork',
+              href: 'https://twitter.com/DarwiniaNetwork',
             },
             {
               label: 'GitHub',
