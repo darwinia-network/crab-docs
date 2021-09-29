@@ -141,7 +141,5 @@ Note that only one block header is shown in the image. These messages are displa
 ## Check if a Node is Synchronized with the Network
 With pub/sub it is also possible to check whether a particular node you are subscribed to is currently synchronized with the network. For that, we can leverage the `web3.eth.subscribe(‘syncing' [, callback])` method, implementing the same callback function to check for the response. This subscription will return an object when the node is synced with the network.
 
-![Subscribe to syncing response](/images/testnet/testnet-pubsub6.png)
-
 ## Current Limitations
 The pub/sub implementation in [Frontier](https://github.com/paritytech/frontier) is still in active development. This first version allows DApp developers (or users in general) to subscribe to specific event types, but there are still some limitations. You may have noticed from previous examples that some of the fields are not showing proper information with the current version released, and that is because certain properties are yet to be supported by Frontier.
