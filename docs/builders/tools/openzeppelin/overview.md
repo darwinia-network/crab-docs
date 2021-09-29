@@ -22,7 +22,7 @@ Currently, the following OpenZeppelin products/solutions work on the different n
 | :-------------------: | :-: | :-----------------: | :-: | :--------------: |
 | Contracts & Libraries |     |          ✓          |     |         ✓       |
 |    Contract Wizard    |     |          ✓          |     |         ✓       |
-|       Defender        |     |          X          |     |         ✓       |
+|       Defender        |     |          X          |     |         X       |
 
 You will find a corresponding tutorial for each product in the following links:
 
