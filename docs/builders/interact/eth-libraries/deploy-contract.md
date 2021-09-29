@@ -418,7 +418,7 @@ web3 = Web3(Web3.HTTPProvider(provider_rpc['development']))  # Change to correct
 # Variables
 account_from = {
     'private_key': 'YOUR-PRIVATE-KEY-HERE',
-    'address': 'PUBLIC-ADDRESS-OF-PK-HERE',
+    'address': Web3.toChecksumAddress('PUBLIC-ADDRESS-OF-PK-HERE'),
 }
 
 #
@@ -1139,7 +1139,7 @@ python3 deploy.py
   </TabItem>
 </Tabs>
 
-This will deploy the contract and return the address:
+This will deploy the contract and return the address. Save the address for later use in `get.*`, `increment.*`, and `reset.*` scripts:
 
 <Tabs
   defaultValue="Web3.js"
@@ -1183,7 +1183,7 @@ Next, run the increment file. You can use the get file to verify the value of th
 # Get value
 node get.js
 # Increment value
-increment.js
+node increment.js
 # Get value
 node get.js
 ```
