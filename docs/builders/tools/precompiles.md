@@ -8,7 +8,7 @@ description:  Learn how to use precompiled contracts on Pangolin, the Pangolin T
 
 ## Introduction
 
-Another feature added with the release of Pangolin and Crab Networks is the inclusion of some [precompiled contracts](https://docs.klaytn.com/smart-contract/precompiled-contracts) that are natively available on Ethereum. 
+Another feature added with the release of Pangolin and Crab Networks is the inclusion of some [precompiled contracts](https://docs.klaytn.com/smart-contract/precompiled-contracts) that are natively available on Ethereum.
 
 Four precompiles are currently included, including: ecrecover, sha256, ripemd-160, and the identity function.
 In this guide, we will explain how to use and/or verify these precompiles.
@@ -85,8 +85,7 @@ contract ECRECOVER{
     uint8 v = 0x1b;
     bytes32 r = 0x44287513919034a471a7dc2b2ed121f95984ae23b20f9637ba8dff471b6719ef;
     bytes32 s = 0x7d7dc30309a3baffbfd9342b97d0e804092c0aeb5821319aa732bc09146eafb4;
-    
-    
+
     function verify() public view returns(bool) {
         // Use ECRECOVER to verify address
         return (ecrecover(msgHash, v, r, s) == (addressTest));
@@ -109,10 +108,10 @@ contract Hash256{
     function calculateHash() internal pure returns (bytes32) {
         string memory word = 'Hello World!';
         bytes32 hash = sha256(bytes (word));
-        
-        return hash;        
+
+        return hash;
     }
-    
+
     function checkHash() public view returns(bool) {
         return (calculateHash() == expectedHash);
     }
@@ -134,10 +133,10 @@ contract HashRipmd160{
     function calculateHash() internal pure returns (bytes20) {
         string memory word = 'Hello World!';
         bytes20 hash = ripemd160(bytes (word));
-        
-        return hash;        
+
+        return hash;
     }
-    
+
     function checkHash() public view returns(bool) {
         return (calculateHash() == expectedHash);
     }
@@ -153,21 +152,21 @@ Also known as datacopy, this function serves as a cheaper way to copy data in me
 pragma solidity ^0.7.0;
 
 contract Identity{
-    
+
     bytes public memoryStored;
 
     function callDatacopy(bytes memory data) public returns (bytes memory) {
-    bytes memory result = new bytes(data.length);
-    assembly {
-        let len := mload(data)
-        if iszero(call(gas(), 0x04, 0, add(data, 0x20), len, add(result,0x20), len)) {
-            invalid()
-        }
-    }
-    
-    memoryStored = result;
+		bytes memory result = new bytes(data.length);
+		assembly {
+			let len := mload(data)
+			if iszero(call(gas(), 0x04, 0, add(data, 0x20), len, add(result,0x20), len)) {
+				invalid()
+			}
+		}
 
-    return result;
+		memoryStored = result;
+
+		return result;
     }
 }
 ```
