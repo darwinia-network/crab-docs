@@ -76,9 +76,6 @@ const configurePangolin = async () => {
 }
 ```
 
-<img src={require("/images/integrations/integrations-metamask-1.png").default} alt="Integrate MetaMask into a Dapp - Select account"/>
-<img src={require("/images/integrations/integrations-metamask-2.png").default} alt="Integrate MetaMask into a Dapp - Connect account"/>
-
 3. Add Pangolin as a new chain by calling `wallet_addEthereumChain`. This will prompt the user to provide permission to add Pangolin as a custom network.
 ```javascript
 import detectEthereumProvider from '@metamask/detect-provider';
@@ -113,15 +110,10 @@ const configurePangolin = async () => {
 }
 ```
 
-<img src={require("/images/integrations/integrations-metamask-3.png").default} alt="Integrate MetaMask into a Dapp - Add network"/>
-
 Once the network has been successfully added, it will also prompt the user to then switch to Pangolin.
 
-<img src={require("/images/integrations/integrations-metamask-4.png").default} alt="Integrate MetaMask into a Dapp - Switch to network"/>
 
 So, now you should have a button that, on click, walks users through the entire process of connecting their MetaMask accounts to Pangolin.
-
-<img src={require("/images/integrations/integrations-metamask-5.png").default} alt="Integrate MetaMask into a Dapp - Account connected to Pangolin"/>
 
 ### Confirm Connection
 

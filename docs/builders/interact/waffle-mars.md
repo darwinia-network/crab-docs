@@ -129,7 +129,7 @@ cd .. && touch waffle.json
 ```json
 {
   "compilerType": "solcjs", // Specifies compiler to use
-  "compilerVersion": "0.8.0", // Specifies version of the compiler
+  "compilerVersion": "0.8.7", // Specifies version of the compiler
   "compilerOptions": {
     "optimizer": { // Optional optimizer settings
       "enabled": true, // Enable optimizer
@@ -155,7 +155,12 @@ That is all you need to do to configure Waffle, now you're all set to compile th
 npm run build
 ```
 
-![Waffle compiler output](/images/waffle-mars/waffle-mars-1.png)
+```
+$ waffle-mars npm run build
+
+> waffle-mars@1.0.0 build
+> waffle
+```
 
 After compiling your contracts, Waffle stores the JSON output in the `build` directory. The contract in this guide is based on Open Zeppelin's ERC-20 template, so relevant ERC-20 JSON files will appear in the `build` directory too.
 
@@ -336,7 +341,13 @@ Artifacts need to be generated for Mars so that typechecks are enabled within de
 ```
 npm run build
 ```
-![Waffle and Mars compiler output](/images/waffle-mars/waffle-mars-2.png)
+
+```
+$ waffle-mars npm run build
+
+> waffle-mars@1.0.0 build
+> waffle && mars
+```
 
 If you open the `build` directory, you should now see an `artifacts.ts` file containing the artifact data needed for deployments. To continue on with the deployment process, you'll need to write a deployment script. The deployment script will be used to tell Mars which contract to deploy, to what network, and which account is to be used to trigger the deployment.
 
@@ -369,7 +380,7 @@ import { MyToken } from '../build/artifacts';
 
 const privateKey = "<insert-your-private-key-here>";
 deploy({network: 'http://pangolin-rpc.darwinia.network', privateKey}, () => {
-  contract('myToken', MyToken, [10]);
+  contract('myToken', MyToken);
 });
 ```
 
@@ -398,6 +409,20 @@ npm run deploy
 
 If successful, you should see details about your transaction including it's hash, the block it was included in, and it's address.
 
-![Mars deployment output](/images/waffle-mars/waffle-mars-4.png)
+```
+$ waffle-mars npm run deploy
+
+
+> waffle-mars@1.0.0 deploy
+> ts-node src/deploy.ts
+
+Transaction: Deploy myToken
+  Fee: $19.24, Ξ0.006553245235595322
+  Balance: $275588.88, Ξ93.85932584491775371
+  Sending ...
+  Hash: 0xa1be3385b7c761e145992f0f0d419546379856e6a35e0acc0275fdc5fa3f75ea
+  Block: 686677
+  Address: 0x9e41aa68a1e59b049A13D14281A9d39197F30036
+```
 
 Congratulations! You've deployed a contract to Pangolin using Waffle and Mars!

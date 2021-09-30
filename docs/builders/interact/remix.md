@@ -22,7 +22,7 @@ This guide assumes that you have a local Darwinia node running in `--dev` mode a
 
 If you followed the guides above, you should have a local Darwinia node which will begin to author blocks as transactions arrive:
 
-![Local Darwinia node producing blocks](/images/remix/using-remix-1.png)
+![Local Darwinia node producing blocks](/images/setting-up-a-node/setting-up-node-4.png)
 
 And you should have a MetaMask installation connected to your local Darwinia dev node with at least one account that has a balance. It should look something like this (expanded view):
 
@@ -79,7 +79,7 @@ As soon as you select "Injected Web3", you will be prompted to allow Remix to co
 
 ![Replace](/images/remix/using-remix-7.png)
 
-Press “Next” in Metamask to allow Remix to access the selected account.
+Press “Connect” in Metamask to allow Remix to access the selected account.
 
 Back on Remix, you should see that the account you wish to use for deployment is now managed by MetaMask. Next to the Deploy button, let’s specify an initial supply of 8M tokens. Since this contract uses the default of 18 decimals, the value to put in the box is `8000000000000000000000000`.
 
