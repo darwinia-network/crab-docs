@@ -1195,7 +1195,7 @@ node get.js
 # Get value
 node get.js
 # Increment value
-increment.js
+node increment.js
 # Get value
 node get.js
 ```
