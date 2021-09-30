@@ -22,7 +22,7 @@ This guide assumes that you have a local Darwinia node running in `--dev` mode a
 
 If you followed the guides above, you should have a local Darwinia node which will begin to author blocks as transactions arrive:
 
-![Local Darwinia node producing blocks](/images/remix/using-remix-01.png)
+![Local Darwinia node producing blocks](/images/setting-up-a-node/setting-up-node-4.png)
 
 And you should have a MetaMask installation connected to your local Darwinia dev node with at least one account that has a balance. It should look something like this (expanded view):
 

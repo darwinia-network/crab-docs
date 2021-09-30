@@ -20,7 +20,7 @@ The different network configuration are as follows.
 | Network  | RPC URL                             | ChainId | Currency| Block Explorer URL |
 | ---------| ------------------------------------ | -------| --------|---------- |
 | Pangolin | http://pangolin-rpc.darwinia.network | 43     | PRING   | https://pangolin.subscan.io/ |
-| Crab     | http://crab-rpc.darwinia.network     | 44     | CRING   | https://crab.subscan.io/      |   
+| Crab     | http://crab-rpc.darwinia.network     | 44     | CRAB   | https://crab.subscan.io/      |   
 
 ![dvm](assets/dvm/metamask/m2.png)
 
@@ -45,3 +45,4 @@ Demonstrating how to use Metamask to transfer and query transactions in a DVM on
 
 ![dvm](assets/dvm/metamask/m7.png)
 ![dvm](assets/dvm/metamask/m8.png)
+

@@ -284,7 +284,7 @@ const Box = await ethers.getContractFactory('Box');
 Next, let's connect this instance to an existing one by passing in the address we obtained when deploying the contract:
 
 ```js
-const box = await Box.attach('0x425668350bD782D80D457d5F9bc7782A24B8c2ef');
+const box = await Box.attach('0x05ECF77bCAA70ea8F20B601F0d2E7987A4F6e554');
 ```
 
 After attaching to the contract, we are ready to interact with it. While the console is still in session, let's call the `store` method and store a simple value:

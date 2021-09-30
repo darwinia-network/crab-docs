@@ -88,6 +88,11 @@ module.exports = {
 };
 ```
 
+After write config file, we need to install `@truffle/hdwallet-provider` package.
+```
+npm i @truffle/hdwallet-provider
+```
+
 Note that we are using `HD-Wallet-Provider` from Truffle as the Hierarchical Deterministic wallet. Also, we've defined a `dev` network that points to the development node provider URL, and the private key of the development account, which holds all funds in the development node, is included.
 
 For deployments to the Pangolin TestNet or Crab, you need to provide the private key of an address that holds funds. For Pangolin, you can create an account in MetaMask, fund it using the [TestNet faucet](/builders/get-started/darwinia-pangolin/#get-tokens), and export its private key.
@@ -210,7 +215,21 @@ truffle compile
 
 If successful, you should see output like the following:
 
-![Truffle compile success message](/images/truffle/truffle-6.png)
+```
+$ metacoin-box truffle compile
+
+Compiling your contracts...
+===========================
+✔ Fetching solc version list from solc-bin. Attempt #1
+✔ Downloading compiler. Attempt #1.
+> Compiling ./contracts/ConvertLib.sol
+> Compiling ./contracts/MetaCoin.sol
+> Compiling ./contracts/Migrations.sol
+✔ Fetching solc version list from solc-bin. Attempt #1
+> Artifacts written to /Users/echo/workspace/draft/code/metacoin-box/build/contracts
+> Compiled successfully using:
+   - solc: 0.6.12+commit.27d51765.Emscripten.clang
+```
 
 Now we are ready to deploy the compiled contracts. You can do this with the following command:
 
@@ -246,5 +265,93 @@ truffle migrate --network Crab
 
 If successful, you will see deployment actions, including the address of the deployed contract:
 
-![Successful contract deployment actions](/images/truffle/truffle-7.png)
+```
+$ metacoin-box truffle migrate --network pangolin
+
+Compiling your contracts...
+===========================
+✔ Fetching solc version list from solc-bin. Attempt #1
+> Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+> Network name:    'pangolin'
+> Network id:      43
+> Block gas limit: 4294967295 (0xffffffff)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x1cf510a03023bd4842ed2fa6e901bad99445ca3caea952451350bc66b7fb3b5b
+   > Blocks: 2            Seconds: 13
+   > contract address:    0xe5C85b572c57F20e6FCA59b7b6B4D0d56B10f87c
+   > block number:        686236
+   > block timestamp:     1632915054
+   > account:             0xA4ADf2A419Fe24e7f6527F76AfBA5674BF9252f3
+   > balance:             93.900544511883035776
+   > gas used:            159195 (0x26ddb)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0031839 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           0.0031839 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'ConvertLib'
+   ----------------------
+   > transaction hash:    0xa782ad8ee3cd9fd572adbb5ea3971f8f862959cb7826ea3b67c8df182e2a2cb9
+   > Blocks: 4            Seconds: 27
+   > contract address:    0x59Ef69D2Dc9b55461bF0BBCAA32b351d669A54b8
+   > block number:        686244
+   > block timestamp:     1632915102
+   > account:             0xA4ADf2A419Fe24e7f6527F76AfBA5674BF9252f3
+   > balance:             93.897784031883035776
+   > gas used:            95686 (0x175c6)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00191372 ETH
+
+
+   Linking
+   -------
+   * Contract: MetaCoin <--> Library: ConvertLib (at address: 0x59Ef69D2Dc9b55461bF0BBCAA32b351d669A54b8)
+
+   Deploying 'MetaCoin'
+   --------------------
+   > transaction hash:    0x245f3136b9044ef34541753fdf08cd2679ddde63ea93c5c4c37d72382bca727c
+   > Blocks: 4            Seconds: 21
+   > contract address:    0xD05FDEC15D2eEA9E13d07817b3C85bf1b500EB58
+   > block number:        686252
+   > block timestamp:     1632915150
+   > account:             0xA4ADf2A419Fe24e7f6527F76AfBA5674BF9252f3
+   > balance:             93.892056811883035776
+   > gas used:            286361 (0x45e99)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00572722 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00764094 ETH
+
+
+Summary
+=======
+> Total deployments:   3
+> Final cost:          0.01082484 ETH
+```
 
