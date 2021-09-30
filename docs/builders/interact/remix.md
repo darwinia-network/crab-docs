@@ -26,7 +26,7 @@ If you followed the guides above, you should have a local Darwinia node which wi
 
 And you should have a MetaMask installation connected to your local Darwinia dev node with at least one account that has a balance. It should look something like this (expanded view):
 
-![MetaMask installation with a balance](/images/remix/using-remix-2.png)
+![MetaMask installation with a balance](/images/remix/using-remix-02.png)
 
 :::note
 Make sure you are connected to your Darwinia node and not another network!
@@ -38,11 +38,11 @@ Now, let’s fire up Remix to exercise more advanced functionalities in Darwinia
 
 Launch Remix by navigating to [https://remix.ethereum.org/](https://remix.ethereum.org/). In the main screen, under Environments, select Solidity to configure Remix for Solidity development, then navigate to the File Explorers view:
 
-![File explorer](/images/remix/using-remix-3.png)
+![File explorer](/images/remix/using-remix-03.png)
 
 We will create a new file to save the Solidity smart contract. Hit the + button under File Explorers and enter the name "MyToken.sol" in the popup dialog:
 
-![Create a new file for your Solidity contract](/images/remix/using-remix-4.png)
+![Create a new file for your Solidity contract](/images/remix/using-remix-04.png)
 
 Next, let's paste the following smart contract into the editor tab that comes up:
 
@@ -63,11 +63,11 @@ This is a simple ERC-20 contract based on the current Open Zeppelin ERC-20 templ
 
 Once you have pasted the contract into the editor, it should look like this:
 
-![Paste the contract into the editor](/images/remix/using-remix-5.png)
+![Paste the contract into the editor](/images/remix/using-remix-05.png)
 
 Now, navigate to the compile sidebar option to press the “Compile MyToken.sol” button:
 
-![Compile MyToken.sol](/images/remix/using-remix-6.png)
+![Compile MyToken.sol](/images/remix/using-remix-06.png)
 
 You will see Remix download all of the Open Zeppelin dependencies and compile the contract.
 
@@ -77,19 +77,21 @@ Now we can deploy the contract by navigating to the Deployment sidebar option. Y
 
 As soon as you select "Injected Web3", you will be prompted to allow Remix to connect to your MetaMask account.
 
-![Replace](/images/remix/using-remix-7.png)
+![Replace-01](/images/remix/using-remix-07.png)
 
-Press “Connect” in Metamask to allow Remix to access the selected account.
+Press “Confirm” in Metamask to allow Remix to access the selected account.
+
+![Replace-02](/images/remix/using-remix-08.png)
+
+
 
 Back on Remix, you should see that the account you wish to use for deployment is now managed by MetaMask. Next to the Deploy button, let’s specify an initial supply of 8M tokens. Since this contract uses the default of 18 decimals, the value to put in the box is `8000000000000000000000000`.
 
 Once you have entered this value, select "Deploy."
 
-![Enter an account balance and deploy](/images/remix/using-remix-8.png)
+![Enter an account balance and deploy](/images/remix/using-remix-09.png)
 
 You will be prompted in MetaMask to confirm the contract deployment transaction.
-
-![Confirm the transaction message](/images/remix/using-remix-9.png)
 
 :::note
 If you have problems deploying any specific contract, you can try manually increasing the gas limit. You can do this under Settings -> Advanced -> Advanced Gas Controls = ON.
@@ -115,19 +117,31 @@ Paste the copied contract address into the “Custom Token” field. The “Toke
 
 ![Paste the copied contract address](/images/remix/using-remix-13.png)
 
-After hitting “Next,” you will need to confirm that you want to add these tokens to your MetaMask account. Hit “Add Token” and you should see a balance of 8M MyTokens in MetaMask:
+After hitting “Next,” you will need to confirm that you want to add these tokens to your MetaMask account.
 
-![Add the tokens to your MetaMask account](/images/remix/using-remix-14.png)
+![Paste the copied contract address](/images/remix/using-remix-14.png)
+
+ Hit “Add Token” and you should see a balance of 8M MyTokens in MetaMask:
+
+![Add the tokens to your MetaMask account](/images/remix/using-remix-15.png)
 
 Now we can send some of these ERC-20 tokens to the other account that we have set up in MetaMask. Hit “send” to initiate the transfer of 500 MyTokens and select the destination account.
 
+![Confirmation of the token transfer](/images/remix/using-remix-16.png)
+
 After hitting “next,” you will be asked to confirm (similar to what is pictured below).
 
-![Confirmation of the token transfer](/images/remix/using-remix-15.png)
+![Confirmation of the token transfer](/images/remix/using-remix-17.png)
 
-Hit “Confirm” and, after the transaction is complete, you will see a confirmation and a reduction of the MyToken account balance from the sender account in MetaMask:
+Hit “Confirm” and after the transaction is complete, you will see a confirmation and a reduction of the MyToken account balance from the sender account in MetaMask:
 
-![Verify the reduction in account balance](/images/remix/using-remix-16.png)
+![Verify the reduction in account balance](/images/remix/using-remix-18.png)
 
 If you own the account that you sent the tokens to, you can add the token asset to verify that the transfer arrived.
+
+![Verify the reduction in account balance](/images/remix/using-remix-19.png)
+
+If you encounter a failure while transferring tokens, you may need to increase the gas price and gas limit.
+![Verify the reduction in account balance](/images/remix/using-remix-20.png)
+![Verify the reduction in account balance](/images/remix/using-remix-21.png)
 

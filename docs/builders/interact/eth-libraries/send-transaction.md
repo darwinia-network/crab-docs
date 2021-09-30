@@ -8,7 +8,7 @@ description: Learn how to create and send transactions on Pangolin’s Ethereum-
 
 ## Introduction
 
-This guide walks through using three different Ethereum libraries to manually sign and send a transaction on Pangolin. The three libraries covered in this tutorial are:
+This guide walks through using three different Ethereum libraries to sign and send a transaction on Pangolin manually. The three libraries covered in this tutorial are:
 
  - [Web3.js](https://web3js.readthedocs.io/)
  - [Ethers.js](https://docs.ethers.io/)
@@ -20,7 +20,7 @@ The examples in this guide assumes you have a MacOS or Ubuntu 18.04-based enviro
 
 ## Checking Prerequisites
 
-The examples using both web3.js and ethers.js require previous installation of Node.js and NPM. The example using web3.py requires Python and PIP. As of the writing of this guide, the versions used were:
+The examples using both web3.js and ethers.js require the previous installation of Node.js and NPM. The example using web3.py requires Python and PIP. As of the writing of this guide, the versions used were:
 
  - Node.js v16.0.0
  - NPM v7.10.0
@@ -89,7 +89,7 @@ Only one file is needed to execute a transaction between accounts. The script sh
  - Ethers.js: [_transaction.js_](/snippets/code/ethers-tx-local/transaction.js)
  - Web3.py: [_transaction.py_](/snippets/code/web3py-tx/transaction.py)
 
-Each of the files, regardless of the library used, has been divided into three sections. In the first section ("Define Provider & Variables"), the library to use is imported, and the provider and other variables are defined (variables depend on the library). Note that `providerRPC` has three the standard node RPC endpoint, the one for development, the one for [Pangolin](/builders/get-started/darwinia-pangolin.md) and another one for [Crab](/builders/get-started/darwinia-crab.md).
+Each of the files, regardless of the library used, has been divided into three sections. In the first section ("Define Provider & Variables"), the library to use is imported, and the provider and other variables are defined (variables depend on the library). Note that `providerRPC` has three standard node RPC endpoint, the one for development, the one for [Pangolin](/builders/get-started/darwinia-pangolin.md) and another one for [Crab](/builders/get-started/darwinia-crab.md).
 
 The second section ("Create and Deploy Transaction") outlines the functions needed to send the transaction itself. Some of the key takeaways are discussed next.
 
@@ -288,7 +288,7 @@ Lastly, run the asynchronous deploy function.
 
 ### Ethers.js
 
-In the first section of [the script](/snippets/code/ethers-tx-local/transaction.js), different networks can be specified with a name, RPC URL (required), and chain ID. The provider (similar to the `web3` instance) is created with the `ethers.providers.StaticJsonRpcProvider` method. An alternative is to use the `ethers.providers.JsonRpcProvide(providerRPC)` method, which only requires the provider RPC endpoint address. But this might created compatibility issues with individual project specifications.
+In the first section of [the script](/snippets/code/ethers-tx-local/transaction.js), different networks can be specified with a name, RPC URL (required), and chain ID. The provider (similar to the `web3` instance) is created with the `ethers.providers.StaticJsonRpcProvider` method. An alternative is to use the `ethers.providers.JsonRpcProvide(providerRPC)` method, which only requires the provider RPC endpoint address. But this might cause compatibility issues with individual project specifications.
 
 The private key is defined to create a wallet instance, which also requires the provider from the previous step. The wallet instance is used to sign transactions.
 
@@ -322,7 +322,7 @@ You can find the code snippet for each library here (files were arbitrarily name
  - Ethers.js: [_balances.js_](/snippets/code/ethers-tx-local/balances.js)
  - Web3.py: [_balances.py_](/snippets/code/web3py-tx/balances.py)
 
-For simplicity, the balance file is composed of two sections. As before, in the first section ("Define Provider & Variables"), the library to use is imported, and the provider and address from/to (to check the balances) are defined.
+For simplicity, the balance file is composed of two sections. In the first section ("Define Provider & Variables"), the library to use is imported, and the provider and addresses from/to (to check the balances) are defined.
 
 The second section ("Balance Call Function") outlines the functions needed to fetch the balances of the accounts previously defined. Note that `providerRPC` has three the standard node RPC endpoint, the one for development, the one for [Pangolin](/builders/get-started/darwinia-pangolin.md) and another one for [Crab](/builders/get-started/darwinia-crab.md). Some of the key takeaways are discussed next.
 
@@ -366,8 +366,8 @@ const balances = async () => {
       'ether'
    );
 
-   console.log(`The balance of ${addressFrom} is: ${balanceFrom} ETH`);
-   console.log(`The balance of ${addressTo} is: ${balanceTo} ETH`);
+   console.log(`The balance of ${addressFrom} is: ${balanceFrom} PRING`);
+   console.log(`The balance of ${addressTo} is: ${balanceTo} PRING`);
 };
 
 balances();
@@ -424,8 +424,8 @@ const balances = async () => {
       await provider.getBalance(addressTo)
    );
 
-   console.log(`The balance of ${addressFrom} is: ${balanceFrom} ETH`);
-   console.log(`The balance of ${addressTo} is: ${balanceTo} ETH`);
+   console.log(`The balance of ${addressFrom} is: ${balanceFrom} PRING`);
+   console.log(`The balance of ${addressTo} is: ${balanceTo} PRING`);
 };
 
 balances();
