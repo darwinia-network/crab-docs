@@ -142,6 +142,9 @@ The only purpose of the compile file is to use the Solidity compiler to output t
 The compile file for both JavaScript libraries is the same as they share the JavaScript bindings for the Solidity compiler (same package)
 :::
 
+import CodeBlock from '@theme/CodeBlock';
+import web3CompileSource from '!!raw-loader!/snippets/code/web3-contract-local/compile.js';
+
 <Tabs
   defaultValue="Web3.js"
   values={[
@@ -150,70 +153,10 @@ The compile file for both JavaScript libraries is the same as they share the Jav
     {label: 'Web3.py', value: 'Web3.py'},
   ]}>
   <TabItem value="Web3.js">
-
-```js
-const fs = require('fs');
-const solc = require('solc');
-
-// Get Path and Load Contract
-const source = fs.readFileSync('Incrementer.sol', 'utf8');
-
-// Compile Contract
-const input = {
-   language: 'Solidity',
-   sources: {
-      'Incrementer.sol': {
-         content: source,
-      },
-   },
-   settings: {
-      outputSelection: {
-         '*': {
-            '*': ['*'],
-         },
-      },
-   },
-};
-const tempFile = JSON.parse(solc.compile(JSON.stringify(input)));
-const contractFile = tempFile.contracts['Incrementer.sol']['Incrementer'];
-
-// Export Contract Data
-module.exports = contractFile;
-```
-
+   <CodeBlock className="language-js">{web3CompileSource}</CodeBlock>
   </TabItem>
   <TabItem value="Ethers.js">
-
-```js
-const fs = require('fs');
-const solc = require('solc');
-
-// Get Path and Load Contract
-const source = fs.readFileSync('Incrementer.sol', 'utf8');
-
-// Compile Contract
-const input = {
-   language: 'Solidity',
-   sources: {
-      'Incrementer.sol': {
-         content: source,
-      },
-   },
-   settings: {
-      outputSelection: {
-         '*': {
-            '*': ['*'],
-         },
-      },
-   },
-};
-const tempFile = JSON.parse(solc.compile(JSON.stringify(input)));
-const contractFile = tempFile.contracts['Incrementer.sol']['Incrementer'];
-
-// Export Contract Data
-module.exports = contractFile;
-```
-
+   <CodeBlock className="language-js">{web3CompileSource}</CodeBlock>
   </TabItem>
   <TabItem value="Web3.py">
 
