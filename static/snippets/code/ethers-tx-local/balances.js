@@ -45,8 +45,8 @@ const balances = async () => {
       await provider.getBalance(addressTo)
    );
 
-   console.log(`The balance of ${addressFrom} is: ${balanceFrom} RING`);
-   console.log(`The balance of ${addressTo} is: ${balanceTo} RING`);
+   console.log(`The balance of ${addressFrom} is: ${balanceFrom} PRING`);
+   console.log(`The balance of ${addressTo} is: ${balanceTo} PRING`);
 };
 
 balances();

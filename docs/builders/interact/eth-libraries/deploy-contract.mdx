@@ -142,6 +142,9 @@ The only purpose of the compile file is to use the Solidity compiler to output t
 The compile file for both JavaScript libraries is the same as they share the JavaScript bindings for the Solidity compiler (same package)
 :::
 
+import CodeBlock from '@theme/CodeBlock';
+import web3CompileSource from '!!raw-loader!/snippets/code/web3-contract-local/compile.js';
+
 <Tabs
   defaultValue="Web3.js"
   values={[
@@ -150,70 +153,10 @@ The compile file for both JavaScript libraries is the same as they share the Jav
     {label: 'Web3.py', value: 'Web3.py'},
   ]}>
   <TabItem value="Web3.js">
-
-```js
-const fs = require('fs');
-const solc = require('solc');
-
-// Get Path and Load Contract
-const source = fs.readFileSync('Incrementer.sol', 'utf8');
-
-// Compile Contract
-const input = {
-   language: 'Solidity',
-   sources: {
-      'Incrementer.sol': {
-         content: source,
-      },
-   },
-   settings: {
-      outputSelection: {
-         '*': {
-            '*': ['*'],
-         },
-      },
-   },
-};
-const tempFile = JSON.parse(solc.compile(JSON.stringify(input)));
-const contractFile = tempFile.contracts['Incrementer.sol']['Incrementer'];
-
-// Export Contract Data
-module.exports = contractFile;
-```
-
+   <CodeBlock className="language-js">{web3CompileSource}</CodeBlock>
   </TabItem>
   <TabItem value="Ethers.js">
-
-```js
-const fs = require('fs');
-const solc = require('solc');
-
-// Get Path and Load Contract
-const source = fs.readFileSync('Incrementer.sol', 'utf8');
-
-// Compile Contract
-const input = {
-   language: 'Solidity',
-   sources: {
-      'Incrementer.sol': {
-         content: source,
-      },
-   },
-   settings: {
-      outputSelection: {
-         '*': {
-            '*': ['*'],
-         },
-      },
-   },
-};
-const tempFile = JSON.parse(solc.compile(JSON.stringify(input)));
-const contractFile = tempFile.contracts['Incrementer.sol']['Incrementer'];
-
-// Export Contract Data
-module.exports = contractFile;
-```
-
+   <CodeBlock className="language-js">{web3CompileSource}</CodeBlock>
   </TabItem>
   <TabItem value="Web3.py">
 
@@ -418,7 +361,7 @@ web3 = Web3(Web3.HTTPProvider(provider_rpc['development']))  # Change to correct
 # Variables
 account_from = {
     'private_key': 'YOUR-PRIVATE-KEY-HERE',
-    'address': 'PUBLIC-ADDRESS-OF-PK-HERE',
+    'address': Web3.toChecksumAddress('PUBLIC-ADDRESS-OF-PK-HERE'),
 }
 
 #
@@ -1139,7 +1082,7 @@ python3 deploy.py
   </TabItem>
 </Tabs>
 
-This will deploy the contract and return the address:
+This will deploy the contract and return the address. Save the address for later use in `get.*`, `increment.*`, and `reset.*` scripts:
 
 <Tabs
   defaultValue="Web3.js"
@@ -1183,7 +1126,7 @@ Next, run the increment file. You can use the get file to verify the value of th
 # Get value
 node get.js
 # Increment value
-increment.js
+node increment.js
 # Get value
 node get.js
 ```
@@ -1195,7 +1138,7 @@ node get.js
 # Get value
 node get.js
 # Increment value
-increment.js
+node increment.js
 # Get value
 node get.js
 ```

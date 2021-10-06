@@ -213,7 +213,7 @@ After compilation, an `artifacts` directory is created: it holds the bytecode an
 
 ## Deploying the Contract
 
-In order to deploy the Box smart contract, we will need to write a simple `deployment script`. First, let's create a new directory (`scripts`). Inside the newly created directory, add a new file `deploy.js`.
+In order to deploy the Box smart contract, we will need to write a simple deployment script. First, let's create a new directory (`scripts`). Inside the newly created directory, add a new file `deploy.js`.
 
 ```
 mkdir scripts && cd scripts
