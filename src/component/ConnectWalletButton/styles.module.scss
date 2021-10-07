@@ -1,0 +1,76 @@
+.chainSelectModal {
+  :global {
+    .ant-modal-content {
+      border-radius: 10px;
+
+      .ant-modal-header {
+        border-radius: 10px 10px 0 0;
+      }
+    }
+  }
+}
+
+%-base-btn {
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    top: 2px;
+  }
+}
+
+.mainBtn {
+  @extend %-base-btn;
+  border-radius: 20px;
+  padding: 5px 10px;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+
+  >span {
+    font-weight: bold;
+    font-size: medium;
+  }
+}
+
+.chainSelectModalTitle {
+  font-weight: bold;
+  font-size: larger;
+  margin: 0;
+}
+
+.chainSelectList {
+  > li {
+    margin-top: 10px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+%-chain-select-list-text {
+  color: black;
+  font-weight: bolder;
+  font-size: 1.1em
+}
+
+.chainSelectBtn {
+  @extend %-base-btn;
+  border-radius: 14px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+
+  >span {
+    @extend %-chain-select-list-text;
+  }
+}
+
+.chainSelected {
+  @extend %-chain-select-list-text;
+}
