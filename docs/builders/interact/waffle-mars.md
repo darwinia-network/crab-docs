@@ -125,7 +125,7 @@ Now that you have written a smart contract, the next step is to use Waffle to co
 cd .. && touch waffle.json
 ```
 
-2. Edit the `waffle.json` to specify compiler configurations, the directory containing your contracts, and more. For this example, we'll use `solcjs` and the Solidity version you used for the contract, which is `0.8.0`:
+2. Edit the `waffle.json` to specify compiler configurations, the directory containing your contracts, and more. For this example, we'll use `solcjs` and the Solidity version you used for the contract, which is `0.8.7`:
 ```json
 {
   "compilerType": "solcjs", // Specifies compiler to use
