@@ -1,6 +1,6 @@
 ---
-title: Overview
-sidebar_position: 1
+title: OpenZeppelin
+sidebar_position: 2
 description:  Learn how to use OpenZeppelin products on Pangolin thanks to its Ethereum compatibility features
 ---
 
