@@ -18,10 +18,10 @@ The newest continent of the Darwinia ecosystem cross-chain game [Evolution Land]
 
 Crab is a Network with long-term value; in fact, it's backed by RING tokens which allow it provide real economic incentives for testing and perfecting game theory, while retaining the benefits of being a testnet.
 
-Crab has the same parameters as Darwinia Mainnet, and uses the same staking and inflation models. Crab’s tokens are CRING and CKTON, with the intial supply of CRING being 2000M, and supply of CKTON starting at 0.
+Crab has the same parameters as Darwinia Mainnet, and uses the same staking and inflation models. Crab’s tokens are CRAB and CKTON, with the intial supply of CRAB being 2000M, and supply of CKTON starting at 0.
 
-CRING and CKTON are tokens with real value, and the cryptocurrency backing module on Crab network has been initially allocated 40M RING as mapped assets supporting that value. These mapped RING on Crab network are managed and voted upon by the Crab Council, and enable CRING and RING tokens to be mutually exchangeable via the Crab<->Darwinia Bridge.
+CRAB and CKTON are tokens with real value, and the cryptocurrency backing module on Crab network has been initially allocated 40M RING as mapped assets supporting that value. These mapped RING on Crab network are managed and voted upon by the Crab Council, and enable CRAB and RING tokens to be mutually exchangeable via the Crab<->Darwinia Bridge.
 
-The exchange of CRING to RING is facilitated by an automated market maker (AMM) protocol similar to Uniswap, so in essense, swapping of CRING and RING is considered typical market behavior, with initial liquidity for trades to be determined by Crab Council.
+The exchange of CRAB to RING is facilitated by an automated market maker (AMM) protocol similar to Uniswap, so in essense, swapping of CRAB and RING is considered typical market behavior, with initial liquidity for trades to be determined by Crab Council.
 
 *** Crab Network will be participating in the Kusama [Parachain Slot Auction](https://polkadot.network/launch-parachains/)***

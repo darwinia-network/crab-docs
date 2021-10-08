@@ -9,7 +9,7 @@ sidebar_position: 6
 
    ![gate1](../assets/crowdloan/gate1.png)
 
-2. 选择 “CRING”，点击进入项目详情。
+2. 选择 “CRAB”，点击进入项目详情。
 
    ![gate2](../assets/crowdloan/gate2.png)
 

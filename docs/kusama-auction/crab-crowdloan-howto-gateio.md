@@ -9,7 +9,7 @@ sidebar_position: 6
 
    ![gate1](../assets/crowdloan/gate1.png)
 
-2. Select "CRING" and click to see the project details.
+2. Select "CRAB" and click to see the project details.
 
    ![gate2](../assets/crowdloan/gate2.png)
 

@@ -80,13 +80,13 @@ Fill in the staking parameters
 
 > The `Stash account` and `Controller account` can be set to the same account. If you hold more tokens or have higher security requirements, it is recommended to set up different accounts here.
 
-`Value bonded` The total amount of the stash balance that will be at stake in any forthcoming rounds (should be less than the total amount available).  This part of the tokens will be temporarily bonded. bonding takes 14 days to unbond; you can choose to bond CRING or CKTON.
+`Value bonded` The total amount of the stash balance that will be at stake in any forthcoming rounds (should be less than the total amount available).  This part of the tokens will be temporarily bonded. bonding takes 14 days to unbond; you can choose to bond CRAB or CKTON.
 
 `Payment destination` The destination account for any payment as either a nominator or validator.
 
-`Bond period` Optional; bond CRING promise for 3-36 months to get additional CKTON rewards. (Promise to lock to accept user terms)
+`Bond period` Optional; bond CRAB promise for 3-36 months to get additional CKTON rewards. (Promise to lock to accept user terms)
 
-> If you unlock CRING in advance within the lock limit, you will be charged  a penalty of 3 times the CKTON reward (In the absence of sufficient CKTON, the CRING can not be used for payment of fines).
+> If you unlock CRAB in advance within the lock limit, you will be charged  a penalty of 3 times the CKTON reward (In the absence of sufficient CKTON, the CRAB can not be used for payment of fines).
 
 After filling in the staking parameters, please click `bond` and `submit`
 

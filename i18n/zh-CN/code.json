@@ -12,7 +12,7 @@
     "description": "Economic model content p1"
   },
   "economic.content02": {
-    "message": "Crab 网络的参数与 Darwinia 主网一样，并使用相同的 Staking 机制和通胀模型。通证分别为 CRING 和 CKTON，CRING 的初始供应量为 2000M，CKTON 的供应量为 0。",
+    "message": "Crab 网络的参数与 Darwinia 主网一样，并使用相同的 Staking 机制和通胀模型。通证分别为 CRAB 和 CKTON，CRAB 的初始供应量为 2000M，CKTON 的供应量为 0。",
     "description": "Economic model content p2"
   },
   "economic.btn01": {
@@ -32,16 +32,16 @@
     "description": "Kusama crowdloaning subtitle"
   },
   "kusama.crowloaningLock": {
-    "message": "KSM持有者将其令牌锁定在Kusama上一段时间（6、12或24个月），以帮助达尔文租用插槽。 作为这些KSM持有者的回报，参与者将获得CRING、NFT等作为奖励。",
+    "message": "KSM持有者将其令牌锁定在Kusama上一段时间（6、12或24个月），以帮助达尔文租用插槽。 作为这些KSM持有者的回报，参与者将获得CRAB、NFT等作为奖励。",
     "description": "Kusama crowloaning lock"
   },
   "kusama.crowloaningSave": {
     "message": "您的令牌锁定以去中心、去信任的方式在链上进行，在锁定期过后持有人就可以继续使用您的令牌，因此您不必担心令牌的安全性。用户的KSM不会脱离用户的钱包账户(托管给交易所的除外)。",
     "description": "Kusama crowloaning save"
   },
-  "kusama.crowloaningCring": {
-    "message": "CRING是Crab网络的令牌。 持有CRING可以参与Crab网络的staking和链上治理。",
-    "description": "Kusama crowloaning cring"
+  "kusama.crowloaningCrab": {
+    "message": "CRAB是Crab网络的令牌。 持有CRAB可以参与Crab网络的staking和链上治理。",
+    "description": "Kusama crowloaning crab"
   },
   "kusama.participateSubTitle": {
     "message": "如何参加",
