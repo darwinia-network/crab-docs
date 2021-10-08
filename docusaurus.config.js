@@ -13,6 +13,9 @@ module.exports = {
   organizationName: 'darwinia-network', // Usually your GitHub org/user name.
   projectName: 'crab-docs', // Usually your repo name.
   themeConfig: {
+    prism: {
+      additionalLanguages: ['solidity'],
+    },
     colorMode: {
       // disableSwitch: true,
       defaultMode: 'light',
