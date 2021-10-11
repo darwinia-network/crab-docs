@@ -1,12 +1,12 @@
 ---
 id: crab-home
-title: Darwinia Crab Network
+title: Crab Network
 sidebar_label: Crab Network
 sidebar_position: 1
 slug: /
 ---
 
-Darwinia Crab Network (Crab) is a canary network with real economic value for Darwinia, and its positioning is similar to Polkadot's Kusama Network. To Expect Chaos is a reasonable assumption!
+Crab Network (Crab) is a canary network with real economic value for Darwinia, and its positioning is similar to Polkadot's Kusama Network. To Expect Chaos is a reasonable assumption!
 
 Crab mainly serves as a testbed and simulation environment for Darwinia network upgrades and application deployment on which radical experiments can be performed. It not only provides a complete network and software execution environment, but also an economic environment.
 
