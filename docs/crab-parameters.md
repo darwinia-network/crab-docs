@@ -79,6 +79,7 @@ sidebar_label: Parameters
 ## SS58 Address Format
 
 Chain specification name: Crab
+
 SS58 prefix: 42
 
 ## Seed Nodes
