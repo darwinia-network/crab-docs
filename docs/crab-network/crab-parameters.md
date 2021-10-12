@@ -78,10 +78,10 @@ sidebar_position: 3
 | Burn unspent treasury funds | Off                       | This deactivates a burn of all  unspent treasury funds at the end of a budgeting period.                                           |
 
 ## SS58 Address Format
-| Network Alias | Network ID | Network Type     |
-| ------------- | ---------- | ---------------- |
-| darwinia      | 18         | Darwinia Mainnet |
-| crab          | 42         | Crab Network     |
+
+Chain specification name: Crab
+
+SS58 prefix: 42
 
 ## Seed Nodes
 
