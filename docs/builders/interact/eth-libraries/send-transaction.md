@@ -85,7 +85,7 @@ The versions used as of publishing this guide were:
 
 ### Test Tokens
 
-If you want to test on the Pangolin testnet, you should have some test tokens in your accounts. Please refer to [_this article_](../../../dvm/wallets/dvm-metamask.md) to learn how to obtain test tokens and transfer them to the designated account.
+If you want to test on the Pangolin testnet, you should have some test tokens in your accounts. Please refer to [_this article_](/dvm/wallets/dvm-metamask.md) to learn how to obtain test tokens and transfer them to the designated account.
 
 ## The Transaction File
 
