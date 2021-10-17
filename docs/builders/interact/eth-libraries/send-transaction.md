@@ -20,6 +20,8 @@ The examples in this guide assumes you have a MacOS or Ubuntu 18.04-based enviro
 
 ## Checking Prerequisites
 
+### Environment
+
 The examples using both web3.js and ethers.js require the previous installation of Node.js and NPM. The example using web3.py requires Python and PIP. As of the writing of this guide, the versions used were:
 
  - Node.js v16.0.0
@@ -80,6 +82,10 @@ The versions used as of publishing this guide were:
  - Web3.js v1.5.2 (`npm ls web3`)
  - Ethers.js v5.4.7 (`npm ls ethers`)
  - Web3.py v5.23.1 (`pip3 show web3`)
+
+### Test Tokens
+
+If you want to test on the Pangolin testnet, you should have some test tokens in your accounts. Please refer to [_this article_](/dvm/wallets/dvm-metamask.md) to learn how to obtain test tokens and transfer them to the designated account.
 
 ## The Transaction File
 
