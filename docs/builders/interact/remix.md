@@ -141,7 +141,4 @@ If you own the account that you sent the tokens to, you can add the token asset 
 
 ![Verify the reduction in account balance](/images/remix/using-remix-19.png)
 
-If you encounter a failure while transferring tokens, you may need to increase the gas price and gas limit.
-![Verify the reduction in account balance](/images/remix/using-remix-20.png)
-![Verify the reduction in account balance](/images/remix/using-remix-21.png)
 
