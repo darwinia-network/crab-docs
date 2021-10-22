@@ -103,14 +103,14 @@ module.exports = {
   ],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-CN'],
+    locales: ['en'],
     localeConfigs: {
       en: {
         label: "English",
       },
-      'zh-CN': {
-        label: "中文",
-      }
+      // 'zh-CN': {
+      //   label: "中文",
+      // }
     }
   }
 };
