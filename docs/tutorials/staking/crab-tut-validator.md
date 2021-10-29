@@ -16,12 +16,7 @@ You can choose either run node with execute file download before or in docker wa
 - Run validator node with existed node binary
 
   ```bash
-  $ ./darwinia \
-    --base-path <YOUR_DATA_DIR> \
-    --name <YOUR_NODE_NAME> \
-    --chain crab \
-    --validator \
-    --rpc-methods=Unsafe 
+  $ ./darwinia --name my-crab-node --chain crab --validator --rpc-methods=Unsafe
   ```
 
 > please make sure to include `--rpc-methods=Unsafe` in command line to prepare for the generation of session keys.
@@ -29,19 +24,8 @@ You can choose either run node with execute file download before or in docker wa
 - Using docker
 
   ```bash
-  $ docker run -it \
-    -v <YOUR_DATA_DIR>:/data \
-    -p <YOUR_NODE_HTTP_PORT>:9933 \
-    -p <YOUR_NODE_WSS_PORT>:9944 \
-    quay.io/darwinia-network/darwinia:vx.x.x \
-      --base-path /data \
-      --name <YOUR_NODE_NAME> \
-      --chain crab \
-      --validator \
-      --rpc-methods=Unsafe \
-      --rpc-external \
-      --rpc-cors all
-    ```
+  $ docker run -it -v node-data:/darwinia/data -p 9933:9933 -p 9944:9944 quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data --name my-crab-node --chain crab --validator --rpc-methods=Unsafe --rpc-external --rpc-cors all
+  ```
 
 > please make sure to include `--rpc-methods=Unsafe --rpc-external --rpc-cors` in command line to prepare for the generation of session keys.
 
@@ -127,21 +111,11 @@ Go to `staking scan` to view information about validators
 For security, you need to remove the rpc unsafe parameters and re-run your node:
 
 ```bash
-$ ./darwinia \
-    --base-path <YOUR_DATA_DIR> \
-    --name <YOUR_NODE_NAME> \
-    --chain crab \
-    --validator
+$ ./darwinia --name my-crab-node --chain crab --validator
 ```
 
 ```bash
-$ docker run -it \
-  -v <YOUR_DATA_DIR>:/data \
-  quay.io/darwinia-network/darwinia:vx.x.x \
-    --base-path /data \
-    --name <YOUR_NODE_NAME> \
-    --chain crab \
-    --validator
+$ docker run -it -v node-data:/darwinia/data quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data --name my-crab-node --chain crab --validator
 ```
 
 ## Other Staking operations
