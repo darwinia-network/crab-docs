@@ -5,26 +5,22 @@ sidebar_label: Running a node
 sidebar_position: 3
 ---
 
-## Initial Setup
+## Clone and Build
 
-> Choose one of the following 3 ways to obtain an executable file
+> Choose one of the following two ways to obtain an executable file
 
 ### 1. Compile from source
+
+The [darwinia-network/darwinia](https://github.com/darwinia-network/darwinia) repo's master branch contains the latest Darwinia code.
 
 ```sh
 $ git clone https://github.com/darwinia-network/darwinia.github
 $ cd darwinia && cargo build --release
 ```
-The compiled executable file darwinia (.exe) can be found under `darwinia/target/release`
-
-### 2. Download the compiled executable file
-
-- https://github.com/darwinia-network/darwinia/releases
-
-### 3. Docker
+Alternatively, if you wish to use a specific release, you can download the binary from release page.(v0.11.4 in the example below):
 
 ```sh
-$ docker pull quay.io/darwinia-network/darwinia:vx.x.x
+$ wget https://github.com/darwinia-network/darwinia/releases/tag/v0.11.4/darwinia-x86_64-linux-gnu.tar.bz2
 ```
 
 ## Run
