@@ -111,21 +111,11 @@ Go to `staking scan` to view information about validators
 For security, you need to remove the rpc unsafe parameters and re-run your node:
 
 ```bash
-$ ./darwinia \
-    --base-path <YOUR_DATA_DIR> \
-    --name <YOUR_NODE_NAME> \
-    --chain crab \
-    --validator
+$ ./darwinia --name "My node's name" --chain crab --validator
 ```
 
 ```bash
-$ docker run -it \
-  -v <YOUR_DATA_DIR>:/data \
-  quay.io/darwinia-network/darwinia:vx.x.x \
-    --base-path /data \
-    --name <YOUR_NODE_NAME> \
-    --chain crab \
-    --validator
+$ docker run -it -v node-data:/darwinia/data -p 9933:9933 -p 9944:9944 quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data/01 --name "My node's name" --chain crab --validator
 ```
 
 ## Other Staking operations
