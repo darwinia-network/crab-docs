@@ -16,7 +16,7 @@ You can choose either run node with execute file download before or in docker wa
 - Run validator node with existed node binary
 
   ```bash
-  $ ./darwinia --name "My node's name" --chain crab --validator --rpc-methods=Unsafe
+  $ ./darwinia --name my-crab-node --chain crab --validator --rpc-methods=Unsafe
   ```
 
 > please make sure to include `--rpc-methods=Unsafe` in command line to prepare for the generation of session keys.
@@ -24,7 +24,7 @@ You can choose either run node with execute file download before or in docker wa
 - Using docker
 
   ```bash
-  $ docker run -it -v node-data:/darwinia/data -p 9933:9933 -p 9944:9944 quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data/01 --name "My node's name" --chain crab --validator --rpc-methods=Unsafe --rpc-external --rpc-cors all
+  $ docker run -it -v node-data:/darwinia/data -p 9933:9933 -p 9944:9944 quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data/01 --name my-crab-node --chain crab --validator --rpc-methods=Unsafe --rpc-external --rpc-cors all
   ```
 
 > please make sure to include `--rpc-methods=Unsafe --rpc-external --rpc-cors` in command line to prepare for the generation of session keys.
@@ -111,11 +111,11 @@ Go to `staking scan` to view information about validators
 For security, you need to remove the rpc unsafe parameters and re-run your node:
 
 ```bash
-$ ./darwinia --name "My node's name" --chain crab --validator
+$ ./darwinia --name my-crab-node --chain crab --validator
 ```
 
 ```bash
-$ docker run -it -v node-data:/darwinia/data -p 9933:9933 -p 9944:9944 quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data/01 --name "My node's name" --chain crab --validator
+$ docker run -it -v node-data:/darwinia/data -p 9933:9933 -p 9944:9944 quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data/01 --name my-crab-node --chain crab --validator
 ```
 
 ## Other Staking operations
