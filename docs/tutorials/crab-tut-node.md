@@ -37,14 +37,14 @@ $ ./darwinia --name my-crab-node --chain crab --ws-external --rpc-cors all
 ### Docker
 
 ```sh
-$ docker run -it -v node-data:/darwinia/data quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data/01 --name my-crab-node --chain crab
+$ docker run -it -v node-data:/darwinia/data quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data --name my-crab-node --chain crab
 ```
 
 Add the `--ws-external` and `--rpc-cors all` options and map out the rpc ports if you want to [remotely connect to this node](https://wiki.polkadot.network/docs/en/maintain-wss):
 
 
 ```sh
-$ docker run -it -v node-data:/darwinia/data quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data/01 --name my-crab-node --chain crab --ws-external --rpc-cors all
+$ docker run -it -v node-data:/darwinia/data quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data --name my-crab-node --chain crab --ws-external --rpc-cors all
 ```
 #### View all parameter descriptions:
 

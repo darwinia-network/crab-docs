@@ -24,7 +24,7 @@ You can choose either run node with execute file download before or in docker wa
 - Using docker
 
   ```bash
-  $ docker run -it -v node-data:/darwinia/data -p 9933:9933 -p 9944:9944 quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data/01 --name my-crab-node --chain crab --validator --rpc-methods=Unsafe --rpc-external --rpc-cors all
+  $ docker run -it -v node-data:/darwinia/data -p 9933:9933 -p 9944:9944 quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data --name my-crab-node --chain crab --validator --rpc-methods=Unsafe --rpc-external --rpc-cors all
   ```
 
 > please make sure to include `--rpc-methods=Unsafe --rpc-external --rpc-cors` in command line to prepare for the generation of session keys.
@@ -115,7 +115,7 @@ $ ./darwinia --name my-crab-node --chain crab --validator
 ```
 
 ```bash
-$ docker run -it -v node-data:/darwinia/data -p 9933:9933 -p 9944:9944 quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data/01 --name my-crab-node --chain crab --validator
+$ docker run -it -v node-data:/darwinia/data -p 9933:9933 -p 9944:9944 quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data --name my-crab-node --chain crab --validator
 ```
 
 ## Other Staking operations
