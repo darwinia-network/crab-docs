@@ -7,17 +7,13 @@ sidebar_position: 3
 
 ## Clone and Build
 
-> Choose one of the following two ways to obtain an executable file
-
-### 1. Compile from source
-
 The [darwinia-network/darwinia](https://github.com/darwinia-network/darwinia) repo's master branch contains the latest Darwinia code.
 
 ```sh
 $ git clone https://github.com/darwinia-network/darwinia.github
 $ cd darwinia && cargo build --release
 ```
-Alternatively, if you wish to use a specific release, you can download the binary from release page.(v0.11.4 in the example below):
+Alternatively, if you wish to use a specific release, you can download the binary from release page.(`v0.11.4` in the example below):
 
 ```sh
 $ wget https://github.com/darwinia-network/darwinia/releases/tag/v0.11.4/darwinia-x86_64-linux-gnu.tar.bz2
