@@ -115,7 +115,7 @@ $ ./darwinia --name my-crab-node --chain crab --validator
 ```
 
 ```bash
-$ docker run -it -v node-data:/darwinia/data -p 9933:9933 -p 9944:9944 quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data --name my-crab-node --chain crab --validator
+$ docker run -it -v node-data:/darwinia/data quay.io/darwinia-network/darwinia:v0.11.4 --base-path /darwinia/data --name my-crab-node --chain crab --validator
 ```
 
 ## Other Staking operations
