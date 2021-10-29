@@ -16,12 +16,7 @@ You can choose either run node with execute file download before or in docker wa
 - Run validator node with existed node binary
 
   ```bash
-  $ ./darwinia \
-    --base-path <YOUR_DATA_DIR> \
-    --name <YOUR_NODE_NAME> \
-    --chain crab \
-    --validator \
-    --rpc-methods=Unsafe 
+  $ ./darwinia --name "My node's name" --chain crab --validator --rpc-methods=Unsafe
   ```
 
 > please make sure to include `--rpc-methods=Unsafe` in command line to prepare for the generation of session keys.
@@ -35,7 +30,7 @@ You can choose either run node with execute file download before or in docker wa
     -p <YOUR_NODE_WSS_PORT>:9944 \
     quay.io/darwinia-network/darwinia:vx.x.x \
       --base-path /data \
-      --name <YOUR_NODE_NAME> \
+      --name "My node's name" \
       --chain crab \
       --validator \
       --rpc-methods=Unsafe \
