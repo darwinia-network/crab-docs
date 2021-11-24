@@ -73,7 +73,7 @@ It is important to understand that different network formats are merely other re
   
 - For [Wormhole](https://wormhole.darwinia.network/) users
   - If you want to transfer assets(RING/KTON) from Ethereum to Darwinia, the `Recipient` part should be a Substrate address for Darwinia, which starts with the number **2**.
-  - If you want to transfer assets(RING/KTON) from Darwinia to Ethereum, the `Recipient` parth should be a real Ethereum address, which starts with **0x**.
+  - If you want to transfer assets(RING/KTON) from Darwinia to Ethereum, the `Recipient` part should be a real Ethereum address, which starts with **0x**.
 
 - Others
   - Some third-party developers have ported their smart contracts or dApps from Ethereum to Crab Network. Users interact with these third-party smart contracts or dApps with MetaMask or other Ethereum-compatible wallet, so **DVM addresses** are used in most cases.
