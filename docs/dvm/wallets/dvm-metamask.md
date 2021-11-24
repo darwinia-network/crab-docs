@@ -5,7 +5,9 @@ sidebar_label: Metamask
 sidebar_position: 2
 ---
 
-The DVM account address format is consistent with the Ethereum account address format and the generation method. The difference is that each DVM account address corresponds to a unique Substrate account address. In other words, the DVM address is first an Ethereum address, but it also corresponds to a Substrate address in addition to the Ethereum address. Currently, you can use the Apps tool to generate the Stustrate address corresponding to the DVM address. Since the DVM and the Ethereum virtual machine are compatible in the underlying specifications, users can use the wallets from the existing Ethereum ecosystem to manage their assets, such as Metamask.
+MetaMask is the most widely used wallet in the Ethereum ecosystem. We have deployed the DVM module in Crab Network and other testnets, which provides Ethereum compatibility. Users can connect to Crab Network and other testnets with MetaMask. There is a corresponding standard Substrate address for every Ethereum-like address, which is called a DVM address. Both addresses point to the same account but are used in different scenarios.
+
+> Detailed explanation of address formats can be found in [DVM Address](../overview/dvm-address.md).
 
 ### Connect with Metamask
 
