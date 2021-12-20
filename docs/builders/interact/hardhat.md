@@ -145,7 +145,7 @@ dev: {
 
 ```
 pangolin: {
-	url: `http://pangolin-rpc.darwinia.network`,
+	url: `https://pangolin-rpc.darwinia.network`,
 	chainId: 43,
 	accounts: [privateKeyPangolin] // Insert your private key here
   },
@@ -156,7 +156,7 @@ pangolin: {
 
 ```
 crab: {
-	url: `http://crab-rpc.darwinia.network`,
+	url: `https://crab-rpc.darwinia.network`,
 	chainId: 44,
 	accounts: [privateKeyCrab] // Insert your private key here
   },
@@ -181,7 +181,7 @@ module.exports = {
   networks: {
     // Pangolin network specification
     pangolin: {
-      url: `http://pangolin-rpc.darwinia.network`,
+      url: `https://pangolin-rpc.darwinia.network`,
       chainId: 43,
       accounts: [privateKey]
     }

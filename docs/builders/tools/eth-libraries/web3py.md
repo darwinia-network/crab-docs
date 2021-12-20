@@ -28,8 +28,8 @@ web3 = Web3(Web3.HTTPProvider('RPC_URL'))
 Depending on which network you want to connect to, you can set the `RPC_URL` to the following values:
 
  - Darwinia development node: `http://localhost:9933/`
- - Pangolin TestNet: `http://pangolin-rpc.darwinia.network`
- - Crab: `http://crab-rpc.darwinia.network`
+ - Pangolin TestNet: `https://pangolin-rpc.darwinia.network`
+ - Crab: `https://crab-rpc.darwinia.network`
 
 ## Tutorials
 

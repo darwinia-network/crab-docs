@@ -27,8 +27,8 @@ The different network configuration are as follows.
 
 | Network  | RPC URL                             | ChainID | Currency| Block Explorer URL |
 | ---------| ------------------------------------ | -------| --------|---------- |
-| Pangolin | http://pangolin-rpc.darwinia.network | 43     | PRING   | https://pangolin.subscan.io/ |
-| Crab     | http://crab-rpc.darwinia.network     | 44     | CRAB   | https://crab.subscan.io/      |   
+| Pangolin | https://pangolin-rpc.darwinia.network | 43     | PRING   | https://pangolin.subscan.io/ |
+| Crab     | https://crab-rpc.darwinia.network     | 44     | CRAB   | https://crab.subscan.io/      |   
 
 ### Address Conversion
 

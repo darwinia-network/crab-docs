@@ -35,7 +35,7 @@ import TabItem from '@theme/TabItem';
 ```js
 describe ('Test Contract', () => {
   // Use custom provider to connect to Pangolin or Darwinia development node
-  const pangolinProvider = new ethers.providers.JsonRpcProvider('http://pangolin-rpc.darwinia.network');
+  const pangolinProvider = new ethers.providers.JsonRpcProvider('https://pangolin-rpc.darwinia.network');
   const devProvider = new ethers.providers.JsonRpcProvider('http://localhost:9933');
 })
 ```
@@ -46,7 +46,7 @@ describe ('Test Contract', () => {
 ```typescript
 describe ('Test Contract', () => {
   // Use custom provider to connect to Pangolin or Darwinia development node
-  const pangolinProvider: Provider = new ethers.providers.JsonRpcProvider('http://pangolin-rpc.darwinia.network');
+  const pangolinProvider: Provider = new ethers.providers.JsonRpcProvider('https://pangolin-rpc.darwinia.network');
   const devProvider: Provider = new ethers.providers.JsonRpcProvider('http://localhost:9933');
 })
 ```

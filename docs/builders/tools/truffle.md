@@ -43,7 +43,7 @@ module.exports = {
         provider: () => {
           return new HDWalletProvider(
             privateKeyPangolin,
-            'http://pangolin-rpc.darwinia.network'
+            'https://pangolin-rpc.darwinia.network'
           );
         },
         network_id: 43,
@@ -53,7 +53,7 @@ module.exports = {
         provider: () => {
           return new HDWalletProvider(
             privateKeyCrab,
-            'http://crab-rpc.darwinia.network'
+            'https://crab-rpc.darwinia.network'
           );
         },
         network_id: 44,

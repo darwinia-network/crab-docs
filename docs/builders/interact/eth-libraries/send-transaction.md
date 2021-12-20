@@ -117,8 +117,8 @@ const Web3 = require('web3');
 // Provider
 const providerRPC = {
    development: 'http://localhost:9933',
-   pangolin: 'http://pangolin-rpc.darwinia.network',
-   crab: 'http://crab-rpc.darwinia.network',
+   pangolin: 'https://pangolin-rpc.darwinia.network',
+   crab: 'https://crab-rpc.darwinia.network',
 };
 const web3 = new Web3(providerRPC.development); //Change to correct network
 
@@ -176,12 +176,12 @@ const providerRPC = {
    },
    pangolin: {
       name: 'pangolin',
-      rpc: 'http://pangolin-rpc.darwinia.network',
+      rpc: 'https://pangolin-rpc.darwinia.network',
       chainId: 43,
    },
    crab: {
       name: 'crab',
-      rpc: 'http://crab-rpc.darwinia.network',
+      rpc: 'https://crab-rpc.darwinia.network',
       chainId: 44,
    },
 };
@@ -237,8 +237,8 @@ from web3 import Web3
 # Provider
 provider_rpc = {
     "development": "http://localhost:9933",
-    "pangolin": 'http://pangolin-rpc.darwinia.network',
-    "crab": 'http://crab-rpc.darwinia.network',
+    "pangolin": 'https://pangolin-rpc.darwinia.network',
+    "crab": 'https://crab-rpc.darwinia.network',
 }
 web3 = Web3(Web3.HTTPProvider(provider_rpc["development"]))  # Change to correct network
 
@@ -350,8 +350,8 @@ const Web3 = require('web3');
 // Provider
 const providerRPC = {
    development: 'http://localhost:9933',
-   pangolin: 'http://pangolin-rpc.darwinia.network',
-   crab: 'http://crab-rpc.darwinia.network',
+   pangolin: 'https://pangolin-rpc.darwinia.network',
+   crab: 'https://crab-rpc.darwinia.network',
 };
 const web3 = new Web3(providerRPC.development); //Change to correct network
 
@@ -397,12 +397,12 @@ const providerRPC = {
    },
    pangolin: {
       name: 'pangolin',
-      rpc: 'http://pangolin-rpc.darwinia.network',
+      rpc: 'https://pangolin-rpc.darwinia.network',
       chainId: 43,
    },
    crab: {
       name: 'crab',
-      rpc: 'http://crab-rpc.darwinia.network',
+      rpc: 'https://crab-rpc.darwinia.network',
       chainId: 44,
    },
 };
@@ -449,8 +449,8 @@ from web3 import Web3
 # Provider
 provider_rpc = {
     "development": "http://localhost:9933",
-    "pangolin": 'http://pangolin-rpc.darwinia.network',
-    "crab": 'http://crab-rpc.darwinia.network',
+    "pangolin": 'https://pangolin-rpc.darwinia.network',
+    "crab": 'https://crab-rpc.darwinia.network',
 }
 web3 = Web3(Web3.HTTPProvider(provider_rpc["development"]))  # Change to correct network
 
