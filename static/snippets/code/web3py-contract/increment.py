@@ -7,8 +7,8 @@ from web3 import Web3
 # Provider
 provider_rpc = {
     'development': 'http://localhost:9933',
-    "pangolin": 'http://pangolin-rpc.darwinia.network',
-    "crab": 'http://crab-rpc.darwinia.network',
+    "pangolin": 'https://pangolin-rpc.darwinia.network',
+    "crab": 'https://crab-rpc.darwinia.network',
 }
 web3 = Web3(Web3.HTTPProvider(provider_rpc["development"]))  # Change to correct network
 

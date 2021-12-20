@@ -59,7 +59,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="Pangolin">
 
 ```
-- RPC_URL: http://pangolin-rpc.darwinia.network
+- RPC_URL: https://pangolin-rpc.darwinia.network
 - ChainId: 43
 - NETWORK_NAME: Pangolin
 ```
@@ -68,7 +68,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="Crab">
 
 ```
-- RPC_URL: http://crab-rpc.darwinia.network
+- RPC_URL: https://crab-rpc.darwinia.network
 - ChainID: 44
 - NETWORK_NAME: Crab
 ```

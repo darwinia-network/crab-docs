@@ -168,7 +168,7 @@ After compiling your contracts, Waffle stores the JSON output in the `build` dir
 
 Before deploying your contract and sending it off into the wild, you should test it first. Waffle provides an advanced testing framework and has plenty of tools to help you with testing.
 
-You'll be running tests against the Pangolin TestNet and will need the corresponding RPC URL to connect to it: `http://pangolin-rpc.darwinia.network`. Since you will be running tests against the TestNet, it might take a couple minutes to run all of the tests.
+You'll be running tests against the Pangolin TestNet and will need the corresponding RPC URL to connect to it: `https://pangolin-rpc.darwinia.network`. Since you will be running tests against the TestNet, it might take a couple minutes to run all of the tests.
 
 1. Create a directory to contain your tests and a file to test your `MyToken` contract:
 ```
@@ -188,7 +188,7 @@ use(solidity);
 
 describe ('MyToken', () => {
   // Use custom provider to connect to Pangolin
-  let provider: Provider = new ethers.providers.JsonRpcProvider('http://pangolin-rpc.darwinia.network');
+  let provider: Provider = new ethers.providers.JsonRpcProvider('https://pangolin-rpc.darwinia.network');
   let wallet: Wallet;
   let walletTo: Wallet;
   let token: MyToken;
@@ -290,7 +290,7 @@ import { MyToken, MyTokenFactory } from '../build/types';
 use(solidity);
 
 describe ('MyToken', () => {
-  let provider: Provider = new ethers.providers.JsonRpcProvider('http://pangolin-rpc.darwinia.network');
+  let provider: Provider = new ethers.providers.JsonRpcProvider('https://pangolin-rpc.darwinia.network');
   let wallet: Wallet;
   let walletTo: Wallet;
   let token: MyToken;
@@ -321,7 +321,7 @@ If you want to write more tests on your own, you could consider testing transfer
 
 After you compile your contracts and before deployment, you will have to generate contract artifacts for Mars. Mars uses the contract artifacts for typechecks in deployments. Then you'll need to create a deployment script and deploy the `MyToken` smart contract.
 
-Remember, you will be deploying to Pangolin and will need to use the TestNet RPC URL: `http://pangolin-rpc.darwinia.network`.
+Remember, you will be deploying to Pangolin and will need to use the TestNet RPC URL: `https://pangolin-rpc.darwinia.network`.
 
 The deployment will be broken up into three sections: [generate artifacts](#generate-artifacts), [create a deployment script](#create-a-deployment-script), and [deploy with Mars](#deploy-with-mars).
 
@@ -368,7 +368,7 @@ mkdir src && cd src && touch deploy.ts
 import { deploy } from 'ethereum-mars';
 
 const privateKey = "<insert-your-private-key-here>";
-deploy({network: 'http://pangolin-rpc.darwinia.network', privateKey},(deployer) => {
+deploy({network: 'https://pangolin-rpc.darwinia.network', privateKey},(deployer) => {
   // Deployment logic will go here
 });
 ```
@@ -379,7 +379,7 @@ import { deploy, contract } from 'ethereum-mars';
 import { MyToken } from '../build/artifacts';
 
 const privateKey = "<insert-your-private-key-here>";
-deploy({network: 'http://pangolin-rpc.darwinia.network', privateKey}, () => {
+deploy({network: 'https://pangolin-rpc.darwinia.network', privateKey}, () => {
   contract('myToken', MyToken);
 });
 ```

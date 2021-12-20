@@ -28,7 +28,7 @@ deploy({network: 'http://localhost:9933', privateKey},(deployer) => {
   // Deployment logic will go here
 });
 // For Pangolin
-deploy({network: 'http://pangolin-rpc.darwinia.network', privateKey},(deployer) => {
+deploy({network: 'https://pangolin-rpc.darwinia.network', privateKey},(deployer) => {
   // Deployment logic will go here
 });
 ```

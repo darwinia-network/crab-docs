@@ -128,7 +128,7 @@ dev: {
 pangolin: {
   provider: () => {
 	 ...
-	 return new HDWalletProvider(privateKeyPangolin, 'http://pangolin-rpc.darwinia.network') // Insert your private key here
+	 return new HDWalletProvider(privateKeyPangolin, 'https://pangolin-rpc.darwinia.network') // Insert your private key here
   },
   network_id: 43,
 },
@@ -141,7 +141,7 @@ pangolin: {
 crab: {
   provider: () => {
 	 ...
-	 return new HDWalletProvider(privateKeyCrab, 'http://crab-rpc.darwinia.network') // Insert your private key here
+	 return new HDWalletProvider(privateKeyCrab, 'https://crab-rpc.darwinia.network') // Insert your private key here
   },
   network_id: 44,
 },

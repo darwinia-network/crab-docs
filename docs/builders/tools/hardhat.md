@@ -50,13 +50,13 @@ module.exports = {
       },
       // Pangolin TestNet
       pangolin: {
-        url: 'http://pangolin-rpc.darwinia.network',
+        url: 'https://pangolin-rpc.darwinia.network',
         chainId: 43,
         accounts: [privateKeyPangolin]
       },
       // Crab
       crab: {
-        url: 'http://crab-rpc.darwinia.network',
+        url: 'https://crab-rpc.darwinia.network',
         chainId: 44,
         accounts: [privateKeyCrab]
       },

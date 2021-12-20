@@ -13,12 +13,12 @@ const providerRPC = {
    },
    pangolin: {
       name: 'pangolin',
-      rpc: 'http://pangolin-rpc.darwinia.network',
+      rpc: 'https://pangolin-rpc.darwinia.network',
       chainId: 43,
    },
    crab: {
       name: 'crab',
-      rpc: 'http://crab-rpc.darwinia.network',
+      rpc: 'https://crab-rpc.darwinia.network',
       chainId: 44,
    },
 };

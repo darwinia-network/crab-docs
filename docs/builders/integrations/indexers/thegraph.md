@@ -10,7 +10,7 @@ The Graph is a decentralized and open-source protocol for indexing and querying 
 Here we introduce you about how to deploy a local The Graph Node, create and deploy a Subgraph to listen event from DVM contract.
 
 ## The Graph Node
-The docker-compose file is like this. Before start the server, you need to set a URL for the network. Here we use the Darwinia testnet `pangolin` http://pangolin-rpc.darwinia.network.
+The docker-compose file is like this. Before start the server, you need to set a URL for the network. Here we use the Darwinia testnet `pangolin` https://pangolin-rpc.darwinia.network.
 ```
 version: '3'
 services:
@@ -31,7 +31,7 @@ services:
       postgres_pass: let-me-in
       postgres_db: graph-node
       ipfs: 'ipfs:5001'
-      ethereum: 'pangolin:http://pangolin-rpc.darwinia.network'
+      ethereum: 'pangolin:https://pangolin-rpc.darwinia.network'
       GRAPH_LOG: info
   ipfs:
     image: ipfs/go-ipfs:v0.4.23

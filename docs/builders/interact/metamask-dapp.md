@@ -96,7 +96,7 @@ const configurePangolin = async () => {
                             symbol: 'PRING',
                             decimals: 18
                         },
-                       rpcUrls: ["http://pangolin-rpc.darwinia.network"],
+                       rpcUrls: ["https://pangolin-rpc.darwinia.network"],
                        blockExplorerUrls: ["https://pangolin.subscan.io/"]
                     },
                 ]

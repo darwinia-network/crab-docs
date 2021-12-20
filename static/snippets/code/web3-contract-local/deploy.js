@@ -7,8 +7,8 @@ const contractFile = require('./compile');
 // Provider
 const providerRPC = {
    development: 'http://localhost:9933',
-   pangolin: 'http://pangolin-rpc.darwinia.network',
-   crab: 'http://crab-rpc.darwinia.network',
+   pangolin: 'https://pangolin-rpc.darwinia.network',
+   crab: 'https://crab-rpc.darwinia.network',
 };
 const web3 = new Web3(providerRPC.development); //Change to correct network
 
