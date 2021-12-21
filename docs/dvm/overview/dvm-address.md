@@ -80,4 +80,4 @@ It is important to understand that different network formats are merely other re
 
 
 > EVM/DVM Address to Substrate Address Conversion Rule
-> ![Darwinia Address Format Overview](https://user-images.githubusercontent.com/1070122/96566582-55774000-12f8-11eb-9eeb-99881cd361c9.png)
+> ![Darwinia Address Format Overview](../../assets/dvm/overview/dvm_address_06.png)
