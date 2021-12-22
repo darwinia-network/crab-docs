@@ -25,6 +25,8 @@ MetaMask is the most widely used wallet in the Ethereum ecosystem. We have deplo
 
 ![dvm](../../assets/dvm/metamask/m2.png)
 
+### Network Configuration
+
 The different network configuration are as follows.
 
 | Network  | RPC URL                             | ChainID | Currency| Block Explorer URL |
