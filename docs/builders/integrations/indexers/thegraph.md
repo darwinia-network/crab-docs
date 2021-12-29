@@ -10,7 +10,7 @@ The Graph is a decentralized and open-source protocol for indexing and querying 
 Here we introduce you about how to deploy a local The Graph Node, create and deploy a Subgraph to listen event from DVM contract.
 
 ## The Graph Node
-The docker-compose file is like this. Before start the server, you need to set a URL for the network. Here we use the Darwinia testnet `pangolin` https://pangolin-rpc.darwinia.network.
+The docker-compose file is like this. Before start the server, you need to set a URL for the network. Here we use the Darwinia testnet `pangolin` https://pangolin-rpc.darwinia.network. If you want to connect to Crab network, you need change the URL to https://crab-rpc.darwinia.network and use the graph-node image built from https://github.com/darwinia-network/graph-node instead of image `graphprotocol/graph-node`.
 ```
 version: '3'
 services:
