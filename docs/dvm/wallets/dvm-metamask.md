@@ -36,7 +36,7 @@ The different network configuration are as follows.
 
 ### Address Conversion
 
-Use Apps tool to generate the Stustrate address corresponding to the DVM address.
+Use Apps tool to generate the Substrate address corresponding to the DVM address.
 1. Copy the DVM address.
 
 ![dvm](../../assets/dvm/metamask/m3.png)
