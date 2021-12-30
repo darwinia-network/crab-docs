@@ -2,7 +2,7 @@
 id: crab-tut-exchange
 title: Exchange Access Guide
 sidebar_label: Exchange Access Guide
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 ## Basic Informations
