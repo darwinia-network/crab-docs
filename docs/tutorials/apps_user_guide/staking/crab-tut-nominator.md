@@ -2,11 +2,11 @@
 id: crab-tut-nominator
 title: How to become a nominator
 sidebar_label: Become a nominator
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 > - Staking is a consensus mechanism based on PoS (Proof of Stake / Proof of Stake). Token holders obtain rewards and benefits through pledge, voting, delegation, and locking.  
-> - Before participating in staking, please make sure you have at least **1** Crab address. If you hold more tokens or have higher security requirements, it is recommended to prepare **2** Crab addresses. If there is no address, please refer to: [How to create an account](../crab-tut-create-account.md).  
+> - Before participating in staking, please make sure you have at least **1** Crab address. If you hold more tokens or have higher security requirements, it is recommended to prepare **2** Crab addresses. If there is no address, please refer to: [How to create an account](../crab-tut-create-account.md).
 > - A small amount of CRING must be prepared in Crab Network's address as fee.
 
 
@@ -14,11 +14,11 @@ sidebar_position: 2
 
 Enter [Darwinia Wallet](https://apps.darwinia.network) and lick the `Staking` column on the left , Click `Start staking`
 
-![nominate](../../assets/tut/staking-norminator/1.png)
+![nominate](../../../assets/tut/staking-norminator/1.png)
 
 Fill in the staking parameters 
 
-![nominate](../../assets/tut/staking-norminator/2.png)
+![nominate](../../../assets/tut/staking-norminator/2.png)
 
 `Stash account` Account for stashing tokens. Tokens participating in staking will come from this account. The operations of this account are mostly related to changes in stash.
 
@@ -36,7 +36,7 @@ Fill in the staking parameters
 
 After filling in the staking parameters, please click `bond` and `submit`
 
-![nominate](../../assets/tut/staking-norminator/3.png)
+![nominate](../../../assets/tut/staking-norminator/3.png)
 
 ## Nominate a validator
 
@@ -44,19 +44,19 @@ After filling in the staking parameters, please click `bond` and `submit`
 
 After completing the staking parameters, click `Nominate` on this page
 
-![nominate](../../assets/tut/staking-norminator/4.png)
+![nominate](../../../assets/tut/staking-norminator/4.png)
 
 Choose your favorite validator
 
-![nominate](../../assets/tut/staking-norminator/5.png)
+![nominate](../../../assets/tut/staking-norminator/5.png)
 
 Sign and submit
 
-![nominate](../../assets/tut/staking-norminator/6.png)
+![nominate](../../../assets/tut/staking-norminator/6.png)
 
 View information about nominated validators
 
-![nominate](../../assets/tut/staking-norminator/7.png)
+![nominate](../../../assets/tut/staking-norminator/7.png)
 
 > The operation of nominating validators will take effect from the next era, and it is normal to temporarily delay.
 
@@ -76,7 +76,7 @@ The tokens' statuses are following:
 
 There are other operations in staking for the following purposes:
 
-![nominate](../../assets/tut/staking-norminator/8.png)
+![nominate](../../../assets/tut/staking-norminator/8.png)
 
 `Stop nomination` Cancels all nominees.
 
@@ -92,7 +92,7 @@ There are other operations in staking for the following purposes:
 
 > Please note: 56 era (about 56 days) will be saved, and you will not be able to claim it if it expires.
 
-![nominate](../../assets/tut/staking-norminator/9.png)
+![nominate](../../../assets/tut/staking-norminator/9.png)
 
 `Claim Reward` Manually claim the reward, and the reward will be distributed in units of era.
 
@@ -110,7 +110,7 @@ There are other operations in staking for the following purposes:
 
 `Set nominees` Re-nominate validator
 
-`Change session key` If you want to upgrade to become a validator, you need to fill in this item. [How to become a validator](/tutorials/staking/crab-tut-validator.md)
+`Change session key` If you want to upgrade to become a validator, you need to fill in this item. [How to become a validator](crab-tut-validator.md)
 
 `Set on-chain identity` Set your personal information, such as display, legal name, email, website, twitter and riot. Other users can view this information and contact you.
 
