@@ -10,6 +10,7 @@ import {
   GithubAccountSection,
   AmountSection,
   SocialLinks,
+  CongratulationContent,
   ComfirmModalTitleWithCRAB,
   ComfirmModalTitleForSorry,
   ComfirmModalTitleForComfirm,
@@ -39,14 +40,13 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
       </div>
       <ComfirmModal
         visible={visibleComfirmModal}
-        title={<ComfirmModalTitleForComfirm onBack={() => setVisibleComfirmModal(false)} />}
-        footer={<ComfirmModalButton onClick={() => setVisibleComfirmModal(false)} text='Comfirm and Claim CRAB' disabled={false} />}
+        title={<ComfirmModalTitleForCcongratulation />}
+        // footer={<ComfirmModalButton onClick={() => setVisibleComfirmModal(false)} text='Comfirm and Claim CRAB' disabled={false} />}
+        footer={<SocialLinks />}
         onCancel={() => setVisibleComfirmModal(false)}
       >
         <Space direction='vertical' size='middle' style={{ width: '100%' }}>
-          <GithubAccountSection />
-          <DestinationSection comfirmAddress='0xe59261f6D4088BcD69985A3D369Ff14cC54EF1E5' />
-          <AmountSection />
+          <CongratulationContent />
         </Space>
       </ComfirmModal>
       <LoadingModal

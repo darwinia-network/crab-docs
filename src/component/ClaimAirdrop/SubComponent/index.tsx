@@ -3,10 +3,10 @@ import clsx from 'clsx';
 import { Modal, Spin, Space, Button } from 'antd';
 
 import styles from '../styles.module.scss';
-import twitterIcon from './img/twitter.svg';
-import mediumIcon from './img/medium.svg';
-import telegramIcon from './img/telegram.svg';
-import discordIcon from './img/discord.svg';
+import TwitterIcon from './img/twitter.svg';
+import MediumIcon from './img/medium.svg';
+import TelegramIcon from './img/telegram.svg';
+import DiscordIcon from './img/discord.svg';
 import BackwardIcon from './img/backward.svg';
 
 export const ComfirmModalTitleWithCRAB = ({ crabQuantity='100' }) => (
@@ -37,6 +37,13 @@ export const ComfirmModalTitleForComfirm = ({
 export const ComfirmModalTitleForCcongratulation = () => (
   <div className={clsx(styles.titleComfirmModalForCongratulation)}>
     <span>Congratulations!</span>
+  </div>
+);
+
+export const CongratulationContent = () => (
+  <div>
+    <p>The airdrop token 100 CRAB has been sent to the destination address that you filled before, please track this transfer through the Subview:</p>
+    <p><a href='#'>View in Subview Explorer</a></p>
   </div>
 );
 
@@ -163,12 +170,10 @@ export const AmountSection = ({ amount='100' }) => (
 );
 
 export const SocialLinks = () => (
-  <div>
-    <Space size='large'>
-      <a href='#'><img alt='...' src={twitterIcon} /></a>
-      <a href='#'><img alt='...' src={mediumIcon} /></a>
-      <a href='#'><img alt='...' src={telegramIcon} /></a>
-      <a href='#'><img alt='...' src={discordIcon} /></a>
-    </Space>
-  </div>
+  <Space className={styles.socialLinks} size='large'>
+    <a href='#'><TwitterIcon /></a>
+    <a href='#'><MediumIcon /></a>
+    <a href='#'><TelegramIcon/></a>
+    <a href='#'><DiscordIcon /></a>
+  </Space>
 );
