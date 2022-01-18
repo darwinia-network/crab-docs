@@ -43,7 +43,7 @@ jobs:
             }' | tee chain_data.json
           jq -n \
             --arg github_oauth_app_key "${{ secrets.X_GITHUB_OAUTH_APP_KEY }}" \
-            --arg github_oauth_app_secret "${{ secrets.X_GITHUB_OAUTH_APP_SECRETS }}" \
+            --arg github_oauth_app_secret "${{ secrets.X_GITHUB_OAUTH_APP_SECRET }}" \
             '{
               github_oauth_app_key: $github_oauth_app_key,
               github_oauth_app_secret: $github_oauth_app_secret
