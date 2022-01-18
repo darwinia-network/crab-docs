@@ -42,3 +42,7 @@ wss://crab-rpc.darwinia.network
 
 - Compatible with EVM, Ethereum contracts, Ethereum contract tools.
 - Support ethereum-substrate bi-directional bridge
+
+## Get Tokens
+
+To promote Crab Network to developers, meanwhile to make it easier for developers to start building on Crab, we launched a developer airdrop program. The developer airdrop program will distribute 200,000 CRAB, any Github account registered before December 30, 2021 will have the qualification to claim the airdrop.
