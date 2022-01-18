@@ -88,6 +88,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  position: relative;
 
   >span {
     color: #ffffff;
@@ -99,6 +100,23 @@
 
     &:last-child {
       font-size: small;
+    }
+  }
+
+  >button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    border: none;
+    opacity: 0.8;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    >svg {
+      width: 20px;
     }
   }
 }
@@ -203,17 +221,27 @@
   }
 }
 
-.destinationSection {
+.destinationSection,
+.githubAccountSection,
+.amountSection {
   display: flex;
   flex-direction: column;
 
   >p {
-    font-weight: bold;
     font-size: small;
     margin: 0;
-    text-align: center;
-  }
 
+    &.center {
+      text-align: center;
+    }
+
+    &.bold {
+      font-weight: bold;
+    }
+  }
+}
+
+.destinationSection {
   >input {
     border: 1px solid #CCCCCC;
     border-radius: 10px;

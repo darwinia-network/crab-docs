@@ -1,12 +1,13 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Modal, Spin, Space } from 'antd';
+import { Modal, Spin, Space, Button } from 'antd';
 
 import styles from '../styles.module.scss';
-import TwitterIcon from './img/Twitter.svg';
-import MediumIcon from './img/Medium.svg';
-import TelegramIcon from './img/Telegram.svg';
-import DiscordIcon from './img/Discord.svg';
+import twitterIcon from './img/twitter.svg';
+import mediumIcon from './img/medium.svg';
+import telegramIcon from './img/telegram.svg';
+import discordIcon from './img/discord.svg';
+import BackwardIcon from './img/backward.svg';
 
 export const ComfirmModalTitleWithCRAB = ({ crabQuantity='100' }) => (
   <div className={clsx(styles.titleComfirmModalWithCRAB)}>
@@ -21,8 +22,13 @@ export const ComfirmModalTitleForSorry = ({ crabQuantity='200,000' }) => (
   </div>
 );
 
-export const ComfirmModalTitleForComfirm = () => (
+export const ComfirmModalTitleForComfirm = ({
+  onBack=()=>{}
+}) => (
   <div className={clsx(styles.titleComfirmModalForComfirm)}>
+    <button onClick={onBack}>
+      <BackwardIcon />
+    </button>
     <span>Confirm Information</span>
     <span>Please review your destination address</span>
   </div>
@@ -107,7 +113,7 @@ export const DestinationSection = ({
   if (isNothingToClaim) {
     return (
       <div className={styles.destinationSection}>
-        <p>Address has no available claim</p>
+        <p className={clsx(styles.center, styles.bold)}>Address has no available claim</p>
       </div>
     );
   }
@@ -115,8 +121,7 @@ export const DestinationSection = ({
   if (isClaimed) {
     return (
       <div className={styles.destinationSection}>
-        <h5>Destination</h5>
-        <p>Address has already claimed</p>
+        <p className={clsx(styles.center, styles.bold)}>Address has already claimed</p>
       </div>
     );
   }
@@ -143,13 +148,27 @@ export const DestinationSection = ({
   );
 };
 
+export const GithubAccountSection = ({ account='helloworld' }) => (
+  <div className={styles.githubAccountSection}>
+    <h5>Github Account</h5>
+    <p>{account}</p>
+  </div>
+);
+
+export const AmountSection = ({ amount='100' }) => (
+  <div className={styles.amountSection}>
+    <h5>Amount</h5>
+    <p>{`${amount} CRAB`}</p>
+  </div>
+);
+
 export const SocialLinks = () => (
   <div>
     <Space size='large'>
-      <a href='#'><img alt='...' src={TwitterIcon} /></a>
-      <a href='#'><img alt='...' src={MediumIcon} /></a>
-      <a href='#'><img alt='...' src={TelegramIcon} /></a>
-      <a href='#'><img alt='...' src={DiscordIcon} /></a>
+      <a href='#'><img alt='...' src={twitterIcon} /></a>
+      <a href='#'><img alt='...' src={mediumIcon} /></a>
+      <a href='#'><img alt='...' src={telegramIcon} /></a>
+      <a href='#'><img alt='...' src={discordIcon} /></a>
     </Space>
   </div>
 );
