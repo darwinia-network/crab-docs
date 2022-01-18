@@ -3,10 +3,10 @@ import clsx from 'clsx';
 import { Modal, Spin, Space, Button } from 'antd';
 
 import styles from '../styles.module.scss';
-import TwitterIcon from './img/twitter.svg';
-import MediumIcon from './img/medium.svg';
-import TelegramIcon from './img/telegram.svg';
-import DiscordIcon from './img/discord.svg';
+import TwitterIcon from './img/Twitter.svg';
+import MediumIcon from './img/Medium.svg';
+import TelegramIcon from './img/Telegram.svg';
+import DiscordIcon from './img/Discord.svg';
 import BackwardIcon from './img/backward.svg';
 
 export const ComfirmModalTitleWithCRAB = ({ crabQuantity='100' }) => (
