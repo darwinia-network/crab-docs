@@ -27,6 +27,10 @@
   background: transparent;
   border-radius: 10px;
   border: 2px solid rgba(228, 26, 112, 0.9);
+  
+  &:hover {
+    text-decoration: none;
+  }
 
   >span {
     font-weight: bold;

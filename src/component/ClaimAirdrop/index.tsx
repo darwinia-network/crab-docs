@@ -24,19 +24,19 @@ type Props = {
 
 const ClaimAirdrop: React.FC<Props> = ({ className }) => {
   const [visibleLoadingModal, setVisibleLoadingModal] = useState(false);
-  const [visibleComfirmModal, setVisibleComfirmModal] = useState(true);
+  const [visibleComfirmModal, setVisibleComfirmModal] = useState(false);
 
-  const handleClickLoginWithGithub = (e: Event) => {
-    e.preventDefault();
-    setVisibleComfirmModal(true);
-  }
+  // const handleClickLoginWithGithub = (e: Event) => {
+  //   e.preventDefault();
+  //   setVisibleComfirmModal(true);
+  // }
 
   return (
     <>
       <div className={clsx(className)}>
-        <button className={clsx(styles.btnLoginWithGihub)} onClick={handleClickLoginWithGithub}>
+        <a className={clsx(styles.btnLoginWithGihub)} href="/api/connect/github">
           <span>Log in with Github</span>
-        </button>
+        </a>
       </div>
       <ComfirmModal
         visible={visibleComfirmModal}
