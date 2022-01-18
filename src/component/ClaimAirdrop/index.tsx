@@ -43,7 +43,7 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
       >
         <Space direction='vertical' size='middle' style={{ width: '100%' }}>
           <SnapshotDataSection />
-          <DestinationSection isNothingToClaim={true} />
+          <DestinationSection isValidAddress={false} />
         </Space>
       </ComfirmModal>
       <LoadingModal

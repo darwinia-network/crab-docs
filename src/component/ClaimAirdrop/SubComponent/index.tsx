@@ -98,7 +98,7 @@ export const SnapshotDataSection = ({
 );
 
 export const DestinationSection = ({
-  onAddressChange=(address)=>console.log(address),
+  onAddressChange=(e)=>console.log(e.target.value),
   isValidAddress=true,
   isNothingToClaim=false,
   isClaimed=false,
@@ -133,11 +133,11 @@ export const DestinationSection = ({
   return (
     <div className={styles.destinationSection}>
       <h5>Destination</h5>
-      <input onChange={onAddressChange} />
+      <input placeholder='Please enter your Crab Smart Address which starts with 0x' onChange={onAddressChange} />
       {isValidAddress ? (
         <span>Please enter your Crab Smart Address to claim token CRAB, learn more about Crab Smart Address, please refer <a href='#'>here</a>.</span>
       ) : (
-        <span>Please enter a valid Crab Smart Address, learn more about Crab Smart Address, please refer <a href='#'>here</a>.</span>
+        <span className={styles.warning}>Please enter a valid Crab Smart Address, learn more about Crab Smart Address, please refer <a href='#'>here</a>.</span>
       )}
     </div>
   );
