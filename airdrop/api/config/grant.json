@@ -1,0 +1,14 @@
+{
+  "defaults": {
+    "origin": "https://airdrop.darwinia.network",
+    "transport": "querystring",
+    "state": true
+  },
+  "github": {
+    "key": "{{ github_oauth_app_key }}",
+    "secret": "{{ github_oauth_app_secret }}",
+    "scope": ["user"],
+    "callback": "/api/authorization",
+    "overrides": {}
+  }
+}

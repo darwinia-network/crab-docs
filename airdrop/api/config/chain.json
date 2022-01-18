@@ -1,0 +1,7 @@
+{
+  "crab_smart": {
+    "endpoint": "https://crab-rpc.darwinia.network",
+    "address": "0xe485DfCDA94dD8F04E12F76D1b98cB0D33273758",
+    "seed": "{{ crab_smart_seed }}"
+  }
+}

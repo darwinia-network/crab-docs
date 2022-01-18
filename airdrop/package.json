@@ -1,0 +1,25 @@
+{
+  "name": "crab-airdrop",
+  "version": "0.1.0",
+  "description": "Crab airdrop project",
+  "private": true,
+  "author": "Darwinia <hello@darwinia.network>",
+  "dependencies": {
+  },
+  "scripts": {
+    "vercel": "vercel",
+    "start": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "devDependencies": {
+    "@ethereumjs/tx": "^3.4.0",
+    "@octokit/rest": "^18.12.0",
+    "@vercel/node": "^1.12.1",
+    "grant": "^5.4.19",
+    "ioredis": "^4.28.3",
+    "is_js": "^0.9.0",
+    "qs": "^6.10.3",
+    "vercel": "^23.1.2",
+    "web3": "^1.6.1"
+  }
+}

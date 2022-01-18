@@ -34,9 +34,55 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Generate config data
+        run: |
+          jq -n \
+            --arg crab_smart_seed "${{ secrets.CRAB_SMART_SEED }}" \
+            '{
+              crab_smart_seed: $crab_smart_seed
+            }' | tee chain_data.json
+          jq -n \
+            --arg github_oauth_app_key "${{ secrets.X_GITHUB_OAUTH_APP_KEY }}" \
+            --arg github_oauth_app_secret "${{ secrets.X_GITHUB_OAUTH_APP_SECRETS }}" \
+            '{
+              github_oauth_app_key: $github_oauth_app_key,
+              github_oauth_app_secret: $github_oauth_app_secret
+            }' | tee grant_data.json
+          jq -n \
+            --arg redis_host "${{ secrets.REDIS_HOST }}" \
+            --arg redis_port "${{ secrets.REDIS_PORT }}" \
+            --arg redis_password "${{ secrets.REDIS_PASSWORD }}" \
+            '{
+              redis_host: $redis_host,
+              redis_port: $redis_port,
+              redis_password: $redis_password
+            }' | tee redis_data.json
+
+      - name: Render chain config
+        uses: jayamanikharyono/jinja-action@v0.1
+        with:
+          datafile: chain_data.json
+          path: airdrop/api/config/chain.json
+
+      - name: Render grant config
+        uses: jayamanikharyono/jinja-action@v0.1
+        with:
+          datafile: grant_data.json
+          path: airdrop/api/config/grant.json
+
+      - name: Render redis config
+        uses: jayamanikharyono/jinja-action@v0.1
+        with:
+          datafile: redis_data.json
+          path: airdrop/api/config/redis.json
+
       - name: Prepare Project Config
         run: |
+          mv airdrop/api/config/chain.json airdrop/api/config/chain.safe.json
+          mv airdrop/api/config/grant.json airdrop/api/config/grant.safe.json
+          mv airdrop/api/config/redis.json airdrop/api/config/redis.safe.json
           mv vercel.json build/
+          mv airdrop/* build/
 
       - name: Deploy
         id: deploy
