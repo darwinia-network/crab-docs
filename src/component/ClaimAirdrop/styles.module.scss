@@ -135,6 +135,8 @@
     .ant-modal-footer {
       border-top: none;
       border-radius: 0 0 20px 20px;
+      padding-top: 0;
+      padding-bottom: 20px;
     }
   }
 }
@@ -182,5 +184,30 @@
     border-left-color: #EC3783;
     border-radius: 50%;
     animation: crab-spin 1.2s linear infinite;
+  }
+}
+
+.snapshotTimeSection {
+  .wrapContent {
+    padding: 14px 12px;
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+    >span {
+      &:first-child {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.destinationSection {
+  >p {
+    font-weight: bold;
+    font-size: small;
+    margin: 0;
+    text-align: center;
   }
 }

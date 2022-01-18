@@ -1,7 +1,12 @@
 import React from 'react';
 import clsx from 'clsx';
+import { Modal, Spin, Space } from 'antd';
+
 import styles from '../styles.module.scss';
-import { Modal, Spin } from 'antd';
+import TwitterIcon from './img/Twitter.svg';
+import MediumIcon from './img/Medium.svg';
+import TelegramIcon from './img/Telegram.svg';
+import DiscordIcon from './img/Discord.svg';
 
 export const ComfirmModalTitleWithCRAB = ({ crabQuantity='100' }) => (
   <div className={clsx(styles.titleComfirmModalWithCRAB)}>
@@ -78,3 +83,73 @@ export const LoadingModal = ({
     </Modal>
   )
 };
+
+export const SnapshotDataSection = ({
+  githubAccount='***',
+  registrationTime='2021/12/05',
+}) => (
+  <div className={styles.snapshotTimeSection}>
+    <h5>Snapshot Data</h5>
+    <div className={clsx(styles.wrapContent)}>
+      <span>{`Github Account: ${githubAccount}`}</span>
+      <span>{`Registration Time: : ${registrationTime}`}</span>
+    </div>
+  </div>
+);
+
+export const DestinationSection = ({
+  onAddressChange=(address)=>console.log(address),
+  isValidAddress=true,
+  isNothingToClaim=false,
+  isClaimed=false,
+  comfirmAddress=undefined,
+}) => {
+  if (isNothingToClaim) {
+    return (
+      <div className={styles.destinationSection}>
+        <p>Address has no available claim</p>
+      </div>
+    );
+  }
+
+  if (isClaimed) {
+    return (
+      <div className={styles.destinationSection}>
+        <h5>Destination</h5>
+        <p>Address has already claimed</p>
+      </div>
+    );
+  }
+
+  if (comfirmAddress) {
+    return (
+      <div className={styles.destinationSection}>
+        <h5>Destination</h5>
+        <p>{comfirmAddress}</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.destinationSection}>
+      <h5>Destination</h5>
+      <input onChange={onAddressChange} />
+      {isValidAddress ? (
+        <span>Please enter your Crab Smart Address to claim token CRAB, learn more about Crab Smart Address, please refer <a href='#'>here</a>.</span>
+      ) : (
+        <span>Please enter a valid Crab Smart Address, learn more about Crab Smart Address, please refer <a href='#'>here</a>.</span>
+      )}
+    </div>
+  );
+};
+
+export const SocialLinks = () => (
+  <div>
+    <Space size='large'>
+      <a href='#'><img alt='...' src={TwitterIcon} /></a>
+      <a href='#'><img alt='...' src={MediumIcon} /></a>
+      <a href='#'><img alt='...' src={TelegramIcon} /></a>
+      <a href='#'><img alt='...' src={DiscordIcon} /></a>
+    </Space>
+  </div>
+);
