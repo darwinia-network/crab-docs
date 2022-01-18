@@ -34,6 +34,11 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Prepare Project Config
+        run: |
+          mv vercel.json build/
+          mv package.json build/
+
       - name: Deploy
         id: deploy
         run: |
