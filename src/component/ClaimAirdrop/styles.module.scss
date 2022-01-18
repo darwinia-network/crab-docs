@@ -1,0 +1,33 @@
+%-btn-base {
+  transition: all 0.3s;
+  opacity: 1;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.btnLoginWithGihub {
+  @extend %-btn-base;
+  padding: 8px 12px;
+  background: transparent;
+  border-radius: 10px;
+  border: 2px solid rgba(228, 26, 112, 0.9);
+
+  &:hover {
+    box-shadow: 0 0 4px rgba(228, 26, 112, 0.9);
+  }
+
+  &:active {
+    box-shadow: 0 0 8px rgba(228, 26, 112, 0.9);
+  }
+
+  >span {
+    font-weight: bold;
+    color: rgba(228, 26, 112, 0.9);
+  }
+}
