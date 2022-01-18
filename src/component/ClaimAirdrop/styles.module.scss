@@ -138,3 +138,49 @@
     }
   }
 }
+
+.loadingModal {
+  :global {
+    .ant-modal-content {
+      border-radius: 20px;
+    }
+
+    .ant-modal-close {
+      color: rgba(0, 0, 0, 0.65);
+    }
+  }
+}
+
+.loadingModalBody {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  >p {
+    margin-top: 20px;
+    color: #000000;
+    font-size: small;
+  }
+}
+
+@keyframes crab-spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingModalSpin {
+  .indicator {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #EC3783;
+    border-radius: 50%;
+    animation: crab-spin 1.2s linear infinite;
+  }
+}

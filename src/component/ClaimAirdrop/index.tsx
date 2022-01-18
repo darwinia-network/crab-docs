@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
 import {
+  LoadingModal,
   ComfirmModal,
   ComfirmModalButton,
   ComfirmModalTitleWithCRAB,
@@ -15,7 +16,8 @@ type Props = {
 }
 
 const ClaimAirdrop: React.FC<Props> = ({ className }) => {
-  const [visibleComfirmModal, setVisibleComfirmModal] = useState(true);
+  const [visibleLoadingModal, setVisibleLoadingModal] = useState(true);
+  const [visibleComfirmModal, setVisibleComfirmModal] = useState(false);
 
   const handleClickLoginWithGithub = (e: Event) => {
     e.preventDefault();
@@ -34,6 +36,10 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
         title={<ComfirmModalTitleForCcongratulation />}
         footer={<ComfirmModalButton onClick={() => setVisibleComfirmModal(false)} disabled={true} />}
         onCancel={() => setVisibleComfirmModal(false)}
+      />
+      <LoadingModal
+        visible={visibleLoadingModal}
+        onCancel={() => setVisibleLoadingModal(false)}
       />
     </>
   );

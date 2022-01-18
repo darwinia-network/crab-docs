@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from '../styles.module.scss';
-import { Modal } from 'antd';
+import { Modal, Spin } from 'antd';
 
 export const ComfirmModalTitleWithCRAB = ({ crabQuantity='100' }) => (
   <div className={clsx(styles.titleComfirmModalWithCRAB)}>
@@ -57,4 +57,24 @@ export const ComfirmModal = ({
       {children}
     </Modal>
   );
+};
+
+export const LoadingModal = ({
+  visible=false,
+  onCancel=()=>{},
+}) => {
+  return (
+    <Modal
+      visible={visible}
+      title={null}
+      footer={null}
+      onCancel={onCancel}
+      className={clsx(styles.loadingModal)}
+    >
+      <div className={clsx(styles.loadingModalBody)}>
+        <Spin size='large' className={clsx(styles.loadingModalSpin)} indicator={<div className={styles.indicator} />} />
+        <p>Waiting For Confirmation</p>
+      </div>
+    </Modal>
+  )
 };
