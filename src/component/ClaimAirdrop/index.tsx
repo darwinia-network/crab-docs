@@ -1,35 +1,14 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
-import { Modal } from 'antd';
-
-const ComfirmModalButton = ({
-  text='OK',
-  onClick=()=>{},
-  disabled=false,
-}) => (
-  <button className={clsx(styles.btnComfirmModal)} onClick={onClick} disabled={disabled}>
-    <span>{text}</span>
-  </button>
-)
-
-const ComfirmModal = ({
-  visible=false,
-  title=null,
-  footer=null,
-  children=null,
-}) => {
-  return (
-    <Modal
-      visible={visible}
-      title={title}
-      footer={footer}
-      className={clsx(styles.comfirmModal)}
-    >
-      {children}
-    </Modal>
-  );
-};
+import {
+  ComfirmModal,
+  ComfirmModalButton,
+  ComfirmModalTitleWithCRAB,
+  ComfirmModalTitleForSorry,
+  ComfirmModalTitleForComfirm,
+  ComfirmModalTitleForCcongratulation,
+} from './SubComponent';
 
 type Props = {
   className?: string;
@@ -52,7 +31,9 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
       </div>
       <ComfirmModal
         visible={visibleComfirmModal}
+        title={<ComfirmModalTitleForCcongratulation />}
         footer={<ComfirmModalButton onClick={() => setVisibleComfirmModal(false)} disabled={true} />}
+        onCancel={() => setVisibleComfirmModal(false)}
       />
     </>
   );
