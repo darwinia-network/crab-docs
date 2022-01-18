@@ -1,13 +1,23 @@
 %-btn-base {
   transition: all 0.3s;
-  opacity: 1;
 
   &:hover {
-    opacity: 0.8;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(228, 26, 112, 0.9);
   }
 
   &:active {
-    opacity: 0.6;
+    box-shadow: 0 0 8px rgba(228, 26, 112, 0.9);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: #EEEEEE;
+    box-shadow: none;
+
+    >span {
+      color: #8D8D8D;
+    }
   }
 }
 
@@ -18,16 +28,48 @@
   border-radius: 10px;
   border: 2px solid rgba(228, 26, 112, 0.9);
 
-  &:hover {
-    box-shadow: 0 0 4px rgba(228, 26, 112, 0.9);
-  }
-
-  &:active {
-    box-shadow: 0 0 8px rgba(228, 26, 112, 0.9);
-  }
-
   >span {
     font-weight: bold;
     color: rgba(228, 26, 112, 0.9);
+  }
+}
+
+.btnComfirmModal {
+  @extend %-btn-base;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: #EC3783;
+
+  >span {
+    color: #ffffff;
+    font-weight: bold;
+  }
+}
+
+.comfirmModal {
+  :global {
+    .ant-modal-content {
+      border-radius: 20px;
+    }
+
+    .ant-modal-header {
+      border-radius: 20px 20px 0 0;
+      border-bottom: none;
+      background: #EC3783;
+    }
+
+    .ant-modal-close {
+      color: #ffffff;
+    }
+
+    .ant-modal-footer {
+      border-top: none;
+      border-radius: 0 0 20px 20px;
+    }
   }
 }
