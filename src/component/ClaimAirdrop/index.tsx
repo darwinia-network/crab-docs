@@ -52,15 +52,19 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
   const [visibleComfirmModal, setVisibleComfirmModal] = useState(false);
   const [visibleCongratulationModal, setVisibleCongratulationModal] = useState(false);
 
+  const checkRegistrationTime = (t) => {
+    if (Number(t.split('-')[0]) >= 2022) {
+      setVisibleNotEligibleModal(true);
+    } else {
+      setVisibleInputDestinationModal(true);
+    }
+  };
+
   const handleClickLoginWithGithub = (e: Event) => {
     e.preventDefault();
 
     if (userInfo) {
-      if (Number(userInfo.created_at.split('-')[0]) >= 2022) {
-        setVisibleNotEligibleModal(true);
-      } else {
-        setVisibleInputDestinationModal(true);
-      }
+      checkRegistrationTime(userInfo.created_at);
     } else {
       window.open('/connect/github');
     }
@@ -117,10 +121,20 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
   };
 
   useEffect(() => {
+    const urlSearchParams = new URLSearchParams((new URL(window.location.href)).search);
     getUserInfo()
       .then(({ status, data }) => {
+        console.info('oauth:', status, data);
         if (status === 200 && data.err === 0 && data?.data) {
           setUserInfo(data.data);
+          if (urlSearchParams.get('oauth') === 'github') {
+            checkRegistrationTime(data.data.created_at);
+          }
+        } else if (urlSearchParams.get('oauth') === 'github') {
+          notification.info({
+            message: 'Authorize',
+            description: 'Failed to authorize.',
+          });
         }
       })
       .catch((err) => {
