@@ -21,7 +21,7 @@ import axios from 'axios';
 
 const getUserInfo = () => {
   return axios.get('/api/user/info', {
-    timeout: 3000,
+    timeout: 5000,
   });
 };
 
@@ -31,8 +31,15 @@ type Props = {
 
 const ClaimAirdrop: React.FC<Props> = ({ className }) => {
   const [userInfo, setUserInfo] = useState(null);
+  const [subviewLink, setSubviewLink] = useState('#');
+
   const [visibleLoadingModal, setVisibleLoadingModal] = useState(false);
+  const [visibleNotEligibleModal, setVisibleNotEligibleModal] = useState(false);
+  const [visibleInputDestinationModal, setVisibleInputDestinationModal] = useState(false);
+  const [visibleClaimedModal, setVisibleClaimedModal] = useState(false);
+  const [visibleNoneLeftModal, setVisibleNoneLeftModal] = useState(false);
   const [visibleComfirmModal, setVisibleComfirmModal] = useState(false);
+  const [visibleCongratulationModal, setVisibleCongratulationModal] = useState(true);
 
   const handleClickLoginWithGithub = (e: Event) => {
     e.preventDefault();
@@ -42,26 +49,17 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
     } else {
       window.open('/connect/github');
     }
-    // getUserInfo()
-    //   .then(({ status, data }) => {
-    //     console.log('user info:', status, data);
-    //   })
-    //   .catch((err) => {
-    //     console.error('get user info', err);
-    //   })
-    //   .finally(() => {});
   };
 
   useEffect(() => {
     getUserInfo()
       .then(({ status, data }) => {
-        console.log('init user info:', status, data);
-        if (status === 200) {
+        if (status === 200 && data.err === 0) {
           setUserInfo(data.data);
         }
       })
       .catch((err) => {
-        console.error('init get user info', err);
+        console.error('get user info', err);
       })
       .finally(() => {});
   }, []);
@@ -74,14 +72,13 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
         </button>
       </div>
       <ComfirmModal
-        visible={visibleComfirmModal}
+        visible={visibleCongratulationModal}
         title={<ComfirmModalTitleForCcongratulation />}
-        // footer={<ComfirmModalButton onClick={() => setVisibleComfirmModal(false)} text='Comfirm and Claim CRAB' disabled={false} />}
         footer={<SocialLinks />}
-        onCancel={() => setVisibleComfirmModal(false)}
+        onCancel={() => setVisibleCongratulationModal(false)}
       >
         <Space direction='vertical' size='middle' style={{ width: '100%' }}>
-          <CongratulationContent />
+          <CongratulationContent subview={subviewLink} />
         </Space>
       </ComfirmModal>
       <LoadingModal

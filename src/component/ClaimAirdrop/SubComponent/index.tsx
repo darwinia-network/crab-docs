@@ -40,10 +40,10 @@ export const ComfirmModalTitleForCcongratulation = () => (
   </div>
 );
 
-export const CongratulationContent = () => (
+export const CongratulationContent = ({ subview='#' }) => (
   <div>
     <p>The airdrop token 100 CRAB has been sent to the destination address that you filled before, please track this transfer through the Subview:</p>
-    <p><a href='#'>View in Subview Explorer</a></p>
+    <p><a target='_blank' rel='noopener noreferrer' href={subview}>View in Subview Explorer</a></p>
   </div>
 );
 
@@ -147,9 +147,9 @@ export const DestinationSection = ({
       <h5>Destination</h5>
       <input placeholder='Please enter your Crab Smart Address which starts with 0x' onChange={onAddressChange} />
       {isValidAddress ? (
-        <span>Please enter your Crab Smart Address to claim token CRAB, learn more about Crab Smart Address, please refer <a href='#'>here</a>.</span>
+        <span>Please enter your Crab Smart Address to claim token CRAB, learn more about Crab Smart Address, please refer <a target='_blank' rel='noopener noreferrer' href='https://docs.crab.network/tutorials/wormhole_user_guide/crab-tut-wormhole-darwinia2crabsmart#3-what-does-the-dvm-address-mean-what-is-the-difference-between-crab-address-and-crab-dvm-address'>here</a>.</span>
       ) : (
-        <span className={styles.warning}>Please enter a valid Crab Smart Address, learn more about Crab Smart Address, please refer <a href='#'>here</a>.</span>
+        <span className={styles.warning}>Please enter a valid Crab Smart Address, learn more about Crab Smart Address, please refer <a target='_blank' rel='noopener noreferrer' href='https://docs.crab.network/tutorials/wormhole_user_guide/crab-tut-wormhole-darwinia2crabsmart#3-what-does-the-dvm-address-mean-what-is-the-difference-between-crab-address-and-crab-dvm-address'>here</a>.</span>
       )}
     </div>
   );
@@ -171,9 +171,9 @@ export const AmountSection = ({ amount='100' }) => (
 
 export const SocialLinks = () => (
   <Space className={styles.socialLinks} size='large'>
-    <a href='#'><TwitterIcon /></a>
-    <a href='#'><MediumIcon /></a>
-    <a href='#'><TelegramIcon/></a>
-    <a href='#'><DiscordIcon /></a>
+    <a target='_blank' rel='noopener noreferrer' href='https://twitter.com/DarwiniaNetwork'><TwitterIcon /></a>
+    <a target='_blank' rel='noopener noreferrer' href='https://medium.com/@DarwiniaNetwork'><MediumIcon /></a>
+    <a target='_blank' rel='noopener noreferrer' href='https://t.me/DarwiniaDev'><TelegramIcon/></a>
+    <a target='_blank' rel='noopener noreferrer' href='https://discord.com/channels/456092011347443723/795384466930663434'><DiscordIcon /></a>
   </Space>
 );
