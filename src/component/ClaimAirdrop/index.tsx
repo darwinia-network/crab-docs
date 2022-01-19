@@ -18,10 +18,17 @@ import {
 } from './SubComponent';
 import { Space } from 'antd';
 import axios from 'axios';
+import { ethers } from 'ethers';
 
 const getUserInfo = () => {
   return axios.get('/api/user/info', {
     timeout: 5000,
+  });
+};
+
+const sendClaimTrans = (address='') => {
+  return axios.post('/api/airdrop/transfer', {
+    address: address,
   });
 };
 
@@ -30,9 +37,17 @@ type Props = {
 }
 
 const ClaimAirdrop: React.FC<Props> = ({ className }) => {
-  const [userInfo, setUserInfo] = useState(null);
+  // const [userInfo, setUserInfo] = useState(null);
+  const [userInfo, setUserInfo] = useState({
+    avatar: "https://avatars.githubusercontent.com/u/21007682?v=4",
+    created_at: "2016-08-13T11:56:58Z",
+    id: 21007682,
+    name: "JayJay1024",
+    type: "User",
+    updated_at: "2021-12-27T05:56:05Z",
+  });
   const [subviewLink, setSubviewLink] = useState('#');
-  const [destinationAddress, setDestinationAddress] = useState('0xe59261f6D4088BcD69985A3D369Ff14cC54EF1E5');
+  const [destinationAddress, setDestinationAddress] = useState(null);
 
   const [visibleLoadingModal, setVisibleLoadingModal] = useState(false);
   const [visibleNotEligibleModal, setVisibleNotEligibleModal] = useState(false);
@@ -46,31 +61,68 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
     e.preventDefault();
 
     if (userInfo) {
-      setVisibleComfirmModal(true);
+      if (Number(userInfo.created_at.split('-')[0]) >= 2022) {
+        setVisibleNotEligibleModal(true);
+      } else {
+        setVisibleInputDestinationModal(true);
+      }
     } else {
       window.open('/connect/github');
     }
   };
 
   const handleClickClaim = () => {
-    console.log('claim');
+    setVisibleInputDestinationModal(false);
+    setVisibleComfirmModal(true);
+  };
+
+  const handleClickComfirmBack = () => {
+    setVisibleComfirmModal(false);
+    setVisibleInputDestinationModal(true);
   };
 
   const handleClickComfirmAndClaim = () => {
-    console.log('comfirm and claim');
+    if (destinationAddress) {
+      setVisibleInputDestinationModal(false);
+      setVisibleLoadingModal(true);
+
+      sendClaimTrans(destinationAddress)
+        .then(({ status, data }) => {
+          console.log('claim response', status, data);
+          setVisibleLoadingModal(false);
+          if (data?.err === 0 && status === 200) {
+            setSubviewLink(data?.data?.preview);
+            setVisibleCongratulationModal(true);
+          } else if (data?.data?.state === 'RECEIVED') {
+            setVisibleClaimedModal(true);
+          } else if (data?.message === 'All airdrops have ended') {
+            setVisibleNoneLeftModal(true);
+          }
+        })
+        .catch((err) => {
+          console.error('send claim trans:', err);
+        })
+        .finally(() => {
+          setVisibleLoadingModal(false);
+        });
+    }
+  };
+
+  const handleDestinationInputChange = ({ target: { value: address } }) => {
+    setDestinationAddress(address);
   };
 
   useEffect(() => {
-    // getUserInfo()
-    //   .then(({ status, data }) => {
-    //     if (status === 200 && data.err === 0) {
-    //       setUserInfo(data.data);
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     console.error('get user info', err);
-    //   })
-    //   .finally(() => {});
+    getUserInfo()
+      .then(({ status, data }) => {
+        if (status === 200 && data.err === 0 && data?.data) {
+          setUserInfo(data.data);
+        }
+      })
+      .catch((err) => {
+        console.error('get user info', err);
+      })
+      .finally(() => {});
   }, []);
 
   return (
@@ -95,12 +147,12 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
       <ComfirmModal
         visible={visibleInputDestinationModal}
         title={<ComfirmModalTitleWithCRAB />}
-        footer={<ComfirmModalButton disabled={true} text='Claim CRAB' onClick={handleClickClaim} />}
+        footer={<ComfirmModalButton disabled={!ethers.utils.isAddress(destinationAddress)} text='Claim CRAB' onClick={handleClickClaim} />}
         onCancel={() => setVisibleInputDestinationModal(false)}
       >
         <Space direction='vertical' size='middle' style={{ width: '100%' }}>
           <SnapshotDataSection githubAccount={userInfo?.name || '***'} registrationTime={userInfo?.created_at?.split('T')[0]?.replace(/-/g, '/') || '2021/12/05'} />
-          <DestinationSection />
+          <DestinationSection onAddressChange={handleDestinationInputChange} isValidAddress={!destinationAddress || ethers.utils.isAddress(destinationAddress)} />
         </Space>
       </ComfirmModal>
       <ComfirmModal
@@ -125,7 +177,7 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
       </ComfirmModal>
       <ComfirmModal
         visible={visibleComfirmModal}
-        title={<ComfirmModalTitleForComfirm />}
+        title={<ComfirmModalTitleForComfirm onBack={handleClickComfirmBack} />}
         footer={<ComfirmModalButton text='Comfirm and Claim CRAB' onClick={handleClickComfirmAndClaim} />}
         onCancel={() => setVisibleComfirmModal(false)}
       >

@@ -97,7 +97,7 @@
   >span {
     color: #ffffff;
 
-    &:first-child {
+    &:first-of-type {
       font-weight: bolder;
       margin-bottom: 6px;
     }
