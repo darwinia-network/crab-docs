@@ -16,7 +16,7 @@ import {
   ComfirmModalTitleForComfirm,
   ComfirmModalTitleForCcongratulation,
 } from './SubComponent';
-import { Space } from 'antd';
+import { Space, notification } from 'antd';
 import axios from 'axios';
 import { ethers } from 'ethers';
 
@@ -92,10 +92,19 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
             setVisibleClaimedModal(true);
           } else if (data?.message === 'All airdrops have ended') {
             setVisibleNoneLeftModal(true);
+          } else {
+            notification.warning({
+              message: 'Woops, something went wrong',
+              description: data?.message,
+            });
           }
         })
-        .catch((err) => {
+        .catch((err: Error) => {
           console.error('send claim trans:', err);
+          notification.error({
+            message: 'Woops, something went wrong',
+            description: err.message,
+          });
         })
         .finally(() => {
           setVisibleLoadingModal(false);
