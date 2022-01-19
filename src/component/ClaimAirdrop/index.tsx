@@ -103,8 +103,9 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
             });
           }
         })
-        .catch((err: Error) => {
+        .catch((err) => {
           console.error('send claim trans:', err);
+          console.log('check error response:', err.response);
           notification.error({
             message: 'Woops, something went wrong',
             description: err.message,
