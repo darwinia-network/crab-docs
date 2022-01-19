@@ -105,7 +105,7 @@ export const SnapshotDataSection = ({
     <h5>Snapshot Data</h5>
     <div className={clsx(styles.wrapContent)}>
       <span>{`Github Account: ${githubAccount}`}</span>
-      <span>{`Registration Time: : ${registrationTime}`}</span>
+      <span>{`Registration Time: ${registrationTime}`}</span>
     </div>
   </div>
 );
