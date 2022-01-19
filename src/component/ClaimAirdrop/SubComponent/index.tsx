@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Modal, Spin, Space, Button } from 'antd';
+import { Modal, Spin, Space } from 'antd';
 
 import styles from '../styles.module.scss';
 import TwitterIcon from './img/Twitter.svg';

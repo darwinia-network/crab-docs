@@ -27,8 +27,11 @@ const getUserInfo = () => {
 };
 
 const sendClaimTrans = (address='') => {
-  return axios.post('/api/airdrop/transfer', {
-    address: address,
+  return axios({
+    url: '/api/airdrop/transfer',
+    method: 'post',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    data: `address=${address}`,
   });
 };
 
@@ -37,15 +40,7 @@ type Props = {
 }
 
 const ClaimAirdrop: React.FC<Props> = ({ className }) => {
-  // const [userInfo, setUserInfo] = useState(null);
-  const [userInfo, setUserInfo] = useState({
-    avatar: "https://avatars.githubusercontent.com/u/21007682?v=4",
-    created_at: "2016-08-13T11:56:58Z",
-    id: 21007682,
-    name: "JayJay1024",
-    type: "User",
-    updated_at: "2021-12-27T05:56:05Z",
-  });
+  const [userInfo, setUserInfo] = useState(null);
   const [subviewLink, setSubviewLink] = useState('#');
   const [destinationAddress, setDestinationAddress] = useState(null);
 
@@ -83,7 +78,7 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
 
   const handleClickComfirmAndClaim = () => {
     if (destinationAddress) {
-      setVisibleInputDestinationModal(false);
+      setVisibleComfirmModal(false);
       setVisibleLoadingModal(true);
 
       sendClaimTrans(destinationAddress)
