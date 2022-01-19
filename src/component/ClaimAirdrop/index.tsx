@@ -107,11 +107,12 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
                 description: data?.message,
               });
             }
-          } else {}
+          } else {
             notification.error({
               message: 'Woops, something went wrong',
               description: err.message,
             });
+          }
         })
         .finally(() => {
           setVisibleLoadingModal(false);
