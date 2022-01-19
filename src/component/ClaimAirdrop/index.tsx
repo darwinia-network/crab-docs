@@ -124,7 +124,6 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
     const urlSearchParams = new URLSearchParams((new URL(window.location.href)).search);
     getUserInfo()
       .then(({ status, data }) => {
-        console.info('oauth:', status, data);
         if (status === 200 && data.err === 0 && data?.data) {
           setUserInfo(data.data);
           if (urlSearchParams.get('oauth') === 'github') {
