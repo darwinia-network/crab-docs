@@ -19,12 +19,9 @@ import {
 import { Space } from 'antd';
 import axios from 'axios';
 
-const BASE_URL = 'https://crab-docs-fewensa-itering.vercel.app';
-
 const getUserInfo = () => {
   return axios.get('/api/user/info', {
     timeout: 3000,
-    baseURL: BASE_URL,
   });
 };
 
@@ -33,26 +30,35 @@ type Props = {
 }
 
 const ClaimAirdrop: React.FC<Props> = ({ className }) => {
+  const [userInfo, setUserInfo] = useState(null);
   const [visibleLoadingModal, setVisibleLoadingModal] = useState(false);
   const [visibleComfirmModal, setVisibleComfirmModal] = useState(false);
 
   const handleClickLoginWithGithub = (e: Event) => {
     e.preventDefault();
-    // setVisibleComfirmModal(true);
-    getUserInfo()
-      .then((res) => {
-        console.log('user info:', res);
-      })
-      .catch((err) => {
-        console.error('get user info', err);
-      })
-      .finally(() => {});
+
+    if (userInfo) {
+      setVisibleComfirmModal(true);
+    } else {
+      window.open('/connect/github');
+    }
+    // getUserInfo()
+    //   .then(({ status, data }) => {
+    //     console.log('user info:', status, data);
+    //   })
+    //   .catch((err) => {
+    //     console.error('get user info', err);
+    //   })
+    //   .finally(() => {});
   };
 
   useEffect(() => {
     getUserInfo()
-      .then((res) => {
-        console.log('init user info:', res);
+      .then(({ status, data }) => {
+        console.log('init user info:', status, data);
+        if (status === 200) {
+          setUserInfo(data.data);
+        }
       })
       .catch((err) => {
         console.error('init get user info', err);
