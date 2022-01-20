@@ -124,7 +124,6 @@ Then, start a tracing node with command:
 $ ./target/release/drml --dev --tmp  --ethapi=debug,trace --wasm-runtime-overrides .
 ```
 
-
 ### Production Environment
 
 ```sh
