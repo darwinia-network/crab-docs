@@ -87,28 +87,32 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
 
       sendClaimTrans(destinationAddress)
         .then(({ status, data }) => {
-          console.log('claim response', status, data);
           setVisibleLoadingModal(false);
           if (data?.err === 0 && status === 200) {
             setSubviewLink(data?.data?.preview);
             setVisibleCongratulationModal(true);
-          } else if (data?.data?.state === 'RECEIVED') {
-            setVisibleClaimedModal(true);
-          } else if (data?.message === 'All airdrops have ended') {
-            setVisibleNoneLeftModal(true);
-          } else {
-            notification.warning({
-              message: 'Woops, something went wrong',
-              description: data?.message,
-            });
           }
         })
-        .catch((err: Error) => {
+        .catch((err) => {
           console.error('send claim trans:', err);
-          notification.error({
-            message: 'Woops, something went wrong',
-            description: err.message,
-          });
+          if (err?.response?.data) {
+            const data = err?.response?.data;
+            if (data?.data?.state === 'RECEIVED') {
+              setVisibleClaimedModal(true);
+            } else if (data?.message === 'All airdrops have ended') {
+              setVisibleNoneLeftModal(true);
+            } else {
+              notification.warning({
+                message: 'Woops, something went wrong',
+                description: data?.message,
+              });
+            }
+          } else {
+            notification.error({
+              message: 'Woops, something went wrong',
+              description: err.message,
+            });
+          }
         })
         .finally(() => {
           setVisibleLoadingModal(false);
