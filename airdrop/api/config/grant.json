@@ -1,6 +1,6 @@
 {
   "defaults": {
-    "origin": "https://docs.darwinia.network/",
+    "origin": "https://docs.crab.network/",
     "transport": "querystring",
     "state": true
   },
