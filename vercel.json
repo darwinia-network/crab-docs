@@ -21,5 +21,8 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {"source": "/connect/(.*)", "destination": "/api/grant"}
   ]
 }
