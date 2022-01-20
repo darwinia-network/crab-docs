@@ -6,7 +6,7 @@ import Web3 from 'web3';
 
 const Redis = require('ioredis');
 
-const AMOUNT = 10;
+const AMOUNT = 100;
 
 
 
