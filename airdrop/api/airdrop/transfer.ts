@@ -52,7 +52,10 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     res.statusCode = 401;
     const body = {
       err: 1,
-      message: 'Authorization failed. please try login again'
+      message: 'Authorization failed. please try login again',
+      data: {
+        state: 'NO_LOGIN',
+      }
     };
     res.end(JSON.stringify(body, null, 2));
     return;
