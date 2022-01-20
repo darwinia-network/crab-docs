@@ -49,9 +49,9 @@ jobs:
               github_oauth_app_secret: $github_oauth_app_secret
             }' | tee grant_data.json
           jq -n \
-            --arg redis_connect_url "${{ secrets.REDIS_CONNECT_URL }}" \
+            --arg url "${{ secrets.REDIS_CONNECT_URL }}" \
             '{
-              url: $redis_connect_url
+              url: $url
             }' | tee redis_data.json
 
       - name: Render chain config
