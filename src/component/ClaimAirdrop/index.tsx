@@ -70,7 +70,7 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
     e.preventDefault();
 
     if (userInfo) {
-      checkRegistrationTime(userInfo.created_at);
+      userInfo.claimed ? setVisibleClaimedModal(true) : checkRegistrationTime(userInfo.created_at);
     } else {
       window.open('/connect/github');
     }
@@ -158,15 +158,6 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
       })
       .catch((err) => {
         console.error('get user info', err);
-      })
-      .finally(() => {});
-  }, []);
-
-  useEffect(() => {
-    getUserState()
-      .then(() => {})
-      .catch((err) => {
-        if (err?.response?.data?.data?.state === 'RECEIVED') {}
       })
       .finally(() => {});
   }, []);
