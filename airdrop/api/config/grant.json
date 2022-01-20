@@ -7,7 +7,7 @@
   "github": {
     "key": "{{ github_oauth_app_key }}",
     "secret": "{{ github_oauth_app_secret }}",
-    "scope": ["user"],
+    "scope": [],
     "callback": "/api/authorization",
     "overrides": {}
   }
