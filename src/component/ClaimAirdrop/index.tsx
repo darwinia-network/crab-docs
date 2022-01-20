@@ -26,6 +26,12 @@ const getUserInfo = () => {
   });
 };
 
+const getUserState = () => {
+  return axios.get('/api/airdrop/state', {
+    timeout: 3000,
+  });
+};
+
 const sendClaimTrans = (address='') => {
   return axios({
     url: '/api/airdrop/transfer',
@@ -129,10 +135,20 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
     getUserInfo()
       .then(({ status, data }) => {
         if (status === 200 && data.err === 0 && data?.data) {
-          setUserInfo(data.data);
-          if (urlSearchParams.get('oauth') === 'github') {
-            checkRegistrationTime(data.data.created_at);
-          }
+          let claimed = false;
+          getUserState()
+            .then(() => {})
+            .catch((err) => {
+              if (err?.response?.data?.data?.state === 'RECEIVED') {
+                claimed = true;
+              }
+            })
+            .finally(() => {
+              setUserInfo({ ...data.data, claimed: claimed });
+              if (urlSearchParams.get('oauth') === 'github') {
+                claimed ? setVisibleClaimedModal(true) : checkRegistrationTime(data.data.created_at);
+              }
+            });
         } else if (urlSearchParams.get('oauth') === 'github') {
           notification.info({
             message: 'Authorize',
@@ -147,15 +163,10 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
   }, []);
 
   useEffect(() => {
-    axios.get('/api/airdrop/state', {
-      timeout: 3000,
-    })
-      .then((res) => {
-        console.log('state:', res);
-      })
+    getUserState()
+      .then(() => {})
       .catch((err) => {
-        console.error('state', err);
-        console.error('state response', err.response);
+        if (err?.response?.data?.data?.state === 'RECEIVED') {}
       })
       .finally(() => {});
   }, []);
