@@ -197,7 +197,7 @@ let _redis;
 function redis() {
   if (_redis) return _redis;
   const config = require('../config/redis.safe.json');
-  _redis = new Redis(`rediss://:${config.password}@${config.host}:${config.port}`);
+  _redis = new Redis(`redis://:${config.password}@${config.host}:${config.port}`);
   return _redis;
 }
 
