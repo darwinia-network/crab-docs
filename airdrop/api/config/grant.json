@@ -1,6 +1,6 @@
 {
   "defaults": {
-    "origin": "https://crab-docs-fewensa-itering.vercel.app",
+    "origin": "https://docs.crab.network",
     "transport": "querystring",
     "state": true
   },
