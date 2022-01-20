@@ -146,6 +146,20 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
       .finally(() => {});
   }, []);
 
+  useEffect(() => {
+    axios.get('/api/airdrop/state', {
+      timeout: 3000,
+    })
+      .then((res) => {
+        console.log('state:', res);
+      })
+      .catch((err) => {
+        console.error('state', err);
+        console.error('state response', err.response);
+      })
+      .finally(() => {});
+  }, []);
+
   return (
     <>
       <div className={clsx(className)}>
