@@ -22,7 +22,7 @@ sidebar_position: 2
 
 ## Full node running
 
-See [How to run a full node](crab-tut-node.md)
+See [How to run a full node](../crab-tut-node.md)
 
 ## Usages
 

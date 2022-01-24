@@ -34,7 +34,7 @@ After some setting, you will get the Ethereum address.
 
 ![Address 02](../../../assets/evm-compatible-crab-smart-chain/builders/advanced/dvm_address_02.png)
 
-Now, if you connect to other Ethereum-compatible networks, the address will not change. We can try to [connect to Crab](../wallets/dvm-metamask.md), which is Ethereum-compatible, and you will see the address is the same, and that is what we call a **DVM address**.
+Now, if you connect to other Ethereum-compatible networks, the address will not change. We can try to [connect to Crab](../../../evm-compatible-crab-smart-chain/wallets/dvm-metamask.md), which is Ethereum-compatible, and you will see the address is the same, and that is what we call a **DVM address**.
 
 ![Address 03](../../../assets/evm-compatible-crab-smart-chain/builders/advanced/dvm_address_03.png)
 

@@ -22,7 +22,7 @@ As of writing of this guide, the versions used were 16.0.0 and 7.10.0, respectiv
 
 Also, you will need the following:
 
- - Have MetaMask installed and [connected to Pangolin](/dvm/wallets/dvm-metamask.md)
+ - Have MetaMask installed and [connected to Pangolin](../../wallets/dvm-metamask.md)
  - Have an account with funds, which you can get from [Faucet](/builders/get-started/darwinia-pangolin/#get-tokens)
 
 Once all requirements have been met, you are ready to build with Hardhat.

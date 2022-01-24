@@ -7,7 +7,7 @@ sidebar_position: 2
 
 MetaMask is the most widely used wallet in the Ethereum ecosystem. We have deployed the DVM module in Crab Network and other testnets, which provides Ethereum compatibility. Users can connect to Crab Network and other testnets with MetaMask. There is a corresponding standard Substrate address for every Ethereum-like address, which is called a DVM address. Both addresses point to the same account but are used in different scenarios.
 
-> Detailed explanation of address formats can be found in [DVM Address](../overview/dvm-address.md).
+> Detailed explanation of address formats can be found in [DVM Address](../builders/advanced/dvm-address.md).
 
 ### Connect with Metamask
 

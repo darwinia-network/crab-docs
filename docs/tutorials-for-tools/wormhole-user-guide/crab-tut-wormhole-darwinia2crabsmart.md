@@ -207,7 +207,7 @@ You can refer to the form below to facilitate understanding:
 | Ethereum Address Format |               ✅ |            ❌ |                ✅ |
 | Substrate Address Format |               ✅ |            ✅ |                ❌ |
 
-For more details about the address formats in Darwinia, please refer [here](../../dvm/overview/dvm-address.md).
+For more details about the address formats in Darwinia, please refer [here](../../evm-compatible-crab-smart-chain/builders/advanced/dvm-address.md).
 
 ### 4. How to understand that when the selected cross-chain direction is different, the fees charged are different?
 
