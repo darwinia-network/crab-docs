@@ -183,7 +183,7 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
       </ComfirmModal>
       <ComfirmModal
         visible={visibleInputDestinationModal}
-        title={<ComfirmModalTitleWithCRAB />}
+        title={<ComfirmModalTitleWithCRAB crabQuantity='10' />}
         footer={<ComfirmModalButton disabled={!ethers.utils.isAddress(destinationAddress)} text='Claim CRAB' onClick={handleClickClaim} />}
         onCancel={() => setVisibleInputDestinationModal(false)}
       >
@@ -194,7 +194,7 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
       </ComfirmModal>
       <ComfirmModal
         visible={visibleClaimedModal}
-        title={<ComfirmModalTitleWithCRAB />}
+        title={<ComfirmModalTitleWithCRAB crabQuantity='10' />}
         footer={<ComfirmModalButton disabled={true} text='Claim CRAB' />}
         onCancel={() => setVisibleClaimedModal(false)}
       >
@@ -205,7 +205,7 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
       </ComfirmModal>
       <ComfirmModal
         visible={visibleNoneLeftModal}
-        title={<ComfirmModalTitleForSorry />}
+        title={<ComfirmModalTitleForSorry crabQuantity='300,000' />}
         onCancel={() => setVisibleNoneLeftModal(false)}
       >
         <Space direction='vertical' size='middle' style={{ width: '100%' }}>
