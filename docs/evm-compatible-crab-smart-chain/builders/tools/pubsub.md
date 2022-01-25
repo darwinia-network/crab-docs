@@ -14,7 +14,7 @@ The examples in this guide are based on a MacOS environment. You will also need 
 
  - Have MetaMask installed and [connected to Pangolin](../../wallets/dvm-metamask.md)
  - Have an account with funds. You can get this from [Faucet](../../get-started/darwinia-pangolin.md)
- - Deploy your own ERC-20 token on Pangolin. You can do following [our Remix tutorial](/builders/interact/remix/), while first pointing MetaMask to Pangolin
+ - Deploy your own ERC-20 token on Pangolin. You can do following [our Remix tutorial](../interact/remix/), while first pointing MetaMask to Pangolin
 
 import InstallNodeJs from '/snippets/text/common/install-nodejs.md';
 

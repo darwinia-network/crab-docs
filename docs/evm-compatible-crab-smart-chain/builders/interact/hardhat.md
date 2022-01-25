@@ -23,7 +23,7 @@ As of writing of this guide, the versions used were 16.0.0 and 7.10.0, respectiv
 Also, you will need the following:
 
  - Have MetaMask installed and [connected to Pangolin](../../wallets/dvm-metamask.md)
- - Have an account with funds, which you can get from [Faucet](/builders/get-started/darwinia-pangolin/#get-tokens)
+ - Have an account with funds, which you can get from [Faucet](../../get-started/darwinia-pangolin/#get-tokens)
 
 Once all requirements have been met, you are ready to build with Hardhat.
 
@@ -104,9 +104,9 @@ contract Box {
 
 Let's modify our Hardhat configuration file so we can compile and deploy this contract to Pangolin.
 
-If you have not yet done so, create a MetaMask Account, [connect to Pangolin](/dvm/wallets/dvm-metamask.md), and fund it through [Faucet](/builders/get-started/darwinia-pangolin/#get-tokens). We will use the private key of the account created to deploy the contract.
+If you have not yet done so, create a MetaMask Account, [connect to Pangolin](../../wallets/dvm-metamask.md), and fund it through [Faucet](../../get-started/darwinia-pangolin/#get-tokens). We will use the private key of the account created to deploy the contract.
 
-We start by requiring the [ethers plugin](https://hardhat.org/plugins/nomiclabs-hardhat-ethers.html), which brings the [ethers.js](/builders/tools/eth-libraries/etherjs/) library that allows you to interact with the blockchain in a simple way. We can install `ethers` plugin by running:
+We start by requiring the [ethers plugin](https://hardhat.org/plugins/nomiclabs-hardhat-ethers.html), which brings the [ethers.js](../../builders/tools/eth-libraries/etherjs/) library that allows you to interact with the blockchain in a simple way. We can install `ethers` plugin by running:
 
 ```
 npm install @nomiclabs/hardhat-ethers ethers
@@ -220,7 +220,7 @@ mkdir scripts && cd scripts
 touch deploy.js
 ```
 
-Next, we need to write our deployment script using `ethers`. Because we'll be running it with Hardhat, we don't need to import any libraries. The script is a simplified version of that used in [this tutorial](/builders/interact/eth-libraries/deploy-contract/#deploying-the-contract).
+Next, we need to write our deployment script using `ethers`. Because we'll be running it with Hardhat, we don't need to import any libraries. The script is a simplified version of that used in [this tutorial](../../builders/interact/eth-libraries/deploy-contract/#deploying-the-contract).
 
 We start by creating a local instance of the contract with the `getContractFactory()` method. Next, let's use the `deploy()` method that exists within this instance to initiate the smart contract. Lastly, we wait for its deployment by using `deployed()`. Once deployed, we can fetch the address of the contract inside the box instantiation.
 

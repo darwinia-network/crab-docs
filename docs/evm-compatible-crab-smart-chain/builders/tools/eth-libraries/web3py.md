@@ -33,5 +33,5 @@ Depending on which network you want to connect to, you can set the `RPC_URL` to 
 
 ## Tutorials
 
-If you are interested in a more detailed step-by-step guide, go to our specific tutorials about using web3.py on Pangolin to [send a transaction](/builders/interact/eth-libraries/send-transaction/) or [deploy a contract](/builders/interact/eth-libraries/deploy-contract/).
+If you are interested in a more detailed step-by-step guide, go to our specific tutorials about using web3.py on Pangolin to [send a transaction](../../interact/eth-libraries/send-transaction/) or [deploy a contract](../../interact/eth-libraries/deploy-contract/).
 

@@ -66,4 +66,4 @@ module.exports = {
 
 ## Tutorial
 
-If you are interested in a more detailed step-by-step guide, check out our specific tutorial about using [Hardhat](/builders/interact/hardhat/) with Pangolin.
+If you are interested in a more detailed step-by-step guide, check out our specific tutorial about using [Hardhat](../interact/hardhat/) with Pangolin.

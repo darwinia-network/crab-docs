@@ -55,7 +55,7 @@ All the code of the contracts was obtained using OpenZeppelin [Contract Wizard](
 The steps described in this section assume you have [MetaMask](https://metamask.io/) installed and connected to the Pangolin Network. Contract deployment is done using the [Remix IDE](https://remix.ethereum.org/) via the "Injected Web3" environment. You can find corresponding tutorials in the following links:
 
  - [Interacting with Pangolin using MetaMask](../../wallets/dvm-metamask.md)
- - [Interacting with Pangolin using Remix](/builders/tools/remix/)
+ - [Interacting with Pangolin using Remix](../tools/remix/)
 
 ### Deploying an ERC20 Token
 

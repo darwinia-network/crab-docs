@@ -22,18 +22,18 @@ The address will not change if you switch to other networks on MetaMask. For exa
 > Example: When we connect to ***Ethereum Mainnet***, the displayed address is `0xe59261f6D4088BcD69985A3D369Ff14cC54EF1E5`.
 > 
 
-![01](../../assets/crab-network/crab-faqs-address-format-01.png)
+![01](../assets/faqs/crab-faqs-address-format-01.png)
 
 > And if we switch network to ***Crab***, the displayed address is also `0xe59261f6D4088BcD69985A3D369Ff14cC54EF1E5`. And this address is a ***Smart address*** first.
 > 
 
-![02](../../assets/crab-network/crab-faqs-address-format-02.png)
+![02](../assets/faqs/crab-faqs-address-format-02.png)
 
 > When we go to the [Apps](https://apps.darwinia.network/#/toolbox/dvmaddress), switch to ***Crab*** network, click the `Toolbox`, and paste the smart address `0xe59261f6D4088BcD69985A3D369Ff14cC54EF1E5` to convert it into a substrate address. 
 The address `5ELRpquT7C3mWtjesm99Kqzm4yHZ66uXnJXPNKLBcc89aTHS` is a ***Substrate address***. This substrate address is unique and can only be converted from this ***Smart address*** `0xe59261f6D4088BcD69985A3D369Ff14cC54EF1E5`. A smart address that has a corresponding substrate address within the same chain is what we call a ***DVM address***. In this case, this address `0xe59261f6D4088BcD69985A3D369Ff14cC54EF1E5` can be called a DVM address.
 > 
 
-![03](../../assets/crab-network/crab-faqs-address-format-03.png)
+![03](../assets/faqs/crab-faqs-address-format-03.png)
 
 The DVM address format is consistent with that in Ethereum, so is the generation method. The difference is that each DVM address corresponds to a unique Substrate address. In other words, the DVM address is first an Ethereum address, but it also corresponds to a Substrate address. Since the DVM and the Ethereum virtual machines are compatible with the underlying specifications, users can use the wallets from the existing Ethereum ecosystem to manage their assets, such as Metamask. 
 

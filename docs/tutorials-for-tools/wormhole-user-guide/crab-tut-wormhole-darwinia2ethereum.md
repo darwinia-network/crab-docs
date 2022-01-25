@@ -83,7 +83,7 @@ You will receive a receipt after the transaction is completed. You can check the
 
 You can click the *Cross-chain history* in your receipt or click *Transfer Records* on the homepage to track the transaction history. When you click *Transfer Records,* please select the source network and the target network first, and fill in the sender account address of the source network.
 
-> NOTE: You will find different address formats(account formats) in the blockchain domain, which can sometimes be confusing for non-experts. Those who want a quick answer on which format to use in different scenarios can refer to [this article](../../dvm/overview/dvm-address.md).
+> NOTE: You will find different address formats(account formats) in the blockchain domain, which can sometimes be confusing for non-experts. Those who want a quick answer on which format to use in different scenarios can refer to [this article](../../evm-compatible-crab-smart-chain/builders/advanced/dvm-address.md).
 > 
 
 ![Untitled](../../assets/tutorials-for-tools/wormhole-user-guide/wormhole-d2e-08.png)

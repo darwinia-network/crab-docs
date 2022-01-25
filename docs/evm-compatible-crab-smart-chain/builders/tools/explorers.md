@@ -11,11 +11,11 @@ Block explorers can be thought of as search engines for the blockchain. They all
 
 ### PolkadotJS (Dev Node - TestNet)
 
-Polkadot JS Apps uses the WebSocket endpoint to interact with the Network. To connect it to a Darwinia development node, you can follow the steps in [this tutorial](/builders/get-started/darwinia-dev/#connecting-to-darwinia-apps). The default port for this is `9944`.
+Polkadot JS Apps uses the WebSocket endpoint to interact with the Network. To connect it to a Darwinia development node, you can follow the steps in [this tutorial](../../get-started/darwinia-dev/#connecting-to-darwinia-apps). The default port for this is `9944`.
 
 ![Polkadot JS Apps](../../../assets/evm-compatible-crab-smart-chain/builders/tools/explorers-01.png)
 
-To view and interact with Pangolin's substrate layer, go to [this URL](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpangolin-rpc.darwinia.network#/explorer). This is the Polkadot JS Apps pointing to the TestNet. You can find more information in [this page](/builders/get-started/darwinia-dev/#connecting-to-darwinia-apps).
+To view and interact with Pangolin's substrate layer, go to [this URL](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpangolin-rpc.darwinia.network#/explorer). This is the Polkadot JS Apps pointing to the TestNet. You can find more information in [this page](../../get-started/darwinia-dev/#connecting-to-darwinia-apps).
 
 ![Polkadot JS Pangolin](../../../assets/evm-compatible-crab-smart-chain/builders/tools/explorers-02.png)
 

@@ -65,4 +65,4 @@ module.exports = {
 
 ## Tutorial
 
-If you are interested in a more detailed step-by-step guide, go to our specific tutorial about [using Truffle](/builders/interact/truffle/) with Pangolin.
+If you are interested in a more detailed step-by-step guide, go to our specific tutorial about [using Truffle](../interact/truffle/) with Pangolin.

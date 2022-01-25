@@ -9,10 +9,9 @@ description: Learn how to deploy unmodified and unchanged Solidity-based smart c
 ## Introduction
 
 This guide walks through using the Solidity compiler and three different Ethereum libraries to deploy a contract to Pangolin manually. The three libraries covered by this tutorial are:
-
- - [Web3.js](/builders/tools/eth-libraries/web3js)
- - [Ethers.js](/builders/tools/eth-libraries/etherjs)
- - [Web3.py](/builders/tools/eth-libraries/web3py)
+ - [Web3.js](../../tools/eth-libraries/web3js)
+ - [Ethers.js](../../tools/eth-libraries/etherjs)
+ - [Web3.py](../../tools/eth-libraries/web3py)
 
 :::note
 If you would like to find the simplest way to get started, check out the quick start guide for each library by clicking the links above
@@ -631,7 +630,7 @@ First, let's overview the _increment.\*_ file, which increments the current numb
  - Ethers.js: [_increment.js_](/snippets/code/ethers-contract-local/increment.js)
  - Web3.py: [_increment.py_](/snippets/code/web3py-contract/increment.py)
 
-For simplicity, the increment file is composed of two sections. In the first section ("Define Provider & Variables"), the library to use and the ABI of the contract are imported. The provider, the contract's address, and the value of the `increment` function are also defined. Note that `providerRPC` has three the standard node RPC endpoint, the one for development, the one for [Pangolin](../../../get-started/darwinia-pangolin.md) and another one for [Crab](/builders/get-started/darwinia-crab.mdx).
+For simplicity, the increment file is composed of two sections. In the first section ("Define Provider & Variables"), the library to use and the ABI of the contract are imported. The provider, the contract's address, and the value of the `increment` function are also defined. Note that `providerRPC` has three the standard node RPC endpoint, the one for development, the one for [Pangolin](../../../get-started/darwinia-pangolin.md) and another one for [Crab](../../../get-started/darwinia-crab.mdx).
 
 The second section ("Send Function") outlines the actual function to be called with the transaction. Regardless of the library, a contract instance is created (linked to the contract's address), from which the function to be used is queried.
 
@@ -1050,7 +1049,7 @@ Lastly, the transaction hash is displayed in the terminal.
 
 ## Running the Scripts
 
-For this section, the code shown before was adapted to target a development node, which you can run by following [this tutorial](/builders/get-started/darwinia-dev/). Also, each transaction was sent from the pre-funded account that comes with the node:
+For this section, the code shown before was adapted to target a development node, which you can run by following [this tutorial](../../../get-started/darwinia-dev/). Also, each transaction was sent from the pre-funded account that comes with the node:
 
 import DevAccount from '/snippets/text/metamask-local/dev-account.md';
 

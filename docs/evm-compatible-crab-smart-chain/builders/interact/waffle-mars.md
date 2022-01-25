@@ -30,7 +30,7 @@ import DevAccount from '/snippets/text/metamask-local/dev-account.md';
 
 <DevAccount name="devAccount" />
 
-Once you've created an account you'll need to export the private key to be used in this guide. Before moving on, ensure your account has funds and, if needed, get `PRING` tokens from the [faucet](/builders/get-started/darwinia-pangolin/#get-tokens).
+Once you've created an account you'll need to export the private key to be used in this guide. Before moving on, ensure your account has funds and, if needed, get `PRING` tokens from the [faucet](../../get-started/darwinia-pangolin/#get-tokens).
 
 ## Create a TypeScript Project with Waffle & Mars
 

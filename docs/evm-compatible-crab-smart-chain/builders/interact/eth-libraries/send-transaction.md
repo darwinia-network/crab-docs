@@ -473,25 +473,25 @@ print(f"The balance of { address_to } is: { balance_to } ETH")
 
 ### Web3.js
 
-The first section of [the script](/snippets/code/web3-tx-local/balances.js) is very similar to the one in [transaction file](/builders/interact/eth-libraries/send-transaction/#web3js). The main difference is that no private key is needed because there is no need to send a transaction.
+The first section of [the script](/snippets/code/web3-tx-local/balances.js) is very similar to the one in [transaction file](../../interact/eth-libraries/send-transaction/#web3js). The main difference is that no private key is needed because there is no need to send a transaction.
 
 In the second section, an asynchronous function wraps the web3 method used to fetch the balance of an address, `web3.eth.getBalance(address)`. Once again, you can leverage the `web3.utils.fromWei()` function to transform the balance into a more readable number in ETH.
 
 ### Ethers.js
 
-The first section of [the script](/snippets/code/ethers-tx-local/balances.js) is very similar to the one in [transaction file](/builders/interact/eth-libraries/send-transaction/#ethersjs). The main difference is that no private key is needed because there is no need to send a transaction. On the contrary, the `addressFrom` needs to be defined.
+The first section of [the script](/snippets/code/ethers-tx-local/balances.js) is very similar to the one in [transaction file](../../interact/eth-libraries/send-transaction/#ethersjs). The main difference is that no private key is needed because there is no need to send a transaction. On the contrary, the `addressFrom` needs to be defined.
 
 In the second section, an asynchronous function wraps the provider method used to fetch the balance of an address, which is `provider.getBalance(address)`. Once again, you can leverage the `ethers.utils.formatEther()` function to transform the balance into a more readable number in ETH.
 
 ### Web3.py
 
-The first section of [the script](/snippets/code/web3py-tx/balances.py) is very similar to the one in [transaction file](/builders/interact/eth-libraries/send-transaction/#web3py). The main difference is that no private key is needed because there is no need to send a transaction.
+The first section of [the script](/snippets/code/web3py-tx/balances.py) is very similar to the one in [transaction file](../../interact/eth-libraries/send-transaction/#web3py). The main difference is that no private key is needed because there is no need to send a transaction.
 
 In the second section, the `web3.eth.getBalance(address)` method is used to fetch a target address's balance. Once again, you can leverage the `eb3.fromWei()` function to transform the balance into a more readable number in ETH.
 
 ## Running the Scripts
 
-For this section, the code shown before was adapted to target a development node, which you can run by following [this tutorial](/builders/get-started/darwinia-dev/). Also, each transaction was sent from the pre-funded account that comes with the node:
+For this section, the code shown before was adapted to target a development node, which you can run by following [this tutorial](../../../get-started/darwinia-dev/). Also, each transaction was sent from the pre-funded account that comes with the node:
 
 import DevAccount from '/snippets/text/metamask-local/dev-account.md';
 

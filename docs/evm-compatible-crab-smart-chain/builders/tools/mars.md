@@ -35,4 +35,4 @@ deploy({network: 'https://pangolin-rpc.darwinia.network', privateKey},(deployer)
 
 ## Tutorial
 
-If you are interested in a more detailed step-by-step guide on how to use Mars, go to our specific tutorial about using [Waffle & Mars](/builders/interact/waffle-mars/) on Pangolin,.
+If you are interested in a more detailed step-by-step guide on how to use Mars, go to our specific tutorial about using [Waffle & Mars](../interact/waffle-mars/) on Pangolin,.

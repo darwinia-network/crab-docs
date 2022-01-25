@@ -78,4 +78,4 @@ import TabItem from '@theme/TabItem';
 
 ## Tutorials
 
-If you are interested in a more detailed step-by-step guide, you can go to our specific tutorials on using ethers.js on Pangolin to [send a transaction](/builders/interact/eth-libraries/send-transaction/) or [deploy a contract](/builders/interact/eth-libraries/deploy-contract/).
+If you are interested in a more detailed step-by-step guide, you can go to our specific tutorials on using ethers.js on Pangolin to [send a transaction](../../interact/eth-libraries/send-transaction/) or [deploy a contract](../../interact/eth-libraries/deploy-contract/).

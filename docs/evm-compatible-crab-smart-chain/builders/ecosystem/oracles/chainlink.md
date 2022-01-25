@@ -23,7 +23,7 @@ import ChainlinkBRM from '/snippets/text/chainlink/chainlink-brm.md';
 
 ### The Client Contract
 
-The Client contract is the element that starts the communication with the Oracle by sending a request. As shown in the diagram, it calls the _transferAndCall_ method from the LINK token contract, but there is more processing that is needed to track the request to the Oracle. For this example, you can use the code in [this file](/snippets/code/chainlink/Client.sol), and deploy it on [Remix](/builders/tools/remix/) to try it out. Let's look at the core functions of the contract:
+The Client contract is the element that starts the communication with the Oracle by sending a request. As shown in the diagram, it calls the _transferAndCall_ method from the LINK token contract, but there is more processing that is needed to track the request to the Oracle. For this example, you can use the code in [this file](/snippets/code/chainlink/Client.sol), and deploy it on [Remix](../../tools/remix.md) to try it out. Let's look at the core functions of the contract:
 
  - _constructor_: runs when the contract is deployed. It sets the address of the LINK token and the owner of the contract
  - _requestPrice_: needs the Oracle contract address, the job ID, and the payment (in LINK) tokens to the fulfiller of the request. Builds the new request that is sent using the _sendChainlinkRequestTo_ function from the _ChainlinkClient.sol_ import
@@ -118,7 +118,7 @@ Currently, the Oracle node has a set of Job IDs for different price datas for th
 | SUSHI to USD |     |  5e47777ecc664801a64bd4b23c5e912c |
 |  UNI to USD  |     |  ea3111fdc33e4a9c9af8dd0ede87b279  |
 
-Let's go ahead and use the interface contract with the `BTC to USD` Job ID in [Remix](/builders/tools/remix/).
+Let's go ahead and use the interface contract with the `BTC to USD` Job ID in [Remix](../../tools/remix.md).
 
 After creating the file and compiling the contract, head to the "Deploy and Run Transactions" tab, enter the Client contract address, and click on "At Address." Make sure you have set the "Environment" to "Injected Web3" so you are connected to Pangolin. This will create an instance of the Client contract that you can interact with. Use the function `requestPrice()` to query the data of the corresponding Job ID. Once the transaction is confirmed, we have to wait until the whole process explained before occurs. We can check the price using the view function `currentPrice()`.
 

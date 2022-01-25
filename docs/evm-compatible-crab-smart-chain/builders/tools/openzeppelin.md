@@ -26,7 +26,7 @@ Currently, the following OpenZeppelin products/solutions work on the different n
 
 You will find a corresponding tutorial for each product in the following links:
 
- - [**Contract Wizard**](/builders/interact/oz-remix/#openzeppelin-contract-wizard) — where you'll find a guide on how to use OpenZeppelin web-based wizard to create different token contracts with different functionalities
- - [**Contracts & Libraries**](/builders/interact/oz-remix/#deploying-openzeppelin-contracts-on-pangolin) — where you'll find tutorials to deploy the most common token contracts using OpenZeppelin's templates: ERC20, ERC721 and ERC1155
+ - [**Contract Wizard**](../interact/oz-remix/#openzeppelin-contract-wizard) — where you'll find a guide on how to use OpenZeppelin web-based wizard to create different token contracts with different functionalities
+ - [**Contracts & Libraries**](../interact/oz-remix/#deploying-openzeppelin-contracts-on-pangolin) — where you'll find tutorials to deploy the most common token contracts using OpenZeppelin's templates: ERC20, ERC721 and ERC1155
  - **Defender** — where you'll find a guide on how to use OpenZeppelin Defender to manage your smart contracts in the Pangolin TestNet
 
