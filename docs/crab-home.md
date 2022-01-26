@@ -24,4 +24,4 @@ CRAB and CKTON are tokens with real value, and the cryptocurrency backing module
 
 The exchange of CRAB to RING is facilitated by an automated market maker (AMM) protocol similar to Uniswap, so in essense, swapping of CRAB and RING is considered typical market behavior, with initial liquidity for trades to be determined by Crab Council.
 
-*** Crab Network will be participating in the Kusama [Parachain Slot Auction](https://polkadot.network/launch-parachains/)***
+*** [Crab Network has won the 22nd Kusama parachain slot!]***
