@@ -5,7 +5,7 @@ sidebar_label: Parameters
 sidebar_position: 1
 ---
 
-> This page intends to reflect current network configurations, it reflects the [runtime file](https://github.com/darwinia-network/darwinia-common/blob/master/bin/node-template/runtime/src/lib.rs), which is still a work in progress. 
+> This page intends to reflect current network configurations in the *runtime*, which is still a work in progress. 
 
 ## Consensus
 
