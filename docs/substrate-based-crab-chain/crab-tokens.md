@@ -19,17 +19,6 @@ The native token for the Crab Network is CRAB, which can be used as gas for tran
     - Symbol: `CRAB`
     - Decimals: `9`
     - Smart Contract Address: n/a
-- Crab Network (Smart Contract)
-    - Spec: `Native`
-    - Symbol: `CRAB`
-    - Decimals: `18`
-    - Smart Contract Address: n/a
-- Crab Network (Smart Contract)
-    - Spec: `ERC20`
-    - Symbol: `WCRAB`
-    - Name: `Wrapped CRAB`
-    - Decimals: `18`
-    - Smart Contract Address: `0x2d2b97ea380b0185e9fdf8271d1afb5d2bf18329`
 
 ## CKTON
 
