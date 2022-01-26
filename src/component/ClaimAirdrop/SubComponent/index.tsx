@@ -42,7 +42,7 @@ export const ComfirmModalTitleForCcongratulation = () => (
 
 export const CongratulationContent = ({ subview='#' }) => (
   <div>
-    <p>The airdrop token 100 CRAB has been sent to the destination address that you filled before, please track this transfer through the Subview:</p>
+    <p>The airdrop token 10 CRAB has been sent to the destination address that you filled before, please track this transfer through the Subview:</p>
     <p><a target='_blank' rel='noopener noreferrer' href={subview}>View in Subview Explorer</a></p>
   </div>
 );
