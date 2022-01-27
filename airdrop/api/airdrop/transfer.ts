@@ -12,13 +12,25 @@ const AMOUNT = 10;
 
 // request
 export default async function (req: VercelRequest, res: VercelResponse) {
+  const ip = req.headers['x-forwarded-for'].toString();
+  if (!ip) {
+    res.statusCode = 403;
+    const body = {
+      err: 1,
+      message: `Sorry, we can't serve you.`
+    };
+    res.end(JSON.stringify(body, null, 2));
+    return;
+  }
+  // const
+
   const data = qs.parse(req.body);
 
   res.setHeader('content-type', 'application/json');
 
   // check data
   if (!data) {
-    res.statusCode = 400;
+    res.statusCode = 403;
     const body = {
       err: 1,
       message: 'Not have data'
@@ -29,7 +41,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
   // check address
   if (is.not.truthy(data.address)) {
-    res.statusCode = 400;
+    res.statusCode = 403;
     const body = {
       err: 1,
       message: 'No address found, please type receiver address'
@@ -37,6 +49,28 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     res.end(JSON.stringify(body, null, 2));
     return;
   }
+
+  const client = redis();
+  const cacheKeyIp = `IP-${ip}`;
+  const recordIp = await client.get(cacheKeyIp);
+  if (!recordIp) {
+    const lastClaimTime = +recordIp;
+    const now = +new Date();
+    if ((now - lastClaimTime) <= 1000 * 60 * 60 * 12) {
+      res.statusCode = 403;
+      const body = {
+        err: 1,
+        message: 'Please wait for the restriction to be lifted',
+        data: {
+          state: 'RATE_LIMIT_IP',
+          time: lastClaimTime,
+        },
+      };
+      res.end(JSON.stringify(body, null, 2));
+      return;
+    }
+  }
+
 
   // query github account info
   let user;
@@ -65,7 +99,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   const created_at = new Date(user.created_at);
   const end = new Date('2021-12-30T00:00:00Z');
   if (+created_at > +end) {
-    res.statusCode = 400;
+    res.statusCode = 403;
     const body = {
       err: 1,
       message: 'Your account does not meet the rules'
@@ -75,23 +109,21 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   }
 
 
-
-  const client = redis();
   // const chainName = data.chain.toUpperCase().trim();
   const chainName = 'CRAB';
-  const cacheKey = `${chainName}-${user.id}`;
+  const cacheKeyClaimed = `${chainName}-${user.id}`;
 
-  const record = await client.get(cacheKey);
+  const recordClaimed = await client.get(cacheKeyClaimed);
 
   // check already sent
-  if (record != null) {
-    res.statusCode = 400;
+  if (recordClaimed != null) {
+    res.statusCode = 403;
     const body = {
       err: 1,
       message: 'You have already received',
       data: {
         state: 'RECEIVED',
-        time: record,
+        time: recordClaimed,
       }
     };
     res.end(JSON.stringify(body, null, 2));
@@ -102,7 +134,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     // transfer
     const result = await transfer(chainName, data.address);
     if (result == null) {
-      res.statusCode = 400;
+      res.statusCode = 403;
       const body = {
         err: 1,
         message: 'Transfer failed. please connect team',
@@ -111,7 +143,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       return;
     }
     if (result instanceof String || (typeof result == 'string')) {
-      res.statusCode = 400;
+      res.statusCode = 403;
       const body = {
         err: 1,
         message: result,
@@ -121,7 +153,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     }
 
     // put sent time for user
-    await client.set(cacheKey, +new Date());
+    const now = +new Date();
+    await client.set(cacheKeyClaimed, now);
+    await client.set(cacheKeyIp, now);
 
     res.statusCode = 200;
     const body = {
@@ -131,7 +165,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     res.end(JSON.stringify(body, null, 2));
 
   } catch (e) {
-    res.statusCode = 400;
+    res.statusCode = 403;
     const body = {
       err: 1,
       message: 'Transfer failed: ' + e.message,

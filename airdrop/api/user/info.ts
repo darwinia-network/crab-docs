@@ -3,8 +3,6 @@ import {Octokit} from '@octokit/rest';
 
 
 export default async function (req: VercelRequest, res: VercelResponse) {
-  const ip = req.headers['x-forwarded-for'];
-  console.log('IP: ', ip);
   const user = await queryGithubAccountInfo(req);
   res.statusCode = 200
   res.setHeader('content-type', 'application/json')
