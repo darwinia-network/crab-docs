@@ -7,6 +7,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   const auth = qs.parse(req.query);
   const accessToken = auth.access_token;
   res.setHeader('Set-Cookie', `x-access-token=${accessToken};httpOnly;secure;path=/;`);
-  res.setHeader('Location', '/builders/get-started/darwinia-crab?oauth=github#get-tokens');
-  res.end('Redirect /builders/get-started/darwinia-crab?oauth=github#get-tokens');
+  res.setHeader('Location', '/crab-smart-chain/get-started/darwinia-crab?oauth=github#get-tokens');
+  res.end('Redirect /crab-smart-chain/get-started/darwinia-crab?oauth=github#get-tokens');
 }
