@@ -54,27 +54,27 @@ To start building on Pangolin, you can get DEV tokens(PRING) from our [Pangolin 
 
 - Visit [Pangolin Apps Portal](https://apps.darwinia.network/#/account) and select the **Pangolin Test Network** in the network list in the upper left corner.
 
-![01](../../assets/evm-compatible-crab-smart-chain/get-started/connect-pangolin-01.png)
+![01](../../assets/crab-smart-chain/get-started/connect-pangolin-01.png)
 
 - Create an account on Pangolin Test Network. For detailed tutorials on creating an account, please refer to [here](https://docs.crab.network/crab-tut-create-account)!
 - Click the avatar and you can copy your Pangolin address.
 
-![02](../../assets/evm-compatible-crab-smart-chain/get-started/connect-pangolin-02.png)
+![02](../../assets/crab-smart-chain/get-started/connect-pangolin-02.png)
 
 - Join the Telegram group named "[Darwinia Faucet Official](https://t.me/darwiniafaucet_official)".
 - Send `/faucet`+ Pangolin address.
 
-![03](../../assets/evm-compatible-crab-smart-chain/get-started/connect-pangolin-03.png)
+![03](../../assets/crab-smart-chain/get-started/connect-pangolin-03.png)
 
 - You can open the link of the darwinia_bot to check the transaction on Subscan.
 
-![04](../../assets/evm-compatible-crab-smart-chain/get-started/connect-pangolin-04.png)
+![04](../../assets/crab-smart-chain/get-started/connect-pangolin-04.png)
 
-![05](../../assets/evm-compatible-crab-smart-chain/get-started/connect-pangolin-05.png)
+![05](../../assets/crab-smart-chain/get-started/connect-pangolin-05.png)
 
 - When the transaction is successful, a certain number of test tokens will appear in your pangolin address.
 
-![06](../../assets/evm-compatible-crab-smart-chain/get-started/connect-pangolin-06.png)
+![06](../../assets/crab-smart-chain/get-started/connect-pangolin-06.png)
 
 - Each telegram account can get 100 PRINGs every seven days.
 

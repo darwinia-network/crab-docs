@@ -13,11 +13,11 @@ Block explorers can be thought of as search engines for the blockchain. They all
 
 Polkadot JS Apps uses the WebSocket endpoint to interact with the Network. To connect it to a Darwinia development node, you can follow the steps in [this tutorial](../../get-started/darwinia-dev/#connecting-to-darwinia-apps). The default port for this is `9944`.
 
-![Polkadot JS Apps](../../../assets/evm-compatible-crab-smart-chain/builders/tools/explorers-01.png)
+![Polkadot JS Apps](../../../assets/crab-smart-chain/builders/tools/explorers-01.png)
 
 To view and interact with Pangolin's substrate layer, go to [this URL](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fpangolin-rpc.darwinia.network#/explorer). This is the Polkadot JS Apps pointing to the TestNet. You can find more information in [this page](../../get-started/darwinia-dev/#connecting-to-darwinia-apps).
 
-![Polkadot JS Pangolin](../../../assets/evm-compatible-crab-smart-chain/builders/tools/explorers-02.png)
+![Polkadot JS Pangolin](../../../assets/crab-smart-chain/builders/tools/explorers-02.png)
 
 ### Subscan
 
@@ -27,18 +27,18 @@ To view and interact with Pangolin's substrate layer, go to [this URL](https://p
 
 Switch network and select the network for which you want to query data.
 
-![dvm](../../../assets/evm-compatible-crab-smart-chain/builders/tools/explorers-03.png)
+![dvm](../../../assets/crab-smart-chain/builders/tools/explorers-03.png)
 
 #### Get transaction information
 
 Enter the DVM transaction hash in the search box and click `Search`.
 
-![dvm](../../../assets/evm-compatible-crab-smart-chain/builders/tools/explorers-04.png)
+![dvm](../../../assets/crab-smart-chain/builders/tools/explorers-04.png)
 
-![dvm](../../../assets/evm-compatible-crab-smart-chain/builders/tools/explorers-05.png)
+![dvm](../../../assets/crab-smart-chain/builders/tools/explorers-05.png)
 
 #### Get account information
 
-![dvm](../../../assets/evm-compatible-crab-smart-chain/builders/tools/explorers-06.png)
+![dvm](../../../assets/crab-smart-chain/builders/tools/explorers-06.png)
 
 As shown above, the relationship between the DVM account and the Substrate account, the account balance, the staking and the transaction history can be clearly displayed.

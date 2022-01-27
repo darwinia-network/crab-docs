@@ -36,7 +36,7 @@ The wizard is comprised of the following sections:
  4. **Access Control** — list of all the available [access control mechanisms](https://docs.openzeppelin.com/contracts/4.x/access-control) for each token standard
  5. **Interactive code display** — shows the smart contract code with the configuration as set by the user
 
-![OpenZeppelin Contracts Wizard](../../../assets/evm-compatible-crab-smart-chain/builders/interact/openzeppelin-01.png)
+![OpenZeppelin Contracts Wizard](../../../assets/crab-smart-chain/builders/interact/openzeppelin-01.png)
 
 Once you have set up your contract with all the settings and features, it is just as easy as copying and pasting the code into your contract file.
 
@@ -91,7 +91,7 @@ contract MyToken is ERC20, Ownable {
 
 This ERC20 token smart contract was extracted from the [Contract Wizard](#openzeppelin-contract-wizard), setting a premint of `1000` tokens and activating the `Mintable` feature.
 
-![Getting Started with Remix](../../../assets/evm-compatible-crab-smart-chain/builders/interact/openzeppelin-02.png)
+![Getting Started with Remix](../../../assets/crab-smart-chain/builders/interact/openzeppelin-02.png)
 
 Once your smart contract is written, you can compile it by taking the following steps:
 
@@ -99,7 +99,7 @@ Once your smart contract is written, you can compile it by taking the following 
  2. Click on the compile button
  3. Alternatively, you can check the "Auto compile" feature
 
-![Compile ERC20 Contract with Remix](../../../assets/evm-compatible-crab-smart-chain/builders/interact/openzeppelin-03.png)
+![Compile ERC20 Contract with Remix](../../../assets/crab-smart-chain/builders/interact/openzeppelin-03.png)
 
 With the contract compiled, you are ready to deploy it taking the following steps:
 
@@ -109,7 +109,7 @@ With the contract compiled, you are ready to deploy it taking the following step
  4. If everything is ready, click on the "Deploy" button. Review the transaction information in MetaMask and confirm it
  5. After a few seconds, the transaction should get confirmed, and you should see your contract under "Deployed Contracts"
 
-![Deploy ERC20 Contract with Remix](../../../assets/evm-compatible-crab-smart-chain/builders/interact/openzeppelin-04.png)
+![Deploy ERC20 Contract with Remix](../../../assets/crab-smart-chain/builders/interact/openzeppelin-04.png)
 
 And that is it! You've deployed an ERC20 token contract using OpenZeppelin's contracts and libraries. Next, you can interact with your token contract via Remix, or add it to MetaMask.
 
@@ -174,7 +174,7 @@ With the contract compiled, head to the "Deploy & Run Transactions" tab. In here
  3. If everything is ready, click on the "Deploy" button. Review the transaction information in MetaMask and confirm it
  4. After a few seconds, the transaction should get confirmed, and you should see your contract under "Deployed Contracts"
 
-![Deploy ERC721 Contract with Remix](../../../assets/evm-compatible-crab-smart-chain/builders/interact/openzeppelin-05.png)
+![Deploy ERC721 Contract with Remix](../../../assets/crab-smart-chain/builders/interact/openzeppelin-05.png)
 
 And that is it! You've deployed an ERC721 token contract using OpenZeppelin's contracts and libraries. Next, you can interact with your token contract via Remix, or add it to MetaMask.
 
@@ -236,6 +236,6 @@ With the contract compiled, head to the "Deploy & Run Transactions" tab. In here
  3. If everything is ready, click on the "Deploy" button. Review the transaction information in MetaMask and confirm it
  4. After a few seconds, the transaction should get confirmed, and you should see your contract under "Deployed Contracts"
 
-![Deploy ERC1155 Contract with Remix](../../../assets/evm-compatible-crab-smart-chain/builders/interact/openzeppelin-06.png)
+![Deploy ERC1155 Contract with Remix](../../../assets/crab-smart-chain/builders/interact/openzeppelin-06.png)
 
 And that is it! You've deployed an ERC1155 token contract using OpenZeppelin's contracts and libraries. Next, you can interact with your token contract via Remix.

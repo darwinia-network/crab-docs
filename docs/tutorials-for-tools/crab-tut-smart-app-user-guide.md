@@ -134,7 +134,7 @@ Cross-chain transfer of assets between multiple blockchains can be realized thro
 
 ## What can we do after transferring tokens to the smart address?
 
-After transferring tokens to the smart address, builders who want to develop DApps on Crab Network will use the tokens as a gas fee. For more detailed operations, please refer to the [Builders](../evm-compatible-crab-smart-chain/get-started/darwinia-dev.md).
+After transferring tokens to the smart address, builders who want to develop DApps on Crab Network will use the tokens as a gas fee. For more detailed operations, please refer to the [Builders](../crab-smart-chain/get-started/darwinia-dev.md).
 
 ## How to add **Crab Network to Metamask?**
 

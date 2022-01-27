@@ -50,7 +50,7 @@ source $HOME/.cargo/env
 
 Here is what the tail end of the build output should look like:
 
-![End of build output](../../assets/evm-compatible-crab-smart-chain/get-started/development-node-01.png)
+![End of build output](../../assets/crab-smart-chain/get-started/development-node-01.png)
 
 Then, you will want to run the node in dev mode using the following command:
 
@@ -62,7 +62,7 @@ Then, you will want to run the node in dev mode using the following command:
 
 You should see an output that looks like the following, showing some blocks has been produced:
 
-![Output shows blocks being produced](../../assets/evm-compatible-crab-smart-chain/get-started/development-node-02.png)
+![Output shows blocks being produced](../../assets/crab-smart-chain/get-started/development-node-02.png)
 
 For more information on some of the flags and options used in the example, check out [Common Options](#common-options). If you want to see a complete list of all of the flags, options, and subcommands, open the help menu by running:
 
@@ -73,15 +73,15 @@ For more information on some of the flags and options used in the example, check
 
 Start by connecting to it with [Darwinia Apps Explorer](https://apps.darwinia.network/?rpc%3Dwss%253A%252F%252Fpangolin-rpc.darwinia.network#/explorer). This will automatically connects to Pangolin TestNet.
 
-![Polkadot JS Apps](../../assets/evm-compatible-crab-smart-chain/get-started/development-node-03.png)
+![Polkadot JS Apps](../../assets/crab-smart-chain/get-started/development-node-03.png)
 
 Click on the top left corner to open the menu to configure the networks, and then navigate down to open the Development sub-menu. In there, you will want to toggle the "Local Node" option, which points to `ws://127.0.0.1:9944`. Next, select the "Save & Reload" button, and the site should connect to your Darwinia development node.
 
-![Select Local Node](../../assets/evm-compatible-crab-smart-chain/get-started/development-node-04.png)
+![Select Local Node](../../assets/crab-smart-chain/get-started/development-node-04.png)
 
 With Darwinia Apps connected, you will see the the development node has began producing blocks.
 
-![Select Local Node](../../assets/evm-compatible-crab-smart-chain/get-started/development-node-05.png)
+![Select Local Node](../../assets/crab-smart-chain/get-started/development-node-05.png)
 
 ## Common Options
 

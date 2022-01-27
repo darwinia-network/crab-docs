@@ -63,7 +63,7 @@ This will create a Hardhat config file (`hardhat.config.js`) in our project dire
 
 After running the command, choose `Create an empty hardhat.config.js`:
 
-![Hardhat Create Project](../../../assets/evm-compatible-crab-smart-chain/builders/interact/hardhat-01.png)
+![Hardhat Create Project](../../../assets/crab-smart-chain/builders/interact/hardhat-01.png)
 
 ## The Contract File
 
@@ -207,7 +207,7 @@ Our contract, `Box.sol`, uses Solidity 0.8.1. Make sure the Hardhat configuratio
 npx hardhat compile
 ```
 
-![Hardhat Contract Compile](../../../assets/evm-compatible-crab-smart-chain/builders/interact/hardhat-02.png)
+![Hardhat Contract Compile](../../../assets/crab-smart-chain/builders/interact/hardhat-02.png)
 
 After compilation, an `artifacts` directory is created: it holds the bytecode and metadata of the contract, which are `.json` files. It’s a good idea to add this directory to your `.gitignore`.
 
@@ -259,7 +259,7 @@ To deploy to a Darwinia development node, replace `pangolin` for `dev` in the `r
 
 After a few seconds, the contract is deployed, and you should see the address in the terminal.
 
-![Hardhat Contract Deploy](../../../assets/evm-compatible-crab-smart-chain/builders/interact/hardhat-03.png)
+![Hardhat Contract Deploy](../../../assets/crab-smart-chain/builders/interact/hardhat-03.png)
 
 Congratulations, your contract is live! Save the address, as we will use it to interact with this contract instance in the next step.
 
@@ -295,7 +295,7 @@ await box.store(5)
 
 The transaction will be signed by your Pangolin account and broadcast to the network. The output should look similar to:
 
-![Transaction output](../../../assets/evm-compatible-crab-smart-chain/builders/interact/hardhat-04.png)
+![Transaction output](../../../assets/crab-smart-chain/builders/interact/hardhat-04.png)
 
 Notice your address labeled `from`, the address of the contract, and the `data` that is being passed. Now, let's retrieve the value by running:
 

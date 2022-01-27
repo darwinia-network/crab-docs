@@ -22,11 +22,11 @@ This guide assumes that you have a local Darwinia node running in `--dev` mode a
 
 If you followed the guides above, you should have a local Darwinia node which will begin to author blocks as transactions arrive:
 
-![Local Darwinia node producing blocks](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-01.png)
+![Local Darwinia node producing blocks](../../../assets/crab-smart-chain/builders/interact/using-remix-01.png)
 
 And you should have a MetaMask installation connected to your local Darwinia dev node with at least one account that has a balance. It should look something like this (expanded view):
 
-![MetaMask installation with a balance](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-02.png)
+![MetaMask installation with a balance](../../../assets/crab-smart-chain/builders/interact/using-remix-02.png)
 
 :::note
 Make sure you are connected to your Darwinia node and not another network!
@@ -38,11 +38,11 @@ Now, let’s fire up Remix to exercise more advanced functionalities in Darwinia
 
 Launch Remix by navigating to [https://remix.ethereum.org/](https://remix.ethereum.org/). In the main screen, under Environments, select Solidity to configure Remix for Solidity development, then navigate to the File Explorers view:
 
-![File explorer](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-03.png)
+![File explorer](../../../assets/crab-smart-chain/builders/interact/using-remix-03.png)
 
 We will create a new file to save the Solidity smart contract. Hit the + button under File Explorers and enter the name "MyToken.sol" in the popup dialog:
 
-![Create a new file for your Solidity contract](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-04.png)
+![Create a new file for your Solidity contract](../../../assets/crab-smart-chain/builders/interact/using-remix-04.png)
 
 Next, let's paste the following smart contract into the editor tab that comes up:
 
@@ -63,11 +63,11 @@ This is a simple ERC-20 contract based on the current Open Zeppelin ERC-20 templ
 
 Once you have pasted the contract into the editor, it should look like this:
 
-![Paste the contract into the editor](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-05.png)
+![Paste the contract into the editor](../../../assets/crab-smart-chain/builders/interact/using-remix-05.png)
 
 Now, navigate to the compile sidebar option to press the “Compile MyToken.sol” button:
 
-![Compile MyToken.sol](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-06.png)
+![Compile MyToken.sol](../../../assets/crab-smart-chain/builders/interact/using-remix-06.png)
 
 You will see Remix download all of the Open Zeppelin dependencies and compile the contract.
 
@@ -77,11 +77,11 @@ Now we can deploy the contract by navigating to the Deployment sidebar option. Y
 
 As soon as you select "Injected Web3", you will be prompted to allow Remix to connect to your MetaMask account.
 
-![Replace-01](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-07.png)
+![Replace-01](../../../assets/crab-smart-chain/builders/interact/using-remix-07.png)
 
 Press “Confirm” in Metamask to allow Remix to access the selected account.
 
-![Replace-02](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-08.png)
+![Replace-02](../../../assets/crab-smart-chain/builders/interact/using-remix-08.png)
 
 
 
@@ -89,7 +89,7 @@ Back on Remix, you should see that the account you wish to use for deployment is
 
 Once you have entered this value, select "Deploy."
 
-![Enter an account balance and deploy](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-09.png)
+![Enter an account balance and deploy](../../../assets/crab-smart-chain/builders/interact/using-remix-09.png)
 
 You will be prompted in MetaMask to confirm the contract deployment transaction.
 
@@ -99,46 +99,46 @@ If you have problems deploying any specific contract, you can try manually incre
 
 After you press confirm and the deployment is complete, you will see the transaction listed in MetaMask. The contract will appear under Deployed Contracts in Remix.
 
-![Confirmed label on a transaction](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-10.png)
+![Confirmed label on a transaction](../../../assets/crab-smart-chain/builders/interact/using-remix-10.png)
 
 Once the contract is deployed, you can interact with it from within Remix.
 
 Drill down on the contract under “Deployed Contracts.” Clicking on name, symbol, and totalSupply should return “MyToken,” “MYTOK,” and “8000000000000000000000000” respectively. If you copy the address from which you deployed the contract and paste it into the balanceOf field, you should see the entirety of the balance of the ERC20 as belonging to that user. Copy the contract address by clicking the button next to the contract name and address.
 
-![Interact with the contract from Remix](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-11.png)
+![Interact with the contract from Remix](../../../assets/crab-smart-chain/builders/interact/using-remix-11.png)
 
 ## Interacting with a Darwinia-based ERC-20 from MetaMask
 
 Now, open MetaMask to add the newly deployed ERC-20 tokens. Before doing so, make sure you have copied the contract's address from Remix. Back in MetaMask, click on “Add Token” as shown below. Make sure you are in the account that deployed the token contract.
 
-![Add a token](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-12.png)
+![Add a token](../../../assets/crab-smart-chain/builders/interact/using-remix-12.png)
 
 Paste the copied contract address into the “Custom Token” field. The “Token Symbol” and “Decimals of Precision” fields should be automatically populated.
 
-![Paste the copied contract address](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-13.png)
+![Paste the copied contract address](../../../assets/crab-smart-chain/builders/interact/using-remix-13.png)
 
 After hitting “Next,” you will need to confirm that you want to add these tokens to your MetaMask account.
 
-![Paste the copied contract address](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-14.png)
+![Paste the copied contract address](../../../assets/crab-smart-chain/builders/interact/using-remix-14.png)
 
  Hit “Add Token” and you should see a balance of 8M MyTokens in MetaMask:
 
-![Add the tokens to your MetaMask account](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-15.png)
+![Add the tokens to your MetaMask account](../../../assets/crab-smart-chain/builders/interact/using-remix-15.png)
 
 Now we can send some of these ERC-20 tokens to the other account that we have set up in MetaMask. Hit “send” to initiate the transfer of 500 MyTokens and select the destination account.
 
-![Confirmation of the token transfer](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-16.png)
+![Confirmation of the token transfer](../../../assets/crab-smart-chain/builders/interact/using-remix-16.png)
 
 After hitting “next,” you will be asked to confirm (similar to what is pictured below).
 
-![Confirmation of the token transfer](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-17.png)
+![Confirmation of the token transfer](../../../assets/crab-smart-chain/builders/interact/using-remix-17.png)
 
 Hit “Confirm” and after the transaction is complete, you will see a confirmation and a reduction of the MyToken account balance from the sender account in MetaMask:
 
-![Verify the reduction in account balance](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-18.png)
+![Verify the reduction in account balance](../../../assets/crab-smart-chain/builders/interact/using-remix-18.png)
 
 If you own the account that you sent the tokens to, you can add the token asset to verify that the transfer arrived.
 
-![Verify the reduction in account balance](../../../assets/evm-compatible-crab-smart-chain/builders/interact/using-remix-19.png)
+![Verify the reduction in account balance](../../../assets/crab-smart-chain/builders/interact/using-remix-19.png)
 
 

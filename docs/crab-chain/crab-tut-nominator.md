@@ -14,11 +14,11 @@ sidebar_position: 5
 
 Enter [Darwinia Wallet](https://apps.darwinia.network) and lick the `Staking` column on the left , Click `Start staking`
 
-![nominate](../assets/substrate-based-crab-chain/become-nominator-01.png)
+![nominate](../assets/crab-chain/become-nominator-01.png)
 
 Fill in the staking parameters 
 
-![nominate](../assets/substrate-based-crab-chain/become-nominator-02.png)
+![nominate](../assets/crab-chain/become-nominator-02.png)
 
 `Stash account` Account for stashing tokens. Tokens participating in staking will come from this account. The operations of this account are mostly related to changes in stash.
 
@@ -36,7 +36,7 @@ Fill in the staking parameters
 
 After filling in the staking parameters, please click `bond` and `submit`
 
-![nominate](../assets/substrate-based-crab-chain/become-nominator-03.png)
+![nominate](../assets/crab-chain/become-nominator-03.png)
 
 ## Nominate a validator
 
@@ -44,19 +44,19 @@ After filling in the staking parameters, please click `bond` and `submit`
 
 After completing the staking parameters, click `Nominate` on this page
 
-![nominate](../assets/substrate-based-crab-chain/become-nominator-04.png)
+![nominate](../assets/crab-chain/become-nominator-04.png)
 
 Choose your favorite validator
 
-![nominate](../assets/substrate-based-crab-chain/become-nominator-05.png)
+![nominate](../assets/crab-chain/become-nominator-05.png)
 
 Sign and submit
 
-![nominate](../assets/substrate-based-crab-chain/become-nominator-06.png)
+![nominate](../assets/crab-chain/become-nominator-06.png)
 
 View information about nominated validators
 
-![nominate](../assets/substrate-based-crab-chain/become-nominator-07.png)
+![nominate](../assets/crab-chain/become-nominator-07.png)
 
 > The operation of nominating validators will take effect from the next era, and it is normal to temporarily delay.
 
@@ -76,7 +76,7 @@ The tokens' statuses are following:
 
 There are other operations in staking for the following purposes:
 
-![nominate](../assets/substrate-based-crab-chain/become-nominator-08.png)
+![nominate](../assets/crab-chain/become-nominator-08.png)
 
 `Stop nomination` Cancels all nominees.
 
@@ -92,7 +92,7 @@ There are other operations in staking for the following purposes:
 
 > Please note: 56 era (about 56 days) will be saved, and you will not be able to claim it if it expires.
 
-![nominate](../assets/substrate-based-crab-chain/become-nominator-09.png)
+![nominate](../assets/crab-chain/become-nominator-09.png)
 
 `Claim Reward` Manually claim the reward, and the reward will be distributed in units of era.
 

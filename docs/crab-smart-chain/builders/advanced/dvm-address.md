@@ -26,24 +26,24 @@ dutch walnut battle make gorilla tomorrow oblige earth current muscle auto cry
 
 > NOTE: The address used here is only for educational purposes, and DO NOT transfer or deposit any assets to it.
 
-![Address 01](../../../assets/evm-compatible-crab-smart-chain/builders/advanced/dvm_address_01.png)
+![Address 01](../../../assets/crab-smart-chain/builders/advanced/dvm_address_01.png)
 
 After some setting, you will get the Ethereum address.
 
 `0x5ED61E64AA17f2B7726FEfB267676DDc14E24B57`
 
-![Address 02](../../../assets/evm-compatible-crab-smart-chain/builders/advanced/dvm_address_02.png)
+![Address 02](../../../assets/crab-smart-chain/builders/advanced/dvm_address_02.png)
 
-Now, if you connect to other Ethereum-compatible networks, the address will not change. We can try to [connect to Crab](../../../evm-compatible-crab-smart-chain/wallets/dvm-metamask.md), which is Ethereum-compatible, and you will see the address is the same, and that is what we call a **DVM address**.
+Now, if you connect to other Ethereum-compatible networks, the address will not change. We can try to [connect to Crab](../../wallets/dvm-metamask.md), which is Ethereum-compatible, and you will see the address is the same, and that is what we call a **DVM address**.
 
-![Address 03](../../../assets/evm-compatible-crab-smart-chain/builders/advanced/dvm_address_03.png)
+![Address 03](../../../assets/crab-smart-chain/builders/advanced/dvm_address_03.png)
 
 ## Address Conversion
 But in our [Apps Portal](https://apps.darwinia.network/), when a user tries to transfer assets(CRAB/CKTON) to another address in the Crab network, the receiving address should be in the Substrate format. Users can use the [online tool](https://apps.darwinia.network/?rpc%3Dwss%253A%252F%252Fcrab-rpc.darwinia.network#/toolbox/dvmaddress) to convert a DVM address to a Substrate one.
 
 `5ELRpquT7C3mWtjepyjZgHHxwJVzRHEGXiyXd5HXanHmTVSp`
 
-![Address 04](../../../assets/evm-compatible-crab-smart-chain/builders/advanced/dvm_address_04.png)
+![Address 04](../../../assets/crab-smart-chain/builders/advanced/dvm_address_04.png)
 
 This address points to the same account in Crab as the DVM address. Assets transferred to this address can be seen in the DVM address with MetaMask.
 
@@ -51,7 +51,7 @@ This address points to the same account in Crab as the DVM address. Assets trans
 To make things more complicated, the Substrate format contains an address type prefix that identifies an address as belonging to a specific network. The address we have generated is a generic Substrate address, which starts with the number **5**. 
 You can use the [Subscan tool](https://polkadot.subscan.io/tools/ss58_transform) to convert this generic address into addresses used in other Substrate-based blockchains. 
 
-![Address 05](../../../assets/evm-compatible-crab-smart-chain/builders/advanced/dvm_address_05.png)
+![Address 05](../../../assets/crab-smart-chain/builders/advanced/dvm_address_05.png)
 
 | Type               | Address   |
 | ----------------------- | ------- |
@@ -80,4 +80,4 @@ It is important to understand that different network formats are merely other re
 
 
 > EVM/DVM Address to Substrate Address Conversion Rule
-> ![Darwinia Address Format Overview](../../../assets/evm-compatible-crab-smart-chain/builders/advanced/dvm_address_06.png)
+> ![Darwinia Address Format Overview](../../../assets/crab-smart-chain/builders/advanced/dvm_address_06.png)

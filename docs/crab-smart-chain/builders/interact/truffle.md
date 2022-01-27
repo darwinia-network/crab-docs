@@ -42,7 +42,7 @@ mkdir metacoin-box && cd metacoin-box
 truffle unbox metacoin
 ```
 
-![Unbox Truffle box](../../../assets/evm-compatible-crab-smart-chain/builders/interact/truffle.png)
+![Unbox Truffle box](../../../assets/crab-smart-chain/builders/interact/truffle.png)
 
 Nevertheless, the box also has Truffle as a dependency in case you do not want to have it installed globally. In such a case, you can directly clone the following repository:
 

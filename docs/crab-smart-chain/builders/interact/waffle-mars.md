@@ -405,7 +405,7 @@ npm run deploy
 ```
 
 2. In your Terminal, Mars will prompt you to press `ENTER` to send your transaction:
-![Mars confirm deployment](../../../assets/evm-compatible-crab-smart-chain/builders/interact/waffle-mars.png)
+![Mars confirm deployment](../../../assets/crab-smart-chain/builders/interact/waffle-mars.png)
 
 If successful, you should see details about your transaction including it's hash, the block it was included in, and it's address.
 
