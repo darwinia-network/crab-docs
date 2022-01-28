@@ -9,12 +9,14 @@ import {
   DestinationSection,
   GithubAccountSection,
   AmountSection,
+  IpLimitSection,
   SocialLinks,
   CongratulationContent,
   ComfirmModalTitleWithCRAB,
   ComfirmModalTitleForSorry,
   ComfirmModalTitleForComfirm,
   ComfirmModalTitleForCcongratulation,
+  ComfirmModalTitleForFailedToClaim,
 } from './SubComponent';
 import { Space, notification } from 'antd';
 import axios from 'axios';
@@ -57,6 +59,7 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
   const [visibleNoneLeftModal, setVisibleNoneLeftModal] = useState(false);
   const [visibleComfirmModal, setVisibleComfirmModal] = useState(false);
   const [visibleCongratulationModal, setVisibleCongratulationModal] = useState(false);
+  const [visibleIpLimitModal, setVisibleIpLimitModal] = useState(false);
 
   const checkRegistrationTime = (t) => {
     if (Number(t.split('-')[0]) >= 2022) {
@@ -107,15 +110,17 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
               setVisibleClaimedModal(true);
             } else if (data?.message === 'All airdrops have ended') {
               setVisibleNoneLeftModal(true);
+            } else if (data?.data?.state === 'RATE_LIMIT_IP') {
+              setVisibleIpLimitModal(true);
             } else {
               notification.warning({
-                message: 'Woops, something went wrong',
+                message: 'Oops, something went wrong',
                 description: data?.message,
               });
             }
           } else {
             notification.error({
-              message: 'Woops, something went wrong',
+              message: 'Oops, something went wrong',
               description: err.message,
             });
           }
@@ -232,6 +237,16 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
       >
         <Space direction='vertical' size='middle' style={{ width: '100%' }}>
           <CongratulationContent subview={subviewLink} />
+        </Space>
+      </ComfirmModal>
+      <ComfirmModal
+        visible={visibleIpLimitModal}
+        title={<ComfirmModalTitleForFailedToClaim />}
+        footer={<SocialLinks />}
+        onCancel={() => setVisibleIpLimitModal(false)}
+      >
+        <Space direction='vertical' size='middle' style={{ width: '100%' }}>
+          <IpLimitSection />
         </Space>
       </ComfirmModal>
 
