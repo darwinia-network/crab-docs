@@ -19,17 +19,6 @@ The native token for the Crab Network is CRAB, which can be used as gas for tran
     - Symbol: `CRAB`
     - Decimals: `9`
     - Smart Contract Address: n/a
-- Crab Network (Smart Contract)
-    - Spec: `Native`
-    - Symbol: `CRAB`
-    - Decimals: `18`
-    - Smart Contract Address: n/a
-- Crab Network (Smart Contract)
-    - Spec: `ERC20`
-    - Symbol: `WCRAB`
-    - Name: `Wrapped CRAB`
-    - Decimals: `18`
-    - Smart Contract Address: `0x2d2b97ea380b0185e9fdf8271d1afb5d2bf18329`
 
 ## CKTON
 
@@ -44,18 +33,3 @@ CKTON is essentially a derivative token of CRAB, which encourages long-term lock
     - Spec: `Native`
     - Decimals: `9`
     - Smart Contract Address: n/a
-- Crab Network (Smart Contract)
-    - Spec: `ERC20`
-    - Symbol: `WCKTON`
-    - Name: `Wrapped CKTON`
-    - Decimals: `18`
-    - Smart Contract Address: `0x159933C635570D5042723359fbD1619dFe83D3f3`
-
-# Tokens On Ethereum-compatible Crab Network
-
-|Parameter |Value |
-| --- | --- |
-| Token Symbol | xRING |
-| Spec| ERC20 |
-| Decimals | 9 |
-|Smart Contract Address | 0x7399Ea6C9d35124d893B8d9808930e9d3F211501 |
