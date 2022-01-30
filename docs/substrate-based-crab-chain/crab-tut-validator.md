@@ -1,7 +1,7 @@
 ---
 id: crab-tut-validator
 title: How to become a validator
-sidebar_label: Become a validator
+sidebar_label: Become a Validator
 sidebar_position: 6
 ---
 

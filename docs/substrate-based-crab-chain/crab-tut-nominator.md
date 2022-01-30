@@ -1,7 +1,7 @@
 ---
 id: crab-tut-nominator
 title: How to become a nominator
-sidebar_label: Become a nominator
+sidebar_label: Become a Nominator
 sidebar_position: 5
 ---
 

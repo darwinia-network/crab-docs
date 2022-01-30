@@ -1,7 +1,7 @@
 ---
 id: crab-tokens
 title: Native Tokens
-sidebar_label: Tokens
+sidebar_label: Native Tokens
 sidebar_position: 3
 ---
 
