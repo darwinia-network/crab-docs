@@ -7,7 +7,9 @@ sidebar_position: 1
 
 ### Crab Network
 
+
 #### Substrate-based Crab Network
+
 
 [CRAB token](https://crab.subscan.io/) is the native token of Crab chain. It is similar to Ether in Ethereum. To interact with Crab chain, CRAB tokens are used as gas fees.
 
@@ -20,8 +22,7 @@ You can deposit CRAB tokens from the exchange to the Substrate-based Crab networ
     - Create an account, tutorial refers [here](https://docs.darwinia.network/tutorials/quick-start-account)
 - **Step 2: Get CRAB token**
     - The CRAB token can be purchased from the following places(up to now)
-        1. Direct Deposits/Withdrawals to the substrate-based Crab Network 
-        - [MXC](https://www.mexc.com/)
+        -- [MXC](https://www.mexc.com/)
 - **Step 3: Deposit CRAB token**
     - You can deposit tokens to the account that you have created on the Substrated-based crab network from the exchange
 

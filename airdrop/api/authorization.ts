@@ -9,4 +9,5 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   res.setHeader('Set-Cookie', `x-access-token=${accessToken};httpOnly;secure;path=/;`);
   res.setHeader('Location', '/evm-compatible-crab-smart-chain/get-started/darwinia-crab?oauth=github#get-tokens');
   res.end('Redirect /evm-compatible-crab-smart-chain/get-started/darwinia-crab?oauth=github#get-tokens');
+
 }
