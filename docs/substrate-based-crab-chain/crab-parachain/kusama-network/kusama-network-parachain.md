@@ -11,7 +11,7 @@ Kusama is a scalable heterogeneous multi-chain. This means that unlike previous 
 
 ## Relay Chain
 
-*The Relay Chain is the central chain of Kusama. All validators of Kusama are staked on the Relay Chain in KSM and validate for the Relay Chain. The Relay Chain is composed of a relatively small number of transaction types that include ways to interact with the governance mechanism, parachain auctions, and participating in NPoS. The Relay Chain has deliberately minimal functionality - for instance, smart contracts are not supported. The main responsibility is to coordinate the system as a whole, including parachains. Other specific work is delegated to the parachains, which have different implementations and features.*
+The Relay Chain is the central chain of Kusama. All validators of Kusama are staked on the Relay Chain in KSM and validate for the Relay Chain. The Relay Chain is composed of a relatively small number of transaction types that include ways to interact with the governance mechanism, parachain auctions, and participating in NPoS. The Relay Chain has deliberately minimal functionality - for instance, smart contracts are not supported. The main responsibility is to coordinate the system as a whole, including parachains. Other specific work is delegated to the parachains, which have different implementations and features.
 
 ### Roles in the Relay Chain
 
@@ -25,7 +25,7 @@ More explain about the roles, please refer [Polkadot WhitePaper](https://polkado
 
 ## Parallel Chain(Parachain)
 
-*A parachain is an application-specific data structure that is globally coherent and validatable by the validators of the Relay Chain. They take their name from the concept of parallelized chains that run parallel to the Relay Chain. Most commonly, a parachain will take the form of a blockchain, but there is no specific need for them to be actual blockchains.*
+A parachain is an application-specific data structure that is globally coherent and validatable by the validators of the Relay Chain. They take their name from the concept of parallelized chains that run parallel to the Relay Chain. Most commonly, a parachain will take the form of a blockchain, but there is no specific need for them to be actual blockchains.
 
 ### Roles in the Parachain
 
