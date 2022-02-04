@@ -42,7 +42,7 @@ The “**Early Bird Program**” detailed Algorithm:
 > More explain about the Parachain Slot Auction, please refer [here](https://www.notion.so/Parachain-Slot-Auction-e6ab3e61d9c844efb2ec525fcc60f7db).
 
 
-If supporters contributed in the “Final Stage”, they will get lower **CRAB and CKTON** rewards, but to thank these supporters, as long as these supporters each contribution share is **greater or equal to 1 KSM during the whole crowdloan(third-party exchanges or PLO aggregators are not eligible)**, they each also can get an [Evolution Land](evolution.land) Metaverse NFT Package.
+If supporters contributed in the “Final Stage”, they will get lower **CRAB and CKTON** rewards, but to thank these supporters, as long as these supporters each contribution share is **greater or equal to 1 KSM during the whole crowdloan(third-party exchanges or PLO aggregators are not eligible)**, they each also can get an Evolution Land Metaverse NFT Package.
 
 >
 >Disclaimer: Crowdloan via exchange or mobile wallet is provided by a third party, not Crab. Crab does not guarantee and does not assume any responsibility for, the acts or omissions of the third party, the performance of their products or services.
