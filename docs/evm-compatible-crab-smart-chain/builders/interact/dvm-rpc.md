@@ -55,4 +55,8 @@ List of implemented interfaces:
 - [x] net_listening
 - [x] web3_clientVersion
 - [x] web3_sha3
+- [x] debug_traceTransaction
+- [x] debug_traceBlockByNumber
+- [x] debug_traceByHash
+- [x] trace_filter
 
