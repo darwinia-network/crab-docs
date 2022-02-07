@@ -40,6 +40,12 @@ export const ComfirmModalTitleForCcongratulation = () => (
   </div>
 );
 
+export const ComfirmModalTitleForFailedToClaim = () => (
+  <div className={clsx(styles.failedToClaimModalHeaderTitle)}>
+    <span>Failed to claim!</span>
+  </div>
+);
+
 export const CongratulationContent = ({ subview='#' }) => (
   <div>
     <p>The airdrop token 10 CRAB has been sent to the destination address that you filled before, please track this transfer through the Subview:</p>
@@ -168,6 +174,13 @@ export const AmountSection = ({ amount='100' }) => (
     <p>{`${amount} CRAB`}</p>
   </div>
 );
+
+export const IpLimitSection = () => (
+  <div className={styles.failedToClaimModalBody}>
+    <p className={styles.failedToClaimModalBodyDesc}>You are now in greylist, greylist will reset this  IP Address after 12 hours later. </p>
+    <p className={styles.failedToClaimModalBodyWarning}>The same IP address can claim once within 12 hours!</p>
+  </div>
+)
 
 export const SocialLinks = () => (
   <Space className={styles.socialLinks} size='large'>
