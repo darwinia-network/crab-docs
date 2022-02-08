@@ -14,8 +14,8 @@
     "write-heading-ids": "npx docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.6 ",
-    "@docusaurus/preset-classic": "2.0.0-beta.6",
+    "@docusaurus/core": "^2.0.0-beta.15",
+    "@docusaurus/preset-classic": "^2.0.0-beta.15",
     "@mdx-js/react": "^1.6.21",
     "@metamask/detect-provider": "^1.2.0",
     "antd": "^4.16.13",
