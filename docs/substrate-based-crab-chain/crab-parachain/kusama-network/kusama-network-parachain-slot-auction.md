@@ -25,7 +25,7 @@ When candle auctions are used online, they require a random number to decide the
 
 Parachain slot auctions differ slightly from a normal candle auction in that it does not use the random number to decide the duration of its opening phase. Instead, it has a *known open phase* and will be retroactively determined (at the normal close) to have ended at some point in the past during the ending phase. So during the open phase, bids will continue to be accepted, but later bids have higher probability of losing since the retroactively determined close moment may be found to have preceded the time that a bid was submitted.
 
-## Randomness in Action
+## Randomness in Auction
 
 The following example will showcase the randomness mechanics of the candle auction for the 22nd auction on Kusama. Keep in mind that the candle phase has a uniform termination profile and has an equal probability of ending at any given block, and the termination block cannot be predicted before or during the auction.
 

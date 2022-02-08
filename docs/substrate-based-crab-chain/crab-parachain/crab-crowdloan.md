@@ -9,7 +9,7 @@ sidebar_position: 2
 
 - Announced that [Crab Network to join Kusama Parachain Auction](https://medium.com/@darwinianetwork/crab-network-to-join-kusama-parachain-auction-db007bffb4d5)
 - Announced that [Rules and Rewards of the Crab Crowdloan](https://medium.com/@darwinianetwork/support-crab-while-investing-in-the-next-generation-infrastructure-for-the-web3-0-metaverse-d194ff902f6d)
-- Created Crab crowdloan module which starts on block [#10840887](https://kusama.subscan.io/block/10840887) on Kusama Network
+- Created Crab Crowdloan module which starts on block [#10840887](https://kusama.subscan.io/block/10840887) on Kusama Network
 - Launched the article about the [guide to participate in the Crab PLO page](https://medium.com/@darwinianetwork/guide-to-participate-in-the-crab-plo-e9b145bed4c9)
 - [Crab won the 22nd Kusama Parachain Slot Auction](https://medium.com/@darwinianetwork/crab-network-will-connect-with-the-kusama-network-as-the-22nd-parachain-slot-41881143ec32)
 - Check rewards on [Crab PLO page](https://crab.network/plo_contribute)
