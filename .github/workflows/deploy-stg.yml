@@ -2,14 +2,19 @@ name: Deploy staging
 
 on:
   push:
-    branches:
+    branches: [main]
 
 jobs:
-  deploy-develop:
+  deploy:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - uses: actions/checkout@v2
+        with:
+          repository: fewensa/actions
+          path: .github/actions
 
       - uses: actions/setup-node@v2
         with:
@@ -79,20 +84,14 @@ jobs:
           mv vercel.json build/
           mv airdrop/* build/
 
-      - name: Deploy
-        id: deploy
-        run: |
-          REPO_NAME=${GITHUB_REPOSITORY#*/}
-          mv build $REPO_NAME
-          cd $REPO_NAME
-          vercel --token ${{ secrets.VERCEL_TOKEN }} --scope itering link --confirm
-          vercel --token ${{ secrets.VERCEL_TOKEN }} --scope itering deploy | tee deploy.log
-          content=$(cat deploy.log)
-          content="${content//'%'/'%25'}"
-          content="${content//$'\n'/'%0A'}"
-          content="${content//$'\r'/'%0D'}"
-          echo ''
-          echo "::set-output name=VERCEL_OUTPUT::$content"
+      - uses: ./.github/actions/smart-vercel
+        name: Deploy to Vercel
+        id: smart-vercel
+        with:
+          vercel_token: ${{ secrets.VERCEL_TOKEN }}
+          vercel_group: itering
+          preview_output: true
+          script_run: false
 
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
@@ -100,7 +99,7 @@ jobs:
           SLACK_CHANNEL: darwinia-docs-edu
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://avatars.githubusercontent.com/u/14985020?s=48&v=4
-          SLACK_MESSAGE: '${{ steps.deploy.outputs.VERCEL_OUTPUT }}'
+          SLACK_MESSAGE: '${{ steps.smart-vercel.outputs.PREVIEW_LINK }}'
           SLACK_TITLE: Preview
           SLACK_USERNAME: Vercel
           SLACK_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK_URL }}

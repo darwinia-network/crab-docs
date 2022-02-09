@@ -1,9 +1,7 @@
-name: Deploy production
+name: Deploy develop
 
 on:
-  push:
-    tags:
-      - 'v*'
+  pull_request:
 
 jobs:
   deploy:
@@ -93,7 +91,11 @@ jobs:
           vercel_group: itering
           preview_output: true
           script_run: false
-          prod_mode: true
+
+      - uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          append: true
+          message: ${{ steps.smart-vercel.outputs.PREVIEW_OUTPUT }}
 
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
