@@ -5,7 +5,7 @@ sidebar_position: 1
 sidebar_label: Using The Graph
 ---
 
-The Graph is a decentralized and open-source protocol for indexing and querying data from blockchains. It is very difficult to query data directly from blockchains. And The Graph makes it easy to save data from blockchain to database and query. The Darwinia DVM is compatible with EVM, we suggest using The Graph as the indexer. Developers can easily deploy The Graph Node, build APIs called Subgraphs, and query data from it. The data is saved in postgres, and with a standard GraphQL API to query. For more detail of the usage of The Graph, you can visit their [docs](https://thegraph.com/docs/about/introduction).
+The Graph is a decentralized and open-source protocol for indexing and querying data from blockchains. It is very difficult to query data directly from blockchains. And The Graph makes it easy to save data from blockchain to database and query. The Darwinia DVM is compatible with EVM, we suggest using The Graph as the indexer. Developers can easily deploy The Graph Node, build APIs called Subgraphs, and query data from it. The data is saved in PostgreSQL, and with a standard GraphQL API to query. For more detail of the usage of The Graph, you can visit their [docs](https://thegraph.com/docs/about/introduction).
 
 Here we introduce you about how to deploy a local The Graph Node, create and deploy a Subgraph to listen event from DVM contract.
 
