@@ -189,7 +189,8 @@ async function transfer(chain: String, address: String): Promise<TransferReceipt
 
 async function _transferCrab(address: String): Promise<TransferReceipt | String> {
   const web3 = crabSmartApi();
-  const chain = require('../config/chain.safe.json').crab_smart;
+  const chain = require('../config/chain.json').crab_smart;
+  chain.seed = process.env.CRAB_SMART_SEED;
 
   let receipt;
   try {
