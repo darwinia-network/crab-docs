@@ -65,7 +65,8 @@ let _redis;
 
 function redis() {
     if (_redis) return _redis;
-    const config = require('../config/redis.safe.json');
+    const config = require('../config/redis.json');
+    config.url = process.env.REDIS_CONNECT_URL;
     _redis = new Redis(config.url);
     return _redis;
 }
