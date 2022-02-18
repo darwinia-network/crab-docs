@@ -23,67 +23,14 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - uses: actions/cache@v2
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
       - name: Install dependencies
         run: yarn install
 
       - name: Build
         run: yarn build
 
-      - name: Generate config data
-        run: |
-          jq -n \
-            --arg crab_smart_seed "${{ secrets.CRAB_SMART_SEED }}" \
-            '{
-              crab_smart_seed: $crab_smart_seed
-            }' | tee chain_data.json
-          jq -n \
-            --arg github_oauth_app_key "${{ secrets.X_GITHUB_OAUTH_APP_KEY }}" \
-            --arg github_oauth_app_secret "${{ secrets.X_GITHUB_OAUTH_APP_SECRET }}" \
-            '{
-              github_oauth_app_key: $github_oauth_app_key,
-              github_oauth_app_secret: $github_oauth_app_secret
-            }' | tee grant_data.json
-          jq -n \
-            --arg url "${{ secrets.REDIS_CONNECT_URL }}" \
-            '{
-              url: $url
-            }' | tee redis_data.json
-
-      - name: Render chain config
-        uses: jayamanikharyono/jinja-action@v0.1
-        with:
-          datafile: chain_data.json
-          path: airdrop/api/config/chain.json
-
-      - name: Render grant config
-        uses: jayamanikharyono/jinja-action@v0.1
-        with:
-          datafile: grant_data.json
-          path: airdrop/api/config/grant.json
-
-      - name: Render redis config
-        uses: jayamanikharyono/jinja-action@v0.1
-        with:
-          datafile: redis_data.json
-          path: airdrop/api/config/redis.json
-
       - name: Prepare Project Config
         run: |
-          mv airdrop/api/config/chain.json airdrop/api/config/chain.safe.json
-          mv airdrop/api/config/grant.json airdrop/api/config/grant.safe.json
-          mv airdrop/api/config/redis.json airdrop/api/config/redis.safe.json
           mv vercel.json build/
           mv airdrop/* build/
 
@@ -94,8 +41,8 @@ jobs:
           vercel_token: ${{ secrets.VERCEL_TOKEN }}
           vercel_group: itering
           preview_output: true
-          script_run: false
           prod_mode: true
+          script_run: false
 
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2

@@ -189,7 +189,8 @@ async function transfer(chain: String, address: String): Promise<TransferReceipt
 
 async function _transferCrab(address: String): Promise<TransferReceipt | String> {
   const web3 = crabSmartApi();
-  const chain = require('../config/chain.safe.json').crab_smart;
+  const chain = require('../config/chain.json').crab_smart;
+  chain.seed = process.env.CRAB_SMART_SEED;
 
   let receipt;
   try {
@@ -233,7 +234,8 @@ let _redis;
 
 function redis() {
   if (_redis) return _redis;
-  const config = require('../config/redis.safe.json');
+  const config = require('../config/redis.json');
+  config.url = process.env.REDIS_CONNECT_URL;
   _redis = new Redis(config.url);
   return _redis;
 }
@@ -244,7 +246,8 @@ let _crabSmartApi;
 function crabSmartApi(): Web3 {
   if (_crabSmartApi) return _crabSmartApi;
 
-  const chain = require('../config/chain.safe.json').crab_smart;
+  const chain = require('../config/chain.json').crab_smart;
+  chain.seed = process.env.CRAB_SMART_SEED;
   _crabSmartApi = new Web3(chain.endpoint);
   return _crabSmartApi;
 }
