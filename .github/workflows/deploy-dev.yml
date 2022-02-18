@@ -17,6 +17,21 @@ jobs:
           persist-credentials: false
           ssh-key: "${{ secrets.ITERING_ACTIONS_DEPLOY_KEY }}"
 
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Prepare Project Config
+        run: |
+          mv vercel.json build/
+          mv airdrop/* build/
+
       - uses: ./.github/actions/smart-vercel
         name: Deploy to Vercel
         id: smart-vercel
@@ -24,6 +39,7 @@ jobs:
           vercel_token: ${{ secrets.VERCEL_TOKEN }}
           vercel_group: itering
           preview_output: true
+          script_run: false
 
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
