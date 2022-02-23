@@ -19,7 +19,10 @@ Go to [https://docs.crab.network/](https://docs.crab.network/) and click the `Co
 
 `Network Name` : Crab
 
-`New RPC URL`: [https://crab-rpc.darwinia.network](https://crab-rpc.darwinia.network/)
+`New RPC URL`: 
+- RPC1: [https://crab-rpc.darwinia.network](https://crab-rpc.darwinia.network/)
+- RPC2: [wss://darwinia-crab.api.onfinality.io/public-ws](wss://darwinia-crab.api.onfinality.io/public-ws)
+- RPC3: [https://darwinia-crab.api.onfinality.io/public/](https://darwinia-crab.api.onfinality.io/public/)
 
 `Chain ID`: 44
 
@@ -36,6 +39,7 @@ Go to [https://docs.crab.network/](https://docs.crab.network/) and click the `Co
 `Network Name` : Pangolin
 
 `New RPC URL`: [https://pangolin-rpc.darwinia.network](https://pangolin-rpc.darwinia.network/)
+
 
 `Chain ID`: 43
 
