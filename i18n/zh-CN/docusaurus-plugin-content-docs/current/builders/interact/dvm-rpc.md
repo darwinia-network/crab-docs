@@ -1,5 +1,5 @@
 ---
-id: dvm-rpc
+id: rpcs
 title: DVM Rpc
 sidebar_label: RPC 列表
 sidebar_position: 0
