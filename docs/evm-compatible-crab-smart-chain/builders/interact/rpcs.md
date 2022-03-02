@@ -1,7 +1,6 @@
 ---
-id: dvm-rpc
-title: DVM RPC list
-sidebar_label: DVM RPC list
+title: RPCs List
+sidebar_label: RPCs List
 sidebar_position: 0
 ---
 
@@ -59,4 +58,3 @@ List of implemented interfaces:
 - [x] debug_traceBlockByNumber
 - [x] debug_traceByHash
 - [x] trace_filter
-
