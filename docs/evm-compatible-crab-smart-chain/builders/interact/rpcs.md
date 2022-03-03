@@ -7,7 +7,7 @@ sidebar_position: 0
 > Note: The currently implemented RPC apis is compatible with Ethereum, but some apis are not yet implemented.
 
 
-List of implemented interfaces:
+## Supported Interfaces
 
 - [x] eth_protocolVersion
 - [x] eth_syncing
@@ -58,3 +58,13 @@ List of implemented interfaces:
 - [x] debug_traceBlockByNumber
 - [x] debug_traceByHash
 - [x] trace_filter
+
+## Compared Ethereum RPCs
+
+### Consensus Related Field
+
+Ethereum uses a consensus protocol named Proof-of-Work (PoW). While CSC uses the Nominated Proof of Stake(NPOS). They are two completely different consensus mechanisms. Consequently, Proof of Work concepts, such as `difficulty`, `uncles`, `hashrate`, generally is not applicable to CSC. For APIs that return value related to Ethereum’s Proof of Work, default value are returned.
+
+### Genesis Block
+
+It is particularly important to note that CSC's genesis block does not start at 0 like Ethereum. It is `4969901`. This means that if you try to query the block history before `4969901` with `eth_getBlockByNumber()` or `eth_getBlockByHash()`, you will get `null`.  This is because the DVM smart contract solution was added in the middle of the Substrate-base Crab chain, there are no Ethereum transactions in the Substrate history blocks and no corresponding Ethereum history blocks generated.
