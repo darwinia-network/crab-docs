@@ -68,3 +68,8 @@ Ethereum uses a consensus protocol named Proof-of-Work (PoW). While CSC uses the
 ### Genesis Block
 
 It is particularly important to note that CSC's genesis block does not start at 0 like Ethereum. It is `4969901`. This means that if you try to query the block history before `4969901` with `eth_getBlockByNumber()` or `eth_getBlockByHash()`, you will get `null`.  This is because the DVM smart contract solution was added in the middle of the Substrate-base Crab chain, there are no Ethereum transactions in the Substrate history blocks and no corresponding Ethereum history blocks generated.
+
+### Ethereum Block Author
+
+The author(miner) of the ethereum block you get from `eth_getBlockByNumber()` or `eth_getBlockByHash()` is the last 20 bytes of the actual substrate block author. It's because the ethereum block is built based on substrate block and who's author is a 32-bytes address. We have to truncate to adapt ethereum block needs. **Please do not tranfer to the ethereum block author, since the private key of this address is unknown.**
+
