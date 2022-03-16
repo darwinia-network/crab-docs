@@ -49,6 +49,7 @@ sidebar_position: 0
 - [x] eth_uninstallFilter
 - [x] eth_subscription
 - [x] eth_unsubscribe
+- [x] eth_feeHistory
 - [x] net_version
 - [x] net_peerCount
 - [x] net_listening
