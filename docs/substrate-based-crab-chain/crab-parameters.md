@@ -5,7 +5,7 @@ sidebar_label: Parameters
 sidebar_position: 1
 ---
 
-> This page intends to reflect current network configurations, it reflects the [runtime file](https://github.com/darwinia-network/darwinia-common/blob/master/bin/node-template/runtime/src/lib.rs), which is still a work in progress. 
+> This page intends to reflect current network configurations, it reflects the [Crab Runtime Config](https://github.com/darwinia-network/darwinia/tree/main/runtime/crab), which is still a work in progress. 
 
 ## Consensus
 
@@ -18,7 +18,7 @@ sidebar_position: 1
 
 | Parameter               | Value                     | Description                                                                   |
 | ----------------------- | ------------------------- | ----------------------------------------------------------------------------- |
-| **Reaping Threshold**   | 0.1 CRAB and 0.001 CKTON | The minimum balance required in the account to create or maintain an account. |
+| **Reaping Threshold**   | 0 CRAB and 0 CKTON        | The minimum balance required in the account to create or maintain an account. |
 | **Transaction Minimum** | 0                         | The Min. amount you can send to an Darwinia Address.                          |
 
 ## Identity
@@ -82,11 +82,3 @@ sidebar_position: 1
 Chain specification name: Crab
 
 SS58 prefix: 42
-
-## Seed Nodes
-
-| Seed Nodes |
-| ---------- |
-| TBC        |
-| TBC        |
-| TBC        |
