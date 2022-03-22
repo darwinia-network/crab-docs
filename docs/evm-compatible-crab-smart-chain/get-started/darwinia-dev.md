@@ -121,7 +121,7 @@ $ cargo build --release --features evm-tracing
 Then, start a tracing node with command:
 
 ```sh
-$ ./target/release/drml --dev --tmp  --ethapi=debug,trace --wasm-runtime-overrides .
+$ ./target/release/drml --dev --tmp  --ethapi-debug-targets=debug,trace --wasm-runtime-overrides .
 ```
 
 ### Production Environment
