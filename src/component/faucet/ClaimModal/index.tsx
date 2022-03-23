@@ -1,5 +1,6 @@
 import React, { useState, useCallback, ChangeEvent } from 'react';
 import { Space, Input } from 'antd';
+import { FaucetClaimResultStatus } from '../../../types';
 import type { TokenSymbolT } from '../../../types';
 import { FaucetBaseModal } from '../BaseModal';
 import style from './style.module.scss';
@@ -10,7 +11,7 @@ type Props = {
   visible: boolean;
   tokenSymbol: TokenSymbolT;
   amount: number;
-  isClaimed?: boolean;
+  status?: FaucetClaimResultStatus.IS_CLAIMED | FaucetClaimResultStatus.NOT_ELIGIBLE;
   githubAccount: string;
   registrationTime?: string;
   onCancel: () => void;
@@ -20,7 +21,7 @@ type Props = {
 const Component = ({
   visible,
   amount,
-  isClaimed,
+  status,
   tokenSymbol,
   githubAccount,
   registrationTime,
@@ -57,7 +58,7 @@ const Component = ({
       visible={visible}
       tokenSymbol={tokenSymbol}
       okText={`Claim ${tokenSymbol}`}
-      disableOk={!address || !isValidAddress || isClaimed}
+      disableOk={!address || !isValidAddress || !!status}
       onCancel={onCancel}
       onOk={handleOkClick}
       title={
@@ -76,8 +77,10 @@ const Component = ({
           </div>
         </section>
         <section className={style.section}>
-          {isClaimed ? (
-            <p className={style.claimed}>Address has already claimed </p>
+          {status === FaucetClaimResultStatus.IS_CLAIMED ? (
+            <p className={style.claimed}>Address has already claimed</p>
+          ) : status === FaucetClaimResultStatus.NOT_ELIGIBLE ? (
+            <p className={style.noteligible}>Address has no available claim</p>
           ) : (
             <>
               <h5 className={style.label}>Destination:</h5>

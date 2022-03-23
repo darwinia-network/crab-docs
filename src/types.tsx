@@ -2,6 +2,8 @@ export type TokenSymbolT = 'CRAB' | 'PRING';
 
 export enum FaucetClaimResultStatus {
   SUCCESS,
+  IS_CLAIMED,
+  NOT_ELIGIBLE,
   POOL_EMPTY,
   IN_GREYLIST,
 };
