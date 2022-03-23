@@ -15,3 +15,9 @@ export type FaucetClaimResult = {
   amount?: number;
   subview?: string;
 };
+
+export type UserInfoT = {
+  isClaimed: boolean;
+  isGithubOauth: boolean;
+  [key: string]: unknown;
+};
