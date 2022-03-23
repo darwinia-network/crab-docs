@@ -23,6 +23,7 @@
     }
   ],
   "rewrites": [
-    {"source": "/connect/(.*)", "destination": "/api/grant"}
+    {"source": "/connect/(.*)", "destination": "/api/grant"},
+    {"source": "/pangolin/(.*)","destination": "/pangolin/grant"}
   ]
 }

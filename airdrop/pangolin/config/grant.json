@@ -1,0 +1,14 @@
+{
+  "defaults": {
+    "origin": "https://docs.crab.network",
+    "transport": "querystring",
+    "state": true
+  },
+  "github": {
+    "key": "{{ pangoin_github_oauth_app_key }}",
+    "secret": "{{ pangolin_github_oauth_app_secret }}",
+    "scope": [],
+    "callback": "/pangolin/authorization",
+    "overrides": {}
+  }
+}

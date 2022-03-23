@@ -5,6 +5,8 @@
   "private": true,
   "author": "Darwinia <hello@darwinia.network>",
   "dependencies": {
+    "@darwinia/types": "2.7.2",
+    "@polkadot/api": "7.11.1"
   },
   "scripts": {
     "vercel": "vercel",
