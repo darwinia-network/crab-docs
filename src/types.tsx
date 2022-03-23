@@ -21,5 +21,6 @@ export type FaucetClaimResult = {
 export type UserInfoT = {
   isClaimed: boolean;
   isGithubOauth: boolean;
+  isOauthSuccess: boolean;
   [key: string]: unknown;
 };

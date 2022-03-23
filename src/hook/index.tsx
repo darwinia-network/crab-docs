@@ -22,11 +22,12 @@ export const useUserInfo = () => {
               setUserInfo({
                 ...data.data,
                 isClaimed: claimed,
+                isOauthSuccess: true,
                 isGithubOauth: urlSearchParams.get('oauth') === 'github',
               });
             });
         } else if (urlSearchParams.get('oauth') === 'github') {
-          setUserInfo({ isClaimed: false, isGithubOauth: true });
+          setUserInfo({ isClaimed: false, isGithubOauth: true, isOauthSuccess: false });
         }
       })
       .catch((err) => {
