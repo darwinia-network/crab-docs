@@ -1,7 +1,8 @@
 import React from "react";
 import { FaucetBaseModal } from '../FaucetBaseModal';
-import type { TokenSymbolT } from '../../types';
 import { Space } from "antd";
+import { FaucetClaimResultStatus } from '../../types';
+import type { FaucetClaimResult, TokenSymbolT } from '../../types';
 import style from './style.module.scss';
 
 import TwitterIcon from './img/twitter.svg';
@@ -11,18 +12,16 @@ import DiscordIcon from './img/discord.svg';
 
 type Props = {
   visible: boolean;
-  amount: number;
-  subview: string;
   onCancel: () => void;
   tokenSymbol: TokenSymbolT;
-}
+  resultInfo: FaucetClaimResult;
+};
 
 const Component = ({
   visible,
-  amount,
+  resultInfo,
   onCancel,
   tokenSymbol,
-  subview = '#',
 }: Props) => (
   <FaucetBaseModal
     visible={visible}
@@ -31,12 +30,23 @@ const Component = ({
     footer={null}
     title={
       <div className={style.title}>
-        <h3>Congratulations!</h3>
+        <h3>{resultInfo.status === FaucetClaimResultStatus.SUCCESS ? 'Congratulations!' : 'Failed to claim!'}</h3>
       </div>
     }
   >
-    <p className={style.tips}>The airdrop token {amount} {tokenSymbol} has been sent to the destination address that you filled before, please track this transfer through the Subview:</p>
-    <p className={style.subview}><a className={style[tokenSymbol.toLowerCase()]} target='_blank' rel='noopener noreferrer' href={subview}>View in Subview Explorer</a></p>
+    {resultInfo.status === FaucetClaimResultStatus.SUCCESS ? (
+      <>
+        <p className={style.tips}>The airdrop token {resultInfo.amount} {tokenSymbol} has been sent to the destination address that you filled before, please track this transfer through the Subview:</p>
+        <p className={style.subview}><a className={style[tokenSymbol.toLowerCase()]} target='_blank' rel='noopener noreferrer' href={resultInfo.subview}>View in Subview Explorer</a></p>
+      </>
+    ) : resultInfo.status === FaucetClaimResultStatus.IN_GREYLIST ? (
+      <>
+        <p className={style.tips}>You are now in greylist, greylist will reset this  IP Address after 12 hours later.</p>
+        <p className={style.tipsWarning}>The same IP address can claim once within 12 hours!</p>
+      </>
+    ) : (
+      <p className={style.tips}>Sorry, the PRING in the fund pool is empty now. Please wait, we’ll add the fund pool soon.</p>
+    )}
     <div className={style.social}>
       <Space align='center' size='large' >
         <a target='_blank' rel='noopener noreferrer' href='https://twitter.com/DarwiniaNetwork'><TwitterIcon /></a>
@@ -48,4 +58,4 @@ const Component = ({
   </FaucetBaseModal>
 );
 
-export const CongratulationModal = React.memo(Component);
+export const FaucetClaimResultModal = React.memo(Component);
