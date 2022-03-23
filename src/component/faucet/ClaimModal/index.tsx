@@ -1,10 +1,10 @@
 import React, { useState, useCallback, ChangeEvent } from 'react';
 import { Space, Input } from 'antd';
-import type { TokenSymbolT } from '../../types';
-import { FaucetBaseModal } from '../FaucetBaseModal';
+import type { TokenSymbolT } from '../../../types';
+import { FaucetBaseModal } from '../BaseModal';
 import style from './style.module.scss';
 import { ethers } from 'ethers';
-import { isValidAddressPolkadotAddress } from '../../utils';
+import { isValidAddressPolkadotAddress } from '../../../utils';
 
 type Props = {
   visible: boolean;

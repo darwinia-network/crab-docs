@@ -1,6 +1,6 @@
 import React from 'react';
-import type { TokenSymbolT } from '../../types';
-import { FaucetBaseModal } from '../FaucetBaseModal';
+import type { TokenSymbolT } from '../../../types';
+import { FaucetBaseModal } from '../BaseModal';
 import style from './style.module.scss';
 import { Space, Typography } from 'antd';
 

@@ -1,7 +1,7 @@
 import React from "react";
-import type { TokenSymbolT } from '../../types';
+import type { TokenSymbolT } from '../../../types';
 import style from './style.module.scss';
-import { FaucetBaseModal } from '../FaucetBaseModal';
+import { FaucetBaseModal } from '../BaseModal';
 import { Spin } from 'antd';
 
 type Props = {

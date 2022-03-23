@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Button } from 'antd';
 import style from './style.module.scss';
-import type { TokenSymbolT } from '../../types';
+import type { TokenSymbolT } from '../../../types';
 
 import CloseIcon from './img/close.svg';
 import CloseDarkIcon from './img/close-dark.svg';

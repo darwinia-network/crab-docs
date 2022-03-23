@@ -1,8 +1,8 @@
 import React from "react";
-import { FaucetBaseModal } from '../FaucetBaseModal';
+import { FaucetBaseModal } from '../BaseModal';
 import { Space } from "antd";
-import { FaucetClaimResultStatus } from '../../types';
-import type { FaucetClaimResult, TokenSymbolT } from '../../types';
+import { FaucetClaimResultStatus } from '../../../types';
+import type { FaucetClaimResult, TokenSymbolT } from '../../../types';
 import style from './style.module.scss';
 
 import TwitterIcon from './img/twitter.svg';
