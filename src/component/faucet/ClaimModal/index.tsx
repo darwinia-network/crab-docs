@@ -10,6 +10,7 @@ type Props = {
   visible: boolean;
   tokenSymbol: TokenSymbolT;
   amount: number;
+  isClaimed?: boolean;
   githubAccount: string;
   registrationTime?: string;
   onCancel: () => void;
@@ -19,6 +20,7 @@ type Props = {
 const Component = ({
   visible,
   amount,
+  isClaimed,
   tokenSymbol,
   githubAccount,
   registrationTime,
@@ -55,7 +57,7 @@ const Component = ({
       visible={visible}
       tokenSymbol={tokenSymbol}
       okText={`Claim ${tokenSymbol}`}
-      disableOk={!address || !isValidAddress}
+      disableOk={!address || !isValidAddress || isClaimed}
       onCancel={onCancel}
       onOk={handleOkClick}
       title={
@@ -74,20 +76,26 @@ const Component = ({
           </div>
         </section>
         <section className={style.section}>
-          <h5 className={style.label}>Destination:</h5>
-          <Input
-            onChange={handleDestinationChange}
-            className={`${style.destination} ${style[tokenSymbol.toLowerCase()]}`}
-            placeholder={tokenSymbol === 'CRAB' ? 'Please enter your Crab Smart Address which starts with 0x' : 'Please enter a substrated-based Pangolin Chain address starting with 5'}
-          />
-          {tokenSymbol === 'CRAB' ? (
-            isValidAddress ? (
-              <span className={`${style.extraNormal} ${style[tokenSymbol.toLowerCase()]}`}>Please enter your Crab Smart Address to claim token CRAB, learn more about Crab Smart Address, please refer <a target='_blank' rel='noopener noreferrer' href='https://docs.crab.network/tutorials/wormhole_user_guide/crab-tut-wormhole-darwinia2crabsmart#3-what-does-the-dvm-address-mean-what-is-the-difference-between-crab-address-and-crab-dvm-address'>here</a>.</span>
-            ) : (
-              <span className={`${style.extraWarning} ${style[tokenSymbol.toLowerCase()]}`}>Please enter a valid Crab Smart Address, learn more about Crab Smart Address, please refer <a target='_blank' rel='noopener noreferrer' href='https://docs.crab.network/tutorials/wormhole_user_guide/crab-tut-wormhole-darwinia2crabsmart#3-what-does-the-dvm-address-mean-what-is-the-difference-between-crab-address-and-crab-dvm-address'>here</a>.</span>
-            )
+          {isClaimed ? (
+            <p className={style.claimed}>Address has already claimed </p>
           ) : (
-            <span className={`${isValidAddress ? style.extraNormal : style.extraWarning} ${style[tokenSymbol.toLowerCase()]}`}>Please enter a substrated-based Pangolin Chain address. And you can use <a target='_blank' rel='noopener noreferrer' href='https://wormhole.darwinia.network/'>Wormhole</a> to transfer your PRING between Pangolin Chain and Pangolin Smart Chain.</span>
+            <>
+              <h5 className={style.label}>Destination:</h5>
+              <Input
+                onChange={handleDestinationChange}
+                className={`${style.destination} ${style[tokenSymbol.toLowerCase()]}`}
+                placeholder={tokenSymbol === 'CRAB' ? 'Please enter your Crab Smart Address which starts with 0x' : 'Please enter a substrated-based Pangolin Chain address starting with 5'}
+              />
+              {tokenSymbol === 'CRAB' ? (
+                isValidAddress ? (
+                  <span className={`${style.extraNormal} ${style[tokenSymbol.toLowerCase()]}`}>Please enter your Crab Smart Address to claim token CRAB, learn more about Crab Smart Address, please refer <a target='_blank' rel='noopener noreferrer' href='https://docs.crab.network/tutorials/wormhole_user_guide/crab-tut-wormhole-darwinia2crabsmart#3-what-does-the-dvm-address-mean-what-is-the-difference-between-crab-address-and-crab-dvm-address'>here</a>.</span>
+                ) : (
+                  <span className={`${style.extraWarning} ${style[tokenSymbol.toLowerCase()]}`}>Please enter a valid Crab Smart Address, learn more about Crab Smart Address, please refer <a target='_blank' rel='noopener noreferrer' href='https://docs.crab.network/tutorials/wormhole_user_guide/crab-tut-wormhole-darwinia2crabsmart#3-what-does-the-dvm-address-mean-what-is-the-difference-between-crab-address-and-crab-dvm-address'>here</a>.</span>
+                )
+              ) : (
+                <span className={`${isValidAddress ? style.extraNormal : style.extraWarning} ${style[tokenSymbol.toLowerCase()]}`}>Please enter a substrated-based Pangolin Chain address. And you can use <a target='_blank' rel='noopener noreferrer' href='https://wormhole.darwinia.network/'>Wormhole</a> to transfer your PRING between Pangolin Chain and Pangolin Smart Chain.</span>
+              )}
+            </>
           )}
         </section>
       </Space>

@@ -4,7 +4,7 @@ export enum FaucetClaimResultStatus {
   SUCCESS,
   POOL_EMPTY,
   IN_GREYLIST,
-}
+};
 
 export type FaucetClaimResult = {
   status: FaucetClaimResultStatus.SUCCESS;
