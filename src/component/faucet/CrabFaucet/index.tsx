@@ -36,7 +36,7 @@ export const CrabFaucet = () => {
 
   const handleLoginWithGithub = useCallback(() => {
     userInfo ? configClaimModalByUserInfo() : window.open('/connect/github');
-  }, []);
+  }, [userInfo]);
 
   const handleClaimOk = useCallback((address) => {
     setClaimModalConfig(prev => ({ ...prev, visible: false }));
@@ -101,7 +101,7 @@ export const CrabFaucet = () => {
       .finally(() => {
         setTxLoadingModalConfig(prev => ({ ...prev, visible: false }));
       });
-  }, []);
+  }, [confirmModalConfig]);
 
   if (userInfo?.isGithubOauth) {
     userInfo?.isOauthSuccess ? configClaimModalByUserInfo() : notification.info({ message: 'Authorize', description: 'Failed to authorize.' });
