@@ -200,7 +200,7 @@ async function transfer(chainName: String, address: String): Promise<TransferRec
   // pangolin todo 
  
   const chain = require('../config/chain.json').pangolin_smart
-  chain.seed = process.env.PANGOLIN_SMART_SEED;
+  chain.seed = process.env.PANGOLIN_SEED;
   const wsProvider = new WsProvider(chain.endpoint);
   
  

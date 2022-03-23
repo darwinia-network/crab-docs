@@ -41,7 +41,7 @@ jobs:
           vercel_group: itering
           preview_output: true
           script_run: false
-          alias_domain: faucet-stg
+          alias_domain: crab-docs-stg
 
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2

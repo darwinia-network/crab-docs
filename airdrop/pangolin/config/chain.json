@@ -2,6 +2,6 @@
   "pangolin_smart": {
     "endpoint": "wss://pangolin-rpc.darwinia.network",
     "address": "5HEWG76dewxhvqxsgpbgVsjQPdFQtNHdbyBGcd1iNN5rweFD",
-    "seed": "{{ pangolin_smart_seed }}"
+    "seed": "{{ pangolin_seed }}"
   }
 }

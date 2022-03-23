@@ -40,7 +40,7 @@ jobs:
           vercel_group: itering
           preview_output: true
           script_run: false
-          alias_domain: faucet-dev
+          alias_domain: crab-docs-dev
 
       - uses: marocchino/sticky-pull-request-comment@v2
         with:
