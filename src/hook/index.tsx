@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import type { UserInfoT } from '../types';
-import { getUserInfo, getUserState } from '../utils';
+import type { UserInfoT, CrabClaimStateT } from '../types';
+import { getUserInfo, getCrabClaimState } from '../utils';
 
 export const useUserInfo = () => {
   const [userInfo, setUserInfo] = useState<UserInfoT | undefined>();
@@ -10,22 +10,11 @@ export const useUserInfo = () => {
     getUserInfo()
       .then(({ status, data }) => {
         if (status === 200 && data.err === 0 && data?.data) {
-          let claimed = false;
-          getUserState()
-            .then(() => {})
-            .catch((err) => {
-              if (err?.response?.data?.data?.state === 'RECEIVED') {
-                claimed = true;
-              }
-            })
-            .finally(() => {
-              setUserInfo({
-                ...data.data,
-                isClaimed: claimed,
-                isOauthSuccess: true,
-                isGithubOauth: urlSearchParams.get('oauth') === 'github',
-              });
-            });
+          setUserInfo({
+            ...data.data,
+            isOauthSuccess: true,
+            isGithubOauth: urlSearchParams.get('oauth') === 'github',
+          });
         } else if (urlSearchParams.get('oauth') === 'github') {
           setUserInfo({ isClaimed: false, isGithubOauth: true, isOauthSuccess: false });
         }
@@ -41,4 +30,26 @@ export const useUserInfo = () => {
   }, []);
 
   return { userInfo, refreshUserInfo };
+};
+
+export const useCrabClaimState = () => {
+  const [crabClaimState, setCrabClaimState] = useState<CrabClaimStateT>({ isClaimed: false });
+
+  const refreshCrabClaimState = useCallback(() => {
+    getCrabClaimState()
+      .then(() => {
+        setCrabClaimState({ isClaimed: false });
+      })
+      .catch((err) => {
+        if (err?.response?.data?.data?.state === 'RECEIVED') {
+          setCrabClaimState({ isClaimed: true });
+        }
+      });
+  }, []);
+
+  useEffect(() => {
+    refreshCrabClaimState();
+  }, []);
+
+  return { crabClaimState, refreshCrabClaimState };
 };

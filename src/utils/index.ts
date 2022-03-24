@@ -22,7 +22,7 @@ export const getUserInfo = () => {
   });
 };
 
-export const getUserState = () => {
+export const getCrabClaimState = () => {
   return axios.get('/api/airdrop/state', {
     timeout: 3000,
   });

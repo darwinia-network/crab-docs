@@ -1,6 +1,6 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { notification } from 'antd';
-import { useUserInfo } from '../../../hook';
+import { useUserInfo, useCrabClaimState } from '../../../hook';
 import type { TokenSymbolT, FaucetClaimResult } from '../../../types';
 import { FaucetClaimResultStatus } from '../../../types';
 import { sendClaimTrans } from '../../../utils';
@@ -15,6 +15,7 @@ const TokenSymbol: TokenSymbolT = 'CRAB';
 
 export const CrabFaucet = () => {
   const { userInfo } = useUserInfo();
+  const { crabClaimState } = useCrabClaimState();
 
   const [txLoadingModalConfig, setTxLoadingModalConfig] = useState({ visible: false });
   const [claimModalConfig, setClaimModalConfig] = useState<{
@@ -27,16 +28,16 @@ export const CrabFaucet = () => {
     visible: boolean; resultInfo: FaucetClaimResult;
   }>({ visible: false, resultInfo: { status: FaucetClaimResultStatus.SUCCESS, amount: 100, subview: '#' } });
 
-  const configClaimModalByUserInfo = () => {
+  const configClaimModal = (userInfo, crabClaimState) => {
     setClaimModalConfig({
       visible: true,
-      status: userInfo.isClaimed ? FaucetClaimResultStatus.IS_CLAIMED : Number((userInfo.created_at as string).split('-')[0]) >= 2022 ? FaucetClaimResultStatus.NOT_ELIGIBLE : undefined
+      status: crabClaimState.isClaimed ? FaucetClaimResultStatus.IS_CLAIMED : Number((userInfo.created_at as string).split('-')[0]) >= 2022 ? FaucetClaimResultStatus.NOT_ELIGIBLE : undefined
     });
   };
 
   const handleLoginWithGithub = useCallback(() => {
-    userInfo ? configClaimModalByUserInfo() : window.open('/connect/github');
-  }, [userInfo]);
+    userInfo ? configClaimModal(userInfo, crabClaimState) : window.open('/connect/github');
+  }, [userInfo, crabClaimState]);
 
   const handleClaimOk = useCallback((address) => {
     setClaimModalConfig(prev => ({ ...prev, visible: false }));
@@ -103,9 +104,11 @@ export const CrabFaucet = () => {
       });
   }, [confirmModalConfig]);
 
-  if (userInfo?.isGithubOauth) {
-    userInfo?.isOauthSuccess ? configClaimModalByUserInfo() : notification.info({ message: 'Authorize', description: 'Failed to authorize.' });
-  }
+  useEffect(() => {
+    if (userInfo?.isGithubOauth) {
+      userInfo?.isOauthSuccess ? configClaimModal(userInfo, crabClaimState) : notification.info({ message: 'Authorize', description: 'Failed to authorize.' });
+    }
+  }, [userInfo, crabClaimState]);
 
   return (
     <>
