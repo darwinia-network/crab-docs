@@ -120,6 +120,7 @@ export const CrabFaucet = () => {
         tokenSymbol={TokenSymbol}
         amount={100}
         githubAccount={userInfo?.name as string || '***'}
+        registrationTime={(userInfo?.created_at as string)?.split('T')[0]?.replace(/-/g, '/') || '2021/12/05'}
         onCancel={() => setClaimModalConfig(prev => ({ ...prev, visible: false }))}
         onOk={handleClaimOk}
       />
