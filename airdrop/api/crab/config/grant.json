@@ -8,7 +8,7 @@
     "key": "{{ github_oauth_app_key }}",
     "secret": "{{ github_oauth_app_secret }}",
     "scope": [],
-    "callback": "/api/authorization",
+    "callback": "/api/crab/authorization",
     "overrides": {}
   }
 }
