@@ -34,7 +34,7 @@ export const PangolinFaucet = () => {
       resultInfo: {
         status: FaucetClaimResultStatus.IN_GREYLIST,
       }
-    }) : window.open('/pangolin/github');
+    }) : window.open('/connect/pangolin/github');
   }, [userInfo, pangolinClaimState]);
 
   const handleClaimOk = useCallback((address) => {

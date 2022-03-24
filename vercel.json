@@ -23,7 +23,7 @@
     }
   ],
   "rewrites": [
-    {"source": "/connect/(.*)", "destination": "/api/pangolin/grant"},
-    {"source": "/pangolin/(.*)","destination": "/api/pangolin/grant"}
+    {"source": "/connect/crab/(.*)", "destination": "/api/crab/grant"},
+    {"source": "/connect/pangolin/(.*)","destination": "/api/pangolin/grant"}
   ]
 }
