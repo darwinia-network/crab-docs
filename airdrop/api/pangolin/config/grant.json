@@ -2,14 +2,15 @@
   "defaults": {
     "origin": "https://crab-docs-dev.vercel.app",
     "transport": "querystring",
-    "state": true,
-    "dynamic":true
+    "state": true
   },
   "github": {
     "key": "{{ github_oauth_app_key }}",
     "secret": "{{ github_oauth_app_secret }}",
-    "scope": [],
-    "callback": "/api/pangolin/authorization",
-    "overrides": {}
+    "pangolin":{
+      "scope": [],
+      "callback": "/api/pangolin/authorization",
+      "overrides": {}
+    }
   }
 }

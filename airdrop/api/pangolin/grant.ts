@@ -13,5 +13,6 @@ function grantConfig() {
 }
 
 export default async function (req: VercelRequest, res: VercelResponse) {
+  
   await grant(req, res)
 }

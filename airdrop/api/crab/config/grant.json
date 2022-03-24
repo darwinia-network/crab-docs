@@ -2,8 +2,7 @@
   "defaults": {
     "origin": "https://docs.crab.network",
     "transport": "querystring",
-    "state": true,
-    "dynamic":true
+    "state": true
   },
   "github": {
     "key": "{{ github_oauth_app_key }}",
