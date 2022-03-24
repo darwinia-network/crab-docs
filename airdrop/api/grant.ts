@@ -15,16 +15,18 @@ function grantConfig() {
       callback: "/api/crab/authorization",
       overrides: {
         crab: {
+          key: process.env.GITHUB_OAUTH_APP_KEY,
+          secret: process.env.GITHUB_OAUTH_APP_SECRET,
           callback: "/api/crab/authorization",
         },
         pangolin: {
+          key: process.env.PANGOLIN_GITHUB_OAUTH_APP_KEY,
+          secret: process.env.PANGOLIN_GITHUB_OAUTH_APP_SECRET,
           callback: "/api/pangolin/authorization",
         },
       },
     },
   };
-  config.github.key = process.env.GITHUB_OAUTH_APP_KEY;
-  config.github.secret = process.env.GITHUB_OAUTH_APP_SECRET;
   return config;
 }
 
