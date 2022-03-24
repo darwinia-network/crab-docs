@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const { decodeAddress, encodeAddress } = require('@polkadot/keyring');
-const { hexToU8a, isHex } = require('@polkadot/util');
+import { decodeAddress, encodeAddress } from '@polkadot/keyring';
+import { hexToU8a, isHex } from '@polkadot/util';
 
 export const isValidAddressPolkadotAddress = (address: string) => {
   try {
