@@ -8,6 +8,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   const accessToken = auth.access_token;
   res.setHeader('Set-Cookie', `x-access-token=${accessToken};httpOnly;secure;path=/;`);
   res.setHeader('Location', '/evm-compatible-crab-smart-chain/get-started/darwinia-pangolin?oauth=github#get-tokens');
-  res.end('Redirect /evm-compatible-crab-smart-chain/get-started/darwinia-pangolin?oauth=github#get-tokens');
+  res.end('Redirect http://localhost:3000/evm-compatible-crab-smart-chain/get-started/darwinia-pangolin?oauth=github#get-tokens');
 
 }
