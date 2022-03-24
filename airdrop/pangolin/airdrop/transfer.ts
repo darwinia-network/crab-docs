@@ -10,7 +10,7 @@ import is from 'is_js';
 
 const Redis = require('ioredis');
 
-const AMOUNT = 100;
+const AMOUNT = 10;
 
 // request
 export default async function (req: VercelRequest, res: VercelResponse) {
@@ -130,7 +130,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   const lastClaimTime = await client.get(cacheKeyLastClaimedTime);
   if (lastClaimTime) {
     const now = +new Date();
-    if ((now - lastClaimTime) <= 1000 * 60 * 60 * 12) {
+    if ((now - lastClaimTime) <= 1000 * 60) {
       res.statusCode = 403;
       const body = {
         err: 1,
