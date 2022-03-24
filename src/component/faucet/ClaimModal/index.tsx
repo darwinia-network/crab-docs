@@ -78,7 +78,7 @@ const Component = ({
         </section>
         <section className={style.section}>
           {status === FaucetClaimResultStatus.IS_CLAIMED ? (
-            <p className={style.claimed}>Address has already claimed</p>
+            <p className={style.claimed}>Address has already claimed 10000</p>
           ) : status === FaucetClaimResultStatus.NOT_ELIGIBLE ? (
             <p className={style.noteligible}>Address has no available claim</p>
           ) : (
