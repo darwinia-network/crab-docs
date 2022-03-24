@@ -1,6 +1,6 @@
 {
   "defaults": {
-    "origin": "https://crab-docs-dev.vercel.app",
+    "origin": "https://docs.crab.network",
     "transport": "querystring",
     "state": true
   },
