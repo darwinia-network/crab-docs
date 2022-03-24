@@ -1,21 +1,21 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { UserInfoT, CrabClaimStateT, PangolinClaimStateT } from '../types';
-import { getUserInfo, getCrabClaimState, getPangolinClaimState } from '../utils';
+import { getUserInfo, getCrabClaimState, getPangolinClaimState, isGithubOauth } from '../utils';
 
 export const useUserInfo = () => {
   const [userInfo, setUserInfo] = useState<UserInfoT | undefined>();
 
   const refreshUserInfo = useCallback(() => {
-    const urlSearchParams = new URLSearchParams((new URL(window.location.href)).search);
+    const oauthFromGithub = isGithubOauth();
     getUserInfo()
       .then(({ status, data }) => {
         if (status === 200 && data.err === 0 && data?.data) {
           setUserInfo({
             ...data.data,
             isOauthSuccess: true,
-            isGithubOauth: urlSearchParams.get('oauth') === 'github',
+            isGithubOauth: oauthFromGithub,
           });
-        } else if (urlSearchParams.get('oauth') === 'github') {
+        } else if (oauthFromGithub) {
           setUserInfo({ isClaimed: false, isGithubOauth: true, isOauthSuccess: false });
         }
       })
