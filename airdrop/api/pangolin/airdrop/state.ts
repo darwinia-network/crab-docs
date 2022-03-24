@@ -11,7 +11,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     let user;
     try {
         const cookies = req.cookies;
-        const accessToken = cookies['x-access-token'];
+        const accessToken = cookies['x-access-pangolin-token'];
         const octokit = new Octokit({
             auth: accessToken,
         });
