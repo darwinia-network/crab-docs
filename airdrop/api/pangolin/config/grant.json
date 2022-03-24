@@ -8,7 +8,7 @@
     "key": "{{ pangoin_github_oauth_app_key }}",
     "secret": "{{ pangolin_github_oauth_app_secret }}",
     "scope": [],
-    "callback": "/pangolin/authorization",
+    "callback": "/api/pangolin/authorization",
     "overrides": {}
   }
 }
