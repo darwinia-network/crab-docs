@@ -23,7 +23,6 @@
     }
   ],
   "rewrites": [
-    {"source": "/connect/github/crab/(.*)", "destination": "/api/crab/grant"},
-    {"source": "/connect/github/pangolin/(.*)","destination": "/api/pangolin/grant"}
+    {"source": "/connect/(.*)", "destination": "/api/grant"}
   ]
 }
