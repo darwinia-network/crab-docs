@@ -24,7 +24,7 @@ export const useUserInfo = () => {
         }
       })
       .catch((err) => {
-        console.error("get user info", err);
+        console.error(err);
       })
       .finally(() => {});
   }, []);
