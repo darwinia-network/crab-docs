@@ -5,6 +5,7 @@ const grant = require('grant').vercel({
 })
 
 
+
 function grantConfig() {
   const config = require('./config/grant.json');
   config.github.key = process.env.PANGOLIN_GITHUB_OAUTH_APP_KEY;
