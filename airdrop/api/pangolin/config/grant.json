@@ -7,10 +7,8 @@
   "github": {
     "key": "{{ github_oauth_app_key }}",
     "secret": "{{ github_oauth_app_secret }}",
-    "pangolin":{
-      "scope": [],
-      "callback": "/api/pangolin/authorization",
-      "overrides": {}
-    }
+    "scope": [],
+    "callback": "/api/pangolin/authorization",
+    "overrides": {}
   }
 }
