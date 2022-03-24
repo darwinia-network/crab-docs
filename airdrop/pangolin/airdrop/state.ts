@@ -83,11 +83,11 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     if (recordIp != null) {
       const lastClaimTime = +recordIp;
       const now = +new Date();
-      if ((now - lastClaimTime) <=  60 * 60 * 24) {
+      if ((now - lastClaimTime) <=  1000 * 60 * 60 * 12) {
         res.statusCode = 429;
         const body = {
           err: 1,
-          message: 'Please wait 24 hours to get dropped',
+          message: 'Please wait 12 hours to get dropped',
           data: {
             state: 'RATE_LIMIT_IP',
             time: lastClaimTime,

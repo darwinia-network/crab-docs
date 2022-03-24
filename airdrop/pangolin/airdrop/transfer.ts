@@ -12,8 +12,6 @@ const Redis = require('ioredis');
 
 const AMOUNT = 100;
 
-
-
 // request
 export default async function (req: VercelRequest, res: VercelResponse) {
   const ip = req.headers['x-forwarded-for'].toString();
@@ -70,27 +68,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       return;
   }
 
-  // const cacheKeyIp = `IP-${ip}`;
-  // const recordIp = await client.get(cacheKeyIp);
-  // if (!recordIp) {
-  //   const lastClaimTime = +recordIp;
-  //   const now = +new Date();
-  //   if ((now - lastClaimTime) <= 1000 * 60 * 60 * 12) {
-  //     res.statusCode = 403;
-  //     const body = {
-  //       err: 1,
-  //       message: 'Please wait for the restriction to be lifted',
-  //       data: {
-  //         state: 'RATE_LIMIT_IP',
-  //         time: lastClaimTime,
-  //       },
-  //     };
-  //     res.end(JSON.stringify(body, null, 2));
-  //     return;
-  //   }
-  // }
-
-
   // query github account info
   let user;
   try {
@@ -129,7 +106,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 
   // const chainName = data.chain.toUpperCase().trim();
-  const chainName = 'PANGOLIN';
  // const cacheKeyClaimed = `${chainName}-${user.id}`;
 
  // const recordClaimed = await client.get(cacheKeyClaimed);
@@ -148,6 +124,26 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   //   res.end(JSON.stringify(body, null, 2));
   //   return;
   // }
+
+  const chainName = 'PANGOLIN';
+  const cacheKeyLastClaimedTime = `${chainName}-${user.id}-${ip}`;
+  const lastClaimTime = await client.get(cacheKeyLastClaimedTime);
+  if (lastClaimTime) {
+    const now = +new Date();
+    if ((now - lastClaimTime) <= 1000 * 60 * 60 * 12) {
+      res.statusCode = 403;
+      const body = {
+        err: 1,
+        message: 'Please wait for the restriction to be lifted',
+        data: {
+          state: 'RATE_LIMIT_IP',
+          time: lastClaimTime,
+        },
+      };
+      res.end(JSON.stringify(body, null, 2));
+      return;
+    }
+  }
 
   try {
     // transfer
