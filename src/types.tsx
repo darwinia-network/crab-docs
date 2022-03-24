@@ -26,4 +26,8 @@ export type UserInfoT = {
 
 export type CrabClaimStateT = {
   isClaimed: boolean;
-}
+};
+
+export type PangolinClaimStateT = {
+  isRateLimit: boolean;
+};

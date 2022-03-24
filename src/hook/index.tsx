@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import type { UserInfoT, CrabClaimStateT } from '../types';
-import { getUserInfo, getCrabClaimState } from '../utils';
+import type { UserInfoT, CrabClaimStateT, PangolinClaimStateT } from '../types';
+import { getUserInfo, getCrabClaimState, getPangolinClaimState } from '../utils';
 
 export const useUserInfo = () => {
   const [userInfo, setUserInfo] = useState<UserInfoT | undefined>();
@@ -52,4 +52,26 @@ export const useCrabClaimState = () => {
   }, []);
 
   return { crabClaimState, refreshCrabClaimState };
+};
+
+export const usePangolinClaimState = () => {
+  const [pangolinClaimState, setPangolinClaimState] = useState<PangolinClaimStateT>({ isRateLimit: false });
+
+  const refreshPangolinClaimState = useCallback(() => {
+    getPangolinClaimState()
+      .then(() => {
+        setPangolinClaimState({ isRateLimit: false });
+      })
+      .catch((err) => {
+        if (err?.response?.data?.data?.state === 'RATE_LIMIT_IP') {
+          setPangolinClaimState({ isRateLimit: true });
+        }
+      });
+  }, []);
+
+  useEffect(() => {
+    refreshPangolinClaimState();
+  }, []);
+
+  return { pangolinClaimState, refreshPangolinClaimState };
 };
