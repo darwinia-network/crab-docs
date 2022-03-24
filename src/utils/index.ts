@@ -36,3 +36,8 @@ export const sendClaimTrans = (address: string = '') => {
     data: `address=${address}`,
   });
 };
+
+export const isGithubOauth = () => {
+  const urlSearchParams = new URLSearchParams((new URL(window.location.href)).search);
+  return urlSearchParams.get('oauth') === 'github';
+};
