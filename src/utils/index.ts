@@ -17,26 +17,26 @@ export const isValidAddressPolkadotAddress = (address: string) => {
 };
 
 export const getUserInfo = () => {
-  return axios.get('/api/user/info', {
+  return axios.get('/api/crab/user/info', {
     timeout: 5000,
   });
 };
 
 export const getCrabClaimState = () => {
-  return axios.get('/api/airdrop/state', {
+  return axios.get('/api/crab/airdrop/state', {
     timeout: 3000,
   });
 };
 
 export const getPangolinClaimState = () => {
-  return axios.get('/pangolin/airdrop/state', {
+  return axios.get('/api/pangolin/airdrop/state', {
     timeout: 3000,
   });
 };
 
 export const sendCrabClaimTrans = (address: string = '') => {
   return axios({
-    url: '/api/airdrop/transfer',
+    url: '/api/crab/airdrop/transfer',
     method: 'post',
     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
     data: `address=${address}`,
@@ -45,7 +45,7 @@ export const sendCrabClaimTrans = (address: string = '') => {
 
 export const sendPangolinClaimTrans = (address: string = '') => {
   return axios({
-    url: '/pangolin/airdrop/transfer',
+    url: '/api/pangolin/airdrop/transfer',
     method: 'post',
     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
     data: `address=${address}`,
