@@ -51,6 +51,10 @@
   },
   "devDependencies": {
     "husky": "^7.0.4",
+    "lint-staged": ">=10",
     "prettier": "2.6.0"
+  },
+  "lint-staged": {
+    "./**/*.{ts,tsx}": "prettier --write"
   }
 }
