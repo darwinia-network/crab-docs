@@ -1,0 +1,138 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+
+  >h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 47px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 0;
+    text-align: start;
+  }
+
+  >p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 4px;
+    text-align: start;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.valueWrap {
+  background-color: #EEEEEE;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.value {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  margin: 0;
+  margin-top: 8px;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.claimed,
+.noteligible {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 0;
+}
+
+.destination {
+  border-radius: 10px;
+  height: 40px;
+  box-shadow: inset 0 0 6px #CCCCCC;
+}
+
+.destination.crab {
+  &:hover {
+    border-color: rgba(#EC3783, 0.8);
+  }
+  &:focus {
+    border-color: rgba(#EC3783, 0.6); 
+    box-shadow: 0 0 2px rgba(#EC3783, 0.8);
+  }
+  &:focus-visible {
+    outline-color: rgba(#EC3783, 0.7);
+  }
+}
+
+.destination.pring {
+  &:hover {
+    border-color: rgba(#5745DE, 0.8);
+  }
+  &:focus {
+    border-color: rgba(#5745DE, 0.6); 
+    box-shadow: 0 0 2px rgba(#5745DE, 0.8);
+  }
+  &:focus-visible {
+    outline-color: rgba(#5745DE, 0.7);
+  }
+}
+
+.extraNormal,
+.extraWarning {
+  margin-top: 6px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  >a {
+    text-decoration: underline;
+  }
+}
+
+.extraWarning.crab,
+.extraWarning.pring {
+  color: #FF0000;
+  >a {
+    color: #000000;
+  }
+}
+
+.extraNormal {
+  color: #000000;
+  &.crab {
+    >a {
+      color: #EC3783;
+    }
+  }
+  &.pring {
+    >a {
+      color: #5745DE;
+    }
+  }
+}
