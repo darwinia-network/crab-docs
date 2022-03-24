@@ -3,7 +3,7 @@ import { notification } from 'antd';
 import { useUserInfo, useCrabClaimState } from '../../../hook';
 import type { TokenSymbolT, FaucetClaimResult } from '../../../types';
 import { FaucetClaimResultStatus } from '../../../types';
-import { sendClaimTrans } from '../../../utils';
+import { sendCrabClaimTrans } from '../../../utils';
 
 import { LoginWithGithub } from '../LoginWithGithub';
 import { FaucetClaimModal } from '../ClaimModal';
@@ -48,7 +48,7 @@ export const CrabFaucet = () => {
     setConfirmModalConfig(prev => ({ ...prev, visible: false }));
     setTxLoadingModalConfig({ visible: true });
 
-    sendClaimTrans(confirmModalConfig.destination)
+    sendCrabClaimTrans(confirmModalConfig.destination)
       .then(({ status, data }) => {
         setTxLoadingModalConfig(prev => ({ ...prev, visible: false }));
         if (data?.err === 0 && status === 200) {

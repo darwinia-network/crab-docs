@@ -28,9 +28,24 @@ export const getCrabClaimState = () => {
   });
 };
 
-export const sendClaimTrans = (address: string = '') => {
+export const getPangolinClaimState = () => {
+  return axios.get('/pangolin/airdrop/state', {
+    timeout: 3000,
+  });
+};
+
+export const sendCrabClaimTrans = (address: string = '') => {
   return axios({
     url: '/api/airdrop/transfer',
+    method: 'post',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    data: `address=${address}`,
+  });
+};
+
+export const sendPangolinClaimTrans = (address: string = '') => {
+  return axios({
+    url: '/pangolin/airdrop/transfer',
     method: 'post',
     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
     data: `address=${address}`,
