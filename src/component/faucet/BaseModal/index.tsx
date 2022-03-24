@@ -1,11 +1,11 @@
-import React from 'react';
-import { Modal, Button } from 'antd';
-import style from './style.module.scss';
-import type { TokenSymbolT } from '../../../types';
+import React from "react";
+import { Modal, Button } from "antd";
+import style from "./style.module.scss";
+import type { TokenSymbolT } from "../../../types";
 
-import CloseIcon from './img/close.svg';
-import CloseDarkIcon from './img/close-dark.svg';
-import BackIcon from './img/back.svg';
+import CloseIcon from "./img/close.svg";
+import CloseDarkIcon from "./img/close-dark.svg";
+import BackIcon from "./img/back.svg";
 
 type FooterProps = {
   tokenSymbol: TokenSymbolT;
@@ -14,13 +14,10 @@ type FooterProps = {
   disableOk?: boolean;
 };
 
-const Footer = ({
-  tokenSymbol,
-  onOk,
-  okText,
-  disableOk,
-}: FooterProps) => (
-  <Button onClick={onOk} disabled={disableOk} className={`${style.onOkBtn} ${style[tokenSymbol.toLowerCase()]}`}>{okText}</Button>
+const Footer = ({ tokenSymbol, onOk, okText, disableOk }: FooterProps) => (
+  <Button onClick={onOk} disabled={disableOk} className={`${style.onOkBtn} ${style[tokenSymbol.toLowerCase()]}`}>
+    {okText}
+  </Button>
 );
 
 type TitleProps = {
@@ -28,13 +25,12 @@ type TitleProps = {
   onBack?: () => void;
 };
 
-const Title = ({
-  children,
-  onBack,
-}: TitleProps) => (
+const Title = ({ children, onBack }: TitleProps) => (
   <>
     {onBack && (
-      <button onClick={onBack} className={style.onBackBtn}><BackIcon /></button>
+      <button onClick={onBack} className={style.onBackBtn}>
+        <BackIcon />
+      </button>
     )}
     {children}
   </>
@@ -47,7 +43,8 @@ type Props = {
   visible: boolean;
   width?: number;
   onCancel?: () => void;
-} & TitleProps & FooterProps;
+} & TitleProps &
+  FooterProps;
 
 const Component = ({
   children,
@@ -56,9 +53,9 @@ const Component = ({
   onBack,
   onCancel,
   disableOk,
-  tokenSymbol ='CRAB',
+  tokenSymbol = "CRAB",
   width = 518,
-  okText = 'OK',
+  okText = "OK",
   onOk = () => {},
   footer = <Footer disableOk={disableOk} tokenSymbol={tokenSymbol} onOk={onOk} okText={okText} />,
 }: Props) => {

@@ -10,6 +10,7 @@
     "deploy": "npx docusaurus deploy",
     "clear": "npx docusaurus clear",
     "serve": "npx docusaurus serve",
+    "format": "prettier './**/*.{ts,tsx}'  --write",
     "write-translations": "npx docusaurus write-translations",
     "write-heading-ids": "npx docusaurus write-heading-ids"
   },
@@ -46,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "2.6.0"
   }
 }

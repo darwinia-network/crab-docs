@@ -1,25 +1,25 @@
-import type {VercelRequest, VercelResponse} from '@vercel/node';
-import { ApiPromise, WsProvider } from '@polkadot/api';
-import {typesBundleForPolkadotApps } from "@darwinia/types/mix";
-import {} from '@polkadot/api-augment';
+import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { ApiPromise, WsProvider } from "@polkadot/api";
+import { typesBundleForPolkadotApps } from "@darwinia/types/mix";
+import {} from "@polkadot/api-augment";
 import { Keyring } from "@polkadot/keyring";
-import {Octokit} from '@octokit/rest';
-import * as qs from 'qs';
-import is from 'is_js';
+import { Octokit } from "@octokit/rest";
+import * as qs from "qs";
+import is from "is_js";
 // import Web3 from 'web3';
 
-const Redis = require('ioredis');
+const Redis = require("ioredis");
 
 const AMOUNT = 10;
 
 // request
 export default async function (req: VercelRequest, res: VercelResponse) {
-  const ip = req.headers['x-forwarded-for'].toString();
+  const ip = req.headers["x-forwarded-for"].toString();
   if (!ip) {
     res.statusCode = 403;
     const body = {
       err: 1,
-      message: `Sorry, we can't find your ip address.`
+      message: `Sorry, we can't find your ip address.`,
     };
     res.end(JSON.stringify(body, null, 2));
     return;
@@ -28,14 +28,14 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
   const data = qs.parse(req.body);
 
-  res.setHeader('content-type', 'application/json');
-  
+  res.setHeader("content-type", "application/json");
+
   // check data
   if (!data) {
     res.statusCode = 403;
     const body = {
       err: 1,
-      message: 'Not have data'
+      message: "Not have data",
     };
     res.end(JSON.stringify(body, null, 2));
     return;
@@ -46,46 +46,46 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     res.statusCode = 403;
     const body = {
       err: 1,
-      message: 'No address found, please type receiver address'
+      message: "No address found, please type receiver address",
     };
     res.end(JSON.stringify(body, null, 2));
     return;
   }
 
   let client;
-  try{
-      client = redis();
-  }catch(e){
-      res.statusCode = 501;
-      const body = {
-           err:1,
-           message: 'Connection Redis failed',
-           data:{
-               state: ''
-           }
-      }
-      res.end(JSON.stringify(body, null, 2));
-      return;
+  try {
+    client = redis();
+  } catch (e) {
+    res.statusCode = 501;
+    const body = {
+      err: 1,
+      message: "Connection Redis failed",
+      data: {
+        state: "",
+      },
+    };
+    res.end(JSON.stringify(body, null, 2));
+    return;
   }
 
   // query github account info
   let user;
   try {
     const cookies = req.cookies;
-    const accessToken = cookies['x-access-pangolin-token'];
+    const accessToken = cookies["x-access-pangolin-token"];
     const octokit = new Octokit({
       auth: accessToken,
     });
-    const {data} = await octokit.request("/user");
+    const { data } = await octokit.request("/user");
     user = data;
   } catch (e) {
     res.statusCode = 401;
     const body = {
       err: 1,
-      message: 'Authorization failed. please try login again',
+      message: "Authorization failed. please try login again",
       data: {
-        state: 'NO_LOGIN',
-      }
+        state: "NO_LOGIN",
+      },
     };
     res.end(JSON.stringify(body, null, 2));
     return;
@@ -104,11 +104,10 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   //   return;
   // }
 
-
   // const chainName = data.chain.toUpperCase().trim();
- // const cacheKeyClaimed = `${chainName}-${user.id}`;
+  // const cacheKeyClaimed = `${chainName}-${user.id}`;
 
- // const recordClaimed = await client.get(cacheKeyClaimed);
+  // const recordClaimed = await client.get(cacheKeyClaimed);
 
   // check already sent
   // if (recordClaimed != null) {
@@ -125,18 +124,18 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   //   return;
   // }
 
-  const chainName = 'PANGOLIN';
+  const chainName = "PANGOLIN";
   const cacheKeyLastClaimedTime = `${chainName}-${user.id}-${ip}`;
   const lastClaimTime = await client.get(cacheKeyLastClaimedTime);
   if (lastClaimTime) {
     const now = +new Date();
-    if ((now - lastClaimTime) <= 1000 * 60) {
+    if (now - lastClaimTime <= 1000 * 60) {
       res.statusCode = 403;
       const body = {
         err: 1,
-        message: 'Please wait for the restriction to be lifted',
+        message: "Please wait for the restriction to be lifted",
         data: {
-          state: 'RATE_LIMIT_IP',
+          state: "RATE_LIMIT_IP",
           time: lastClaimTime,
         },
       };
@@ -152,12 +151,12 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       res.statusCode = 403;
       const body = {
         err: 1,
-        message: 'Transfer failed. please connect team',
+        message: "Transfer failed. please connect team",
       };
       res.end(JSON.stringify(body, null, 2));
       return;
     }
-    if (result instanceof String || (typeof result == 'string')) {
+    if (result instanceof String || typeof result == "string") {
       res.statusCode = 403;
       const body = {
         err: 1,
@@ -169,7 +168,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
     // put sent time for user
     const now = +new Date();
-    const cacheKeyClaimed = `${chainName}-${user.id}-${ip}`
+    const cacheKeyClaimed = `${chainName}-${user.id}-${ip}`;
     await client.set(cacheKeyClaimed, now);
     // await client.set(cacheKeyIp, now);
 
@@ -179,51 +178,51 @@ export default async function (req: VercelRequest, res: VercelResponse) {
       data: result,
     };
     res.end(JSON.stringify(body, null, 2));
-
   } catch (e) {
     res.statusCode = 403;
     const body = {
       err: 1,
-      message: 'Transfer failed: ' + e.message,
+      message: "Transfer failed: " + e.message,
     };
     res.end(JSON.stringify(body, null, 2));
   }
 }
 
-
 async function transfer(chainName: String, address: String): Promise<TransferReceipt | String | null> {
   chainName = chainName.toUpperCase();
-  // pangolin todo 
- 
-  const chain = require('../config/chain.json').pangolin_smart
+  // pangolin todo
+
+  const chain = require("../config/chain.json").pangolin_smart;
   chain.seed = process.env.PANGOLIN_SEED;
   const wsProvider = new WsProvider(chain.endpoint);
-  
- 
+
   console.log(`Check account ${chain.address} balance`);
-  
+
   let hash;
-  try{
-      const  api = await ApiPromise.create({provider: wsProvider, typesBundle: typesBundleForPolkadotApps});
-      const {nonce, data: balance} = await api.query.system.account(chain.address);
-      console.log(`free balance ${balance.free} of address ${chain.address}`)
-      if (balance.free <= AMOUNT*1000000000) {
-        return "All airdrops have ended"
-      }
+  try {
+    const api = await ApiPromise.create({
+      provider: wsProvider,
+      typesBundle: typesBundleForPolkadotApps,
+    });
+    const { nonce, data: balance } = await api.query.system.account(chain.address);
+    console.log(`free balance ${balance.free} of address ${chain.address}`);
+    if (balance.free <= AMOUNT * 1000000000) {
+      return "All airdrops have ended";
+    }
 
-      console.log(`Transfer chain ${chainName} to ${address.toString()}`);
+    console.log(`Transfer chain ${chainName} to ${address.toString()}`);
 
-      const keyring = new Keyring({ type: 'sr25519' });
-      const faucetAccount = keyring.addFromUri(chain.seed);
+    const keyring = new Keyring({ type: "sr25519" });
+    const faucetAccount = keyring.addFromUri(chain.seed);
 
-      await  api.tx.balances.transfer(address.toString(), AMOUNT*1000000000)
+    await api.tx.balances
+      .transfer(address.toString(), AMOUNT * 1000000000)
       .signAndSend(faucetAccount, ({ events = [], status }) => {
         console.log(`Current status is ${status.type}`);
 
-        if (status.isInBlock){
-            hash = status.asInBlock.toHex();
-            console.log('transaction with hash ' + status.asInBlock.toHex());
-
+        if (status.isInBlock) {
+          hash = status.asInBlock.toHex();
+          console.log("transaction with hash " + status.asInBlock.toHex());
         }
         if (status.isFinalized) {
           console.log(`Transaction included at blockHash ${status.asFinalized}`);
@@ -233,15 +232,12 @@ async function transfer(chainName: String, address: String): Promise<TransferRec
           // });
         }
       });
-
-  }catch(err){
+  } catch (err) {
     console.error(err);
-    return 'Failed to sign transactions: ' + err.message;
+    return "Failed to sign transactions: " + err.message;
   }
-   
-  return {tx: hash, preview: `https://pangolin.subscan.io/extrinsic/${hash}`,}
 
-
+  return { tx: hash, preview: `https://pangolin.subscan.io/extrinsic/${hash}` };
 
   // switch (chainName) {
   //   case 'CRAB':
@@ -249,10 +245,7 @@ async function transfer(chainName: String, address: String): Promise<TransferRec
   //   default:
   //     return `Not support this chain: ${chainName}`;
   // }
-
-
 }
-
 
 // async function _transferCrab(address: String): Promise<TransferReceipt | String> {
 //   const web3 = crabSmartApi();
@@ -293,20 +286,15 @@ async function transfer(chainName: String, address: String): Promise<TransferRec
 //   return {tx: hash, preview: `https://crab.subview.xyz/tx/${hash}`,}
 // }
 
-
-
-
-
 let _redis;
 
 function redis() {
   if (_redis) return _redis;
-  const config = require('../config/redis.json');
+  const config = require("../config/redis.json");
   config.url = process.env.REDIS_CONNECT_URL;
   _redis = new Redis(config.url);
   return _redis;
 }
-
 
 // let _crabSmartApi;
 
@@ -318,7 +306,6 @@ function redis() {
 //   _crabSmartApi = new Web3(chain.endpoint);
 //   return _crabSmartApi;
 // }
-
 
 class TransferReceipt {
   tx: String;

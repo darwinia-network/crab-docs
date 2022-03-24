@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import clsx from 'clsx';
-import styles from './styles.module.scss';
+import React, { useState, useEffect } from "react";
+import clsx from "clsx";
+import styles from "./styles.module.scss";
 import {
   LoadingModal,
   ComfirmModal,
@@ -17,39 +17,39 @@ import {
   ComfirmModalTitleForComfirm,
   ComfirmModalTitleForCcongratulation,
   ComfirmModalTitleForFailedToClaim,
-} from './SubComponent';
-import { Space, notification } from 'antd';
-import axios from 'axios';
-import { ethers } from 'ethers';
+} from "./SubComponent";
+import { Space, notification } from "antd";
+import axios from "axios";
+import { ethers } from "ethers";
 
 const getUserInfo = () => {
-  return axios.get('/api/user/info', {
+  return axios.get("/api/user/info", {
     timeout: 5000,
   });
 };
 
 const getUserState = () => {
-  return axios.get('/api/airdrop/state', {
+  return axios.get("/api/airdrop/state", {
     timeout: 3000,
   });
 };
 
-const sendClaimTrans = (address='') => {
+const sendClaimTrans = (address = "") => {
   return axios({
-    url: '/api/airdrop/transfer',
-    method: 'post',
-    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    url: "/api/airdrop/transfer",
+    method: "post",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
     data: `address=${address}`,
   });
 };
 
 type Props = {
   className?: string;
-}
+};
 
 const ClaimAirdrop: React.FC<Props> = ({ className }) => {
   const [userInfo, setUserInfo] = useState(null);
-  const [subviewLink, setSubviewLink] = useState('#');
+  const [subviewLink, setSubviewLink] = useState("#");
   const [destinationAddress, setDestinationAddress] = useState(null);
 
   const [visibleLoadingModal, setVisibleLoadingModal] = useState(false);
@@ -62,7 +62,7 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
   const [visibleIpLimitModal, setVisibleIpLimitModal] = useState(false);
 
   const checkRegistrationTime = (t) => {
-    if (Number(t.split('-')[0]) >= 2022) {
+    if (Number(t.split("-")[0]) >= 2022) {
       setVisibleNotEligibleModal(true);
     } else {
       setVisibleInputDestinationModal(true);
@@ -75,7 +75,7 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
     if (userInfo) {
       userInfo.claimed ? setVisibleClaimedModal(true) : checkRegistrationTime(userInfo.created_at);
     } else {
-      window.open('/connect/github');
+      window.open("/connect/github");
     }
   };
 
@@ -103,24 +103,24 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
           }
         })
         .catch((err) => {
-          console.error('send claim trans:', err);
+          console.error("send claim trans:", err);
           if (err?.response?.data) {
             const data = err?.response?.data;
-            if (data?.data?.state === 'RECEIVED') {
+            if (data?.data?.state === "RECEIVED") {
               setVisibleClaimedModal(true);
-            } else if (data?.message === 'All airdrops have ended') {
+            } else if (data?.message === "All airdrops have ended") {
               setVisibleNoneLeftModal(true);
-            } else if (data?.data?.state === 'RATE_LIMIT_IP') {
+            } else if (data?.data?.state === "RATE_LIMIT_IP") {
               setVisibleIpLimitModal(true);
             } else {
               notification.warning({
-                message: 'Oops, something went wrong',
+                message: "Oops, something went wrong",
                 description: data?.message,
               });
             }
           } else {
             notification.error({
-              message: 'Oops, something went wrong',
+              message: "Oops, something went wrong",
               description: err.message,
             });
           }
@@ -136,7 +136,7 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
   };
 
   useEffect(() => {
-    const urlSearchParams = new URLSearchParams((new URL(window.location.href)).search);
+    const urlSearchParams = new URLSearchParams(new URL(window.location.href).search);
     getUserInfo()
       .then(({ status, data }) => {
         if (status === 200 && data.err === 0 && data?.data) {
@@ -144,25 +144,25 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
           getUserState()
             .then(() => {})
             .catch((err) => {
-              if (err?.response?.data?.data?.state === 'RECEIVED') {
+              if (err?.response?.data?.data?.state === "RECEIVED") {
                 claimed = true;
               }
             })
             .finally(() => {
               setUserInfo({ ...data.data, claimed: claimed });
-              if (urlSearchParams.get('oauth') === 'github') {
+              if (urlSearchParams.get("oauth") === "github") {
                 claimed ? setVisibleClaimedModal(true) : checkRegistrationTime(data.data.created_at);
               }
             });
-        } else if (urlSearchParams.get('oauth') === 'github') {
+        } else if (urlSearchParams.get("oauth") === "github") {
           notification.info({
-            message: 'Authorize',
-            description: 'Failed to authorize.',
+            message: "Authorize",
+            description: "Failed to authorize.",
           });
         }
       })
       .catch((err) => {
-        console.error('get user info', err);
+        console.error("get user info", err);
       })
       .finally(() => {});
   }, []);
@@ -177,54 +177,75 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
 
       <ComfirmModal
         visible={visibleNotEligibleModal}
-        title={<ComfirmModalTitleWithCRAB crabQuantity='0' />}
-        footer={<ComfirmModalButton disabled={true} text='Claim CRAB' />}
+        title={<ComfirmModalTitleWithCRAB crabQuantity="0" />}
+        footer={<ComfirmModalButton disabled={true} text="Claim CRAB" />}
         onCancel={() => setVisibleNotEligibleModal(false)}
       >
-        <Space direction='vertical' size='middle' style={{ width: '100%' }}>
-          <SnapshotDataSection githubAccount={userInfo?.name || '***'} registrationTime={userInfo?.created_at?.split('T')[0]?.replace(/-/g, '/') || '2021/12/05'} />
+        <Space direction="vertical" size="middle" style={{ width: "100%" }}>
+          <SnapshotDataSection
+            githubAccount={userInfo?.name || "***"}
+            registrationTime={userInfo?.created_at?.split("T")[0]?.replace(/-/g, "/") || "2021/12/05"}
+          />
           <DestinationSection isNothingToClaim={true} />
         </Space>
       </ComfirmModal>
       <ComfirmModal
         visible={visibleInputDestinationModal}
-        title={<ComfirmModalTitleWithCRAB crabQuantity='10' />}
-        footer={<ComfirmModalButton disabled={!ethers.utils.isAddress(destinationAddress)} text='Claim CRAB' onClick={handleClickClaim} />}
+        title={<ComfirmModalTitleWithCRAB crabQuantity="10" />}
+        footer={
+          <ComfirmModalButton
+            disabled={!ethers.utils.isAddress(destinationAddress)}
+            text="Claim CRAB"
+            onClick={handleClickClaim}
+          />
+        }
         onCancel={() => setVisibleInputDestinationModal(false)}
       >
-        <Space direction='vertical' size='middle' style={{ width: '100%' }}>
-          <SnapshotDataSection githubAccount={userInfo?.name || '***'} registrationTime={userInfo?.created_at?.split('T')[0]?.replace(/-/g, '/') || '2021/12/05'} />
-          <DestinationSection onAddressChange={handleDestinationInputChange} isValidAddress={!destinationAddress || ethers.utils.isAddress(destinationAddress)} />
+        <Space direction="vertical" size="middle" style={{ width: "100%" }}>
+          <SnapshotDataSection
+            githubAccount={userInfo?.name || "***"}
+            registrationTime={userInfo?.created_at?.split("T")[0]?.replace(/-/g, "/") || "2021/12/05"}
+          />
+          <DestinationSection
+            onAddressChange={handleDestinationInputChange}
+            isValidAddress={!destinationAddress || ethers.utils.isAddress(destinationAddress)}
+          />
         </Space>
       </ComfirmModal>
       <ComfirmModal
         visible={visibleClaimedModal}
-        title={<ComfirmModalTitleWithCRAB crabQuantity='10' />}
-        footer={<ComfirmModalButton disabled={true} text='Claim CRAB' />}
+        title={<ComfirmModalTitleWithCRAB crabQuantity="10" />}
+        footer={<ComfirmModalButton disabled={true} text="Claim CRAB" />}
         onCancel={() => setVisibleClaimedModal(false)}
       >
-        <Space direction='vertical' size='middle' style={{ width: '100%' }}>
-          <SnapshotDataSection githubAccount={userInfo?.name || '***'} registrationTime={userInfo?.created_at?.split('T')[0]?.replace(/-/g, '/') || '2021/12/05'} />
+        <Space direction="vertical" size="middle" style={{ width: "100%" }}>
+          <SnapshotDataSection
+            githubAccount={userInfo?.name || "***"}
+            registrationTime={userInfo?.created_at?.split("T")[0]?.replace(/-/g, "/") || "2021/12/05"}
+          />
           <DestinationSection isClaimed={true} />
         </Space>
       </ComfirmModal>
       <ComfirmModal
         visible={visibleNoneLeftModal}
-        title={<ComfirmModalTitleForSorry crabQuantity='300,000' />}
+        title={<ComfirmModalTitleForSorry crabQuantity="300,000" />}
         onCancel={() => setVisibleNoneLeftModal(false)}
       >
-        <Space direction='vertical' size='middle' style={{ width: '100%' }}>
-          <SnapshotDataSection githubAccount={userInfo?.name || '***'} registrationTime={userInfo?.created_at?.split('T')[0]?.replace(/-/g, '/') || '2021/12/05'} />
+        <Space direction="vertical" size="middle" style={{ width: "100%" }}>
+          <SnapshotDataSection
+            githubAccount={userInfo?.name || "***"}
+            registrationTime={userInfo?.created_at?.split("T")[0]?.replace(/-/g, "/") || "2021/12/05"}
+          />
         </Space>
       </ComfirmModal>
       <ComfirmModal
         visible={visibleComfirmModal}
         title={<ComfirmModalTitleForComfirm onBack={handleClickComfirmBack} />}
-        footer={<ComfirmModalButton text='Comfirm and Claim CRAB' onClick={handleClickComfirmAndClaim} />}
+        footer={<ComfirmModalButton text="Comfirm and Claim CRAB" onClick={handleClickComfirmAndClaim} />}
         onCancel={() => setVisibleComfirmModal(false)}
       >
-        <Space direction='vertical' size='middle' style={{ width: '100%' }}>
-          <GithubAccountSection account={userInfo?.name || '***'} />
+        <Space direction="vertical" size="middle" style={{ width: "100%" }}>
+          <GithubAccountSection account={userInfo?.name || "***"} />
           <DestinationSection comfirmAddress={destinationAddress} />
           <AmountSection />
         </Space>
@@ -235,7 +256,7 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
         footer={<SocialLinks />}
         onCancel={() => setVisibleCongratulationModal(false)}
       >
-        <Space direction='vertical' size='middle' style={{ width: '100%' }}>
+        <Space direction="vertical" size="middle" style={{ width: "100%" }}>
           <CongratulationContent subview={subviewLink} />
         </Space>
       </ComfirmModal>
@@ -245,15 +266,12 @@ const ClaimAirdrop: React.FC<Props> = ({ className }) => {
         footer={<SocialLinks />}
         onCancel={() => setVisibleIpLimitModal(false)}
       >
-        <Space direction='vertical' size='middle' style={{ width: '100%' }}>
+        <Space direction="vertical" size="middle" style={{ width: "100%" }}>
           <IpLimitSection />
         </Space>
       </ComfirmModal>
 
-      <LoadingModal
-        visible={visibleLoadingModal}
-        onCancel={() => setVisibleLoadingModal(false)}
-      />
+      <LoadingModal visible={visibleLoadingModal} onCancel={() => setVisibleLoadingModal(false)} />
     </>
   );
 };

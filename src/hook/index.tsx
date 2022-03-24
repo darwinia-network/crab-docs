@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
-import type { UserInfoT, CrabClaimStateT, PangolinClaimStateT } from '../types';
-import { getUserInfo, getCrabClaimState, getPangolinClaimState, isGithubOauth } from '../utils';
+import { useState, useEffect, useCallback } from "react";
+import type { UserInfoT, CrabClaimStateT, PangolinClaimStateT } from "../types";
+import { getUserInfo, getCrabClaimState, getPangolinClaimState, isGithubOauth } from "../utils";
 
 export const useUserInfo = () => {
   const [userInfo, setUserInfo] = useState<UserInfoT | undefined>();
@@ -16,11 +16,15 @@ export const useUserInfo = () => {
             isGithubOauth: oauthFromGithub,
           });
         } else if (oauthFromGithub) {
-          setUserInfo({ isClaimed: false, isGithubOauth: true, isOauthSuccess: false });
+          setUserInfo({
+            isClaimed: false,
+            isGithubOauth: true,
+            isOauthSuccess: false,
+          });
         }
       })
       .catch((err) => {
-        console.error('get user info', err);
+        console.error("get user info", err);
       })
       .finally(() => {});
   }, []);
@@ -33,7 +37,9 @@ export const useUserInfo = () => {
 };
 
 export const useCrabClaimState = () => {
-  const [crabClaimState, setCrabClaimState] = useState<CrabClaimStateT>({ isClaimed: false });
+  const [crabClaimState, setCrabClaimState] = useState<CrabClaimStateT>({
+    isClaimed: false,
+  });
 
   const refreshCrabClaimState = useCallback(() => {
     getCrabClaimState()
@@ -41,7 +47,7 @@ export const useCrabClaimState = () => {
         setCrabClaimState({ isClaimed: false });
       })
       .catch((err) => {
-        if (err?.response?.data?.data?.state === 'RECEIVED') {
+        if (err?.response?.data?.data?.state === "RECEIVED") {
           setCrabClaimState({ isClaimed: true });
         }
       });
@@ -63,7 +69,7 @@ export const usePangolinClaimState = () => {
         setPangolinClaimState({ isRateLimit: false });
       })
       .catch((err) => {
-        if (err?.response?.data?.data?.state === 'RATE_LIMIT_IP') {
+        if (err?.response?.data?.data?.state === "RATE_LIMIT_IP") {
           setPangolinClaimState({ isRateLimit: true });
         }
       });

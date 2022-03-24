@@ -1,8 +1,8 @@
-import React from 'react';
-import type { TokenSymbolT } from '../../../types';
-import { FaucetBaseModal } from '../BaseModal';
-import style from './style.module.scss';
-import { Space, Typography } from 'antd';
+import React from "react";
+import type { TokenSymbolT } from "../../../types";
+import { FaucetBaseModal } from "../BaseModal";
+import style from "./style.module.scss";
+import { Space, Typography } from "antd";
 
 type Props = {
   onCancel: () => void;
@@ -13,18 +13,9 @@ type Props = {
   amount: number;
   tokenSymbol: TokenSymbolT;
   visible: boolean;
-}
+};
 
-const Component = ({
-  onCancel,
-  onOk,
-  onBack,
-  githubAccount,
-  destination,
-  amount,
-  tokenSymbol,
-  visible,
-}: Props) => {
+const Component = ({ onCancel, onOk, onBack, githubAccount, destination, amount, tokenSymbol, visible }: Props) => {
   return (
     <FaucetBaseModal
       onCancel={onCancel}
@@ -40,18 +31,22 @@ const Component = ({
         </div>
       }
     >
-      <Space direction='vertical' align='start' size='middle'>
+      <Space direction="vertical" align="start" size="middle">
         <section className={style.section}>
           <h5 className={style.label}>Github Account:</h5>
           <span className={style.value}>{githubAccount}</span>
         </section>
         <section className={style.section}>
           <h5 className={style.label}>Destination:</h5>
-          <Typography.Text ellipsis className={style.value}>{destination}</Typography.Text>
+          <Typography.Text ellipsis className={style.value}>
+            {destination}
+          </Typography.Text>
         </section>
         <section className={style.section}>
           <h5 className={style.label}>Amount:</h5>
-          <span className={style.value}>{amount} {tokenSymbol}</span>
+          <span className={style.value}>
+            {amount} {tokenSymbol}
+          </span>
         </section>
       </Space>
     </FaucetBaseModal>
