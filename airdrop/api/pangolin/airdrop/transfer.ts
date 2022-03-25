@@ -217,20 +217,7 @@ async function transfer(chainName: String, address: String): Promise<TransferRec
 
     const txHash = await api.tx.balances
       .transfer(address.toString(), AMOUNT * 1000000000)
-      .signAndSend(faucetAccount, ({ events = [], status }) => {
-        console.log(`Current status is ${status.type}`);
-
-        if (status.isInBlock) {
-          console.log("transaction with hash " + status.asInBlock.toHex());
-        }
-        if (status.isFinalized) {
-          console.log(`Transaction included at blockHash ${status.asFinalized}`);
-          // Loop through Vec<EventRecord> to display all events
-          // events.forEach(({ phase, event: { data, method, section } }) => {
-          //   console.log(`\t' ${phase}: ${section}.${method}:: ${data}`);
-          // });
-        }
-      });
+      .signAndSend(faucetAccount);
       
     return { tx: txHash, preview: `https://pangolin.subscan.io/block/${txHash}` };
 
