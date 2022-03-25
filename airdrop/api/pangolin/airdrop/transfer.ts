@@ -219,7 +219,7 @@ async function transfer(chainName: String, address: String): Promise<TransferRec
       .transfer(address.toString(), AMOUNT * 1000000000)
       .signAndSend(faucetAccount);
       
-    return { tx: txHash, preview: `https://pangolin.subscan.io/block/${txHash}` };
+    return { tx: txHash, preview: `https://pangolin.subscan.io/extrinsic/${txHash}` };
 
   } catch (err) {
     console.error(err);
