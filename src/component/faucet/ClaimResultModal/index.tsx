@@ -43,7 +43,7 @@ const Component = ({ visible, resultInfo, onCancel, tokenSymbol }: Props) => (
             rel="noopener noreferrer"
             href={resultInfo.subview}
           >
-            View in Subview Explorer
+            {tokenSymbol === "CRAB" ? "View in Subview Explorer" : "View in Subscan Explorer"}
           </a>
         </p>
       </>
