@@ -12,7 +12,7 @@ import { TxLoadingModal } from "../TxLoadingModal";
 import { FaucetClaimResultModal } from "../ClaimResultModal";
 
 const CLAIM_AMOUNT = 100;
-const TokenSymbol: TokenSymbolT = "PRING";
+const TOKEN_SYMBOL: TokenSymbolT = "PRING";
 
 export const PangolinFaucet = () => {
   const { userInfo } = useUserInfo();
@@ -126,11 +126,11 @@ export const PangolinFaucet = () => {
 
   return (
     <>
-      <LoginWithGithub tokenSymbol={TokenSymbol} onClick={handleLoginWithGithub} />
+      <LoginWithGithub tokenSymbol={TOKEN_SYMBOL} onClick={handleLoginWithGithub} />
 
       <FaucetClaimModal
         visible={claimModalConfig.visible}
-        tokenSymbol={TokenSymbol}
+        tokenSymbol={TOKEN_SYMBOL}
         amount={CLAIM_AMOUNT}
         githubAccount={(userInfo?.name as string) || "***"}
         onCancel={() => setClaimModalConfig((prev) => ({ ...prev, visible: false }))}
@@ -138,7 +138,7 @@ export const PangolinFaucet = () => {
       />
       <FaucetConfirmModal
         visible={confirmModalConfig.visible}
-        tokenSymbol={TokenSymbol}
+        tokenSymbol={TOKEN_SYMBOL}
         amount={CLAIM_AMOUNT}
         githubAccount={(userInfo?.name as string) || "***"}
         destination={confirmModalConfig.destination}
@@ -150,12 +150,12 @@ export const PangolinFaucet = () => {
         onOk={handleConfirmOk}
       />
       <TxLoadingModal
-        tokenSymbol={TokenSymbol}
+        tokenSymbol={TOKEN_SYMBOL}
         visible={txLoadingModalConfig.visible}
         onCancel={() => setTxLoadingModalConfig((prev) => ({ ...prev, visible: false }))}
       />
       <FaucetClaimResultModal
-        tokenSymbol={TokenSymbol}
+        tokenSymbol={TOKEN_SYMBOL}
         visible={claimResultModalConfig.visible}
         resultInfo={claimResultModalConfig.resultInfo}
         onCancel={() => setClaimResultModalConfig((prev) => ({ ...prev, visible: false }))}

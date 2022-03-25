@@ -12,7 +12,7 @@ import { TxLoadingModal } from "../TxLoadingModal";
 import { FaucetClaimResultModal } from "../ClaimResultModal";
 
 const CLAIM_AMOUNT = 10;
-const TokenSymbol: TokenSymbolT = "CRAB";
+const TOKEN_SYMBOL: TokenSymbolT = "CRAB";
 
 export const CrabFaucet = () => {
   const { userInfo } = useUserInfo();
@@ -134,12 +134,12 @@ export const CrabFaucet = () => {
 
   return (
     <>
-      <LoginWithGithub tokenSymbol={TokenSymbol} onClick={handleLoginWithGithub} />
+      <LoginWithGithub tokenSymbol={TOKEN_SYMBOL} onClick={handleLoginWithGithub} />
 
       <FaucetClaimModal
         visible={claimModalConfig.visible}
         status={claimModalConfig.status}
-        tokenSymbol={TokenSymbol}
+        tokenSymbol={TOKEN_SYMBOL}
         amount={CLAIM_AMOUNT}
         githubAccount={(userInfo?.name as string) || "***"}
         registrationTime={(userInfo?.created_at as string)?.split("T")[0]?.replace(/-/g, "/") || "2021/12/05"}
@@ -148,7 +148,7 @@ export const CrabFaucet = () => {
       />
       <FaucetConfirmModal
         visible={confirmModalConfig.visible}
-        tokenSymbol={TokenSymbol}
+        tokenSymbol={TOKEN_SYMBOL}
         amount={CLAIM_AMOUNT}
         githubAccount={(userInfo?.name as string) || "***"}
         destination={confirmModalConfig.destination}
@@ -160,12 +160,12 @@ export const CrabFaucet = () => {
         onOk={handleConfirmOk}
       />
       <TxLoadingModal
-        tokenSymbol={TokenSymbol}
+        tokenSymbol={TOKEN_SYMBOL}
         visible={txLoadingModalConfig.visible}
         onCancel={() => setTxLoadingModalConfig((prev) => ({ ...prev, visible: false }))}
       />
       <FaucetClaimResultModal
-        tokenSymbol={TokenSymbol}
+        tokenSymbol={TOKEN_SYMBOL}
         visible={claimResultModalConfig.visible}
         resultInfo={claimResultModalConfig.resultInfo}
         onCancel={() => setClaimResultModalConfig((prev) => ({ ...prev, visible: false }))}
