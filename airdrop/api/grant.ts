@@ -23,7 +23,7 @@ function getConfig() {
     },
   };
   config.github.key = process.env.GITHUB_OAUTH_APP_KEY;
-  config.github.secret = process.env.GITHUB_OAUTH_APP_KEY;
+  config.github.secret = process.env.GITHUB_OAUTH_APP_SECRET;
   return config;
 }
 
