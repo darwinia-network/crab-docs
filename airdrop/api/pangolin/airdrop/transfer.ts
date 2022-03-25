@@ -198,7 +198,6 @@ async function transfer(chainName: String, address: String): Promise<TransferRec
 
   console.log(`Check account ${chain.address} balance`);
 
- 
   try {
     const api = await ApiPromise.create({
       provider: wsProvider,
@@ -215,17 +214,13 @@ async function transfer(chainName: String, address: String): Promise<TransferRec
     const keyring = new Keyring({ type: "sr25519" });
     const faucetAccount = keyring.addFromUri(chain.seed);
 
-    const txHash = await api.tx.balances
-      .transfer(address.toString(), AMOUNT * 1000000000)
-      .signAndSend(faucetAccount);
-      
-    return { tx: txHash, preview: `https://pangolin.subscan.io/block/${txHash}` };
+    const txHash = await api.tx.balances.transfer(address.toString(), AMOUNT * 1000000000).signAndSend(faucetAccount);
 
+    return { tx: txHash, preview: `https://pangolin.subscan.io/extrinsic/${txHash}` };
   } catch (err) {
     console.error(err);
     return "Failed to sign transactions: " + err.message;
   }
-
 
   // switch (chainName) {
   //   case 'CRAB':
