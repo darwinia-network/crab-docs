@@ -16,7 +16,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 async function queryGithubAccountInfo(req: VercelRequest): Promise<UserInfo | null> {
   try {
     const cookies = req.cookies;
-    const accessToken = cookies["x-access-pangolin-token"];
+    const accessToken = cookies["x-access-token"];
     const octokit = new Octokit({
       auth: accessToken,
     });
