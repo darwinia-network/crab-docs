@@ -52,7 +52,7 @@ export const CrabFaucet = () => {
   };
 
   const handleLoginWithGithub = useCallback(() => {
-    userInfo ? configClaimModal(userInfo, crabClaimState) : window.open("/connect/github/crab");
+    userInfo?.isOauthSuccess ? configClaimModal(userInfo, crabClaimState) : window.open("/connect/github/crab");
   }, [userInfo, crabClaimState]);
 
   const handleClaimOk = useCallback((address) => {

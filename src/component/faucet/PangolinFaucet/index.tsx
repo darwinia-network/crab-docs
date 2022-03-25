@@ -40,13 +40,15 @@ export const PangolinFaucet = () => {
   });
 
   const handleLoginWithGithub = useCallback(() => {
-    userInfo && pangolinClaimState.isRateLimit
-      ? setClaimResultModalConfig({
-          visible: true,
-          resultInfo: {
-            status: FaucetClaimResultStatus.IN_GREYLIST,
-          },
-        })
+    userInfo?.isOauthSuccess
+      ? pangolinClaimState.isRateLimit
+        ? setClaimResultModalConfig({
+            visible: true,
+            resultInfo: {
+              status: FaucetClaimResultStatus.IN_GREYLIST,
+            },
+          })
+        : setClaimModalConfig({ visible: true })
       : window.open("/connect/github/pangolin");
   }, [userInfo, pangolinClaimState]);
 
