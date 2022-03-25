@@ -9,13 +9,6 @@
     "secret": "{{ github_oauth_app_secret }}",
     "scope": [],
     "callback": "/api/crab/authorization",
-    "overrides": {
-      "crab": {
-        "callback": "/api/crab/authorization"
-      },
-      "pangolin": {
-        "callback": "/api/pangolin/authorization"
-      }
-    }
+    "overrides": {}
   }
 }
