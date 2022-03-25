@@ -157,7 +157,7 @@ export const PangolinFaucet = () => {
         tokenSymbol={TokenSymbol}
         visible={claimResultModalConfig.visible}
         resultInfo={claimResultModalConfig.resultInfo}
-        onCancel={() => setTxLoadingModalConfig((prev) => ({ ...prev, visible: false }))}
+        onCancel={() => setClaimResultModalConfig((prev) => ({ ...prev, visible: false }))}
       />
     </>
   );
