@@ -10,7 +10,7 @@ import is from "is_js";
 
 const Redis = require("ioredis");
 
-const AMOUNT = 100;
+const AMOUNT = 10;
 
 // request
 export default async function (req: VercelRequest, res: VercelResponse) {
