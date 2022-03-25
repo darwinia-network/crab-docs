@@ -3,8 +3,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 function getConfig() {
   const config = {
     defaults: {
-      // "origin": "https://docs.crab.network",
-      origin: "https://crab-docs-dev.vercel.app",
+      origin: "https://docs.crab.network",
       transport: "querystring",
       state: true,
     },
@@ -23,8 +22,8 @@ function getConfig() {
       },
     },
   };
-  config.github.key = process.env.PANGOLIN_GITHUB_OAUTH_APP_KEY;
-  config.github.secret = process.env.PANGOLIN_GITHUB_OAUTH_APP_SECRET;
+  config.github.key = process.env.GITHUB_OAUTH_APP_KEY;
+  config.github.secret = process.env.GITHUB_OAUTH_APP_KEY;
   return config;
 }
 

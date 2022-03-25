@@ -82,7 +82,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   if (recordIp != null) {
     const lastClaimTime = +recordIp;
     const now = +new Date();
-    if (now - lastClaimTime <= 1000 * 60) {
+    if (now - lastClaimTime <= 1000 * 60 * 60 * 12) {
       res.statusCode = 429;
       const body = {
         err: 1,

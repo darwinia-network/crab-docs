@@ -43,13 +43,13 @@ const Component = ({ visible, resultInfo, onCancel, tokenSymbol }: Props) => (
             rel="noopener noreferrer"
             href={resultInfo.subview}
           >
-            View in Subview Explorer
+            {tokenSymbol === "CRAB" ? "View in Subview Explorer" : "View in Subscan Explorer"}
           </a>
         </p>
       </>
     ) : resultInfo.status === FaucetClaimResultStatus.IN_GREYLIST ? (
       <>
-        <p className={style.tips}>You are now in greylist, greylist will reset this IP Address after 1 minute later.</p>
+        <p className={style.tips}>You are now in greylist, greylist will reset this IP Address after 12 hours later.</p>
         <p className={style.tipsWarning}>The same IP address can claim once within 12 hours!</p>
       </>
     ) : (

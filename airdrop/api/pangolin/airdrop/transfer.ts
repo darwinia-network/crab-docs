@@ -129,7 +129,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   const lastClaimTime = await client.get(cacheKeyLastClaimedTime);
   if (lastClaimTime) {
     const now = +new Date();
-    if (now - lastClaimTime <= 1000 * 60) {
+    if (now - lastClaimTime <= 1000 * 60 * 60 * 12) {
       res.statusCode = 403;
       const body = {
         err: 1,
@@ -198,7 +198,6 @@ async function transfer(chainName: String, address: String): Promise<TransferRec
 
   console.log(`Check account ${chain.address} balance`);
 
- 
   try {
     const api = await ApiPromise.create({
       provider: wsProvider,
@@ -215,17 +214,13 @@ async function transfer(chainName: String, address: String): Promise<TransferRec
     const keyring = new Keyring({ type: "sr25519" });
     const faucetAccount = keyring.addFromUri(chain.seed);
 
-    const txHash = await api.tx.balances
-      .transfer(address.toString(), AMOUNT * 1000000000)
-      .signAndSend(faucetAccount);
-      
-    return { tx: txHash, preview: `https://pangolin.subscan.io/extrinsic/${txHash}` };
+    const txHash = await api.tx.balances.transfer(address.toString(), AMOUNT * 1000000000).signAndSend(faucetAccount);
 
+    return { tx: txHash, preview: `https://pangolin.subscan.io/extrinsic/${txHash}` };
   } catch (err) {
     console.error(err);
     return "Failed to sign transactions: " + err.message;
   }
-
 
   // switch (chainName) {
   //   case 'CRAB':
