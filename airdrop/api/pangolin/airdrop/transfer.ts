@@ -6,7 +6,7 @@ import { Keyring } from "@polkadot/keyring";
 import { Octokit } from "@octokit/rest";
 import * as qs from "qs";
 import is from "is_js";
-// import Web3 from 'web3';
+
 
 const Redis = require("ioredis");
 
@@ -91,38 +91,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     return;
   }
 
-  // check account registry time
-  // const created_at = new Date(user.created_at);
-  // const end = new Date('2021-12-30T00:00:00Z');
-  // if (+created_at > +end) {
-  //   res.statusCode = 403;
-  //   const body = {
-  //     err: 1,
-  //     message: 'Your account does not meet the rules'
-  //   };
-  //   res.end(JSON.stringify(body, null, 2));
-  //   return;
-  // }
-
-  // const chainName = data.chain.toUpperCase().trim();
-  // const cacheKeyClaimed = `${chainName}-${user.id}`;
-
-  // const recordClaimed = await client.get(cacheKeyClaimed);
-
-  // check already sent
-  // if (recordClaimed != null) {
-  //   res.statusCode = 403;
-  //   const body = {
-  //     err: 1,
-  //     message: 'You have already received',
-  //     data: {
-  //       state: 'RECEIVED',
-  //       time: recordClaimed,
-  //     }
-  //   };
-  //   res.end(JSON.stringify(body, null, 2));
-  //   return;
-  // }
 
   const chainName = "PANGOLIN";
   const cacheKeyLastClaimedTime = `${chainName}-${user.id}-${ip}`;
@@ -190,7 +158,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
 
 async function transfer(chainName: String, address: String): Promise<TransferReceipt | String | null> {
   chainName = chainName.toUpperCase();
-  // pangolin todo
+  
 
   const chain = require("../config/chain.json").pangolin_smart;
   chain.seed = process.env.PANGOLIN_SEED;
@@ -222,52 +190,8 @@ async function transfer(chainName: String, address: String): Promise<TransferRec
     return "Failed to sign transactions: " + err.message;
   }
 
-  // switch (chainName) {
-  //   case 'CRAB':
-  //     return await _transferCrab(address);
-  //   default:
-  //     return `Not support this chain: ${chainName}`;
-  // }
 }
 
-// async function _transferCrab(address: String): Promise<TransferReceipt | String> {
-//   const web3 = crabSmartApi();
-//   const chain = require('../config/chain.json').crab_smart;
-//   chain.seed = process.env.CRAB_SMART_SEED;
-
-//   let receipt;
-//   try {
-//     const balanceFrom = web3.utils.fromWei(
-//       await web3.eth.getBalance(chain.address),
-//       'ether'
-//     );
-//     // const balanceTo = web3.utils.fromWei(
-//     //   await web3.eth.getBalance(address.toString()),
-//     //   'ether'
-//     // );
-//     if (balanceFrom == null) {
-//       return 'Not have more balance to transfer';
-//     }
-//     if (+balanceFrom <= AMOUNT) {
-//       return 'All airdrops have ended';
-//     }
-
-//     const tx = await web3.eth.accounts.signTransaction({
-//       from: chain.address,
-//       to: address.toString(),
-//       value: web3.utils.toWei(AMOUNT.toString(), 'ether'),
-//       gas: 40000,
-//     }, chain.seed);
-
-//     receipt = await web3.eth.sendSignedTransaction(tx.rawTransaction);
-//   } catch (err) {
-//     console.error(err);
-//     return 'Failed to sign transactions: ' + err.message;
-//   }
-//   const hash = receipt.transactionHash;
-
-//   return {tx: hash, preview: `https://crab.subview.xyz/tx/${hash}`,}
-// }
 
 let _redis;
 
@@ -279,16 +203,6 @@ function redis() {
   return _redis;
 }
 
-// let _crabSmartApi;
-
-// function crabSmartApi(): Web3 {
-//   if (_crabSmartApi) return _crabSmartApi;
-
-//   const chain = require('../config/chain.json').crab_smart;
-//   chain.seed = process.env.CRAB_SMART_SEED;
-//   _crabSmartApi = new Web3(chain.endpoint);
-//   return _crabSmartApi;
-// }
 
 class TransferReceipt {
   tx: String;

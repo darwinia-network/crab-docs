@@ -42,28 +42,6 @@ export default async function (req: VercelRequest, res: VercelResponse) {
     return;
   }
 
-  // const chainName = data.chain.toUpperCase().trim();
-  // const chainName = 'PANGOLIN';
-  // const cacheKey = `${chainName}-${user.id}`;
-
-  // const record = await client.get(cacheKey);
-
-  // // check already sent
-  // if (record != null) {
-  //     res.statusCode = 400;
-  //     const body = {
-  //         err: 1,
-  //         message: 'You have already received',
-  //         data: {
-  //             state: 'RECEIVED',
-  //             time: record,
-  //         }
-  //     };
-  //     res.end(JSON.stringify(body, null, 2));
-  //     return;
-  // }
-
-  // check sending rules
   const ip = req.headers["x-forwarded-for"].toString();
   if (!ip) {
     res.statusCode = 403;
