@@ -10,7 +10,7 @@ import is from "is_js";
 
 const Redis = require("ioredis");
 
-const AMOUNT = 10;
+const AMOUNT = 100;
 
 // request
 export default async function (req: VercelRequest, res: VercelResponse) {
@@ -198,7 +198,7 @@ async function transfer(chainName: String, address: String): Promise<TransferRec
 
   console.log(`Check account ${chain.address} balance`);
 
-  let hash;
+ 
   try {
     const api = await ApiPromise.create({
       provider: wsProvider,
@@ -215,13 +215,12 @@ async function transfer(chainName: String, address: String): Promise<TransferRec
     const keyring = new Keyring({ type: "sr25519" });
     const faucetAccount = keyring.addFromUri(chain.seed);
 
-    await api.tx.balances
+    const txHash = await api.tx.balances
       .transfer(address.toString(), AMOUNT * 1000000000)
       .signAndSend(faucetAccount, ({ events = [], status }) => {
         console.log(`Current status is ${status.type}`);
 
         if (status.isInBlock) {
-          hash = status.asInBlock.toHex();
           console.log("transaction with hash " + status.asInBlock.toHex());
         }
         if (status.isFinalized) {
@@ -232,12 +231,14 @@ async function transfer(chainName: String, address: String): Promise<TransferRec
           // });
         }
       });
+      
+    return { tx: txHash, preview: `https://pangolin.subscan.io/block/${txHash}` };
+
   } catch (err) {
     console.error(err);
     return "Failed to sign transactions: " + err.message;
   }
 
-  return { tx: hash, preview: `https://pangolin.subscan.io/extrinsic/${hash}` };
 
   // switch (chainName) {
   //   case 'CRAB':
