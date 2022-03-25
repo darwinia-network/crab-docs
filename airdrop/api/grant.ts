@@ -1,35 +1,38 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-function pangolinGrantConfig() {
-  const config = require("./pangolin/config/grant.json");
+function getConfig() {
+  const config = {
+    defaults: {
+      // "origin": "https://docs.crab.network",
+      origin: "https://crab-docs-dev.vercel.app",
+      transport: "querystring",
+      state: true,
+    },
+    github: {
+      key: "{{ github_oauth_app_key }}",
+      secret: "{{ github_oauth_app_secret }}",
+      scope: [],
+      callback: "/api/crab/authorization",
+      overrides: {
+        crab: {
+          callback: "/api/crab/authorization",
+        },
+        pangolin: {
+          callback: "/api/pangolin/authorization",
+        },
+      },
+    },
+  };
   config.github.key = process.env.PANGOLIN_GITHUB_OAUTH_APP_KEY;
   config.github.secret = process.env.PANGOLIN_GITHUB_OAUTH_APP_SECRET;
   return config;
 }
 
-const pangolinGrant = require("grant").vercel({
-  config: pangolinGrantConfig(),
-  session: { secret: "pangolin-grant" },
+const grant = require("grant").vercel({
+  config: getConfig(),
+  session: { secret: "grant" },
 });
 
-const crabGrant = require('grant').vercel({
-  config: crabGrantConfig(), session: {secret: 'crab-grant'}
-})
-
-
-function crabGrantConfig() {
-  const config = require('./crab/config/grant.json');
-  config.github.key = process.env.GITHUB_OAUTH_APP_KEY;
-  config.github.secret = process.env.GITHUB_OAUTH_APP_SECRET;
-  return config;
-}
-
 export default async function (req: VercelRequest, res: VercelResponse) {
-  console.log(`request url ${req.url}`);
-  if ("/connect/github/pangolin" === req.url){
-    await pangolinGrant(req, res);
-  }else{
-    await crabGrant(req, res);
-  }
-  
+  await grant(req, res);
 }
