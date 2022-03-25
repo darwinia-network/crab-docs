@@ -20,6 +20,7 @@ type Props = {
 const Component = ({ visible, resultInfo, onCancel, tokenSymbol }: Props) => (
   <FaucetBaseModal
     visible={visible}
+    destroyOnClose={true}
     onCancel={onCancel}
     tokenSymbol={tokenSymbol}
     footer={null}

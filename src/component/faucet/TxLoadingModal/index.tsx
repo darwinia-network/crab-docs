@@ -11,7 +11,7 @@ type Props = {
 };
 
 const Component = ({ visible, tokenSymbol, onCancel }: Props) => (
-  <FaucetBaseModal visible={visible} tokenSymbol={tokenSymbol} onCancel={onCancel} footer={null}>
+  <FaucetBaseModal visible={visible} tokenSymbol={tokenSymbol} onCancel={onCancel} footer={null} destroyOnClose={true}>
     <div className={`${style.waiting}`}>
       <Spin
         size="large"

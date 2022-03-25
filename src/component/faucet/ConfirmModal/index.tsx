@@ -24,6 +24,7 @@ const Component = ({ onCancel, onOk, onBack, githubAccount, destination, amount,
       tokenSymbol={tokenSymbol}
       okText={`Confirm and Claim ${tokenSymbol}`}
       visible={visible}
+      destroyOnClose={true}
       title={
         <div className={style.title}>
           <h3>Confirm Information</h3>

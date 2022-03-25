@@ -42,6 +42,7 @@ type Props = {
   children: React.ReactNode;
   visible: boolean;
   width?: number;
+  destroyOnClose?: boolean;
   onCancel?: () => void;
 } & TitleProps &
   FooterProps;
@@ -53,6 +54,7 @@ const Component = ({
   onBack,
   onCancel,
   disableOk,
+  destroyOnClose = false,
   tokenSymbol = "CRAB",
   width = 518,
   okText = "OK",
@@ -62,7 +64,7 @@ const Component = ({
   return (
     <Modal
       maskClosable={false}
-      destroyOnClose={true}
+      destroyOnClose={destroyOnClose}
       visible={visible}
       title={title && <Title onBack={onBack}>{title}</Title>}
       footer={footer}
