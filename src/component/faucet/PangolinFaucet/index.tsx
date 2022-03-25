@@ -11,6 +11,7 @@ import { FaucetConfirmModal } from "../ConfirmModal";
 import { TxLoadingModal } from "../TxLoadingModal";
 import { FaucetClaimResultModal } from "../ClaimResultModal";
 
+const CLAIM_AMOUNT = 100;
 const TokenSymbol: TokenSymbolT = "PRING";
 
 export const PangolinFaucet = () => {
@@ -34,7 +35,7 @@ export const PangolinFaucet = () => {
     visible: false,
     resultInfo: {
       status: FaucetClaimResultStatus.SUCCESS,
-      amount: 100,
+      amount: CLAIM_AMOUNT,
       subview: "#",
     },
   });
@@ -70,7 +71,7 @@ export const PangolinFaucet = () => {
             resultInfo: {
               status: FaucetClaimResultStatus.SUCCESS,
               subview: data?.data?.preview || "#",
-              amount: 100,
+              amount: CLAIM_AMOUNT,
             },
           });
         }
@@ -130,7 +131,7 @@ export const PangolinFaucet = () => {
       <FaucetClaimModal
         visible={claimModalConfig.visible}
         tokenSymbol={TokenSymbol}
-        amount={100}
+        amount={CLAIM_AMOUNT}
         githubAccount={(userInfo?.name as string) || "***"}
         onCancel={() => setClaimModalConfig((prev) => ({ ...prev, visible: false }))}
         onOk={handleClaimOk}
@@ -138,7 +139,7 @@ export const PangolinFaucet = () => {
       <FaucetConfirmModal
         visible={confirmModalConfig.visible}
         tokenSymbol={TokenSymbol}
-        amount={100}
+        amount={CLAIM_AMOUNT}
         githubAccount={(userInfo?.name as string) || "***"}
         destination={confirmModalConfig.destination}
         onCancel={() => setConfirmModalConfig((prev) => ({ ...prev, visible: false }))}
