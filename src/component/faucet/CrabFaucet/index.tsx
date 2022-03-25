@@ -11,6 +11,7 @@ import { FaucetConfirmModal } from "../ConfirmModal";
 import { TxLoadingModal } from "../TxLoadingModal";
 import { FaucetClaimResultModal } from "../ClaimResultModal";
 
+const CLAIM_AMOUNT = 10;
 const TokenSymbol: TokenSymbolT = "CRAB";
 
 export const CrabFaucet = () => {
@@ -35,7 +36,7 @@ export const CrabFaucet = () => {
     visible: false,
     resultInfo: {
       status: FaucetClaimResultStatus.SUCCESS,
-      amount: 100,
+      amount: CLAIM_AMOUNT,
       subview: "#",
     },
   });
@@ -73,7 +74,7 @@ export const CrabFaucet = () => {
             resultInfo: {
               status: FaucetClaimResultStatus.SUCCESS,
               subview: data?.data?.preview || "#",
-              amount: 100,
+              amount: CLAIM_AMOUNT,
             },
           });
         }
@@ -139,7 +140,7 @@ export const CrabFaucet = () => {
         visible={claimModalConfig.visible}
         status={claimModalConfig.status}
         tokenSymbol={TokenSymbol}
-        amount={100}
+        amount={CLAIM_AMOUNT}
         githubAccount={(userInfo?.name as string) || "***"}
         registrationTime={(userInfo?.created_at as string)?.split("T")[0]?.replace(/-/g, "/") || "2021/12/05"}
         onCancel={() => setClaimModalConfig((prev) => ({ ...prev, visible: false }))}
@@ -148,7 +149,7 @@ export const CrabFaucet = () => {
       <FaucetConfirmModal
         visible={confirmModalConfig.visible}
         tokenSymbol={TokenSymbol}
-        amount={100}
+        amount={CLAIM_AMOUNT}
         githubAccount={(userInfo?.name as string) || "***"}
         destination={confirmModalConfig.destination}
         onCancel={() => setConfirmModalConfig((prev) => ({ ...prev, visible: false }))}
