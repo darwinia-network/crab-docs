@@ -15,6 +15,8 @@
     "@ethereumjs/tx": "^3.4.0",
     "@octokit/rest": "^18.12.0",
     "@vercel/node": "^1.12.1",
+    "@darwinia/types": "2.7.2",
+    "@polkadot/api": "7.11.1",
     "grant": "^5.4.19",
     "ioredis": "^4.28.3",
     "is_js": "^0.9.0",

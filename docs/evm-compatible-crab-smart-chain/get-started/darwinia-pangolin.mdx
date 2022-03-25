@@ -1,0 +1,56 @@
+---
+title: Connect to Pangolin
+sidebar_position: 2
+description: How to connect to Pangolin network
+---
+
+# Connect to Pangolin
+
+## Introduction
+
+The Darwinia official TestNet, named Pangolin, is the easiest way to get started with a Darwinia network environment. Follow this tutorial to connect to the Pangolin network.
+
+The Pangolin Network has two endpoints available for users to connect to: one for HTTPS and one for WSS.
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { PangolinFaucet } from '../../../src/component/faucet/PangolinFaucet';
+
+<Tabs
+  defaultValue="wss"
+  values={[
+    {label: 'WSS Entry', value: 'wss'},
+    {label: 'HTTPS Entry', value: 'https'},
+  ]}>
+
+  <TabItem value="https">
+
+```
+https://pangolin-rpc.darwinia.network
+```
+
+  </TabItem>
+  <TabItem value="wss">
+
+```
+wss://pangolin-rpc.darwinia.network
+```
+
+   </TabItem>
+</Tabs>
+
+## Features
+
+- Testing the latest technology products.
+- Compatible with EVM, Ethereum contracts, Ethereum contract tools.
+- Support substrate-substrate bi-directional bridge
+- Support ethereum-substrate bi-directional bridge.
+- Have some unstable features, may be reset.
+
+## Get Test Tokens
+
+To start building on Pangolin, you can get DEV tokens(PRING) by logging in with your Github account, there is an IP address limit that one IP address can claim once within 12 hours.
+For token requests of more than the limited account allowed by the faucet, contact an admin directly via our [Darwinia Technical Telegram Group](https://t.me/DarwiniaDev). We are happy to provide the tokens needed to test your applications.
+
+<PangolinFaucet />
+
