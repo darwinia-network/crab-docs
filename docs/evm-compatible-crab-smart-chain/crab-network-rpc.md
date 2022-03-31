@@ -25,6 +25,7 @@ Go to [https://docs.crab.network/](https://docs.crab.network/) and click the `Co
 - RPC2: [wss://darwinia-crab.api.onfinality.io/public-ws](wss://darwinia-crab.api.onfinality.io/public-ws)
 - RPC3: [https://darwinia-crab.api.onfinality.io/public/](https://darwinia-crab.api.onfinality.io/public/)
 - RPC4: [wss://darwiniacrab-rpc.dwellir.com](wss://darwiniacrab-rpc.dwellir.com)
+- RPC5: [https://darwiniacrab-rpc.dwellir.com](https://darwiniacrab-rpc.dwellir.com)
 
 `Chain ID`: 44
 
