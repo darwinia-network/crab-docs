@@ -60,7 +60,11 @@ sidebar_position: 0
 - [x] web3_clientVersion
 - [x] web3_sha3
 
-## Compared Ethereum RPCs
+## Things Dapp developers must know
+
+### Use `block.timestamp` instead of `block.number`
+
+On Ethereum or other EVM-Compatible platform, you may use `block.number` in contract, but this is not recommended in CSC. We may introduce CSC 2.0 (The Next Generation of CSC) in the future and export the data from CSC 1.0 to CSC 2.0, which may reset the chain height to zero, so we recommend using `block.timestamp`.
 
 ### Consensus Related Field
 
