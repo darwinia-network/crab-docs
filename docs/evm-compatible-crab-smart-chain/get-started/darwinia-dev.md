@@ -101,12 +101,12 @@ For a complete list of flags and options, spin up your Darwinia development node
 
 ## Run Tracing node
 
-Geth's debug and OpenEthereum's trace module provide non-standard RPC methods for getting a deeper insight into transaction processing.Supporting these RPC methods is important because many projects, such as [The Graph](https://thegraph.com/en/) or [Blockscout](https://docs.blockscout.com/), rely on them to index blockchain data. To use the supported RPC methods, you need to run a tracing node, which is slightly different than running a full node.
+Geth's debug and OpenEthereum's trace module provide non-standard RPC methods for getting a deeper insight into transaction processing. Supporting these RPC methods is important because many projects, such as [The Graph](https://thegraph.com/en/) or [Blockscout](https://docs.blockscout.com/), rely on them to index blockchain data. To use the supported RPC methods, you need to run a tracing node, which is slightly different than running a full node.
 
-Spinning up a debug, txpool, or tracing node is similar to running a full node. You will also need to start your node with the following flag(s) depending on the features you would like to enable:
-  - `--ethapi=debug` - optional flag that enables `debug_traceTransaction`, `debug_traceBlockByNumber`, and `debug_traceBlockByHash`.
-  - `--ethapi=trace` - optional flag that enables `trace_filter`.
-  - `--wasm-runtime-overrides=overridden-runtimes/<network>/wasms` - required flag for tracing that specifies the path where the local WASM runtimes are stored. Depending on the network and the binary version, the overrides runtime file are available at [Runtime Overrides Release](https://github.com/darwinia-network/runtime-overrides/releases). Accepts the network as a parameter: `pangolin`, `pangoro` now.
+Spinning up a tracing node is similar to running a full node. You will also need to start your node with the following flag(s) depending on the features you would like to enable:
+  - `--ethapi-debug-targets=debug` - optional flag that enables `debug_traceTransaction`, `debug_traceBlockByNumber`, and `debug_traceBlockByHash`.
+  - `--ethapi-debug-targets=trace` - optional flag that enables `trace_filter`.
+  - `--wasm-runtime-overrides=overridden-runtimes/<network>/wasms` - required flag for tracing that specifies the path where the local WASM runtimes are stored. Depending on the network and the binary version, the overrides runtime file are available at [Runtime Overrides Files](https://github.com/darwinia-network/runtime-overrides/tree/main/overridden-runtimes). Accepts the network as a parameter: `pangolin`, `pangoro` now.
 
 ### Local Development
 
@@ -127,30 +127,23 @@ $ ./target/release/drml --dev --tmp  --ethapi-debug-targets=debug,trace --wasm-r
 ### Production Environment
 
 ```sh
-./drml \
-    -d data \
+$ ./drml \
+     -d data \
     --chain <network> \
-    --state-cache-size 1 \
-    --execution wasm \       # necessary
-    --ethapi=debug,trace \   # necessary
-    --wasm-runtime-overrides=overridden-runtimes/<network>/wasms \  # necessary
-    --validator
+    --execution wasm \
+    --ethapi-debug-targets=debug,trace \
+    --wasm-runtime-overrides=overridden-runtimes/<network>/wasms
 ```
 
 #### Additional flags
 
-To use the Wasm binary stored on-chain, run the following command:
-
-- `--execution=wasm` - sets the execution strategy that should be used by all execution contexts to wasm.
-
-
 By default, the maximum number of trace entries a single request of trace_filter is allowed to return is 500. A request exceeding this limit will return an error. You can set a different maximum limit with the following flag:
 
-- `--ethapi-trace-max-count <uint>` — sets the maximum number of trace entries to be returned by the node
+- `--ethapi-trace-max-count <uint>` — sets the maximum number of trace entries to be returned by the node.
 
 Blocks processed by requests are temporarily stored on cache for a certain amount of time (default is 300 seconds), after which they are deleted. You can set a different time for deletion with the following flag:
 
-- `-ethapi-trace-cache-duration <uint>` — sets the duration (in seconds) after which the cache of trace_filter, for a given block, is discarded
+- `-ethapi-trace-cache-duration <uint>` — sets the duration (in seconds) after which the cache of trace_filter, for a given block, is discarded.
 
 
 ## Pre-funded Development Accounts
