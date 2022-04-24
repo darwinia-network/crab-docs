@@ -128,7 +128,7 @@ $ ./target/release/drml --dev --tmp  --ethapi-debug-targets=debug,trace --wasm-r
 
 ```sh
 $ ./drml \
-     -d data \
+    -d data \
     --chain <network> \
     --execution wasm \
     --ethapi-debug-targets=debug,trace \
