@@ -34,7 +34,7 @@ const Component = ({ visible, resultInfo, onCancel, tokenSymbol }: Props) => (
       <>
         <p className={style.tips}>
           The airdrop token {resultInfo.amount} {tokenSymbol} has been sent to the destination address that you filled
-          before, please track this transfer through the Subview:
+          before, please track this transfer through the explorer:
         </p>
         <p className={style.subview}>
           <a
