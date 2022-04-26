@@ -15,15 +15,14 @@ MetaMask is the most widely used wallet in the Ethereum ecosystem. We have deplo
 2. Add a custom network, here is an example of adding a Pangolin test network, different networks have different configuration parameters.
 + Click `Custom RPC`.
 
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-01.png)
+![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-02.png)
 
 + Add Pangolin Test Network configuration parameters.
 
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-02.png)
+![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-03.png)
 
 + After the connection is successful, as shown in the figure below.
 
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-03.png)
 
 ### Network Configuration
 
@@ -53,28 +52,7 @@ Use Apps tool to generate the Substrate address corresponding to the DVM address
 
 ### Apply for the test token
 
-1. Join the Telegram group named ["Darwinia Faucet Official"](https://t.me/darwiniafaucet_official).
-
-2. Send `/faucet@darwinia_faucet_bot`.
-
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-07.png)
-
-3. Send `Faucet`+ the copied Substrate address corresponding to the DVM account address.
-
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-08.png)
-
-4. You can open the link of the Darwinia_bot to check the transaction on Subscan. 
-
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-09.png)
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-10.png)
-
-5. Since this Substrate address corresponds to a specific DVM address, when the test token is sent to the Substrate address, the corresponding DVM address can be managed through Metamask to achieve the purpose of managing this Substrate address.
-
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-11.png)
-
-6. When querying the DVM address through Subscan, you can see its corresponding Substrate address at the same time.
-
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-12.png)
+To start building on Pangolin, you can click [here](https://docs.crab.network/evm-compatible-crab-smart-chain/get-started/darwinia-pangolin) and get DEV tokens(PRING) by logging in with your Github Account and claim tokens to substrate-based address that you generated above. There is an IP address limit that one IP address can claim once within 12 hours. For token requests of more than the limited account allowed by the faucet, contact an admin directly via our [Darwinia Technical Telegram Group](https://t.me/DarwiniaDev). We are happy to provide the tokens needed to test your applications.
 
 ### Transfer
 
