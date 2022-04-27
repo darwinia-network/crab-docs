@@ -12,21 +12,9 @@ MetaMask is the most widely used wallet in the Ethereum ecosystem. We have deplo
 ### Connect with Metamask
 
 1. Install the Metamask plugin, download and install it yourself. 
-2. Add a custom network, here is an example of adding a Pangolin test network, different networks have different configuration parameters.
-+ Click `Custom RPC`.
-
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-02.png)
-
-+ Add Pangolin Test Network configuration parameters.
-
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-03.png)
-
-+ After the connection is successful, as shown in the figure below.
+2. Add the Network RPC automatically, go to https://docs.crab.network/ and click the `Connect Wallet` on the right upper corner, then you can see the RPC configuration parameters of Pangolin and Crab, click and then the corresponding network RPC will be added automatically. The network configuration blow can be used as a reference if you want to add the Network RPC manually.
 
 
-### Network Configuration
-
-The different network configuration are as follows.
 
 | Network  | RPC URL                             | ChainID | Currency| Block Explorer URL |
 | ---------| ------------------------------------ | -------| --------|---------- |
@@ -38,17 +26,17 @@ The different network configuration are as follows.
 Use Apps tool to generate the Substrate address corresponding to the DVM address.
 1. Copy the DVM address.
 
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-04.png)
+![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-01.png)
 
-2. Address conversion can be done by using the [Apps](https://apps.darwinia.network/#/toolbox/dvmaddress) tool. Click on `Toolbox`, `DVM Address`, enter the address of the copied DVM account.
+1. Address conversion can be done by using the [Apps](https://apps.darwinia.network/toolbox) tool. Click on `Toolbox`, `DVM Address`, enter the address of the copied DVM account.
 
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-05.png)
+![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-02.png)
 
 3. This address is the only Substrate address corresponding to the DVM address. Click the upper right corner to copy the Substrate address.
 
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-06.png)
+![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-03.png)
 
-4. You can apply for the test token from the Faucet through the generated Substrate address. For details, please refer to the following.
+4. You can apply for the test token from the Faucet through the generated Substrate address above. For details, please refer to the following.
 
 ### Apply for the test token
 
@@ -60,18 +48,18 @@ Demonstrating how to use Metamask to transfer and query transactions in a DVM on
 
 1. Click `Send` and enter the transfer parameters. 
 
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-13.png)
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-14.png)
+![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-04.png)
+![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-05.png)
 
 2. Click `Confirm` to send transaction.
 
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-15.png)
+![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-06.png)
 
 3. The transfer executed successfully.
 
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-16.png)
+![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-07.png)
 
 4. View details of the transaction execution in your browser.
 
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-17.png)
-![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-18.png)
+![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-08.png)
+![dvm](../../assets/evm-compatible-crab-smart-chain/wallets/metamask-09.png)
