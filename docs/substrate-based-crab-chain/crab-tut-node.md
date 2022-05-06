@@ -1,7 +1,7 @@
 ---
 id: crab-tut-node
 title: How to run a node
-sidebar_label: How to Run a node
+sidebar_label: How to Run a Node
 sidebar_position: 7
 ---
 
