@@ -5,6 +5,8 @@
  * work well for content-centric websites.
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #ec3783;
@@ -14,7 +16,20 @@
   --ifm-color-primary-light: #ef5293;
   --ifm-color-primary-lighter: #f05f9c;
   --ifm-color-primary-lightest: #f487b4;
-  --ifm-code-font-size: 95%;
+  
+  --ifm-code-font-size: 90%;
+  --ifm-font-family-base: 'Open Sans';
+}
+
+.menu__link--sublist:after {
+  content: '';
+  min-width: 1.25rem;
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
+  filter: var(--ifm-menu-link-sublist-icon-filter);
+  height: 1.25rem;
+  transform: rotate(180deg);
+  width: 1.25rem;
+  transition: transform var(--ifm-transition-fast) linear;
 }
 
 .docusaurus-highlight-code-line {
