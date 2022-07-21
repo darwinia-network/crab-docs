@@ -1,6 +1,6 @@
 ---
 id: dvm-metamask
-title: Metamask
+title: Use Metamask
 sidebar_label: Metamask
 sidebar_position: 2
 ---

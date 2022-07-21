@@ -36,3 +36,12 @@ Crab Smart Chain is a substrate based ethereum compatible smart contract platfor
     - `https://pangolin-rpc.darwinia.network`
 - WSS Endpoints:
     - `wss://pangolin-rpc.darwinia.network`
+
+## Crab Smart Chain Other tokens
+
+| Token Symbol | Spec | Decimals | Smart Contract Address |
+| --- | --- | --- | --- |
+| xRING | ERC20 | 9 | 0x7399Ea6C9d35124d893B8d9808930e9d3F211501 |
+| WCRAB | ERC20 | 18 | 0x2d2b97ea380b0185e9fdf8271d1afb5d2bf18329 |
+| WCKTON | ERC20 | 18 | 0x159933C635570D5042723359fbD1619dFe83D3f3 |
+
