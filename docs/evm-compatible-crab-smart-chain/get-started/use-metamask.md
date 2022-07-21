@@ -1,7 +1,7 @@
 ---
 id: dvm-metamask
-title: Metamask
-sidebar_label: Metamask
+title: Use Metamask
+sidebar_label: Use Metamask
 sidebar_position: 2
 ---
 
@@ -40,7 +40,7 @@ Use Apps tool to generate the Substrate address corresponding to the DVM address
 
 ### Apply for the test token
 
-To start building on Pangolin, you can click [here](https://docs.crab.network/evm-compatible-crab-smart-chain/get-started/darwinia-pangolin) and get DEV tokens(PRING) by logging in with your Github Account and claim tokens to substrate-based address that you generated above. There is an IP address limit that one IP address can claim once within 12 hours. For token requests of more than the limited account allowed by the faucet, contact an admin directly via our [Darwinia Technical Telegram Group](https://t.me/DarwiniaDev). We are happy to provide the tokens needed to test your applications.
+To start building on Pangolin, you can click [here](https://apps.darwinia.network/?network=pangolin) and get DEV tokens(PRING) by logging in with your Github Account and claim tokens to substrate-based address that you generated above. There is an IP address limit that one IP address can claim once within 12 hours. For token requests of more than the limited account allowed by the faucet, contact an admin directly via our [Darwinia Technical Telegram Group](https://t.me/DarwiniaDev). We are happy to provide the tokens needed to test your applications.
 
 ### Transfer
 

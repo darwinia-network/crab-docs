@@ -1,10 +1,10 @@
 ---
 title: Development Node
 sidebar_position: 1
-description: How to setup a Darwinia Development Node.
+description: How to setup a Crab Development Node.
 ---
 
-# Getting Started with a Darwinia Development Node
+# Getting Started with a Crab Development Node
 
 ## Introduction
 

@@ -47,4 +47,4 @@ On the basis of the above three steps of the substrate-based crab network part, 
 
 #### Get the PRING Test Token
 
-Please refer this [tutorial](https://docs.crab.network/builders/get-started/darwinia-pangolin#pangolin-faucet-official) to get the PRING test token.
+Please refer this [Faucet](https://apps.darwinia.network/?network=pangolin) to get the PRING test token.
