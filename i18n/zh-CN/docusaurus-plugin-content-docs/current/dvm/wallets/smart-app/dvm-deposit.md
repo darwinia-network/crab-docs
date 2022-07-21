@@ -9,7 +9,7 @@ DVM 账户充值指的是用户将 Substrate 账户资产转移到 DVM 账户中
 
 ## 准备 
 
-准备一个接收 `PRING/PKTON` 的 DVM 账户，可以用 Metamask 生成。见 [如何使用 Metamask](/dvm/wallets/dvm-metamask.md)。
+准备一个接收 `PRING/PKTON` 的 DVM 账户，可以用 Metamask 生成。见 [如何使用 Metamask](/dvm/get-started/use-metamask.md)。
 
 ## 充值
 
