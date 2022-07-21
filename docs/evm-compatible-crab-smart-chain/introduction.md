@@ -1,0 +1,38 @@
+---
+id: crab-introduction
+title: Crab Smart Chain
+sidebar_label: Introduction
+sidebar_position: 2
+---
+
+Crab Smart Chain is a substrate based ethereum compatible smart contract platform where contract developers can easily migrate smart contracts from the Ethereum chain to run their business. In addition, we have set up a free test network, **the Pangolin network**, where the latest features will be fully tested before they are added to the Crab Smart Chain. The user can obtain test tokens at [Pangolin Test Token Faucet](https://apps.darwinia.network/?network=pangolin).
+
+##  Network Info
+
+### For Crab Smart Chain
+
+- Network Name: `Crab`
+- Token Name: `Crab`
+- Token Decimal: `18`
+- ChainId: `44`
+- Block Explorer URL: `https://crab.subscan.io/`
+- HTTP Endpoints:
+    - `https://crab-rpc.darwinia.network`
+    - `https://darwinia-crab.api.onfinality.io/public`
+    - `https://darwiniacrab-rpc.dwellir.com`
+- WSS Endpoints:
+    - `wss://crab-rpc.darwinia.network`
+    - `wss://darwinia-crab.api.onfinality.io/public-ws`
+    - `wss://darwiniacrab-rpc.dwellir.com`
+
+### For Pangolin Smart Chain
+
+- Network Name: `Pangolin`
+- Token Name: `PRING`
+- Token Decimal: `18`
+- ChainId: `43`
+- Block Explorer URL: `https://pangolin.subscan.io`
+- HTTP Endpoints:
+    - `https://pangolin-rpc.darwinia.network`
+- WSS Endpoints:
+    - `wss://pangolin-rpc.darwinia.network`
