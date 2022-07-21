@@ -19,6 +19,6 @@ Crab Chain(CC) is the native standalone chain based on Substrate with a set of d
 ### Crab Parachain
 
 **Crab Network has won the 22nd Kusama parachain slot!**
-### Crab Smart Chain
+### [Crab Smart Chain](evm-compatible-crab-smart-chain/crab-network-rpc.md)
 
-CSC adds an Ethereum-Compatible layer to the CC and provides users with the ability to create and interact with solidity smart contracts. The node of CSC provides Ethereum RPCs endpoint for reading chain states and sending transactions which can be included in Ethereum blocks, and these blocks are chained together as an Ethereum blockchain in the network. Therefore, it is easy for projects in the Ethereum ecosystem to migrate to the Darwinia Network.
+Crab Smart Chain(CSC) adds an Ethereum-Compatible layer to the Crab Chain(CC() and provides users with the ability to create and interact with solidity smart contracts. The node of the Crab Smart Chain(CSC) provides Ethereum RPCs endpoint for reading chain states and sending transactions which can be included in Ethereum blocks, and these blocks are chained together as an Ethereum blockchain in the network. Therefore, it is easy for projects in the Ethereum ecosystem to migrate to the Darwinia Network.
