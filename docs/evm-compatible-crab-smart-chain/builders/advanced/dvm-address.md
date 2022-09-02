@@ -1,7 +1,7 @@
 ---
 id: dvm-address
 title: DVM Address
-sidebar_label: Address
+sidebar_label: DVM Address
 sidebar_position: 1
 ---
 
@@ -67,11 +67,8 @@ It is important to understand that different network formats are merely other re
 - For [Apps Portal](https://apps.darwinia.network/) users
   - If you are connected to Darwinia Network and want to transfer RING/KTON from an account to another, make sure to use the Substrate address for Darwinia, which starts with the number **2**, for the `send to address` input box. 
   - If you are connected to Crab Network and want to transfer CRAB/CKTON from an account to another, make sure to use the Substrate address for Crab, which starts with the number **5**, for the `send to address` input box. 
-- For [Smart App](https://smart.darwinia.network/) users
-  - If you want to transfer assets(CRAB/CKTON) from a Crab Smart address to a Substrate address for Crab, you  connect to the Smart Module in the Crab Network with MetaMask and fill the receiving account's Substrate address for Crab, which starts with the number **5**, in the `Destination address` input box.
-  - If you want to transfer assets(CRAB/CKTON) from a Substrate address for Crab to a Crab Smart address, you  connect to the Crab Network with polkadot{.js} and fill the receiving account's DVM address, which starts with **0x**, in the `Destination address` input box.
-  
-- For [Wormhole](https://wormhole.darwinia.network/) users
+
+- For [Helix](https://apps.helixbridge.app/) users
   - If you want to transfer assets(RING/KTON) from Ethereum to Darwinia, the `Recipient` part should be a Substrate address for Darwinia, which starts with the number **2**.
   - If you want to transfer assets(RING/KTON) from Darwinia to Ethereum, the `Recipient` part should be a real Ethereum address, which starts with **0x**.
 
