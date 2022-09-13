@@ -41,5 +41,13 @@ Crab Smart Chain is a substrate based ethereum compatible smart contract platfor
 
 | Token Symbol | Spec | Decimals | Smart Contract Address |
 | --- | --- | --- | --- |
-| xRING | ERC20 | 9 | 0x7399Ea6C9d35124d893B8d9808930e9d3F211501 |
+| CKTON | ERC20 | 18 | 0x0000000000000000000000000000000000000402 |
 | WCRAB | ERC20 | 18 | 0x2d2b97ea380b0185e9fdf8271d1afb5d2bf18329 |
+| xWRING | ERC20 | 18 | 0x273131F7CB50ac002BDd08cA721988731F7e1092 |
+
+
+### Deprecated tokens
+| Token Symbol | Spec | Decimals | Smart Contract Address | Why |
+| --- | --- | --- | --- | --- |
+| WCKTON(Classic) | ERC20 | 18 | 0x159933C635570D5042723359fbD1619dFe83D3f3 | migrated to CKTON |
+| xRING(Classic) | ERC20 | 18 | 0x7399Ea6C9d35124d893B8d9808930e9d3F211501 | migrated to xWRING |
