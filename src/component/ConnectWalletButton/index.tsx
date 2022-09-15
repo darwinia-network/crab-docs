@@ -21,19 +21,8 @@ interface AddEthereumChainParameter {
 
 const chainsParameter: AddEthereumChainParameter[] = [
   {
-    chainId: "0x2b",
-    chainName: "Pangolin",
-    nativeCurrency: {
-      name: "PRING",
-      symbol: "PRING",
-      decimals: 18,
-    },
-    rpcUrls: ["https://pangolin-rpc.darwinia.network/"],
-    blockExplorerUrls: ["https://pangolin.subscan.io/"],
-  },
-  {
     chainId: "0x2c",
-    chainName: "Crab",
+    chainName: "Crab Smart Chain",
     nativeCurrency: {
       name: "CRAB",
       symbol: "CRAB",
@@ -41,6 +30,17 @@ const chainsParameter: AddEthereumChainParameter[] = [
     },
     rpcUrls: ["https://crab-rpc.darwinia.network/"],
     blockExplorerUrls: ["https://crab.subscan.io/"],
+  },
+  {
+    chainId: "0x2b",
+    chainName: "Pangolin Smart Chain",
+    nativeCurrency: {
+      name: "PRING",
+      symbol: "PRING",
+      decimals: 18,
+    },
+    rpcUrls: ["https://pangolin-rpc.darwinia.network/"],
+    blockExplorerUrls: ["https://pangolin.subscan.io/"],
   },
 ];
 
@@ -145,7 +145,7 @@ const ConnectWalletButton: React.FC<Props> = ({ className }) => {
     <>
       <Modal
         visible={isVisible}
-        title={<h3 className={styles.chainSelectModalTitle}>Please select a network to connect:</h3>}
+        title={<div className={styles.chainSelectModalTitle}>Please select a network to connect:</div>}
         footer={null}
         onCancel={() => setIsVisible(false)}
         className={styles.chainSelectModal}

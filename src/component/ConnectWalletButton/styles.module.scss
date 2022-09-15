@@ -16,32 +16,28 @@
   position: relative;
 
   &:hover {
-    transform: scale(1.1);
-  }
-
-  &:active {
-    top: 2px;
+    opacity: 0.7;
   }
 }
 
 .mainBtn {
   @extend %-base-btn;
-  border-radius: 20px;
-  padding: 4px 8px;
+  border-radius: 0.25rem;
+  padding: 6px 15px;
   background: transparent;
-  border: 2px solid rgba(81, 45, 188, 0.7);
+  border: 1px solid rgba(81, 45, 188, 0.7);
 
   >span {
-    font-weight: bold;
-    font-size: medium;
+    font-size: 16px;
     color: rgba(81, 45, 188, 1);
   }
 }
 
 .chainSelectModalTitle {
-  font-weight: bold;
-  font-size: larger;
-  margin: 0;
+  font-size: 19px;
+  font-weight: 400;
+  text-transform: capitalize;
+  text-align: center;
 }
 
 .chainSelectList {
@@ -62,16 +58,23 @@
 
 .chainSelectBtn {
   @extend %-base-btn;
-  border-radius: 14px;
-  padding: 6px 14px;
+  padding: 8px 20px;
   background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(81, 45, 188, 0.7);
+  min-width: 110px;
+  border-radius: 0.25rem;
 
   >span {
     @extend %-chain-select-list-text;
+    font-size: 16px;
+    font-weight: normal;
   }
 }
 
 .chainSelected {
   @extend %-chain-select-list-text;
+  display: inline-block;
+  padding: 5px 0;
+  font-size: 16px;
+  font-weight: normal;
 }
